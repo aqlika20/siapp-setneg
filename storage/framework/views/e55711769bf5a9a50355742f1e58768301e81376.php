@@ -1,8 +1,8 @@
-{{-- Extends layout --}}
-@extends('layout.default')
 
-{{-- Content --}}
-@section('content')
+
+
+
+<?php $__env->startSection('content'); ?>
 
         <!--begin::Content-->
         <div class="content d-flex flex-column flex-column-fluid" id="kt_content">			
@@ -15,7 +15,7 @@
                     <div class="card card-custom">
                         <div class="card-header flex-wrap border-0 pt-6 pb-0">
                             <div class="card-title">
-                                <h3 class="card-label">Daftar Surat Usulan
+                                <h3 class="card-label">Daftar Surat Usulan Jabatan Fungsional
                             </div>
                             <div class="card-toolbar">
                                 <!--begin::Button-->
@@ -137,7 +137,7 @@
                                                                             <!--end::Icon-->
                                                                             <!--begin::Title-->
                                                                             <div class="d-flex flex-column flex-grow-1 mr-2">
-                                                                                <a href="{{ route('super-admin.administrasi.jabatan-fungsional.form') }}" class="font-weight-bold text-dark-75 text-hover-primary font-size-lg mb-1">Pengangkatan Pejabat Fungsional Keahlian Utama</a>
+                                                                                <a href="<?php echo e(route('super-admin.administrasi.jabatan-fungsional.form')); ?>" class="font-weight-bold text-dark-75 text-hover-primary font-size-lg mb-1">Pengangkatan Pejabat Fungsional Keahlian Utama</a>
                                                                             </div>
                                                                             <!--end::Title-->
                                                                             <!--begin::Lable-->
@@ -161,7 +161,7 @@
                                                                             <!--end::Icon-->
                                                                             <!--begin::Title-->
                                                                             <div class="d-flex flex-column flex-grow-1 mr-2">
-                                                                                <a href="custom/pages/form.html" class="font-weight-bold text-dark-75 text-hover-primary font-size-lg mb-1">Pemberhentian Pejabat Fungsional Keahlian Utama</a>
+                                                                                <a href="<?php echo e(route('super-admin.administrasi.jabatan-fungsional.form')); ?>" class="font-weight-bold text-dark-75 text-hover-primary font-size-lg mb-1">Pemberhentian Pejabat Fungsional Keahlian Utama</a>
                                                                             </div>
                                                                             <!--end::Title-->
                                                                             <!--begin::Lable-->
@@ -185,7 +185,7 @@
                                                                             <!--end::Icon-->
                                                                             <!--begin::Title-->
                                                                             <div class="d-flex flex-column flex-grow-1 mr-2">
-                                                                                <a href="custom/pages/form.html" class="font-weight-bold text-dark-75 text-hover-primary font-size-lg mb-1">Perpindahan Pejabat Fungsional Keahlian Utama</a>
+                                                                                <a href="<?php echo e(route('super-admin.administrasi.jabatan-fungsional.form')); ?>" class="font-weight-bold text-dark-75 text-hover-primary font-size-lg mb-1">Perpindahan Pejabat Fungsional Keahlian Utama</a>
                                                                             </div>
                                                                             <!--end::Title-->
                                                                             <!--begin::Lable-->
@@ -209,7 +209,7 @@
                                                                             <!--end::Icon-->
                                                                             <!--begin::Title-->
                                                                             <div class="d-flex flex-column flex-grow-1 mr-2">
-                                                                                <a href="custom/pages/form.html" class="font-weight-bold text-dark-75 text-hover-primary font-size-lg mb-1">Ralat Keppres Jabatan Fungsional Keahlian Utama</a>
+                                                                                <a href="<?php echo e(route('super-admin.administrasi.jabatan-fungsional.form')); ?>" class="font-weight-bold text-dark-75 text-hover-primary font-size-lg mb-1">Ralat Keppres Jabatan Fungsional Keahlian Utama</a>
                                                                             </div>
                                                                             <!--end::Title-->
                                                                             <!--begin::Lable-->
@@ -233,7 +233,7 @@
                                                                             <!--end::Icon-->
                                                                             <!--begin::Title-->
                                                                             <div class="d-flex flex-column flex-grow-1 mr-2">
-                                                                                <a href="custom/pages/form.html" class="font-weight-bold text-dark-75 text-hover-primary font-size-lg mb-1">Pembatalan Keppres Jabatan Fungsional Keahlian Utama</a>
+                                                                                <a href="<?php echo e(route('super-admin.administrasi.jabatan-fungsional.form')); ?>" class="font-weight-bold text-dark-75 text-hover-primary font-size-lg mb-1">Pembatalan Keppres Jabatan Fungsional Keahlian Utama</a>
                                                                             </div>
                                                                             <!--end::Title-->
                                                                             <!--begin::Lable-->
@@ -262,7 +262,7 @@
                                                                             <!--end::Icon-->
                                                                             <!--begin::Title-->
                                                                             <div class="d-flex flex-column flex-grow-1 mr-2">
-                                                                                <a href="custom/pages/form.html" class="font-weight-bold text-dark-75 text-hover-primary font-size-lg mb-1">Pengangkatan Pejabat Non Struktural</a>
+                                                                                <a href="<?php echo e(route('super-admin.administrasi.jabatan-fungsional.form')); ?>" class="font-weight-bold text-dark-75 text-hover-primary font-size-lg mb-1">Pengangkatan Pejabat Non Struktural</a>
                                                                             </div>
                                                                             <!--end::Title-->
                                                                             <!--begin::Lable-->
@@ -286,7 +286,7 @@
                                                                             <!--end::Icon-->
                                                                             <!--begin::Title-->
                                                                             <div class="d-flex flex-column flex-grow-1 mr-2">
-                                                                                <a href="custom/pages/form.html" class="font-weight-bold text-dark-75 text-hover-primary font-size-lg mb-1">Pemberhentian Pejabat Non Struktural</a>
+                                                                                <a href="<?php echo e(route('super-admin.administrasi.jabatan-fungsional.form')); ?>" class="font-weight-bold text-dark-75 text-hover-primary font-size-lg mb-1">Pemberhentian Pejabat Non Struktural</a>
                                                                             </div>
                                                                             <!--end::Title-->
                                                                             <!--begin::Lable-->
@@ -310,7 +310,7 @@
                                                                             <!--end::Icon-->
                                                                             <!--begin::Title-->
                                                                             <div class="d-flex flex-column flex-grow-1 mr-2">
-                                                                                <a href="custom/pages/form.html" class="font-weight-bold text-dark-75 text-hover-primary font-size-lg mb-1">Ralat Keppres Jabatan Non Struktural</a>
+                                                                                <a href="<?php echo e(route('super-admin.administrasi.jabatan-fungsional.form')); ?>" class="font-weight-bold text-dark-75 text-hover-primary font-size-lg mb-1">Ralat Keppres Jabatan Non Struktural</a>
                                                                             </div>
                                                                             <!--end::Title-->
                                                                             <!--begin::Lable-->
@@ -334,7 +334,7 @@
                                                                             <!--end::Icon-->
                                                                             <!--begin::Title-->
                                                                             <div class="d-flex flex-column flex-grow-1 mr-2">
-                                                                                <a href="custom/pages/form.html" class="font-weight-bold text-dark-75 text-hover-primary font-size-lg mb-1">Pembatalan Keppres Jabatan Non Struktural</a>
+                                                                                <a href="<?php echo e(route('super-admin.administrasi.jabatan-fungsional.form')); ?>" class="font-weight-bold text-dark-75 text-hover-primary font-size-lg mb-1">Pembatalan Keppres Jabatan Non Struktural</a>
                                                                             </div>
                                                                             <!--end::Title-->
                                                                             <!--begin::Lable-->
@@ -363,7 +363,7 @@
                                                                             <!--end::Icon-->
                                                                             <!--begin::Title-->
                                                                             <div class="d-flex flex-column flex-grow-1 mr-2">
-                                                                                <a href="custom/pages/form.html" class="font-weight-bold text-dark-75 text-hover-primary font-size-lg mb-1">Pengangkatan Pejabat Lainnya</a>
+                                                                                <a href="<?php echo e(route('super-admin.administrasi.jabatan-fungsional.form')); ?>" class="font-weight-bold text-dark-75 text-hover-primary font-size-lg mb-1">Pengangkatan Pejabat Lainnya</a>
                                                                             </div>
                                                                             <!--end::Title-->
                                                                             <!--begin::Lable-->
@@ -387,7 +387,7 @@
                                                                             <!--end::Icon-->
                                                                             <!--begin::Title-->
                                                                             <div class="d-flex flex-column flex-grow-1 mr-2">
-                                                                                <a href="custom/pages/form.html" class="font-weight-bold text-dark-75 text-hover-primary font-size-lg mb-1">Pemberhentian Pejabat Fungsional Keahlian Utama</a>
+                                                                                <a href="<?php echo e(route('super-admin.administrasi.jabatan-fungsional.form')); ?>" class="font-weight-bold text-dark-75 text-hover-primary font-size-lg mb-1">Pemberhentian Pejabat Fungsional Keahlian Utama</a>
                                                                             </div>
                                                                             <!--end::Title-->
                                                                             <!--begin::Lable-->
@@ -411,7 +411,7 @@
                                                                             <!--end::Icon-->
                                                                             <!--begin::Title-->
                                                                             <div class="d-flex flex-column flex-grow-1 mr-2">
-                                                                                <a href="custom/pages/form.html" class="font-weight-bold text-dark-75 text-hover-primary font-size-lg mb-1">Pemberhentian Pejabat Lainnya</a>
+                                                                                <a href="<?php echo e(route('super-admin.administrasi.jabatan-fungsional.form')); ?>" class="font-weight-bold text-dark-75 text-hover-primary font-size-lg mb-1">Pemberhentian Pejabat Lainnya</a>
                                                                             </div>
                                                                             <!--end::Title-->
                                                                             <!--begin::Lable-->
@@ -435,7 +435,7 @@
                                                                             <!--end::Icon-->
                                                                             <!--begin::Title-->
                                                                             <div class="d-flex flex-column flex-grow-1 mr-2">
-                                                                                <a href="custom/pages/form.html" class="font-weight-bold text-dark-75 text-hover-primary font-size-lg mb-1">Ralat Keppres Jabatan Lainnya</a>
+                                                                                <a href="<?php echo e(route('super-admin.administrasi.jabatan-fungsional.form')); ?>" class="font-weight-bold text-dark-75 text-hover-primary font-size-lg mb-1">Ralat Keppres Jabatan Lainnya</a>
                                                                             </div>
                                                                             <!--end::Title-->
                                                                             <!--begin::Lable-->
@@ -459,7 +459,7 @@
                                                                             <!--end::Icon-->
                                                                             <!--begin::Title-->
                                                                             <div class="d-flex flex-column flex-grow-1 mr-2">
-                                                                                <a href="custom/pages/form.html" class="font-weight-bold text-dark-75 text-hover-primary font-size-lg mb-1">Pembatalan Keppres Jabatan Lainnya</a>
+                                                                                <a href="<?php echo e(route('super-admin.administrasi.jabatan-fungsional.form')); ?>" class="font-weight-bold text-dark-75 text-hover-primary font-size-lg mb-1">Pembatalan Keppres Jabatan Lainnya</a>
 
                                                                             </div>
                                                                             <!--end::Title-->
@@ -484,7 +484,7 @@
                                                                             <!--end::Icon-->
                                                                             <!--begin::Title-->
                                                                             <div class="d-flex flex-column flex-grow-1 mr-2">
-                                                                                <a href="custom/pages/form.html" class="font-weight-bold text-dark-75 text-hover-primary font-size-lg mb-1">Persetujuan pengangkatan Staf Khusus Menteri/Kepala Lembaga</a>
+                                                                                <a href="<?php echo e(route('super-admin.administrasi.jabatan-fungsional.form')); ?>" class="font-weight-bold text-dark-75 text-hover-primary font-size-lg mb-1">Persetujuan pengangkatan Staf Khusus Menteri/Kepala Lembaga</a>
                                                                                 <div class="wizard-desc">Produk Surat Dinas</div>
 
                                                                             </div>
@@ -580,18 +580,18 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                @foreach($pengangkatans as $pengangkatan)
+                                <?php $__currentLoopData = $pengangkatans; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $pengangkatan): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                     <tr>
-                                        <td>{{ $pengangkatan->tanggal_surat_usulan }}</td>
-                                        <td>{{ $pengangkatan->no_surat_usulan }}</td>
-                                        <td>{{ $pengangkatan->instansi }}</td>
-                                        <td>{{ $pengangkatan->jenis_usulan }}</td>
-                                        <td>{{ $pengangkatan->nip }}</td>
-                                        <td>{{ $pengangkatan->nama }}</td>
-                                        <td>{{ $pengangkatan->jabatan }}</td>
+                                        <td><?php echo e($pengangkatan->tanggal_surat_usulan); ?></td>
+                                        <td><?php echo e($pengangkatan->no_surat_usulan); ?></td>
+                                        <td><?php echo e($pengangkatan->instansi); ?></td>
+                                        <td><?php echo e($pengangkatan->jenis_usulan); ?></td>
+                                        <td><?php echo e($pengangkatan->nip); ?></td>
+                                        <td><?php echo e($pengangkatan->nama); ?></td>
+                                        <td><?php echo e($pengangkatan->jabatan); ?></td>
                                         <td>Coming Soon..</td>
                                     </tr>
-                                @endforeach
+                                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                                 </tbody>
                             </table>
                             <!--end: Datatable-->
@@ -609,20 +609,21 @@
         </div>
         <!--end::Content-->
 
-@endsection
+<?php $__env->stopSection(); ?>
 
-{{-- Styles Section --}}
-@section('styles')
+
+<?php $__env->startSection('styles'); ?>
 <style>
     td {  
         background-color: #86dcec;    
         
     }
 </style>
-@endsection
+<?php $__env->stopSection(); ?>
 
-{{-- Scripts Section --}}
-@section('scripts')
-<script src="{{ asset('js/pages/custom/wizard/wizard-2.js') }}"></script>
-<script src="{{ asset('js/pages/crud/ktdatatable/base/html-table.js') }}" type="text/javascript"></script>
-@endsection
+
+<?php $__env->startSection('scripts'); ?>
+<script src="<?php echo e(asset('js/pages/custom/wizard/wizard-2.js')); ?>"></script>
+<script src="<?php echo e(asset('js/pages/crud/ktdatatable/base/html-table.js')); ?>" type="text/javascript"></script>
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('layout.default', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH D:\Project\siapp\resources\views/pages/super_admin/administrasi/jabatan_fungsional.blade.php ENDPATH**/ ?>

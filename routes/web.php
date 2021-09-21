@@ -32,11 +32,111 @@ Route::group(['middleware' => ['auth', 'checkRole:1']], function() {
             Route::get('/', 'BackWeb\SuperAdmin\HomeController@index')->name('super-admin.home.index');
         });
         Route::prefix('/administrasi')->group(function(){
-            Route::prefix('/form')->group(function(){
-                Route::get('/jabatan-fungsional', 'BackWeb\SuperAdmin\Administrasi\JabatanFungsionalController@form')->name('super-admin.administrasi.jabatan-fungsional.form');
-                Route::patch('/jabatan-fungsional/add', 'BackWeb\SuperAdmin\Administrasi\JabatanFungsionalController@store')->name('super-admin.administrasi.jabatan-fungsional.store');
+            Route::prefix('/surat-usulan')->group(function(){
+                Route::get('/', 'BackWeb\SuperAdmin\Administrasi\Surat_Usulan\JabatanFungsionalController@index')->name('super-admin.administrasi.surat-usulan.index');
+                Route::prefix('/form')->group(function(){
+                    Route::get('/pengangkatan-pejabat-fku', 'BackWeb\SuperAdmin\Administrasi\Surat_Usulan\PengangkatanPejabatFungsionalKeahlianUtamaController@index')->name('super-admin.administrasi.surat-usulan.pengangkatan-pejabat-fku.index');
+                    Route::patch('/pengangkatan-pejabat-fku/add', 'BackWeb\SuperAdmin\Administrasi\Surat_Usulan\PengangkatanPejabatFungsionalKeahlianUtamaController@store')->name('super-admin.administrasi.surat-usulan.pengangkatan-pejabat-fku.store');
+
+                    Route::get('/pemberhentian-pejabat-fku', 'BackWeb\SuperAdmin\Administrasi\Surat_Usulan\PemberhentianPejabatFungsionalKeahlianUtamaController@index')->name('super-admin.administrasi.surat-usulan.pemberhentian-pejabat-fku.index');
+                    Route::patch('/pemberhentian-pejabat-fku/add', 'BackWeb\SuperAdmin\Administrasi\Surat_Usulan\PemberhentianPejabatFungsionalKeahlianUtamaController@store')->name('super-admin.administrasi.surat-usulan.pemberhentian-pejabat-fku.store');
+
+                    Route::get('/perpindahan-pejabat-fku', 'BackWeb\SuperAdmin\Administrasi\Surat_Usulan\PerpindahanPejabatFungsionalKeahlianUtamaController@index')->name('super-admin.administrasi.surat-usulan.perpindahan-pejabat-fku.index');
+                    Route::patch('/perpindahan-pejabat-fku/add', 'BackWeb\SuperAdmin\Administrasi\Surat_Usulan\PerpindahanPejabatFungsionalKeahlianUtamaController@store')->name('super-admin.administrasi.surat-usulan.perpindahan-pejabat-fku.store');
+
+                    Route::get('/ralat-keppres-fku', 'BackWeb\SuperAdmin\Administrasi\Surat_Usulan\RalatKeppresJabatanFungsionalKeahlianUtamaController@index')->name('super-admin.administrasi.surat-usulan.ralat-keppres-fku.index');
+                    Route::patch('/ralat-keppres-fku/add', 'BackWeb\SuperAdmin\Administrasi\Surat_Usulan\RalatKeppresJabatanFungsionalKeahlianUtamaController@store')->name('super-admin.administrasi.surat-usulan.ralat-keppres-fku.store');
+
+                    Route::get('/pembatalan-keppres-jabatan-fku', 'BackWeb\SuperAdmin\Administrasi\Surat_Usulan\PembatalanKeppresJabatanFungsionalKeahlianUtamaController@index')->name('super-admin.administrasi.surat-usulan.pembatalan-keppres-jabatan-fku.index');
+                    Route::patch('/pembatalan-keppres-jabatan-fku/add', 'BackWeb\SuperAdmin\Administrasi\Surat_Usulan\PembatalanKeppresJabatanFungsionalKeahlianUtamaController@store')->name('super-admin.administrasi.surat-usulan.pembatalan-keppres-jabatan-fku.store');
+
+
+
+                    Route::get('/pengangkatan-pejabat-ns', 'BackWeb\SuperAdmin\Administrasi\Surat_Usulan\PengangkatanPejabatNonStrukturalController@index')->name('super-admin.administrasi.surat-usulan.pengangkatan-pejabat-ns.index');
+                    Route::patch('/pengangkatan-pejabat-ns/add', 'BackWeb\SuperAdmin\Administrasi\Surat_Usulan\PengangkatanPejabatNonStrukturalController@store')->name('super-admin.administrasi.surat-usulan.pengangkatan-pejabat-ns.store');
+
+                    Route::get('/pemberhentian-pejabat-ns', 'BackWeb\SuperAdmin\Administrasi\Surat_Usulan\PemberhentianPejabatNonStrukturalController@index')->name('super-admin.administrasi.surat-usulan.pemberhentian-pejabat-ns.index');
+                    Route::patch('/pemberhentian-pejabat-ns/add', 'BackWeb\SuperAdmin\Administrasi\Surat_Usulan\PemberhentianPejabatNonStrukturalController@store')->name('super-admin.administrasi.surat-usulan.pemberhentian-pejabat-ns.store');
+
+                    Route::get('/ralat-keppres-jabatan-ns', 'BackWeb\SuperAdmin\Administrasi\Surat_Usulan\RalatKeppresJabatanNonStrukturalController@index')->name('super-admin.administrasi.surat-usulan.ralat-keppres-jabatan-ns.index');
+                    Route::patch('/ralat-keppres-jabatan-ns/add', 'BackWeb\SuperAdmin\Administrasi\Surat_Usulan\RalatKeppresJabatanNonStrukturalController@store')->name('super-admin.administrasi.surat-usulan.ralat-keppres-jabatan-ns.store');
+
+                    Route::get('/pembatalan-keppres-jabatan-ns', 'BackWeb\SuperAdmin\Administrasi\Surat_Usulan\PembatalanKeppresJabatanNonStrukturalController@index')->name('super-admin.administrasi.surat-usulan.pembatalan-keppres-jabatan-ns.index');
+                    Route::patch('/pembatalan-keppres-jabatan-ns/add', 'BackWeb\SuperAdmin\Administrasi\Surat_Usulan\PembatalanKeppresJabatanNonStrukturalController@store')->name('super-admin.administrasi.surat-usulan.pembatalan-keppres-jabatan-ns.store');
+
+
+
+                    Route::get('/pengangkatan-pejabat-lainnya', 'BackWeb\SuperAdmin\Administrasi\Surat_Usulan\PengangkatanPejabatLainnyaController@index')->name('super-admin.administrasi.surat-usulan.pengangkatan-pejabat-lainnya.index');
+                    Route::patch('/pengangkatan-pejabat-lainnya/add', 'BackWeb\SuperAdmin\Administrasi\Surat_Usulan\PengangkatanPejabatLainnyaController@store')->name('super-admin.administrasi.surat-usulan.pengangkatan-pejabat-lainnya.store');
+
+                    Route::get('/pemberhentian-pejabat-lainnya', 'BackWeb\SuperAdmin\Administrasi\Surat_Usulan\PemberhentianPejabatLainnyaController@index')->name('super-admin.administrasi.surat-usulan.pemberhentian-pejabat-lainnya.index');
+                    Route::patch('/pemberhentian-pejabat-lainnya/add', 'BackWeb\SuperAdmin\Administrasi\Surat_Usulan\PemberhentianPejabatLainnyaController@store')->name('super-admin.administrasi.surat-usulan.pemberhentian-pejabat-lainnya.store');
+
+                    Route::get('/ralat-keppres-jabatan-lainnya', 'BackWeb\SuperAdmin\Administrasi\Surat_Usulan\RalatKeppresJabatanLainnyaController@index')->name('super-admin.administrasi.surat-usulan.ralat-keppres-jabatan-lainnya.index');
+                    Route::patch('/ralat-keppres-jabatan-lainnya/add', 'BackWeb\SuperAdmin\Administrasi\Surat_Usulan\RalatKeppresJabatanLainnyaController@store')->name('super-admin.administrasi.surat-usulan.ralat-keppres-jabatan-lainnya.store');
+
+                    Route::get('/pembatalan-keppres-jabatan-lainnya', 'BackWeb\SuperAdmin\Administrasi\Surat_Usulan\PembatalanKeppresJabatanLainnyaController@index')->name('super-admin.administrasi.surat-usulan.pembatalan-keppres-jabatan-lainnya.index');
+                    Route::patch('/pembatalan-keppres-jabatan-lainnya/add', 'BackWeb\SuperAdmin\Administrasi\Surat_Usulan\PembatalanKeppresJabatanLainnyaController@store')->name('super-admin.administrasi.surat-usulan.pembatalan-keppres-jabatan-lainnya.store');
+
+                    Route::get('/persetujuan-pengangkatan-staf-khusus', 'BackWeb\SuperAdmin\Administrasi\Surat_Usulan\PersetujuanPengangkatanStafKhususController@index')->name('super-admin.administrasi.surat-usulan.persetujuan-pengangkatan-staf-khusus.index');
+                    Route::patch('/persetujuan-pengangkatan-staf-khusus/add', 'BackWeb\SuperAdmin\Administrasi\Surat_Usulan\PersetujuanPengangkatanStafKhususController@store')->name('super-admin.administrasi.surat-usulan.persetujuan-pengangkatan-staf-khusus.store');
+                });
             });
-            Route::get('/jabatan-fungsional', 'BackWeb\SuperAdmin\Administrasi\JabatanFungsionalController@index')->name('super-admin.administrasi.jabatan-fungsional.index');
+
+            Route::prefix('/kenaikan_pangkat')->group(function(){
+                Route::get('/', 'BackWeb\SuperAdmin\Administrasi\Kenaikan_Pangkat\KenaikanPangkatController@index')->name('super-admin.administrasi.kenaikan-pangkat.index');
+                Route::prefix('/form')->group(function(){
+                    Route::get('/pemberian-kenaikan-pangkat', 'BackWeb\SuperAdmin\Administrasi\Kenaikan_Pangkat\PemberianKenaikanPangkatController@index')->name('super-admin.administrasi.kenaikan-pangkat.pemberian-kenaikan-pangkat.index');
+                    Route::patch('/pemberian-kenaikan-pangkat/add', 'BackWeb\SuperAdmin\Administrasi\Kenaikan_Pangkat\PemberianKenaikanPangkatController@store')->name('super-admin.administrasi.kenaikan-pangkat.pemberian-kenaikan-pangkat.store');
+
+                    Route::get('/pembatalan-keppres-kenaikan-pangkat', 'BackWeb\SuperAdmin\Administrasi\Kenaikan_Pangkat\PembatalanKeppresKenaikanPangkatController@index')->name('super-admin.administrasi.kenaikan-pangkat.pembatalan-keppres-kenaikan-pangkat.index');
+                    Route::patch('/pembatalan-keppres-kenaikan-pangkat/add', 'BackWeb\SuperAdmin\Administrasi\Kenaikan_Pangkat\PembatalanKeppresKenaikanPangkatController@store')->name('super-admin.administrasi.kenaikan-pangkat.pembatalan-keppres-kenaikan-pangkat.store');
+
+                    Route::get('/pengesahan-kenaikan-pangkat', 'BackWeb\SuperAdmin\Administrasi\Kenaikan_Pangkat\PengesahanKenaikanPangkatController@index')->name('super-admin.administrasi.kenaikan-pangkat.pengesahan-kenaikan-pangkat.index');
+                    Route::patch('/pengesahan-kenaikan-pangkat/add', 'BackWeb\SuperAdmin\Administrasi\Kenaikan_Pangkat\PengesahanKenaikanPangkatController@store')->name('super-admin.administrasi.kenaikan-pangkat.pengesahan-kenaikan-pangkat.store');
+
+                    Route::get('/ralat-keppres-kepangkatan', 'BackWeb\SuperAdmin\Administrasi\Kenaikan_Pangkat\RalatKeppresKepangkatanController@index')->name('super-admin.administrasi.kenaikan-pangkat.ralat-keppres-kepangkatan.index');
+                    Route::patch('/ralat-keppres-kepangkatan/add', 'BackWeb\SuperAdmin\Administrasi\Kenaikan_Pangkat\RalatKeppresKepangkatanController@store')->name('super-admin.administrasi.kenaikan-pangkat.ralat-keppres-kepangkatan.store');
+                });
+            });
+
+            Route::prefix('/pemberhentian')->group(function(){
+                Route::get('/', 'BackWeb\SuperAdmin\Administrasi\Pemberhentian\PemberhentianController@index')->name('super-admin.administrasi.kenaikan-pangkat.index');
+                Route::prefix('/form')->group(function(){
+                    Route::get('/bup-non-kpp', 'BackWeb\SuperAdmin\Administrasi\Pemberhentian\PemberianKenaikanPangkatController@index')->name('super-admin.administrasi.kenaikan-pangkat.bup-non-kpp.index');
+                    Route::patch('/bup-non-kpp/add', 'BackWeb\SuperAdmin\Administrasi\Pemberhentian\PemberianKenaikanPangkatController@store')->name('super-admin.administrasi.kenaikan-pangkat.bup-non-kpp.store');
+
+                    Route::get('/bup-kpp', 'BackWeb\SuperAdmin\Administrasi\Pemberhentian\PembatalanKeppresKenaikanPangkatController@index')->name('super-admin.administrasi.kenaikan-pangkat.bup-kpp.index');
+                    Route::patch('/bup-kpp/add', 'BackWeb\SuperAdmin\Administrasi\Pemberhentian\PembatalanKeppresKenaikanPangkatController@store')->name('super-admin.administrasi.kenaikan-pangkat.bup-kpp.store');
+
+                    Route::get('/berhenti-atas-permintaan-sendiri', 'BackWeb\SuperAdmin\Administrasi\Pemberhentian\PengesahanKenaikanPangkatController@index')->name('super-admin.administrasi.kenaikan-pangkat.berhenti-atas-permintaan-sendiri.index');
+                    Route::patch('/berhenti-atas-permintaan-sendiri/add', 'BackWeb\SuperAdmin\Administrasi\Pemberhentian\PengesahanKenaikanPangkatController@store')->name('super-admin.administrasi.kenaikan-pangkat.berhenti-atas-permintaan-sendiri.store');
+
+                    Route::get('/non-bup-jda-non-kpp', 'BackWeb\SuperAdmin\Administrasi\Pemberhentian\RalatKeppresKepangkatanController@index')->name('super-admin.administrasi.kenaikan-pangkat.non-bup-jda-non-kpp.index');
+                    Route::patch('/non-bup-jda-non-kpp/add', 'BackWeb\SuperAdmin\Administrasi\Pemberhentian\RalatKeppresKepangkatanController@store')->name('super-admin.administrasi.kenaikan-pangkat.non-bup-jda-non-kpp.store');
+
+                    Route::get('/non-bup-jda-kpp', 'BackWeb\SuperAdmin\Administrasi\Pemberhentian\RalatKeppresKepangkatanController@index')->name('super-admin.administrasi.kenaikan-pangkat.non-bup-jda-kpp.index');
+                    Route::patch('/non-bup-jda-kpp/add', 'BackWeb\SuperAdmin\Administrasi\Pemberhentian\RalatKeppresKepangkatanController@store')->name('super-admin.administrasi.kenaikan-pangkat.non-bup-jda-kpp.store');
+
+                    Route::get('/berhenti-tidak-dengan-hormat', 'BackWeb\SuperAdmin\Administrasi\Pemberhentian\RalatKeppresKepangkatanController@index')->name('super-admin.administrasi.kenaikan-pangkat.berhenti-tidak-dengan-hormat.index');
+                    Route::patch('/berhenti-tidak-dengan-hormat/add', 'BackWeb\SuperAdmin\Administrasi\Pemberhentian\RalatKeppresKepangkatanController@store')->name('super-admin.administrasi.kenaikan-pangkat.berhenti-tidak-dengan-hormat.store');
+
+                    Route::get('/anumerta', 'BackWeb\SuperAdmin\Administrasi\Pemberhentian\RalatKeppresKepangkatanController@index')->name('super-admin.administrasi.kenaikan-pangkat.anumerta.index');
+                    Route::patch('/anumerta/add', 'BackWeb\SuperAdmin\Administrasi\Pemberhentian\RalatKeppresKepangkatanController@store')->name('super-admin.administrasi.kenaikan-pangkat.anumerta.store');
+
+                    Route::get('/pemberhentian-sementara', 'BackWeb\SuperAdmin\Administrasi\Pemberhentian\RalatKeppresKepangkatanController@index')->name('super-admin.administrasi.kenaikan-pangkat.pemberhentian-sementara.index');
+                    Route::patch('/pemberhentian-sementara/add', 'BackWeb\SuperAdmin\Administrasi\Pemberhentian\RalatKeppresKepangkatanController@store')->name('super-admin.administrasi.kenaikan-pangkat.pemberhentian-sementara.store');
+
+                    Route::get('/ralat-keppres-pemberhentian', 'BackWeb\SuperAdmin\Administrasi\Pemberhentian\RalatKeppresKepangkatanController@index')->name('super-admin.administrasi.kenaikan-pangkat.ralat-keppres-pemberhentian.index');
+                    Route::patch('/ralat-keppres-pemberhentian/add', 'BackWeb\SuperAdmin\Administrasi\Pemberhentian\RalatKeppresKepangkatanController@store')->name('super-admin.administrasi.kenaikan-pangkat.ralat-keppres-pemberhentian.store');
+
+                    Route::get('/pembatalan-keppres-pemberhentian', 'BackWeb\SuperAdmin\Administrasi\Pemberhentian\RalatKeppresKepangkatanController@index')->name('super-admin.administrasi.kenaikan-pangkat.pembatalan-keppres-pemberhentian.index');
+                    Route::patch('/pembatalan-keppres-pemberhentian/add', 'BackWeb\SuperAdmin\Administrasi\Pemberhentian\RalatKeppresKepangkatanController@store')->name('super-admin.administrasi.kenaikan-pangkat.pembatalan-keppres-pemberhentian.store');
+
+                    Route::get('/petikan-keppres-yang-hilang', 'BackWeb\SuperAdmin\Administrasi\Pemberhentian\RalatKeppresKepangkatanController@index')->name('super-admin.administrasi.kenaikan-pangkat.petikan-keppres-yang-hilang.index');
+                    Route::patch('/petikan-keppres-yang-hilang/add', 'BackWeb\SuperAdmin\Administrasi\Pemberhentian\RalatKeppresKepangkatanController@store')->name('super-admin.administrasi.kenaikan-pangkat.petikan-keppres-yang-hilang.store');
+                });
+            });
         });
     });
 }); 

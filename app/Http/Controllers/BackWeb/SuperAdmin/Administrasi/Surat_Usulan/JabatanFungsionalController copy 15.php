@@ -14,6 +14,7 @@ use App\UserManagement;
 use App\Pengangkatan;
 use App\Pangkat;
 use App\Periode;
+use App\Helper;
 
 use Carbon\Carbon;
 
@@ -55,22 +56,12 @@ class JabatanFungsionalController extends Controller
     public function index() 
     {
         $currentUser = UserManagement::find(Auth::id());
-        $page_title = 'Super Admin | Administrasi | Jabatan Fungsional';
-        $page_description = 'Home';
-        $pengangkatans = Pengangkatan::where('status', 'Prosess')->get();
-        // $pros = Proseq::select(DB::raw("pro, id_product_remark, created_by, seq_no, created_at, id_status"))->distinct('seq_no')->get();
-        return view('pages.super_admin.administrasi.jabatan_fungsional', compact('page_title', 'page_description', 'currentUser', 'pengangkatans'));
-    }
-
-    public function form() 
-    {
-        $currentUser = UserManagement::find(Auth::id());
-        $page_title = 'Super Admin | Administrasi | Jabatan Fungsional | Keahlian Utama';
+        $page_title = 'Super Admin | Administrasi | Surat Usulan | Keahlian Utama';
         $page_description = 'Home';
         $pangkats = Pangkat::All();
         $periodes = Periode::All();
         // $pros = Proseq::select(DB::raw("pro, id_product_remark, created_by, seq_no, created_at, id_status"))->distinct('seq_no')->get();
-        return view('pages.super_admin.administrasi.form.form_keahlian_utama', compact('page_title', 'page_description', 'currentUser', 'pangkats', 'periodes'));
+        return view('pages.super_admin.administrasi.surat_usulan.form.form_keahlian_utama', compact('page_title', 'page_description', 'currentUser', 'pangkats', 'periodes'));
     }
 
     // ========= function create basic information =============
@@ -159,8 +150,8 @@ class JabatanFungsionalController extends Controller
             'periode_kenaikan_pangkat' => $input['req_periode_kenaikan'],
             'tanggal_catatan' => $input['req_tanggal_catatan'],
             'catatan' => $input['req_catatan'],
-            'jenis_usulan' => 'Pengangkatan dan Pemberhentian Pejabat Fungsional Keahlian Utama',
-            'status' => 'Prosess'
+            'jenis_usulan' => Helper::$pengangkatan_pejabat_FKU,
+            'status' => Helper::$proses
             
         ]);
 
