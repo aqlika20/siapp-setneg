@@ -74,13 +74,13 @@
                                 <span class="menu-link"><span class="menu-text">Administrasi</span></span>
                             </li>
                             <li class="menu-item <?php echo e((strpos($page_title, 'Super Admin | Administrasi | Jabatan Fungsional') !== false) ? 'menu-item-active' : ''); ?>" aria-haspopup="true">
-                                <a href="<?php echo e(route('super-admin.administrasi.jabatan-fungsional.index')); ?>" class="menu-link "><i class="menu-bullet menu-bullet-line"><span></span></i><span class="menu-text">Jabatan Fungsional</span></a>
+                                <a href="<?php echo e(route('super-admin.administrasi.surat-usulan.index')); ?>" class="menu-link "><i class="menu-bullet menu-bullet-line"><span></span></i><span class="menu-text">Jabatan Fungsional</span></a>
                             </li>
                             <li class="menu-item <?php echo e((strpos($page_title, 'Super Admin | Administrasi | Kenaikan Pangkat') !== false) ? 'menu-item-active' : ''); ?>" aria-haspopup="true">
                                 <a href="<?php echo e(route('super-admin.administrasi.kenaikan-pangkat.index')); ?>" class="menu-link "><i class="menu-bullet menu-bullet-line"><span></span></i><span class="menu-text">Kenaikan Pangkat</span></a>
                             </li>
                             <li class="menu-item <?php echo e((strpos($page_title, 'Super Admin | Administrasi | Pemberhentian') !== false) ? 'menu-item-active' : ''); ?>" aria-haspopup="true">
-                                <a href="" class="menu-link "><i class="menu-bullet menu-bullet-line"><span></span></i><span class="menu-text">Pemberhentian</span></a>
+                                <a href="<?php echo e(route('super-admin.administrasi.pemberhentian.index')); ?>" class="menu-link "><i class="menu-bullet menu-bullet-line"><span></span></i><span class="menu-text">Pemberhentian</span></a>
                             </li>
                             <li class="menu-item <?php echo e((strpos($page_title, 'Super Admin | Administrasi | Status Usulan') !== false) ? 'menu-item-active' : ''); ?>" aria-haspopup="true">
                                 <a href="" class="menu-link "><i class="menu-bullet menu-bullet-line"><span></span></i><span class="menu-text">Status Usulan</span></a>

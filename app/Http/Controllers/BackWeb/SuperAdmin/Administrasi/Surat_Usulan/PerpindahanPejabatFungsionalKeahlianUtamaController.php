@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\BackWeb\SuperAdmin\Administrasi;
+namespace App\Http\Controllers\BackWeb\SuperAdmin\Administrasi\Surat_Usulan;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;

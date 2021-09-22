@@ -79,7 +79,7 @@
                                 <a href="{{ route('super-admin.administrasi.kenaikan-pangkat.index') }}" class="menu-link "><i class="menu-bullet menu-bullet-line"><span></span></i><span class="menu-text">Kenaikan Pangkat</span></a>
                             </li>
                             <li class="menu-item {{ (strpos($page_title, 'Super Admin | Administrasi | Pemberhentian') !== false) ? 'menu-item-active' : '' }}" aria-haspopup="true">
-                                <a href="" class="menu-link "><i class="menu-bullet menu-bullet-line"><span></span></i><span class="menu-text">Pemberhentian</span></a>
+                                <a href="{{ route('super-admin.administrasi.pemberhentian.index') }}" class="menu-link "><i class="menu-bullet menu-bullet-line"><span></span></i><span class="menu-text">Pemberhentian</span></a>
                             </li>
                             <li class="menu-item {{ (strpos($page_title, 'Super Admin | Administrasi | Status Usulan') !== false) ? 'menu-item-active' : '' }}" aria-haspopup="true">
                                 <a href="" class="menu-link "><i class="menu-bullet menu-bullet-line"><span></span></i><span class="menu-text">Status Usulan</span></a>

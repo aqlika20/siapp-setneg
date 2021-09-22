@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\BackWeb\SuperAdmin\Administrasi;
+namespace App\Http\Controllers\BackWeb\SuperAdmin\Administrasi\Surat_Usulan;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
@@ -18,7 +18,7 @@ use App\Helper;
 
 use Carbon\Carbon;
 
-class JabatanFungsionalController extends Controller
+class PemberhentianPejabatLainnyaController extends Controller
 {
     private $curr_int_time;
 
@@ -56,22 +56,11 @@ class JabatanFungsionalController extends Controller
     public function index() 
     {
         $currentUser = UserManagement::find(Auth::id());
-        $page_title = 'Super Admin | Administrasi | Jabatan Fungsional';
-        $page_description = 'Home';
-        $pengangkatans = Pengangkatan::where('status', 'Prosess')->get();
-        // $pros = Proseq::select(DB::raw("pro, id_product_remark, created_by, seq_no, created_at, id_status"))->distinct('seq_no')->get();
-        return view('pages.super_admin.administrasi.surat_usulan.jabatan_fungsional', compact('page_title', 'page_description', 'currentUser', 'pengangkatans'));
-    }
-
-    public function form() 
-    {
-        $currentUser = UserManagement::find(Auth::id());
-        $page_title = 'Super Admin | Administrasi | Jabatan Fungsional | Keahlian Utama';
-        $page_description = 'Home';
+        $page_title = 'Super Admin | Administrasi | Surat Usulan | Pemberhentian Pejabat Lainnya';
+        $page_description = 'Pemberhentian Pejabat Lainnya';
         $pangkats = Pangkat::All();
         $periodes = Periode::All();
-        // $pros = Proseq::select(DB::raw("pro, id_product_remark, created_by, seq_no, created_at, id_status"))->distinct('seq_no')->get();
-        return view('pages.super_admin.administrasi.surat_usulan.form.form_keahlian_utama', compact('page_title', 'page_description', 'currentUser', 'pangkats', 'periodes'));
+        return view('pages.super_admin.administrasi.surat_usulan.form.pemberhentian_pejabat_lainnya', compact('page_title', 'page_description', 'currentUser', 'pangkats', 'periodes'));
     }
 
     // ========= function create basic information =============
