@@ -26,24 +26,24 @@ License: You must have a valid license purchased only from themeforest(the above
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
 
         {{-- Favicon --}}
-        <link rel="shortcut icon" href="{{ asset('media/logos/siapp.ico') }}" />
+        <link rel="shortcut icon" href="{{ secure_asset('media/logos/siapp.ico') }}" />
 
         {{-- Fonts --}}
         {{-- {{ Metronic::getGoogleFontsInclude() }} --}}
 
         {{-- Global Theme Styles (used by all pages) --}}
         @foreach(config('layout.resources.css') as $style)
-            <link href="{{ config('layout.self.rtl') ? asset(Metronic::rtlCssPath($style)) : asset($style) }}" rel="stylesheet" type="text/css"/>
+            <link href="{{ config('layout.self.rtl') ? secure_asset(Metronic::rtlCssPath($style)) : secure_asset($style) }}" rel="stylesheet" type="text/css"/>
         @endforeach
 
         {{-- Layout Themes (used by all pages) --}}
         @foreach (Metronic::initThemes() as $theme)
-            <link href="{{ config('layout.self.rtl') ? asset(Metronic::rtlCssPath($theme)) : asset($theme) }}" rel="stylesheet" type="text/css"/>
+            <link href="{{ config('layout.self.rtl') ? secure_asset(Metronic::rtlCssPath($theme)) : secure_asset($theme) }}" rel="stylesheet" type="text/css"/>
         @endforeach
 
         {{-- Includable CSS --}}
             
-		    <link href="{{ asset('css/pages/wizard/wizard-2.css') }}" rel="stylesheet" type="text/css" />
+		    <link href="{{ secure_asset('css/pages/wizard/wizard-2.css') }}" rel="stylesheet" type="text/css" />
         {{-- @yield('styles') --}}
 
         
@@ -81,7 +81,7 @@ License: You must have a valid license purchased only from themeforest(the above
 
         {{-- Global Theme JS Bundle (used by all pages)  --}}
         @foreach(config('layout.resources.js') as $script)
-            <script src="{{ asset($script) }}" type="text/javascript"></script>
+            <script src="{{ secure_asset($script) }}" type="text/javascript"></script>
 
         @endforeach
         <!-- <script src="../../js/papaparse.min.js"></script> -->
