@@ -137,7 +137,21 @@ Route::group(['middleware' => ['auth', 'checkRole:1']], function() {
                     Route::patch('/petikan-keppres-yang-hilang/add', 'BackWeb\SuperAdmin\Administrasi\Pemberhentian\PetikanKeppresHilangController@store')->name('super-admin.administrasi.pemberhentian.petikan-keppres-yang-hilang.store');
                 });
             });
+
+            Route::prefix('/status-usulan')->group(function(){
+                Route::get('/', 'BackWeb\SuperAdmin\Administrasi\Status_Usulan\StatusUsulanController@index')->name('super-admin.administrasi.status-usulan.index');
+            });
+            
         });
+
+        Route::prefix('/inbox')->group(function(){
+            Route::get('/', 'BackWeb\SuperAdmin\InboxController@index')->name('super-admin.inbox.index');
+        });
+        
+        Route::prefix('/faq')->group(function(){
+            Route::get('/', 'BackWeb\SuperAdmin\FaqController@index')->name('super-admin.faq.index');
+        });
+
     });
 }); 
 

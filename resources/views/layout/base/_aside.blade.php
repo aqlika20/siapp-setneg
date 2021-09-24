@@ -82,14 +82,14 @@
                                 <a href="{{ route('super-admin.administrasi.pemberhentian.index') }}" class="menu-link "><i class="menu-bullet menu-bullet-line"><span></span></i><span class="menu-text">Pemberhentian</span></a>
                             </li>
                             <li class="menu-item {{ (strpos($page_title, 'Super Admin | Administrasi | Status Usulan') !== false) ? 'menu-item-active' : '' }}" aria-haspopup="true">
-                                <a href="" class="menu-link "><i class="menu-bullet menu-bullet-line"><span></span></i><span class="menu-text">Status Usulan</span></a>
+                                <a href="{{ route('super-admin.administrasi.status-usulan.index') }}" class="menu-link "><i class="menu-bullet menu-bullet-line"><span></span></i><span class="menu-text">Status Usulan</span></a>
                             </li>
                         </ul>
                     </div>
                 </li>
 
                 <li class="menu-item {{ (strpos($page_title, 'Super Admin | User Management') !== false) ? 'menu-item-active' : '' }}" aria-haspopup="true">
-                    <a href="" class="menu-link ">
+                    <a href="{{ route('super-admin.inbox.index') }}" class="menu-link ">
                         <span class="svg-icon menu-icon"><!--begin::Svg Icon | path:media/svg/icons/Design/Layers.svg-->
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-mailbox" viewBox="0 0 16 16">
                                 <path d="M4 4a3 3 0 0 0-3 3v6h6V7a3 3 0 0 0-3-3zm0-1h8a4 4 0 0 1 4 4v6a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1V7a4 4 0 0 1 4-4zm2.646 1A3.99 3.99 0 0 1 8 7v6h7V7a3 3 0 0 0-3-3H6.646z"/>
@@ -124,7 +124,7 @@
                                 <a href="" class="menu-link "><i class="menu-bullet menu-bullet-line"><span></span></i><span class="menu-text">Alur Proses</span></a>
                             </li>
                             <li class="menu-item {{ (strpos($page_title, 'Super Admin | Setting | Supplier Definition') !== false) ? 'menu-item-active' : '' }}" aria-haspopup="true">
-                                <a href="" class="menu-link "><i class="menu-bullet menu-bullet-line"><span></span></i><span class="menu-text">FAQ</span></a>
+                                <a href="{{ route('super-admin.faq.index') }}" class="menu-link "><i class="menu-bullet menu-bullet-line"><span></span></i><span class="menu-text">FAQ</span></a>
                             </li>
                         </ul>
                     </div>
