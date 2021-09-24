@@ -141,47 +141,19 @@ Route::group(['middleware' => ['auth', 'checkRole:1']], function() {
     });
 }); 
 
-// PPIC
-Route::group(['middleware' => ['auth', 'checkRole:2']], function() {
-    Route::prefix('/ppic')->group(function(){
-        Route::prefix('/import-csv')->group(function(){
-            Route::get('/', 'BackWeb\PPIC\ImportCSVController@index')->name('ppic.import-csv.index');
-            Route::get('/detail/{pro}', 'BackWeb\PPIC\ImportCSVController@detail')->name('ppic.import-csv.detail');
-            Route::post('/create', 'BackWeb\PPIC\ImportCSVController@create')->name('ppic.import-csv.create');
-            Route::delete('/delete/{pro}', 'BackWeb\PPIC\ImportCSVController@delete')->name('ppic.import-csv.delete');
+
+Route::group(['middleware' => ['auth', 'checkRole:3']], function() {
+    Route::prefix('/demo3')->group(function(){
+        Route::prefix('/home')->group(function(){
+            Route::get('/', 'BackWeb\demo3\HomeController@index')->name('demo3.home.index');
         });
-        Route::prefix('/production-planning')->group(function(){
-            Route::prefix('/icing-sugar')->group(function(){
-                Route::get('/', 'BackWeb\PPIC\ProductionPlanning\IcingSugarController@index')->name('ppic.production-planning.icing-sugar.index');
-                Route::post('/create', 'BackWeb\PPIC\ProductionPlanning\IcingSugarController@create')->name('ppic.production-planning.icing-sugar.create');
-                Route::get('/edit/{id}', 'BackWeb\PPIC\ProductionPlanning\IcingSugarController@view')->name('ppic.production-planning.icing-sugar.view');
-                Route::patch('/edit/{id}', 'BackWeb\PPIC\ProductionPlanning\IcingSugarController@edit')->name('ppic.production-planning.icing-sugar.edit');
-                Route::delete('/delete/{id}', 'BackWeb\PPIC\ProductionPlanning\IcingSugarController@delete')->name('ppic.production-planning.icing-sugar.delete');
-            });
-            // Route::prefix('/blending')->group(function(){
-            //     Route::get('/', 'BackWeb\PPIC\ProductionPlanning\BlendingController@index')->name('ppic.production-planning.blending.index');
-            //     Route::post('/create', 'BackWeb\PPIC\ProductionPlanning\BlendingController@create')->name('ppic.production-planning.blending.create');
-            // });
-        });
-        Route::prefix('/report')->group(function(){
-            Route::prefix('/general')->group(function(){
-                Route::get('/', 'BackWeb\PPIC\Report\GeneralController@index')->name('ppic.report.general.index');
-                Route::get('/pdf', 'BackWeb\PPIC\Report\GeneralController@pdf')->name('ppic.report.general.pdf');
-                Route::get('/excel', 'BackWeb\PPIC\Report\GeneralController@excel')->name('ppic.report.general.excel');
-            });
-            Route::prefix('/production')->group(function(){
-                Route::get('/', 'BackWeb\PPIC\Report\ProductionController@index')->name('ppic.report.production.index');
-                Route::get('/pdf', 'BackWeb\PPIC\Report\ProductionController@pdf')->name('ppic.report.production.pdf');
-                Route::get('/excel', 'BackWeb\PPIC\Report\ProductionController@excel')->name('ppic.report.production.excel');
-            });
-            Route::prefix('/consumption')->group(function(){
-                Route::get('/', 'BackWeb\PPIC\Report\ConsumptionController@index')->name('ppic.report.consumption.index');
-                Route::get('/pdf', 'BackWeb\PPIC\Report\ConsumptionController@pdf')->name('ppic.report.consumption.pdf');
-                Route::get('/excel', 'BackWeb\PPIC\Report\ConsumptionController@excel')->name('ppic.report.consumption.excel');
-            });
-        });
+        Route::get('/inbox', 'BackWeb\demo3\InboxController@index')->name('demo3.inbox.index');
+        Route::get('/atur_dokument', 'BackWeb\demo3\AturDokumentController@index')->name('demo3.atur-dokument.index');
+        Route::get('/riwayat', 'BackWeb\demo3\RiwayatController@index')->name('demo3.riwayat.index');
+        Route::get('/faq', 'BackWeb\demo3\PengaturanController@faq')->name('demo3.pengaturan.faq');
+
     });
-});
+}); 
 
 Auth::routes(['register' => false]);
 // Auth::routes();
