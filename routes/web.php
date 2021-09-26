@@ -155,7 +155,36 @@ Route::group(['middleware' => ['auth', 'checkRole:1']], function() {
     });
 }); 
 
+// Kemensetneg
+Route::group(['middleware' => ['auth', 'checkRole:2']], function() {
 
+    Route::prefix('/kemensetneg')->group(function(){
+        Route::prefix('/home')->group(function(){
+            Route::get('/', 'BackWeb\Kemensetneg\HomeController@index')->name('kemensetneg.home.index');
+        });
+        Route::prefix('/inbox')->group(function(){
+            Route::get('/jfku', 'BackWeb\Kemensetneg\Inbox\JFKUController@index')->name('kemensetneg.inbox.jfku.index');
+            Route::get('/kenaikan-pangkat', 'BackWeb\Kemensetneg\Inbox\KenaikanPangkatController@index')->name('kemensetneg.inbox.kenaikan-pangkat.index');
+            Route::get('/pemberhentian', 'BackWeb\Kemensetneg\Inbox\PemberhentianController@index')->name('kemensetneg.inbox.pemberhentian.index');
+            
+        });
+
+        Route::prefix('/atur-dokumen')->group(function(){
+            Route::get('/', 'BackWeb\Kemensetneg\AturDokumenController@index')->name('kemensetneg.atur-dokumen.index');
+        });
+        
+        Route::prefix('/riwayat')->group(function(){
+            Route::get('/', 'BackWeb\Kemensetneg\RiwayatController@index')->name('kemensetneg.riwayat.index');
+        });
+
+        Route::prefix('/faq')->group(function(){
+            Route::get('/', 'BackWeb\Kemensetneg\FaqController@index')->name('kemensetneg.faq.index');
+        });
+
+    });
+});
+
+// Demo 3
 Route::group(['middleware' => ['auth', 'checkRole:3']], function() {
     Route::prefix('/demo3')->group(function(){
         Route::prefix('/home')->group(function(){

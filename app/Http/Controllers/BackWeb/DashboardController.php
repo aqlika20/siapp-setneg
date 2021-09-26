@@ -36,7 +36,7 @@ class DashboardController extends Controller
 
         // PPIC
         if ($currentUser->roles_id == 2) {
-            return redirect()->route('ppic.import-csv.index');
+            return redirect()->route('kemensetneg.home.index');
         }
 
         if ($currentUser->roles_id == 3) {
