@@ -15,10 +15,10 @@ class CreateDataUsulan extends Migration
     {
         Schema::create('data_usulan', function (Blueprint $table) {
             $table->id();
-            $table->string('no_surat_usulan')->unique();
-            $table->string('tanggal_surat_usulan');
-            $table->string('pejabat_ttd');
-            $table->string('file_usulan');
+            $table->string('no_surat_usulan')->nullable();
+            $table->string('tanggal_surat_usulan')->nullable();
+            $table->string('pejabat_ttd')->nullable();
+            $table->string('file_usulan')->nullable();
             $table->timestamp('created_at')->default(DB::raw('CURRENT_TIMESTAMP'));
             $table->timestamp('updated_at')->default(DB::raw('CURRENT_TIMESTAMP on update CURRENT_TIMESTAMP'));
             // $table->foreign('id_asn')->references('id')->on('items_type')->onCascade('delete');
