@@ -42,7 +42,7 @@ php artisan serve
 And navigate to generated server link (http://127.0.0.1:8000)
 
 ### User List
-Super Admin :
+PIC :
 111111
 testestes
 

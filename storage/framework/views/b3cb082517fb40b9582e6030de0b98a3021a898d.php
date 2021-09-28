@@ -137,7 +137,7 @@
                                                                             <!--end::Icon-->
                                                                             <!--begin::Title-->
                                                                             <div class="d-flex flex-column flex-grow-1 mr-2">
-                                                                                <a href="<?php echo e(route('super-admin.administrasi.surat-usulan.pengangkatan-pejabat-fku.index')); ?>" class="font-weight-bold text-dark-75 text-hover-primary font-size-lg mb-1">Pengangkatan Pejabat Fungsional Keahlian Utama</a>
+                                                                                <a href="<?php echo e(route('pic.administrasi.surat-usulan.pengangkatan-pejabat-fku.index')); ?>" class="font-weight-bold text-dark-75 text-hover-primary font-size-lg mb-1">Pengangkatan Pejabat Fungsional Keahlian Utama</a>
                                                                             </div>
                                                                             <!--end::Title-->
                                                                             <!--begin::Lable-->
@@ -161,7 +161,7 @@
                                                                             <!--end::Icon-->
                                                                             <!--begin::Title-->
                                                                             <div class="d-flex flex-column flex-grow-1 mr-2">
-                                                                                <a href="<?php echo e(route('super-admin.administrasi.surat-usulan.pemberhentian-pejabat-fku.index')); ?>" class="font-weight-bold text-dark-75 text-hover-primary font-size-lg mb-1">Pemberhentian Pejabat Fungsional Keahlian Utama</a>
+                                                                                <a href="<?php echo e(route('pic.administrasi.surat-usulan.pemberhentian-pejabat-fku.index')); ?>" class="font-weight-bold text-dark-75 text-hover-primary font-size-lg mb-1">Pemberhentian Pejabat Fungsional Keahlian Utama</a>
                                                                             </div>
                                                                             <!--end::Title-->
                                                                             <!--begin::Lable-->
@@ -185,7 +185,7 @@
                                                                             <!--end::Icon-->
                                                                             <!--begin::Title-->
                                                                             <div class="d-flex flex-column flex-grow-1 mr-2">
-                                                                                <a href="<?php echo e(route('super-admin.administrasi.surat-usulan.perpindahan-pejabat-fku.index')); ?>" class="font-weight-bold text-dark-75 text-hover-primary font-size-lg mb-1">Perpindahan Pejabat Fungsional Keahlian Utama</a>
+                                                                                <a href="<?php echo e(route('pic.administrasi.surat-usulan.perpindahan-pejabat-fku.index')); ?>" class="font-weight-bold text-dark-75 text-hover-primary font-size-lg mb-1">Perpindahan Pejabat Fungsional Keahlian Utama</a>
                                                                             </div>
                                                                             <!--end::Title-->
                                                                             <!--begin::Lable-->
@@ -209,7 +209,7 @@
                                                                             <!--end::Icon-->
                                                                             <!--begin::Title-->
                                                                             <div class="d-flex flex-column flex-grow-1 mr-2">
-                                                                                <a href="<?php echo e(route('super-admin.administrasi.surat-usulan.ralat-keppres-fku.index')); ?>" class="font-weight-bold text-dark-75 text-hover-primary font-size-lg mb-1">Ralat Keppres Jabatan Fungsional Keahlian Utama</a>
+                                                                                <a href="<?php echo e(route('pic.administrasi.surat-usulan.ralat-keppres-fku.index')); ?>" class="font-weight-bold text-dark-75 text-hover-primary font-size-lg mb-1">Ralat Keppres Jabatan Fungsional Keahlian Utama</a>
                                                                             </div>
                                                                             <!--end::Title-->
                                                                             <!--begin::Lable-->
@@ -233,7 +233,7 @@
                                                                             <!--end::Icon-->
                                                                             <!--begin::Title-->
                                                                             <div class="d-flex flex-column flex-grow-1 mr-2">
-                                                                                <a href="<?php echo e(route('super-admin.administrasi.surat-usulan.pembatalan-keppres-jabatan-fku.index')); ?>" class="font-weight-bold text-dark-75 text-hover-primary font-size-lg mb-1">Pembatalan Keppres Jabatan Fungsional Keahlian Utama</a>
+                                                                                <a href="<?php echo e(route('pic.administrasi.surat-usulan.pembatalan-keppres-jabatan-fku.index')); ?>" class="font-weight-bold text-dark-75 text-hover-primary font-size-lg mb-1">Pembatalan Keppres Jabatan Fungsional Keahlian Utama</a>
                                                                             </div>
                                                                             <!--end::Title-->
                                                                             <!--begin::Lable-->
@@ -262,7 +262,7 @@
                                                                             <!--end::Icon-->
                                                                             <!--begin::Title-->
                                                                             <div class="d-flex flex-column flex-grow-1 mr-2">
-                                                                                <a href="<?php echo e(route('super-admin.administrasi.surat-usulan.pengangkatan-pejabat-ns.index')); ?>" class="font-weight-bold text-dark-75 text-hover-primary font-size-lg mb-1">Pengangkatan Pejabat Non Struktural</a>
+                                                                                <a href="<?php echo e(route('pic.administrasi.surat-usulan.pengangkatan-pejabat-ns.index')); ?>" class="font-weight-bold text-dark-75 text-hover-primary font-size-lg mb-1">Pengangkatan Pejabat Non Struktural</a>
                                                                             </div>
                                                                             <!--end::Title-->
                                                                             <!--begin::Lable-->
@@ -286,7 +286,7 @@
                                                                             <!--end::Icon-->
                                                                             <!--begin::Title-->
                                                                             <div class="d-flex flex-column flex-grow-1 mr-2">
-                                                                                <a href="<?php echo e(route('super-admin.administrasi.surat-usulan.pemberhentian-pejabat-ns.index')); ?>" class="font-weight-bold text-dark-75 text-hover-primary font-size-lg mb-1">Pemberhentian Pejabat Non Struktural</a>
+                                                                                <a href="<?php echo e(route('pic.administrasi.surat-usulan.pemberhentian-pejabat-ns.index')); ?>" class="font-weight-bold text-dark-75 text-hover-primary font-size-lg mb-1">Pemberhentian Pejabat Non Struktural</a>
                                                                             </div>
                                                                             <!--end::Title-->
                                                                             <!--begin::Lable-->
@@ -310,7 +310,7 @@
                                                                             <!--end::Icon-->
                                                                             <!--begin::Title-->
                                                                             <div class="d-flex flex-column flex-grow-1 mr-2">
-                                                                                <a href="<?php echo e(route('super-admin.administrasi.surat-usulan.ralat-keppres-jabatan-ns.index')); ?>" class="font-weight-bold text-dark-75 text-hover-primary font-size-lg mb-1">Ralat Keppres Jabatan Non Struktural</a>
+                                                                                <a href="<?php echo e(route('pic.administrasi.surat-usulan.ralat-keppres-jabatan-ns.index')); ?>" class="font-weight-bold text-dark-75 text-hover-primary font-size-lg mb-1">Ralat Keppres Jabatan Non Struktural</a>
                                                                             </div>
                                                                             <!--end::Title-->
                                                                             <!--begin::Lable-->
@@ -334,7 +334,7 @@
                                                                             <!--end::Icon-->
                                                                             <!--begin::Title-->
                                                                             <div class="d-flex flex-column flex-grow-1 mr-2">
-                                                                                <a href="<?php echo e(route('super-admin.administrasi.surat-usulan.pembatalan-keppres-jabatan-ns.index')); ?>" class="font-weight-bold text-dark-75 text-hover-primary font-size-lg mb-1">Pembatalan Keppres Jabatan Non Struktural</a>
+                                                                                <a href="<?php echo e(route('pic.administrasi.surat-usulan.pembatalan-keppres-jabatan-ns.index')); ?>" class="font-weight-bold text-dark-75 text-hover-primary font-size-lg mb-1">Pembatalan Keppres Jabatan Non Struktural</a>
                                                                             </div>
                                                                             <!--end::Title-->
                                                                             <!--begin::Lable-->
@@ -363,7 +363,7 @@
                                                                             <!--end::Icon-->
                                                                             <!--begin::Title-->
                                                                             <div class="d-flex flex-column flex-grow-1 mr-2">
-                                                                                <a href="<?php echo e(route('super-admin.administrasi.surat-usulan.pengangkatan-pejabat-lainnya.index')); ?>" class="font-weight-bold text-dark-75 text-hover-primary font-size-lg mb-1">Pengangkatan Pejabat Lainnya</a>
+                                                                                <a href="<?php echo e(route('pic.administrasi.surat-usulan.pengangkatan-pejabat-lainnya.index')); ?>" class="font-weight-bold text-dark-75 text-hover-primary font-size-lg mb-1">Pengangkatan Pejabat Lainnya</a>
                                                                             </div>
                                                                             <!--end::Title-->
                                                                             <!--begin::Lable-->
@@ -387,7 +387,7 @@
                                                                             <!--end::Icon-->
                                                                             <!--begin::Title-->
                                                                             <div class="d-flex flex-column flex-grow-1 mr-2">
-                                                                                <a href="<?php echo e(route('super-admin.administrasi.surat-usulan.pemberhentian-pejabat-lainnya.index')); ?>" class="font-weight-bold text-dark-75 text-hover-primary font-size-lg mb-1">Pemberhentian Pejabat Lainnya</a>
+                                                                                <a href="<?php echo e(route('pic.administrasi.surat-usulan.pemberhentian-pejabat-lainnya.index')); ?>" class="font-weight-bold text-dark-75 text-hover-primary font-size-lg mb-1">Pemberhentian Pejabat Lainnya</a>
                                                                             </div>
                                                                             <!--end::Title-->
                                                                             <!--begin::Lable-->
@@ -411,7 +411,7 @@
                                                                             <!--end::Icon-->
                                                                             <!--begin::Title-->
                                                                             <div class="d-flex flex-column flex-grow-1 mr-2">
-                                                                                <a href="<?php echo e(route('super-admin.administrasi.surat-usulan.ralat-keppres-jabatan-lainnya.index')); ?>" class="font-weight-bold text-dark-75 text-hover-primary font-size-lg mb-1">Ralat Keppres Jabatan Lainnya</a>
+                                                                                <a href="<?php echo e(route('pic.administrasi.surat-usulan.ralat-keppres-jabatan-lainnya.index')); ?>" class="font-weight-bold text-dark-75 text-hover-primary font-size-lg mb-1">Ralat Keppres Jabatan Lainnya</a>
                                                                             </div>
                                                                             <!--end::Title-->
                                                                             <!--begin::Lable-->
@@ -435,7 +435,7 @@
                                                                             <!--end::Icon-->
                                                                             <!--begin::Title-->
                                                                             <div class="d-flex flex-column flex-grow-1 mr-2">
-                                                                                <a href="<?php echo e(route('super-admin.administrasi.surat-usulan.pembatalan-keppres-jabatan-lainnya.index')); ?>" class="font-weight-bold text-dark-75 text-hover-primary font-size-lg mb-1">Pembatalan Keppres Jabatan Lainnya</a>
+                                                                                <a href="<?php echo e(route('pic.administrasi.surat-usulan.pembatalan-keppres-jabatan-lainnya.index')); ?>" class="font-weight-bold text-dark-75 text-hover-primary font-size-lg mb-1">Pembatalan Keppres Jabatan Lainnya</a>
 
                                                                             </div>
                                                                             <!--end::Title-->
@@ -460,7 +460,7 @@
                                                                             <!--end::Icon-->
                                                                             <!--begin::Title-->
                                                                             <div class="d-flex flex-column flex-grow-1 mr-2">
-                                                                                <a href="<?php echo e(route('super-admin.administrasi.surat-usulan.persetujuan-pengangkatan-staf-khusus.index')); ?>" class="font-weight-bold text-dark-75 text-hover-primary font-size-lg mb-1">Persetujuan pengangkatan Staf Khusus Menteri/Kepala Lembaga</a>
+                                                                                <a href="<?php echo e(route('pic.administrasi.surat-usulan.persetujuan-pengangkatan-staf-khusus.index')); ?>" class="font-weight-bold text-dark-75 text-hover-primary font-size-lg mb-1">Persetujuan pengangkatan Staf Khusus Menteri/Kepala Lembaga</a>
                                                                                 <div class="wizard-desc">Produk Surat Dinas</div>
 
                                                                             </div>
@@ -596,4 +596,4 @@
 <script src="<?php echo e(asset('js/pages/custom/wizard/wizard-2.js')); ?>"></script>
 <script src="<?php echo e(asset('js/pages/crud/ktdatatable/base/html-table.js')); ?>" type="text/javascript"></script>
 <?php $__env->stopSection(); ?>
-<?php echo $__env->make('layout.default', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\Users\ardim\Desktop\siapp jadi\siapp\resources\views/pages/super_admin/administrasi/surat_usulan/jabatan_fungsional.blade.php ENDPATH**/ ?>
+<?php echo $__env->make('layout.default', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\Users\ardim\Desktop\siapp jadi\siapp\resources\views/pages/pic/administrasi/surat_usulan/jabatan_fungsional.blade.php ENDPATH**/ ?>

@@ -20,7 +20,7 @@
                                                 <div class="col-lg-12 col-xl-12">
                                                     <div class="row">
                                                         <div class="col-md-6 my-2 my-md-0">
-                                                            <form method="POST" action="<?php echo e(route('super-admin.setting.item-definition.edit',[$item->id])); ?>">
+                                                            <form method="POST" action="<?php echo e(route('pic.setting.item-definition.edit',[$item->id])); ?>">
                                                                 <?php echo csrf_field(); ?>
                                                                 <?php echo method_field('PATCH'); ?>
 
@@ -88,7 +88,7 @@ unset($__errorArgs, $__bag); ?>" name="notes" autocomplete="notes" autofocus><?p
 
                                                                 
                                                                 
-                                                                <a href="/super-admin/setting/item-definition" class="btn btn-secondary">Back</a>
+                                                                <a href="/pic/setting/item-definition" class="btn btn-secondary">Back</a>
                                                                 <button type="submit" class="btn btn-primary"><?php echo e(__('Edit')); ?></button>
                                                             </form>
                                                         </div>
@@ -119,4 +119,4 @@ unset($__errorArgs, $__bag); ?>" name="notes" autocomplete="notes" autofocus><?p
 <?php $__env->startSection('scripts'); ?>
 <script src="<?php echo e(asset('js/pages/crud/ktdatatable/base/html-table.js')); ?>" type="text/javascript"></script>
 <?php $__env->stopSection(); ?>
-<?php echo $__env->make('layout.default', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH /var/www/pt_tigaraksa_satria/resources/views/pages/super_admin/setting/item_definition_edit.blade.php ENDPATH**/ ?>
+<?php echo $__env->make('layout.default', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH /var/www/pt_tigaraksa_satria/resources/views/pages/pic/setting/item_definition_edit.blade.php ENDPATH**/ ?>

@@ -63,6 +63,6 @@ class HomeController extends Controller
         // var_dump($json_chart);
 
         return view('pages.demo3.home', compact('page_title', 'page_description', 'currentUser', 'pengangkatan'));
-        // return view('pages.super_admin.home', ['chart' => $chart], compact('page_title', 'page_description', 'currentUser', 'pengangkatan'));
+        // return view('pages.pic.home', ['chart' => $chart], compact('page_title', 'page_description', 'currentUser', 'pengangkatan'));
     }
 }

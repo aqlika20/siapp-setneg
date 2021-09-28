@@ -29,9 +29,9 @@ class DashboardController extends Controller
         // $count_request_for_claim = 0;
         // $count_claimed = 0;
 
-        // Super Admin
+        // PIC
         if ($currentUser->roles_id == 1) {
-            return redirect()->route('super-admin.home.index');
+            return redirect()->route('pic.home.index');
         }
 
         // PPIC

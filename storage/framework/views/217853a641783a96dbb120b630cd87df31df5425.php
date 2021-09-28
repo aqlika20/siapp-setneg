@@ -33,7 +33,7 @@
                             <div class="row justify-content-center py-10 px-8 py-lg-12 px-lg-10">
                                 <div class="col-xl-20 col-xxl-12">
                                     <!--begin: Wizard Form-->
-                                    <form class="form" id="kt_form" action="<?php echo e(route('super-admin.administrasi.surat-usulan.ralat-keppres-fku.store')); ?>" enctype="multipart/form-data" method="POST">
+                                    <form class="form" id="kt_form" action="<?php echo e(route('pic.administrasi.surat-usulan.ralat-keppres-fku.store')); ?>" enctype="multipart/form-data" method="POST">
                                         <?php echo csrf_field(); ?>
                                         <?php echo method_field('PATCH'); ?>
                                         <!--begin: Wizard Step 1-->
@@ -871,7 +871,7 @@
                         <!--end: Wizard-->                      
                     </div>
                     <div class="modal-footer">
-                        <a href="<?php echo e(route('super-admin.administrasi.surat-usulan.index')); ?>"type="button" class="btn btn-light-danger font-weight-bold">Batalkan</a>
+                        <a href="<?php echo e(route('pic.administrasi.surat-usulan.index')); ?>"type="button" class="btn btn-light-danger font-weight-bold">Batalkan</a>
                     </div>
                 </div>
             </div>
@@ -982,4 +982,4 @@
     <script src="<?php echo e(asset('js/pages/crud/file-upload/dropzonejs.js')); ?>"></script>
     <script src="<?php echo e(asset('js/pages/crud/ktdatatable/base/html-table.js')); ?>" type="text/javascript"></script>
 <?php $__env->stopSection(); ?>
-<?php echo $__env->make('layout.default', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH D:\Project\siapp\resources\views/pages/super_admin/administrasi/surat_usulan/form/ralat_keppres_jabatan_fku.blade.php ENDPATH**/ ?>
+<?php echo $__env->make('layout.default', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH D:\Project\siapp\resources\views/pages/pic/administrasi/surat_usulan/form/ralat_keppres_jabatan_fku.blade.php ENDPATH**/ ?>

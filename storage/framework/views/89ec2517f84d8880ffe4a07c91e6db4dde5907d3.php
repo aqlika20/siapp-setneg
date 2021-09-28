@@ -113,7 +113,7 @@
                                                                 <label class="mr-3 mb-0 d-none d-md-block">Role:</label>
                                                                 <select class="form-control" id="super_admin_user_management_search_role">
                                                                     <option value="">All</option>
-                                                                    <option value="1">Super Admin</option>
+                                                                    <option value="1">PIC</option>
                                                                     <option value="2">PPIC</option>
                                                                     <option value="3">Warehouse</option>
                                                                     <option value="4">Production - Icing</option>
@@ -151,10 +151,10 @@
                                                     <td><?php echo e($user->email); ?></td>
                                                     <td><?php echo e($user->roles->id); ?></td>
                                                     <td>
-                                                        <form method="POST" action="<?php echo e(route('super-admin.user-management.delete',[$user->id])); ?>">
+                                                        <form method="POST" action="<?php echo e(route('pic.user-management.delete',[$user->id])); ?>">
                                                             <?php echo csrf_field(); ?> 
                                                             <?php echo method_field('DELETE'); ?>
-                                                            <a href="<?php echo e(route('super-admin.user-management.view',[$user->id])); ?>" title="Edit" class="btn btn-icon btn-light btn-sm mx-1">
+                                                            <a href="<?php echo e(route('pic.user-management.view',[$user->id])); ?>" title="Edit" class="btn btn-icon btn-light btn-sm mx-1">
                                                                 <?php echo e(Metronic::getSVG("media/svg/icons/Communication/Write.svg", "svg-icon-md svg-icon-primary")); ?>
 
                                                             </a>
@@ -175,7 +175,7 @@
                                     <div class="modal fade" id="newDataModal" tabindex="-1" role="dialog" aria-labelledby="newDataModalLabel" aria-hidden="true">
                                         <div class="modal-dialog" role="document">
                                             <div class="modal-content">
-                                            <form method="POST" action="<?php echo e(route('super-admin.user-management.create')); ?>">
+                                            <form method="POST" action="<?php echo e(route('pic.user-management.create')); ?>">
                                                 <div class="modal-header">
                                                     <h5 class="modal-title" id="newDataModalLabel">New Data</h5>
                                                 </div>
@@ -241,7 +241,7 @@ unset($__errorArgs, $__bag); ?>" name="password" required autocomplete="new-pass
                                                         <div class="col-md-6">
                                                             <select id="roles_id" class="form-control" name="roles_id" required autofocus>
                                                                 <option value="">Choose</option>
-                                                                <option value="1">Super Admin</option>
+                                                                <option value="1">PIC</option>
                                                                 <option value="2">PPIC</option>
                                                                 <option value="3">Warehouse</option>
                                                                 <option value="4">Production - Icing</option>
@@ -286,4 +286,4 @@ unset($__errorArgs, $__bag); ?>" name="password" required autocomplete="new-pass
 
 <script src="<?php echo e(asset('js/pages/crud/ktdatatable/base/html-table.js')); ?>" type="text/javascript"></script>
 <?php $__env->stopSection(); ?>
-<?php echo $__env->make('layout.default', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH D:\Project\tigaraksa\resources\views/pages/super_admin/user_management.blade.php ENDPATH**/ ?>
+<?php echo $__env->make('layout.default', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH D:\Project\tigaraksa\resources\views/pages/pic/user_management.blade.php ENDPATH**/ ?>

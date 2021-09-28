@@ -67,7 +67,7 @@
                             <div class="col-md-6">
                                 <select id="roles_id" class="form-control" name="roles_id" required>
                                     <option value="">Choose</option>
-                                    <option value="1">Super Admin</option>
+                                    <option value="1">PIC</option>
                                     <option value="2">Warehouse</option>
                                     <option value="3">Production - Icing</option>
                                     <option value="4">Production - Batching 1</option>

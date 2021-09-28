@@ -102,10 +102,10 @@
                                                         <?php if($item->notes != ''): ?> <?php echo e($item->notes); ?> <?php endif; ?></td>
                                                     <td>
                                                         <?php if($item->item_id != Helper::$dextrin && $item->item_id != Helper::$refined_sugar && $item->item_id != Helper::$icing_sugar): ?>
-                                                        <form method="POST" action="<?php echo e(route('super-admin.setting.item-definition.delete',[$item->id])); ?>">
+                                                        <form method="POST" action="<?php echo e(route('pic.setting.item-definition.delete',[$item->id])); ?>">
                                                             <?php echo csrf_field(); ?> 
                                                             <?php echo method_field('DELETE'); ?>
-                                                            <a href="<?php echo e(route('super-admin.setting.item-definition.view',[$item->id])); ?>" title="Edit" class="btn btn-icon btn-light btn-sm mx-1">
+                                                            <a href="<?php echo e(route('pic.setting.item-definition.view',[$item->id])); ?>" title="Edit" class="btn btn-icon btn-light btn-sm mx-1">
                                                                 <?php echo e(Metronic::getSVG("media/svg/icons/Communication/Write.svg", "svg-icon-md svg-icon-primary")); ?>
 
                                                             </a>
@@ -128,7 +128,7 @@
                                     <div class="modal fade" id="newDataInputCSV" tabindex="-1" role="dialog" aria-labelledby="newDataInputCSVLabel" aria-hidden="true">
                                         <div class="modal-dialog" role="document">
                                             <div class="modal-content">
-                                            <form method="POST" action="<?php echo e(route('super-admin.setting.item-definition.create.csv')); ?>" enctype="multipart/form-data">
+                                            <form method="POST" action="<?php echo e(route('pic.setting.item-definition.create.csv')); ?>" enctype="multipart/form-data">
                                                 <div class="modal-header">
                                                     <h5 class="modal-title" id="newDataInputCSVLabel">New Data</h5>
                                                 </div>
@@ -173,7 +173,7 @@ unset($__errorArgs, $__bag); ?>" name="upload_csv" required autocomplete="upload
                                     <div class="modal fade" id="newDataInputManual" tabindex="-1" role="dialog" aria-labelledby="newDataInputManualLabel" aria-hidden="true">
                                         <div class="modal-dialog" role="document">
                                             <div class="modal-content">
-                                            <form method="POST" action="<?php echo e(route('super-admin.setting.item-definition.create.manual')); ?>">
+                                            <form method="POST" action="<?php echo e(route('pic.setting.item-definition.create.manual')); ?>">
                                                 <div class="modal-header">
                                                     <h5 class="modal-title" id="newDataInputManualLabel">New Data</h5>
                                                 </div>
@@ -270,4 +270,4 @@ unset($__errorArgs, $__bag); ?>" name="notes" autocomplete="notes" autofocus></t
 
 <script src="<?php echo e(asset('js/pages/crud/ktdatatable/base/html-table.js')); ?>" type="text/javascript"></script>
 <?php $__env->stopSection(); ?>
-<?php echo $__env->make('layout.default', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH /var/www/pt_tigaraksa_satria/resources/views/pages/super_admin/setting/item_definition.blade.php ENDPATH**/ ?>
+<?php echo $__env->make('layout.default', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH /var/www/pt_tigaraksa_satria/resources/views/pages/pic/setting/item_definition.blade.php ENDPATH**/ ?>

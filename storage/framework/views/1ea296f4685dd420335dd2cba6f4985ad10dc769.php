@@ -44,8 +44,8 @@
 
 
                 <?php if($currentUser->roles_id == 1): ?> 
-                <li class="menu-item <?php echo e((strpos($page_title, 'Super Admin | Dashboard') !== false) ? 'menu-item-active' : ''); ?>" aria-haspopup="true">
-                    <a href="<?php echo e(route('super-admin.home.index')); ?>" class="menu-link ">
+                <li class="menu-item <?php echo e((strpos($page_title, 'PIC | Dashboard') !== false) ? 'menu-item-active' : ''); ?>" aria-haspopup="true">
+                    <a href="<?php echo e(route('pic.home.index')); ?>" class="menu-link ">
                         <span class="svg-icon menu-icon"><!--begin::Svg Icon | path:media/svg/icons/Design/Layers.svg-->
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-house" viewBox="0 0 16 16">
                                 <path fill-rule="evenodd" d="M2 13.5V7h1v6.5a.5.5 0 0 0 .5.5h9a.5.5 0 0 0 .5-.5V7h1v6.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5zm11-11V6l-2-2V2.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5z"/>
@@ -73,23 +73,23 @@
                             <li class="menu-item  menu-item-parent" aria-haspopup="true">
                                 <span class="menu-link"><span class="menu-text">Administrasi</span></span>
                             </li>
-                            <li class="menu-item <?php echo e((strpos($page_title, 'Super Admin | Administrasi | Jabatan Fungsional') !== false) ? 'menu-item-active' : ''); ?>" aria-haspopup="true">
-                                <a href="<?php echo e(route('super-admin.administrasi.jabatan-fungsional.index')); ?>" class="menu-link "><i class="menu-bullet menu-bullet-line"><span></span></i><span class="menu-text">Jabatan Fungsional</span></a>
+                            <li class="menu-item <?php echo e((strpos($page_title, 'PIC | Administrasi | Jabatan Fungsional') !== false) ? 'menu-item-active' : ''); ?>" aria-haspopup="true">
+                                <a href="<?php echo e(route('pic.administrasi.jabatan-fungsional.index')); ?>" class="menu-link "><i class="menu-bullet menu-bullet-line"><span></span></i><span class="menu-text">Jabatan Fungsional</span></a>
                             </li>
-                            <li class="menu-item <?php echo e((strpos($page_title, 'Super Admin | Administrasi | Kenaikan Pangkat') !== false) ? 'menu-item-active' : ''); ?>" aria-haspopup="true">
+                            <li class="menu-item <?php echo e((strpos($page_title, 'PIC | Administrasi | Kenaikan Pangkat') !== false) ? 'menu-item-active' : ''); ?>" aria-haspopup="true">
                                 <a href="" class="menu-link "><i class="menu-bullet menu-bullet-line"><span></span></i><span class="menu-text">Kenaikan Pangkat</span></a>
                             </li>
-                            <li class="menu-item <?php echo e((strpos($page_title, 'Super Admin | Administrasi | Pemberhentian') !== false) ? 'menu-item-active' : ''); ?>" aria-haspopup="true">
+                            <li class="menu-item <?php echo e((strpos($page_title, 'PIC | Administrasi | Pemberhentian') !== false) ? 'menu-item-active' : ''); ?>" aria-haspopup="true">
                                 <a href="" class="menu-link "><i class="menu-bullet menu-bullet-line"><span></span></i><span class="menu-text">Pemberhentian</span></a>
                             </li>
-                            <li class="menu-item <?php echo e((strpos($page_title, 'Super Admin | Administrasi | Status Usulan') !== false) ? 'menu-item-active' : ''); ?>" aria-haspopup="true">
+                            <li class="menu-item <?php echo e((strpos($page_title, 'PIC | Administrasi | Status Usulan') !== false) ? 'menu-item-active' : ''); ?>" aria-haspopup="true">
                                 <a href="" class="menu-link "><i class="menu-bullet menu-bullet-line"><span></span></i><span class="menu-text">Status Usulan</span></a>
                             </li>
                         </ul>
                     </div>
                 </li>
 
-                <li class="menu-item <?php echo e((strpos($page_title, 'Super Admin | User Management') !== false) ? 'menu-item-active' : ''); ?>" aria-haspopup="true">
+                <li class="menu-item <?php echo e((strpos($page_title, 'PIC | User Management') !== false) ? 'menu-item-active' : ''); ?>" aria-haspopup="true">
                     <a href="" class="menu-link ">
                         <span class="svg-icon menu-icon"><!--begin::Svg Icon | path:media/svg/icons/Design/Layers.svg-->
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-mailbox" viewBox="0 0 16 16">
@@ -118,13 +118,13 @@
                             <li class="menu-item  menu-item-parent" aria-haspopup="true">
                                 <span class="menu-link"><span class="menu-text">Pengaturan</span></span>
                             </li>
-                            <li class="menu-item <?php echo e((strpos($page_title, 'Super Admin | Setting | Product Definition') !== false) ? 'menu-item-active' : ''); ?>" aria-haspopup="true">
+                            <li class="menu-item <?php echo e((strpos($page_title, 'PIC | Setting | Product Definition') !== false) ? 'menu-item-active' : ''); ?>" aria-haspopup="true">
                                 <a href="" class="menu-link "><i class="menu-bullet menu-bullet-line"><span></span></i><span class="menu-text">User</span></a>
                             </li>
-                            <li class="menu-item <?php echo e((strpos($page_title, 'Super Admin | Setting | Item Definition') !== false) ? 'menu-item-active' : ''); ?>" aria-haspopup="true">
+                            <li class="menu-item <?php echo e((strpos($page_title, 'PIC | Setting | Item Definition') !== false) ? 'menu-item-active' : ''); ?>" aria-haspopup="true">
                                 <a href="" class="menu-link "><i class="menu-bullet menu-bullet-line"><span></span></i><span class="menu-text">Alur Proses</span></a>
                             </li>
-                            <li class="menu-item <?php echo e((strpos($page_title, 'Super Admin | Setting | Supplier Definition') !== false) ? 'menu-item-active' : ''); ?>" aria-haspopup="true">
+                            <li class="menu-item <?php echo e((strpos($page_title, 'PIC | Setting | Supplier Definition') !== false) ? 'menu-item-active' : ''); ?>" aria-haspopup="true">
                                 <a href="" class="menu-link "><i class="menu-bullet menu-bullet-line"><span></span></i><span class="menu-text">FAQ</span></a>
                             </li>
                         </ul>

@@ -137,7 +137,7 @@
                                                                             <!--end::Icon-->
                                                                             <!--begin::Title-->
                                                                             <div class="d-flex flex-column flex-grow-1 mr-2">
-                                                                                <a href="<?php echo e(route('super-admin.administrasi.jabatan-fungsional.form')); ?>" class="font-weight-bold text-dark-75 text-hover-primary font-size-lg mb-1">Pengangkatan Pejabat Fungsional Keahlian Utama</a>
+                                                                                <a href="<?php echo e(route('pic.administrasi.jabatan-fungsional.form')); ?>" class="font-weight-bold text-dark-75 text-hover-primary font-size-lg mb-1">Pengangkatan Pejabat Fungsional Keahlian Utama</a>
                                                                             </div>
                                                                             <!--end::Title-->
                                                                             <!--begin::Lable-->
@@ -626,4 +626,4 @@
 <script src="<?php echo e(asset('js/pages/custom/wizard/wizard-2.js')); ?>"></script>
 <script src="<?php echo e(asset('js/pages/crud/ktdatatable/base/html-table.js')); ?>" type="text/javascript"></script>
 <?php $__env->stopSection(); ?>
-<?php echo $__env->make('layout.default', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH D:\Project\tigaraksa\resources\views/pages/super_admin/administrasi/jabatan_fungsional.blade.php ENDPATH**/ ?>
+<?php echo $__env->make('layout.default', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH D:\Project\tigaraksa\resources\views/pages/pic/administrasi/jabatan_fungsional.blade.php ENDPATH**/ ?>

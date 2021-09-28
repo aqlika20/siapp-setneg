@@ -35,7 +35,7 @@
                                                     <ul class="navi flex-column navi-hover py-2">
                                                         <li class="navi-header font-weight-bolder text-uppercase font-size-sm text-primary pb-2">Choose an option:</li>
                                                         <li class="navi-item">
-                                                            <a href="<?php echo e(route('super-admin.report.excel')); ?>" class="navi-link">
+                                                            <a href="<?php echo e(route('pic.report.excel')); ?>" class="navi-link">
                                                                 <span class="navi-icon">
                                                                     <i class="la la-file-excel-o"></i>
                                                                 </span>
@@ -43,7 +43,7 @@
                                                             </a>
                                                         </li>
                                                         <li class="navi-item">
-                                                            <a href="<?php echo e(route('super-admin.report.pdf')); ?>" class="navi-link">
+                                                            <a href="<?php echo e(route('pic.report.pdf')); ?>" class="navi-link">
                                                                 <span class="navi-icon">
                                                                     <i class="la la-file-pdf-o"></i>
                                                                 </span>
@@ -140,4 +140,4 @@
 
 
 
-<?php echo $__env->make('layout.default', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH /var/www/pt_tigaraksa_satria/resources/views/pages/super_admin/report.blade.php ENDPATH**/ ?>
+<?php echo $__env->make('layout.default', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH /var/www/pt_tigaraksa_satria/resources/views/pages/pic/report.blade.php ENDPATH**/ ?>

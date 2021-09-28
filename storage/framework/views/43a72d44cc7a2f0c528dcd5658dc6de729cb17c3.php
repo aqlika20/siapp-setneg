@@ -102,7 +102,7 @@
                                                                             <!--end::Icon-->
                                                                             <!--begin::Title-->
                                                                             <div class="d-flex flex-column flex-grow-1 mr-2">
-                                                                                <a href="<?php echo e(route('super-admin.administrasi.pemberhentian.bup-non-kpp.index')); ?>" class="font-weight-bold text-dark-75 text-hover-primary font-size-lg mb-1">BUP Non KPP</a>
+                                                                                <a href="<?php echo e(route('pic.administrasi.pemberhentian.bup-non-kpp.index')); ?>" class="font-weight-bold text-dark-75 text-hover-primary font-size-lg mb-1">BUP Non KPP</a>
                                                                             </div>
                                                                             <!--end::Title-->
                                                                             <!--begin::Lable-->
@@ -127,7 +127,7 @@
                                                                             <!--end::Icon-->
                                                                             <!--begin::Title-->
                                                                             <div class="d-flex flex-column flex-grow-1 mr-2">
-                                                                                <a href="<?php echo e(route('super-admin.administrasi.pemberhentian.bup-kpp.index')); ?>" class="font-weight-bold text-dark-75 text-hover-primary font-size-lg mb-1">BUP KPP</a>
+                                                                                <a href="<?php echo e(route('pic.administrasi.pemberhentian.bup-kpp.index')); ?>" class="font-weight-bold text-dark-75 text-hover-primary font-size-lg mb-1">BUP KPP</a>
                                                                             </div>
                                                                             <!--end::Title-->
                                                                             <!--begin::Lable-->
@@ -152,7 +152,7 @@
                                                                             <!--end::Icon-->
                                                                             <!--begin::Title-->
                                                                             <div class="d-flex flex-column flex-grow-1 mr-2">
-                                                                                <a href="<?php echo e(route('super-admin.administrasi.pemberhentian.berhenti-atas-permintaan-sendiri.index')); ?>" class="font-weight-bold text-dark-75 text-hover-primary font-size-lg mb-1">Berhenti Atas Permintaan Sendiri</a>
+                                                                                <a href="<?php echo e(route('pic.administrasi.pemberhentian.berhenti-atas-permintaan-sendiri.index')); ?>" class="font-weight-bold text-dark-75 text-hover-primary font-size-lg mb-1">Berhenti Atas Permintaan Sendiri</a>
                                                                             </div>
                                                                             <!--end::Title-->
                                                                             <!--begin::Lable-->
@@ -177,7 +177,7 @@
                                                                             <!--end::Icon-->
                                                                             <!--begin::Title-->
                                                                             <div class="d-flex flex-column flex-grow-1 mr-2">
-                                                                                <a href="<?php echo e(route('super-admin.administrasi.pemberhentian.non-bup-jda-non-kpp.index')); ?>" class="font-weight-bold text-dark-75 text-hover-primary font-size-lg mb-1">Non BUP Janda/Duda/Anak non KPP</a>
+                                                                                <a href="<?php echo e(route('pic.administrasi.pemberhentian.non-bup-jda-non-kpp.index')); ?>" class="font-weight-bold text-dark-75 text-hover-primary font-size-lg mb-1">Non BUP Janda/Duda/Anak non KPP</a>
                                                                             </div>
                                                                             <!--end::Title-->
                                                                             <!--begin::Lable-->
@@ -202,7 +202,7 @@
                                                                             <!--end::Icon-->
                                                                             <!--begin::Title-->
                                                                             <div class="d-flex flex-column flex-grow-1 mr-2">
-                                                                                <a href="<?php echo e(route('super-admin.administrasi.pemberhentian.non-bup-jda-kpp.index')); ?>" class="font-weight-bold text-dark-75 text-hover-primary font-size-lg mb-1">Non BUP Janda/Duda/Anak KPP</a>
+                                                                                <a href="<?php echo e(route('pic.administrasi.pemberhentian.non-bup-jda-kpp.index')); ?>" class="font-weight-bold text-dark-75 text-hover-primary font-size-lg mb-1">Non BUP Janda/Duda/Anak KPP</a>
                                                                             </div>
                                                                             <!--end::Title-->
                                                                             <!--begin::Lable-->
@@ -227,7 +227,7 @@
                                                                             <!--end::Icon-->
                                                                             <!--begin::Title-->
                                                                             <div class="d-flex flex-column flex-grow-1 mr-2">
-                                                                                <a href="<?php echo e(route('super-admin.administrasi.pemberhentian.berhenti-tidak-dengan-hormat.index')); ?>" class="font-weight-bold text-dark-75 text-hover-primary font-size-lg mb-1">Berhenti Tidak Dengan Hormat</a>
+                                                                                <a href="<?php echo e(route('pic.administrasi.pemberhentian.berhenti-tidak-dengan-hormat.index')); ?>" class="font-weight-bold text-dark-75 text-hover-primary font-size-lg mb-1">Berhenti Tidak Dengan Hormat</a>
                                                                             </div>
                                                                             <!--end::Title-->
                                                                             <!--begin::Lable-->
@@ -256,7 +256,7 @@
                                                                             <!--end::Icon-->
                                                                             <!--begin::Title-->
                                                                             <div class="d-flex flex-column flex-grow-1 mr-2">
-                                                                                <a href="<?php echo e(route('super-admin.administrasi.pemberhentian.anumerta.index')); ?>" class="font-weight-bold text-dark-75 text-hover-primary font-size-lg mb-1">Anumerta</a>
+                                                                                <a href="<?php echo e(route('pic.administrasi.pemberhentian.anumerta.index')); ?>" class="font-weight-bold text-dark-75 text-hover-primary font-size-lg mb-1">Anumerta</a>
                                                                             </div>
                                                                             <!--end::Title-->
                                                                             <!--begin::Lable-->
@@ -281,7 +281,7 @@
                                                                             <!--end::Icon-->
                                                                             <!--begin::Title-->
                                                                             <div class="d-flex flex-column flex-grow-1 mr-2">
-                                                                                <a href="<?php echo e(route('super-admin.administrasi.pemberhentian.pemberhentian-sementara.index')); ?>" class="font-weight-bold text-dark-75 text-hover-primary font-size-lg mb-1">Pemberhentian Sementara</a>
+                                                                                <a href="<?php echo e(route('pic.administrasi.pemberhentian.pemberhentian-sementara.index')); ?>" class="font-weight-bold text-dark-75 text-hover-primary font-size-lg mb-1">Pemberhentian Sementara</a>
                                                                             </div>
                                                                             <!--end::Title-->
                                                                             <!--begin::Lable-->
@@ -306,7 +306,7 @@
                                                                             <!--end::Icon-->
                                                                             <!--begin::Title-->
                                                                             <div class="d-flex flex-column flex-grow-1 mr-2">
-                                                                                <a href="<?php echo e(route('super-admin.administrasi.pemberhentian.ralat-keppres-pemberhentian.index')); ?>" class="font-weight-bold text-dark-75 text-hover-primary font-size-lg mb-1">Ralat Keppres Pemberhentian</a>
+                                                                                <a href="<?php echo e(route('pic.administrasi.pemberhentian.ralat-keppres-pemberhentian.index')); ?>" class="font-weight-bold text-dark-75 text-hover-primary font-size-lg mb-1">Ralat Keppres Pemberhentian</a>
                                                                             </div>
                                                                             <!--end::Title-->
                                                                             <!--begin::Lable-->
@@ -331,7 +331,7 @@
                                                                             <!--end::Icon-->
                                                                             <!--begin::Title-->
                                                                             <div class="d-flex flex-column flex-grow-1 mr-2">
-                                                                                <a href="<?php echo e(route('super-admin.administrasi.pemberhentian.pembatalan-keppres-pemberhentian.index')); ?>" class="font-weight-bold text-dark-75 text-hover-primary font-size-lg mb-1">Pembatalan Keppres Pemberhentian</a>
+                                                                                <a href="<?php echo e(route('pic.administrasi.pemberhentian.pembatalan-keppres-pemberhentian.index')); ?>" class="font-weight-bold text-dark-75 text-hover-primary font-size-lg mb-1">Pembatalan Keppres Pemberhentian</a>
                                                                             </div>
                                                                             <!--end::Title-->
                                                                             <!--begin::Lable-->
@@ -356,7 +356,7 @@
                                                                             <!--end::Icon-->
                                                                             <!--begin::Title-->
                                                                             <div class="d-flex flex-column flex-grow-1 mr-2">
-                                                                                <a href="<?php echo e(route('super-admin.administrasi.pemberhentian.petikan-keppres-yang-hilang.index')); ?>" class="font-weight-bold text-dark-75 text-hover-primary font-size-lg mb-1">Petikan Keppres yang Hilang/Rusak</a>
+                                                                                <a href="<?php echo e(route('pic.administrasi.pemberhentian.petikan-keppres-yang-hilang.index')); ?>" class="font-weight-bold text-dark-75 text-hover-primary font-size-lg mb-1">Petikan Keppres yang Hilang/Rusak</a>
                                                                             </div>
                                                                             <!--end::Title-->
                                                                             <!--begin::Lable-->
@@ -378,7 +378,7 @@
                                                                             <!--end::Icon-->
                                                                             <!--begin::Title-->
                                                                             <div class="d-flex flex-column flex-grow-1 mr-2">
-                                                                                <a href="<?php echo e(route('super-admin.administrasi.kenaikan-pangkat.index')); ?>" class="font-weight-bold text-dark-75 text-hover-primary font-size-lg mb-1"></a>
+                                                                                <a href="<?php echo e(route('pic.administrasi.kenaikan-pangkat.index')); ?>" class="font-weight-bold text-dark-75 text-hover-primary font-size-lg mb-1"></a>
                                                                             </div>
                                                                             <!--end::Title-->
                                                                             <!--begin::Lable-->
@@ -523,4 +523,4 @@
 <script src="<?php echo e(asset('js/pages/custom/wizard/wizard-2.js')); ?>"></script>
 <script src="<?php echo e(asset('js/pages/crud/ktdatatable/base/html-table.js')); ?>" type="text/javascript"></script>
 <?php $__env->stopSection(); ?>
-<?php echo $__env->make('layout.default', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH D:\Project\siapp\resources\views/pages/super_admin/administrasi/pemberhentian/pemberhentian.blade.php ENDPATH**/ ?>
+<?php echo $__env->make('layout.default', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH D:\Project\siapp\resources\views/pages/pic/administrasi/pemberhentian/pemberhentian.blade.php ENDPATH**/ ?>

@@ -44,7 +44,7 @@
 														<!--begin::Item-->
 														<div class="timeline-item align-items-start">
 															<!--begin::Label-->
-															<div class="timeline-label font-weight-bolder text-dark-75 font-size-xs">{{$pengangkatan}}</div>
+															<div class="timeline-label font-weight-bolder text-dark-75 font-size-xs">{{$pengangkatan_jfku}}</div>
 															<!--end::Label-->
 															<!--begin::Badge-->
 															<div class="timeline-badge">
@@ -59,7 +59,7 @@
 														<!--begin::Item-->
 														<div class="timeline-item align-items-start">
 															<!--begin::Label-->
-															<div class="timeline-label font-weight-bolder text-dark-75 font-size-lg">0</div>
+															<div class="timeline-label font-weight-bolder text-dark-75 font-size-lg">{{$pemberhentian_jfku}}</div>
 															<!--end::Label-->
 															<!--begin::Badge-->
 															<div class="timeline-badge">
@@ -76,7 +76,7 @@
 														<!--begin::Item-->
 														<div class="timeline-item align-items-start">
 															<!--begin::Label-->
-															<div class="timeline-label font-weight-bolder text-dark-75 font-size-lg">0</div>
+															<div class="timeline-label font-weight-bolder text-dark-75 font-size-lg">{{$perpindahan_jfku}}</div>
 															<!--end::Label-->
 															<!--begin::Badge-->
 															<div class="timeline-badge">
@@ -94,7 +94,7 @@
 														<!--begin::Item-->
 														<div class="timeline-item align-items-start">
 															<!--begin::Label-->
-															<div class="timeline-label font-weight-bolder text-dark-75 font-size-lg">0</div>
+															<div class="timeline-label font-weight-bolder text-dark-75 font-size-lg">{{$ralat_keppres_jfku}}</div>
 															<!--end::Label-->
 															<!--begin::Badge-->
 															<div class="timeline-badge">
@@ -112,7 +112,7 @@
 														<!--begin::Item-->
 														<div class="timeline-item align-items-start">
 															<!--begin::Label-->
-															<div class="timeline-label font-weight-bolder text-dark-75 font-size-xs">0</div>
+															<div class="timeline-label font-weight-bolder text-dark-75 font-size-xs">{{$pembatalan_keppres_jfku}}</div>
 															<!--end::Label-->
 															<!--begin::Badge-->
 															<div class="timeline-badge">
@@ -572,7 +572,7 @@
 @section('scripts')
 <script src="https://code.highcharts.com/highcharts.js"></script>
 <script>
-	var users =  <?php echo json_encode($pengangkatan) ?>;
+	var users =  <?php echo json_encode($pengangkatan_jfku) ?>;
 	
 	Highcharts.chart('chart', {
 		title: {

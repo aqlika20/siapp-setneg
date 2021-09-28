@@ -28,14 +28,68 @@ class HomeController extends Controller
         $currentUser = UserManagement::find(Auth::id());
         $page_title = 'Kemensetneg | Home';
         $page_description = 'Home';
-        $count = Pengangkatan::where('status', 'Prosess')->count();
-
-        if($count == 0){
-            $pengangkatan = '0';
-        } else{
-            $pengangkatan = $count;
-        }
         
+    //pengangkatan
+        $count_pengangkatan_jfku = PengangkatanPemberhentianJFKU::where([
+            ['jenis_layanan', Helper::$pengangkatan_pejabat_FKU],
+            ['status', Helper::$proses]
+        ])->count();
+
+        if($count_pengangkatan_jfku == 0){
+            $pengangkatan_jfku = '0';
+        } else{
+            $pengangkatan_jfku = $count_pengangkatan_jfku;
+        }
+
+    //pemberhentian
+        $count_pemberhentian_jfku = PengangkatanPemberhentianJFKU::where([
+            ['jenis_layanan', Helper::$pemberhentian_pejabat_FKU],
+            ['status', Helper::$proses]
+        ])->count();
+
+        if($count_pemberhentian_jfku == 0){
+            $pemberhentian_jfku = '0';
+        } else{
+            $pemberhentian_jfku = $count_pemberhentian_jfku;
+        }
+
+    //perpindahan        
+        $count_perpindahan_jfku = PengangkatanPemberhentianJFKU::where([
+            ['jenis_layanan', Helper::$perpindahan_pejabat_FKU],
+            ['status', Helper::$proses]
+        ])->count();
+
+        if($count_perpindahan_jfku == 0){
+            $perpindahan_jfku = '0';
+        } else{
+            $perpindahan_jfku = $count_perpindahan_jfku;
+        }
+
+    //ralat keppres        
+        $count_ralat_keppres_jfku = PengangkatanPemberhentianJFKU::where([
+            ['jenis_layanan', Helper::$ralat_keppres_jabatan_FKU],
+            ['status', Helper::$proses]
+        ])->count();
+
+        if($count_ralat_keppres_jfku == 0){
+            $ralat_keppres_jfku = '0';
+        } else{
+            $ralat_keppres_jfku = $count_ralat_keppres_jfku;
+        }
+
+    //pembatalan keppres        
+        $count_pembatalan_keppres_jfku = PengangkatanPemberhentianJFKU::where([
+            ['jenis_layanan', Helper::$pembatalan_keppres_jabatan_FKU],
+            ['status', Helper::$proses]
+        ])->count();
+
+        if($count_pembatalan_keppres_jfku == 0){
+            $pembatalan_keppres_jfku = '0';
+        } else{
+            $pembatalan_keppres_jfku = $count_pembatalan_keppres_jfku;
+        }
+
+
         // $chart = Charts::create('line', 'highcharts');
 
         // $chart = new SampleChart;
@@ -64,6 +118,6 @@ class HomeController extends Controller
         // var_dump($json_chart);
 
         return view('pages.kemensetneg.home', compact('page_title', 'page_description', 'currentUser', 'pengangkatan'));
-        // return view('pages.super_admin.home', ['chart' => $chart], compact('page_title', 'page_description', 'currentUser', 'pengangkatan'));
+        // return view('pages.pic.home', ['chart' => $chart], compact('page_title', 'page_description', 'currentUser', 'pengangkatan'));
     }
 }

@@ -99,7 +99,7 @@
                                                                             <!--end::Icon-->
                                                                             <!--begin::Title-->
                                                                             <div class="d-flex flex-column flex-grow-1 mr-2">
-                                                                                <a href="<?php echo e(route('super-admin.administrasi.kenaikan-pangkat.pemberian-kenaikan-pangkat.index')); ?>" class="font-weight-bold text-dark-75 text-hover-primary font-size-lg mb-1">Pemberian Kenaikan Pangkat</a>
+                                                                                <a href="<?php echo e(route('pic.administrasi.kenaikan-pangkat.pemberian-kenaikan-pangkat.index')); ?>" class="font-weight-bold text-dark-75 text-hover-primary font-size-lg mb-1">Pemberian Kenaikan Pangkat</a>
                                                                             </div>
                                                                             <!--end::Title-->
                                                                             <!--begin::Lable-->
@@ -123,7 +123,7 @@
                                                                             <!--end::Icon-->
                                                                             <!--begin::Title-->
                                                                             <div class="d-flex flex-column flex-grow-1 mr-2">
-                                                                                <a href="<?php echo e(route('super-admin.administrasi.kenaikan-pangkat.pembatalan-keppres-kenaikan-pangkat.index')); ?>" class="font-weight-bold text-dark-75 text-hover-primary font-size-lg mb-1">Pembatalan Keppres Kenaikan Pangkat</a>
+                                                                                <a href="<?php echo e(route('pic.administrasi.kenaikan-pangkat.pembatalan-keppres-kenaikan-pangkat.index')); ?>" class="font-weight-bold text-dark-75 text-hover-primary font-size-lg mb-1">Pembatalan Keppres Kenaikan Pangkat</a>
                                                                             </div>
                                                                             <!--end::Title-->
                                                                             <!--begin::Lable-->
@@ -147,7 +147,7 @@
                                                                             <!--end::Icon-->
                                                                             <!--begin::Title-->
                                                                             <div class="d-flex flex-column flex-grow-1 mr-2">
-                                                                                <a href="<?php echo e(route('super-admin.administrasi.kenaikan-pangkat.pengesahan-kenaikan-pangkat.index')); ?>" class="font-weight-bold text-dark-75 text-hover-primary font-size-lg mb-1">Pengesahan Kenaikan Pangkat</a>
+                                                                                <a href="<?php echo e(route('pic.administrasi.kenaikan-pangkat.pengesahan-kenaikan-pangkat.index')); ?>" class="font-weight-bold text-dark-75 text-hover-primary font-size-lg mb-1">Pengesahan Kenaikan Pangkat</a>
                                                                             </div>
                                                                             <!--end::Title-->
                                                                             <!--begin::Lable-->
@@ -171,7 +171,7 @@
                                                                             <!--end::Icon-->
                                                                             <!--begin::Title-->
                                                                             <div class="d-flex flex-column flex-grow-1 mr-2">
-                                                                                <a href="<?php echo e(route('super-admin.administrasi.kenaikan-pangkat.ralat-keppres-kepangkatan.index')); ?>" class="font-weight-bold text-dark-75 text-hover-primary font-size-lg mb-1">Ralat Keppres Kepangkatan</a>
+                                                                                <a href="<?php echo e(route('pic.administrasi.kenaikan-pangkat.ralat-keppres-kepangkatan.index')); ?>" class="font-weight-bold text-dark-75 text-hover-primary font-size-lg mb-1">Ralat Keppres Kepangkatan</a>
                                                                             </div>
                                                                             <!--end::Title-->
                                                                             <!--begin::Lable-->
@@ -277,4 +277,4 @@
 <script src="<?php echo e(asset('js/pages/custom/wizard/wizard-2.js')); ?>"></script>
 <script src="<?php echo e(asset('js/pages/crud/ktdatatable/base/html-table.js')); ?>" type="text/javascript"></script>
 <?php $__env->stopSection(); ?>
-<?php echo $__env->make('layout.default', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH D:\Project\siapp\resources\views/pages/super_admin/administrasi/kenaikan_pangkat/kenaikan_pangkat.blade.php ENDPATH**/ ?>
+<?php echo $__env->make('layout.default', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH D:\Project\siapp\resources\views/pages/pic/administrasi/kenaikan_pangkat/kenaikan_pangkat.blade.php ENDPATH**/ ?>

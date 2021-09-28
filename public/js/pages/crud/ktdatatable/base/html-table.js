@@ -231,7 +231,7 @@
               title: 'Role',
               template: function (row) {
                 var role = {
-                  1: { 'roleName': 'Super Admin' },
+                  1: { 'roleName': 'PIC' },
                   2: { 'roleName': 'PPIC' },
                   3: { 'roleName': 'Warehouse' },
                   4: { 'roleName': 'Production - Icing' },

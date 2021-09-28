@@ -104,14 +104,14 @@
                     <td><?php echo e($supplier->supplier_id); ?></td>
                     <td><?php echo e($supplier->supplier_desc); ?></td>
                     <td>
-                        <form method="POST" action="<?php echo e(route('super-admin.setting.supplier-definition.delete',[$supplier->id])); ?>">
+                        <form method="POST" action="<?php echo e(route('pic.setting.supplier-definition.delete',[$supplier->id])); ?>">
                             <?php echo csrf_field(); ?>
                             <?php echo method_field('DELETE'); ?>
-                            <a title="Detail" class="btn btn-icon btn-light btn-sm mx-1" href="<?php echo e(route('super-admin.setting.supplier-definition.detail',[$supplier->id])); ?>">
+                            <a title="Detail" class="btn btn-icon btn-light btn-sm mx-1" href="<?php echo e(route('pic.setting.supplier-definition.detail',[$supplier->id])); ?>">
                                 <?php echo e(Metronic::getSVG("media/svg/icons/Files/File.svg", "svg-icon-md svg-icon-primary")); ?>
 
                             </a>
-                            <a href="<?php echo e(route('super-admin.setting.supplier-definition.view',[$supplier->id])); ?>" title="Edit" class="btn btn-icon btn-light btn-sm mx-1">
+                            <a href="<?php echo e(route('pic.setting.supplier-definition.view',[$supplier->id])); ?>" title="Edit" class="btn btn-icon btn-light btn-sm mx-1">
                                 <?php echo e(Metronic::getSVG("media/svg/icons/Communication/Write.svg", "svg-icon-md svg-icon-primary")); ?>
 
                             </a>
@@ -133,7 +133,7 @@
     <div class="modal fade" id="newDataInputCSV" tabindex="-1" role="dialog" aria-labelledby="newDataInputCSVLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
-                <form method="POST" action="<?php echo e(route('super-admin.setting.supplier-definition.create.csv')); ?>" enctype="multipart/form-data">
+                <form method="POST" action="<?php echo e(route('pic.setting.supplier-definition.create.csv')); ?>" enctype="multipart/form-data">
                     <div class="modal-header">
                         <h5 class="modal-title" id="newDataInputCSVLabel">New Data</h5>
                     </div>
@@ -180,7 +180,7 @@ unset($__errorArgs, $__bag); ?>" name="upload_csv" required autocomplete="upload
     <div class="modal fade" id="newDataInputManual" tabindex="-1" role="dialog" aria-labelledby="newDataInputManualLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
-                <form method="POST" action="<?php echo e(route('super-admin.setting.supplier-definition.create.manual')); ?>">
+                <form method="POST" action="<?php echo e(route('pic.setting.supplier-definition.create.manual')); ?>">
                     <div class="modal-header">
                         <h5 class="modal-title" id="newDataInputManualLabel">New Data</h5>
                     </div>
@@ -290,4 +290,4 @@ unset($__errorArgs, $__bag); ?>" name="description" required autocomplete="descr
     $('#type').select2();
 </script>
 <?php $__env->stopSection(); ?>
-<?php echo $__env->make('layout.default', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH /var/www/pt_tigaraksa_satria/resources/views/pages/super_admin/setting/supplier_definition.blade.php ENDPATH**/ ?>
+<?php echo $__env->make('layout.default', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH /var/www/pt_tigaraksa_satria/resources/views/pages/pic/setting/supplier_definition.blade.php ENDPATH**/ ?>

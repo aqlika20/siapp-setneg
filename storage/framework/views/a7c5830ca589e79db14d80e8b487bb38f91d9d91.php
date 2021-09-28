@@ -20,7 +20,7 @@
                                                 <div class="col-lg-12 col-xl-12">
                                                     <div class="row">
                                                         <div class="col-md-6 my-2 my-md-0">
-                                                            <form method="POST" action="<?php echo e(route('super-admin.user-management.edit',[$user->id])); ?>">
+                                                            <form method="POST" action="<?php echo e(route('pic.user-management.edit',[$user->id])); ?>">
                                                                 <?php echo csrf_field(); ?>
                                                                 <?php echo method_field('PATCH'); ?>
                                                                 
@@ -61,7 +61,7 @@ unset($__errorArgs, $__bag); ?>" name="email" value="<?php echo e($user->email);
                                                                         <select id="roles_id" class="form-control" name="roles_id" required autofocus>
                                                                             <option value="">Choose</option>
                                                                                 <option value="">All</option>
-                                                                                <option value="1" <?php if($user->roles_id == 1): ?> <?php echo e('selected'); ?> <?php endif; ?>>Super Admin</option>
+                                                                                <option value="1" <?php if($user->roles_id == 1): ?> <?php echo e('selected'); ?> <?php endif; ?>>PIC</option>
                                                                                 <option value="2" <?php if($user->roles_id == 2): ?> <?php echo e('selected'); ?> <?php endif; ?>>PPIC</option>
                                                                                 <option value="3" <?php if($user->roles_id == 3): ?> <?php echo e('selected'); ?> <?php endif; ?>>Warehouse</option>
                                                                                 <option value="4" <?php if($user->roles_id == 4): ?> <?php echo e('selected'); ?> <?php endif; ?>>Production - Icing</option>
@@ -87,7 +87,7 @@ unset($__errorArgs, $__bag); ?>" name="password" value="" autocomplete="password
                                                                     </div>
                                                                 </div>
                                                                 
-                                                                <a href="/super-admin/user-management" class="btn btn-secondary">Back</a>
+                                                                <a href="/pic/user-management" class="btn btn-secondary">Back</a>
                                                                 <button type="submit" class="btn btn-primary"><?php echo e(__('Submit')); ?></button>
                                                             </form>
                                                         </div>
@@ -121,4 +121,4 @@ unset($__errorArgs, $__bag); ?>" name="password" value="" autocomplete="password
     $('#roles_id').select2();
 </script>
 <?php $__env->stopSection(); ?>
-<?php echo $__env->make('layout.default', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH /var/www/pt_tigaraksa_satria/resources/views/pages/super_admin/user_management_edit.blade.php ENDPATH**/ ?>
+<?php echo $__env->make('layout.default', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH /var/www/pt_tigaraksa_satria/resources/views/pages/pic/user_management_edit.blade.php ENDPATH**/ ?>

@@ -50,7 +50,7 @@
 
 
                 <?php if($currentUser->roles_id == 1): ?> 
-                <li class="menu-item <?php echo e((strpos($page_title, 'Super Admin | Home') !== false) ? 'menu-item-active' : ''); ?>" aria-haspopup="true"><a href="<?php echo e(route('super-admin.home.index')); ?>" class="menu-link ">
+                <li class="menu-item <?php echo e((strpos($page_title, 'PIC | Home') !== false) ? 'menu-item-active' : ''); ?>" aria-haspopup="true"><a href="<?php echo e(route('pic.home.index')); ?>" class="menu-link ">
                 <span class="svg-icon menu-icon"><!--begin::Svg Icon | path:media/svg/icons/Design/Layers.svg-->
                 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
                     <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
@@ -61,7 +61,7 @@
                 </svg><!--end::Svg Icon-->
                 </span>
                 <span class="menu-text">Home</span></a></li>
-                <li class="menu-item <?php echo e((strpos($page_title, 'Super Admin | Report') !== false) ? 'menu-item-active' : ''); ?>" aria-haspopup="true"><a href="<?php echo e(route('super-admin.report.index')); ?>" class="menu-link ">
+                <li class="menu-item <?php echo e((strpos($page_title, 'PIC | Report') !== false) ? 'menu-item-active' : ''); ?>" aria-haspopup="true"><a href="<?php echo e(route('pic.report.index')); ?>" class="menu-link ">
                 <span class="svg-icon menu-icon"><!--begin::Svg Icon | path:media/svg/icons/Design/Layers.svg-->
                 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
                     <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
@@ -72,7 +72,7 @@
                 </svg><!--end::Svg Icon-->
                 </span>
                 <span class="menu-text">Report</span></a></li>
-                <li class="menu-item <?php echo e((strpos($page_title, 'Super Admin | User Management') !== false) ? 'menu-item-active' : ''); ?>" aria-haspopup="true"><a href="<?php echo e(route('super-admin.user-management.index')); ?>" class="menu-link ">
+                <li class="menu-item <?php echo e((strpos($page_title, 'PIC | User Management') !== false) ? 'menu-item-active' : ''); ?>" aria-haspopup="true"><a href="<?php echo e(route('pic.user-management.index')); ?>" class="menu-link ">
                 <span class="svg-icon menu-icon"><!--begin::Svg Icon | path:media/svg/icons/Design/Layers.svg-->
                 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
                     <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
@@ -100,23 +100,23 @@
                         <li class="menu-item  menu-item-parent" aria-haspopup="true">
                             <span class="menu-link"><span class="menu-text">Setting</span></span>
                         </li>
-                        <li class="menu-item <?php echo e((strpos($page_title, 'Super Admin | Setting | Product Definition') !== false) ? 'menu-item-active' : ''); ?>" aria-haspopup="true">
-                            <a href="<?php echo e(route('super-admin.setting.product-definition.index')); ?>" class="menu-link "><i class="menu-bullet menu-bullet-line"><span></span></i><span class="menu-text">Product Definition</span></a>
+                        <li class="menu-item <?php echo e((strpos($page_title, 'PIC | Setting | Product Definition') !== false) ? 'menu-item-active' : ''); ?>" aria-haspopup="true">
+                            <a href="<?php echo e(route('pic.setting.product-definition.index')); ?>" class="menu-link "><i class="menu-bullet menu-bullet-line"><span></span></i><span class="menu-text">Product Definition</span></a>
                         </li>
-                        <li class="menu-item <?php echo e((strpos($page_title, 'Super Admin | Setting | Item Definition') !== false) ? 'menu-item-active' : ''); ?>" aria-haspopup="true">
-                            <a href="<?php echo e(route('super-admin.setting.item-definition.index')); ?>" class="menu-link "><i class="menu-bullet menu-bullet-line"><span></span></i><span class="menu-text">Item Definition</span></a>
+                        <li class="menu-item <?php echo e((strpos($page_title, 'PIC | Setting | Item Definition') !== false) ? 'menu-item-active' : ''); ?>" aria-haspopup="true">
+                            <a href="<?php echo e(route('pic.setting.item-definition.index')); ?>" class="menu-link "><i class="menu-bullet menu-bullet-line"><span></span></i><span class="menu-text">Item Definition</span></a>
                         </li>
-                        <li class="menu-item <?php echo e((strpos($page_title, 'Super Admin | Setting | Supplier Definition') !== false) ? 'menu-item-active' : ''); ?>" aria-haspopup="true">
-                            <a href="<?php echo e(route('super-admin.setting.supplier-definition.index')); ?>" class="menu-link "><i class="menu-bullet menu-bullet-line"><span></span></i><span class="menu-text">Supplier Definition</span></a>
+                        <li class="menu-item <?php echo e((strpos($page_title, 'PIC | Setting | Supplier Definition') !== false) ? 'menu-item-active' : ''); ?>" aria-haspopup="true">
+                            <a href="<?php echo e(route('pic.setting.supplier-definition.index')); ?>" class="menu-link "><i class="menu-bullet menu-bullet-line"><span></span></i><span class="menu-text">Supplier Definition</span></a>
                         </li>
-                        <li class="menu-item <?php echo e((strpos($page_title, 'Super Admin | Setting | Shift') !== false) ? 'menu-item-active' : ''); ?>" aria-haspopup="true">
-                            <a href="<?php echo e(route('super-admin.setting.shift.index')); ?>" class="menu-link "><i class="menu-bullet menu-bullet-line"><span></span></i><span class="menu-text">Shift</span></a>
+                        <li class="menu-item <?php echo e((strpos($page_title, 'PIC | Setting | Shift') !== false) ? 'menu-item-active' : ''); ?>" aria-haspopup="true">
+                            <a href="<?php echo e(route('pic.setting.shift.index')); ?>" class="menu-link "><i class="menu-bullet menu-bullet-line"><span></span></i><span class="menu-text">Shift</span></a>
                         </li>
-                        <li class="menu-item <?php echo e((strpos($page_title, 'Super Admin | Setting | Oper Type') !== false) ? 'menu-item-active' : ''); ?>" aria-haspopup="true">
-                            <a href="<?php echo e(route('super-admin.setting.oper-type.index')); ?>" class="menu-link "><i class="menu-bullet menu-bullet-line"><span></span></i><span class="menu-text">Oper Type</span></a>
+                        <li class="menu-item <?php echo e((strpos($page_title, 'PIC | Setting | Oper Type') !== false) ? 'menu-item-active' : ''); ?>" aria-haspopup="true">
+                            <a href="<?php echo e(route('pic.setting.oper-type.index')); ?>" class="menu-link "><i class="menu-bullet menu-bullet-line"><span></span></i><span class="menu-text">Oper Type</span></a>
                         </li>
-                        <li class="menu-item <?php echo e((strpos($page_title, 'Super Admin | Setting | Role') !== false) ? 'menu-item-active' : ''); ?>" aria-haspopup="true">
-                            <a href="<?php echo e(route('super-admin.setting.role.index')); ?>" class="menu-link "><i class="menu-bullet menu-bullet-line"><span></span></i><span class="menu-text">Role</span></a>
+                        <li class="menu-item <?php echo e((strpos($page_title, 'PIC | Setting | Role') !== false) ? 'menu-item-active' : ''); ?>" aria-haspopup="true">
+                            <a href="<?php echo e(route('pic.setting.role.index')); ?>" class="menu-link "><i class="menu-bullet menu-bullet-line"><span></span></i><span class="menu-text">Role</span></a>
                         </li>
                     </ul>
                 </div>
