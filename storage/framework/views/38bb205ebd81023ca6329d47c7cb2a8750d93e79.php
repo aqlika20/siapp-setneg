@@ -545,21 +545,19 @@
                                         <th><b>Jenis Usulan</b></th>
                                         <th><b>NIP</b></th>
                                         <th><b>Nama</b></th>
-                                        <th><b>Jabatan</b></th>
-                                        <th><b>Aksi</b></th>
+                                        <th><b>Status</b></th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                 <?php $__currentLoopData = $pengangkatans; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $pengangkatan): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                     <tr>
-                                        <td><?php echo e($pengangkatan->tanggal_surat_usulan); ?></td>
+                                        <td><?php echo e($pengangkatan->tgl_surat_usulan); ?></td>
                                         <td><?php echo e($pengangkatan->no_surat_usulan); ?></td>
-                                        <td><?php echo e($pengangkatan->instansi); ?></td>
-                                        <td><?php echo e($pengangkatan->jenis_usulan); ?></td>
+                                        <td><?php echo e($pengangkatan->instansi_pengusul); ?></td>
+                                        <td><?php echo e(Helper::defineJenisLayananBy($pengangkatan->jenis_layanan)); ?></td>
                                         <td><?php echo e($pengangkatan->nip); ?></td>
                                         <td><?php echo e($pengangkatan->nama); ?></td>
-                                        <td><?php echo e($pengangkatan->jabatan); ?></td>
-                                        <td>Coming Soon..</td>
+                                        <td><?php echo e(Helper::defineStatusBy($pengangkatan->status)); ?></td>
                                     </tr>
                                 <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                                 </tbody>

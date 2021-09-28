@@ -7,7 +7,7 @@ class Helper {
     // jenis layanan
     public static $pengangkatan_pejabat_FKU = 1;                        // Pengangkatan Pejabat Fungsional Keahlian Utama
     public static $pemberhentian_pejabat_FKU = 2;                       // Pemberhentian Pejabat Fungsional Keahlian Utama
-    public static $Perpindahan_pejabat_FKU = 3;                         // Perpindahan Pejabat Fungsional Keahlian Utama
+    public static $perpindahan_pejabat_FKU = 3;                         // Perpindahan Pejabat Fungsional Keahlian Utama
     public static $ralat_keppres_jabatan_FKU = 4;                       // Ralat Keppres Jabatan Fungsional Keahlian Utama
     public static $pembatalan_keppres_jabatan_FKU = 5;                  // Pembatalan Keppres Jabatan Fungsional Keahlian Utama
     public static $pengangkatan_pejabat_NS = 6;                         // Pengangkatan Pejabat Non Struktural
@@ -42,12 +42,153 @@ class Helper {
     public static $tolak = 3;
 
 
-
-
-
     public static function convertDatetoMonths($date){
         $date = date('m', strtotime($date));
-
         return $date;
+    }
+
+    public static function defineJenisLayananBy($type)
+    {
+        $jenis_layanan = "";
+        switch ($type) {
+            case '1':
+                $jenis_layanan = 'Pengangkatan Pejabat Fungsional Keahlian Utama';
+                break;
+
+            case '2':
+                $jenis_layanan = 'Pemberhentian Pejabat Fungsional Keahlian Utama';
+                break;
+
+            case '3':
+                $jenis_layanan = 'Perpindahan Pejabat Fungsional Keahlian Utama';
+                break;
+            
+            case '4':
+                $jenis_layanan = 'Ralat Keppres Jabatan Fungsional Keahlian Utama';
+                break;
+
+            case '5':
+                $jenis_layanan = 'Pembatalan Keppres Jabatan Fungsional Keahlian Utama';
+                break;
+
+            case '6':
+                $jenis_layanan = 'Pengangkatan Pejabat Non Struktural';
+                break;
+
+            case '7':
+                $jenis_layanan = 'Pemberhentian Pejabat Non Struktural';
+                break;
+            
+            case '8':
+                $jenis_layanan = 'Ralat Keppres Jabatan Non Struktural';
+                break;
+            
+            case '9':
+                $jenis_layanan = 'Pembatalan Keppres Jabatan Non Struktural';
+                break;
+
+            case '10':
+                $jenis_layanan = 'Pengangkatan Pejabat Lainnya';
+                break;
+
+            case '11':
+                $jenis_layanan = 'Pemberhentian Pejabat Lainnya';
+                break;
+            
+            case '12':
+                $jenis_layanan = 'Ralat Keppres Jabatan Lainnya';
+                break;
+
+            case '13':
+                $jenis_layanan = 'Pembatalan Keppres Jabatan Lainnya';
+                break;
+
+            case '14':
+                $jenis_layanan = 'Persetujuan pengangkatan Staf Khusus Menteri/Kepala Lembaga';
+                break;
+
+            case '15':
+                $jenis_layanan = 'Pemberian Kenaikan Pangkat';
+                break;
+            
+            case '16':
+                $jenis_layanan = 'Pembatalan Keppres Kenaikan Pangkat';
+                break;
+
+            case '17':
+                $jenis_layanan = 'Pengesahan Kenaikan Pangkat';
+                break;
+
+            case '18':
+                $jenis_layanan = 'Ralat Keppres Kepangkatan';
+                break;
+
+            case '19':
+                $jenis_layanan = 'BUP Non KPP';
+                break;
+            
+            case '20':
+                $jenis_layanan = 'BUP KPP';
+                break;
+            
+            case '21':
+                $jenis_layanan = 'Berhenti Atas Permintaan Sendiri';
+                break;
+
+            case '22':
+                $jenis_layanan = 'Non BUP Janda/Duda/Anak non KPP';
+                break;
+
+            case '23':
+                $jenis_layanan = 'Non BUP Janda/Duda/Anak KPP';
+                break;
+
+            case '24':
+                $jenis_layanan = 'Berhenti Tidak Dengan Hormat';
+                break;
+            
+            case '25':
+                $jenis_layanan = 'Anumerta';
+                break;
+
+            case '26':
+                $jenis_layanan = 'Pemberhentian Sementara';
+                break;
+
+            case '27':
+                $jenis_layanan = 'Ralat Keppres Pemberhentian';
+                break;
+
+            case '28':
+                $jenis_layanan = 'Pembatalan Keppres Pemberhentian';
+                break;
+            
+            case '29':
+                $jenis_layanan = 'Petikan Keppres yang Hilang/Rusak';
+                break;
+
+        }
+
+        return $jenis_layanan;
+    }
+
+    public static function defineStatusBy($type)
+    {
+        $status = "";
+        switch ($type) {
+            case '1':
+                $status = 'Proses';
+                break;
+
+            case '2':
+                $status = 'Pending';
+                break;
+
+            case '3':
+                $status = 'Tolak';
+                break;
+        }
+
+        return $status;
     }
 };

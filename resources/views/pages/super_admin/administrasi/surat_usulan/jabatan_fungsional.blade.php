@@ -545,21 +545,19 @@
                                         <th><b>Jenis Usulan</b></th>
                                         <th><b>NIP</b></th>
                                         <th><b>Nama</b></th>
-                                        <th><b>Jabatan</b></th>
-                                        <th><b>Aksi</b></th>
+                                        <th><b>Status</b></th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                 @foreach($pengangkatans as $pengangkatan)
                                     <tr>
-                                        <td>{{ $pengangkatan->tanggal_surat_usulan }}</td>
+                                        <td>{{ $pengangkatan->tgl_surat_usulan }}</td>
                                         <td>{{ $pengangkatan->no_surat_usulan }}</td>
-                                        <td>{{ $pengangkatan->instansi }}</td>
-                                        <td>{{ $pengangkatan->jenis_usulan }}</td>
+                                        <td>{{ $pengangkatan->instansi_pengusul }}</td>
+                                        <td>{{ Helper::defineJenisLayananBy($pengangkatan->jenis_layanan) }}</td>
                                         <td>{{ $pengangkatan->nip }}</td>
                                         <td>{{ $pengangkatan->nama }}</td>
-                                        <td>{{ $pengangkatan->jabatan }}</td>
-                                        <td>Coming Soon..</td>
+                                        <td>{{ Helper::defineStatusBy($pengangkatan->status) }}</td>
                                     </tr>
                                 @endforeach
                                 </tbody>

@@ -78,10 +78,10 @@ class PemberhentianPejabatFungsionalKeahlianUtamaController extends Controller
             'req_pangkat_gol' => 'required',
             'req_tmt_gol' => 'required',
 
-            'req_nomor_pak' => 'nullable',
-            'req_tanggal_pak' => 'nullable',
-            'req_jumlah_angka_kredit' => 'nullable',
-            'req_periode_penilaian' => 'nullable',
+            'req_nomor_pak_terakhir' => 'nullable',
+            'req_tanggal_pak_terakhir' => 'nullable',
+            'req_jumlah_angka_kredit_terakhir' => 'nullable',
+            'req_periode_penilaian_terakhir' => 'nullable',
             
             'req_jabatan_fungsional' => 'required',
             'req_no_keppress_jabatan_fungsional' => 'required',
@@ -91,9 +91,7 @@ class PemberhentianPejabatFungsionalKeahlianUtamaController extends Controller
             'req_alasan_pemberhentian' => 'required',
             'req_ket_alasan_pemberhentian' => 'required',
             'req_tmt_pemberhentian' => 'required',
-            'req_tanggal_catatan' => 'required',
-            'req_catatan' => 'required',
-            'req_ket' => 'required',
+            'req_ket.*' => 'required',
             
             'req_file_data_usulan.*' => 'max:25000|mimes:docx,doc,xlsx,xls,csv,jpg,png,jpeg,pdf',
             'req_file_data_asn.*' => 'max:25000|mimes:docx,doc,xlsx,xls,csv,jpg,png,jpeg,pdf',
@@ -123,10 +121,10 @@ class PemberhentianPejabatFungsionalKeahlianUtamaController extends Controller
             'pangkat_gol' => $input['req_pangkat_gol'],
             'tmt_gol' => $input['req_tmt_gol'],
 
-            'nomor_pak' => $input['req_nomor_pak'],
-            'tanggal_pak' => $input['req_tanggal_pak'],
-            'jumlah_angka_kredit' => $input['req_jumlah_angka_kredit'],
-            'periode_penilaian' => $input['req_periode_penilaian'],
+            'nomor_pak_terakhir' => $input['req_nomor_pak_terakhir'],
+            'tanggal_pak_terakhir' => $input['req_tanggal_pak_terakhir'],
+            'jumlah_angka_kredit_terakhir' => $input['req_jumlah_angka_kredit_terakhir'],
+            'periode_penilaian_terakhir' => $input['req_periode_penilaian_terakhir'],
 
             'jabatan_fungsional' => $input['req_jabatan_fungsional'],
             'no_keppress_jabatan_fungsional' => $input['req_no_keppress_jabatan_fungsional'],
