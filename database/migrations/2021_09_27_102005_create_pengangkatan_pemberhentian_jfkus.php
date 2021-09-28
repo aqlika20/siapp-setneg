@@ -15,7 +15,7 @@ class CreatePengangkatanPemberhentianJfkus extends Migration
     {
         Schema::create('pengangkatan_pemberhentian_jfkus', function (Blueprint $table) {
             $table->id();
-            $table->string('tgl_surat_usulan', 30)->unique();
+            $table->string('tgl_surat_usulan', 30)->nullable();
             $table->string('no_surat_usulan', 30)->nullable();
             $table->string('pejabat_menandatangani', 30)->nullable();
             $table->string('file_data_usulan', 30)->nullable();

@@ -26,7 +26,7 @@ class PemberianKenaikanPangkatController extends Controller
      * Pengangkatan Pejabat Fungsional Keahlian Utama Attachments root folder
      * only declared here.
      */
-    private $attachments_root_folder = "pengangkatan_pejabat_fungsional_keahlian_utama_attachments/";
+    private $attachments_root_folder = "jfku_attachments/";
     private $data_usulan_folder;
     private $note_usulan_folder;
     private $note_usulan2_folder;
