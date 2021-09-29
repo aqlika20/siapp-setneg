@@ -6,10 +6,14 @@ use Illuminate\Database\Eloquent\Model;
 
 class Catatan extends Model
 {
-    protected $table = 'catatan';
+    protected $table = 'notes';
 
     protected $fillable = [
-        'id', 'jenis_layanan', 'catatan', 'tanggal_catatan'
+        'id', 'jfku_id', 'catatan', 'tanggal_catatan'
+    ];
+
+    protected $date = [
+        'created_at', 'updated_at'
     ];
 
 }

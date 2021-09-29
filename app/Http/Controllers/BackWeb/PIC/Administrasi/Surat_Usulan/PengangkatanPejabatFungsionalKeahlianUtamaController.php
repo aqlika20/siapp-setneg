@@ -120,6 +120,9 @@ class PengangkatanPejabatFungsionalKeahlianUtamaController extends Controller
             'req_terisi' => 'nullable',
             'req_sisa' => 'nullable',
             'req_ket' => 'nullable',
+            
+            // 'jenis_usulan' => Helper::$pengangkatan_pejabat_FKU,
+            // 'status' => Helper::$proses,
 
             'req_file_data_usulan.*' => 'max:25000|mimes:docx,doc,xlsx,xls,csv,jpg,png,jpeg,pdf',
             'req_file_nota_usulan.*' => 'max:25000|mimes:docx,doc,xlsx,xls,csv,jpg,png,jpeg,pdf',
@@ -167,8 +170,8 @@ class PengangkatanPejabatFungsionalKeahlianUtamaController extends Controller
             'jabatan_lama' => $input['req_jabatan_lama'],
             'unit_kerja_baru' => $input['req_unit_kerja_baru'],
             'unit_kerja_lama' => $input['req_unit_kerja_lama'],
-            'tanggal_catatan' => implode(',', $input['req_tanggal_catatan']),
-            'catatan' => implode(',', $input['req_catatan']),
+            // 'tanggal_catatan' => implode(',', $input['req_tanggal_catatan']),
+            // 'catatan' => implode(',', $input['req_catatan']),
             'ket' => implode(',', $input['req_ket']),
             'no_sk_jabatan_lama' => $input['req_no_sk_jabatan_lama'],
             'tmt_jabatan_lama' => $input['req_tmt_jabatan_lama'],
@@ -333,6 +336,17 @@ class PengangkatanPejabatFungsionalKeahlianUtamaController extends Controller
         $pengangkatans->status = "1";
 
         $pengangkatans->save();
+
+        $count = count($input['req_tanggal_catatan']);
+        for($i=0;$i<$count;$i++) {
+            $notes = new Catatan();
+            $notes->jfku_id = $pengangkatans->id;
+            $notes->tanggal_catatan = $input['req_tanggal_catatan'][$i];
+            $notes->catatan = $input['req_catatan'][$i];
+            $notes->save();
+
+        }
+        
 
         return redirect()->back()->with(['success'=>'Jabatan Fungsional Success Added!!!']);
     }

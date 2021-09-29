@@ -192,7 +192,7 @@ class PerpindahanPejabatFungsionalKeahlianUtamaController extends Controller
             'terisi' => $input['req_terisi'],
             'sisa' => $input['req_sisa'],
 
-            'jenis_usulan' => Helper::$pengangkatan_pejabat_FKU,
+            'jenis_usulan' => Helper::$perpindahan_pejabat_FKU,
             'status' => Helper::$proses
             
         ]);
@@ -358,6 +358,16 @@ class PerpindahanPejabatFungsionalKeahlianUtamaController extends Controller
         }
 
         $perpindahans->save();
+
+        $count = count($input['req_tanggal_catatan']);
+        for($i=0;$i<$count;$i++) {
+            $notes = new Catatan();
+            $notes->jfku_id = $perpindahans->id;
+            $notes->tanggal_catatan = $input['req_tanggal_catatan'][$i];
+            $notes->catatan = $input['req_catatan'][$i];
+            $notes->save();
+
+        }
 
         return redirect()->back()->with(['success'=>'Jabatan Fungsional Success Added!!!']);
     }

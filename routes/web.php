@@ -167,6 +167,9 @@ Route::group(['middleware' => ['auth', 'checkRole:2']], function() {
             Route::get('/kenaikan-pangkat', 'BackWeb\Koor_Pokja\Inbox\KenaikanPangkatController@index')->name('koor-pokja.inbox.kenaikan-pangkat.index');
             Route::get('/pemberhentian', 'BackWeb\Koor_Pokja\Inbox\PemberhentianController@index')->name('koor-pokja.inbox.pemberhentian.index');
             
+            Route::prefix('/jfku')->group(function(){
+                Route::get('/verification/{id}', 'BackWeb\Koor_Pokja\Inbox\JFKUController@verification')->name('koor-pokja.inbox.jfku.verif');
+            });
         });
 
         Route::prefix('/atur-dokumen')->group(function(){
