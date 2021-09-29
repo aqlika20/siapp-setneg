@@ -17,7 +17,16 @@
                             <img style="width: 47%;" alt="<?php echo e(config('app.name')); ?>" src="<?php echo e(asset('media/logos/'.$kt_logo_image)); ?>"/>
                         </div>
                     </div>
-                    <div class="form-group row" style="margin-top: 50px; justify-content: center;">
+                    <div class="form-group row" style="justify-content: center;">
+                        <div class="col-md-6 mb-5 bg-light-info p-8 rounded">
+                            <label class="text-info"><strong>PIC</strong></label>
+                            <div class="text-info"> User  : <strong>111111</strong> and password <strong>testestes</strong></div>
+                            <br>
+                            <label class="text-info"><strong>Koordinator Pokja</strong></label>
+                            <div class="text-info"> User  : <strong>123456</strong> and password <strong>testestes</strong></div>
+                        </div>
+                    </div>
+                    <div class="form-group row" style="justify-content: center;">
                         <div class="col-md-6">
                             <input id="nip" class="form-control h-auto form-control-solid py-4 px-8" type="text" placeholder="NIP" name="nip" autocomplete="off" required/>
                         </div>
