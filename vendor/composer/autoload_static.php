@@ -714,6 +714,7 @@ class ComposerStaticInit1d0cf772d8f9050daa8ab52e052398d5
     );
 
     public static $classMap = array (
+        'App\\Catatan' => __DIR__ . '/../..' . '/app/Catatan.php',
         'App\\Charts\\ChartDashboard' => __DIR__ . '/../..' . '/app/Charts/ChartDashboard.php',
         'App\\Classes\\Theme\\Init' => __DIR__ . '/../..' . '/app/Classes/Theme/Init.php',
         'App\\Classes\\Theme\\Metronic' => __DIR__ . '/../..' . '/app/Classes/Theme/Metronic.php',
@@ -735,7 +736,6 @@ class ComposerStaticInit1d0cf772d8f9050daa8ab52e052398d5
         'App\\Http\\Controllers\\BackWeb\\Kemensetneg\\Inbox\\KenaikanPangkatController' => __DIR__ . '/../..' . '/app/Http/Controllers/BackWeb/Kemensetneg/Inbox/KenaikanPangkatController.php',
         'App\\Http\\Controllers\\BackWeb\\Kemensetneg\\Inbox\\PemberhentianController' => __DIR__ . '/../..' . '/app/Http/Controllers/BackWeb/Kemensetneg/Inbox/PemberhentianController.php',
         'App\\Http\\Controllers\\BackWeb\\Kemensetneg\\RiwayatController' => __DIR__ . '/../..' . '/app/Http/Controllers/BackWeb/Kemensetneg/RiwayatController.php',
-        'App\\Http\\Controllers\\BackWeb\\ProfileController' => __DIR__ . '/../..' . '/app/Http/Controllers/BackWeb/ProfileController.php',
         'App\\Http\\Controllers\\BackWeb\\PIC\\Administrasi\\Kenaikan_Pangkat\\KenaikanPangkatController' => __DIR__ . '/../..' . '/app/Http/Controllers/BackWeb/PIC/Administrasi/Kenaikan_Pangkat/KenaikanPangkatController.php',
         'App\\Http\\Controllers\\BackWeb\\PIC\\Administrasi\\Kenaikan_Pangkat\\PembatalanKeppresKenaikanPangkatController' => __DIR__ . '/../..' . '/app/Http/Controllers/BackWeb/PIC/Administrasi/Kenaikan_Pangkat/PembatalanKeppresKenaikanPangkatController.php',
         'App\\Http\\Controllers\\BackWeb\\PIC\\Administrasi\\Kenaikan_Pangkat\\PemberianKenaikanPangkatController' => __DIR__ . '/../..' . '/app/Http/Controllers/BackWeb/PIC/Administrasi/Kenaikan_Pangkat/PemberianKenaikanPangkatController.php',
@@ -774,6 +774,7 @@ class ComposerStaticInit1d0cf772d8f9050daa8ab52e052398d5
         'App\\Http\\Controllers\\BackWeb\\PIC\\InboxController' => __DIR__ . '/../..' . '/app/Http/Controllers/BackWeb/PIC/InboxController.php',
         'App\\Http\\Controllers\\BackWeb\\PIC\\Setting\\RoleController' => __DIR__ . '/../..' . '/app/Http/Controllers/BackWeb/PIC/Setting/RoleController.php',
         'App\\Http\\Controllers\\BackWeb\\PIC\\UserManagementController' => __DIR__ . '/../..' . '/app/Http/Controllers/BackWeb/PIC/UserManagementController.php',
+        'App\\Http\\Controllers\\BackWeb\\ProfileController' => __DIR__ . '/../..' . '/app/Http/Controllers/BackWeb/ProfileController.php',
         'App\\Http\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Controller.php',
         'App\\Http\\Kernel' => __DIR__ . '/../..' . '/app/Http/Kernel.php',
         'App\\Http\\Middleware\\Authenticate' => __DIR__ . '/../..' . '/app/Http/Middleware/Authenticate.php',
@@ -788,6 +789,7 @@ class ComposerStaticInit1d0cf772d8f9050daa8ab52e052398d5
         'App\\Other\\UniqueLink' => __DIR__ . '/../..' . '/app/Other/UniqueLink.php',
         'App\\Pangkat' => __DIR__ . '/../..' . '/app/Pangkat.php',
         'App\\Pengangkatan' => __DIR__ . '/../..' . '/app/Pengangkatan.php',
+        'App\\PengangkatanPemberhentianJFKU' => __DIR__ . '/../..' . '/app/PengangkatanPemberhentianJFKU.php',
         'App\\Periode' => __DIR__ . '/../..' . '/app/Periode.php',
         'App\\Providers\\AppServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AppServiceProvider.php',
         'App\\Providers\\AuthServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AuthServiceProvider.php',

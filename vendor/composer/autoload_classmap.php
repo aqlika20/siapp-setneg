@@ -6,6 +6,7 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
+    'App\\Catatan' => $baseDir . '/app/Catatan.php',
     'App\\Charts\\ChartDashboard' => $baseDir . '/app/Charts/ChartDashboard.php',
     'App\\Classes\\Theme\\Init' => $baseDir . '/app/Classes/Theme/Init.php',
     'App\\Classes\\Theme\\Metronic' => $baseDir . '/app/Classes/Theme/Metronic.php',
@@ -27,7 +28,6 @@ return array(
     'App\\Http\\Controllers\\BackWeb\\Kemensetneg\\Inbox\\KenaikanPangkatController' => $baseDir . '/app/Http/Controllers/BackWeb/Kemensetneg/Inbox/KenaikanPangkatController.php',
     'App\\Http\\Controllers\\BackWeb\\Kemensetneg\\Inbox\\PemberhentianController' => $baseDir . '/app/Http/Controllers/BackWeb/Kemensetneg/Inbox/PemberhentianController.php',
     'App\\Http\\Controllers\\BackWeb\\Kemensetneg\\RiwayatController' => $baseDir . '/app/Http/Controllers/BackWeb/Kemensetneg/RiwayatController.php',
-    'App\\Http\\Controllers\\BackWeb\\ProfileController' => $baseDir . '/app/Http/Controllers/BackWeb/ProfileController.php',
     'App\\Http\\Controllers\\BackWeb\\PIC\\Administrasi\\Kenaikan_Pangkat\\KenaikanPangkatController' => $baseDir . '/app/Http/Controllers/BackWeb/PIC/Administrasi/Kenaikan_Pangkat/KenaikanPangkatController.php',
     'App\\Http\\Controllers\\BackWeb\\PIC\\Administrasi\\Kenaikan_Pangkat\\PembatalanKeppresKenaikanPangkatController' => $baseDir . '/app/Http/Controllers/BackWeb/PIC/Administrasi/Kenaikan_Pangkat/PembatalanKeppresKenaikanPangkatController.php',
     'App\\Http\\Controllers\\BackWeb\\PIC\\Administrasi\\Kenaikan_Pangkat\\PemberianKenaikanPangkatController' => $baseDir . '/app/Http/Controllers/BackWeb/PIC/Administrasi/Kenaikan_Pangkat/PemberianKenaikanPangkatController.php',
@@ -66,6 +66,7 @@ return array(
     'App\\Http\\Controllers\\BackWeb\\PIC\\InboxController' => $baseDir . '/app/Http/Controllers/BackWeb/PIC/InboxController.php',
     'App\\Http\\Controllers\\BackWeb\\PIC\\Setting\\RoleController' => $baseDir . '/app/Http/Controllers/BackWeb/PIC/Setting/RoleController.php',
     'App\\Http\\Controllers\\BackWeb\\PIC\\UserManagementController' => $baseDir . '/app/Http/Controllers/BackWeb/PIC/UserManagementController.php',
+    'App\\Http\\Controllers\\BackWeb\\ProfileController' => $baseDir . '/app/Http/Controllers/BackWeb/ProfileController.php',
     'App\\Http\\Controllers\\Controller' => $baseDir . '/app/Http/Controllers/Controller.php',
     'App\\Http\\Kernel' => $baseDir . '/app/Http/Kernel.php',
     'App\\Http\\Middleware\\Authenticate' => $baseDir . '/app/Http/Middleware/Authenticate.php',
@@ -80,6 +81,7 @@ return array(
     'App\\Other\\UniqueLink' => $baseDir . '/app/Other/UniqueLink.php',
     'App\\Pangkat' => $baseDir . '/app/Pangkat.php',
     'App\\Pengangkatan' => $baseDir . '/app/Pengangkatan.php',
+    'App\\PengangkatanPemberhentianJFKU' => $baseDir . '/app/PengangkatanPemberhentianJFKU.php',
     'App\\Periode' => $baseDir . '/app/Periode.php',
     'App\\Providers\\AppServiceProvider' => $baseDir . '/app/Providers/AppServiceProvider.php',
     'App\\Providers\\AuthServiceProvider' => $baseDir . '/app/Providers/AuthServiceProvider.php',
