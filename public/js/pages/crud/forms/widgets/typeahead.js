@@ -144,7 +144,7 @@ var KTTypeahead = function () {
     });
   };
 
-  var demo3 = function demo3() {
+  var jf_ahli = function jf_ahli() {
     var countries = new Bloodhound({
       datumTokenizer: Bloodhound.tokenizers.whitespace,
       queryTokenizer: Bloodhound.tokenizers.whitespace,
@@ -212,7 +212,7 @@ var KTTypeahead = function () {
     init: function init() {
       demo1();
       demo2();
-      demo3();
+      jf_ahli();
       demo4();
       demo5();
     }

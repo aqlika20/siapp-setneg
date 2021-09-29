@@ -41,7 +41,7 @@ var KTFormRepeater = function() {
     }
 
 
-    var demo3 = function() {
+    var jf_ahli = function() {
         $('#kt_repeater_3').repeater({
             initEmpty: false,
            
@@ -119,7 +119,7 @@ var KTFormRepeater = function() {
         init: function() {
             demo1();
             demo2();
-            demo3();
+            jf_ahli();
             demo4();
             demo5();
             demo6();

@@ -259,7 +259,7 @@ var KTFlotchartsDemo = function() {
 		});
 	}
 
-	var demo3 = function() {
+	var jf_ahli = function() {
 		var sin = [],
 			cos = [];
 		for (var i = 0; i < 14; i += 0.1) {
@@ -698,7 +698,7 @@ var KTFlotchartsDemo = function() {
 			// default charts
 			demo1();
 			demo2();
-			demo3();
+			jf_ahli();
 			demo4();
 			demo5();
 			demo6();

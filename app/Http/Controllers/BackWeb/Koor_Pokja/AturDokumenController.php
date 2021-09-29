@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\BackWeb\Kemensetneg\Inbox;
+namespace App\Http\Controllers\BackWeb\Koor_Pokja;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
@@ -18,7 +18,7 @@ use App\Helper;
 
 use Carbon\Carbon;
 
-class PemberhentianController extends Controller
+class AturDokumenController extends Controller
 {
   
     public function __construct()
@@ -30,12 +30,12 @@ class PemberhentianController extends Controller
     public function index() 
     {
         $currentUser = UserManagement::find(Auth::id());
-        $page_title = 'KemenSetneg | Inbox | Pemberhentian';
-        $page_description = 'Pemberhentian';
+        $page_title = 'KemenSetneg | Atur Dokumen';
+        $page_description = 'Atur Dokumen';
         $pengangkatans = Pengangkatan::where([
             ['status', '=', Helper::$proses]
         ])->get();
-        return view('pages.kemensetneg.inbox.pemberhentian', compact('page_title', 'page_description', 'currentUser', 'pengangkatans'));
+        return view('pages.koor_pokja.atur_dokumen', compact('page_title', 'page_description', 'currentUser', 'pengangkatans'));
     }
 
 }

@@ -155,45 +155,45 @@ Route::group(['middleware' => ['auth', 'checkRole:1']], function() {
     });
 }); 
 
-// Kemensetneg
+// Koordinator Pokja
 Route::group(['middleware' => ['auth', 'checkRole:2']], function() {
 
-    Route::prefix('/kemensetneg')->group(function(){
+    Route::prefix('/koor-pokja')->group(function(){
         Route::prefix('/home')->group(function(){
-            Route::get('/', 'BackWeb\Kemensetneg\HomeController@index')->name('kemensetneg.home.index');
+            Route::get('/', 'BackWeb\Koor_Pokja\HomeController@index')->name('koor-pokja.home.index');
         });
         Route::prefix('/inbox')->group(function(){
-            Route::get('/jfku', 'BackWeb\Kemensetneg\Inbox\JFKUController@index')->name('kemensetneg.inbox.jfku.index');
-            Route::get('/kenaikan-pangkat', 'BackWeb\Kemensetneg\Inbox\KenaikanPangkatController@index')->name('kemensetneg.inbox.kenaikan-pangkat.index');
-            Route::get('/pemberhentian', 'BackWeb\Kemensetneg\Inbox\PemberhentianController@index')->name('kemensetneg.inbox.pemberhentian.index');
+            Route::get('/jfku', 'BackWeb\Koor_Pokja\Inbox\JFKUController@index')->name('koor-pokja.inbox.jfku.index');
+            Route::get('/kenaikan-pangkat', 'BackWeb\Koor_Pokja\Inbox\KenaikanPangkatController@index')->name('koor-pokja.inbox.kenaikan-pangkat.index');
+            Route::get('/pemberhentian', 'BackWeb\Koor_Pokja\Inbox\PemberhentianController@index')->name('koor-pokja.inbox.pemberhentian.index');
             
         });
 
         Route::prefix('/atur-dokumen')->group(function(){
-            Route::get('/', 'BackWeb\Kemensetneg\AturDokumenController@index')->name('kemensetneg.atur-dokumen.index');
+            Route::get('/', 'BackWeb\Koor_Pokja\AturDokumenController@index')->name('koor-pokja.atur-dokumen.index');
         });
         
         Route::prefix('/riwayat')->group(function(){
-            Route::get('/', 'BackWeb\Kemensetneg\RiwayatController@index')->name('kemensetneg.riwayat.index');
+            Route::get('/', 'BackWeb\Koor_Pokja\RiwayatController@index')->name('koor-pokja.riwayat.index');
         });
 
         Route::prefix('/faq')->group(function(){
-            Route::get('/', 'BackWeb\Kemensetneg\FaqController@index')->name('kemensetneg.faq.index');
+            Route::get('/', 'BackWeb\Koor_Pokja\FaqController@index')->name('koor-pokja.faq.index');
         });
 
     });
 });
 
-// Demo 3
+// JF Muda Madya
 Route::group(['middleware' => ['auth', 'checkRole:3']], function() {
-    Route::prefix('/demo3')->group(function(){
+    Route::prefix('/Jf-Ahli')->group(function(){
         Route::prefix('/home')->group(function(){
-            Route::get('/', 'BackWeb\demo3\HomeController@index')->name('demo3.home.index');
+            Route::get('/', 'BackWeb\JF_Ahli\HomeController@index')->name('jf-ahli.home.index');
         });
-        Route::get('/inbox', 'BackWeb\demo3\InboxController@index')->name('demo3.inbox.index');
-        Route::get('/atur_dokument', 'BackWeb\demo3\AturDokumentController@index')->name('demo3.atur-dokument.index');
-        Route::get('/riwayat', 'BackWeb\demo3\RiwayatController@index')->name('demo3.riwayat.index');
-        Route::get('/faq', 'BackWeb\demo3\PengaturanController@faq')->name('demo3.pengaturan.faq');
+        Route::get('/inbox', 'BackWeb\JF_Ahli\InboxController@index')->name('jf-ahli.inbox.index');
+        Route::get('/atur_dokument', 'BackWeb\JF_Ahli\AturDokumentController@index')->name('jf-ahli.atur-dokument.index');
+        Route::get('/riwayat', 'BackWeb\JF_Ahli\RiwayatController@index')->name('jf-ahli.riwayat.index');
+        Route::get('/faq', 'BackWeb\JF_Ahli\PengaturanController@faq')->name('jf-ahli.pengaturan.faq');
 
     });
 }); 

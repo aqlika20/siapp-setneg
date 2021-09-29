@@ -228,7 +228,7 @@ var KTDropzoneDemo = function () {
     });
   };
 
-  var demo3 = function demo3() {
+  var jf_ahli = function jf_ahli() {
     // set the dropzone container id
     var id = '#kt_dropzone_5'; // set the preview element template
 
@@ -275,7 +275,7 @@ var KTDropzoneDemo = function () {
     init: function init() {
       demo1();
       demo2();
-      demo3();
+      jf_ahli();
     }
   };
 }();

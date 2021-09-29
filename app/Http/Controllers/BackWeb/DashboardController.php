@@ -19,28 +19,20 @@ class DashboardController extends Controller
     public function index()
     {
         $currentUser = UserManagement::find(Auth::id());
-        // $page_title = 'Dashboard';
-        // $page_description = '';
-
-        // $count_queue = 0;
-        // $count_approved = 0;
-        // $count_rejected = 0;
-        // $count_expired = 0;
-        // $count_request_for_claim = 0;
-        // $count_claimed = 0;
 
         // PIC
         if ($currentUser->roles_id == 1) {
             return redirect()->route('pic.home.index');
         }
 
-        // PPIC
+        // Koordinator Pokja
         if ($currentUser->roles_id == 2) {
-            return redirect()->route('kemensetneg.home.index');
+            return redirect()->route('koor-pokja.home.index');
         }
 
+        // JF Ahli
         if ($currentUser->roles_id == 3) {
-            return redirect()->route('demo3.home.index');
+            return redirect()->route('jf-ahli.home.index');
         }
     }
 

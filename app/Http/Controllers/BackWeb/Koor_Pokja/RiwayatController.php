@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\BackWeb\Kemensetneg;
+namespace App\Http\Controllers\BackWeb\Koor_Pokja;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
@@ -18,13 +18,11 @@ use App\Helper;
 
 use Carbon\Carbon;
 
-class FaqController extends Controller
+class RiwayatController extends Controller
 {
-    private $curr_int_time;
-
+  
     public function __construct()
     {
-        $this->curr_int_time = strtotime(Carbon::now());
         $this->middleware('auth');
         
     }
@@ -32,9 +30,12 @@ class FaqController extends Controller
     public function index() 
     {
         $currentUser = UserManagement::find(Auth::id());
-        $page_title = 'Kemensetneg | FAQ';
-        $page_description = 'FAQ';
-        $pengangkatans = Pengangkatan::where('status', 'Prosess')->get();
-        return view('pages.kemensetneg.faq', compact('page_title', 'page_description', 'currentUser', 'pengangkatans'));
+        $page_title = 'KemenSetneg | Riwayat';
+        $page_description = 'Riwayat';
+        $pengangkatans = Pengangkatan::where([
+            ['status', '=', Helper::$proses]
+        ])->get();
+        return view('pages.koor_pokja.riwayat', compact('page_title', 'page_description', 'currentUser', 'pengangkatans'));
     }
+
 }

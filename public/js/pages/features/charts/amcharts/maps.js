@@ -389,7 +389,7 @@ var KTamChartsMapsDemo = function () {
     });
   };
 
-  var demo3 = function demo3() {
+  var jf_ahli = function jf_ahli() {
     var map = AmCharts.makeChart("kt_amcharts_3", {
       "type": "map",
       "theme": "light",
@@ -1067,7 +1067,7 @@ var KTamChartsMapsDemo = function () {
     init: function init() {
       demo1();
       demo2();
-      demo3();
+      jf_ahli();
       demo4();
       demo5();
       demo6();

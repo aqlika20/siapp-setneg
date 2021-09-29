@@ -351,7 +351,7 @@ var KTamChartsStockChartsDemo = function() {
         });
     }
 
-    var demo3 = function() {
+    var jf_ahli = function() {
         var chartData = generateChartData();
 
         function generateChartData() {
@@ -772,7 +772,7 @@ var KTamChartsStockChartsDemo = function() {
         init: function() {
             demo1();
             demo2();
-            demo3();
+            jf_ahli();
             demo4();
             demo5();
         }

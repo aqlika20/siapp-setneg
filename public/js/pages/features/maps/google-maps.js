@@ -121,7 +121,7 @@ var KTGoogleMapsDemo = function () {
     });
   };
 
-  var demo3 = function demo3() {
+  var jf_ahli = function jf_ahli() {
     var map = new GMaps({
       div: '#kt_gmap_3',
       lat: -51.38739,
@@ -281,7 +281,7 @@ var KTGoogleMapsDemo = function () {
       // default charts
       demo1();
       demo2();
-      demo3();
+      jf_ahli();
       demo4();
       demo5();
       demo6();

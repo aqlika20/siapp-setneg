@@ -155,7 +155,7 @@ var KTLeaflet = function () {
     }).addTo(leaflet);
   };
 
-  var demo3 = function demo3() {
+  var jf_ahli = function jf_ahli() {
     // define leaflet
     var leaflet = L.map('kt_leaflet_3', {
       center: [47.339, 11.602],
@@ -408,7 +408,7 @@ var KTLeaflet = function () {
       // default charts
       demo1();
       demo2();
-      demo3();
+      jf_ahli();
       demo4();
       demo5();
       demo6();

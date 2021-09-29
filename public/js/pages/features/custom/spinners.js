@@ -121,8 +121,8 @@ var KTSpinnersDemo = function () {
     });
   };
 
-  var demo3 = function demo3() {
-    // Demo 3
+  var jf_ahli = function jf_ahli() {
+    // JF Muda Madya
     var btn = KTUtil.getById("kt_btn_3");
     KTUtil.addEvent(btn, "click", function () {
       KTUtil.btnWait(btn, "spinner spinner-left spinner-darker-success pl-15", "Disabled...");
@@ -148,7 +148,7 @@ var KTSpinnersDemo = function () {
     init: function init() {
       demo1();
       demo2();
-      demo3();
+      jf_ahli();
       demo4();
     }
   };

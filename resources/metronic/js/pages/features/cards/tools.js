@@ -132,8 +132,8 @@ var KTCardTools = function () {
         });
     }
 
-    // Demo 3
-    var demo3 = function() {
+    // JF Muda Madya
+    var jf_ahli = function() {
         // This card is lazy initialized using data-card="true" attribute. You can access to the card object as shown below and override its behavior
         var card = new KTCard('kt_card_3');
 
@@ -312,7 +312,7 @@ var KTCardTools = function () {
             // init demos
             demo1();
             demo2();
-            demo3();
+            jf_ahli();
             demo4();
         }
     };

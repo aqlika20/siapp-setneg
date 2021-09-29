@@ -102,7 +102,7 @@ var KTBootstrapDatetimepicker = function () {
 
     $('#kt_datetimepicker_2').datetimepicker({
       locale: 'de'
-    }); // Demo 3
+    }); // JF Muda Madya
 
     $('#kt_datetimepicker_3').datetimepicker({
       format: 'L'

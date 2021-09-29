@@ -147,7 +147,7 @@ var KTnoUiSliderDemos = function () {
     });
   };
 
-  var demo3 = function demo3() {
+  var jf_ahli = function jf_ahli() {
     // init slider
     var slider = document.getElementById('kt_nouislider_3');
     noUiSlider.create(slider, {
@@ -346,7 +346,7 @@ var KTnoUiSliderDemos = function () {
     init: function init() {
       demo1();
       demo2();
-      demo3();
+      jf_ahli();
       demo4();
       demo5();
       demo6();

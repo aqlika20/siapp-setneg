@@ -135,7 +135,7 @@
 
             <?php if($currentUser->roles_id == 2): ?> 
                 <li class="menu-item <?php echo e((strpos($page_title, 'KemenSetneg | Dashboard') !== false) ? 'menu-item-active' : ''); ?>" aria-haspopup="true">
-                    <a href="<?php echo e(route('kemensetneg.home.index')); ?>" class="menu-link ">
+                    <a href="<?php echo e(route('koor-pokja.home.index')); ?>" class="menu-link ">
                         <span class="svg-icon menu-icon"><!--begin::Svg Icon | path:media/svg/icons/Design/Layers.svg-->
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-house" viewBox="0 0 16 16">
                                 <path fill-rule="evenodd" d="M2 13.5V7h1v6.5a.5.5 0 0 0 .5.5h9a.5.5 0 0 0 .5-.5V7h1v6.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5zm11-11V6l-2-2V2.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5z"/>
@@ -164,20 +164,20 @@
                                 <span class="menu-link"><span class="menu-text">Inbox</span></span>
                             </li>
                             <li class="menu-item <?php echo e((strpos($page_title, 'KemenSetneg | Inbox | JFKU') !== false) ? 'menu-item-active' : ''); ?>" aria-haspopup="true">
-                                <a href="<?php echo e(route('kemensetneg.inbox.jfku.index')); ?>" class="menu-link "><i class="menu-bullet menu-bullet-line"><span></span></i><span class="menu-text">JFKU</span></a>
+                                <a href="<?php echo e(route('koor-pokja.inbox.jfku.index')); ?>" class="menu-link "><i class="menu-bullet menu-bullet-line"><span></span></i><span class="menu-text">JFKU</span></a>
                             </li>
                             <li class="menu-item <?php echo e((strpos($page_title, 'KemenSetneg | Inbox | Kenaikan Pangkat') !== false) ? 'menu-item-active' : ''); ?>" aria-haspopup="true">
-                                <a href="<?php echo e(route('kemensetneg.inbox.kenaikan-pangkat.index')); ?>" class="menu-link "><i class="menu-bullet menu-bullet-line"><span></span></i><span class="menu-text">Kenaikan Pangkat</span></a>
+                                <a href="<?php echo e(route('koor-pokja.inbox.kenaikan-pangkat.index')); ?>" class="menu-link "><i class="menu-bullet menu-bullet-line"><span></span></i><span class="menu-text">Kenaikan Pangkat</span></a>
                             </li>
                             <li class="menu-item <?php echo e((strpos($page_title, 'KemenSetneg | Inbox | Pemberhentian') !== false) ? 'menu-item-active' : ''); ?>" aria-haspopup="true">
-                                <a href="<?php echo e(route('kemensetneg.inbox.pemberhentian.index')); ?>" class="menu-link "><i class="menu-bullet menu-bullet-line"><span></span></i><span class="menu-text">Pemberhentian</span></a>
+                                <a href="<?php echo e(route('koor-pokja.inbox.pemberhentian.index')); ?>" class="menu-link "><i class="menu-bullet menu-bullet-line"><span></span></i><span class="menu-text">Pemberhentian</span></a>
                             </li>
                         </ul>
                     </div>
                 </li>
 
                 <li class="menu-item <?php echo e((strpos($page_title, 'KemenSetneg | Atur Dokumen') !== false) ? 'menu-item-active' : ''); ?>" aria-haspopup="true">
-                    <a href="<?php echo e(route('kemensetneg.atur-dokumen.index')); ?>" class="menu-link ">
+                    <a href="<?php echo e(route('koor-pokja.atur-dokumen.index')); ?>" class="menu-link ">
                         <span class="svg-icon menu-icon"><!--begin::Svg Icon | path:media/svg/icons/Design/Layers.svg-->
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-mailbox" viewBox="0 0 16 16">
                                 <path d="M4 4a3 3 0 0 0-3 3v6h6V7a3 3 0 0 0-3-3zm0-1h8a4 4 0 0 1 4 4v6a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1V7a4 4 0 0 1 4-4zm2.646 1A3.99 3.99 0 0 1 8 7v6h7V7a3 3 0 0 0-3-3H6.646z"/>
@@ -189,7 +189,7 @@
                 </li>
 
                 <li class="menu-item <?php echo e((strpos($page_title, 'KemenSetneg | Riwayat') !== false) ? 'menu-item-active' : ''); ?>" aria-haspopup="true">
-                    <a href="<?php echo e(route('kemensetneg.riwayat.index')); ?>" class="menu-link ">
+                    <a href="<?php echo e(route('koor-pokja.riwayat.index')); ?>" class="menu-link ">
                         <span class="svg-icon menu-icon"><!--begin::Svg Icon | path:media/svg/icons/Design/Layers.svg-->
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-mailbox" viewBox="0 0 16 16">
                                 <path d="M4 4a3 3 0 0 0-3 3v6h6V7a3 3 0 0 0-3-3zm0-1h8a4 4 0 0 1 4 4v6a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1V7a4 4 0 0 1 4-4zm2.646 1A3.99 3.99 0 0 1 8 7v6h7V7a3 3 0 0 0-3-3H6.646z"/>
@@ -224,7 +224,7 @@
                                 <a href="" class="menu-link "><i class="menu-bullet menu-bullet-line"><span></span></i><span class="menu-text">Alur Proses</span></a>
                             </li>
                             <li class="menu-item <?php echo e((strpos($page_title, 'KemenSetneg | Setting | Supplier Definition') !== false) ? 'menu-item-active' : ''); ?>" aria-haspopup="true">
-                                <a href="<?php echo e(route('kemensetneg.faq.index')); ?>" class="menu-link "><i class="menu-bullet menu-bullet-line"><span></span></i><span class="menu-text">FAQ</span></a>
+                                <a href="<?php echo e(route('koor-pokja.faq.index')); ?>" class="menu-link "><i class="menu-bullet menu-bullet-line"><span></span></i><span class="menu-text">FAQ</span></a>
                             </li>
                         </ul>
                     </div>
@@ -233,8 +233,8 @@
                 
 
             <?php if($currentUser->roles_id == 3): ?> 
-                <li class="menu-item <?php echo e((strpos($page_title, 'Demo 3 | Dashboard') !== false) ? 'menu-item-active' : ''); ?>" aria-haspopup="true">
-                    <a href="<?php echo e(route('demo3.home.index')); ?>" class="menu-link ">
+                <li class="menu-item <?php echo e((strpos($page_title, 'JF Muda Madya | Dashboard') !== false) ? 'menu-item-active' : ''); ?>" aria-haspopup="true">
+                    <a href="<?php echo e(route('jf-ahli.home.index')); ?>" class="menu-link ">
                         <span class="svg-icon menu-icon"><!--begin::Svg Icon | path:media/svg/icons/Design/Layers.svg-->
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-house" viewBox="0 0 16 16">
                                 <path fill-rule="evenodd" d="M2 13.5V7h1v6.5a.5.5 0 0 0 .5.5h9a.5.5 0 0 0 .5-.5V7h1v6.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5zm11-11V6l-2-2V2.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5z"/>
@@ -245,8 +245,8 @@
                     </a>
                 </li>
 
-                <li class="menu-item <?php echo e((strpos($page_title, 'Demo 3 | Inbox') !== false) ? 'menu-item-active' : ''); ?>" aria-haspopup="true">
-                    <a href="<?php echo e(route('demo3.inbox.index')); ?>" class="menu-link ">
+                <li class="menu-item <?php echo e((strpos($page_title, 'JF Muda Madya | Inbox') !== false) ? 'menu-item-active' : ''); ?>" aria-haspopup="true">
+                    <a href="<?php echo e(route('jf-ahli.inbox.index')); ?>" class="menu-link ">
                         <span class="svg-icon menu-icon"><!--begin::Svg Icon | path:media/svg/icons/Design/Layers.svg-->
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-mailbox" viewBox="0 0 16 16">
                                 <path d="M4 4a3 3 0 0 0-3 3v6h6V7a3 3 0 0 0-3-3zm0-1h8a4 4 0 0 1 4 4v6a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1V7a4 4 0 0 1 4-4zm2.646 1A3.99 3.99 0 0 1 8 7v6h7V7a3 3 0 0 0-3-3H6.646z"/>
@@ -257,8 +257,8 @@
                     </a>
                 </li>
 
-                <li class="menu-item <?php echo e((strpos($page_title, 'Demo 3 | Atur Dokument') !== false) ? 'menu-item-active' : ''); ?>" aria-haspopup="true">
-                    <a href="<?php echo e(route('demo3.atur-dokument.index')); ?>" class="menu-link ">
+                <li class="menu-item <?php echo e((strpos($page_title, 'JF Muda Madya | Atur Dokument') !== false) ? 'menu-item-active' : ''); ?>" aria-haspopup="true">
+                    <a href="<?php echo e(route('jf-ahli.atur-dokument.index')); ?>" class="menu-link ">
                         <!--begin::Svg Icon | path: assets/media/icons/duotune/files/fil012.svg-->
                         <span class="svg-icon menu-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
                             <path opacity="0.3" d="M10 4H21C21.6 4 22 4.4 22 5V7H10V4Z" />
@@ -268,8 +268,8 @@
                     </a>
                 </li>
 
-                <li class="menu-item <?php echo e((strpos($page_title, 'Demo 3 | Riwayat') !== false) ? 'menu-item-active' : ''); ?>" aria-haspopup="true">
-                    <a href="<?php echo e(route('demo3.riwayat.index')); ?>" class="menu-link ">
+                <li class="menu-item <?php echo e((strpos($page_title, 'JF Muda Madya | Riwayat') !== false) ? 'menu-item-active' : ''); ?>" aria-haspopup="true">
+                    <a href="<?php echo e(route('jf-ahli.riwayat.index')); ?>" class="menu-link ">
                         <span class="svg-icon menu-icon"><svg xmlns="http://www.w3.org/2000/svg"  width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
                             <path d="M14.5 20.7259C14.6 21.2259 14.2 21.826 13.7 21.926C13.2 22.026 12.6 22.0259 12.1 22.0259C9.5 22.0259 6.9 21.0259 5 19.1259C1.4 15.5259 1.09998 9.72592 4.29998 5.82592L5.70001 7.22595C3.30001 10.3259 3.59999 14.8259 6.39999 17.7259C8.19999 19.5259 10.8 20.426 13.4 19.926C13.9 19.826 14.4 20.2259 14.5 20.7259ZM18.4 16.8259L19.8 18.2259C22.9 14.3259 22.7 8.52593 19 4.92593C16.7 2.62593 13.5 1.62594 10.3 2.12594C9.79998 2.22594 9.4 2.72595 9.5 3.22595C9.6 3.72595 10.1 4.12594 10.6 4.02594C13.1 3.62594 15.7 4.42595 17.6 6.22595C20.5 9.22595 20.7 13.7259 18.4 16.8259Z" />
                             <path opacity="0.3" d="M2 3.62592H7C7.6 3.62592 8 4.02592 8 4.62592V9.62589L2 3.62592ZM16 14.4259V19.4259C16 20.0259 16.4 20.4259 17 20.4259H22L16 14.4259Z" />
@@ -301,8 +301,8 @@
                             <li class="menu-item <?php echo e((strpos($page_title, 'PIC | Setting | Item Definition') !== false) ? 'menu-item-active' : ''); ?>" aria-haspopup="true">
                                 <a href="" class="menu-link "><i class="menu-bullet menu-bullet-line"><span></span></i><span class="menu-text">Alur Proses</span></a>
                             </li>
-                            <li class="menu-item <?php echo e((strpos($page_title, 'Demo 3 | Setting | FAQ') !== false) ? 'menu-item-active' : ''); ?>" aria-haspopup="true">
-                                <a href="<?php echo e(route('demo3.pengaturan.faq')); ?>" class="menu-link "><i class="menu-bullet menu-bullet-line"><span></span></i><span class="menu-text">FAQ</span></a>
+                            <li class="menu-item <?php echo e((strpos($page_title, 'JF Muda Madya | Setting | FAQ') !== false) ? 'menu-item-active' : ''); ?>" aria-haspopup="true">
+                                <a href="<?php echo e(route('jf-ahli.pengaturan.faq')); ?>" class="menu-link "><i class="menu-bullet menu-bullet-line"><span></span></i><span class="menu-text">FAQ</span></a>
                             </li>
                         </ul>
                     </div>

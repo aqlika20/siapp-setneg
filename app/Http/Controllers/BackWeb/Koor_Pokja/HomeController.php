@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\BackWeb\Kemensetneg;
+namespace App\Http\Controllers\BackWeb\Koor_Pokja;
 
 use App\UserManagement;
 use App\Http\Controllers\Controller;
@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 
-use App\Pengangkatan;
+use App\PengangkatanPemberhentianJFKU;
 use App\Helper;
 
 use Charts;
@@ -26,7 +26,7 @@ class HomeController extends Controller
     public function index() 
     {
         $currentUser = UserManagement::find(Auth::id());
-        $page_title = 'Kemensetneg | Home';
+        $page_title = 'Koordinator Pokja | Home';
         $page_description = 'Home';
         
     //pengangkatan
@@ -116,8 +116,7 @@ class HomeController extends Controller
         // }
         // $json_chart = json_encode($chart);
         // var_dump($json_chart);
-
-        return view('pages.kemensetneg.home', compact('page_title', 'page_description', 'currentUser', 'pengangkatan'));
+        return view('pages.koor_pokja.home', compact('page_title', 'page_description', 'currentUser','pengangkatan_jfku', 'pemberhentian_jfku', 'perpindahan_jfku', 'ralat_keppres_jfku', 'pembatalan_keppres_jfku'));
         // return view('pages.pic.home', ['chart' => $chart], compact('page_title', 'page_description', 'currentUser', 'pengangkatan'));
     }
 }

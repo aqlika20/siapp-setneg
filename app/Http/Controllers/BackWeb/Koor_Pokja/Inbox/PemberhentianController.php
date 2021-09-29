@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\BackWeb\Kemensetneg\Inbox;
+namespace App\Http\Controllers\BackWeb\Koor_Pokja\Inbox;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
@@ -18,7 +18,7 @@ use App\Helper;
 
 use Carbon\Carbon;
 
-class JFKUController extends Controller
+class PemberhentianController extends Controller
 {
   
     public function __construct()
@@ -30,12 +30,12 @@ class JFKUController extends Controller
     public function index() 
     {
         $currentUser = UserManagement::find(Auth::id());
-        $page_title = 'KemenSetneg | Inbox | JFKU';
-        $page_description = 'JFKU';
+        $page_title = 'KemenSetneg | Inbox | Pemberhentian';
+        $page_description = 'Pemberhentian';
         $pengangkatans = Pengangkatan::where([
             ['status', '=', Helper::$proses]
         ])->get();
-        return view('pages.kemensetneg.inbox.jfku', compact('page_title', 'page_description', 'currentUser', 'pengangkatans'));
+        return view('pages.koor_pokja.inbox.pemberhentian', compact('page_title', 'page_description', 'currentUser', 'pengangkatans'));
     }
 
 }

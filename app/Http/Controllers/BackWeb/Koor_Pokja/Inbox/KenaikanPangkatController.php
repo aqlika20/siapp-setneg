@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\BackWeb\Kemensetneg\Inbox;
+namespace App\Http\Controllers\BackWeb\Koor_Pokja\Inbox;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
@@ -35,7 +35,7 @@ class KenaikanPangkatController extends Controller
         $pengangkatans = Pengangkatan::where([
             ['status', '=', Helper::$proses]
         ])->get();
-        return view('pages.kemensetneg.inbox.kenaikan_pangkat', compact('page_title', 'page_description', 'currentUser', 'pengangkatans'));
+        return view('pages.koor_pokja.inbox.kenaikan_pangkat', compact('page_title', 'page_description', 'currentUser', 'pengangkatans'));
     }
 
 }

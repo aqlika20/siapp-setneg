@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\backweb\demo3;
+namespace App\Http\Controllers\backweb\JF_Ahli;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
@@ -20,9 +20,9 @@ class AturDokumentController extends Controller
     public function index() 
     {
         $currentUser = UserManagement::find(Auth::id());
-        $page_title = 'Demo 3 | Atur Dokument';
+        $page_title = 'JF Muda Madya | Atur Dokument';
         $page_description = 'Atur Dokument';
 
-        return view('pages.demo3.atur_dokument', compact('page_title', 'page_description', 'currentUser'));
+        return view('pages.jf_ahli.atur_dokument', compact('page_title', 'page_description', 'currentUser'));
     }
 }

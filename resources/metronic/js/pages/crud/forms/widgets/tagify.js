@@ -86,7 +86,7 @@ var KTTagifyDemos = function() {
         });
     }
 
-    var demo3 = function() {
+    var jf_ahli = function() {
         var input = document.getElementById('kt_tagify_3');
 
         // init Tagify script on the above inputs
@@ -284,7 +284,7 @@ var KTTagifyDemos = function() {
             demo1Readonly();
 
             demo2();
-            demo3();
+            jf_ahli();
             demo4();
             demo5();
             demo6();

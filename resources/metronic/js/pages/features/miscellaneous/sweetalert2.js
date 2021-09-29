@@ -13,7 +13,7 @@ var KTSweetAlert2Demo = function () {
 			Swal.fire("Here's the title!", "...and here's the text!");
 		});
 
-		// Sweetalert Demo 3
+		// Sweetalert JF Muda Madya
 		$('#kt_sweetalert_demo_3_1').click(function (e) {
 			Swal.fire("Good job!", "You clicked the button!", "warning");
 		});

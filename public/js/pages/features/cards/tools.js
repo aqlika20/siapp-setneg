@@ -204,10 +204,10 @@ var KTCardTools = function () {
         KTApp.unblock(card.getSelf());
       }, 2000);
     });
-  }; // Demo 3
+  }; // JF Muda Madya
 
 
-  var demo3 = function demo3() {
+  var jf_ahli = function jf_ahli() {
     // This card is lazy initialized using data-card="true" attribute. You can access to the card object as shown below and override its behavior
     var card = new KTCard('kt_card_3'); // Toggle event handlers
 
@@ -355,7 +355,7 @@ var KTCardTools = function () {
 
       demo1();
       demo2();
-      demo3();
+      jf_ahli();
       demo4();
     }
   };

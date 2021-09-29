@@ -170,7 +170,7 @@ var KTamChartsChartsDemo = function() {
         });
     }
 
-    var demo3 = function() {
+    var jf_ahli = function() {
         var chart = AmCharts.makeChart("kt_amcharts_3", {
             "theme": "light",
             "type": "serial",
@@ -2372,7 +2372,7 @@ var KTamChartsChartsDemo = function() {
         init: function() {
             demo1();
             demo2();
-            demo3();
+            jf_ahli();
             demo4();
             demo5();
             demo6();

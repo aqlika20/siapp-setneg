@@ -653,4 +653,4 @@
 </script>
 <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
 <?php $__env->stopSection(); ?>
-<?php echo $__env->make('layout.default', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH D:\Project\siapp\resources\views/pages/kemensetneg/home.blade.php ENDPATH**/ ?>
+<?php echo $__env->make('layout.default', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH D:\Project\siapp\resources\views/pages/koor-pokja/home.blade.php ENDPATH**/ ?>

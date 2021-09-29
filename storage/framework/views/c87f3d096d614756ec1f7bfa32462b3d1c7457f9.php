@@ -95,4 +95,4 @@
 <script src="<?php echo e(asset('js/pages/custom/wizard/wizard-2.js')); ?>"></script>
 <script src="<?php echo e(asset('js/pages/crud/ktdatatable/base/html-table.js')); ?>" type="text/javascript"></script>
 <?php $__env->stopSection(); ?>
-<?php echo $__env->make('layout.default', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\Users\ardim\Desktop\siapp jadi\siapp\resources\views/pages/demo3/atur_dokument.blade.php ENDPATH**/ ?>
+<?php echo $__env->make('layout.default', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\Users\ardim\Desktop\siapp jadi\siapp\resources\views/pages/jf_ahli/atur_dokument.blade.php ENDPATH**/ ?>

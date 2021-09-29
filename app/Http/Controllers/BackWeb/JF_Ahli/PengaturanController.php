@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\backweb\demo3;
+namespace App\Http\Controllers\backweb\JF_Ahli;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
@@ -20,9 +20,9 @@ class PengaturanController extends Controller
     public function faq()
     {
         $currentUser = UserManagement::find(Auth::id());
-        $page_title = 'Demo 3 | faq';
+        $page_title = 'JF Muda Madya | faq';
         $page_description = 'faq';
         
-        return view('pages.demo3.faq', compact('page_title', 'page_description', 'currentUser'));
+        return view('pages.jf_ahli.faq', compact('page_title', 'page_description', 'currentUser'));
     }
 }

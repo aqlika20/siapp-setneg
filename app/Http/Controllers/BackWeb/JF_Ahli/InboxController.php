@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\backweb\demo3;
+namespace App\Http\Controllers\backweb\JF_Ahli;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
@@ -9,8 +9,10 @@ use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use App\UserManagement;
+use App\Pengangkatan;
 
-class RiwayatController extends Controller
+
+class InboxController extends Controller
 {
     public function __construct()
     {
@@ -20,9 +22,11 @@ class RiwayatController extends Controller
     public function index() 
     {
         $currentUser = UserManagement::find(Auth::id());
-        $page_title = 'Demo 3 | Riwayat';
-        $page_description = 'Riwayat';
+        $page_title = 'JF Muda Madya | inbox';
+        $page_description = 'inbox';
+        $pengangkatans = Pengangkatan::where('status', 'Prosess')->get();
 
-        return view('pages.demo3.riwayat', compact('page_title', 'page_description', 'currentUser'));
+        
+        return view('pages.jf_ahli.inbox', compact('page_title', 'page_description', 'currentUser', 'pengangkatans'));
     }
 }

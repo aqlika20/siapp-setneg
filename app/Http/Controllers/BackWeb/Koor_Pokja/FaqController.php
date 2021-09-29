@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\BackWeb\Kemensetneg;
+namespace App\Http\Controllers\BackWeb\Koor_Pokja;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
@@ -18,11 +18,13 @@ use App\Helper;
 
 use Carbon\Carbon;
 
-class AturDokumenController extends Controller
+class FaqController extends Controller
 {
-  
+    private $curr_int_time;
+
     public function __construct()
     {
+        $this->curr_int_time = strtotime(Carbon::now());
         $this->middleware('auth');
         
     }
@@ -30,12 +32,9 @@ class AturDokumenController extends Controller
     public function index() 
     {
         $currentUser = UserManagement::find(Auth::id());
-        $page_title = 'KemenSetneg | Atur Dokumen';
-        $page_description = 'Atur Dokumen';
-        $pengangkatans = Pengangkatan::where([
-            ['status', '=', Helper::$proses]
-        ])->get();
-        return view('pages.kemensetneg.atur_dokumen', compact('page_title', 'page_description', 'currentUser', 'pengangkatans'));
+        $page_title = 'Koordinator Pokja | FAQ';
+        $page_description = 'FAQ';
+        $pengangkatans = Pengangkatan::where('status', 'Prosess')->get();
+        return view('pages.koor_pokja.faq', compact('page_title', 'page_description', 'currentUser', 'pengangkatans'));
     }
-
 }

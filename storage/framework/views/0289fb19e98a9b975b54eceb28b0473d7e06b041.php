@@ -24,6 +24,9 @@
                             <br>
                             <label class="text-info"><strong>Koordinator Pokja</strong></label>
                             <div class="text-info"> User  : <strong>123456</strong> and password <strong>testestes</strong></div>
+                            <br>
+                            <label class="text-info"><strong>JF Ahli madya / muda</strong></label>
+                            <div class="text-info"> User  : <strong>654321</strong> and password <strong>testestes</strong></div>
                         </div>
                     </div>
                     <div class="form-group row" style="justify-content: center;">

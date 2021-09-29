@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\backweb\demo3;
+namespace App\Http\Controllers\backweb\JF_Ahli;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
@@ -25,7 +25,7 @@ class HomeController extends Controller
     public function index() 
     {
         $currentUser = UserManagement::find(Auth::id());
-        $page_title = 'Demo 3 | Home';
+        $page_title = 'JF Muda Madya | Home';
         $page_description = 'Home';
         $count = Pengangkatan::where('status', 'Prosess')->count();
 
@@ -62,7 +62,7 @@ class HomeController extends Controller
         // $json_chart = json_encode($chart);
         // var_dump($json_chart);
 
-        return view('pages.demo3.home', compact('page_title', 'page_description', 'currentUser', 'pengangkatan'));
+        return view('pages.jf_ahli.home', compact('page_title', 'page_description', 'currentUser', 'pengangkatan'));
         // return view('pages.pic.home', ['chart' => $chart], compact('page_title', 'page_description', 'currentUser', 'pengangkatan'));
     }
 }
