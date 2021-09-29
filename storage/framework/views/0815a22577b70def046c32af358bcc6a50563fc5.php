@@ -536,14 +536,14 @@
                             <table class="datatable cell-border" id="jabatan_fungsional">
                                 <thead>
                                     <tr>
-                                        <th><b>Tanggal Agenda</b></th>
-                                        <th><b>No Surat</b></th>
-                                        <th><b>Instansi Pengusul</b></th>
-                                        <th><b>Jenis Usulan</b></th>
-                                        <th><b>NIP</b></th>
-                                        <th><b>Nama</b></th>
-                                        <th><b>Jabatan</b></th>
-                                        <th><b>Aksi</b></th>
+                                        <th><strong>Tanggal Agenda</strong></th>
+                                        <th><strong>No Surat</strong></th>
+                                        <th><strong>Instansi Pengusul</strong></th>
+                                        <th><strong>Jenis Usulan</strong></th>
+                                        <th><strong>NIP</strong></th>
+                                        <th><strong>Nama</strong></th>
+                                        <th><strong>Jabatan</strong></th>
+                                        <th><strong>Aksi</strong></th>
                                     </tr>
                                 </thead>
                                 <tbody>

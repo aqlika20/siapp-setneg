@@ -284,7 +284,7 @@
 													</div>
 												</div>
 
-												<div class="tab-pane" id="kt_tab_pane_2_3" role="tabpanel" aria-labelledby="kt_tab_pane_2_3">
+												<div class="tab-pane fade" id="kt_tab_pane_2_3" role="tabpanel" aria-labelledby="kt_tab_pane_2_3">
 													<div class="timeline timeline-6 mt-3">
 														<!--begin::Item-->
 														<div class="timeline-item align-items-start">

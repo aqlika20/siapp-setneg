@@ -145,7 +145,7 @@ class PengangkatanPejabatFungsionalKeahlianUtamaController extends Controller
 
         $pengangkatans = PengangkatanPemberhentianJFKU::create([
             'no_surat_usulan' => $input['req_no_surat_usulan'],
-            'tanggal_surat_usulan' => $input['req_tanggal_surat_usulan'],
+            'tgl_surat_usulan' => $input['req_tanggal_surat_usulan'],
             'pejabat_ttd' => $input['req_jabatan_menandatangani'],
             'nip' => $input['req_nip'],
             'nama' => $input['req_nama'],

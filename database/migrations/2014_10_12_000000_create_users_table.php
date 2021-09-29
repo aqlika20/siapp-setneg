@@ -20,10 +20,12 @@ class CreateUsersTable extends Migration
             $table->timestamp('nip_verified_at')->nullable();
             $table->string('password');
             $table->unsignedBigInteger('roles_id');
+            $table->unsignedBigInteger('groups_id')->nullable();
             $table->rememberToken();
             $table->timestamp('created_at')->default(DB::raw('CURRENT_TIMESTAMP'));
             $table->timestamp('updated_at')->default(DB::raw('CURRENT_TIMESTAMP on update CURRENT_TIMESTAMP'));
             $table->foreign('roles_id')->references('id')->on('roles')->onCascade('delete');
+            $table->foreign('groups_id')->references('id')->on('groups')->onCascade('delete');
         });
     }
 

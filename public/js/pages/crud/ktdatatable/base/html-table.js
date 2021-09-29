@@ -107,2088 +107,181 @@
       // Class definition
 
       var KTDatatableHtmlTableDemo = function () {
+
         // Private functions
+      
         // demo initializer
-        var superAdminHome = function superAdminHome() {
-          var datatable = $('#super_admin_home').KTDatatable({
-            data: {
-              saveState: {
-                cookie: false
-              }
-            }, rows: {
-              autoHide: false
-            },
-            layout: {
-              scroll: true,
-              customScrollbar: false
-            },
-            columns: [{
-              field: '#',
-              title: '#'
-            }, {
-              field: 'Imported At Formatted',
-              title: 'Imported At Formatted'
-            }, {
-              field: 'Imported Time Formatted',
-              title: 'Imported Time Formatted'
-            }, {
-              field: 'Imported By Formatted',
-              title: 'Imported By Formatted'
-            }, {
-              field: 'PrO',
-              title: 'PrO'
-            }, {
-              field: 'SKU Name',
-              title: 'SKU Name'
-            }, {
-              field: 'Comment',
-              title: 'Comment'
-            }, {
-              field: 'Seq No',
-              title: 'Seq No'
-            }, {
-              field: 'Status',
-              title: 'Status'
-            }]
-          });
-          $('#super_admin_home_search_query').on('input', function () {
-            datatable.search($(this).val().toLowerCase(), 'PrO');
-          });
-        };
+        // var groupByTable = function groupByTable() {
+        //   var dataJSONArray = JSON.parse(
+        //     '[{"RecordID":1,"Nama":"Grub 1","NIP":"12345523455123","Instansi":"BADAN RISET DAN INOVASI NASIONAL","Status":1,"Type":3,"Orders":[{"Jabatan":"Andika Purnomo","Periode":"817161514"},{"Jabatan":"Arjuna Weda","Periode":"918178374"},{"Jabatan":"Arlambang Pambudie","Periode":"12312311"},{"Jabatan":"Lala Cyanticka","Periode":"9181716154"}]},\n' +
+        //     '{"RecordID":2,"Nama":"Grub 2","NIP":"12312312312","Instansi":"BADAN RISET DAN INOVASI NASIONAL","Status":3,"Type":3,"Orders":[{"Jabatan":"Ariel Sibolutanggang","Pangkat":"IV/c","Periode":"2021/2022","NoPertek":"456789056788","TanggalPertek":"3/5/2021"},{}]},\n' +
+        //     '{"RecordID":3,"Nama":"Grub 3","NIP":"12312312","Instansi":"BADAN RISET DAN INOVASI NASIONAL","Status":4,"Type":4,"Orders":[{"Jabatan":"Arsyaf Albuquerque","Pangkat":"IV/c","Periode":"2021/2022","NoPertek":"92827625242425","TanggalPertek":"3/5/2021"},{}]},\n' +
+        //     '{"RecordID":345,"Nama":"Grub 4","NIP":"1231231231231","Instansi":"BADAN RISET DAN INOVASI NASIONAL","Status":2,"Type":3,"Orders":[{"Jabatan":"Hendrawan Susilo Adi","Pangkat":"IV/c","Periode":"2021/2022","NoPertek":"14124121312","TanggalPertek":"3/5/2021"},{}]},\n' +
+        //     '{"RecordID":350,"Nama":"Grub 5","NIP":"345345345345","Instansi":"BADAN RISET DAN INOVASI NASIONAL","Status":3,"Type":3,"Orders":[{"Jabatan":"Ramos Raditya Anaki","Pangkat":"IV/c","Periode":"2021/2022","NoPertek":"45678945678","TanggalPertek":"3/5/2021"},{}]}]');
+      
+        //   var datatable = $('.groupByTable').KTDatatable({
+        //     // datasource definition
+        //     data: {
+        //       type: 'local',
+        //       source: dataJSONArray,
+        //       pageSize: 10, // display 20 records per page
+        //     },
+        //     // data: {
+        //     //   saveState: {
+        //     //     cookie: false
+        //     //   }
+        //     // },
+        //     // layout definition
+        //     layout: {
+        //       scroll: false,
+        //       height: null,
+        //       footer: false,
+        //     },
+      
+        //     sortable: true,
+      
+        //     filterable: false,
+      
+        //     pagination: true,
+      
+        //     detail: {
+        //       title: 'Load sub table',
+        //       content: subTableInit,
+        //     },
+      
+        //     search: {
+        //       input: $('#kt_datatable_search_query'),
+        //       key: 'generalSearch'
+        //     },
+      
+        //     // columns definition
+        //     columns: [
+        //       {
+        //         field: 'RecordID',
+        //         title: '',
+        //         sortable: false,
+        //         width: 30,
+        //         textAlign: 'center',
+        //       }, {
+        //         field: 'Nama',
+        //         title: 'Grub',
+        //         width: 200,
+      
+        //       }, {
+        //         field: '',
+        //         title: '',
+        //       }, {
+        //         field: '',
+        //         title: '',
+        //       }, {
+        //         field: 'Status',
+        //         title: '',
+        //         Align:'right',
+        //         template: function(row) {
+        //           var status = {
+        //             1: {'title': 'JF Analis SDMA Muda', 'class': 'label-primary'},
+        //             2: {'title': 'Pengelola Lainnya', 'class': ' label-danger'},
+        //             3: {'title': 'JF Analis SDMA Pertama ', 'class': ' label-success'},
+        //             4: {'title': 'JF Analis SDMA Terampil', 'class': ' label-info'},
+        //             5: {'title': 'Warning', 'class': ' label-warning'},
+        //           };
+        //           return '<span class="label ' + status[row.Status].class + ' label-inline label-pill">' + status[row.Status].title + '</span>';
+        //         },
+        //       },  {
+        //         field: '',
+        //         title: '',
+        //         autoHide: false,
+        //         // callback function support for column rendering
+        //         template: function(row) {
+        //           var status = {
+        //             1: {'title': 'Online', 'state': 'danger'},
+        //             2: {'title': 'Retail', 'state': 'primary'},
+        //             3: {'title': 'Telah di Verifikasi', 'state': 'success'},
+        //           };
+        //           return '<span class="label label-' + status[row.Type].state + ' label-dot"></span>&nbsp;<span class="font-weight-bold text-' + status[row.Type].state +
+        //             '">' +
+        //             status[row.Type].title + '</span>';
+        //         },
+        //       }, {
+        //         field: 'Actions',
+        //         title: '',
+        //         sortable: false,
+        //         textAlign:'right',
+        //         overflow: 'visible',
+        //         template: function() {
+        //           return '\
+        //           <a href="#" class="btn btn-outline-success">\
+        //           <i class="flaticon2-poll-symbol"></i> Distribusikan Ke Grub\
+        //         </a>\
+        //                        \
+        //                      \
+        //                     ';
+        //         },
+        //       }],
+        //   });
+      
+        //   $('#kt_datatable_search_status').on('change', function() {
+        //     datatable.search($(this).val().toLowerCase(), 'Status');
+        //   });
+      
+        //   $('#kt_datatable_search_type').on('change', function() {
+        //     datatable.search($(this).val().toLowerCase(), 'Type');
+        //   });
+      
+        //   $('#kt_datatable_search_status, #kt_datatable_search_type').selectpicker();
+        // };
 
-        var superAdminReport = function superAdminReport() {
-          var datatable = $('#super_admin_report').KTDatatable({
-            data: {
-              saveState: {
-                cookie: false
-              }
-            }, rows: {
-              autoHide: false
-            },
-            layout: {
-              scroll: true,
-              customScrollbar: false
-            },
-            columns: [{
-              field: '#',
-              title: '#'
-            }, {
-              field: 'Imported At Formatted',
-              title: 'Imported At Formatted'
-            }, {
-              field: 'Imported Time Formatted',
-              title: 'Imported Time Formatted'
-            }, {
-              field: 'Imported By Formatted',
-              title: 'Imported By Formatted'
-            }, {
-              field: 'PrO',
-              title: 'PrO'
-            }, {
-              field: 'SKU Name',
-              title: 'SKU Name'
-            }, {
-              field: 'Comment',
-              title: 'Comment'
-            }, {
-              field: 'Seq No',
-              title: 'Seq No'
-            }, {
-              field: 'Status',
-              title: 'Status'
-            }]
-          });
-          $('#super_admin_report_search_query').on('input', function () {
-            datatable.search($(this).val().toLowerCase(), 'PrO');
-          });
-        };
-
-        var superAdminUserManagement = function superAdminUserManagement() {
-          var datatable = $('#super_admin_user_management').KTDatatable({
-            data: {
-              saveState: {
-                cookie: false
-              }
-            }, rows: {
-              autoHide: false
-            },
-            layout: {
-              scroll: true,
-              customScrollbar: false,
-
-            },
-            columns: [{
-              field: '#',
-              title: '#'
-            }, {
-              field: 'Name',
-              title: 'Name'
-            }, {
-              field: 'Email',
-              title: 'Email'
-            }, {
-              field: 'Role',
-              title: 'Role',
-              template: function (row) {
-                var role = {
-                  1: { 'roleName': 'PIC' },
-                  2: { 'roleName': 'PPIC' },
-                  3: { 'roleName': 'Warehouse' },
-                  4: { 'roleName': 'Production - Icing' },
-                  5: { 'roleName': 'Production - Batching 1' },
-                  6: { 'roleName': 'Production - Batching 2' },
-                  7: { 'roleName': 'Filling' }
-                };
-                return role[row.Role].roleName;
-              },
-            }, {
-              field: 'Action',
-              title: 'Action',
-              sortable: false,
-              width: 200
-            }]
-          });
-          $('#super_admin_user_management_search_role').on('change', function () {
-            datatable.search($(this).val().toLowerCase(), 'Role');
-          });
-          $('#super_admin_user_management_search_query').on('input', function () {
-            datatable.search($(this).val().toLowerCase(), 'Email');
-          });
-          $('#super_admin_user_management_search_role').selectpicker();
-        };
-        var superAdminSettingProductDefinition = function superAdminSettingProductDefinition() {
-          var datatable = $('#super_admin_setting_product_definition').KTDatatable({
-            data: {
-              saveState: {
-                cookie: false
-              }
-            }, rows: {
-              autoHide: false
-            },
-            layout: {
-              scroll: true,
-              customScrollbar: false
-            },
-            columns: [{
-              field: '#',
-              title: '#'
-            }, {
-              field: 'Product ID',
-              title: 'Product ID',
-            }, {
-              field: 'SKU Name',
-              title: 'SKU Name',
-            }, {
-              field: 'Notes',
-              title: 'Notes',
-            }, {
-              field: 'Action',
-              title: 'Action',
-              sortable: false,
-              width: 200
-            }]
-          });
-          $('#super_admin_setting_product_definition_search_query').on('input', function () {
-            datatable.search($(this).val().toLowerCase(), 'Product ID');
-          });
-        };
-
-        var superAdminSettingProductDefinitionDetail = function superAdminSettingProductDefinitionDetail() {
-          var datatable = $('#super_admin_setting_product_definition_detail').KTDatatable({
-            data: {
-              saveState: {
-                cookie: false
-              }
-            }, rows: {
-              autoHide: false
-            },
-            layout: {
-              scroll: true,
-              customScrollbar: false
-            },
-            columns: [{
-              field: '#',
-              title: '#'
-            }, {
-              field: 'Comment',
-              title: 'Comment',
-            }, {
-              field: 'Action',
-              title: 'Action',
-              sortable: false,
-              width: 200
-            }]
-          });
-          $('#super_admin_setting_product_definition_detail_search_query').on('input', function () {
-            datatable.search($(this).val().toLowerCase(), 'Comment');
-          });
-        };
-
-        var superAdminSettingProductDefinitionDetailDetail = function superAdminSettingProductDefinitionDetailDetail() {
-          var datatable = $('#super_admin_setting_product_definition_detail_detail').KTDatatable({
-            data: {
-              saveState: {
-                cookie: false
-              }
-            }, rows: {
-              autoHide: false
-            },
-            layout: {
-              scroll: true,
-              customScrollbar: false
-            },
-            columns: [{
-              field: '#',
-              title: '#'
-            }, {
-              field: 'Item ID',
-              title: 'Item ID',
-            }, {
-              field: 'Item Desc',
-              title: 'Item Desc',
-            }, {
-              field: 'Qty',
-              title: 'Qty',
-            }, {
-              field: 'UoM',
-              title: 'UoM',
-            }, {
-              field: 'Action',
-              title: 'Action',
-              sortable: false,
-              width: 200
-            }]
-          });
-          $('#super_admin_setting_product_definition_detail_detail_search_query').on('input', function () {
-            datatable.search($(this).val().toLowerCase(), 'Item ID');
-          });
-        };
-
-        var superAdminSettingItemDefinition = function superAdminSettingItemDefinition() {
-          var datatable = $('#super_admin_setting_item_definition').KTDatatable({
-            data: {
-              saveState: {
-                cookie: false
-              }
-            }, rows: {
-              autoHide: false
-            },
-            layout: {
-              scroll: true,
-              customScrollbar: false
-            },
-            columns: [{
-              field: '#',
-              title: '#'
-            }, {
-              field: 'Item ID',
-              title: 'Item ID',
-            }, {
-              field: 'Item Desc',
-              title: 'Item Desc',
-            }, {
-              field: 'Notes',
-              title: 'Notes',
-            }, {
-              field: 'Action',
-              title: 'Action',
-              sortable: false,
-              width: 200
-            }]
-          });
-          $('#super_admin_setting_item_definition_search_query').on('input', function () {
-            datatable.search($(this).val().toLowerCase(), 'Item ID');
-          });
-        };
-
-        var superAdminSettingSupplierDefinition = function superAdminSettingSupplierDefinition() {
-          var datatable = $('#super_admin_setting_supplier_definition').KTDatatable({
-            data: {
-              saveState: {
-                cookie: false
-              }
-            }, rows: {
-              autoHide: false
-            },
-            layout: {
-              scroll: true,
-              customScrollbar: false
-            },
-            columns: [{
-              field: '#',
-              title: '#'
-            }, {
-              field: 'Type',
-              title: 'Type',
-            }, {
-              field: 'Supplier ID',
-              title: 'Supplier ID',
-            }, {
-              field: 'Supplier Desc',
-              title: 'Supplier Desc',
-            }, {
-              field: 'Action',
-              title: 'Action',
-              sortable: false,
-              width: 200
-            }]
-          });
-          $('#super_admin_setting_supplier_definition_search_query').on('input', function () {
-            datatable.search($(this).val().toLowerCase(), 'Supplier ID');
-          });
-          $('#super_admin_setting_supplier_definition_search_type').on('change', function () {
-            datatable.search($(this).val().toLowerCase(), 'Type');
-          });
-          $('#super_admin_setting_supplier_definition_search_type').selectpicker();
-        };
-
-        var superAdminSettingShift = function superAdminSettingShift() {
-          var datatable = $('#super_admin_setting_shift').KTDatatable({
-            data: {
-              saveState: {
-                cookie: false
-              }
-            }, rows: {
-              autoHide: false
-            },
-            layout: {
-              scroll: true,
-              customScrollbar: false
-            },
-            columns: [{
-              field: '#',
-              title: '#'
-            }, {
-              field: 'Shift',
-              title: 'Shift',
-            }]
-          });
-        }
-
-        var superAdminSettingOperType = function superAdminSettingOperType() {
-          var datatable = $('#super_admin_setting_oper_type').KTDatatable({
-            data: {
-              saveState: {
-                cookie: false
-              }
-            }, rows: {
-              autoHide: false
-            },
-            layout: {
-              scroll: true,
-              customScrollbar: false
-            },
-            columns: [{
-              field: '#',
-              title: '#'
-            }, {
-              field: 'Oper Type',
-              title: 'Oper Type',
-            }]
-          });
-        };
-
-        var superAdminSettingRole = function superAdminSettingRole() {
-          var datatable = $('#super_admin_setting_role').KTDatatable({
-            data: {
-              saveState: {
-                cookie: false
-              }
-            }, rows: {
-              autoHide: false
-            },
-            layout: {
-              scroll: true,
-              customScrollbar: false
-            },
-            columns: [{
-              field: '#',
-              title: '#'
-            }, {
-              field: 'Role',
-              title: 'Role',
-            }]
-          });
-        };
-
-// PPIC 
-        var ppicAvailablePrO = function ppicAvailablePrO() {
-          var datatable = $('#ppic_available_pro').KTDatatable({
-            data: {
-              saveState: {
-                cookie: false
-              }
-            }, rows: {
-              autoHide: false
-            },
-            layout: {
-              scroll: true,
-              customScrollbar: false
-            },
-            columns: [{
-              field: '#',
-              title: '#'
-            }, {
-              field: 'PrO',
-              title: 'PrO',
-            }, {
-              field: 'SKU Name',
-              title: 'SKU Name',
-            }, {
-              field: 'Comment',
-              title: 'Comment',
-            }, {
-              field: 'Seq Total',
-              title: 'Seq Total',
-            }, {
-              field: 'Action',
-              title: 'Action',
-              sortable: false,
-              width: 200
-            }]
-          });
-        };
-
-        var ppicIcingSugarRequest = function ppicIcingSugarRequest() {
-          var datatable = $('#ppic_icing_request').KTDatatable({
-            data: {
-              saveState: {
-                cookie: false
-              }
-            }, rows: {
-              autoHide: false
-            },
-            columns: [{
-              field: '#',
-              title: '#'
-            }, {
-              field: 'PO Target',
-              title: 'PO Target',
-            }, {
-              field: 'Weight',
-              title: 'Weight',
-            }, {
-              field: 'Action',
-              title: 'Action',
-              sortable: false,
-              width: 200
-            }]
-          });
-        }
-
-        var ppicBlending = function ppicBlending() {
-          var datatable = $('#ppic_blending').KTDatatable({
-            data: {
-              saveState: {
-                cookie: false
-              }
-            }, rows: {
-              autoHide: false
-            },
-            columns: [{
-              field: '#',
-              title: '#'
-            }, {
-              field: 'PrO',
-              title: 'PrO'
-            }, {
-              field: 'SKU Name',
-              title: 'SKU Name',
-            }, {
-              field: 'Status',
-              title: 'Status',
-            }, {
-              field: 'Seq No',
-              title: 'Seq No',
-            }]
-          });
-        }
-
-        var ppicReportGeneral = function ppicReportGeneral() {
-          var datatable = $('#ppic_report_general').KTDatatable({
-            data: {
-              saveState: {
-                cookie: false
-              }
-            }, 
-            rows: {
-              autoHide: false
-            },
-            layout: {
-              scroll: true,
-              customScrollbar: false
-            },
-            columns: [{
-              field: '#',
-              title: '#'
-            }, {
-              field: 'Imported At Formatted',
-              title: 'Imported At Formatted',
-            }, {
-              field: 'Imported Time Formatted',
-              title: 'Imported Time Formatted',
-            }, {
-              field: 'Imported By Formatted',
-              title: 'Imported By Formatted',
-            }, {
-              field: 'PrO',
-              title: 'PrO'
-            }, {
-              field: 'SKU Name',
-              title: 'SKU Name'
-            }, {
-              field: 'Comment',
-              title: 'Comment'
-            }, {
-              field: 'Seq No',
-              title: 'Seq No'
-            }, {
-              field: 'Status',
-              title: 'Status'
-            }]
-          });
-          $('#ppic_report_general_search_query').on('input', function () {
-            datatable.search($(this).val().toLowerCase(), 'PrO');
-          });
-        };
-
-        var ppicReportProduction = function ppicReportProduction() {
-          var datatable = $('#ppic_report_production').KTDatatable({
-            data: {
-              saveState: {
-                cookie: false
-              }
-            }, 
-            rows: {
-              autoHide: false
-            },
-            layout: {
-              scroll: true,
-              customScrollbar: false
-            },
-            columns: [{
-              field: '#',
-              title: '#'
-            }, {
-              field: 'PrO',
-              title: 'PrO',
-            }, {
-              field: 'Operation',
-              title: 'Operation',
-            }, {
-              field: 'Equipment',
-              title: 'Equipment',
-            }, {
-              field: 'Seq No',
-              title: 'Seq No'
-            }, {
-              field: 'Item ID',
-              title: 'Item ID'
-            }, {
-              field: 'Item Desc',
-              title: 'Item Desc'
-            }, {
-              field: 'Batch No',
-              title: 'Batch No'
-            }, {
-              field: 'Sublot No',
-              title: 'Sublot No'
-            }, {
-              field: 'Qty',
-              title: 'Qty'
-            }, {
-              field: 'UoM',
-              title: 'UoM'
-            }, {
-              field: 'Sent To SAP',
-              title: 'Sent To SAP'
-            }, {
-              field: 'Tumbler',
-              title: 'Tumbler'
-            }, {
-              field: 'RpM',
-              title: 'RpM'
-            }, {
-              field: 'Duration In Second',
-              title: 'Duration In Second'
-            }, {
-              field: 'User',
-              title: 'User'
-            }, {
-              field: 'Last Produced At Formatted',
-              title: 'Last Produced At Formatted'
-            }, {
-              field: 'Last Produced Time Formatted',
-              title: 'Last Produced Time Formatted'
-            }]
-          });
-          $('#ppic_report_production_search_query').on('input', function () {
-            datatable.search($(this).val().toLowerCase(), 'PrO');
-          });
-        };
-
-        var ppicReportConsumption = function ppicReportConsumption() {
-          var datatable = $('#ppic_report_consumption').KTDatatable({
-            data: {
-              saveState: {
-                cookie: false
-              }
-            }, 
-            rows: {
-              autoHide: false
-            },
-            layout: {
-              scroll: true,
-              customScrollbar: false
-            },
-            columns: [{
-              field: '#',
-              title: '#'
-            }, {
-              field: 'PrO',
-              title: 'PrO',
-            }, {
-              field: 'Operation',
-              title: 'Operation',
-            }, {
-              field: 'Equipment',
-              title: 'Equipment',
-            }, {
-              field: 'Seq No',
-              title: 'Seq No'
-            }, {
-              field: 'Item ID',
-              title: 'Item ID'
-            }, {
-              field: 'Item Desc',
-              title: 'Item Desc'
-            }, {
-              field: 'Batch No',
-              title: 'Batch No'
-            }, {
-              field: 'Sublot No',
-              title: 'Sublot No'
-            }, {
-              field: 'Qty',
-              title: 'Qty'
-            }, {
-              field: 'UoM',
-              title: 'UoM'
-            }, {
-              field: 'Sent To SAP',
-              title: 'Sent To SAP'
-            }, {
-              field: 'User',
-              title: 'User'
-            }, {
-              field: 'Consumed At Formatted',
-              title: 'Consumed At Formatted'
-            }, {
-              field: 'Consumed Time Formatted',
-              title: 'Consumed Time Formatted'
-            }]
-          });
-          $('#ppic_report_consumption_search_query').on('input', function () {
-            datatable.search($(this).val().toLowerCase(), 'PrO');
-          });
-        };
-
-// Warehouse
-        var warehouseAvailablePrO = function warehouseAvailablePrO() {
-          var datatable = $('#warehouse_available_pro').KTDatatable({
-            data: {
-              saveState: {
-                cookie: false
-              }
-            }, rows: {
-              autoHide: false
-            },
-            layout: {
-              scroll: true,
-              customScrollbar: false
-            },
-            columns: [{
-              field: '#',
-              title: '#'
-            }, {
-              field: 'PrO',
-              title: 'PrO',
-            }, {
-              field: 'SKU Name',
-              title: 'SKU Name',
-            }, {
-              field: 'Comment',
-              title: 'Comment',
-            }, {
-              field: 'Seq Total',
-              title: 'Seq Total',
-            }, {
-              field: 'Action',
-              title: 'Action',
-              sortable: false,
-              width: 200
-            }]
-          });
-        };
-
-        var warehouseIcingSugar = function warehouseIcingSugar() {
-          var datatable = $('#warehouse_icing_sugar').KTDatatable({
-            pagination: false,
-            data: {
-              saveState: {
-                cookie: false
-              }
-            }, rows: {
-              autoHide: false
-            },
-            layout: {
-              scroll: true,
-              customScrollbar: false
-            },
-            columns: [{
-              field: 'Received',
-              title: 'Received'
-            }, {
-              field: 'Icing Sugar Batch No',
-              title: 'Icing Sugar Batch No'
-            }, {
-              field: 'Refined Sugar Batch No ',
-              title: 'Refined Sugar Batch No '
-            }, {
-              field: 'Dextrin Batch No',
-              title: 'Dextrin Batch No'
-            }, {
-              field: 'Multiwall Batch No',
-              title: 'Multiwall Batch No'
-            }, {
-              field: 'Total',
-              title: 'Total'
-            }, {
-              field: 'Action',
-              title: 'Action',
-              sortable: false,
-              width: 200
-            }]
-          });
-          $('#warehouse_icing_sugar_search_query').on('input', function () {
-            datatable.search($(this).val().toLowerCase(), 'Icing Sugar Batch No');
-          });
-        };
-
-        var warehouseBeritaAcara = function warehouseBeritaAcara() {
-          var datatable = $('#warehouse_berita_acara').KTDatatable({
-            data: {
-              saveState: {
-                cookie: false
-              }
-            }, rows: {
-              autoHide: false
-            },
-            layout: {
-              scroll: true,
-              customScrollbar: false
-            },
-            columns: [{
-              field: '#',
-              title: '#'
-            }, {
-              field: 'Hold At Formatted',
-              title: 'Hold At Formatted'
-            }, {
-              field: 'Hold Time Formatted',
-              title: 'Hold Time Formatted'
-            }, {
-              field: 'PrO',
-              title: 'PrO'
-            }, {
-              field: 'Seq No',
-              title: 'Seq No'
-            }, {
-              field: 'Item ID',
-              title: 'Item ID'
-            }, {
-              field: 'Item Desc',
-              title: 'Item Desc'
-            }, {
-              field: 'Sublot No',
-              title: 'Sublot No'
-            }, {
-              field: 'Description',
-              title: 'Description'
-            }, {
-              field: 'Action',
-              title: 'Action',
-              sortable: false,
-              width: 200
-            }]
-          });
-          $('#warehouse_berita_acara_search_query').on('input', function () {
-            datatable.search($(this).val().toLowerCase(), 'PrO');
-          });
-        };
-
-        var warehouseIncomingMaterialMajorMinorItemHold = function warehouseIncomingMaterialMajorMinorItemHold() {
-          var datatable = $('#warehouse_incoming_material_major_minor_item_hold').KTDatatable({
-            pagination: false,
-            data: {
-              saveState: {
-                cookie: false
-              }
-            }, rows: {
-              autoHide: false
-            },
-            layout: {
-              scroll: true,
-              customScrollbar: false
-            },
-            columns: [{
-              field: 'Sublot No',
-              title: 'Sublot No'
-            }, {
-              field: 'Problem Desc',
-              title: 'Problem Desc',
-              sortable: false,
-              width: 200
-            }, {
-              field: 'Item ID',
-              title: 'Item ID'
-            }, {
-              field: 'Item Desc',
-              title: 'Item Desc'
-            }, {
-              field: 'Quality',
-              title: 'Quality'
-            }, {
-              field: 'Qty',
-              title: 'Qty'
-            }, {
-              field: 'UoM',
-              title: 'UoM'
-            }]
-          });
-          $('#warehouse_incoming_material_major_minor_item_hold_search_query').on('input', function () {
-            datatable.search($(this).val().toLowerCase(), 'Sublot No');
-          });
-        };
-
-        var warehouseStockListMajorMinorItem = function warehouseStockListMajorMinorItem() {
-          var datatable = $('#warehouse_stock_list_major_minor_item').KTDatatable({
-            data: {
-              saveState: {
-                cookie: false
-              }
-            }, rows: {
-              autoHide: false
-            },
-            layout: {
-              scroll: true,
-              customScrollbar: false
-            },
-            columns: [{
-              field: '#',
-              title: '#'
-            }, {
-              field: 'PrO',
-              title: 'PrO'
-            }, {
-              field: 'SKU Name',
-              title: 'SKU Name'
-            }, {
-              field: 'Comment',
-              title: 'Comment'
-            }, {
-              field: 'Seq No',
-              title: 'Seq No'
-            }, {
-              field: 'Action',
-              title: 'Action',
-              sortable: false,
-              width: 200
-            }]
-          });
-          $('#warehouse_stock_list_major_minor_item_search_query').on('input', function () {
-            datatable.search($(this).val().toLowerCase(), 'PrO');
-          });
-        };
-
-        var warehouseStockListMajorMinorItemDetail = function warehouseStockListMajorMinorItemDetail() {
-          var datatable = $('#warehouse_stock_list_major_minor_item_detail').KTDatatable({
-            data: {
-              saveState: {
-                cookie: false
-              }
-            }, rows: {
-              autoHide: false
-            },
-            layout: {
-              scroll: true,
-              customScrollbar: false
-            },
-            columns: [{
-              field: '#',
-              title: '#'
-            }, {
-              field: 'Item ID',
-              title: 'Item ID'
-            }, {
-              field: 'Item Desc',
-              title: 'Item Desc'
-            }, {
-              field: 'Lot No',
-              title: 'Lot No'
-            }, {
-              field: 'Sublot No',
-              title: 'Sublot No'
-            }, {
-              field: 'Qty',
-              title: 'Qty'
-            }, {
-              field: 'UoM',
-              title: 'UoM'
-            }, {
-              field: 'Quality',
-              title: 'Quality'
-            }, {
-              field: 'Received At Formatted',
-              title: 'Received At Formatted'
-            }, {
-              field: 'Received Time Formatted',
-              title: 'Received Time Formatted'
-            }, {
-              field: 'Expired At Formatted',
-              title: 'Expired At Formatted'
-            }, {
-              field: 'Expired Time Formatted', 
-              title: 'Expired Time Formatted'
-            }]
-          });
-          $('#warehouse_stock_list_major_minor_item_detail_search_query').on('input', function () {
-            datatable.search($(this).val().toLowerCase(), 'Sublot No');
-          });
-        };
-
-        var warehouseStockListOther = function warehouseStockListOther() {
-          var datatable = $('#warehouse_stock_list_other').KTDatatable({
-            data: {
-              saveState: {
-                cookie: false
-              }
-            }, rows: {
-              autoHide: false
-            },
-            layout: {
-              scroll: true,
-              customScrollbar: false
-            },
-            columns: [{
-              field: '#',
-              title: '#'
-            }, {
-              field: 'Item ID',
-              title: 'Item ID'
-            }, {
-              field: 'Item Desc',
-              title: 'Item Desc'
-            }, {
-              field: 'Batch No',
-              title: 'Batch No'
-            }, {
-              field: 'Supplier',
-              title: 'Supplier'
-            }, {
-              field: 'Qty',
-              title: 'Qty'
-            }, {
-              field: 'UoM',
-              title: 'UoM'
-            }, {
-              field: 'Actual Weight',
-              title: 'Actual Weight'
-            }, {
-              field: 'Received At Formatted',
-              title: 'Received At Formatted'
-            }, {
-              field: 'Received Time Formatted',
-              title: 'Received Time Formatted'
-            }, {
-              field: 'Expired At Formatted',
-              title: 'Expired At Formatted'
-            }, {
-              field: 'Expired Time Formatted', 
-              title: 'Expired Time Formatted'
-            }, {
-              field: 'Action',
-              title: 'Action',
-              sortable: false,
-              width: 200
-            }]
-          });
-          $('#warehouse_stock_list_other_search_query').on('input', function () {
-            datatable.search($(this).val().toLowerCase(), 'Batch No');
-          });
-        };
-
-        var warehouseStockListOtherDetail = function warehouseStockListOtherDetail() {
-          var datatable = $('#warehouse_stock_list_other_detail').KTDatatable({
-            data: {
-              saveState: {
-                cookie: false
-              }
-            }, rows: {
-              autoHide: false
-            },
-            layout: {
-              scroll: true,
-              customScrollbar: false
-            },
-            columns: [{
-              field: '#',
-              title: '#'
-            }, {
-              field: 'SSCC No',
-              title: 'SSCC No'
-            }, {
-              field: 'Qty',
-              title: 'Qty'
-            }, {
-              field: 'UoM',
-              title: 'UoM'
-            }, {
-              field: 'Grade',
-              title: 'Grade'
-            }]
-          });
-          $('#warehouse_stock_list_other_detail_search_query').on('input', function () {
-            datatable.search($(this).val().toLowerCase(), 'SSCC No');
-          });
-        };
-
-        var warehouseReportMajorMinorItem = function warehouseReportMajorMinorItem() {
-          var datatable = $('#warehouse_report_major_minor_item').KTDatatable({
-            data: {
-              saveState: {
-                cookie: false
-              }
-            }, rows: {
-              autoHide: false
-            },
-            layout: {
-              scroll: true,
-              customScrollbar: false
-            },
-            columns: [{
-              field: '#',
-              title: '#'
-            }, {
-              field: 'PrO',
-              title: 'PrO'
-            }, {
-              field: 'SKU Name',
-              title: 'SKU Name'
-            }, {
-              field: 'Comment',
-              title: 'Comment'
-            }, {
-              field: 'Seq No',
-              title: 'Seq No'
-            }, {
-              field: 'Action',
-              title: 'Action',
-              sortable: false,
-              width: 200
-            }]
-          });
-          $('#warehouse_report_major_minor_item_search_query').on('input', function () {
-            datatable.search($(this).val().toLowerCase(), 'PrO');
-          });
-        };
-
-        var warehouseReportMajorMinorItemDetail = function warehouseReportMajorMinorItemDetail() {
-          var datatable = $('#warehouse_report_major_minor_item_detail').KTDatatable({
-            data: {
-              saveState: {
-                cookie: false
-              }
-            }, rows: {
-              autoHide: false
-            },
-            layout: {
-              scroll: true,
-              customScrollbar: false
-            },
-            columns: [{
-              field: '#',
-              title: '#'
-            }, {
-              field: 'Item ID',
-              title: 'Item ID'
-            }, {
-              field: 'Item Desc',
-              title: 'Item Desc'
-            }, {
-              field: 'Lot No',
-              title: 'Lot No'
-            }, {
-              field: 'Sublot No',
-              title: 'Sublot No'
-            }, {
-              field: 'Qty',
-              title: 'Qty'
-            }, {
-              field: 'UoM',
-              title: 'UoM'
-            }, {
-              field: 'Quality',
-              title: 'Quality'
-            }, {
-              field: 'Received At Formatted',
-              title: 'Received At Formatted'
-            }, {
-              field: 'Received Time Formatted',
-              title: 'Received Time Formatted'
-            }, {
-              field: 'Expired At Formatted',
-              title: 'Expired At Formatted'
-            }, {
-              field: 'Expired Time Formatted', 
-              title: 'Expired Time Formatted'
-            }]
-          });
-          $('#warehouse_report_major_minor_item_detail_search_query').on('input', function () {
-            datatable.search($(this).val().toLowerCase(), 'Sublot No');
-          });
-        };
-
-        var warehouseReportOther = function warehouseReportOther() {
-          var datatable = $('#warehouse_report_other').KTDatatable({
-            data: {
-              saveState: {
-                cookie: false
-              }
-            }, rows: {
-              autoHide: false
-            },
-            layout: {
-              scroll: true,
-              customScrollbar: false
-            },
-            columns: [{
-              field: '#',
-              title: '#'
-            }, {
-              field: 'Item ID',
-              title: 'Item ID'
-            }, {
-              field: 'Item Desc',
-              title: 'Item Desc'
-            }, {
-              field: 'Batch No',
-              title: 'Batch No'
-            }, {
-              field: 'Supplier',
-              title: 'Supplier'
-            }, {
-              field: 'Qty',
-              title: 'Qty'
-            }, {
-              field: 'UoM',
-              title: 'UoM'
-            }, {
-              field: 'Actual Weight',
-              title: 'Actual Weight'
-            }, {
-              field: 'Received At Formatted',
-              title: 'Received At Formatted'
-            }, {
-              field: 'Received Time Formatted',
-              title: 'Received Time Formatted'
-            }, {
-              field: 'Expired At Formatted', 
-              title: 'Expired At Formatted'
-            }, {
-              field: 'Expired Time Formatted', 
-              title: 'Expired Time Formatted'
-            }, {
-              field: 'Action',
-              title: 'Action',
-              sortable: false,
-              width: 200
-            }]
-          });
-          $('#warehouse_report_other_search_query').on('input', function () {
-            datatable.search($(this).val().toLowerCase(), 'Batch No');
-          });
-        };
-
-        var warehouseReportOtherDetailList = function warehouseReportOtherDetailList() {
-          var datatable = $('#warehouse_report_other_detail_list').KTDatatable({
-            data: {
-              saveState: {
-                cookie: false
-              }
-            }, rows: {
-              autoHide: false
-            },
-            layout: {
-              scroll: true,
-              customScrollbar: false
-            },
-            columns: [{
-              field: '#',
-              title: '#'
-            }, {
-              field: 'SSCC No',
-              title: 'SSCC No'
-            }, {
-              field: 'Qty',
-              title: 'Qty'
-            }, {
-              field: 'UoM',
-              title: 'UoM'
-            }, {
-              field: 'Grade',
-              title: 'Grade'
-            }]
-          });
-          $('#warehouse_report_other_detail_list_search_query').on('input', function () {
-            datatable.search($(this).val().toLowerCase(), 'SSCC No');
-          });
-        };
-
-        var warehouseReportOtherDetailUsage = function warehouseReportOtherDetailUsage() {
-          var datatable = $('#warehouse_report_other_detail_usage').KTDatatable({
-            data: {
-              saveState: {
-                cookie: false
-              }
-            }, rows: {
-              autoHide: false
-            },
-            layout: {
-              scroll: true,
-              customScrollbar: false
-            },
-            columns: [{
-              field: '#',
-              title: '#'
-            }, {
-              field: 'PrO',
-              title: 'PrO'
-            }, {
-              field: 'Seq No',
-              title: 'Seq No'
-            }, {
-              field: 'Lot No',
-              title: 'Lot No'
-            }, {
-              field: 'Sublot No',
-              title: 'Sublot No'
-            }, {
-              field: 'Qty',
-              title: 'Qty'
-            }, {
-              field: 'UoM',
-              title: 'UoM'
-            }, {
-              field: 'Actual Weight',
-              title: 'Actual Weight'
-            }]
-          });
-          $('#warehouse_report_other_detail_usage_search_query').on('input', function () {
-            datatable.search($(this).val().toLowerCase(), 'PrO');
-          });
-        };
-
-        var warehouseDeliveryNoteProduction = function warehouseDeliveryNoteProduction() {
-          var datatable = $('#warehouse_delivery_note_production').KTDatatable({
-            data: {
-              saveState: {
-                cookie: false
-              }
-            }, rows: {
-              autoHide: false
-            },
-            layout: {
-              scroll: true,
-              customScrollbar: false
-            },
-            columns: [{
-              field: '#',
-              title: '#'
-            }, {
-              field: 'PrO',
-              title: 'PrO'
-            }, {
-              field: 'SKU Name',
-              title: 'SKU Name'
-            }, {
-              field: 'Comment',
-              title: 'Comment'
-            }, {
-              field: 'Status',
-              title: 'Status'
-            }, {
-              field: 'Seq No',
-              title: 'Seq No'
-            }]
-          });
-        };
-
-        var warehouseDeliveryNoteIcingProductionDextrinStock = function warehouseDeliveryNoteIcingProductionDextrinStock() {
-          var datatable = $('#warehouse_delivery_note_production_dextrin_stock').KTDatatable({
-            data: {
-              saveState: {
-                cookie: false
-              }
-            }, rows: {
-              autoHide: false
-            },
-            layout: {
-              scroll: true,
-              customScrollbar: false
-            },
-            columns: [{
-              field: '#',
-              title: '#'
-            }, {
-              field: 'Batch No',
-              title: 'Batch No'
-            }, {
-              field: 'Item ID',
-              title: 'Item ID'
-            }, {
-              field: 'Item Desc',
-              title: 'Item Desc'
-            }, {
-              field: 'Weight',
-              title: 'Weight'
-            }]
-          });
-        };
-
-        var warehouseDeliveryNoteIcingProcessRefinedSugarStock = function warehouseDeliveryNoteIcingProcessRefinedSugarStock() {
-          var datatable = $('#warehouse_delivery_note_icing_process_refined_sugar_stock').KTDatatable({
-            data: {
-              saveState: {
-                cookie: false
-              }
-            }, rows: {
-              autoHide: false
-            },
-            layout: {
-              scroll: true,
-              customScrollbar: false
-            },
-            columns: [{
-              field: '#',
-              title: '#'
-            }, {
-              field: 'Batch No',
-              title: 'Batch No'
-            }, {
-              field: 'Item ID',
-              title: 'Item ID'
-            }, {
-              field: 'Item Desc',
-              title: 'Item Desc'
-            }, {
-              field: 'Weight',
-              title: 'Weight'
-            }]
-          });
-        };
-
-        var warehouseDeliveryNoteIcingProcessDextrinStock = function warehouseDeliveryNoteIcingProcessDextrinStock() {
-          var datatable = $('#warehouse_delivery_note_icing_process_dextrin_stock').KTDatatable({
-            data: {
-              saveState: {
-                cookie: false
-              }
-            }, rows: {
-              autoHide: false
-            },
-            layout: {
-              scroll: true,
-              customScrollbar: false
-            },
-            columns: [{
-              field: '#',
-              title: '#'
-            }, {
-              field: 'Batch No',
-              title: 'Batch No'
-            }, {
-              field: 'Item ID',
-              title: 'Item ID'
-            }, {
-              field: 'Item Desc',
-              title: 'Item Desc'
-            }, {
-              field: 'Weight',
-              title: 'Weight'
-            }]
-          });
-        };
-
-        var warehouseDeliveryNoteIcingProcessMultiwallStock = function warehouseDeliveryNoteIcingProcessMultiwallStock() {
-          var datatable = $('#warehouse_delivery_note_icing_process_multiwall_stock').KTDatatable({
-            data: {
-              saveState: {
-                cookie: false
-              }
-            }, rows: {
-              autoHide: false
-            },
-            layout: {
-              scroll: true,
-              customScrollbar: false
-            },
-            columns: [{
-              field: '#',
-              title: '#'
-            }, {
-              field: 'Batch No',
-              title: 'Batch No'
-            }, {
-              field: 'Item ID',
-              title: 'Item ID'
-            }, {
-              field: 'Item Desc',
-              title: 'Item Desc'
-            }, {
-              field: 'Piece',
-              title: 'Piece'
-            }]
-          });
-        };
-
-        var warehouseDeliveryNoteIcingProcessRequestStock = function warehouseDeliveryNoteIcingProcessRequestStock() {
-          var datatable = $('#warehouse_delivery_note_icing_process_request_stock').KTDatatable({
-            data: {
-              saveState: {
-                cookie: false
-              }
-            }, rows: {
-              autoHide: false
-            },
-            layout: {
-              scroll: true,
-              customScrollbar: false
-            },
-            columns: [{
-              field: '#',
-              title: '#'
-            }, {
-              field: 'Requested At Formatted',
-              title: 'Requested At Formatted'
-            }, {
-              field: 'PO Target',
-              title: 'PO Target'
-            }, {
-              field: 'Weight',
-              title: 'Weight'
-            }]
-          });
-        };
-
-        var warehouseDeliveryNotePackagingFillingStock = function warehouseDeliveryNotePackagingFillingStock() {
-          var datatable = $('#warehouse_delivery_note_packaging_filling_stock').KTDatatable({
-            data: {
-              saveState: {
-                cookie: false
-              }
-            }, rows: {
-              autoHide: false
-            },
-            layout: {
-              scroll: true,
-              customScrollbar: false
-            },
-            columns: [{
-              field: '#',
-              title: '#'
-            }, {
-              field: 'Batch No',
-              title: 'Batch No'
-            }, {
-              field: 'Item ID',
-              title: 'Item ID'
-            }, {
-              field: 'Item Desc',
-              title: 'Item Desc'
-            }, {
-              field: 'Weight',
-              title: 'Weight'
-            }]
-          });
-        };        
-
-// Produciton Icing
-
-        var productionicingDeliveryNote = function productionicingDeliveryNote() {
-          var datatable = $('#production_icing_delivery_note').KTDatatable({
-            pagination: false,
-            data: {
-              saveState: {
-                cookie: false
-              }
-            }, rows: {
-              autoHide: false
-            },
-            layout: {
-              scroll: true,
-              customScrollbar: false
-            },
-            columns: [{
-              field: '#',
-              title: '#'
-            }, {
-              field: 'Selected',
-              title: 'Selected'
-            }, {
-              field: 'Icing Sugar Batch No',
-              title: 'Icing Sugar Batch No'
-            }, {
-              field: 'Refined Sugar Batch No ',
-              title: 'Refined Sugar Batch No '
-            }, {
-              field: 'Dextrin Batch No',
-              title: 'Dextrin Batch No'
-            }, {
-              field: 'Multiwall Batch No',
-              title: 'Multiwall Batch No'
-            }, {
-              field: 'Total',
-              title: 'Total'
-            }]
-          });
-          $('#production_icing_delivery_note_search_query').on('input', function () {
-            datatable.search($(this).val().toLowerCase(), 'Icing Sugar Batch No');
-          });
-        };
-
-        var productionicingIncomingMaterial = function productionicingIncomingMaterial() {
-          var datatable = $('#production_icing_incoming_material').KTDatatable({
-            pagination: false,
-            data: {
-              saveState: {
-                cookie: false
-              }
-            }, rows: {
-              autoHide: false
-            },
-            layout: {
-              scroll: true,
-              customScrollbar: false
-            },
-            columns: [{
-              field: 'Received',
-              title: 'Received',
-              sortable: false,
-            }, {
-              field: 'Date',
-              title: 'Date',
-              sortable: false,
-              width: 200
-            }, {
-              field: 'Time',
-              title: 'Time',
-              sortable: false,
-              width: 200
-            }, {
-              field: 'PO Target',
-              title: 'PO Target'
-            }, {
-              field: 'Shift',
-              title: 'Shift'
-            }, {
-              field: 'Refined Sugar Batch No ',
-              title: 'Refined Sugar Batch No '
-            }, {
-              field: 'Refined Sugar Weight',
-              title: 'Refined Sugar Weight'
-            }, {
-              field: 'Dextrin Batch No',
-              title: 'Dextrin Batch No'
-            }, {
-              field: 'Dextrin Weight',
-              title: 'Dextrin Weight'
-            }, {
-              field: 'Multiwall Batch No',
-              title: 'Multiwall Batch No'
-            }, {
-              field: 'Multiwall Piece',
-              title: 'Multiwall Piece'
-            }, {
-              field: 'Total',
-              title: 'Total'
-            }]
-          });
-          $('#production_icing_incoming_material_search_query_1').on('input', function () {
-            datatable.search($(this).val().toLowerCase(), 'Refined Sugar Batch No ');
-          });
-          $('#production_icing_incoming_material_search_query_2').on('input', function () {
-            datatable.search($(this).val().toLowerCase(), 'Dextrin Batch No');
-          });
-          $('#production_icing_incoming_material_search_query_3').on('input', function () {
-            datatable.search($(this).val().toLowerCase(), 'Multiwall Batch No');
-          });
-        };
-
-        var productionicingIcingProcess = function productionicingIcingProcess() {
-          var datatable = $('#production_icing_icing_process').KTDatatable({
-            pagination: false,
-            data: {
-              saveState: {
-                cookie: false
-              }
-            }, rows: {
-              autoHide: false
-            },
-            layout: {
-              scroll: true,
-              customScrollbar: false
-            },
-            columns: [{
-              field: '#',
-              title: '#'
-            }, {
-              field: 'Selected',
-              title: 'Selected',
-              sortable: false,
-            }, {
-              field: 'Icing Sugar Batch No',
-              title: 'Icing Sugar Batch No'
-            }, {
-              field: 'PO Target',
-              title: 'PO Target'
-            }, {
-              field: 'Shift',
-              title: 'Shift'
-            }, {
-              field: 'Refined Sugar Batch No ',
-              title: 'Refined Sugar Batch No '
-            }, {
-              field: 'Refined Sugar Weight',
-              title: 'Refined Sugar Weight',
-              sortable: false,
-              width: 200
-            }, {
-              field: 'Dextrin Batch No',
-              title: 'Dextrin Batch No'
-            }, {
-              field: 'Dextrin Weight',
-              title: 'Dextrin Weight',
-              sortable: false,
-              width: 200
-            }, {
-              field: 'Multiwall Batch No',
-              title: 'Multiwall Batch No'
-            }, {
-              field: 'Multiwall Piece',
-              title: 'Multiwall Piece',
-              sortable: false,
-              width: 200
-            }, {
-              field: 'Total',
-              title: 'Total',
-              sortable: false,
-              width: 200
-            }]
-          });
-          $('#production_icing_icing_process_search_query_1').on('input', function () {
-            datatable.search($(this).val().toLowerCase(), 'Refined Sugar Batch No ');
-          });
-          $('#production_icing_icing_process_search_query_2').on('input', function () {
-            datatable.search($(this).val().toLowerCase(), 'Dextrin Batch No');
-          });
-          $('#production_icing_icing_process_search_query_3').on('input', function () {
-            datatable.search($(this).val().toLowerCase(), 'Multiwall Batch No');
-          });
-        };
-
-        var productionicingReport = function productionicingReport() {
-          var datatable = $('#production_icing_report').KTDatatable({
-            data: {
-              saveState: {
-                cookie: false
-              }
-            }, rows: {
-              autoHide: false
-            },
-            layout: {
-              scroll: true,
-              customScrollbar: false
-            },
-            columns: [{
-              field: '#',
-              title: '#'
-            }, {
-              field: 'Icing Sugar Batch No',
-              title: 'Icing Sugar Batch No'
-            }, {
-              field: 'Shift',
-              title: 'Shift'
-            }, {
-              field: 'Refined Sugar Batch No ',
-              title: 'Refined Sugar Batch No '
-            }, {
-              field: 'Dextrin Batch No',
-              title: 'Dextrin Batch No'
-            }, {
-              field: 'Multiwall Batch No',
-              title: 'Multiwall Batch No'
-            }, {
-              field: 'Total',
-              title: 'Total'
-            }]
-          });
-          $('#production_icing_report_search_query').on('input', function () {
-            datatable.search($(this).val().toLowerCase(), 'Icing Sugar Batch No');
-          });
-        };
-
-// production batching 1 
-        var productionbatching1MaterialCheckingPro = function productionbatching1MaterialCheckingPro() {
-          var datatable = $('#production_batching_1_material_checking_pro_id').KTDatatable({
-            data: {
-              
-              saveState: {
-                cookie: false
-              }
-            }, rows: {
-              autoHide: false
-            },
-            layout: {
-              scroll: true,
-              customScrollbar: false
-            },
-            columns: [{
-              field: '#',
-              title: '#'
-            }, {
-              field: 'PrO',
-              title: 'PrO'
-            }, {
-              field: 'SKU Name',
-              title: 'SKU Name'
-            }, {
-              field: 'Comment',
-              title: 'Comment'
-            }, {
-              field: 'Seq No',
-              title: 'Seq No'
-            }]
-          });
-        };
-
-        var productionbatching1BeritaAcara = function productionbatching1BeritaAcara() {
-          var datatable = $('#production_batching_1_berita_acara').KTDatatable({
-            data: {
-              saveState: {
-                cookie: false
-              }
-            }, rows: {
-              autoHide: false
-            },
-            layout: {
-              scroll: true,
-              customScrollbar: false
-            },
-            columns: [{
-              field: '#',
-              title: '#'
-            }, {
-              field: 'Hold At Formatted',
-              title: 'Hold At Formatted'
-            }, {
-              field: 'Hold Time Formatted',
-              title: 'Hold Time Formatted'
-            }, {
-              field: 'PrO',
-              title: 'PrO'
-            }, {
-              field: 'Seq No',
-              title: 'Seq No'
-            }, {
-              field: 'Item ID',
-              title: 'Item ID'
-            }, {
-              field: 'Item Desc',
-              title: 'Item Desc'
-            }, {
-              field: 'SSCC/Sublot No',
-              title: 'SSCC/Sublot No'
-            }, {
-              field: 'Comment',
-              title: 'Comment'
-            }, {
-              field: 'Description',
-              title: 'Description'
-            }, {
-              field: 'Action',
-              title: 'Action',
-              sortable: false,
-              width: 200
-            }]
-          });
-          $('#production_batching_1_berita_acara_search_query').on('input', function () {
-            datatable.search($(this).val().toLowerCase(), 'PrO');
-          });
-        };
-
-        var productionbatching1BeritaAcaraEdit = function productionbatching1BeritaAcaraEdit() {
-          var datatable = $('#production_batching_1_berita_acara_edit').KTDatatable({
-            pagination: false,
-            data: {
-              saveState: {
-                cookie: false
-              }
-            }, rows: {
-              autoHide: false
-            },
-            layout: {
-              scroll: true,
-              customScrollbar: false
-            },
-            columns: [{
-              field: '#',
-              title: '#'
-            }, {
-              field: 'Item ID',
-              title: 'Item ID'
-            }, {
-              field: 'Item Desc',
-              title: 'Item Desc'
-            }, {
-              field: 'Lot No',
-              title: 'Lot No'
-            }, {
-              field: 'Current Sublot No',
-              title: 'Current Sublot No'
-            }, {
-              field: 'New Sublot No',
-              title: 'New Sublot No'
-            }, {
-              field: 'Qty',
-              title: 'Qty'
-            }, {
-              field: 'UoM',
-              title: 'UoM'
-            }, {
-              field: 'Quality',
-              title: 'Quality'
-            }, {
-              field: 'Expired At Formatted',
-              title: 'Expired At Formatted'
-            }, {
-              field: 'Expired Time Formatted',
-              title: 'Expired Time Formatted'
-            }]
-          });
-          $('#production_batching_1_berita_acara_edit_search_query').on('input', function () {
-            datatable.search($(this).val().toLowerCase(), 'Current Sublot No');
-          });
-        };
-
-        var productionbatching1Report = function productionbatching1Report() {
-          var datatable = $('#production_batching_1_report').KTDatatable({
-            data: {
-              pageSize: 11,
-              saveState: {
-                cookie: false
-              }
-            }, rows: {
-              autoHide: false
-            },
-            layout: {
-              scroll: true,
-              customScrollbar: false
-            },
-            columns: [{
-              field: '#',
-              title: '#'
-            }, {
-              field: 'PrO',
-              title: 'PrO'
-            }, {
-              field: 'SKU Name',
-              title: 'SKU Name'
-            }, {
-              field: 'Comment',
-              title: 'Comment'
-            }, {
-              field: 'Shift',
-              title: 'Shift'
-            }, {
-              field: 'Seq Total',
-              title: 'Seq Total'
-            }, {
-              field: 'Seq No',
-              title: 'Seq No'
-            }]
-          });
-          $('#production_batching_1_delivery_note_search_query').on('input', function () {
-            datatable.search($(this).val().toLowerCase(), 'PrO');
-          });
-        };
-
-// Filling
-        var fillingIncomingMaterial = function fillingIncomingMaterial() {
-          var datatable = $('#filling_incoming_material').KTDatatable({
-            data: {
-              pageSize: 5,
-              saveState: {
-                cookie: false
-              }
-            }, rows: {
-              autoHide: false
-            },
-            layout: {
-              scroll: true,
-              customScrollbar: false
-            },
-            columns: [{
-              field: 'Received',
-              title: 'Received',
-              sortable: false,
-            }, {
-              field: 'Batch No',
-              title: 'Batch No'
-            }, {
-              field: 'Item ID',
-              title: 'Item ID'
-            }, {
-              field: 'Item Desc',
-              title: 'Item Desc'
-            }, {
-              field: 'Weight',
-              title: 'Weight'
-            }]
-          });
-          $('#filling_incoming_material_search_query').on('input', function () {
-            datatable.search($(this).val().toLowerCase(), 'Batch No');
-          });
-        };
-
-        var fillingfillingprocessFillInFillingProcess = function fillingfillingprocessFillInFillingProcess() {
-          var datatable = $('#filling_filling_process_fill_in_pro_available').KTDatatable({
-            data: {
-              
-              saveState: {
-                cookie: false
-              }
-            }, rows: {
-              autoHide: false
-            },
-            layout: {
-              scroll: true,
-              customScrollbar: false
-            },
-            columns: [{
-              field: '#',
-              title: '#'
-            }, {
-              field: 'PrO',
-              title: 'PrO'
-            }, {
-              field: 'SKU Name',
-              title: 'SKU Name'
-            }, {
-              field: 'Comment',
-              title: 'Comment'
-            },{
-              field: 'Seq No',
-              title: 'Seq No'
-            }]
-          });
-        };
-
-        var fillingfillingprocessFillInAluminiumFoilStock = function fillingfillingprocessFillInAluminiumFoilStock() {
-          var datatable = $('#filling_filling_process_fill_in_packaging_stock').KTDatatable({
-            data: {
-              
-              saveState: {
-                cookie: false
-              }
-            }, rows: {
-              autoHide: false
-            },
-            layout: {
-              scroll: true,
-              customScrollbar: false
-            },
-            columns: [{
-              field: '#',
-              title: '#'
-            }, {
-              field: 'Batch No',
-              title: 'Batch No'
-            }, {
-              field: 'Item ID',
-              title: 'Item ID'
-            }, {
-              field: 'Item Desc',
-              title: 'Item Desc'
-            }, {
-              field: 'Qty',
-              title: 'Qty'
-            }, {
-              field: 'Action',
-              title: 'Action',
-              sortable: false,
-              width: 200
-            }]
-          });
-        };
-
-        var fillingReport = function fillingReport() {
-          var datatable = $('#filling_report').KTDatatable({
-            data: {
-              
-              saveState: {
-                cookie: false
-              }
-            }, rows: {
-              autoHide: false
-            },
-            layout: {
-              scroll: true,
-              customScrollbar: false
-            },
-            columns: [{
-              field: '#',
-              title: '#'
-            }, {
-              field: 'Item ID',
-              title: 'Item ID'
-            }, {
-              field: 'Item Desc',
-              title: 'Item Desc'
-            }, {
-              field: 'Batch No',
-              title: 'Batch No'
-            }, {
-              field: 'PrO',
-              title: 'PrO'
-            }, {
-              field: 'SKU Name',
-              title: 'SKU Name'
-            }, {
-              field: 'Comment',
-              title: 'Comment'
-            }, {
-              field: 'Seq No',
-              title: 'Seq No'
-            }, {
-              field: 'Shift',
-              title: 'Shift'
-            }]
-          });
-          $('#filling_report_search_query').on('input', function () {
-            datatable.search($(this).val().toLowerCase(), 'Batch No');
-          });
-        };
+        // var subTableInit = function(e) {
+        //   $('<div/>').attr('id', 'child_data_local_' + e.data.RecordID).appendTo(e.detailCell).KTDatatable({
+        //     data: {
+        //       type: 'local',
+        //       source: e.data.Orders,
+        //       pageSize: 6,
+        //     },
+      
+        //     // layout definition
+        //     layout: {
+        //       scroll: true,
+        //       height: 600,
+        //       footer: false,
+        //     },
+        //     pagination: false,
+        //     sortable: true,
+      
+        //     // columns definition
+        //     columns: [
+        //       {
+        //         field: 'Jabatan',
+        //         title: 'Nama Anggota',
+      
+        //       }, {
+        //         field: '',
+        //         title: '',
+        //         width: 100
+        //       }, {
+        //         field: 'Periode',
+        //         title: 'NIP',
+        //       }, {
+        //         field: 'Actions',
+        //         title: '',
+        //         sortable: false,
+        //         textAlign:'right',
+        //         overflow: 'visible',
+        //         template: function() {
+        //           return '\
+        //           <a href="#" class="btn btn-light-info btn-sm">\
+        //           Distribusikan\
+        //         </a>\
+        //                        \
+        //                      \
+        //                     ';
+        //         },
+        //       }, {
+        //         field: '',
+        //         title: '',
+        //       }],
+        //   });
+        // };
 
         var jabatanFungsional = function jabatanFungsional() {
           var datatable = $('#jabatan_fungsional').KTDatatable({
@@ -2202,7 +295,6 @@
             layout: {
               scroll: true,
               customScrollbar: false,
-
             },
             columns: [{
               field: '#',
@@ -2244,65 +336,50 @@
           $('#super_admin_user_management_search_role').selectpicker();
         };
 
+        var groupByTable = function groupByTable() {
+          var datatable = $('.groupByTable').KTDatatable({
+            data: {
+              saveState: {
+                cookie: false
+              }
+            }, rows: {
+              autoHide: false
+            },
+            layout: {
+              scroll: true,
+              customScrollbar: false,
+            },
+            columns: [{
+              field: '#',
+              title: '#'
+            }, {
+              field: 'Nama',
+              title: 'Nama'
+            }, {
+              field: 'NIP',
+              title: 'NIP'
+            }, {
+              field: 'Aksi',
+              title: 'Aksi',
+              sortable: false,
+              width: 200
+            }]
+          });
+          $('#super_admin_user_management_search_role').on('change', function () {
+            datatable.search($(this).val().toLowerCase(), 'Role');
+          });
+          $('#super_admin_user_management_search_query').on('input', function () {
+            datatable.search($(this).val().toLowerCase(), 'Email');
+          });
+          $('#super_admin_user_management_search_role').selectpicker();
+        };
+
         return {
           // Public functions
           init: function init() {
             // init demo
             jabatanFungsional();
-            superAdminHome();
-            superAdminReport();
-            superAdminUserManagement();
-            superAdminSettingProductDefinition();
-            superAdminSettingProductDefinitionDetail();
-            superAdminSettingProductDefinitionDetailDetail();
-            superAdminSettingItemDefinition();
-            superAdminSettingSupplierDefinition();
-            superAdminSettingShift();
-            superAdminSettingOperType();
-            superAdminSettingRole();
-
-            ppicAvailablePrO();
-            ppicIcingSugarRequest();
-            ppicBlending();
-            ppicReportGeneral();
-            ppicReportProduction();
-            ppicReportConsumption();
-
-            warehouseAvailablePrO();
-            warehouseIncomingMaterialMajorMinorItemHold();
-            warehouseStockListMajorMinorItem();
-            warehouseStockListMajorMinorItemDetail();
-            warehouseStockListOther();
-            warehouseStockListOtherDetail();
-            warehouseIcingSugar();
-            warehouseDeliveryNoteProduction();
-            warehouseDeliveryNoteIcingProductionDextrinStock();
-            warehouseDeliveryNoteIcingProcessRefinedSugarStock();
-            warehouseDeliveryNoteIcingProcessDextrinStock();
-            warehouseDeliveryNoteIcingProcessMultiwallStock();
-            warehouseDeliveryNoteIcingProcessRequestStock();
-            warehouseDeliveryNotePackagingFillingStock();
-            warehouseBeritaAcara();
-            warehouseReportMajorMinorItem();
-            warehouseReportMajorMinorItemDetail();
-            warehouseReportOther();
-            warehouseReportOtherDetailList();
-            warehouseReportOtherDetailUsage();
-
-            productionicingDeliveryNote();
-            productionicingIncomingMaterial();
-            productionicingIcingProcess();
-            productionicingReport();
-
-            productionbatching1MaterialCheckingPro();
-            productionbatching1BeritaAcara();
-            productionbatching1BeritaAcaraEdit();
-            productionbatching1Report();
-
-            fillingIncomingMaterial();
-            fillingfillingprocessFillInFillingProcess();
-            fillingfillingprocessFillInAluminiumFoilStock();
-            fillingReport();
+            groupByTable();
 
           }
         };

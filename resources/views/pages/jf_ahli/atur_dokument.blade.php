@@ -51,10 +51,10 @@
                             <table class="datatable cell-border" id="jabatan_fungsional">
                                 <thead>
                                     <tr>
-                                        <th><b>Nama Dokumen</b></th>
-                                        <th><b>Oleh</b></th>
-                                        <th><b>Tanggal Upload</b></th>
-                                        <th><b>Opsi</b></th>
+                                        <th><strong>Nama Dokumen</strong></th>
+                                        <th><strong>Oleh</strong></th>
+                                        <th><strong>Tanggal Upload</strong></th>
+                                        <th><strong>Opsi</strong></th>
                                     </tr>
                                 </thead>
                                 <tbody>
