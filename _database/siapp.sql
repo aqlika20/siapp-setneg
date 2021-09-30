@@ -1,10 +1,10 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.1
+-- version 5.1.0
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 28, 2021 at 06:30 PM
--- Server version: 10.4.21-MariaDB
+-- Generation Time: Sep 30, 2021 at 12:11 AM
+-- Server version: 10.4.19-MariaDB
 -- PHP Version: 7.4.23
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
@@ -145,7 +145,31 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (19, '2021_09_14_150206_create_pangkat_gols', 3),
 (20, '2021_09_14_164243_create_periodes', 3),
 (21, '2014_10_12_100000_create_password_resets_table', 4),
-(22, '2021_09_27_102005_create_pengangkatan_pemberhentian_jfkus', 5);
+(23, '2021_09_27_102005_create_pengangkatan_pemberhentian_jfkus', 5);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `notes`
+--
+
+CREATE TABLE `notes` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `jfku_id` bigint(20) UNSIGNED NOT NULL,
+  `tanggal_catatan` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `catatan` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
+  `updated_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `notes`
+--
+
+INSERT INTO `notes` (`id`, `jfku_id`, `tanggal_catatan`, `catatan`, `created_at`, `updated_at`) VALUES
+(3, 33, '29-Sep-2021', 'tes 1', '2021-09-29 19:45:41', '2021-09-29 19:45:41'),
+(4, 33, '30-Sep-2021', 'tes 2', '2021-09-29 19:45:41', '2021-09-29 19:45:41'),
+(5, 34, NULL, NULL, '2021-09-29 21:13:17', '2021-09-29 21:13:17');
 
 -- --------------------------------------------------------
 
@@ -369,73 +393,71 @@ CREATE TABLE `pengangkatan_pemberhentian_jfkus` (
   `tgl_surat_usulan` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `no_surat_usulan` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `pejabat_menandatangani` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `file_data_usulan` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `file_data_usulan` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `nip` bigint(20) UNSIGNED DEFAULT NULL,
   `nama` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `tempat_lahir` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `tanggal_lahir` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `tanggal_lahir` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `pendidikan_terakhir` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `instansi_induk` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `instansi_pengusul` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `pangkat_gol` int(11) DEFAULT NULL,
   `tmt_gol` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `file_nota_usulan_asn` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `file_nota_usulan_asn` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `nomor_pak` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `tanggal_pak` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `tanggal_pak` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `jumlah_angka_kredit` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `periode_penilaian` int(11) DEFAULT NULL,
-  `file_data_pak` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `file_data_pak` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `nomor_klarifikasi` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `tanggal_klarifikasi` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `file_klarifikasi_pak` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `tanggal_klarifikasi` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `file_klarifikasi_pak` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `nomor_pak_terakhir` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `tanggal_pak_terakhir` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `tanggal_pak_terakhir` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `jumlah_angka_kredit_terakhir` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `periode_penilaian_terakhir` int(11) DEFAULT NULL,
-  `file_data_pak_terakhir` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `file_data_pak_terakhir` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `jabatan_fungsional` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `no_keppress_jabatan_fungsional` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `file_data_jabatan_fungsional` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `file_data_jabatan_fungsional_2` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `file_ba_pengambilan_sumpah_pelantikan_fungsional` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `file_data_jabatan_fungsional` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `file_data_jabatan_fungsional_2` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `file_ba_pengambilan_sumpah_pelantikan_fungsional` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `tmt_jabatan_fungsional` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `unit_kerja_fungsional` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `tgl_penerimaan_keppres` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `alasan_pemberhentian` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `ket_alasan_pemberhentian` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `tmt_pemberhentian` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `file_pendukung_pemberhentian` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `tgl_catatan_pemberhentian` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `catatan_pemberhentian` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `file_pendukung_pemberhentian` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `ket_pemberhentian` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `jabatan` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `no_sk_jabatan` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `tmt_jabatan` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `unit_kerja` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `file_data_jabatan` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `file_data_jabatan` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `jabatan_lama` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `no_sk_jabatan_lama` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `tmt_jabatan_lama` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `unit_kerja_lama` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `file_data_jabatan_lama` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `file_data_jabatan_lama` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `jabatan_baru` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `unit_kerja_baru` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `file_data_jabatan_baru` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `file_data_jabatan_baru` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `no_surat_rekomendasi` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `tgl_surat_rekomendasi` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `file_data_rekomendasi` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `file_surat_pernyataan_rekomendasi` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `file_data_rekomendasi` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `file_surat_pernyataan_rekomendasi` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `jabatan_data_kompetensi` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `nomor_sertifikat` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `tgl_sertifikat` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `file_data_kompetensi` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `file_data_kompetensi` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `jumlah` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `terisi` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `sisa` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `file_formasi_jabatan` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `file_skp_2` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `file_skp_2_dukungan_lainnya` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `tanggal_catatan` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `file_formasi_jabatan` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `file_skp_2` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `file_skp_2_dukungan_lainnya` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `tanggal_catatan` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `catatan` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `ket` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `jenis_layanan` int(11) DEFAULT NULL,
@@ -448,13 +470,9 @@ CREATE TABLE `pengangkatan_pemberhentian_jfkus` (
 -- Dumping data for table `pengangkatan_pemberhentian_jfkus`
 --
 
-INSERT INTO `pengangkatan_pemberhentian_jfkus` (`id`, `tgl_surat_usulan`, `no_surat_usulan`, `pejabat_menandatangani`, `file_data_usulan`, `nip`, `nama`, `tempat_lahir`, `tanggal_lahir`, `pendidikan_terakhir`, `instansi_induk`, `instansi_pengusul`, `pangkat_gol`, `tmt_gol`, `file_nota_usulan_asn`, `nomor_pak`, `tanggal_pak`, `jumlah_angka_kredit`, `periode_penilaian`, `file_data_pak`, `nomor_klarifikasi`, `tanggal_klarifikasi`, `file_klarifikasi_pak`, `nomor_pak_terakhir`, `tanggal_pak_terakhir`, `jumlah_angka_kredit_terakhir`, `periode_penilaian_terakhir`, `file_data_pak_terakhir`, `jabatan_fungsional`, `no_keppress_jabatan_fungsional`, `file_data_jabatan_fungsional`, `file_data_jabatan_fungsional_2`, `file_ba_pengambilan_sumpah_pelantikan_fungsional`, `tmt_jabatan_fungsional`, `unit_kerja_fungsional`, `tgl_penerimaan_keppres`, `alasan_pemberhentian`, `ket_alasan_pemberhentian`, `tmt_pemberhentian`, `file_pendukung_pemberhentian`, `tgl_catatan_pemberhentian`, `catatan_pemberhentian`, `ket_pemberhentian`, `jabatan`, `no_sk_jabatan`, `tmt_jabatan`, `unit_kerja`, `file_data_jabatan`, `jabatan_lama`, `no_sk_jabatan_lama`, `tmt_jabatan_lama`, `unit_kerja_lama`, `file_data_jabatan_lama`, `jabatan_baru`, `unit_kerja_baru`, `file_data_jabatan_baru`, `no_surat_rekomendasi`, `tgl_surat_rekomendasi`, `file_data_rekomendasi`, `file_surat_pernyataan_rekomendasi`, `jabatan_data_kompetensi`, `nomor_sertifikat`, `tgl_sertifikat`, `file_data_kompetensi`, `jumlah`, `terisi`, `sisa`, `file_formasi_jabatan`, `file_skp_2`, `file_skp_2_dukungan_lainnya`, `tanggal_catatan`, `catatan`, `ket`, `jenis_layanan`, `status`, `created_at`, `updated_at`) VALUES
-(8, '27-Sep-2021', 'sdasdas', 'dasdas', '32654905856711-mock-up-KP-(1).pdf,32654905856879-Mockup-JFKU-(2).pdf', 312312312, 'sdasdad', 'dsadasdas', '27-Sep-2021', 'dasdasdas', 'sadasd', 'asdasd', 1, '27-Sep-2021', '32654905856993-Mockup-JFKU-(2).pdf', 'dasdasdas', '27-Sep-2021', 'dsadasda', 1, '32654905857115-High-level-diagram.pdf', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'dasdasda', 'asdasda', '32654905857155-20210912_Review1.pdf,32654905857174-analisis-kebutuhan-SIAPP.jpg', NULL, '32654905857191-probis-SIAPP.JPG', '27-Sep-2021', 'dasdasdas', NULL, 'on', 'dasdasd', '27-Sep-2021', '32654905857209-mock-up-KP-(1).pdf,32654905857302-Mockup-JFKU-(2).pdf', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '27-Sep-2021', '27-Sep-2021', '1,4,6', 2, 1, '2021-09-27 12:21:32', '2021-09-27 12:21:32'),
-(9, '28-Sep-2021', 'dsadas', 'dsadas', '32655976491167-20210912_Review1.pdf,32655976491261-analisis-kebutuhan-SIAPP.jpg', 232131, 'sdADadasd', 'sdasd', '28-Sep-2021', 'dsadas', 'sdassd', 'sdas', 1, '28-Sep-2021', '32655976491280-20210912_Review1.pdf,32655976491300-analisis-kebutuhan-SIAPP.jpg', 'dsadasd', '28-Sep-2021', 'sdasdas', 1, '32655976491321-20210912_Review1.pdf,32655976491347-analisis-kebutuhan-SIAPP.jpg', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'dsadasd', 'dsadas', '32655976491370-20210912_Review1.pdf,32655976491391-analisis-kebutuhan-SIAPP.jpg', NULL, '32655976491412-20210912_Review1.pdf,32655976491438-analisis-kebutuhan-SIAPP.jpg', '28-Sep-2021', 'asdasdas', NULL, 'on', 'dad', '30-Sep-2021', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '28-Sep-2021,28-Sep-2021,28-Sep-2021', '28-Sep-2021,28-Sep-2021,28-Sep-2021', '1,2,4,6,7', 2, 1, '2021-09-28 03:13:44', '2021-09-28 03:13:44'),
-(10, '30-Sep-2021', '1234567', 'dsadas', NULL, 2312312, 'sdada', 'sdaasd', '28-Sep-2021', 'dsadasd', 'sdasd', 'sdadas', 2, '28-Sep-2021', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'sadasd', '23zda', NULL, NULL, NULL, '28-Sep-2021', 'dsadasd', NULL, 'on', 'sdasd', '28-Sep-2021', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '28-Sep-2021', 'dasda,sadasd', '1', 2, 1, '2021-09-28 03:47:12', '2021-09-28 03:47:12'),
-(19, '29-Sep-2021', 'dsdasdasd', 'sadasdsad', NULL, 2312321312, 'sdadasd', 'sdasdasd', '28-Sep-2021', 'sdasdas', 'dasdasd', 'dasdas', 1, '28-Sep-2021', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'dsadas', 'dasdasd', NULL, NULL, NULL, '21-Sep-2021', 'dasdsada', NULL, 'on', 'sdasdad', '28-Sep-2021', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '29-Sep-2021', 'dsadasdas,dsadasd', '1,2,5,6', 2, 1, '2021-09-28 03:54:11', '2021-09-28 03:54:11'),
-(20, '30-Aug-2021', '31312312', 'dasdasdas', '32656341544030-20210912_Review1.pdf,32656341547428-analisis-kebutuhan-SIAPP.jpg', 2313123, 'sdsdada', 'sdasda', '28-Sep-2021', 'dsadasd', 'sdasd', 'dsadas', 1, '28-Sep-2021', '32656341547442-analisis-kebutuhan-SIAPP.jpg', 'sdasdsadas', '28-Sep-2021', 'sadasdasd', 1, '32656341547456-report-VA-01-09-2021.pdf', 'sdasdasd', '28-Sep-2021', '32656341547485-report-VA-01-09-2021.pdf', NULL, NULL, NULL, NULL, NULL, 'sdsadasd', 'dsadas', '32656341547518-mock-up-KP-(1).pdf,32656341547615-Mockup-JFKU-(2).pdf', '32656341547743-High-level-diagram.pdf', NULL, 'dsadasdasdsaqwe', '28-Sep-2021', NULL, '7', 'asdasdasda', NULL, '32656341547780-analisis-kebutuhan-SIAPP.jpg', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '28-Sep-2021,28-Sep-2021', 'sadsadas,sdadasdas', '1,2,3,4,5', 5, 1, '2021-09-28 08:17:57', '2021-09-28 08:17:57'),
-(21, '21-Sep-2021', 'sdsad', 'dasdsad', NULL, 231313, 'dasdas', 'sdasd', '28-Sep-2021', 'dsadsa', 'dsad', 'sdasd', 2, '28-Sep-2021', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'dsadasd', 'dsadasd', NULL, NULL, NULL, '28-Sep-2021', 'dasdasda', NULL, '2', 'sdasd', '28-Sep-2021', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '28-Sep-2021', 'sdasdasd', '1,2,3,4', 2, 1, '2021-09-28 09:40:01', '2021-09-28 09:40:01');
+INSERT INTO `pengangkatan_pemberhentian_jfkus` (`id`, `tgl_surat_usulan`, `no_surat_usulan`, `pejabat_menandatangani`, `file_data_usulan`, `nip`, `nama`, `tempat_lahir`, `tanggal_lahir`, `pendidikan_terakhir`, `instansi_induk`, `instansi_pengusul`, `pangkat_gol`, `tmt_gol`, `file_nota_usulan_asn`, `nomor_pak`, `tanggal_pak`, `jumlah_angka_kredit`, `periode_penilaian`, `file_data_pak`, `nomor_klarifikasi`, `tanggal_klarifikasi`, `file_klarifikasi_pak`, `nomor_pak_terakhir`, `tanggal_pak_terakhir`, `jumlah_angka_kredit_terakhir`, `periode_penilaian_terakhir`, `file_data_pak_terakhir`, `jabatan_fungsional`, `no_keppress_jabatan_fungsional`, `file_data_jabatan_fungsional`, `file_data_jabatan_fungsional_2`, `file_ba_pengambilan_sumpah_pelantikan_fungsional`, `tmt_jabatan_fungsional`, `unit_kerja_fungsional`, `tgl_penerimaan_keppres`, `alasan_pemberhentian`, `ket_alasan_pemberhentian`, `tmt_pemberhentian`, `file_pendukung_pemberhentian`, `ket_pemberhentian`, `jabatan`, `no_sk_jabatan`, `tmt_jabatan`, `unit_kerja`, `file_data_jabatan`, `jabatan_lama`, `no_sk_jabatan_lama`, `tmt_jabatan_lama`, `unit_kerja_lama`, `file_data_jabatan_lama`, `jabatan_baru`, `unit_kerja_baru`, `file_data_jabatan_baru`, `no_surat_rekomendasi`, `tgl_surat_rekomendasi`, `file_data_rekomendasi`, `file_surat_pernyataan_rekomendasi`, `jabatan_data_kompetensi`, `nomor_sertifikat`, `tgl_sertifikat`, `file_data_kompetensi`, `jumlah`, `terisi`, `sisa`, `file_formasi_jabatan`, `file_skp_2`, `file_skp_2_dukungan_lainnya`, `tanggal_catatan`, `catatan`, `ket`, `jenis_layanan`, `status`, `created_at`, `updated_at`) VALUES
+(33, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', 1, 1, '2021-09-29 19:45:41', '2021-09-29 19:45:41'),
+(34, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '32658999953000-coba1.pdf', NULL, NULL, NULL, '6', 1, 1, '2021-09-29 21:13:17', '2021-09-29 22:05:55');
 
 -- --------------------------------------------------------
 
@@ -524,7 +542,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `nip`, `nip_verified_at`, `password`, `roles_id`, `remember_token`, `created_at`, `updated_at`) VALUES
-(1, 'PIC - Nama', '111111', NULL, '$2y$10$gGqnqq58u00YXuJTOnNJBu2zpu5X8bQxhi86Tx.wk.oTQcZHfte3y', 1, 'RpWzZznBHl9bJstieUfL9JIF7K00EmxZDoSFixe7BgcWZjFU9Cj7rTr0fLwd', '2021-09-12 15:01:55', '2021-09-28 16:18:01'),
+(1, 'PIC - Nama', '111111', NULL, '$2y$10$gGqnqq58u00YXuJTOnNJBu2zpu5X8bQxhi86Tx.wk.oTQcZHfte3y', 1, 'DGrywLKwJsvXjVL3rRTDk6NGa688vaCRqTvqXREe847MR5Fre8qvCJTiJbHP', '2021-09-12 15:01:55', '2021-09-29 20:04:58'),
 (2, 'Koordinator Pokja - Nama', '123456', NULL, '$2y$10$gGqnqq58u00YXuJTOnNJBu2zpu5X8bQxhi86Tx.wk.oTQcZHfte3y', 2, NULL, '2021-09-26 16:03:36', '2021-09-28 16:18:01'),
 (3, 'Kepala Biro - Nama', '654321', NULL, '$2y$10$gGqnqq58u00YXuJTOnNJBu2zpu5X8bQxhi86Tx.wk.oTQcZHfte3y', 3, NULL, '2021-09-26 16:33:45', '2021-09-28 16:18:01');
 
@@ -572,6 +590,13 @@ ALTER TABLE `klarifikasi_pak`
 --
 ALTER TABLE `migrations`
   ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `notes`
+--
+ALTER TABLE `notes`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `jfku_id` (`jfku_id`);
 
 --
 -- Indexes for table `oauth_access_tokens`
@@ -698,7 +723,13 @@ ALTER TABLE `klarifikasi_pak`
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+
+--
+-- AUTO_INCREMENT for table `notes`
+--
+ALTER TABLE `notes`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `oauth_clients`
@@ -734,7 +765,7 @@ ALTER TABLE `pengangkatans`
 -- AUTO_INCREMENT for table `pengangkatan_pemberhentian_jfkus`
 --
 ALTER TABLE `pengangkatan_pemberhentian_jfkus`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
 
 --
 -- AUTO_INCREMENT for table `periodes`
@@ -753,6 +784,16 @@ ALTER TABLE `roles`
 --
 ALTER TABLE `users`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `notes`
+--
+ALTER TABLE `notes`
+  ADD CONSTRAINT `jfku_id` FOREIGN KEY (`jfku_id`) REFERENCES `pengangkatan_pemberhentian_jfkus` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

@@ -534,24 +534,7 @@
 									<!--end: List Widget 9-->
 								</div>
 								
-								<div class="col-xxl-7 order-2 order-xxl-1">
-									<!--begin::Advance Table Widget 2-->
-									<div class="card card-custom card-stretch gutter-b">
-											<div class="card-header" style="background-color: #3699FF;"> 
-												<div class="card-title">
-													<h3 class="card-label text-light">Grafik Status Usulan</h3>
-												</div>
-											</div>
-											<div class="card-body">
-												<!--begin::Chart-->
-
-												<div id="chart"></div>
-
-												<!--end::Chart-->
-										</div>
-									</div>
-									<!--end::Advance Table Widget 2-->
-								</div>
+								
 								<!--begin::Card-->
 								<!--end::Card-->
 								<!--begin::Card-->

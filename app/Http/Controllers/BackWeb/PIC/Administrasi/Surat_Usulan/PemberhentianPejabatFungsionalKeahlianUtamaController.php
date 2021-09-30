@@ -15,6 +15,7 @@ use App\PengangkatanPemberhentianJFKU;
 use App\Pangkat;
 use App\Periode;
 use App\Helper;
+use App\Catatan;
 
 use Carbon\Carbon;
 
@@ -204,6 +205,16 @@ class PemberhentianPejabatFungsionalKeahlianUtamaController extends Controller
         }
 
         $pengangkatans->save();
+
+        $count = count($input['req_tanggal_catatan']);
+        for($i=0;$i<$count;$i++) {
+            $notes = new Catatan();
+            $notes->jfku_id = $pengangkatans->id;
+            $notes->tanggal_catatan = $input['req_tanggal_catatan'][$i];
+            $notes->catatan = $input['req_catatan'][$i];
+            $notes->save();
+
+        }
 
         return redirect()->back()->with(['success'=>'Pemberhentian JFKU Success Added!!!']);
     }

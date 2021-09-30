@@ -68,7 +68,7 @@
                                                             <td><div style="color: #3699FF;">{{ $pengangkatan->nip }}</div></td>
                                                             <td>{{ $pengangkatan->nama }}</td>
                                                             <td>
-                                                                <a href="verifikasi.html"><i class="fa fa-pencil-alt text-success mr-2"></i></a>
+                                                                <a href="{{route('koor-pokja.inbox.jfku.verif', ['id' => $pengangkatan->id])}}"><i class="fa fa-pencil-alt text-success mr-2"></i></a>
                                                                 <a href="{{route('koor-pokja.inbox.distributor.index', ['id' => $pengangkatan->id])}}"><i class="fa fa-share text-info mr-1"></i></a>
                                                             </td>
                                                         </tr>

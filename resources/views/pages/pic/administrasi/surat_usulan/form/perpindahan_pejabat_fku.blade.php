@@ -520,7 +520,7 @@
                                                 <label class="col-form-label text-right col-lg-3 col-sm-12">Tgl. Surat Rekomendasi</label>
                                                 <div class="col-lg-5 col-md-9 col-sm-12">
                                                     <div class="input-group date">
-                                                        <input type="text" class="form-control datetimepicker-input my-datepicker" id="req_tlg_surat_rekomendasi" name="req_tlg_surat_rekomendasi" data-toggle="datetimepicker" data-target="#1" placeholder="Pilih Tanggal" value="{{old('req_tmt_jabatan')}}" autocomplete="off" require />
+                                                    <input type="text" class="form-control datetimepicker-input my-datepicker" id="req_tlg_surat_rekomendasi" name="req_tlg_surat_rekomendasi" data-toggle="datetimepicker" data-target="#req_tlg_surat_rekomendasi" placeholder="Pilih Tanggal" value="{{old('req_tlg_surat_rekomendasi')}}" autocomplete="off" require />
                                                         <div class="input-group-append">
                                                             <span class="input-group-text">
                                                                 <i class="la la-calendar"></i>
@@ -907,7 +907,7 @@
                 <label class="col-form-label col-lg-3 col-sm-12">Tanggal Catatan</label>
                 <div class="col-lg-5 col-md-9 col-sm-12">
                     <div class="input-group date">
-                        <input type="text" class="form-control datetimepicker-input my-datepicker" id="req_tanggal_catatan" name="req_tanggal_catatan[]" data-toggle="datetimepicker" placeholder="Pilih Tanggal" value="{{old('req_tanggal_catatan')}}" autocomplete="off" require />
+                        <input type="text" class="form-control datetimepicker-input my-datepicker" id="req_tanggal_catatan" name="req_tanggal_catatan[]" data-toggle="datetimepicker" placeholder="Pilih Tanggal"  autocomplete="off" require />
                         <div class="input-group-append">
                             <span class="input-group-text">
                                 <i class="la la-calendar"></i>
@@ -920,7 +920,7 @@
                 <label class="col-form-label col-lg-3 col-sm-12">Catatan</label>
                 <div class="col-lg-9 col-md-9 col-sm-12">
                     <div class="input-group date">
-                        <textarea class="form-control" rows="3" id="req_catatan" name="req_catatan[]" value="{{old('req_catatan')}}"></textarea>
+                        <textarea class="form-control" rows="3" id="req_catatan" name="req_catatan[]" ></textarea>
                     </div>
                 </div>
             </div>

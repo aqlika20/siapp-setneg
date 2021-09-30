@@ -60,8 +60,8 @@ class CreatePengangkatanPemberhentianJfkus extends Migration
             $table->text('ket_alasan_pemberhentian')->nullable();
             $table->string('tmt_pemberhentian', 30)->nullable();
             $table->string('file_pendukung_pemberhentian', 30)->nullable();
-            $table->string('tgl_catatan_pemberhentian', 30)->nullable();
-            $table->text('catatan_pemberhentian')->nullable();
+            // $table->string('tgl_catatan_pemberhentian', 30)->nullable();
+            // $table->text('catatan_pemberhentian')->nullable();
             $table->string('ket_pemberhentian', 30)->nullable();
 
             $table->string('jabatan', 30)->nullable();

@@ -11,7 +11,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 
 use App\UserManagement;
-use App\Pengangkatan;
+use App\PengangkatanPemberhentianJFKU;
 use App\Pangkat;
 use App\Periode;
 use App\Helper;
@@ -34,7 +34,7 @@ class InboxController extends Controller
         $currentUser = UserManagement::find(Auth::id());
         $page_title = 'PIC | Administrasi | Inbox';
         $page_description = 'Inbox';
-        $pengangkatans = Pengangkatan::where('status', 'Prosess')->get();
+        $pengangkatans = PengangkatanPemberhentianJFKU::where('status', 'Prosess')->get();
         return view('pages.pic.inbox', compact('page_title', 'page_description', 'currentUser', 'pengangkatans'));
     }
 }

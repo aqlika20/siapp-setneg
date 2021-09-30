@@ -9,7 +9,8 @@ use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use App\UserManagement;
-use App\Pengangkatan;
+use App\PengangkatanPemberhentianJFKU;
+use App\Helper;
 
 
 class InboxController extends Controller
@@ -24,7 +25,11 @@ class InboxController extends Controller
         $currentUser = UserManagement::find(Auth::id());
         $page_title = 'JF Muda Madya | inbox';
         $page_description = 'inbox';
-        $pengangkatans = Pengangkatan::where('status', 'Prosess')->get();
+        $pengangkatans = PengangkatanPemberhentianJFKU::where([
+            ['status', '=', Helper::$proses],
+            ['distributor_id', '=', null],
+            ['group_id', '=', '1']
+        ])->get();
 
         
         return view('pages.jf_ahli.inbox', compact('page_title', 'page_description', 'currentUser', 'pengangkatans'));

@@ -510,58 +510,62 @@
                                 <!--end::Button-->
                             </div>
                         </div>
-                        <div class="card-body">
-                            <!--begin: Search Form-->
-                            <!--begin::Search Form-->
-                            <div class="mb-7">
-                                <div class="row align-items-center">
-                                    <div class="col-lg col-xl-6">
-                                        <div class="row align-items-center">
-                                            <div class="col-md-9 my-2 my-md-0">
-                                                <div class="input-icon">
-                                                    <input type="text" class="form-control" placeholder="Cari..." id="kt_datatable_search_query" />
-                                                    <span>
-                                                        <i class="flaticon2-search-1 text-muted"></i>
-                                                    </span>
+                        <div class="card card-custom">
+                            <div class="card-body">
+                                <div class="tab-content">
+                                    <div class="tab-pane fade show active" id="kt_tab_pane_4_1" role="tabpanel" aria-labelledby="kt_tab_pane_4_1">
+                                        <div class="mb-7">
+                                            <div class="row align-items-center">
+                                                <div class="col-lg col-xl-6">
+                                                    <div class="row align-items-center">
+                                                        <div class="col-md-9 my-2 my-md-0">
+                                                            <div class="input-icon">
+                                                                <input type="text" class="form-control" placeholder="Cari..." id="kt_datatable_search_query" />
+                                                                <span>
+                                                                    <i class="flaticon2-search-1 text-muted"></i>
+                                                                </span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
                                                 </div>
+                                                
                                             </div>
                                         </div>
-                                    </div>
-                                    
-                                </div>
+                                        <table class="table data-table-bordered datatable-head-custom" id="jabatan_fungsional_1">
+                                            <thead>
+                                                <tr>
+                                                    <th>Tanggal Agenda</th>
+                                                    <th>No Surat</th>
+                                                    <th>Instansi Pengusul</th>
+                                                    <th>Jenis Usulan</th>
+                                                    <th>NIP</th>
+                                                    <th>Nama</th>
+                                                    <th>Jabatan</th>
+                                                    <th>Aksi</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                @foreach($pengangkatans as $pengangkatan)
+                                                    <tr>
+                                                        <td>{{ $pengangkatan->tgl_surat_usulan }}</td>
+                                                        <td>{{ $pengangkatan->no_surat_usulan }}</td>
+                                                        <td>{{ $pengangkatan->instansi_pengusul }}</td>
+                                                        <td><div style="color: #FFA800;">{{ Helper::defineJenisLayananBy($pengangkatan->jenis_layanan) }}</div></td>
+                                                        <td><div style="color: #3699FF;">{{ $pengangkatan->nip }}</div></td>
+                                                        <td>{{ $pengangkatan->nama }}</td>
+                                                        <td>{{ $pengangkatan->jabatan_lama }}</td>
+                                                        <td>
+                                                            <a href="{{route('jf-ahli.jfku.verif', ['id' => $pengangkatan->id])}}" type="button" class="btn btn-success btn-sm">
+                                                                Verifikasi
+                                                            </a>
+                                                        </td>
+                                                    </tr>
+                                                @endforeach
+                                            </tbody>
+                                        </table>
+                                    </div>	
+                                </div>	
                             </div>
-                            <!--end::Search Form-->
-                            <!--end: Search Form-->
-                            <!--begin: Datatable-->
-                            <table class="datatable cell-border" id="jabatan_fungsional">
-                                <thead>
-                                    <tr>
-                                        <th><strong>Tanggal Agenda</strong></th>
-                                        <th><strong>No Surat</strong></th>
-                                        <th><strong>Instansi Pengusul</strong></th>
-                                        <th><strong>Jenis Usulan</strong></th>
-                                        <th><strong>NIP</strong></th>
-                                        <th><strong>Nama</strong></th>
-                                        <th><strong>Jabatan</strong></th>
-                                        <th><strong>Aksi</strong></th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                @foreach($pengangkatans as $pengangkatan)
-                                    <tr>
-                                        <td>{{ $pengangkatan->tanggal_surat_usulan }}</td>
-                                        <td>{{ $pengangkatan->no_surat_usulan }}</td>
-                                        <td>{{ $pengangkatan->instansi }}</td>
-                                        <td>{{ $pengangkatan->jenis_usulan }}</td>
-                                        <td>{{ $pengangkatan->nip }}</td>
-                                        <td>{{ $pengangkatan->nama }}</td>
-                                        <td>{{ $pengangkatan->jabatan }}</td>
-                                        <td>Coming Soon..</td>
-                                    </tr>
-                                @endforeach
-                                </tbody>
-                            </table>
-                            <!--end: Datatable-->
                         </div>
                     </div>
                     <!--end card-->

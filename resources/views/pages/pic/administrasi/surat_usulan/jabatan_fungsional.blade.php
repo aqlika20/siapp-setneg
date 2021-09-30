@@ -536,16 +536,16 @@
                             <!--end::Search Form-->
                             <!--end: Search Form-->
                             <!--begin: Datatable-->
-                            <table class="datatable cell-border" id="jabatan_fungsional">
+                            <table class="table data-table-bordered datatable-head-custom" id="jabatan_fungsional_1">
                                 <thead>
                                     <tr>
-                                        <th><strong>Tanggal Agenda</strong></th>
-                                        <th><strong>No Surat</strong></th>
-                                        <th><strong>Instansi Pengusul</strong></th>
-                                        <th><strong>Jenis Usulan</strong></th>
-                                        <th><strong>NIP</strong></th>
-                                        <th><strong>Nama</strong></th>
-                                        <th><strong>Status</strong></th>
+                                        <th>Tanggal Agenda</th>
+                                        <th>No Surat</th>
+                                        <th>Instansi Pengusul</th>
+                                        <th>Jenis Usulan</th>
+                                        <th>NIP</th>
+                                        <th>Nama</th>
+                                        <th>Status</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -554,8 +554,8 @@
                                         <td>{{ $pengangkatan->tgl_surat_usulan }}</td>
                                         <td>{{ $pengangkatan->no_surat_usulan }}</td>
                                         <td>{{ $pengangkatan->instansi_pengusul }}</td>
-                                        <td>{{ Helper::defineJenisLayananBy($pengangkatan->jenis_layanan) }}</td>
-                                        <td>{{ $pengangkatan->nip }}</td>
+                                        <td><div style="color: #FFA800;">{{ Helper::defineJenisLayananBy($pengangkatan->jenis_layanan) }}</div></td>
+                                        <td><div style="color: #3699FF;">{{ $pengangkatan->nip }}</div></td>
                                         <td>{{ $pengangkatan->nama }}</td>
                                         <td>{{ Helper::defineStatusBy($pengangkatan->status) }}</td>
                                     </tr>

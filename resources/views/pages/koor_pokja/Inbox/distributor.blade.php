@@ -65,7 +65,7 @@
                                                             @foreach($group_roles[$list->name] as $role)
                                                                 <table>
                                                                     <th style="width: 200px;"><span class="label label-inline label-pill label-primary" style="height: 35px; font-size: 12px;" >{{$role}}</span></th>
-                                                                    <th style="width: 200px;"><a href="#" class="btn btn-outline-success"><i class="flaticon2-poll-symbol"></i> Distribusikan Ke Batch</a></th>
+                                                                    <!-- <th style="width: 200px;"><a href="#" class="btn btn-outline-success"><i class="flaticon2-poll-symbol"></i> Distribusikan Ke Batch</a></th> -->
                                                                 </table>
                                                                 <br>
                                                             
@@ -83,7 +83,15 @@
                                                                                 <tr>
                                                                                     <td>{{$user->name}}</td>
                                                                                     <td>{{$user->nip}}</td>
-                                                                                    <td> <a href="#" class="btn btn-light-info btn-sm">Distribusikan</a> </td>
+                                                                                    <td> 
+                                                                                        <form method="POST" action="{{ route('koor-pokja.inbox.distributor.store_distributor', ['id' => $pengangkatans->id]) }}">
+                                                                                            @csrf 
+                                                                                            <input type="hidden" class="btn btn-outline-success" name="distributor" value="{{$user->nip}}">
+                                                                                            <button type="submit" class="btn btn-outline-success" >
+                                                                                                <i class="flaticon2-poll-symbol"></i> Distribusikan
+                                                                                            </button>
+                                                                                        </form>
+                                                                                    </td>
                                                                                 </tr>
                                                                             @endif
                                                                         @endforeach

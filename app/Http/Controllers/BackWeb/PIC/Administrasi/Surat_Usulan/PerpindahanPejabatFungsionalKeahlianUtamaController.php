@@ -15,6 +15,7 @@ use App\Pengangkatan;
 use App\PengangkatanPemberhentianJFKU;
 use App\Pangkat;
 use App\Periode;
+use App\Catatan;
 use App\Helper;
 
 use Carbon\Carbon;
@@ -96,27 +97,15 @@ class PerpindahanPejabatFungsionalKeahlianUtamaController extends Controller
             'req_instansi_pengusul' => 'nullable',
             'req_pangkat_gol' => 'nullable',
             'req_tmt_gol' => 'nullable',
-            'req_tmt_cpns' => 'nullable',
-            'req_masa_kerja_gol_tahun' => 'nullable',
-            'req_masa_kerja_gol_bulan' => 'nullable',
             'req_nomor_pak' => 'nullable',
             'req_tanggal_pak' => 'nullable',
             'req_jumlah_angka_kredit' => 'nullable',
             'req_periode_penilaian' => 'nullable',
-            'req_masa_kerja_gol' => 'nullable',
-            'req_tanggal_klarifikasi' => 'nullable',
             'req_jabatan_baru' => 'nullable',
             'req_jabatan_lama' => 'nullable',
             'req_no_sk_jabatan_lama' => 'nullable',
-            'req_no_keppress_jabatan' => 'nullable',
-            'req_tmt_jabatan' => 'nullable',
             'req_unit_kerja_lama' => 'nullable',
             'req_unit_kerja_baru' => 'nullable',
-            'req_pangkat_gol_baru' => 'nullable',
-            'req_tmt_gol_baru' => 'nullable',
-            'req_masa_kerja_gol_tahun_baru' => 'nullable',
-            'req_masa_kerja_gol_bulan_baru' => 'nullable',
-            'req_periode_kenaikan' => 'nullable',
             'req_tanggal_catatan' => 'nullable',
             'req_catatan' => 'nullable',
             'req_tmt_jabatan_lama' => 'nullable',
@@ -127,15 +116,15 @@ class PerpindahanPejabatFungsionalKeahlianUtamaController extends Controller
             'req_sisa' => 'nullable',
 
             
-            'req_file_data_usulan.*' => 'max:1000|mimes:doc,pdf,docx',
-            'req_file_nota_usulan.*' => 'max:1000|mimes:pdf',
-            'req_file_nota_usulan_2.*' => 'max:1000|mimes:pdf',
-            'req_file_data_pak.*' => 'max:1000|mimes:pdf',
-            'req_file_klarifikasi_pak.*' => 'max:1000|mimes:pdf',
-            'req_file_jabatan.*' => 'max:1000|mimes:pdf',
-            'req_file_pengambilan_sumpah.*' => 'max:1000|mimes:pdf',
-            'req_file_pendukung.*' => 'max:1000|mimes:pdf',
-            'req_file_catatan.*' => 'max:1000|mimes:pdf',
+            'req_file_data_usulan.*' => 'max:25000|mimes:docx,doc,xlsx,xls,csv,jpg,png,jpeg,pdf',
+            'req_file_nota_usulan.*' => 'max:25000|mimes:docx,doc,xlsx,xls,csv,jpg,png,jpeg,pdf',
+            'req_file_nota_usulan_2.*' => 'max:25000|mimes:docx,doc,xlsx,xls,csv,jpg,png,jpeg,pdf',
+            'req_file_data_pak.*' => 'max:25000|mimes:docx,doc,xlsx,xls,csv,jpg,png,jpeg,pdf',
+            'req_file_klarifikasi_pak.*' => 'max:25000|mimes:docx,doc,xlsx,xls,csv,jpg,png,jpeg,pdf',
+            'req_file_jabatan.*' => 'max:25000|mimes:docx,doc,xlsx,xls,csv,jpg,png,jpeg,pdf',
+            'req_file_pengambilan_sumpah.*' => 'max:25000|mimes:docx,doc,xlsx,xls,csv,jpg,png,jpeg,pdf',
+            'req_file_pendukung.*' => 'max:25000|mimes:docx,doc,xlsx,xls,csv,jpg,png,jpeg,pdf',
+            'req_file_catatan.*' => 'max:25000|mimes:docx,doc,xlsx,xls,csv,jpg,png,jpeg,pdf',
             'req_file_jabatan_lama.*' => 'max:25000|mimes:docx,doc,xlsx,xls,csv,jpg,png,jpeg,pdf',
             'req_file_jabatan_baru.*' => 'max:25000|mimes:docx,doc,xlsx,xls,csv,jpg,png,jpeg,pdf',
             'req_file_rekomendasi.*' => 'max:25000|mimes:docx,doc,xlsx,xls,csv,jpg,png,jpeg,pdf',
@@ -161,38 +150,26 @@ class PerpindahanPejabatFungsionalKeahlianUtamaController extends Controller
             'instansi_pengusul' => $input['req_instansi_pengusul'],
             'pangkat_gol' => $input['req_pangkat_gol'],
             'tmt_gol' => $input['req_tmt_gol'],
-            'tmt_cpns' => $input['req_tmt_cpns'],
-            'masa_kerja_golongan_thn' => $input['req_masa_kerja_gol_tahun'],
-            'masa_kerja_golongan_bln' => $input['req_masa_kerja_gol_bulan'],
             'nomor_pak' => $input['req_nomor_pak'],
             'tanggal_pak' => $input['req_tanggal_pak'],
             'jumlah_angka_kredit' => $input['req_jumlah_angka_kredit'],
             'periode_penilaian' => $input['req_periode_penilaian'],
-            'nomor_klarifikasi' => $input['req_masa_kerja_gol'],
-            'tanggal_klarifikasi' => $input['req_tanggal_klarifikasi'],
             'jabatan_baru' => $input['req_jabatan_baru'],
             'jabatan_lama' => $input['req_jabatan_lama'],
-            'no_keppres_jabatan' => $input['req_no_keppress_jabatan'],
-            'tmt_jabatan' => $input['req_tmt_jabatan'],
             'unit_kerja_lama' => $input['req_unit_kerja_lama'],
             'unit_kerja_baru' => $input['req_unit_kerja_baru'],
-            'pangkat_gol_baru' => $input['req_pangkat_gol_baru'],
-            'tmt_gol_baru' => $input['req_tmt_gol_baru'],
-            'masa_kerja_gol_thn' => $input['req_masa_kerja_gol_tahun_baru'],
-            'masa_kerja_gol_bln' => $input['req_masa_kerja_gol_bulan_baru'],
-            'periode_kenaikan_pangkat' => $input['req_periode_kenaikan'],
             'tanggal_catatan' => implode(',', $input['req_tanggal_catatan']),
             'catatan' => implode(',', $input['req_catatan']),
             'ket' => implode(',', $input['req_ket']),
             'no_sk_jabatan_lama' => $input['req_no_sk_jabatan_lama'],
             'tmt_jabatan_lama' => $input['req_tmt_jabatan_lama'],
             'no_surat_rekomendasi' => $input['req_no_surat_rekomendasi'],
-            'tgl_surat_rekomendasi' => $imput['req_tlg_surat_rekomendasi'],
+            'tgl_surat_rekomendasi' => $input['req_tlg_surat_rekomendasi'],
             'jumlah' => $input['req_jumlah'],
             'terisi' => $input['req_terisi'],
             'sisa' => $input['req_sisa'],
 
-            'jenis_usulan' => Helper::$pengangkatan_pejabat_FKU,
+            'jenis_usulan' => Helper::$perpindahan_pejabat_FKU,
             'status' => Helper::$proses
             
         ]);
@@ -204,7 +181,7 @@ class PerpindahanPejabatFungsionalKeahlianUtamaController extends Controller
                 Storage::putFileAs($this->data_usulan_folder, $file, $filename);
                 $files[] = $filename;
             }
-            $perpindahans->file_usulan = $files;
+            $perpindahans->file_data_usulan = $files;
         }
 
         if($request->has('req_file_nota_usulan')){
@@ -214,17 +191,7 @@ class PerpindahanPejabatFungsionalKeahlianUtamaController extends Controller
                 Storage::putFileAs($this->note_usulan_folder, $file, $filename);
                 $files[] = $filename;
             }
-            $perpindahans->file_nota_usul_asn_1 = $files;
-        }
-
-        if($request->has('req_file_nota_usulan_2')){
-            $files = [];
-            foreach ($request->file('req_file_nota_usulan_2') as $file) {
-                $filename = round(microtime(true) * 20000).'-'.str_replace(' ','-',$file->getClientOriginalName());
-                Storage::putFileAs($this->note_usulan2_folder, $file, $filename);
-                $files[] = $filename;
-            }
-            $perpindahans->file_nota_usul_asn_2 = $files;
+            $perpindahans->file_nota_usulan_asn = $files;
         }
 
         if($request->has('req_file_data_pak')){
@@ -294,7 +261,7 @@ class PerpindahanPejabatFungsionalKeahlianUtamaController extends Controller
                 Storage::putFileAs($this->data_jabatan_lama_folder, $file, $filename);
                 $files[] = $filename;
             }
-            $perpindahans->file_jabatan_lama = $files;
+            $perpindahans->file_data_jabatan_lama = $files;
         }
 
         if($request->has('req_file_jabatan_baru')){
@@ -304,7 +271,7 @@ class PerpindahanPejabatFungsionalKeahlianUtamaController extends Controller
                 Storage::putFileAs($this->data_jabatan_baru_folder, $file, $filename);
                 $files[] = $filename;
             }
-            $perpindahans->file_jabatan_baru = $files;
+            $perpindahans->file_data_jabatan_baru = $files;
         }
 
         if($request->has('req_file_rekomendasi')){
@@ -354,10 +321,20 @@ class PerpindahanPejabatFungsionalKeahlianUtamaController extends Controller
                 Storage::putFileAs($this->skp_2_lainnya_folder, $file, $filename);
                 $files[] = $filename;
             }
-            $perpindahans->file_skp_2_lainnya = $files;
+            $perpindahans->file_skp_2_dukungan_lainnya = $files;
         }
 
         $perpindahans->save();
+
+        $count = count($input['req_tanggal_catatan']);
+        for($i=0;$i<$count;$i++) {
+            $notes = new Catatan();
+            $notes->jfku_id = $perpindahans->id;
+            $notes->tanggal_catatan = $input['req_tanggal_catatan'][$i];
+            $notes->catatan = $input['req_catatan'][$i];
+            $notes->save();
+
+        }
 
         return redirect()->back()->with(['success'=>'Jabatan Fungsional Success Added!!!']);
     }

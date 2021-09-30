@@ -73,5 +73,14 @@ class DistributorController extends Controller
         return redirect()->route('koor-pokja.inbox.jfku.index')->with(['success'=>'Distribusi Success !!!']);
     }
 
+    public function store_distributor($id, Request $request) 
+    {
+        $input = $request->all();
+        $pengangkatans = PengangkatanPemberhentianJFKU::where('id', '=', $id)->update(
+            ['distributor_id' => $input['distributor']]
+        );
+        return redirect()->route('koor-pokja.inbox.jfku.index')->with(['success'=>'Distribusi Success !!!']);
+    }
+
 
 }

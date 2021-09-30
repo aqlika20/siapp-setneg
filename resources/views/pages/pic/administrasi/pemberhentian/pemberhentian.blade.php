@@ -476,20 +476,6 @@
                                         <th><strong>Aksi</strong></th>
                                     </tr>
                                 </thead>
-                                <tbody>
-                                @foreach($pengangkatans as $pengangkatan)
-                                    <tr>
-                                        <td>{{ $pengangkatan->tanggal_surat_usulan }}</td>
-                                        <td>{{ $pengangkatan->no_surat_usulan }}</td>
-                                        <td>{{ $pengangkatan->instansi }}</td>
-                                        <td>{{ $pengangkatan->jenis_usulan }}</td>
-                                        <td>{{ $pengangkatan->nip }}</td>
-                                        <td>{{ $pengangkatan->nama }}</td>
-                                        <td>{{ $pengangkatan->jabatan }}</td>
-                                        <td>Coming Soon..</td>
-                                    </tr>
-                                @endforeach
-                                </tbody>
                             </table>
                             <!--end: Datatable-->
                         </div>

@@ -13,6 +13,7 @@ use Illuminate\Support\Facades\DB;
 use App\UserManagement;
 use App\PengangkatanPemberhentianJFKU;
 use App\Pangkat;
+use App\Catatan;
 use App\Periode;
 use App\Role;
 use App\Group;
@@ -73,6 +74,48 @@ class JFKUController extends Controller
 
 
         return view('pages.koor_pokja.inbox.jfku', compact('page_title', 'page_description', 'currentUser', 'pengangkatans', 'jfku_pendings', 'jfku_tolaks', 'group_lists', 'group_users', 'group_roles'));
+    }
+
+    public function verification($id){
+        $currentUser = UserManagement::find(Auth::id());
+        $page_title = 'KemenSetneg | Verification';
+        $page_description = 'Verification';
+        $verifikasi = PengangkatanPemberhentianJFKU::where('id', $id)->first();
+
+        $notes = Catatan::where('jfku_id', $id)->get();
+
+        if (!$verifikasi) {
+            return redirect()->route('pages.koor_pokja.inbox.jfku')->with(['error'=>'Invalid parameter id.']);
+        }
+    
+        return view('pages.koor_pokja.inbox.verif', compact('page_title', 'page_description', 'currentUser', 'verifikasi', 'notes'));
+    }
+
+    public function store_proses($id, Request $request) 
+    {
+        $input = $request->all();
+        $pengangkatans = PengangkatanPemberhentianJFKU::where('id', '=', $id)->update(
+            ['status' => $input['proses']]
+        );
+        return redirect()->route('koor-pokja.inbox.jfku.index')->with(['success'=>'verifikasi Success !!!']);
+    }
+
+    public function store_pending($id, Request $request) 
+    {
+        $input = $request->all();
+        $pengangkatans = PengangkatanPemberhentianJFKU::where('id', '=', $id)->update(
+            ['status' => $input['pending']]
+        );
+        return redirect()->route('koor-pokja.inbox.jfku.index')->with(['success'=>'verifikasi Success !!!']);
+    }
+
+    public function store_tolak($id, Request $request) 
+    {
+        $input = $request->all();
+        $pengangkatans = PengangkatanPemberhentianJFKU::where('id', '=', $id)->update(
+            ['status' => $input['tolak']]
+        );
+        return redirect()->route('koor-pokja.inbox.jfku.index')->with(['success'=>'verifikasi Success !!!']);
     }
 
 }

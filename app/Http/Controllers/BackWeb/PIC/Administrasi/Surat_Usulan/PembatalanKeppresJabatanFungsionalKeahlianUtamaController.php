@@ -13,6 +13,7 @@ use Illuminate\Support\Facades\DB;
 use App\UserManagement;
 use App\PengangkatanPemberhentianJFKU;
 use App\Pangkat;
+use App\Catatan;
 use App\Periode;
 use App\Helper;
 
@@ -143,8 +144,8 @@ class PembatalanKeppresJabatanFungsionalKeahlianUtamaController extends Controll
             'alasan_pemberhentian' => $input['req_alasan_pemberhentian'],
             'ket_alasan_pemberhentian' => $input['req_ket_alasan_pemberhentian'],
             
-            'tanggal_catatan' => implode(',', $input['req_tanggal_catatan']),
-            'catatan' => implode(',', $input['req_catatan']),
+            // 'tanggal_catatan' => implode(',', $input['req_tanggal_catatan']),
+            // 'catatan' => implode(',', $input['req_catatan']),
             'ket' => implode(',', $input['req_ket']),
             'jenis_layanan' => Helper::$pembatalan_keppres_jabatan_FKU,
             'status' => Helper::$proses
@@ -223,6 +224,16 @@ class PembatalanKeppresJabatanFungsionalKeahlianUtamaController extends Controll
         }
 
         $pengangkatans->save();
+
+        $count = count($input['req_tanggal_catatan']);
+        for($i=0;$i<$count;$i++) {
+            $notes = new Catatan();
+            $notes->jfku_id = $pengangkatans->id;
+            $notes->tanggal_catatan = $input['req_tanggal_catatan'][$i];
+            $notes->catatan = $input['req_catatan'][$i];
+            $notes->save();
+
+        }
 
         return redirect()->back()->with(['success'=>'Jabatan Fungsional Success Added!!!']);
     }

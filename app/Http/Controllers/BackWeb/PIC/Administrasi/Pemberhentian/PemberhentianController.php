@@ -34,7 +34,7 @@ class PemberhentianController extends Controller
         $currentUser = UserManagement::find(Auth::id());
         $page_title = 'PIC | Administrasi | Pemberhentian';
         $page_description = 'Pemberhentian';
-        $pengangkatans = Pengangkatan::where('status', 'Prosess')->get();
-        return view('pages.pic.administrasi.pemberhentian.pemberhentian', compact('page_title', 'page_description', 'currentUser', 'pengangkatans'));
+        // $pengangkatans = Pengangkatan::where('status', 'Prosess')->get();
+        return view('pages.pic.administrasi.pemberhentian.pemberhentian', compact('page_title', 'page_description', 'currentUser'));
     }
 }
