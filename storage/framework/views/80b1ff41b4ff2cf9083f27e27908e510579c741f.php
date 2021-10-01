@@ -16,6 +16,7 @@
 
         
         <link rel="shortcut icon" href="<?php echo e(asset('media/logos/siapp.ico')); ?>" />
+        <!-- <link rel="shortcut icon" href="<?php echo e(secure_asset('media/logos/siapp.ico')); ?>" /> -->
 
         
         
@@ -23,28 +24,32 @@
         
         <?php $__currentLoopData = config('layout.resources.css'); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $style): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
             <link href="<?php echo e(config('layout.self.rtl') ? asset(Metronic::rtlCssPath($style)) : asset($style)); ?>" rel="stylesheet" type="text/css"/>
+            <!-- <link href="<?php echo e(config('layout.self.rtl') ? secure_asset(Metronic::rtlCssPath($style)) : secure_asset($style)); ?>" rel="stylesheet" type="text/css"/> -->
         <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
 
         
         <?php $__currentLoopData = Metronic::initThemes(); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $theme): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
             <link href="<?php echo e(config('layout.self.rtl') ? asset(Metronic::rtlCssPath($theme)) : asset($theme)); ?>" rel="stylesheet" type="text/css"/>
+            <!-- <link href="<?php echo e(config('layout.self.rtl') ? secure_asset(Metronic::rtlCssPath($theme)) : secure_asset($theme)); ?>" rel="stylesheet" type="text/css"/> -->
         <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
 
         
             
 		    <link href="<?php echo e(asset('css/pages/wizard/wizard-2.css')); ?>" rel="stylesheet" type="text/css" />
+		    <!-- <link href="<?php echo e(secure_asset('css/pages/wizard/wizard-2.css')); ?>" rel="stylesheet" type="text/css" /> -->
         
 
         
         <style>
+            th[data-field="#"]{
+                font-weight: bold;
+            }
             th[data-field="#"], td[data-field="#"] {
                 width: 30px !important;
-                weight: bold;
             }
 
             th[data-field="#"] span, td[data-field="#"] span {
                 width: 30px !important;
-                weight: bold;
             }
             
             .datatable td{
@@ -71,6 +76,7 @@
         
         <?php $__currentLoopData = config('layout.resources.js'); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $script): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
             <script src="<?php echo e(asset($script)); ?>" type="text/javascript"></script>
+            <!-- <script src="<?php echo e(secure_asset($script)); ?>" type="text/javascript"></script> -->
 
         <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
         <!-- <script src="../../js/papaparse.min.js"></script> -->

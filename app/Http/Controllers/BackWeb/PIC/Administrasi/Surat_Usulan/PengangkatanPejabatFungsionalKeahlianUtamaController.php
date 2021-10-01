@@ -86,18 +86,20 @@ class PengangkatanPejabatFungsionalKeahlianUtamaController extends Controller
         $input = $request->all();
 
         $validator = Validator::make($input, [
-            'req_tanggal_surat_usulan' => 'nullable',
-            'req_no_surat_usulan' => 'nullable',
-            'req_jabatan_menandatangani' => 'nullable',
-            'req_nip' => 'nullable',
-            'req_nama' => 'nullable',
-            'req_tempat_lahir' => 'nullable',
-            'req_tanggal_lahir' => 'nullable',
-            'req_pendidikan_terakhir' => 'nullable',
-            'req_instansi_induk' => 'nullable',
-            'req_instansi_pengusul' => 'nullable',
-            'req_pangkat_gol' => 'nullable',
-            'req_tmt_gol' => 'nullable',
+            'req_tanggal_surat_usulan' => 'required',
+            'req_no_surat_usulan' => 'required',
+            'req_jabatan_menandatangani' => 'required',
+
+            'req_nip' => 'required',
+            'req_nama' => 'required',
+            'req_tempat_lahir' => 'required',
+            'req_tanggal_lahir' => 'required',
+            'req_pendidikan_terakhir' => 'required',
+            'req_instansi_induk' => 'required',
+            'req_instansi_pengusul' => 'required',
+            'req_pangkat_gol' => 'required',
+            'req_tmt_gol' => 'required',
+
             'req_nomor_pak' => 'nullable',
             'req_tanggal_pak' => 'nullable',
             'req_jumlah_angka_kredit' => 'nullable',
@@ -105,28 +107,28 @@ class PengangkatanPejabatFungsionalKeahlianUtamaController extends Controller
             'req_periode_penilaian' => 'nullable',
             'req_masa_kerja_gol' => 'nullable',
             'req_tanggal_klarifikasi' => 'nullable',
-            'req_jabatan_baru' => 'nullable',
-            'req_jabatan_lama' => 'nullable',
-            'req_tmt_jabatan_lama' => 'nullable',
-            'req_no_sk_jabatan_lama' => 'nullable',
-            'req_unit_kerja_baru' => 'nullable',
-            'req_unit_kerja_lama' => 'nullable',
-            'req_jabatan_kompetensi' => 'nullable',
-            'req_periode_kenaikan' => 'nullable',
-            'req_tanggal_catatan' => 'nullable',
-            'req_catatan' => 'nullable',
-            'req_no_sertifikat' => 'nullable',
-            'req_tgl_sertifikat' => 'nullable',
-            'req_terisi' => 'nullable',
-            'req_sisa' => 'nullable',
-            'req_ket' => 'nullable',
+
+            'req_jabatan_baru' => 'required',
+            'req_jabatan_lama' => 'required',
+            'req_tmt_jabatan_lama' => 'required',
+            'req_no_sk_jabatan_lama' => 'required',
+            'req_unit_kerja_baru' => 'required',
+            'req_unit_kerja_lama' => 'required',
+            'req_jabatan_kompetensi' => 'required',
+            'req_periode_kenaikan' => 'required',
+            'req_tanggal_catatan' => 'required',
+            'req_catatan' => 'required',
+            'req_no_sertifikat' => 'required',
+            'req_tgl_sertifikat' => 'required',
+            'req_terisi' => 'required',
+            'req_sisa' => 'required',
+            'req_ket' => 'required',
             
             // 'jenis_usulan' => Helper::$pengangkatan_pejabat_FKU,
             // 'status' => Helper::$proses,
 
             'req_file_data_usulan.*' => 'max:25000|mimes:docx,doc,xlsx,xls,csv,jpg,png,jpeg,pdf',
             'req_file_nota_usulan.*' => 'max:25000|mimes:docx,doc,xlsx,xls,csv,jpg,png,jpeg,pdf',
-            'req_file_nota_usulan_2.*' => 'max:25000|mimes:docx,doc,xlsx,xls,csv,jpg,png,jpeg,pdf',
             'req_file_data_pak.*' => 'max:25000|mimes:docx,doc,xlsx,xls,csv,jpg,png,jpeg,pdf',
             'req_file_klarifikasi_pak.*' => 'max:25000|mimes:docx,doc,xlsx,xls,csv,jpg,png,jpeg,pdf',
             'req_file_jabatan.*' => 'max:25000|mimes:docx,doc,xlsx,xls,csv,jpg,png,jpeg,pdf',
@@ -327,7 +329,6 @@ class PengangkatanPejabatFungsionalKeahlianUtamaController extends Controller
             $notes->save();
 
         }
-        
 
         return redirect()->back()->with(['success'=>'Jabatan Fungsional Success Added!!!']);
     }

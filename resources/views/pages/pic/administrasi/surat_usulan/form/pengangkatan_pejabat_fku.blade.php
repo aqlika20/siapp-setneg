@@ -225,46 +225,6 @@
                                                 </div>
                                             </div>
                                             
-                                            <div class="form-group row">
-                                                <label class="col-lg-3 col-form-label text-lg-right">Upload/Download Nota Usul</label>
-                                                <div class="col-lg-9">
-                                                    <input id="req_file_nota_usulan_2" name="req_file_nota_usulan_2[]" type="file" class="file" data-show-preview="false" multiple/>
-                                                    <!-- <div class="dropzone dropzone-multi" id="kt_dropzone_6">
-                                                        <div class="dropzone-panel mb-lg-0 mb-2">
-                                                            <a class="dropzone-select btn btn-light-primary font-weight-bold btn-sm">Attach files</a>
-                                                            <a class="dropzone-upload btn btn-light-primary font-weight-bold btn-sm">Upload All</a>
-                                                            <a class="dropzone-remove-all btn btn-light-primary font-weight-bold btn-sm">Remove All</a>
-                                                        </div>
-                                                        <div class="dropzone-items">
-                                                            <div class="dropzone-item" style="display:none">
-                                                                <div class="dropzone-file">
-                                                                    <div class="dropzone-filename" title="some_image_file_name.jpg">
-                                                                        <span data-dz-name="">some_image_file_name.jpg</span>
-                                                                        <strong>(<span data-dz-size="">340kb</span>)</strong>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="dropzone-progress">
-                                                                    <div class="progress">
-                                                                        <div class="progress-bar bg-primary" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" data-dz-uploadprogress=""></div>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="dropzone-toolbar">
-                                                                    <span class="dropzone-start">
-                                                                        <i class="flaticon2-arrow"></i>
-                                                                    </span>
-                                                                    <span class="dropzone-cancel" data-dz-remove="" style="display: none;">
-                                                                        <i class="flaticon2-cross"></i>
-                                                                    </span>
-                                                                    <span class="dropzone-delete" data-dz-remove="">
-                                                                        <i class="flaticon2-cross"></i>
-                                                                    </span>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div> -->
-                                                    <span class="form-text text-muted">Max file size is 1MB and max number of files is 5.</span>
-                                                </div>
-                                            </div>
                                             <div  id="otherFieldDiv">
                                                 <h4 class="mb-10 font-weight-bold text-dark">Data PAK</h4>
                                                 <!--begin::Input-->
@@ -912,11 +872,8 @@
                                                     </div>
                                                 </div>
                                             </div>	 
-
                                         </div>
-
-                                        </div>
-
+                                    
                                         <div class="d-flex justify-content-between mt-5 pt-10">
                                             <div class="mr-2">
                                                 <button type="button" class="btn btn-light-primary font-weight-bolder text-uppercase px-9 py-4" data-wizard-type="action-prev">Sebelumnya</button>
