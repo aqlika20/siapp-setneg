@@ -28,44 +28,33 @@ class PerpindahanPejabatFungsionalKeahlianUtamaController extends Controller
      * Pengangkatan Pejabat Fungsional Keahlian Utama Attachments root folder
      * only declared here.
      */
-    private $attachments_root_folder = "pengangkatan_pejabat_fungsional_keahlian_utama_attachments/";
+    private $attachments_root_folder = "JFKU_Attachments/";
     private $data_usulan_folder;
-    private $note_usulan_folder;
-    private $note_usulan2_folder;
+    private $data_asn_folder;
     private $data_pak_folder;
-    private $klarifikasi_pak_folder;
-    private $data_jabatan_folder;
-    private $ba_pengambilan_sumpah_folder;
-    private $data_pendukung_pangkat_baru_folder;
-    private $tambah_catatan_folder;
     private $data_jabatan_lama_folder;
     private $data_jabatan_baru_folder;
-    private $data_rekomendasi;
-    private $data_surat_pernyataan_rekomendasi;
-    private $formasi_jabatan_folder;
-    private $skp_2_folder;
-    private $skp_2_lainnya_folder;
+    private $data_rekomendasi_folder;
+    private $data_surat_pernyataan_rekomendasi_folder;
+    private $data_formasi_jabatan_folder;
+    private $data_skp_2_folder;
+    private $data_skp_2_dukungan_lainnya_folder;
 
     public function __construct()
     {
         $this->curr_int_time = strtotime(Carbon::now());
         $this->middleware('auth');
         $this->data_usulan_folder = $this->attachments_root_folder . "data_usulan/";
-        $this->note_usulan_folder = $this->attachments_root_folder . "note_usulan/";
-        $this->note_usulan2_folder = $this->attachments_root_folder . "note_usulan2/";
+        $this->data_asn_folder = $this->attachments_root_folder . "data_asn/";
         $this->data_pak_folder = $this->attachments_root_folder . "data_pak/";
-        $this->klarifikasi_pak_folder = $this->attachments_root_folder . "klarifikasi_pak/";
-        $this->data_jabatan_folder = $this->attachments_root_folder . "data_jabatan/";
-        $this->ba_pengambilan_sumpah_folder = $this->attachments_root_folder . "ba_pengambilan_sumpah/";
-        $this->data_pendukung_pangkat_baru_folder = $this->attachments_root_folder . "data_pendukung_pangkat_baru/";
-        $this->tambah_catatan_folder = $this->attachments_root_folder . "tambah_catatan/";
         $this->data_jabatan_lama_folder = $this->attachments_root_folder . "data_jabatan_lama/";
         $this->data_jabatan_baru_folder = $this->attachments_root_folder . "data_jabatan_baru/";
-        $this->data_rekomendasi = $this->attachments_root_folder . "data_rekomendasi/";
-        $this->data_surat_pernyataan_rekomendasi = $this->attachments_root_folder . "data_surat_pernyataan_rekomendasi/";
-        $this->formasi_jabatan_folder = $this->attachments_root_folder . "formasi_jabatan/";
-        $this->skp_2_folder = $this->attachments_root_folder . "skp_2/";
-        $this->skp_2_lainnya_folder = $this->attachments_root_folder . "skp_2_lainnya/";
+        $this->data_rekomendasi_folder = $this->attachments_root_folder . "data_rekomendasi/";
+        $this->data_surat_pernyataan_rekomendasi_folder = $this->attachments_root_folder . "data_surat_pernyataan_rekomendasi/";
+        $this->data_formasi_jabatan_folder = $this->attachments_root_folder . "data_formasi_jabatan/";
+        $this->data_skp_2_folder = $this->attachments_root_folder . "data_skp_2/";
+        $this->data_skp_2_dukungan_lainnya_folder = $this->attachments_root_folder . "data_skp_2_dukungan_lainnya/";
+
     }
 
     public function index() 
@@ -85,52 +74,56 @@ class PerpindahanPejabatFungsionalKeahlianUtamaController extends Controller
         $input = $request->all();
 
         $validator = Validator::make($input, [
-            'req_tanggal_surat_usulan' => 'nullable',
-            'req_no_surat_usulan' => 'nullable',
-            'req_jabatan_menandatangani' => 'nullable',
-            'req_nip' => 'nullable',
-            'req_nama' => 'nullable',
-            'req_tempat_lahir' => 'nullable',
-            'req_tanggal_lahir' => 'nullable',
-            'req_pendidikan_terakhir' => 'nullable',
-            'req_instansi_induk' => 'nullable',
-            'req_instansi_pengusul' => 'nullable',
-            'req_pangkat_gol' => 'nullable',
-            'req_tmt_gol' => 'nullable',
-            'req_nomor_pak' => 'nullable',
-            'req_tanggal_pak' => 'nullable',
-            'req_jumlah_angka_kredit' => 'nullable',
-            'req_periode_penilaian' => 'nullable',
-            'req_jabatan_baru' => 'nullable',
-            'req_jabatan_lama' => 'nullable',
-            'req_no_sk_jabatan_lama' => 'nullable',
-            'req_unit_kerja_lama' => 'nullable',
-            'req_unit_kerja_baru' => 'nullable',
-            'req_tanggal_catatan' => 'nullable',
-            'req_catatan' => 'nullable',
-            'req_tmt_jabatan_lama' => 'nullable',
-            'req_no_surat_rekomendasi' => 'nullable',
-            'req_tlg_surat_rekomendasi' => 'nullable',
-            'req_jumlah' => 'nullable',
-            'req_terisi' => 'nullable',
-            'req_sisa' => 'nullable',
+            'req_tanggal_surat_usulan' => 'required',
+            'req_no_surat_usulan' => 'required',
+            'req_jabatan_menandatangani' => 'required',
+
+            'req_nip' => 'required',
+            'req_nama' => 'required',
+            'req_tempat_lahir' => 'required',
+            'req_tanggal_lahir' => 'required',
+            'req_pendidikan_terakhir' => 'required',
+            'req_instansi_induk' => 'required',
+            'req_instansi_pengusul' => 'required',
+            'req_pangkat_gol' => 'required',
+            'req_tmt_gol' => 'required',
+
+            'req_nomor_pak' => 'required',
+            'req_tanggal_pak' => 'required',
+            'req_jumlah_angka_kredit' => 'required',
+            'req_periode_penilaian' => 'required',
+
+            'req_jabatan_lama' => 'required',
+            'req_no_sk_jabatan_lama' => 'required',
+            'req_tmt_jabatan_lama' => 'required',
+            'req_unit_kerja_lama' => 'required',
+
+            'req_jabatan_baru' => 'required',
+            'req_unit_kerja_baru' => 'required',
+
+            'req_no_surat_rekomendasi' => 'required',
+            'req_tgl_surat_rekomendasi' => 'required',
+
+            'req_jumlah' => 'required',
+            'req_terisi' => 'required',
+            'req_sisa' => 'required',
+
+            'req_tanggal_catatan' => 'required',
+            'req_catatan' => 'required',
+            'req_ket' => 'required',
 
             
-            'req_file_data_usulan.*' => 'max:25000|mimes:docx,doc,xlsx,xls,csv,jpg,png,jpeg,pdf',
-            'req_file_nota_usulan.*' => 'max:25000|mimes:docx,doc,xlsx,xls,csv,jpg,png,jpeg,pdf',
-            'req_file_nota_usulan_2.*' => 'max:25000|mimes:docx,doc,xlsx,xls,csv,jpg,png,jpeg,pdf',
-            'req_file_data_pak.*' => 'max:25000|mimes:docx,doc,xlsx,xls,csv,jpg,png,jpeg,pdf',
-            'req_file_klarifikasi_pak.*' => 'max:25000|mimes:docx,doc,xlsx,xls,csv,jpg,png,jpeg,pdf',
-            'req_file_jabatan.*' => 'max:25000|mimes:docx,doc,xlsx,xls,csv,jpg,png,jpeg,pdf',
-            'req_file_pengambilan_sumpah.*' => 'max:25000|mimes:docx,doc,xlsx,xls,csv,jpg,png,jpeg,pdf',
-            'req_file_pendukung.*' => 'max:25000|mimes:docx,doc,xlsx,xls,csv,jpg,png,jpeg,pdf',
-            'req_file_catatan.*' => 'max:25000|mimes:docx,doc,xlsx,xls,csv,jpg,png,jpeg,pdf',
-            'req_file_jabatan_lama.*' => 'max:25000|mimes:docx,doc,xlsx,xls,csv,jpg,png,jpeg,pdf',
-            'req_file_jabatan_baru.*' => 'max:25000|mimes:docx,doc,xlsx,xls,csv,jpg,png,jpeg,pdf',
-            'req_file_rekomendasi.*' => 'max:25000|mimes:docx,doc,xlsx,xls,csv,jpg,png,jpeg,pdf',
-            'req_file_formasi_jabatan.*' => 'max:25000|mimes:docx,doc,xlsx,xls,csv,jpg,png,jpeg,pdf',
-            'req_file_skp_2.*' => 'max:25000|mimes:docx,doc,xlsx,xls,csv,jpg,png,jpeg,pdf',
-            'req_file_skp_2_lainnya.*' => 'max:25000|mimes:docx,doc,xlsx,xls,csv,jpg,png,jpeg,pdf',
+            'req_file_data_usulan.*' => 'max:25000|mimes:jpg,png,jpeg,pdf',
+            'req_file_data_asn.*' => 'max:25000|mimes:jpg,png,jpeg,pdf',
+            'req_file_data_pak.*' => 'max:25000|mimes:jpg,png,jpeg,pdf',
+            'req_file_data_jabatan_lama.*' => 'max:25000|mimes:jpg,png,jpeg,pdf',
+            'req_file_data_jabatan_baru.*' => 'max:25000|mimes:jpg,png,jpeg,pdf',
+            'req_file_data_rekomendasi.*' => 'max:25000|mimes:jpg,png,jpeg,pdf',
+            'req_file_surat_pernyataan_rekomendasi.*' => 'max:25000|mimes:jpg,png,jpeg,pdf',
+            'req_file_formasi_jabatan.*' => 'max:25000|mimes:jpg,png,jpeg,pdf',
+            'req_file_skp_2.*' => 'max:25000|mimes:jpg,png,jpeg,pdf',
+            'req_file_skp_2_dukungan_lainnya.*' => 'max:25000|mimes:jpg,png,jpeg,pdf',
+
         ]);
 
         if ($validator->fails()) {
@@ -138,9 +131,10 @@ class PerpindahanPejabatFungsionalKeahlianUtamaController extends Controller
         }
 
         $perpindahans = PengangkatanPemberhentianJFKU::create([
-            'no_surat_usulan' => $input['req_no_surat_usulan'],
             'tgl_surat_usulan' => $input['req_tanggal_surat_usulan'],
-            'pejabat_ttd' => $input['req_jabatan_menandatangani'],
+            'no_surat_usulan' => $input['req_no_surat_usulan'],
+            'pejabat_menandatangani' => $input['req_jabatan_menandatangani'],
+            
             'nip' => $input['req_nip'],
             'nama' => $input['req_nama'],
             'tempat_lahir' => $input['req_tempat_lahir'],
@@ -150,26 +144,29 @@ class PerpindahanPejabatFungsionalKeahlianUtamaController extends Controller
             'instansi_pengusul' => $input['req_instansi_pengusul'],
             'pangkat_gol' => $input['req_pangkat_gol'],
             'tmt_gol' => $input['req_tmt_gol'],
+
             'nomor_pak' => $input['req_nomor_pak'],
             'tanggal_pak' => $input['req_tanggal_pak'],
             'jumlah_angka_kredit' => $input['req_jumlah_angka_kredit'],
             'periode_penilaian' => $input['req_periode_penilaian'],
-            'jabatan_baru' => $input['req_jabatan_baru'],
+
             'jabatan_lama' => $input['req_jabatan_lama'],
-            'unit_kerja_lama' => $input['req_unit_kerja_lama'],
-            'unit_kerja_baru' => $input['req_unit_kerja_baru'],
-            'tanggal_catatan' => implode(',', $input['req_tanggal_catatan']),
-            'catatan' => implode(',', $input['req_catatan']),
-            'ket' => implode(',', $input['req_ket']),
             'no_sk_jabatan_lama' => $input['req_no_sk_jabatan_lama'],
             'tmt_jabatan_lama' => $input['req_tmt_jabatan_lama'],
+            'unit_kerja_lama' => $input['req_unit_kerja_lama'],
+
+            'jabatan_baru' => $input['req_jabatan_baru'],
+            'unit_kerja_baru' => $input['req_unit_kerja_baru'],
+
             'no_surat_rekomendasi' => $input['req_no_surat_rekomendasi'],
-            'tgl_surat_rekomendasi' => $input['req_tlg_surat_rekomendasi'],
+            'tgl_surat_rekomendasi' => $input['req_tgl_surat_rekomendasi'],
+
             'jumlah' => $input['req_jumlah'],
             'terisi' => $input['req_terisi'],
             'sisa' => $input['req_sisa'],
 
-            'jenis_usulan' => Helper::$perpindahan_pejabat_FKU,
+            'ket' => implode(',', $input['req_ket']),
+            'jenis_layanan' => Helper::$perpindahan_pejabat_FKU,
             'status' => Helper::$proses
             
         ]);
@@ -181,17 +178,17 @@ class PerpindahanPejabatFungsionalKeahlianUtamaController extends Controller
                 Storage::putFileAs($this->data_usulan_folder, $file, $filename);
                 $files[] = $filename;
             }
-            $perpindahans->file_data_usulan = $files;
+            $pengangkatans->file_data_usulan = implode(',', $files);
         }
-
-        if($request->has('req_file_nota_usulan')){
+        
+        if($request->has('req_file_data_asn')){
             $files = [];
-            foreach ($request->file('req_file_nota_usulan') as $file) {
+            foreach ($request->file('req_file_data_asn') as $file) {
                 $filename = round(microtime(true) * 20000).'-'.str_replace(' ','-',$file->getClientOriginalName());
-                Storage::putFileAs($this->note_usulan_folder, $file, $filename);
+                Storage::putFileAs($this->data_asn_folder, $file, $filename);
                 $files[] = $filename;
             }
-            $perpindahans->file_nota_usulan_asn = $files;
+            $pengangkatans->file_nota_usulan_asn = implode(',', $files);
         }
 
         if($request->has('req_file_data_pak')){
@@ -201,127 +198,77 @@ class PerpindahanPejabatFungsionalKeahlianUtamaController extends Controller
                 Storage::putFileAs($this->data_pak_folder, $file, $filename);
                 $files[] = $filename;
             }
-            $perpindahans->file_data_pak = $files;
+            $pengangkatans->file_data_pak = implode(',', $files);
         }
 
-        if($request->has('req_file_klarifikasi_pak')){
+        if($request->has('req_file_data_jabatan_lama')){
             $files = [];
-            foreach ($request->file('req_file_klarifikasi_pak') as $file) {
-                $filename = round(microtime(true) * 20000).'-'.str_replace(' ','-',$file->getClientOriginalName());
-                Storage::putFileAs($this->klarifikasi_pak_folder, $file, $filename);
-                $files[] = $filename;
-            }
-            $perpindahans->file_klarifikasi_pak = $files;
-        }
-
-        if($request->has('req_file_jabatan')){
-            $files = [];
-            foreach ($request->file('req_file_jabatan') as $file) {
-                $filename = round(microtime(true) * 20000).'-'.str_replace(' ','-',$file->getClientOriginalName());
-                Storage::putFileAs($this->data_jabatan_folder, $file, $filename);
-                $files[] = $filename;
-            }
-            $perpindahans->file_jabatan = $files;
-        }
-
-        if($request->has('req_file_pengambilan_sumpah')){
-            $files = [];
-            foreach ($request->file('req_file_pengambilan_sumpah') as $file) {
-                $filename = round(microtime(true) * 20000).'-'.str_replace(' ','-',$file->getClientOriginalName());
-                Storage::putFileAs($this->ba_pengambilan_sumpah_folder, $file, $filename);
-                $files[] = $filename;
-            }
-            $perpindahans->file_ba_pengambilan_sumpah_jabatan = $files;
-        }
-
-        if($request->has('req_file_pendukung')){
-            $files = [];
-            foreach ($request->file('req_file_pendukung') as $file) {
-                $filename = round(microtime(true) * 20000).'-'.str_replace(' ','-',$file->getClientOriginalName());
-                Storage::putFileAs($this->data_pendukung_pangkat_baru_folder, $file, $filename);
-                $files[] = $filename;
-            }
-            $perpindahans->file_data_pendukung = $files;
-        }
-
-        if($request->has('req_file_catatan')){
-            $files = [];
-            foreach ($request->file('req_file_catatan') as $file) {
-                $filename = round(microtime(true) * 20000).'-'.str_replace(' ','-',$file->getClientOriginalName());
-                Storage::putFileAs($this->tambah_catatan_folder, $file, $filename);
-                $files[] = $filename;
-            }
-            $perpindahans->tambah_catatan = $files;
-        }
-
-        if($request->has('req_file_jabatan_lama')){
-            $files = [];
-            foreach ($request->file('req_file_jabatan_lama') as $file) {
+            foreach ($request->file('req_file_data_jabatan_lama') as $file) {
                 $filename = round(microtime(true) * 20000).'-'.str_replace(' ','-',$file->getClientOriginalName());
                 Storage::putFileAs($this->data_jabatan_lama_folder, $file, $filename);
                 $files[] = $filename;
             }
-            $perpindahans->file_data_jabatan_lama = $files;
+            $pengangkatans->file_data_jabatan_lama = implode(',', $files);
         }
 
-        if($request->has('req_file_jabatan_baru')){
+        if($request->has('req_file_data_jabatan_baru')){
             $files = [];
-            foreach ($request->file('req_file_jabatan_baru') as $file) {
+            foreach ($request->file('req_file_data_jabatan_baru') as $file) {
                 $filename = round(microtime(true) * 20000).'-'.str_replace(' ','-',$file->getClientOriginalName());
                 Storage::putFileAs($this->data_jabatan_baru_folder, $file, $filename);
                 $files[] = $filename;
             }
-            $perpindahans->file_data_jabatan_baru = $files;
+            $pengangkatans->file_data_jabatan_baru = implode(',', $files);
         }
 
-        if($request->has('req_file_rekomendasi')){
+        if($request->has('req_file_data_rekomendasi')){
             $files = [];
-            foreach ($request->file('req_file_rekomendasi') as $file) {
+            foreach ($request->file('req_file_data_rekomendasi') as $file) {
                 $filename = round(microtime(true) * 20000).'-'.str_replace(' ','-',$file->getClientOriginalName());
-                Storage::putFileAs($this->data_rekomendasi, $file, $filename);
+                Storage::putFileAs($this->data_rekomendasi_folder, $file, $filename);
                 $files[] = $filename;
             }
-            $perpindahans->file_data_rekomendasi = $files;
+            $pengangkatans->file_data_rekomendasi = implode(',', $files);
         }
 
         if($request->has('req_file_surat_pernyataan_rekomendasi')){
             $files = [];
             foreach ($request->file('req_file_surat_pernyataan_rekomendasi') as $file) {
                 $filename = round(microtime(true) * 20000).'-'.str_replace(' ','-',$file->getClientOriginalName());
-                Storage::putFileAs($this->data_surat_pernyataan_rekomendasi, $file, $filename);
+                Storage::putFileAs($this->data_surat_pernyataan_rekomendasi_folder, $file, $filename);
                 $files[] = $filename;
             }
-            $perpindahans->file_surat_pernyataan_rekomendasi = $files;
+            $pengangkatans->file_surat_pernyataan_rekomendasi = implode(',', $files);
         }
 
         if($request->has('req_file_formasi_jabatan')){
             $files = [];
             foreach ($request->file('req_file_formasi_jabatan') as $file) {
                 $filename = round(microtime(true) * 20000).'-'.str_replace(' ','-',$file->getClientOriginalName());
-                Storage::putFileAs($this->formasi_jabatan_folder, $file, $filename);
+                Storage::putFileAs($this->data_formasi_jabatan_folder, $file, $filename);
                 $files[] = $filename;
             }
-            $perpindahans->file_formasi_jabatan = $files;
+            $pengangkatans->file_formasi_jabatan = implode(',', $files);
         }
 
         if($request->has('req_file_skp_2')){
             $files = [];
             foreach ($request->file('req_file_skp_2') as $file) {
                 $filename = round(microtime(true) * 20000).'-'.str_replace(' ','-',$file->getClientOriginalName());
-                Storage::putFileAs($this->skp_2_folder, $file, $filename);
+                Storage::putFileAs($this->data_skp_2_folder, $file, $filename);
                 $files[] = $filename;
             }
-            $perpindahans->file_skp_2 = $files;
+            $pengangkatans->file_skp_2 = implode(',', $files);
         }
 
-        if($request->has('req_file_skp_2_lainnya')){
+        if($request->has('req_file_skp_2_dukungan_lainnya')){
             $files = [];
-            foreach ($request->file('req_file_skp_2_lainnya') as $file) {
+            foreach ($request->file('req_file_skp_2_dukungan_lainnya') as $file) {
                 $filename = round(microtime(true) * 20000).'-'.str_replace(' ','-',$file->getClientOriginalName());
-                Storage::putFileAs($this->skp_2_lainnya_folder, $file, $filename);
+                Storage::putFileAs($this->data_skp_2_dukungan_lainnya_folder, $file, $filename);
                 $files[] = $filename;
             }
-            $perpindahans->file_skp_2_dukungan_lainnya = $files;
+            $pengangkatans->file_skp_2_dukungan_lainnya = implode(',', $files);
         }
 
         $perpindahans->save();
@@ -336,7 +283,7 @@ class PerpindahanPejabatFungsionalKeahlianUtamaController extends Controller
 
         }
 
-        return redirect()->back()->with(['success'=>'Jabatan Fungsional Success Added!!!']);
+        return redirect()->route('pic.administrasi.surat-usulan.index')->with(['success'=>'Jabatan Fungsional Success Added!!!']);
     }
    
 

@@ -115,7 +115,6 @@ class PengangkatanPejabatFungsionalKeahlianUtamaController extends Controller
             'req_unit_kerja_baru' => 'required',
             'req_unit_kerja_lama' => 'required',
             'req_jabatan_kompetensi' => 'required',
-            'req_periode_kenaikan' => 'required',
             'req_tanggal_catatan' => 'required',
             'req_catatan' => 'required',
             'req_no_sertifikat' => 'required',
