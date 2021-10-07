@@ -108,198 +108,67 @@
 
       var KTDatatableHtmlTableDemo = function () {
 
-        // Private functions
-      
-        // demo initializer
-        // var groupByTable = function groupByTable() {
-        //   var dataJSONArray = JSON.parse(
-        //     '[{"RecordID":1,"Nama":"Grub 1","NIP":"12345523455123","Instansi":"BADAN RISET DAN INOVASI NASIONAL","Status":1,"Type":3,"Orders":[{"Jabatan":"Andika Purnomo","Periode":"817161514"},{"Jabatan":"Arjuna Weda","Periode":"918178374"},{"Jabatan":"Arlambang Pambudie","Periode":"12312311"},{"Jabatan":"Lala Cyanticka","Periode":"9181716154"}]},\n' +
-        //     '{"RecordID":2,"Nama":"Grub 2","NIP":"12312312312","Instansi":"BADAN RISET DAN INOVASI NASIONAL","Status":3,"Type":3,"Orders":[{"Jabatan":"Ariel Sibolutanggang","Pangkat":"IV/c","Periode":"2021/2022","NoPertek":"456789056788","TanggalPertek":"3/5/2021"},{}]},\n' +
-        //     '{"RecordID":3,"Nama":"Grub 3","NIP":"12312312","Instansi":"BADAN RISET DAN INOVASI NASIONAL","Status":4,"Type":4,"Orders":[{"Jabatan":"Arsyaf Albuquerque","Pangkat":"IV/c","Periode":"2021/2022","NoPertek":"92827625242425","TanggalPertek":"3/5/2021"},{}]},\n' +
-        //     '{"RecordID":345,"Nama":"Grub 4","NIP":"1231231231231","Instansi":"BADAN RISET DAN INOVASI NASIONAL","Status":2,"Type":3,"Orders":[{"Jabatan":"Hendrawan Susilo Adi","Pangkat":"IV/c","Periode":"2021/2022","NoPertek":"14124121312","TanggalPertek":"3/5/2021"},{}]},\n' +
-        //     '{"RecordID":350,"Nama":"Grub 5","NIP":"345345345345","Instansi":"BADAN RISET DAN INOVASI NASIONAL","Status":3,"Type":3,"Orders":[{"Jabatan":"Ramos Raditya Anaki","Pangkat":"IV/c","Periode":"2021/2022","NoPertek":"45678945678","TanggalPertek":"3/5/2021"},{}]}]');
-      
-        //   var datatable = $('.groupByTable').KTDatatable({
-        //     // datasource definition
-        //     data: {
-        //       type: 'local',
-        //       source: dataJSONArray,
-        //       pageSize: 10, // display 20 records per page
-        //     },
-        //     // data: {
-        //     //   saveState: {
-        //     //     cookie: false
-        //     //   }
-        //     // },
-        //     // layout definition
-        //     layout: {
-        //       scroll: false,
-        //       height: null,
-        //       footer: false,
-        //     },
-      
-        //     sortable: true,
-      
-        //     filterable: false,
-      
-        //     pagination: true,
-      
-        //     detail: {
-        //       title: 'Load sub table',
-        //       content: subTableInit,
-        //     },
-      
-        //     search: {
-        //       input: $('#kt_datatable_search_query'),
-        //       key: 'generalSearch'
-        //     },
-      
-        //     // columns definition
-        //     columns: [
-        //       {
-        //         field: 'RecordID',
-        //         title: '',
-        //         sortable: false,
-        //         width: 30,
-        //         textAlign: 'center',
-        //       }, {
-        //         field: 'Nama',
-        //         title: 'Grub',
-        //         width: 200,
-      
-        //       }, {
-        //         field: '',
-        //         title: '',
-        //       }, {
-        //         field: '',
-        //         title: '',
-        //       }, {
-        //         field: 'Status',
-        //         title: '',
-        //         Align:'right',
-        //         template: function(row) {
-        //           var status = {
-        //             1: {'title': 'JF Analis SDMA Muda', 'class': 'label-primary'},
-        //             2: {'title': 'Pengelola Lainnya', 'class': ' label-danger'},
-        //             3: {'title': 'JF Analis SDMA Pertama ', 'class': ' label-success'},
-        //             4: {'title': 'JF Analis SDMA Terampil', 'class': ' label-info'},
-        //             5: {'title': 'Warning', 'class': ' label-warning'},
-        //           };
-        //           return '<span class="label ' + status[row.Status].class + ' label-inline label-pill">' + status[row.Status].title + '</span>';
-        //         },
-        //       },  {
-        //         field: '',
-        //         title: '',
-        //         autoHide: false,
-        //         // callback function support for column rendering
-        //         template: function(row) {
-        //           var status = {
-        //             1: {'title': 'Online', 'state': 'danger'},
-        //             2: {'title': 'Retail', 'state': 'primary'},
-        //             3: {'title': 'Telah di Verifikasi', 'state': 'success'},
-        //           };
-        //           return '<span class="label label-' + status[row.Type].state + ' label-dot"></span>&nbsp;<span class="font-weight-bold text-' + status[row.Type].state +
-        //             '">' +
-        //             status[row.Type].title + '</span>';
-        //         },
-        //       }, {
-        //         field: 'Actions',
-        //         title: '',
-        //         sortable: false,
-        //         textAlign:'right',
-        //         overflow: 'visible',
-        //         template: function() {
-        //           return '\
-        //           <a href="#" class="btn btn-outline-success">\
-        //           <i class="flaticon2-poll-symbol"></i> Distribusikan Ke Grub\
-        //         </a>\
-        //                        \
-        //                      \
-        //                     ';
-        //         },
-        //       }],
-        //   });
-      
-        //   $('#kt_datatable_search_status').on('change', function() {
-        //     datatable.search($(this).val().toLowerCase(), 'Status');
-        //   });
-      
-        //   $('#kt_datatable_search_type').on('change', function() {
-        //     datatable.search($(this).val().toLowerCase(), 'Type');
-        //   });
-      
-        //   $('#kt_datatable_search_status, #kt_datatable_search_type').selectpicker();
-        // };
-
-        // var subTableInit = function(e) {
-        //   $('<div/>').attr('id', 'child_data_local_' + e.data.RecordID).appendTo(e.detailCell).KTDatatable({
-        //     data: {
-        //       type: 'local',
-        //       source: e.data.Orders,
-        //       pageSize: 6,
-        //     },
-      
-        //     // layout definition
-        //     layout: {
-        //       scroll: true,
-        //       height: 600,
-        //       footer: false,
-        //     },
-        //     pagination: false,
-        //     sortable: true,
-      
-        //     // columns definition
-        //     columns: [
-        //       {
-        //         field: 'Jabatan',
-        //         title: 'Nama Anggota',
-      
-        //       }, {
-        //         field: '',
-        //         title: '',
-        //         width: 100
-        //       }, {
-        //         field: 'Periode',
-        //         title: 'NIP',
-        //       }, {
-        //         field: 'Actions',
-        //         title: '',
-        //         sortable: false,
-        //         textAlign:'right',
-        //         overflow: 'visible',
-        //         template: function() {
-        //           return '\
-        //           <a href="#" class="btn btn-light-info btn-sm">\
-        //           Distribusikan\
-        //         </a>\
-        //                        \
-        //                      \
-        //                     ';
-        //         },
-        //       }, {
-        //         field: '',
-        //         title: '',
-        //       }],
-        //   });
-        // };
-
-        var jabatanFungsional = function jabatanFungsional() {
-          var datatable = $('#jabatan_fungsional').KTDatatable({
+        var tbAdministrasi = function tbAdministrasi() {
+          var datatable = $('#tb_administrasi').KTDatatable({
             data: {
               saveState: {
                 cookie: false
               }
-            }, rows: {
+            },
+            rows: {
               autoHide: false
             },
             layout: {
               scroll: true,
               customScrollbar: false,
+              class: 'datatable-bordered',
             },
             columns: [{
-              field: '#',
-              title: '#'
+              field: 'Tanggal Agenda',
+              title: 'Tanggal Agenda'
             }, {
+              field: 'No Surat',
+              title: 'No Surat'
+            }, {
+              field: 'Instansi Pengusul',
+              title: 'Instansi Pengusul'
+            }, {
+              field: 'Jenis Usulan',
+              title: 'Jenis Usulan'
+            }, {
+              field: 'NIP',
+              title: 'NIP'
+            }, {
+              field: 'Nama',
+              title: 'Nama'
+            }, {
+              field: 'Action',
+              title: 'Action',
+              sortable: false,
+              width: 200
+            }]
+          });
+          $('#no_surat').on('change', function () {
+            datatable.search($(this).val().toLowerCase(), 'No Surat');
+          });
+        };
+
+        var tbAdministrasi2 = function tbAdministrasi2() {
+          var datatable = $('#tb_administrasi2').KTDatatable({
+            data: {
+              saveState: {
+                cookie: false
+              }
+            },
+            rows: {
+              autoHide: false
+            },
+            layout: {
+              scroll: true,
+              customScrollbar: false,
+              class: 'datatable-bordered',
+            },
+            columns: [{
               field: 'Tanggal Agenda',
               title: 'Tanggal Agenda'
             }, {
@@ -327,59 +196,201 @@
               width: 200
             }]
           });
-          $('#super_admin_user_management_search_role').on('change', function () {
-            datatable.search($(this).val().toLowerCase(), 'Role');
+          $('#no_surat2').on('change', function () {
+            datatable.search($(this).val().toLowerCase(), 'No Surat');
           });
-          $('#super_admin_user_management_search_query').on('input', function () {
-            datatable.search($(this).val().toLowerCase(), 'Email');
-          });
-          $('#super_admin_user_management_search_role').selectpicker();
         };
 
-        var groupByTable = function groupByTable() {
-          var datatable = $('.groupByTable').KTDatatable({
+        var tbBaru = function tbBaru() {
+          var datatable = $('#tb_baru').KTDatatable({
             data: {
               saveState: {
                 cookie: false
               }
-            }, rows: {
+            },
+            rows: {
               autoHide: false
             },
             layout: {
               scroll: true,
               customScrollbar: false,
+              class: 'datatable-bordered',
             },
             columns: [{
-              field: '#',
-              title: '#'
+              field: 'Tanggal Agenda',
+              title: 'Tanggal Agenda'
             }, {
-              field: 'Nama',
-              title: 'Nama'
+              field: 'No Surat',
+              title: 'No Surat'
+            }, {
+              field: 'Instansi Pengusul',
+              title: 'Instansi Pengusul'
+            }, {
+              field: 'Jenis Usulan',
+              title: 'Jenis Usulan'
             }, {
               field: 'NIP',
               title: 'NIP'
             }, {
-              field: 'Aksi',
-              title: 'Aksi',
+              field: 'Nama',
+              title: 'Nama'
+            }, {
+              field: 'Action',
+              title: 'Action',
               sortable: false,
               width: 200
             }]
           });
-          $('#super_admin_user_management_search_role').on('change', function () {
-            datatable.search($(this).val().toLowerCase(), 'Role');
+          $('#no_surat').on('change', function () {
+            datatable.search($(this).val().toLowerCase(), 'No Surat');
           });
-          $('#super_admin_user_management_search_query').on('input', function () {
-            datatable.search($(this).val().toLowerCase(), 'Email');
+        };
+
+        var tbProses = function tbProses() {
+          var datatable = $('#tb_proses').KTDatatable({
+            data: {
+              saveState: {
+                cookie: false
+              }
+            },
+            rows: {
+              autoHide: false
+            },
+            layout: {
+              scroll: true,
+              customScrollbar: false,
+              class: 'datatable-bordered',
+            },
+            columns: [{
+              field: 'Tanggal Agenda',
+              title: 'Tanggal Agenda'
+            }, {
+              field: 'No Surat',
+              title: 'No Surat'
+            }, {
+              field: 'Instansi Pengusul',
+              title: 'Instansi Pengusul'
+            }, {
+              field: 'Jenis Usulan',
+              title: 'Jenis Usulan'
+            }, {
+              field: 'NIP',
+              title: 'NIP'
+            }, {
+              field: 'Nama',
+              title: 'Nama'
+            }, {
+              field: 'Action',
+              title: 'Action',
+              sortable: false,
+              width: 200
+            }]
           });
-          $('#super_admin_user_management_search_role').selectpicker();
+          $('#no_surat').on('change', function () {
+            datatable.search($(this).val().toLowerCase(), 'No Surat');
+          });
+        };
+
+        var tbPending = function tbPending() {
+          var datatable = $('#tb_pending').KTDatatable({
+            data: {
+              saveState: {
+                cookie: false
+              }
+            },
+            rows: {
+              autoHide: false
+            },
+            layout: {
+              scroll: true,
+              customScrollbar: false,
+              class: 'datatable-bordered',
+            },
+            columns: [{
+              field: 'Tanggal Agenda',
+              title: 'Tanggal Agenda'
+            }, {
+              field: 'No Surat',
+              title: 'No Surat'
+            }, {
+              field: 'Instansi Pengusul',
+              title: 'Instansi Pengusul'
+            }, {
+              field: 'Jenis Usulan',
+              title: 'Jenis Usulan'
+            }, {
+              field: 'NIP',
+              title: 'NIP'
+            }, {
+              field: 'Nama',
+              title: 'Nama'
+            }, {
+              field: 'Action',
+              title: 'Action',
+              sortable: false,
+              width: 200
+            }]
+          });
+          $('#no_surat').on('change', function () {
+            datatable.search($(this).val().toLowerCase(), 'No Surat');
+          });
+        };
+
+        var tbTolak = function tbTolak() {
+          var datatable = $('#tb_tolak').KTDatatable({
+            data: {
+              saveState: {
+                cookie: false
+              }
+            },
+            rows: {
+              autoHide: false
+            },
+            layout: {
+              scroll: true,
+              customScrollbar: false,
+              class: 'datatable-bordered',
+            },
+            columns: [{
+              field: 'Tanggal Agenda',
+              title: 'Tanggal Agenda'
+            }, {
+              field: 'No Surat',
+              title: 'No Surat'
+            }, {
+              field: 'Instansi Pengusul',
+              title: 'Instansi Pengusul'
+            }, {
+              field: 'Jenis Usulan',
+              title: 'Jenis Usulan'
+            }, {
+              field: 'NIP',
+              title: 'NIP'
+            }, {
+              field: 'Nama',
+              title: 'Nama'
+            }, {
+              field: 'Action',
+              title: 'Action',
+              sortable: false,
+              width: 200
+            }]
+          });
+          $('#no_surat').on('change', function () {
+            datatable.search($(this).val().toLowerCase(), 'No Surat');
+          });
         };
 
         return {
           // Public functions
           init: function init() {
             // init demo
-            jabatanFungsional();
-            groupByTable();
+            tbAdministrasi();
+            tbAdministrasi2();
+            tbBaru();
+            tbProses();
+            tbPending();
+            tbTolak();
 
           }
         };

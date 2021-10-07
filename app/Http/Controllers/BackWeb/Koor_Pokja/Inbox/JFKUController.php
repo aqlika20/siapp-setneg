@@ -36,7 +36,7 @@ class JFKUController extends Controller
         $page_title = 'KemenSetneg | Inbox | JFKU';
         $page_description = 'JFKU';
         $pengangkatans = PengangkatanPemberhentianJFKU::where([
-            ['status', '=', Helper::$proses],
+            ['status', '=', Helper::$pengajuan_usulan],
             ['distributor_id', '=', null],
             ['group_id', '=', null]
         ])->get();

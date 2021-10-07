@@ -65,7 +65,7 @@ class PembatalanKeppresJabatanFungsionalKeahlianUtamaController extends Controll
     // ========= function create basic information =============
     public function store(Request $request)
     {
-
+        $id_pengirim = UserManagement::find(Auth::id());
         $input = $request->all();
 
         $validator = Validator::make($input, [
@@ -144,11 +144,10 @@ class PembatalanKeppresJabatanFungsionalKeahlianUtamaController extends Controll
             'alasan_pemberhentian' => $input['req_alasan_pemberhentian'],
             'ket_alasan_pemberhentian' => $input['req_ket_alasan_pemberhentian'],
             
-            // 'tanggal_catatan' => implode(',', $input['req_tanggal_catatan']),
-            // 'catatan' => implode(',', $input['req_catatan']),
+            'id_pengirim' => $id_pengirim->nip,
             'ket' => implode(',', $input['req_ket']),
             'jenis_layanan' => Helper::$pembatalan_keppres_jabatan_FKU,
-            'status' => Helper::$proses
+            'status' => Helper::$pengajuan_usulan
             
         ]);
 
@@ -228,14 +227,15 @@ class PembatalanKeppresJabatanFungsionalKeahlianUtamaController extends Controll
         $count = count($input['req_tanggal_catatan']);
         for($i=0;$i<$count;$i++) {
             $notes = new Catatan();
-            $notes->jfku_id = $pengangkatans->id;
+            $notes->id_usulan = $pengangkatans->id;
+            $notes->id_layanan = $pengangkatans->jenis_layanan;
+            $notes->id_pengirim = $id_pengirim->nip;
             $notes->tanggal_catatan = $input['req_tanggal_catatan'][$i];
             $notes->catatan = $input['req_catatan'][$i];
             $notes->save();
-
         }
 
-        return redirect()->back()->with(['success'=>'Jabatan Fungsional Success Added!!!']);
+        return redirect()->route('pic.administrasi.surat-usulan.index')->with(['success'=>'Jabatan Fungsional Success Added!!!']);
     }
    
 

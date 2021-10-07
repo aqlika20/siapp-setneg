@@ -33,7 +33,7 @@ class AturDokumenController extends Controller
         $page_title = 'KemenSetneg | Atur Dokumen';
         $page_description = 'Atur Dokumen';
         $pengangkatans = Pengangkatan::where([
-            ['status', '=', Helper::$proses]
+            ['status', '=', Helper::$pengajuan_usulan]
         ])->get();
         return view('pages.koor_pokja.atur_dokumen', compact('page_title', 'page_description', 'currentUser', 'pengangkatans'));
     }

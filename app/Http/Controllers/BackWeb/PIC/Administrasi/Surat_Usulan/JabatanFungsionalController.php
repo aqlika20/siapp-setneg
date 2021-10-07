@@ -34,7 +34,7 @@ class JabatanFungsionalController extends Controller
         $currentUser = UserManagement::find(Auth::id());
         $page_title = 'PIC | Administrasi | Surat Usulan';
         $page_description = 'Surat Usulan';
-        $pengangkatans = PengangkatanPemberhentianJFKU::where('status', Helper::$proses)->get();
+        $pengangkatans = PengangkatanPemberhentianJFKU::where('status', Helper::$pengajuan_usulan)->get();
         return view('pages.pic.administrasi.surat_usulan.jabatan_fungsional', compact('page_title', 'page_description', 'currentUser', 'pengangkatans'));
     }
 }

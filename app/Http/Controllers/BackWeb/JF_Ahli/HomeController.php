@@ -31,7 +31,7 @@ class HomeController extends Controller
     //pengangkatan
         $count_pengangkatan_jfku = PengangkatanPemberhentianJFKU::where([
             ['jenis_layanan', Helper::$pengangkatan_pejabat_FKU],
-            ['status', Helper::$proses]
+            ['status', Helper::$pengajuan_usulan]
         ])->count();
 
         if($count_pengangkatan_jfku == 0){
@@ -43,7 +43,7 @@ class HomeController extends Controller
     //pemberhentian
         $count_pemberhentian_jfku = PengangkatanPemberhentianJFKU::where([
             ['jenis_layanan', Helper::$pemberhentian_pejabat_FKU],
-            ['status', Helper::$proses]
+            ['status', Helper::$pengajuan_usulan]
         ])->count();
 
         if($count_pemberhentian_jfku == 0){
@@ -55,7 +55,7 @@ class HomeController extends Controller
     //perpindahan        
         $count_perpindahan_jfku = PengangkatanPemberhentianJFKU::where([
             ['jenis_layanan', Helper::$perpindahan_pejabat_FKU],
-            ['status', Helper::$proses]
+            ['status', Helper::$pengajuan_usulan]
         ])->count();
 
         if($count_perpindahan_jfku == 0){
@@ -67,7 +67,7 @@ class HomeController extends Controller
     //ralat keppres        
         $count_ralat_keppres_jfku = PengangkatanPemberhentianJFKU::where([
             ['jenis_layanan', Helper::$ralat_keppres_jabatan_FKU],
-            ['status', Helper::$proses]
+            ['status', Helper::$pengajuan_usulan]
         ])->count();
 
         if($count_ralat_keppres_jfku == 0){
@@ -79,7 +79,7 @@ class HomeController extends Controller
     //pembatalan keppres        
         $count_pembatalan_keppres_jfku = PengangkatanPemberhentianJFKU::where([
             ['jenis_layanan', Helper::$pembatalan_keppres_jabatan_FKU],
-            ['status', Helper::$proses]
+            ['status', Helper::$pengajuan_usulan]
         ])->count();
 
         if($count_pembatalan_keppres_jfku == 0){

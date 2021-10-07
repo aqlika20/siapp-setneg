@@ -150,7 +150,7 @@ class AnumertaController extends Controller
             'tanggal_catatan' => $input['req_tanggal_catatan'],
             'catatan' => $input['req_catatan'],
             'jenis_usulan' => Helper::$pengangkatan_pejabat_FKU,
-            'status' => Helper::$proses
+            'status' => Helper::$pengajuan_usulan
             
         ]);
 

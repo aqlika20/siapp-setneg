@@ -33,7 +33,7 @@ class RiwayatController extends Controller
         $page_title = 'KemenSetneg | Riwayat';
         $page_description = 'Riwayat';
         $pengangkatans = Pengangkatan::where([
-            ['status', '=', Helper::$proses]
+            ['status', '=', Helper::$pengajuan_usulan]
         ])->get();
         return view('pages.koor_pokja.riwayat', compact('page_title', 'page_description', 'currentUser', 'pengangkatans'));
     }

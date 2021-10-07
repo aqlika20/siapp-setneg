@@ -66,7 +66,7 @@
                                                 <label class="col-form-label text-right col-lg-3 col-sm-12">Pejabat yang Menandatangani</label>
                                                 <div class="col-lg-9 col-md-9 col-sm-12">
                                                     <div class="input-group">
-                                                        <input type="text"class="form-control" id="req_jabatan_menandatangani" name="req_jabatan_menandatangani" value="{{old('req_jabatan_menandatangani')}}" autocomplete="off" require/>
+                                                        <input type="text" onkeydown="return /[a-zA-Z0-9\s]+/i.test(event.key)" class="form-control" id="req_jabatan_menandatangani" name="req_jabatan_menandatangani" value="{{old('req_jabatan_menandatangani')}}" autocomplete="off" require/>
                                                     </div>
                                                 </div>
                                             </div>
@@ -134,7 +134,7 @@
                                                 <label class="col-form-label text-right col-lg-3 col-sm-12">Nama</label>
                                                 <div class="col-lg-9 col-md-9 col-sm-12">
                                                     <div class="input-group date">
-                                                        <input type="text" class="form-control" id="req_nama" name="req_nama" value="{{old('req_nama')}}" autocomplete="off" require />
+                                                        <input type="text" onkeydown="return /[a-zA-Z0-9\s]+/i.test(event.key)" class="form-control" id="req_nama" name="req_nama" value="{{old('req_nama')}}" autocomplete="off" require />
                                                     </div>
                                                 </div>
                                             </div>
@@ -144,7 +144,7 @@
                                                 <label class="col-form-label text-right col-lg-3 col-sm-12">Tempat Lahir</label>
                                                 <div class="col-lg-9 col-md-9 col-sm-12">
                                                     <div class="input-group date">
-                                                        <input type="text" class="form-control" id="req_tempat_lahir" name="req_tempat_lahir" value="{{old('req_tempat_lahir')}}" autocomplete="off" require />
+                                                        <input type="text" onkeydown="return /[a-zA-Z0-9\s]+/i.test(event.key)" class="form-control" id="req_tempat_lahir" name="req_tempat_lahir" value="{{old('req_tempat_lahir')}}" autocomplete="off" require />
                                                     </div>
                                                 </div>
                                             </div>
@@ -168,7 +168,7 @@
                                                 <label class="col-form-label text-right col-lg-3 col-sm-12">Pendidikan Terakhir</label>
                                                 <div class="col-lg-9 col-md-9 col-sm-12">
                                                     <div class="input-group date">
-                                                        <input type="text" class="form-control" id="req_pendidikan_terakhir" name="req_pendidikan_terakhir" value="{{old('req_pendidikan_terakhir')}}" autocomplete="off" require />
+                                                        <input type="text" onkeydown="return /[a-zA-Z0-9\s]+/i.test(event.key)" class="form-control" id="req_pendidikan_terakhir" name="req_pendidikan_terakhir" value="{{old('req_pendidikan_terakhir')}}" autocomplete="off" require />
                                                     </div>
                                                 </div>
                                             </div>
@@ -176,7 +176,7 @@
                                                 <label class="col-form-label text-right col-lg-3 col-sm-12">Instansi Induk</label>
                                                 <div class="col-lg-9 col-md-9 col-sm-12">
                                                     <div class="input-group date">
-                                                        <input type="text" class="form-control" id="req_instansi_induk" name="req_instansi_induk" value="{{old('req_instansi_induk')}}" autocomplete="off" require />
+                                                        <input type="text" onkeydown="return /[a-zA-Z0-9\s]+/i.test(event.key)" class="form-control" id="req_instansi_induk" name="req_instansi_induk" value="{{old('req_instansi_induk')}}" autocomplete="off" require />
                                                     </div>
                                                 </div>
                                             </div>
@@ -184,7 +184,7 @@
                                                 <label class="col-form-label text-right col-lg-3 col-sm-12">Instansi Pengusul</label>
                                                 <div class="col-lg-9 col-md-9 col-sm-12">
                                                     <div class="input-group date">
-                                                        <input type="text" class="form-control" id="req_instansi_pengusul" name="req_instansi_pengusul" value="{{old('req_instansi_pengusul')}}" autocomplete="off" require />
+                                                        <input type="text" onkeydown="return /[a-zA-Z0-9\s]+/i.test(event.key)" class="form-control" id="req_instansi_pengusul" name="req_instansi_pengusul" value="{{old('req_instansi_pengusul')}}" autocomplete="off" require />
                                                     </div>
                                                 </div>
                                             </div>
@@ -283,7 +283,7 @@
                                                     <label class="col-form-label text-right col-lg-3 col-sm-12">Jumlah Angka Kredit</label>
                                                     <div class="col-lg-9 col-md-9 col-sm-12">
                                                         <div class="input-group date">
-                                                            <input type="text" class="form-control" id="req_jumlah_angka_kredit" name="req_jumlah_angka_kredit" value="{{old('req_jumlah_angka_kredit')}}" autocomplete="off" />
+                                                            <input type="text" onkeydown="return /[a-zA-Z0-9\s]+/i.test(event.key)" class="form-control" id="req_jumlah_angka_kredit" name="req_jumlah_angka_kredit" value="{{old('req_jumlah_angka_kredit')}}" autocomplete="off" />
                                                         </div>
                                                     </div>
                                                 </div>
@@ -424,7 +424,7 @@
                                                 <label class="col-form-label text-right col-lg-3 col-sm-12">Jabatan</label>
                                                 <div class="col-lg-9 col-md-9 col-sm-12">
                                                     <div class="input-group date">
-                                                        <input type="text" class="form-control" id="req_jabatan_fungsional" name="req_jabatan_fungsional" value="{{old('req_jabatan_fungsional')}}" autocomplete="off" require/>
+                                                        <input type="text" onkeydown="return /[a-zA-Z0-9\s]+/i.test(event.key)" class="form-control" id="req_jabatan_fungsional" name="req_jabatan_fungsional" value="{{old('req_jabatan_fungsional')}}" autocomplete="off" require/>
                                                     </div>
                                                 </div>
                                             </div>
@@ -440,7 +440,7 @@
                                                 <label class="col-form-label text-right col-lg-3 col-sm-12">Unit Kerja</label>
                                                 <div class="col-lg-9 col-md-9 col-sm-12">
                                                     <div class="input-group date">
-                                                        <input type="text" class="form-control" id="req_unit_kerja_fungsional" name="req_unit_kerja_fungsional" value="{{old('req_unit_kerja_fungsional')}}" autocomplete="off" require/>
+                                                        <input type="text" onkeydown="return /[a-zA-Z0-9\s]+/i.test(event.key)" class="form-control" id="req_unit_kerja_fungsional" name="req_unit_kerja_fungsional" value="{{old('req_unit_kerja_fungsional')}}" autocomplete="off" require/>
                                                     </div>
                                                 </div>
                                             </div>
@@ -861,7 +861,7 @@
                     req_no_surat_usulan: 'required',
                     req_jabatan_menandatangani: 'required',
                     req_file_data_usulan: {
-                        extenstion: "docx,doc,xlsx,xls,csv,jpg,png,jpeg,pdf"
+                        extenstion: "jpg,png,jpeg,pdf"
                     },
                     req_nip: 'required',
                     req_nama: 'required',
@@ -873,22 +873,22 @@
                     req_pangkat_gol: 'required',
                     req_tmt_gol: 'required',
                     req_file_data_asn: {
-                        extenstion: "docx,doc,xlsx,xls,csv,jpg,png,jpeg,pdf"
+                        extenstion: "jpg,png,jpeg,pdf"
                     },
                     req_jabatan_fungsional: 'required',
                     req_no_keppress_jabatan_fungsional: 'required',
                     req_unit_kerja_fungsional: 'required',
                     req_file_data_jabatan_fungsional: {
-                        extenstion: "docx,doc,xlsx,xls,csv,jpg,png,jpeg,pdf"
+                        extenstion: "jpg,png,jpeg,pdf"
                     },
                     req_tgl_penerimaan_keppres: 'required',
                     req_file_data_jabatan_fungsional_2: {
-                        extenstion: "docx,doc,xlsx,xls,csv,jpg,png,jpeg,pdf"
+                        extenstion: "jpg,png,jpeg,pdf"
                     },
                     req_alasan_pemberhentian: 'required',
                     req_ket_alasan_pemberhentian: 'required',
                     req_file_data_pemberhentian: {
-                        extenstion: "docx,doc,xlsx,xls,csv,jpg,png,jpeg,pdf"
+                        extenstion: "jpg,png,jpeg,pdf"
                     },
                     req_ket: 'required'
 

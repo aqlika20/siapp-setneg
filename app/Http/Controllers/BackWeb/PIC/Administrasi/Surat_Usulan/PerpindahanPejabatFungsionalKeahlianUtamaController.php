@@ -70,21 +70,21 @@ class PerpindahanPejabatFungsionalKeahlianUtamaController extends Controller
     // ========= function create basic information =============
     public function store(Request $request)
     {
-
+        $id_pengirim = UserManagement::find(Auth::id());
         $input = $request->all();
 
         $validator = Validator::make($input, [
             'req_tanggal_surat_usulan' => 'required',
             'req_no_surat_usulan' => 'required',
-            'req_jabatan_menandatangani' => 'required',
+            'req_jabatan_menandatangani' => 'required|regex:/^[a-zA-Z]+$/u',
 
             'req_nip' => 'required',
-            'req_nama' => 'required',
-            'req_tempat_lahir' => 'required',
+            'req_nama' => 'required|regex:/^[a-zA-Z]+$/u',
+            'req_tempat_lahir' => 'required|regex:/^[a-zA-Z]+$/u',
             'req_tanggal_lahir' => 'required',
-            'req_pendidikan_terakhir' => 'required',
-            'req_instansi_induk' => 'required',
-            'req_instansi_pengusul' => 'required',
+            'req_pendidikan_terakhir' => 'required|regex:/^[a-zA-Z]+$/u',
+            'req_instansi_induk' => 'required|regex:/^[a-zA-Z]+$/u',
+            'req_instansi_pengusul' => 'required|regex:/^[a-zA-Z]+$/u',
             'req_pangkat_gol' => 'required',
             'req_tmt_gol' => 'required',
 
@@ -93,20 +93,20 @@ class PerpindahanPejabatFungsionalKeahlianUtamaController extends Controller
             'req_jumlah_angka_kredit' => 'required',
             'req_periode_penilaian' => 'required',
 
-            'req_jabatan_lama' => 'required',
+            'req_jabatan_lama' => 'required|regex:/^[a-zA-Z]+$/u',
             'req_no_sk_jabatan_lama' => 'required',
             'req_tmt_jabatan_lama' => 'required',
-            'req_unit_kerja_lama' => 'required',
+            'req_unit_kerja_lama' => 'required|regex:/^[a-zA-Z]+$/u',
 
-            'req_jabatan_baru' => 'required',
-            'req_unit_kerja_baru' => 'required',
+            'req_jabatan_baru' => 'required|regex:/^[a-zA-Z]+$/u',
+            'req_unit_kerja_baru' => 'required|regex:/^[a-zA-Z]+$/u',
 
             'req_no_surat_rekomendasi' => 'required',
             'req_tgl_surat_rekomendasi' => 'required',
 
-            'req_jumlah' => 'required',
-            'req_terisi' => 'required',
-            'req_sisa' => 'required',
+            'req_jumlah' => 'required|regex:/^[a-zA-Z]+$/u',
+            'req_terisi' => 'required|regex:/^[a-zA-Z]+$/u',
+            'req_sisa' => 'required|regex:/^[a-zA-Z]+$/u',
 
             'req_tanggal_catatan' => 'required',
             'req_catatan' => 'required',
@@ -165,9 +165,10 @@ class PerpindahanPejabatFungsionalKeahlianUtamaController extends Controller
             'terisi' => $input['req_terisi'],
             'sisa' => $input['req_sisa'],
 
+            'id_pengirim' => $id_pengirim->nip,
             'ket' => implode(',', $input['req_ket']),
             'jenis_layanan' => Helper::$perpindahan_pejabat_FKU,
-            'status' => Helper::$proses
+            'status' => Helper::$pengajuan_usulan
             
         ]);
 
@@ -276,12 +277,14 @@ class PerpindahanPejabatFungsionalKeahlianUtamaController extends Controller
         $count = count($input['req_tanggal_catatan']);
         for($i=0;$i<$count;$i++) {
             $notes = new Catatan();
-            $notes->jfku_id = $perpindahans->id;
+            $notes->id_usulan = $pengangkatans->id;
+            $notes->id_layanan = $pengangkatans->jenis_layanan;
+            $notes->id_pengirim = $id_pengirim->nip;
             $notes->tanggal_catatan = $input['req_tanggal_catatan'][$i];
             $notes->catatan = $input['req_catatan'][$i];
             $notes->save();
-
         }
+
 
         return redirect()->route('pic.administrasi.surat-usulan.index')->with(['success'=>'Jabatan Fungsional Success Added!!!']);
     }

@@ -41,20 +41,14 @@
 
         
         <style>
-            th[data-field="#"]{
-                font-weight: bold;
-            }
-            th[data-field="#"], td[data-field="#"] {
-                width: 30px !important;
+            th span, th{
+                font-weight: bold !important;
             }
 
-            th[data-field="#"] span, td[data-field="#"] span {
+            /* th[data-field="#"] span, td[data-field="#"] span {
                 width: 30px !important;
-            }
+            } */
             
-            .datatable td{
-                background-color: #86dcec;    
-            }
         </style>
     </head>
 

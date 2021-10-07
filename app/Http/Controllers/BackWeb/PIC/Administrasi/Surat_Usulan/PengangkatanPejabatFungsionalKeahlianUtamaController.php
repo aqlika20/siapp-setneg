@@ -124,7 +124,7 @@ class PengangkatanPejabatFungsionalKeahlianUtamaController extends Controller
             'req_ket' => 'required',
             
             // 'jenis_usulan' => Helper::$pengangkatan_pejabat_FKU,
-            // 'status' => Helper::$proses,
+            // 'status' => Helper::$pengajuan_usulan,
 
             'req_file_data_usulan.*' => 'max:25000|mimes:docx,doc,xlsx,xls,csv,jpg,png,jpeg,pdf',
             'req_file_nota_usulan.*' => 'max:25000|mimes:docx,doc,xlsx,xls,csv,jpg,png,jpeg,pdf',
@@ -171,8 +171,7 @@ class PengangkatanPejabatFungsionalKeahlianUtamaController extends Controller
             'jabatan_lama' => $input['req_jabatan_lama'],
             'unit_kerja_baru' => $input['req_unit_kerja_baru'],
             'unit_kerja_lama' => $input['req_unit_kerja_lama'],
-            // 'tanggal_catatan' => implode(',', $input['req_tanggal_catatan']),
-            // 'catatan' => implode(',', $input['req_catatan']),
+            
             'ket' => implode(',', $input['req_ket']),
             'no_sk_jabatan_lama' => $input['req_no_sk_jabatan_lama'],
             'tmt_jabatan_lama' => $input['req_tmt_jabatan_lama'],
@@ -180,7 +179,9 @@ class PengangkatanPejabatFungsionalKeahlianUtamaController extends Controller
             'tgl_sertifikat' => $input['req_tgl_sertifikat'],
             'terisi' => $input['req_terisi'],
             'sisa' => $input['req_sisa'],
+            'id_pengirim' => $id_pengirim->nip,
             'jenis_usulan' => Helper::$pengangkatan_pejabat_FKU,
+            'status' => Helper::$pengajuan_usulan
             
         ]);
 
@@ -313,23 +314,21 @@ class PengangkatanPejabatFungsionalKeahlianUtamaController extends Controller
             }
             $pengangkatans->file_skp_2_dukungan_lainnya = $files;
         }
-        
-        $pengangkatans->jenis_layanan = "1";
-        $pengangkatans->status = "1";
 
         $pengangkatans->save();
 
         $count = count($input['req_tanggal_catatan']);
         for($i=0;$i<$count;$i++) {
             $notes = new Catatan();
-            $notes->jfku_id = $pengangkatans->id;
+            $notes->id_usulan = $pengangkatans->id;
+            $notes->id_layanan = $pengangkatans->jenis_layanan;
+            $notes->id_pengirim = $id_pengirim->nip;
             $notes->tanggal_catatan = $input['req_tanggal_catatan'][$i];
             $notes->catatan = $input['req_catatan'][$i];
             $notes->save();
-
         }
 
-        return redirect()->back()->with(['success'=>'Jabatan Fungsional Success Added!!!']);
+        return redirect()->route('pic.administrasi.surat-usulan.index')->with(['success'=>'Jabatan Fungsional Success Added!!!']);
     }
    
 

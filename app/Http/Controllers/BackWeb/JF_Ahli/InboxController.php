@@ -26,7 +26,7 @@ class InboxController extends Controller
         $page_title = 'JF Muda Madya | inbox';
         $page_description = 'inbox';
         $pengangkatans = PengangkatanPemberhentianJFKU::where([
-            ['status', '=', Helper::$proses],
+            ['status', '=', Helper::$pengajuan_usulan],
             ['distributor_id', '=', null],
             ['group_id', '=', '1']
         ])->get();

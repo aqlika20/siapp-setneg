@@ -37,9 +37,15 @@ class Helper {
 
 
     // status
-    public static $proses = 1;
+    public static $pengajuan_usulan = 1;
     public static $pending = 2;
     public static $tolak = 3;
+    public static $Diproses_Pokja = 3;
+    public static $pengembalian_surat_usulan = 5;
+    // public static $tolak = 3;
+    // public static $tolak = 3;
+    // public static $tolak = 3;
+    // public static $tolak = 3;
 
 
     public static function convertDatetoMonths($date){
@@ -177,7 +183,7 @@ class Helper {
         $status = "";
         switch ($type) {
             case '1':
-                $status = 'Proses';
+                $status = 'Pengajuan Surat Usulan';
                 break;
 
             case '2':
@@ -187,6 +193,51 @@ class Helper {
             case '3':
                 $status = 'Tolak';
                 break;
+
+            case '4':
+                $status = 'Diproses Pokja';
+                break;
+
+            case '5':
+                $status = 'Pengembalian Surat Usulan';
+                break;
+
+            case '6':
+                $status = 'Terima Pertek BKN';
+                break;
+            
+            case '7':
+                $status = 'Pengembalian Pertek BKN';
+                break;
+
+            case '8':
+                $status = 'Penyiapan Rancangan Keppres';
+                break;
+
+            case '9':
+                $status = 'Pengajuan Rancangan Keppres ';
+                break;
+
+            case '10':
+                $status = 'Penomoran Keppres';
+                break;
+
+            case '11':
+                $status = 'Penyiapan Salinan dan Petikan Keppres';
+                break;
+            
+            case '12':
+                $status = 'Pengiriman';
+                break;
+
+            case '13':
+                $status = 'Penyampaian Tanda Terima';
+                break;
+
+            case '14':
+                $status = 'Diverifikasi Pokja';
+                break;
+
         }
 
         return $status;

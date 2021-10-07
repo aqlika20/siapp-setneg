@@ -33,7 +33,7 @@ class KenaikanPangkatController extends Controller
         $page_title = 'PIC | Administrasi | Kenaikan Pangkat';
         $page_description = 'Kenaikan Pangkat';
         $pengangkatans = Pengangkatan::where([
-            ['status', '=', Helper::$proses]
+            ['status', '=', Helper::$pengajuan_usulan]
         ])->get();
         return view('pages.pic.administrasi.kenaikan_pangkat.kenaikan_pangkat', compact('page_title', 'page_description', 'currentUser', 'pengangkatans'));
     }

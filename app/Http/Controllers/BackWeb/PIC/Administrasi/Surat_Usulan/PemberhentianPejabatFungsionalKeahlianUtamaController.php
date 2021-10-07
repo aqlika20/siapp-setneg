@@ -61,21 +61,22 @@ class PemberhentianPejabatFungsionalKeahlianUtamaController extends Controller
     // ========= function create basic information =============
     public function store(Request $request)
     {
-
+        
+        $id_pengirim = UserManagement::find(Auth::id());
         $input = $request->all();
 
         $validator = Validator::make($input, [
             'req_tanggal_surat_usulan' => 'required',
             'req_no_surat_usulan' => 'required',
-            'req_jabatan_menandatangani' => 'required',
+            'req_jabatan_menandatangani' => 'required|regex:/^[a-zA-Z]+$/u',
 
             'req_nip' => 'required',
-            'req_nama' => 'required',
-            'req_tempat_lahir' => 'required',
+            'req_nama' => 'required|regex:/^[a-zA-Z]+$/u',
+            'req_tempat_lahir' => 'required|regex:/^[a-zA-Z]+$/u',
             'req_tanggal_lahir' => 'required',
-            'req_pendidikan_terakhir' => 'required',
-            'req_instansi_induk' => 'required',
-            'req_instansi_pengusul' => 'required',
+            'req_pendidikan_terakhir' => 'required|regex:/^[a-zA-Z]+$/u',
+            'req_instansi_induk' => 'required|regex:/^[a-zA-Z]+$/u',
+            'req_instansi_pengusul' => 'required|regex:/^[a-zA-Z]+$/u',
             'req_pangkat_gol' => 'required',
             'req_tmt_gol' => 'required',
 
@@ -84,22 +85,22 @@ class PemberhentianPejabatFungsionalKeahlianUtamaController extends Controller
             'req_jumlah_angka_kredit_terakhir' => 'nullable',
             'req_periode_penilaian_terakhir' => 'nullable',
             
-            'req_jabatan_fungsional' => 'required',
+            'req_jabatan_fungsional' => 'required|regex:/^[a-zA-Z]+$/u',
             'req_no_keppress_jabatan_fungsional' => 'required',
             'req_tmt_jabatan_fungsional' => 'required',
-            'req_unit_kerja_fungsional' => 'required',
+            'req_unit_kerja_fungsional' => 'required|regex:/^[a-zA-Z]+$/u',
 
             'req_alasan_pemberhentian' => 'required',
             'req_ket_alasan_pemberhentian' => 'required',
             'req_tmt_pemberhentian' => 'required',
             'req_ket.*' => 'required',
             
-            'req_file_data_usulan.*' => 'max:25000|mimes:docx,doc,xlsx,xls,csv,jpg,png,jpeg,pdf',
-            'req_file_data_asn.*' => 'max:25000|mimes:docx,doc,xlsx,xls,csv,jpg,png,jpeg,pdf',
-            'req_file_data_pak.*' => 'max:25000|mimes:docx,doc,xlsx,xls,csv,jpg,png,jpeg,pdf',
-            'req_file_data_jabatan_fungsional.*' => 'max:25000|mimes:docx,doc,xlsx,xls,csv,jpg,png,jpeg,pdf',
-            'req_file_ba_pengambilan_sumpah_fungsional.*' => 'max:25000|mimes:docx,doc,xlsx,xls,csv,jpg,png,jpeg,pdf',
-            'req_file_data_pemberhentian.*' => 'max:25000|mimes:docx,doc,xlsx,xls,csv,jpg,png,jpeg,pdf'
+            'req_file_data_usulan.*' => 'max:25000|mimes:jpg,png,jpeg,pdf',
+            'req_file_data_asn.*' => 'max:25000|mimes:jpg,png,jpeg,pdf',
+            'req_file_data_pak.*' => 'max:25000|mimes:jpg,png,jpeg,pdf',
+            'req_file_data_jabatan_fungsional.*' => 'max:25000|mimes:jpg,png,jpeg,pdf',
+            'req_file_ba_pengambilan_sumpah_fungsional.*' => 'max:25000|mimes:jpg,png,jpeg,pdf',
+            'req_file_data_pemberhentian.*' => 'max:25000|mimes:jpg,png,jpeg,pdf'
         ]);
         
         if ($validator->fails()) {
@@ -138,8 +139,9 @@ class PemberhentianPejabatFungsionalKeahlianUtamaController extends Controller
             'tanggal_catatan' => implode(',', $input['req_tanggal_catatan']),
             'catatan' => implode(',', $input['req_catatan']),
             'ket' => implode(',', $input['req_ket']),
+            'id_pengirim' => $id_pengirim->nip,
             'jenis_layanan' => Helper::$pemberhentian_pejabat_FKU,
-            'status' => Helper::$proses
+            'status' => Helper::$pengajuan_usulan
             
         ]);
 
@@ -209,11 +211,12 @@ class PemberhentianPejabatFungsionalKeahlianUtamaController extends Controller
         $count = count($input['req_tanggal_catatan']);
         for($i=0;$i<$count;$i++) {
             $notes = new Catatan();
-            $notes->jfku_id = $pengangkatans->id;
+            $notes->id_usulan = $pengangkatans->id;
+            $notes->id_layanan = $pengangkatans->jenis_layanan;
+            $notes->id_pengirim = $id_pengirim->nip;
             $notes->tanggal_catatan = $input['req_tanggal_catatan'][$i];
             $notes->catatan = $input['req_catatan'][$i];
             $notes->save();
-
         }
 
         return redirect()->back()->with(['success'=>'Pemberhentian JFKU Success Added!!!']);

@@ -25,7 +25,7 @@
                                 <div data-wizard-type="step" data-wizard-state="current"></div>
                                 <div data-wizard-type="step"></div>
                                 <div data-wizard-type="step"></div>
-                                <div data-wizard-type="step"></div>																					
+                                <div data-wizard-type="step"></div>
                             </div>
                             <!--end: Wizard Nav-->
                             <!--begin: Wizard Body-->
@@ -66,7 +66,7 @@
                                                 <label class="col-form-label col-lg-3 col-sm-12">Pejabat yang Menandatangani</label>
                                                 <div class="col-lg-9 col-md-9 col-sm-12">
                                                     <div class="input-group">
-                                                        <input type="text"class="form-control" id="req_jabatan_menandatangani" name="req_jabatan_menandatangani" value="{{old('req_jabatan_menandatangani')}}" autocomplete="off" require/>
+                                                        <input type="text" onkeydown="return /[a-zA-Z0-9\s]+/i.test(event.key)" class="form-control" id="req_jabatan_menandatangani" name="req_jabatan_menandatangani" value="{{old('req_jabatan_menandatangani')}}" autocomplete="off" require/>
                                                     </div>
                                                 </div>
                                             </div>
@@ -116,6 +116,7 @@
                                             
                                         </div>
                                         <!--end: Wizard Step 1-->
+
                                         <!--begin: Wizard Step 2-->
                                         <div class="pb-6" style="margin-left: 50px; margin-right: 50px;" data-wizard-type="step-content">
                                             <h4 class="mb-10 font-weight-bold text-dark">Data ASN</h4>
@@ -124,7 +125,7 @@
                                                 <label class="col-form-label col-lg-3 col-sm-12">NIP</label>
                                                 <div class="col-lg-9 col-md-9 col-sm-12">
                                                     <div class="input-group date">
-                                                        <input type="number" class="form-control" id="req_nip" name="req_nip" value="{{old('req_nip')}}" autocomplete="off" require/>
+                                                        <input type="number" pattern="[0-9]+([\.,][0-9]+)?" class="form-control" id="req_nip" name="req_nip" value="{{old('req_nip')}}" autocomplete="off" require/>
                                                     </div>
                                                 </div>
                                             </div>
@@ -134,7 +135,7 @@
                                                 <label class="col-form-label col-lg-3 col-sm-12">Nama</label>
                                                 <div class="col-lg-9 col-md-9 col-sm-12">
                                                     <div class="input-group date">
-                                                        <input type="text" class="form-control" id="req_nama" name="req_nama" value="{{old('req_nama')}}" autocomplete="off" require />
+                                                        <input type="text" onkeydown="return /[a-zA-Z0-9\s]+/i.test(event.key)" class="form-control" id="req_nama" name="req_nama" value="{{old('req_nama')}}" autocomplete="off" require />
                                                     </div>
                                                 </div>
                                             </div>
@@ -144,7 +145,7 @@
                                                 <label class="col-form-label col-lg-3 col-sm-12">Tempat Lahir</label>
                                                 <div class="col-lg-9 col-md-9 col-sm-12">
                                                     <div class="input-group date">
-                                                        <input type="text" class="form-control" id="req_tempat_lahir" name="req_tempat_lahir" value="{{old('req_tempat_lahir')}}" autocomplete="off" require />
+                                                        <input type="text" onkeydown="return /[a-zA-Z0-9\s]+/i.test(event.key)" class="form-control" id="req_tempat_lahir" name="req_tempat_lahir" value="{{old('req_tempat_lahir')}}" autocomplete="off" require />
                                                     </div>
                                                 </div>
                                             </div>
@@ -168,7 +169,7 @@
                                                 <label class="col-form-label col-lg-3 col-sm-12">Pendidikan Terakhir</label>
                                                 <div class="col-lg-9 col-md-9 col-sm-12">
                                                     <div class="input-group date">
-                                                        <input type="text" class="form-control" id="req_pendidikan_terakhir" name="req_pendidikan_terakhir" value="{{old('req_pendidikan_terakhir')}}" autocomplete="off" require />
+                                                        <input type="text" onkeydown="return /[a-zA-Z0-9\s]+/i.test(event.key)" class="form-control" id="req_pendidikan_terakhir" name="req_pendidikan_terakhir" value="{{old('req_pendidikan_terakhir')}}" autocomplete="off" require />
                                                     </div>
                                                 </div>
                                             </div>
@@ -176,7 +177,7 @@
                                                 <label class="col-form-label col-lg-3 col-sm-12">Instansi Induk</label>
                                                 <div class="col-lg-9 col-md-9 col-sm-12">
                                                     <div class="input-group date">
-                                                        <input type="text" class="form-control" id="req_instansi_induk" name="req_instansi_induk" value="{{old('req_instansi_induk')}}" autocomplete="off" require />
+                                                        <input type="text" onkeydown="return /[a-zA-Z0-9\s]+/i.test(event.key)" class="form-control" id="req_instansi_induk" name="req_instansi_induk" value="{{old('req_instansi_induk')}}" autocomplete="off" require />
                                                     </div>
                                                 </div>
                                             </div>
@@ -184,7 +185,7 @@
                                                 <label class="col-form-label col-lg-3 col-sm-12">Instansi Pengusul</label>
                                                 <div class="col-lg-9 col-md-9 col-sm-12">
                                                     <div class="input-group date">
-                                                        <input type="text" class="form-control" id="req_instansi_pengusul" name="req_instansi_pengusul" value="{{old('req_instansi_pengusul')}}" autocomplete="off" require />
+                                                        <input type="text" onkeydown="return /[a-zA-Z0-9\s]+/i.test(event.key)" class="form-control" id="req_instansi_pengusul" name="req_instansi_pengusul" value="{{old('req_instansi_pengusul')}}" autocomplete="off" require />
                                                     </div>
                                                 </div>
                                             </div>
@@ -290,7 +291,7 @@
                                                     <label class="col-form-label col-lg-3 col-sm-12">Jumlah Angka Kredit</label>
                                                     <div class="col-lg-9 col-md-9 col-sm-12">
                                                         <div class="input-group date">
-                                                            <input type="text" class="form-control" id="req_jumlah_angka_kredit_terakhir" name="req_jumlah_angka_kredit_terakhir" value="{{old('req_jumlah_angka_kredit_terakhir')}}" autocomplete="off" />
+                                                            <input type="text" onkeydown="return /[a-zA-Z0-9\s]+/i.test(event.key)" class="form-control" id="req_jumlah_angka_kredit_terakhir" name="req_jumlah_angka_kredit_terakhir" value="{{old('req_jumlah_angka_kredit_terakhir')}}" autocomplete="off" />
                                                         </div>
                                                     </div>
                                                 </div>
@@ -355,8 +356,8 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        
                                         <!--end: Wizard Step 2-->
+
                                         <!--begin: Wizard Step 3-->
                                         <div class="pb-6" style="margin-left: 50px; margin-right: 50px;" data-wizard-type="step-content">
                                             <h4 class="mb-10 font-weight-bold text-dark">Data Jabatan Fungsional</h4>
@@ -365,7 +366,7 @@
                                                 <label class="col-form-label col-lg-3 col-sm-12">Jabatan</label>
                                                 <div class="col-lg-9 col-md-9 col-sm-12">
                                                     <div class="input-group date">
-                                                        <input type="text" class="form-control" id="req_jabatan_fungsional" name="req_jabatan_fungsional" value="{{old('req_jabatan_fungsional')}}" autocomplete="off" require/>
+                                                        <input type="text" onkeydown="return /[a-zA-Z0-9\s]+/i.test(event.key)" class="form-control" id="req_jabatan_fungsional" name="req_jabatan_fungsional" value="{{old('req_jabatan_fungsional')}}" autocomplete="off" require/>
                                                     </div>
                                                 </div>
                                             </div>
@@ -474,16 +475,14 @@
                                                 <label class="col-form-label col-lg-3 col-sm-12">Unit Kerja</label>
                                                 <div class="col-lg-9 col-md-9 col-sm-12">
                                                     <div class="input-group date">
-                                                        <input type="text" class="form-control" id="req_unit_kerja_fungsional" name="req_unit_kerja_fungsional" value="{{old('req_unit_kerja_fungsional')}}" autocomplete="off" require/>
+                                                        <input type="text" onkeydown="return /[a-zA-Z0-9\s]+/i.test(event.key)" class="form-control" id="req_unit_kerja_fungsional" name="req_unit_kerja_fungsional" value="{{old('req_unit_kerja_fungsional')}}" autocomplete="off" require/>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
                                         <!--end: Wizard Step 3-->
-                                        <!--begin: Wizard Step 2-->
                                         
-                                        <!--end: Wizard Step 2-->
-                                        <!--begin: Wizard Step 2-->
+                                        <!--begin: Wizard Step 4-->
                                         <div class="pb-6" style="margin-left: 50px; margin-right: 50px;" data-wizard-type="step-content">
                                             <h4 class="mb-10 font-weight-bold text-dark">Data Pemberhentian</h4>
                                             <div class="form-group row">
@@ -691,6 +690,7 @@
                                                 </div>
                                             </div>
                                         </div>
+                                        <!--end: Wizard Step 4-->
 
                                         <div class="d-flex justify-content-between mt-5 pt-10" style="margin-left: 50px; margin-right: 50px;" >
                                             <div class="mr-2">
@@ -833,7 +833,7 @@
                     req_no_surat_usulan: 'required',
                     req_jabatan_menandatangani: 'required',
                     req_file_data_usulan: {
-                        extenstion: "docx,doc,xlsx,xls,csv,jpg,png,jpeg,pdf"
+                        extenstion: "jpg,png,jpeg,pdf"
                     },
                     req_nip: 'required',
                     req_nama: 'required',
@@ -845,15 +845,15 @@
                     req_pangkat_gol: 'required',
                     req_tmt_gol: 'required',
                     req_file_data_asn: {
-                        extenstion: "docx,doc,xlsx,xls,csv,jpg,png,jpeg,pdf"
+                        extenstion: "jpg,png,jpeg,pdf"
                     },
                     req_jabatan_fungsional: 'required',
                     req_no_keppress_jabatan_fungsional: 'required',
                     req_file_data_jabatan_fungsional: {
-                        extenstion: "docx,doc,xlsx,xls,csv,jpg,png,jpeg,pdf"
+                        extenstion: "jpg,png,jpeg,pdf"
                     },
                     req_file_ba_pengambilan_sumpah_fungsional: {
-                        extenstion: "docx,doc,xlsx,xls,csv,jpg,png,jpeg,pdf"
+                        extenstion: "jpg,png,jpeg,pdf"
                     },
                     req_tmt_jabatan_fungsional: 'required',
                     req_unit_kerja_fungsional: 'required',
@@ -863,7 +863,7 @@
                     req_tmt_pemberhentian: 'required',
                     
                     req_file_data_pemberhentian: {
-                        extenstion: "docx,doc,xlsx,xls,csv,jpg,png,jpeg,pdf"
+                        extenstion: "jpg,png,jpeg,pdf"
                     },
                     req_ket: 'required'
 

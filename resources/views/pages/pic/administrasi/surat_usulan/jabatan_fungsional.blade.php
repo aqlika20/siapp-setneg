@@ -514,15 +514,14 @@
                             </div>
                         </div>
                         <div class="card-body">
-                            <!--begin: Search Form-->
-                            <!--begin::Search Form-->
+                             <!--begin::Search Form-->
                             <div class="mb-7">
                                 <div class="row align-items-center">
-                                    <div class="col-lg col-xl-6">
+                                    <div class="col-lg-9 col-xl-8">
                                         <div class="row align-items-center">
-                                            <div class="col-md-9 my-2 my-md-0">
+                                            <div class="col-md-4 my-2 my-md-0">
                                                 <div class="input-icon">
-                                                    <input type="text" class="form-control" placeholder="Cari..." id="kt_datatable_search_query" />
+                                                    <input type="text" class="form-control" placeholder="Search By No Surat" id="no_surat" />
                                                     <span>
                                                         <i class="flaticon2-search-1 text-muted"></i>
                                                     </span>
@@ -530,15 +529,13 @@
                                             </div>
                                         </div>
                                     </div>
-                                    
                                 </div>
                             </div>
                             <!--end::Search Form-->
-                            <!--end: Search Form-->
                             <!--begin: Datatable-->
-                            <table class="table data-table-bordered datatable-head-custom" id="jabatan_fungsional_1">
+                            <table class="datatable cell-border" id="tb_administrasi">
                                 <thead>
-                                    <tr>
+                                    <tr class="text-start text-gray-400 fw-bolder fs-7 text-uppercase gs-0">
                                         <th>Tanggal Agenda</th>
                                         <th>No Surat</th>
                                         <th>Instansi Pengusul</th>

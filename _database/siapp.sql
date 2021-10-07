@@ -1,10 +1,10 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.0
+-- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 30, 2021 at 12:11 AM
--- Server version: 10.4.19-MariaDB
+-- Generation Time: Oct 07, 2021 at 08:40 AM
+-- Server version: 10.4.21-MariaDB
 -- PHP Version: 7.4.23
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
@@ -24,93 +24,110 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `data_asn`
+-- Table structure for table `groups`
 --
 
-CREATE TABLE `data_asn` (
+CREATE TABLE `groups` (
   `id` bigint(20) UNSIGNED NOT NULL,
-  `nip` bigint(20) UNSIGNED NOT NULL,
-  `nama` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `tempat_lahir` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `tanggal_lahir` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `pendidikan_terakhir` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `instansi` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `file_nota_usul_asn_1` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `pangkat_gol` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `tmt_gol` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `tmt_cpns` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `masa_kerja_golongan_thn` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `masa_kerja_golongan_bln` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `file_nota_usul_asn_2` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
-  `updated_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `groups`
+--
+
+INSERT INTO `groups` (`id`, `name`, `created_at`) VALUES
+(1, 'Group 1', '2021-09-29 14:41:10'),
+(2, 'Group 2', '2021-09-29 14:41:10');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `data_jabatan`
+-- Table structure for table `jabatans`
 --
 
-CREATE TABLE `data_jabatan` (
-  `id` bigint(20) UNSIGNED NOT NULL,
-  `no_keppres_jabatan` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `jabatan` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `file_jabatan` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `file_ba_pengambilan_sumpah_jabatan` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `tmt_jabatan` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `unit_kerja` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
-  `updated_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+CREATE TABLE `jabatans` (
+  `id` int(11) NOT NULL,
+  `nama` varchar(255) NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `jabatans`
+--
+
+INSERT INTO `jabatans` (`id`, `nama`, `created_at`) VALUES
+(1, 'Jendral', '2021-10-05 12:48:06'),
+(2, 'Kolonel', '2021-10-05 12:48:06');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `data_pak`
+-- Table structure for table `kenaikan_pangkats`
 --
 
-CREATE TABLE `data_pak` (
-  `id` bigint(20) UNSIGNED NOT NULL,
-  `nomor_pak` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `tanggal_pak` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `jumlah_angka_kredit` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `periode_penilaian` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `file_data_pak` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+CREATE TABLE `kenaikan_pangkats` (
+  `id` int(11) NOT NULL,
+  `tanggal_surat_usulan` varchar(255) DEFAULT NULL,
+  `no_surat_usulan` varchar(255) DEFAULT NULL,
+  `pejabat_menandatangani` varchar(255) DEFAULT NULL,
+  `file_data_usulan` varchar(255) DEFAULT NULL,
+  `nip` bigint(20) DEFAULT NULL,
+  `nama` varchar(255) DEFAULT NULL,
+  `tempat_lahir` varchar(255) DEFAULT NULL,
+  `tanggal_lahir` varchar(255) DEFAULT NULL,
+  `pendidikan_terakhir` varchar(255) DEFAULT NULL,
+  `instansi_induk` varchar(255) DEFAULT NULL,
+  `instansi_pengusul` varchar(255) DEFAULT NULL,
+  `pangkat_gol` int(11) DEFAULT NULL,
+  `tmt_gol` varchar(255) DEFAULT NULL,
+  `file_nota_usulan_asn` varchar(255) DEFAULT NULL,
+  `nomor_pak` varchar(255) DEFAULT NULL,
+  `tanggal_pak` varchar(255) DEFAULT NULL,
+  `jumlah_angka_kredit` varchar(255) DEFAULT NULL,
+  `periode_penilaian` varchar(255) DEFAULT NULL,
+  `file_data_pak` varchar(255) DEFAULT NULL,
+  `nomor_klarifikasi` varchar(255) DEFAULT NULL,
+  `tanggal_klarifikasi` varchar(255) DEFAULT NULL,
+  `file_klarifikasi_pak` varchar(255) DEFAULT NULL,
+  `jabatan_lama` varchar(255) DEFAULT NULL,
+  `no_sk_jabatan_lama` varchar(255) DEFAULT NULL,
+  `tmt_jabatan_lama` varchar(255) DEFAULT NULL,
+  `unit_kerja_lama` varchar(255) DEFAULT NULL,
+  `file_data_jabatan_lama` varchar(255) DEFAULT NULL,
+  `jabatan_baru` varchar(255) DEFAULT NULL,
+  `unit_kerja_baru` varchar(255) DEFAULT NULL,
+  `file_data_jabatan_baru` varchar(255) DEFAULT NULL,
+  `jabatan_data_kompetensi` varchar(255) DEFAULT NULL,
+  `nomor_sertifikat` varchar(255) DEFAULT NULL,
+  `tgl_sertifikat` varchar(255) DEFAULT NULL,
+  `file_data_kompetensi` varchar(255) DEFAULT NULL,
+  `jumlah` varchar(255) DEFAULT NULL,
+  `terisi` varchar(255) DEFAULT NULL,
+  `sisa` varchar(255) DEFAULT NULL,
+  `file_formasi_jabatan` varchar(255) DEFAULT NULL,
+  `file_skp_2` varchar(255) DEFAULT NULL,
+  `file_skp_2_dukungan_lainnya` varchar(255) DEFAULT NULL,
+  `ket` varchar(255) DEFAULT NULL,
+  `no_keppres` varchar(255) DEFAULT NULL,
+  `tanggal_keppres` varchar(255) DEFAULT NULL,
+  `masa_jabatan_start` varchar(255) DEFAULT NULL,
+  `masa_jabatan_end` varchar(255) DEFAULT NULL,
+  `tmt` varchar(255) DEFAULT NULL,
+  `hak_keuangan` varchar(255) DEFAULT NULL,
+  `tanggal_pelantikan` varchar(255) DEFAULT NULL,
+  `yang_melantik` varchar(255) DEFAULT NULL,
+  `file_ba_pelantikan` varchar(255) DEFAULT NULL,
+  `file_sumpah_jabatan` varchar(255) DEFAULT NULL,
+  `id_pengirim` bigint(20) NOT NULL,
+  `jenis_layanan` int(11) NOT NULL,
+  `status` int(11) NOT NULL,
+  `distributor_id` int(11) DEFAULT NULL,
+  `group_id` int(11) DEFAULT NULL,
   `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
   `updated_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `data_usulan`
---
-
-CREATE TABLE `data_usulan` (
-  `id` bigint(20) UNSIGNED NOT NULL,
-  `no_surat_usulan` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `tanggal_surat_usulan` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `pejabat_ttd` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `file_usulan` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
-  `updated_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `klarifikasi_pak`
---
-
-CREATE TABLE `klarifikasi_pak` (
-  `id` bigint(20) UNSIGNED NOT NULL,
-  `nomor_klarifikasi` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `tanggal_klarifikasi` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `file_klarifikasi_pak` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
-  `updated_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -145,7 +162,10 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (19, '2021_09_14_150206_create_pangkat_gols', 3),
 (20, '2021_09_14_164243_create_periodes', 3),
 (21, '2014_10_12_100000_create_password_resets_table', 4),
-(23, '2021_09_27_102005_create_pengangkatan_pemberhentian_jfkus', 5);
+(37, '2021_09_27_102005_create_pengangkatan_pemberhentian_jfkus', 5),
+(38, '2021_09_29_092546_create_roles_table', 5),
+(39, '2021_09_29_202625_create_groups_table', 5),
+(40, '2014_10_12_000000_create_users_table', 6);
 
 -- --------------------------------------------------------
 
@@ -154,22 +174,15 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 --
 
 CREATE TABLE `notes` (
-  `id` bigint(20) UNSIGNED NOT NULL,
-  `jfku_id` bigint(20) UNSIGNED NOT NULL,
-  `tanggal_catatan` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `catatan` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `id` int(11) NOT NULL,
+  `id_usulan` bigint(20) DEFAULT NULL,
+  `id_layanan` bigint(20) DEFAULT NULL,
+  `id_pengirim` bigint(20) DEFAULT NULL,
+  `tanggal_catatan` varchar(255) DEFAULT NULL,
+  `catatan` text DEFAULT NULL,
   `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
   `updated_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
---
--- Dumping data for table `notes`
---
-
-INSERT INTO `notes` (`id`, `jfku_id`, `tanggal_catatan`, `catatan`, `created_at`, `updated_at`) VALUES
-(3, 33, '29-Sep-2021', 'tes 1', '2021-09-29 19:45:41', '2021-09-29 19:45:41'),
-(4, 33, '30-Sep-2021', 'tes 2', '2021-09-29 19:45:41', '2021-09-29 19:45:41'),
-(5, 34, NULL, NULL, '2021-09-29 21:13:17', '2021-09-29 21:13:17');
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -252,27 +265,6 @@ CREATE TABLE `oauth_refresh_tokens` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `pangkat_baru`
---
-
-CREATE TABLE `pangkat_baru` (
-  `id` bigint(20) UNSIGNED NOT NULL,
-  `pangkat_gol` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `tmt_gol` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `masa_kerja_gol_thn` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `masa_kerja_gol_bln` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `periode_kenaikan_pangkat` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `file_data_pendukung` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `tambah_catatan` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `tanggal_catatan` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `catatan` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
-  `updated_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `pangkat_gols`
 --
 
@@ -319,6 +311,50 @@ CREATE TABLE `password_resets` (
   `token` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `created_at` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `pemberhentians`
+--
+
+CREATE TABLE `pemberhentians` (
+  `id` int(11) NOT NULL,
+  `tanggal_surat_usulan` varchar(255) DEFAULT NULL,
+  `no_surat_usulan` varchar(255) DEFAULT NULL,
+  `pejabat_menandatangani` varchar(255) DEFAULT NULL,
+  `file_data_usulan` varchar(255) DEFAULT NULL,
+  `nip` bigint(20) DEFAULT NULL,
+  `nama` varchar(255) DEFAULT NULL,
+  `tanggal_lahir` varchar(255) DEFAULT NULL,
+  `pendidikan_terakhir` varchar(255) DEFAULT NULL,
+  `instansi` varchar(255) DEFAULT NULL,
+  `pangkat_gol_baru` int(11) DEFAULT NULL,
+  `tmt_gol_baru` varchar(255) DEFAULT NULL,
+  `pangkat_lama` varchar(255) DEFAULT NULL,
+  `gol_ruang_lama` varchar(255) DEFAULT NULL,
+  `nomor_pak` varchar(255) DEFAULT NULL,
+  `tanggal_pak` varchar(255) DEFAULT NULL,
+  `jumlah_angka_kredit` varchar(255) DEFAULT NULL,
+  `periode_penilaian` int(11) DEFAULT NULL,
+  `file_data_pak` varchar(255) DEFAULT NULL,
+  `no_klarifikasi` varchar(255) DEFAULT NULL,
+  `tanggal_klarifikasi` varchar(255) DEFAULT NULL,
+  `file_klarifikasi_pak` varchar(255) DEFAULT NULL,
+  `tmt_lama` varchar(255) DEFAULT NULL,
+  `jabatan_terakhir` varchar(255) DEFAULT NULL,
+  `unit_kerja_terakhir` varchar(255) DEFAULT NULL,
+  `tmt_berhenti` varchar(255) DEFAULT NULL,
+  `tmt_pensiun` varchar(255) DEFAULT NULL,
+  `ket` varchar(255) DEFAULT NULL,
+  `id_pengirim` bigint(20) NOT NULL,
+  `jenis_layanan` int(11) NOT NULL,
+  `status` int(11) NOT NULL,
+  `distributor_id` int(11) DEFAULT NULL,
+  `group_id` int(11) DEFAULT NULL,
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
+  `updated_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -390,89 +426,177 @@ INSERT INTO `pengangkatans` (`id`, `no_surat_usulan`, `tanggal_surat_usulan`, `p
 
 CREATE TABLE `pengangkatan_pemberhentian_jfkus` (
   `id` bigint(20) UNSIGNED NOT NULL,
-  `tgl_surat_usulan` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `tgl_surat_usulan` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `no_surat_usulan` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `pejabat_menandatangani` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `file_data_usulan` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `file_data_usulan` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `nip` bigint(20) UNSIGNED DEFAULT NULL,
   `nama` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `tempat_lahir` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `tanggal_lahir` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `tanggal_lahir` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `pendidikan_terakhir` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `instansi_induk` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `instansi_pengusul` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `pangkat_gol` int(11) DEFAULT NULL,
   `tmt_gol` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `file_nota_usulan_asn` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `file_nota_usulan_asn` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `nomor_pak` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `tanggal_pak` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `tanggal_pak` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `jumlah_angka_kredit` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `periode_penilaian` int(11) DEFAULT NULL,
-  `file_data_pak` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `file_data_pak` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `nomor_klarifikasi` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `tanggal_klarifikasi` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `file_klarifikasi_pak` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `tanggal_klarifikasi` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `file_klarifikasi_pak` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `nomor_pak_terakhir` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `tanggal_pak_terakhir` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `tanggal_pak_terakhir` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `jumlah_angka_kredit_terakhir` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `periode_penilaian_terakhir` int(11) DEFAULT NULL,
-  `file_data_pak_terakhir` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `file_data_pak_terakhir` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `jabatan_fungsional` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `no_keppress_jabatan_fungsional` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `file_data_jabatan_fungsional` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `file_data_jabatan_fungsional_2` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `file_ba_pengambilan_sumpah_pelantikan_fungsional` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `file_data_jabatan_fungsional` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `file_data_jabatan_fungsional_2` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `file_ba_pengambilan_sumpah_pelantikan_fungsional` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `tmt_jabatan_fungsional` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `unit_kerja_fungsional` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `tgl_penerimaan_keppres` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `alasan_pemberhentian` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `ket_alasan_pemberhentian` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `tmt_pemberhentian` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `file_pendukung_pemberhentian` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `file_pendukung_pemberhentian` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `tgl_catatan_pemberhentian` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `catatan_pemberhentian` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `ket_pemberhentian` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `jabatan` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `no_sk_jabatan` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `tmt_jabatan` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `unit_kerja` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `file_data_jabatan` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `file_data_jabatan` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `jabatan_lama` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `no_sk_jabatan_lama` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `tmt_jabatan_lama` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `unit_kerja_lama` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `file_data_jabatan_lama` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `file_data_jabatan_lama` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `jabatan_baru` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `unit_kerja_baru` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `file_data_jabatan_baru` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `file_data_jabatan_baru` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `no_surat_rekomendasi` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `tgl_surat_rekomendasi` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `file_data_rekomendasi` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `file_surat_pernyataan_rekomendasi` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `file_data_rekomendasi` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `file_surat_pernyataan_rekomendasi` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `jabatan_data_kompetensi` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `nomor_sertifikat` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `tgl_sertifikat` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `file_data_kompetensi` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `file_data_kompetensi` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `jumlah` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `terisi` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `sisa` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `file_formasi_jabatan` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `file_skp_2` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `file_skp_2_dukungan_lainnya` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `tanggal_catatan` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `catatan` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `file_formasi_jabatan` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `file_skp_2` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `file_skp_2_dukungan_lainnya` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `ket` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `tanggal_surat_pengantar` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `no_surat_pengantar` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `no_keppres` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `tanggal_keppres` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `alasan_ralat` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `file_surat_pengantar` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `file_keppres` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `file_bukti_pendukung` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `id_pengirim` bigint(20) NOT NULL,
   `jenis_layanan` int(11) DEFAULT NULL,
   `status` int(11) DEFAULT NULL,
+  `distributor_id` int(11) DEFAULT NULL,
+  `group_id` int(11) DEFAULT NULL,
   `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
   `updated_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+-- --------------------------------------------------------
+
 --
--- Dumping data for table `pengangkatan_pemberhentian_jfkus`
+-- Table structure for table `pengangkatan_pemberhentian_lainnya`
 --
 
-INSERT INTO `pengangkatan_pemberhentian_jfkus` (`id`, `tgl_surat_usulan`, `no_surat_usulan`, `pejabat_menandatangani`, `file_data_usulan`, `nip`, `nama`, `tempat_lahir`, `tanggal_lahir`, `pendidikan_terakhir`, `instansi_induk`, `instansi_pengusul`, `pangkat_gol`, `tmt_gol`, `file_nota_usulan_asn`, `nomor_pak`, `tanggal_pak`, `jumlah_angka_kredit`, `periode_penilaian`, `file_data_pak`, `nomor_klarifikasi`, `tanggal_klarifikasi`, `file_klarifikasi_pak`, `nomor_pak_terakhir`, `tanggal_pak_terakhir`, `jumlah_angka_kredit_terakhir`, `periode_penilaian_terakhir`, `file_data_pak_terakhir`, `jabatan_fungsional`, `no_keppress_jabatan_fungsional`, `file_data_jabatan_fungsional`, `file_data_jabatan_fungsional_2`, `file_ba_pengambilan_sumpah_pelantikan_fungsional`, `tmt_jabatan_fungsional`, `unit_kerja_fungsional`, `tgl_penerimaan_keppres`, `alasan_pemberhentian`, `ket_alasan_pemberhentian`, `tmt_pemberhentian`, `file_pendukung_pemberhentian`, `ket_pemberhentian`, `jabatan`, `no_sk_jabatan`, `tmt_jabatan`, `unit_kerja`, `file_data_jabatan`, `jabatan_lama`, `no_sk_jabatan_lama`, `tmt_jabatan_lama`, `unit_kerja_lama`, `file_data_jabatan_lama`, `jabatan_baru`, `unit_kerja_baru`, `file_data_jabatan_baru`, `no_surat_rekomendasi`, `tgl_surat_rekomendasi`, `file_data_rekomendasi`, `file_surat_pernyataan_rekomendasi`, `jabatan_data_kompetensi`, `nomor_sertifikat`, `tgl_sertifikat`, `file_data_kompetensi`, `jumlah`, `terisi`, `sisa`, `file_formasi_jabatan`, `file_skp_2`, `file_skp_2_dukungan_lainnya`, `tanggal_catatan`, `catatan`, `ket`, `jenis_layanan`, `status`, `created_at`, `updated_at`) VALUES
-(33, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', 1, 1, '2021-09-29 19:45:41', '2021-09-29 19:45:41'),
-(34, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '32658999953000-coba1.pdf', NULL, NULL, NULL, '6', 1, 1, '2021-09-29 21:13:17', '2021-09-29 22:05:55');
+CREATE TABLE `pengangkatan_pemberhentian_lainnya` (
+  `id` int(11) NOT NULL,
+  `tanggal_surat_pengantar` varchar(255) DEFAULT NULL,
+  `no_surat_pengantar` varchar(255) DEFAULT NULL,
+  `jabatan_lainnya` varchar(255) DEFAULT NULL,
+  `unsur` int(11) DEFAULT NULL,
+  `nip` varchar(255) DEFAULT NULL,
+  `nama` varchar(255) DEFAULT NULL,
+  `instansi` varchar(255) DEFAULT NULL,
+  `jabatan_angkat` int(11) DEFAULT NULL,
+  `jabatan_berhenti` int(11) DEFAULT NULL,
+  `file_surat_pengantar` varchar(255) DEFAULT NULL,
+  `file_dhr` varchar(255) DEFAULT NULL,
+  `file_dukumen_lain_pengangkatan_lainnya` varchar(255) DEFAULT NULL,
+  `no_keppres` varchar(255) DEFAULT NULL,
+  `tanggal_keppres` varchar(255) DEFAULT NULL,
+  `masa_jabatan_start` varchar(255) DEFAULT NULL,
+  `masa_jabatan_end` varchar(255) DEFAULT NULL,
+  `tmt` varchar(255) DEFAULT NULL,
+  `hak_keuangan` varchar(255) DEFAULT NULL,
+  `tanggal_pelantikan` varchar(255) DEFAULT NULL,
+  `yang_melantik` varchar(255) DEFAULT NULL,
+  `file_ba_pelantikan` varchar(255) DEFAULT NULL,
+  `file_sumpah_jabatan` varchar(255) DEFAULT NULL,
+  `formasi` varchar(255) DEFAULT NULL,
+  `formasi_terisi_start` varchar(255) DEFAULT NULL,
+  `formasi_terisi_end` varchar(255) DEFAULT NULL,
+  `no_surat_persetujuan` varchar(255) DEFAULT NULL,
+  `tanggal_surat_persetujuan` varchar(255) DEFAULT NULL,
+  `kepada_menteri` varchar(255) DEFAULT NULL,
+  `nama_staff_khusus` varchar(255) DEFAULT NULL,
+  `id_pengirim` bigint(20) NOT NULL,
+  `jenis_layanan` int(11) NOT NULL,
+  `status` int(11) NOT NULL,
+  `distributor_id` int(11) DEFAULT NULL,
+  `group_id` int(11) DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT current_timestamp(),
+  `updated_at` timestamp NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `pengangkatan_pemberhentian_ns`
+--
+
+CREATE TABLE `pengangkatan_pemberhentian_ns` (
+  `id` int(11) NOT NULL,
+  `tanggal_surat_pengantar` varchar(255) DEFAULT NULL,
+  `no_surat_pengantar` varchar(255) DEFAULT NULL,
+  `file_surat_pengantar` varchar(255) DEFAULT NULL,
+  `lns` varchar(255) DEFAULT NULL,
+  `unsur` int(11) DEFAULT NULL,
+  `nip` varchar(255) DEFAULT NULL,
+  `nama` varchar(255) DEFAULT NULL,
+  `instansi` varchar(255) DEFAULT NULL,
+  `jabatan_angkat` int(11) DEFAULT NULL,
+  `jabatan_berhenti` int(11) DEFAULT NULL,
+  `file_dhr` varchar(255) DEFAULT NULL,
+  `file_dukumen_lain_pengangkatan_ns` varchar(255) DEFAULT NULL,
+  `no_keppres` varchar(255) DEFAULT NULL,
+  `tanggal_keppres` varchar(255) DEFAULT NULL,
+  `masa_jabatan_start` varchar(255) DEFAULT NULL,
+  `masa_jabatan_end` varchar(255) DEFAULT NULL,
+  `tmt` varchar(255) DEFAULT NULL,
+  `hak_keuangan` varchar(255) DEFAULT NULL,
+  `tanggal_pelantikan` varchar(255) DEFAULT NULL,
+  `yang_melantik` varchar(255) DEFAULT NULL,
+  `file_ba_pelantikan` varchar(255) DEFAULT NULL,
+  `file_sumpah_jabatan` varchar(255) DEFAULT NULL,
+  `id_pengirim` bigint(20) NOT NULL,
+  `jenis_layanan` int(11) NOT NULL,
+  `status` int(11) NOT NULL,
+  `distributor_id` int(11) DEFAULT NULL,
+  `group_id` int(11) DEFAULT NULL,
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
+  `updated_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -513,11 +637,31 @@ CREATE TABLE `roles` (
 --
 
 INSERT INTO `roles` (`id`, `name`, `created_at`) VALUES
-(1, 'PIC', '2021-09-13 01:57:16'),
-(2, 'Koordinator Pokja', '2021-09-13 02:29:09'),
-(3, 'JF Ahli Muda', '2021-09-13 02:30:06'),
-(4, 'JF Ahli Madya', '2021-09-13 02:30:06'),
-(5, 'Kepala Biro', '2021-09-28 16:08:11');
+(1, 'PIC', '2021-09-29 14:40:35'),
+(2, 'Koordinator Pokja', '2021-09-29 14:40:35'),
+(3, 'JF Ahli Muda', '2021-09-29 14:40:35'),
+(4, 'JF Ahli Madya', '2021-09-29 14:40:35'),
+(5, 'Kepala Biro', '2021-09-29 14:40:35');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `unsurs`
+--
+
+CREATE TABLE `unsurs` (
+  `id` int(11) NOT NULL,
+  `nama` varchar(255) NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `unsurs`
+--
+
+INSERT INTO `unsurs` (`id`, `nama`, `created_at`) VALUES
+(1, 'Pemerintah', '2021-10-05 12:45:19'),
+(2, 'Non Pemerintah', '2021-10-05 12:45:19');
 
 -- --------------------------------------------------------
 
@@ -532,6 +676,7 @@ CREATE TABLE `users` (
   `nip_verified_at` timestamp NULL DEFAULT NULL,
   `password` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `roles_id` bigint(20) UNSIGNED NOT NULL,
+  `groups_id` bigint(20) UNSIGNED DEFAULT NULL,
   `remember_token` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
   `updated_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
@@ -541,49 +686,35 @@ CREATE TABLE `users` (
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`id`, `name`, `nip`, `nip_verified_at`, `password`, `roles_id`, `remember_token`, `created_at`, `updated_at`) VALUES
-(1, 'PIC - Nama', '111111', NULL, '$2y$10$gGqnqq58u00YXuJTOnNJBu2zpu5X8bQxhi86Tx.wk.oTQcZHfte3y', 1, 'DGrywLKwJsvXjVL3rRTDk6NGa688vaCRqTvqXREe847MR5Fre8qvCJTiJbHP', '2021-09-12 15:01:55', '2021-09-29 20:04:58'),
-(2, 'Koordinator Pokja - Nama', '123456', NULL, '$2y$10$gGqnqq58u00YXuJTOnNJBu2zpu5X8bQxhi86Tx.wk.oTQcZHfte3y', 2, NULL, '2021-09-26 16:03:36', '2021-09-28 16:18:01'),
-(3, 'Kepala Biro - Nama', '654321', NULL, '$2y$10$gGqnqq58u00YXuJTOnNJBu2zpu5X8bQxhi86Tx.wk.oTQcZHfte3y', 3, NULL, '2021-09-26 16:33:45', '2021-09-28 16:18:01');
+INSERT INTO `users` (`id`, `name`, `nip`, `nip_verified_at`, `password`, `roles_id`, `groups_id`, `remember_token`, `created_at`, `updated_at`) VALUES
+(1, 'PIC - Nama', '111111', NULL, '$2y$10$gGqnqq58u00YXuJTOnNJBu2zpu5X8bQxhi86Tx.wk.oTQcZHfte3y', 1, NULL, 'luZbVVzV1Rmswuf2kjvn2P3yCB4w0kOc2KCUBQNkRPIo21On8uQyyCeiPqh9', '2021-09-29 14:41:21', '2021-10-07 06:06:04'),
+(2, 'Koordinator Pokja - Nama', '123456', NULL, '$2y$10$gGqnqq58u00YXuJTOnNJBu2zpu5X8bQxhi86Tx.wk.oTQcZHfte3y', 2, 1, NULL, '2021-09-29 14:41:21', '2021-09-29 14:41:21'),
+(3, 'JF Ahli Muda - Nama', '654321', NULL, '$2y$10$gGqnqq58u00YXuJTOnNJBu2zpu5X8bQxhi86Tx.wk.oTQcZHfte3y', 3, 1, NULL, '2021-09-29 14:41:21', '2021-09-29 14:41:21'),
+(4, 'JF Ahli Madya- Nama', '222222', NULL, '$2y$10$gGqnqq58u00YXuJTOnNJBu2zpu5X8bQxhi86Tx.wk.oTQcZHfte3y', 4, 2, NULL, '2021-09-29 14:41:21', '2021-09-29 14:41:21'),
+(5, 'Kepala Biro - Nama', '333333', NULL, '$2y$10$gGqnqq58u00YXuJTOnNJBu2zpu5X8bQxhi86Tx.wk.oTQcZHfte3y', 5, 2, NULL, '2021-09-29 14:41:21', '2021-09-29 14:41:21');
 
 --
 -- Indexes for dumped tables
 --
 
 --
--- Indexes for table `data_asn`
+-- Indexes for table `groups`
 --
-ALTER TABLE `data_asn`
+ALTER TABLE `groups`
   ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `data_asn_nip_unique` (`nip`);
+  ADD UNIQUE KEY `groups_name_unique` (`name`);
 
 --
--- Indexes for table `data_jabatan`
+-- Indexes for table `jabatans`
 --
-ALTER TABLE `data_jabatan`
-  ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `data_jabatan_no_keppres_jabatan_unique` (`no_keppres_jabatan`);
+ALTER TABLE `jabatans`
+  ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `data_pak`
+-- Indexes for table `kenaikan_pangkats`
 --
-ALTER TABLE `data_pak`
-  ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `data_pak_nomor_pak_unique` (`nomor_pak`);
-
---
--- Indexes for table `data_usulan`
---
-ALTER TABLE `data_usulan`
-  ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `data_usulan_no_surat_usulan_unique` (`no_surat_usulan`);
-
---
--- Indexes for table `klarifikasi_pak`
---
-ALTER TABLE `klarifikasi_pak`
-  ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `klarifikasi_pak_nomor_klarifikasi_unique` (`nomor_klarifikasi`);
+ALTER TABLE `kenaikan_pangkats`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `migrations`
@@ -595,8 +726,7 @@ ALTER TABLE `migrations`
 -- Indexes for table `notes`
 --
 ALTER TABLE `notes`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `jfku_id` (`jfku_id`);
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `oauth_access_tokens`
@@ -632,12 +762,6 @@ ALTER TABLE `oauth_refresh_tokens`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `pangkat_baru`
---
-ALTER TABLE `pangkat_baru`
-  ADD PRIMARY KEY (`id`);
-
---
 -- Indexes for table `pangkat_gols`
 --
 ALTER TABLE `pangkat_gols`
@@ -649,6 +773,12 @@ ALTER TABLE `pangkat_gols`
 --
 ALTER TABLE `password_resets`
   ADD KEY `password_resets_nip_index` (`nip`);
+
+--
+-- Indexes for table `pemberhentians`
+--
+ALTER TABLE `pemberhentians`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `pengangkatans`
@@ -666,6 +796,18 @@ ALTER TABLE `pengangkatan_pemberhentian_jfkus`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `pengangkatan_pemberhentian_lainnya`
+--
+ALTER TABLE `pengangkatan_pemberhentian_lainnya`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `pengangkatan_pemberhentian_ns`
+--
+ALTER TABLE `pengangkatan_pemberhentian_ns`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `periodes`
 --
 ALTER TABLE `periodes`
@@ -680,56 +822,53 @@ ALTER TABLE `roles`
   ADD UNIQUE KEY `roles_name_unique` (`name`);
 
 --
+-- Indexes for table `unsurs`
+--
+ALTER TABLE `unsurs`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `users`
 --
 ALTER TABLE `users`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `users_nip_unique` (`nip`),
+  ADD KEY `users_roles_id_foreign` (`roles_id`),
+  ADD KEY `users_groups_id_foreign` (`groups_id`);
 
 --
 -- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT for table `data_asn`
+-- AUTO_INCREMENT for table `groups`
 --
-ALTER TABLE `data_asn`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+ALTER TABLE `groups`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT for table `data_jabatan`
+-- AUTO_INCREMENT for table `jabatans`
 --
-ALTER TABLE `data_jabatan`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+ALTER TABLE `jabatans`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT for table `data_pak`
+-- AUTO_INCREMENT for table `kenaikan_pangkats`
 --
-ALTER TABLE `data_pak`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT for table `data_usulan`
---
-ALTER TABLE `data_usulan`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT for table `klarifikasi_pak`
---
-ALTER TABLE `klarifikasi_pak`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+ALTER TABLE `kenaikan_pangkats`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=41;
 
 --
 -- AUTO_INCREMENT for table `notes`
 --
 ALTER TABLE `notes`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `oauth_clients`
@@ -744,16 +883,16 @@ ALTER TABLE `oauth_personal_access_clients`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `pangkat_baru`
---
-ALTER TABLE `pangkat_baru`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
-
---
 -- AUTO_INCREMENT for table `pangkat_gols`
 --
 ALTER TABLE `pangkat_gols`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+
+--
+-- AUTO_INCREMENT for table `pemberhentians`
+--
+ALTER TABLE `pemberhentians`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `pengangkatans`
@@ -765,7 +904,19 @@ ALTER TABLE `pengangkatans`
 -- AUTO_INCREMENT for table `pengangkatan_pemberhentian_jfkus`
 --
 ALTER TABLE `pengangkatan_pemberhentian_jfkus`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `pengangkatan_pemberhentian_lainnya`
+--
+ALTER TABLE `pengangkatan_pemberhentian_lainnya`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `pengangkatan_pemberhentian_ns`
+--
+ALTER TABLE `pengangkatan_pemberhentian_ns`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `periodes`
@@ -780,20 +931,27 @@ ALTER TABLE `roles`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
+-- AUTO_INCREMENT for table `unsurs`
+--
+ALTER TABLE `unsurs`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- Constraints for dumped tables
 --
 
 --
--- Constraints for table `notes`
+-- Constraints for table `users`
 --
-ALTER TABLE `notes`
-  ADD CONSTRAINT `jfku_id` FOREIGN KEY (`jfku_id`) REFERENCES `pengangkatan_pemberhentian_jfkus` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+ALTER TABLE `users`
+  ADD CONSTRAINT `users_groups_id_foreign` FOREIGN KEY (`groups_id`) REFERENCES `groups` (`id`),
+  ADD CONSTRAINT `users_roles_id_foreign` FOREIGN KEY (`roles_id`) REFERENCES `roles` (`id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

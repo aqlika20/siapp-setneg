@@ -514,13 +514,14 @@
                             <div class="card-body">
                                 <div class="tab-content">
                                     <div class="tab-pane fade show active" id="kt_tab_pane_4_1" role="tabpanel" aria-labelledby="kt_tab_pane_4_1">
+                                         <!--begin::Search Form-->
                                         <div class="mb-7">
                                             <div class="row align-items-center">
-                                                <div class="col-lg col-xl-6">
+                                                <div class="col-lg-9 col-xl-8">
                                                     <div class="row align-items-center">
-                                                        <div class="col-md-9 my-2 my-md-0">
+                                                        <div class="col-md-4 my-2 my-md-0">
                                                             <div class="input-icon">
-                                                                <input type="text" class="form-control" placeholder="Cari..." id="kt_datatable_search_query" />
+                                                                <input type="text" class="form-control" placeholder="Search By No Surat" id="no_surat2" />
                                                                 <span>
                                                                     <i class="flaticon2-search-1 text-muted"></i>
                                                                 </span>
@@ -528,12 +529,13 @@
                                                         </div>
                                                     </div>
                                                 </div>
-                                                
                                             </div>
                                         </div>
-                                        <table class="table data-table-bordered datatable-head-custom" id="jabatan_fungsional_1">
+                                        <!--end::Search Form-->
+                                        <!--begin: Datatable-->
+                                        <table class="datatable cell-border" id="tb_administrasi2">
                                             <thead>
-                                                <tr>
+                                                <tr class="text-start text-gray-400 fw-bolder fs-7 text-uppercase gs-0">
                                                     <th>Tanggal Agenda</th>
                                                     <th>No Surat</th>
                                                     <th>Instansi Pengusul</th>
@@ -563,6 +565,7 @@
                                                 @endforeach
                                             </tbody>
                                         </table>
+                                        <!--end: Datatable-->
                                     </div>	
                                 </div>	
                             </div>
