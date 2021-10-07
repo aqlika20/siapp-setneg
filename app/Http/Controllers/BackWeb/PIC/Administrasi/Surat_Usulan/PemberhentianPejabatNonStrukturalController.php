@@ -68,6 +68,7 @@ class PemberhentianPejabatNonStrukturalController extends Controller
             'req_nama' => 'required',
             'req_instansi' => 'required',
             'req_jabatan' => 'required',
+            'req_tanggal_keppres' => 'required',
             
            
             'req_file_surat_pengantar.*' => 'max:25000|mimes:jpg,png,jpeg,pdf',
@@ -90,6 +91,7 @@ class PemberhentianPejabatNonStrukturalController extends Controller
             'nama' => $input['req_nama'],
             'instansi' => $input['req_instansi'],
             'jabatan_berhenti' => $input['req_jabatan'],
+            'tanggal_keppres' => $input['req_tanggal_keppres'],
 
             'id_pengirim' => $id_pengirim->nip,
             'jenis_layanan' => Helper::$pemberhentian_pejabat_NS,

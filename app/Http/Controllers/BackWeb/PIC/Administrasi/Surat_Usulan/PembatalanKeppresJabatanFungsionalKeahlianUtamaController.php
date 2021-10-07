@@ -95,7 +95,7 @@ class PembatalanKeppresJabatanFungsionalKeahlianUtamaController extends Controll
             'req_no_keppress_jabatan_fungsional' => 'required',
             'req_unit_kerja_fungsional' => 'required',
             'req_tgl_penerimaan_keppres' => 'required',
-
+            
             'req_alasan_pemberhentian' => 'required',
             'req_ket_alasan_pemberhentian' => 'required',
             'req_ket.*' => 'required',
@@ -135,6 +135,7 @@ class PembatalanKeppresJabatanFungsionalKeahlianUtamaController extends Controll
 
             'nomor_klarifikasi' => $input['req_no_klarifikasi'],
             'tanggal_klarifikasi' => $input['req_tanggal_klarifikasi'],
+            'tgl_penerimaan_keppres' => $input['req_tgl_penerimaan_keppres'],
 
             'jabatan_fungsional' => $input['req_jabatan_fungsional'],
             'no_keppress_jabatan_fungsional' => $input['req_no_keppress_jabatan_fungsional'],

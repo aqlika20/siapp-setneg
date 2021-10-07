@@ -87,6 +87,22 @@
                                                             </td>
                                                         </tr>
                                                     @endforeach
+
+                                                    @foreach($pengangkatans_ns as $pengangkatan_ns)
+                                                        <tr>
+                                                            <td>{{ $pengangkatan_ns->tgl_surat_usulan }}</td>
+                                                            <td>{{ $pengangkatan_ns->no_surat_usulan }}</td>
+                                                            <td>{{ $pengangkatan_ns->instansi_pengusul }}</td>
+                                                            <td><div style="color: #FFA800;">{{ Helper::defineJenisLayananBy($pengangkatan_ns->jenis_layanan) }}</div></td>
+                                                            <td><div style="color: #3699FF;">{{ $pengangkatan_ns->nip }}</div></td>
+                                                            <td>{{ $pengangkatan_ns->nama }}</td>
+                                                            <td>
+                                                                <a href="{{route('koor-pokja.inbox.ns.verif', ['id' => $pengangkatan_ns->id])}}"><i class="fa fa-pencil-alt text-success mr-2"></i></a>
+                                                                <a href="{{route('koor-pokja.inbox.distributor.index', ['id' => $pengangkatan_ns->id])}}"><i class="fa fa-share text-info mr-1"></i></a>
+                                                            </td>
+                                                        </tr>
+                                                    @endforeach
+                                                    
                                                 </tbody>
                                             </table>
                                         <!--end::Table-->
@@ -137,6 +153,7 @@
                                                             <td>{{ $pengangkatan->nama }}</td>
                                                         </tr>
                                                     @endforeach
+                                                    
                                                 </tbody>
                                             </table>
                                         </div>
