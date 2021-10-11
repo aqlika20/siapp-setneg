@@ -47,12 +47,6 @@ class Helper {
     // public static $tolak = 3;
     // public static $tolak = 3;
 
-
-    public static function convertDatetoMonths($date){
-        $date = date('m', strtotime($date));
-        return $date;
-    }
-
     public static function defineJenisLayananBy($type)
     {
         $jenis_layanan = "";
@@ -242,4 +236,15 @@ class Helper {
 
         return $status;
     }
+
+    public static function convertDatetoMonths($date){
+        $date = date('m', strtotime($date));
+        return $date;
+    }
+
+    public static function convertDate($date){
+        $date = date('d M Y', strtotime($date));
+        return $date;
+    }
+
 };

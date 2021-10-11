@@ -12,6 +12,8 @@ use Illuminate\Support\Facades\DB;
 
 use App\UserManagement;
 use App\PengangkatanPemberhentianJFKU;
+use App\PengangkatanPemberhentianNS;
+use App\PengangkatanPemberhentianLainnya;
 use App\Pangkat;
 use App\Periode;
 use App\Helper;
@@ -34,7 +36,18 @@ class JabatanFungsionalController extends Controller
         $currentUser = UserManagement::find(Auth::id());
         $page_title = 'PIC | Administrasi | Surat Usulan';
         $page_description = 'Surat Usulan';
-        $pengangkatans = PengangkatanPemberhentianJFKU::where('status', Helper::$pengajuan_usulan)->get();
-        return view('pages.pic.administrasi.surat_usulan.jabatan_fungsional', compact('page_title', 'page_description', 'currentUser', 'pengangkatans'));
+        $pengangkatans = PengangkatanPemberhentianJFKU::where([
+            ['status', '=', Helper::$pengajuan_usulan],
+            ['id_pengirim', '=', $currentUser->nip]
+        ])->get();
+        $strukturals = PengangkatanPemberhentianNS::where([
+            ['status', '=', Helper::$pengajuan_usulan],
+            ['id_pengirim', '=', $currentUser->nip]
+        ])->get();
+        $lainnyas = PengangkatanPemberhentianLainnya::where([
+            ['status', '=', Helper::$pengajuan_usulan],
+            ['id_pengirim', '=', $currentUser->nip]
+        ])->get();
+        return view('pages.pic.administrasi.surat_usulan.jabatan_fungsional', compact('page_title', 'page_description', 'currentUser', 'pengangkatans', 'strukturals', 'lainnyas'));
     }
 }

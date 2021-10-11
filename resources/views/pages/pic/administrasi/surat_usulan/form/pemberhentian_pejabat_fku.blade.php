@@ -195,7 +195,7 @@
                                                     <select class="form-control select2" style="width: 230px;" id="req_pangkat_gol" name="req_pangkat_gol">
                                                         <option value="">Choose</option>
                                                         @foreach ($pangkats as $pangkat)
-                                                            <option value="{{$pangkat->id}}" {{ old('req_pangkat_gol') == $pangkat->id ? 'selected' : '' }}>{{$pangkat->name}} | {{$pangkat->golongan}} | {{$pangkat->ruang}}</option>
+                                                            <option value="{{$pangkat->id}}" {{ old('req_pangkat_gol') == $pangkat->id ? 'selected' : '' }}>{{$pangkat->golongan}} | {{$pangkat->ruang}}</option>
                                                         @endforeach
                                                     </select>
                                                     <!-- <div class="input-group date">

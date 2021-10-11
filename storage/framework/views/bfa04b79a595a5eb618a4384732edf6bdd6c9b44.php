@@ -82,9 +82,9 @@
                             <li class="menu-item <?php echo e((strpos($page_title, 'PIC | Administrasi | Pemberhentian') !== false) ? 'menu-item-active' : ''); ?>" aria-haspopup="true">
                                 <a href="<?php echo e(route('pic.administrasi.pemberhentian.index')); ?>" class="menu-link "><i class="menu-bullet menu-bullet-line"><span></span></i><span class="menu-text">Pemberhentian</span></a>
                             </li>
-                            <li class="menu-item <?php echo e((strpos($page_title, 'PIC | Administrasi | Status Usulan') !== false) ? 'menu-item-active' : ''); ?>" aria-haspopup="true">
+                            <!-- <li class="menu-item <?php echo e((strpos($page_title, 'PIC | Administrasi | Status Usulan') !== false) ? 'menu-item-active' : ''); ?>" aria-haspopup="true">
                                 <a href="<?php echo e(route('pic.administrasi.status-usulan.index')); ?>" class="menu-link "><i class="menu-bullet menu-bullet-line"><span></span></i><span class="menu-text">Status Usulan</span></a>
-                            </li>
+                            </li> -->
                         </ul>
                     </div>
                 </li>

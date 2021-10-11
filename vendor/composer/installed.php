@@ -5,7 +5,7 @@
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => '6acd57e43dba655dd7876ef0d63e44936992de49',
+        'reference' => '3aa8ebcf6c3c503f5b30605127d6cf3cf6f9cb26',
         'name' => 'laravel/laravel',
         'dev' => true,
     ),
@@ -35,15 +35,6 @@
             'install_path' => __DIR__ . '/../brick/math',
             'aliases' => array(),
             'reference' => 'ca57d18f028f84f777b2168cd1911b0dee2343ae',
-            'dev_requirement' => false,
-        ),
-        'chartisan/php' => array(
-            'pretty_version' => '1.2.1',
-            'version' => '1.2.1.0',
-            'type' => 'library',
-            'install_path' => __DIR__ . '/../chartisan/php',
-            'aliases' => array(),
-            'reference' => '85d2352077800e9bcb411aec1ff7e4d23eef93a1',
             'dev_requirement' => false,
         ),
         'chartisan/php' => array(
@@ -460,7 +451,7 @@
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => '6acd57e43dba655dd7876ef0d63e44936992de49',
+            'reference' => '3aa8ebcf6c3c503f5b30605127d6cf3cf6f9cb26',
             'dev_requirement' => false,
         ),
         'laravel/passport' => array(
@@ -955,8 +946,8 @@
         'psr/log-implementation' => array(
             'dev_requirement' => false,
             'provided' => array(
-                0 => '1.0.0 || 2.0.0 || 3.0.0',
-                1 => '1.0|2.0',
+                0 => '1.0|2.0',
+                1 => '1.0.0 || 2.0.0 || 3.0.0',
             ),
         ),
         'psr/simple-cache' => array(
