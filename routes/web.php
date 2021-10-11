@@ -176,6 +176,13 @@ Route::group(['middleware' => ['auth', 'checkRole:2']], function() {
                 Route::post('/verification/pending/{id}', 'BackWeb\Koor_Pokja\Inbox\JFKUController@store_pending')->name('koor-pokja.inbox.jfku.store_pending');
                 Route::post('/verification/tolak/{id}', 'BackWeb\Koor_Pokja\Inbox\JFKUController@store_tolak')->name('koor-pokja.inbox.jfku.store_tolak');
             });
+
+            Route::prefix('/ns')->group(function(){
+                Route::get('/verification/{id}', 'BackWeb\Koor_Pokja\Inbox\JFKUController@verification_ns')->name('koor-pokja.inbox.ns.verif');
+                Route::post('/verification/proses/{id}', 'BackWeb\Koor_Pokja\Inbox\JFKUController@store_proses')->name('koor-pokja.inbox.ns.store_proses');
+                Route::post('/verification/pending/{id}', 'BackWeb\Koor_Pokja\Inbox\JFKUController@store_pending')->name('koor-pokja.inbox.ns.store_pending');
+                Route::post('/verification/tolak/{id}', 'BackWeb\Koor_Pokja\Inbox\JFKUController@store_tolak')->name('koor-pokja.inbox.ns.store_tolak');
+            });
         });
 
         Route::prefix('/atur-dokumen')->group(function(){

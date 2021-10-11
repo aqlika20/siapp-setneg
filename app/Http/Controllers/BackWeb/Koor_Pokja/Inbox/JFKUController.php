@@ -12,6 +12,7 @@ use Illuminate\Support\Facades\DB;
 
 use App\UserManagement;
 use App\PengangkatanPemberhentianJFKU;
+use App\PengangkatanPemberhentianNS;
 use App\Pangkat;
 use App\Catatan;
 use App\Periode;
@@ -49,6 +50,20 @@ class JFKUController extends Controller
             ['status', '=', Helper::$tolak]
         ])->get();
 
+        $pengangkatans_ns = PengangkatanPemberhentianNS::where([
+            ['status', '=', Helper::$pengajuan_usulan],
+            ['distributor_id', '=', null],
+            ['group_id', '=', null]
+        ])->get();
+
+        $ns_pendings = PengangkatanPemberhentianNS::where([
+            ['status', '=', Helper::$pending]
+        ])->get();
+
+        $ns_tolaks = PengangkatanPemberhentianNS::where([
+            ['status', '=', Helper::$tolak]
+        ])->get();
+
         $group_lists = Group::distinct()->get();
         
         $group_users = Group::select(
@@ -73,7 +88,7 @@ class JFKUController extends Controller
         // dd($group_roles);
 
 
-        return view('pages.koor_pokja.inbox.jfku', compact('page_title', 'page_description', 'currentUser', 'pengangkatans', 'jfku_pendings', 'jfku_tolaks', 'group_lists', 'group_users', 'group_roles'));
+        return view('pages.koor_pokja.inbox.jfku', compact('page_title', 'page_description', 'currentUser', 'pengangkatans', 'jfku_pendings', 'jfku_tolaks', 'group_lists', 'group_users', 'group_roles', 'pengangkatans_ns', 'ns_pendings', 'ns_tolaks'));
     }
 
     public function verification($id){
@@ -82,13 +97,28 @@ class JFKUController extends Controller
         $page_description = 'Verification';
         $verifikasi = PengangkatanPemberhentianJFKU::where('id', $id)->first();
 
-        $notes = Catatan::where('jfku_id', $id)->get();
+        $notes = Catatan::where('id_usulan', $id)->get();
 
         if (!$verifikasi) {
             return redirect()->route('pages.koor_pokja.inbox.jfku')->with(['error'=>'Invalid parameter id.']);
         }
     
         return view('pages.koor_pokja.inbox.verif', compact('page_title', 'page_description', 'currentUser', 'verifikasi', 'notes'));
+    }
+
+    public function verification_ns($id){
+        $currentUser = UserManagement::find(Auth::id());
+        $page_title = 'KemenSetneg | Verification';
+        $page_description = 'Verification';
+        $verifikasi_ns = PengangkatanPemberhentianNS::where('id', $id)->first();
+
+        // $notes = Catatan::where('id_usulan', $id)->get();
+
+        if (!$verifikasi_ns) {
+            return redirect()->route('pages.koor_pokja.inbox.jfku')->with(['error'=>'Invalid parameter id.']);
+        }
+    
+        return view('pages.koor_pokja.inbox.verif_ns', compact('page_title', 'page_description', 'currentUser', 'verifikasi_ns'));
     }
 
     public function store_proses($id, Request $request) 

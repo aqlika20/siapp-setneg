@@ -43,8 +43,9 @@
                                                                     <!--begin: Wizard Form-->
                                                                     <form class="form" id="kt_form">
                                                                         <!--begin: Wizard Step 1-->
+                                                                        @if ($verifikasi->jenis_layanan == '1' || $verifikasi->jenis_layanan == '2' || $verifikasi->jenis_layanan == '3' || $verifikasi->jenis_layanan == '5')
                                                                         <div class="pb-6" data-wizard-type="step-content" data-wizard-state="current">
-                                                                            <h4 class="mb-10 font-weight-bold text-dark">Data Personal</h4>
+                                                                            <h4 class="mb-10 font-weight-bold text-dark">Data Usulan</h4>
                                                                             <!--begin::Input-->
                                                                             <div class="form-group row">
                                                                                 <label class="col-form-label text-right col-lg-3 col-sm-12">Tanggal Surat usulan</label>
@@ -87,8 +88,10 @@
                                                                                    </div>
                                                                             </div>
                                                                         </div>
+                                                                        @endif
                                                                         <!--end: Wizard Step 1-->
                                                                         <!--begin: Wizard Step 2-->
+                                                                        @if ($verifikasi->jenis_layanan == '1' || $verifikasi->jenis_layanan == '2' || $verifikasi->jenis_layanan == '3' || $verifikasi->jenis_layanan == '5')
                                                                         <div class="pb-6" data-wizard-type="step-content">
                                                                             <h4 class="mb-10 font-weight-bold text-dark">Data ASN</h4>
                                                                             <!--begin::Input-->
@@ -161,14 +164,14 @@
                                                                                     </div>
                                                                                 </div>
                                                                             </div>
-                                                                            <div class="form-group row">
+                                                                            {{-- <div class="form-group row">
                                                                                 <label class="col-form-label text-right col-lg-3 col-sm-12">Upload/Download file</label>
                                                                                 <div class="col-lg-9 col-md-9 col-sm-12">
                                                                                     <div class="input-group date">
                                                                                         <a style="color: blue;">file.pdf</a>
                                                                                     </div>
                                                                                    </div>
-                                                                            </div>
+                                                                            </div> --}}
                                                                             <div class="form-group row">
                                                                                 <label class="col-form-label text-right col-lg-3 col-sm-12">Pangkat (Gol/Ruang)</label>
                                                                                 <div class="col-lg-9 col-md-9 col-sm-12">
@@ -280,10 +283,11 @@
                                                                                     </div>
                                                                                    </div>
                                                                             </div>
-                                                                            
                                                                         </div>
+                                                                        @endif
                                                                         <!--end: Wizard Step 2-->
                                                                         <!--begin: Wizard Step 3-->
+                                                                        @if ($verifikasi->jenis_layanan == '1' || $verifikasi->jenis_layanan == '3')
                                                                         <div class="pb-6" data-wizard-type="step-content">
                                                                             <h4 class="mb-10 font-weight-bold text-dark">Data Jabatan Lama</h4>
                                                                             <!--begin::Select-->
@@ -333,6 +337,9 @@
                                                                                    </div>
                                                                             </div>
                                                                         </div>
+                                                                        @endif
+
+                                                                        @if ($verifikasi->jenis_layanan == '1' || $verifikasi->jenis_layanan == '3')
 
                                                                         <div class="pb-6" data-wizard-type="step-content">
                                                                             <h4 class="mb-10 font-weight-bold text-dark">Data Jabatan Baru</h4>
@@ -363,9 +370,179 @@
                                                                                    </div>
                                                                             </div>
                                                                         </div>
+                                                                        @endif
+
+                                                                        @if ($verifikasi->jenis_layanan == '5')
+                                                                        <div class="pb-6" data-wizard-type="step-content">
+                                                                            <h4 class="mb-10 font-weight-bold text-dark">Data Jabatan Fungsional</h4>
+                                                                            <!--begin::Select-->
+                                                                            <div class="form-group row">
+                                                                                <label class="col-form-label text-right col-lg-3 col-sm-12">Jabatan</label>
+                                                                                <div class="col-lg-9 col-md-9 col-sm-12">
+                                                                                    <div class="input-group date">
+                                                                                        <input type="text" class="form-control" value="{{ $verifikasi->jabatan_fungsional }}"  disabled/>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="form-group row">
+                                                                                <label class="col-form-label text-right col-lg-3 col-sm-12">No. Keppress Jabatan</label>
+                                                                                <div class="col-lg-9 col-md-9 col-sm-12">
+                                                                                    <div class="input-group date">
+                                                                                        <input type="text" class="form-control" value="{{ $verifikasi->no_keppress_jabatan_fungsional }}" disabled />
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="form-group row">
+                                                                                <label class="col-form-label text-right col-lg-3 col-sm-12">Unit Kerja</label>
+                                                                                <div class="col-lg-9 col-md-9 col-sm-12">
+                                                                                    <div class="input-group date">
+                                                                                        <input type="text" class="form-control" value="{{ $verifikasi->unit_kerja_fungsional }}" disabled />
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="form-group row">
+                                                                                <label class="col-form-label text-right col-lg-3 col-sm-12">Upload/Download File</label>
+                                                                                <div class="col-lg-9 col-md-9 col-sm-12">
+                                                                                    <div class="input-group date">
+                                                                                        <a style="color: blue;">file.pdf</a>
+                                                                                    </div>
+                                                                                   </div>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="form-group row">
+                                                                            <label class="col-form-label text-right col-lg-3 col-sm-12">Tanggal Penerimaan Keppres</label>
+                                                                            <div class="col-lg-9 col-md-9 col-sm-12">
+                                                                                <div class="input-group date">
+                                                                                    <input type="text" class="form-control" value="{{ $verifikasi->tgl_penerimaan_keppres }}" disabled />
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                        @endif
+
+                                                                        @if ($verifikasi->jenis_layanan == '5')
+                                                                        <div class="pb-6" data-wizard-type="step-content">
+                                                                            <h4 class="mb-10 font-weight-bold text-dark">Data Pemberhentian</h4>
+                                                                            <div class="form-group row">
+                                                                                <label class="col-form-label text-right col-lg-3 col-sm-12">Alasan Pemberhentian</label>
+                                                                                <div class="col-lg-9 col-md-9 col-sm-12">
+                                                                                    <div style="margin-bottom:10px;">
+                                                                                        <label class="radio radio-success">
+                                                                                            <input type="radio" id="radio_1" name="req_alasan_pemberhentian" value="7" {{ ($verifikasi->alasan_pemberhentian =="7")? "checked" : "" }} disabled />
+                                                                                            <span></span>
+                                                                                            <div style="margin-left: 10px;">Tidak dilantik dalam Jabatan Fungsional Keahlian Utama melewati 90 hari dari sejak Keppres diterima instansi pengusul</div>
+                                                                                        </label>
+                                                                                    </div>
+                                                                                    <div style="margin-bottom:10px;">
+                                                                                        <label class="radio radio-success">
+                                                                                            <input type="radio" id="radio_2" name="req_alasan_pemberhentian" value="8" {{ ($verifikasi->alasan_pemberhentian =="8")? "checked" : "" }} disabled/>
+                                                                                            <span></span>
+                                                                                            <div style="margin-left: 10px;">Alasan Lainnya</div>
+                                                                                        </label>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                
+                                                                            <div class="form-group row">
+                                                                                <label class="col-form-label text-right col-lg-3 col-sm-12">Keterangan Alasan</label>
+                                                                                <div class="col-lg-9 col-md-9 col-sm-12">
+                                                                                    <div class="input-group date">
+                                                                                        <textarea class="form-control" rows="3" id="req_ket_alasan_pemberhentian" name="req_ket_alasan_pemberhentian" disabled> {{ $verifikasi->ket_alasan_pemberhentian }} </textarea>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                
+                                                                            <div class="form-group row">
+                                                                                <label class="col-form-label text-right col-lg-3 col-sm-12">Upload/Download File Data Pendukung Lainnya</label>
+                                                                                <div class="col-lg-9 col-md-9 col-sm-12">
+                                                                                    <div class="input-group date">
+                                                                                        <a style="color: blue;">file.pdf</a>
+                                                                                    </div>
+                                                                                   </div>
+                                                                            </div> 
+
+                                                                            <div id="kt_repeater_1">
+                                
+                                                                                @foreach ($notes as $catatans)
+                                                                                <div class="form-group row">
+
+                                                                                    <label class="col-form-label text-right col-lg-3 col-sm-12">Tanggal Catatan</label>
+                                                                                    <div class="col-lg-9 col-md-9 col-sm-12">
+                                                                                        <div class="input-group date">
+                                                                                            <input type="text" class="form-control" value="{{ $catatans->tanggal_catatan }}"  disabled/>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                    
+                                                                                    <label class="col-form-label text-right col-lg-3 col-sm-12">Catatan</label>
+                                                                                    <div class="col-lg-9 col-md-9 col-sm-12">
+                                                                                        <div class="input-group date">
+                                                                                            <input type="text" class="form-control" value="{{ $catatans->catatan }}"  disabled/>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            @endforeach
+                                                                                
+                                                                                <div class="form-group row">
+                                                                                    <label class="col-form-label col-lg-3 col-sm-12"></label>
+                                                                                    <div class="col-lg-9 col-md-9 col-sm-12">
+                                                                                        <div style="margin-bottom:10px;">
+                                                                                            <label class="checkbox checkbox-outline checkbox-outline-2x checkbox-primary">
+                                                                                                <input type="checkbox" id="req_ket" name="req_ket[]" value="7" disabled/>
+                                                                                                <span></span><div style="margin-left: 10px;">
+                                                                                                    Tidak dilantik dalam Jabatan Fungsional Keahlian Utama melewati 90 hari dari sejak Keppres diterima instansi pengusul</div>
+                                                                                            </label>
+                                                                                        </div>
+                                                                                        <div style="margin-bottom:10px;">
+                                                                                            <label class="checkbox checkbox-outline checkbox-outline-2x checkbox-primary">
+                                                                                                <input type="checkbox" id="req_ket" name="req_ket[]" value="2" disabled/>
+                                                                                                <span></span><div style="margin-left: 10px;">Nota Usulan asli yang dilengkapi dengan data formasi dan ditandatangani oleh PPK</div>
+                                                                                            </label>
+                                                                                        </div>
+                                                                                        <div style="margin-bottom:10px;">
+                                                                                            <label class="checkbox checkbox-outline checkbox-outline-2x checkbox-primary">
+                                                                                                <input type="checkbox" id="req_ket" name="req_ket[]" value="3" disabled/>
+                                                                                                <span></span><div style="margin-left: 10px;">Sertifikat/tanda lulus/surat keterangan lulus uji kompetensi</div>
+                                                                                            </label>
+                                                                                        </div>
+                                                                                        <div style="margin-bottom:10px;">
+                                                                                            <label class="checkbox checkbox-outline checkbox-outline-2x checkbox-primary">
+                                                                                                <input type="checkbox" id="req_ket" name="req_ket[]" value="4" disabled/>
+                                                                                                <span></span><div style="margin-left: 10px;">PAK asli 1 tahun terakhir</div>
+                                                                                            </label>
+                                                                                        </div>
+                                                                                        <div style="margin-bottom:10px;">
+                                                                                            <label class="checkbox checkbox-outline checkbox-outline-2x checkbox-primary">
+                                                                                                <input type="checkbox" id="req_ket" name="req_ket[]" value="5" disabled/>
+                                                                                                <span></span><div style="margin-left: 10px;">Salinan sah SK jabatan terakhir</div>
+                                                                                            </label>
+                                                                                        </div>
+                                                                                        <div style="margin-bottom:10px;">
+                                                                                            <label class="checkbox checkbox-outline checkbox-outline-2x checkbox-primary">
+                                                                                                <input type="checkbox" id="req_ket" name="req_ket[]" value="6" disabled/>
+                                                                                                <span></span><div style="margin-left: 10px;">Salinan sah SK Pangkat terakhir</div>
+                                                                                            </label>
+                                                                                        </div>
+                                                                                        <div style="margin-bottom:30px;">
+                                                                                            <label class="checkbox checkbox-outline checkbox-outline-2x checkbox-primary">
+                                                                                                <input type="checkbox" id="req_ket" name="req_ket[]" value="7" disabled/>
+                                                                                                <span></span><div style="margin-left: 10px;">Salinan sah SKP dan Penilaian Prestasi Kerja 2 tahun terakhir</div>
+                                                                                            </label>
+                                                                                        </div>
+                                                                                        <div style="margin-bottom:10px;">
+                                                                                            <label class="checkbox checkbox-outline checkbox-outline-2x checkbox-primary">
+                                                                                                <input type="checkbox" id="req_ket" name="req_ket[]" value="8" disabled/>
+                                                                                                <span></span><div style="margin-left: 10px;">Semua persyaratan dan dokumen benar</div>
+                                                                                            </label>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                        @endif
 
                                                                         <!--end: Wizard Step 3-->
                                                                         <!--begin: Wizard Step 2-->
+                                                                        @if ($verifikasi->jenis_layanan == '1' || $verifikasi->jenis_layanan == '3')
+                                                                        @if ($verifikasi->nomor_pak != '')
                                                                         <div class="pb-6" data-wizard-type="step-content">
                                                                             <h4 class="mb-10 font-weight-bold text-dark">Data PAK</h4>
                                                                             <!--begin::Input-->
@@ -423,10 +600,13 @@
                                                                                    </div>
                                                                             </div>
                                                                         </div>
+                                                                        @endif
+                                                                        @endif
+                                                                        @if ($verifikasi->jenis_layanan == '1' && $verifikasi->nomor_klarifikasi != '')
                                                                         <!--end: Wizard Step 2-->
                                                                         <!--begin: Wizard Step 2-->
                                                                         <div class="pb-6" data-wizard-type="step-content">
-                                                                            <h4 class="mb-10 font-weight-bold text-dark">Karifikasi PAK
+                                                                            <h4 class="mb-10 font-weight-bold text-dark">Klarifikasi PAK
                                                                                 <span class="form-text text-muted"><small>Khusus untuk PAK yang dikeluarkan oleh Kemenkes & Kemendikbud</small></span>
                                                                             </h4>
 
@@ -462,6 +642,117 @@
                                                                                    </div>
                                                                             </div> 	
                                                                         </div>
+                                                                        @endif
+
+                                                                        @if ($verifikasi->jenis_layanan == '2' && $verifikasi->nomor_pak_terakhir != '')
+                                                                        <div class="pb-6" data-wizard-type="step-content">
+                                                                            <h4 class="mb-10 font-weight-bold text-dark">Data PAK Terakhir</h4>
+                                                                            <!--begin::Input-->
+                                                                            <div class="form-group row">
+                                                                                <label class="col-form-label text-right col-lg-3 col-sm-12">Nomor PAK</label>
+                                                                                <div class="col-lg-9 col-md-9 col-sm-12">
+                                                                                    <div class="input-group date">
+                                                                                        <input type="text" class="form-control" value="{{ $verifikasi->nomor_pak_terakhir }}"  disabled/>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                            <!--end::Input-->
+                                                                            <!--begin::Input-->
+                                                                            <div class="form-group row">
+                                                                                <label class="col-form-label text-right col-lg-3 col-sm-12">Tanggal PAK</label>
+                                                                                <div class="col-lg-5 col-md-9 col-sm-12">
+                                                                                    <div class="input-group date">
+                                                                                        <input type="text" class="form-control" value="{{ $verifikasi->tanggal_pak_terakhir }}" id="kt_datepicker_8_modal" disabled/>
+                                                                                        <div class="input-group-append">
+                                                                                            <span class="input-group-text">
+                                                                                                <i class="la la-calendar"></i>
+                                                                                            </span>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="form-group row">
+                                                                                <label class="col-form-label text-right col-lg-3 col-sm-12">Jumlah Angka Kredit</label>
+                                                                                <div class="col-lg-9 col-md-9 col-sm-12">
+                                                                                    <div class="input-group date">
+                                                                                        <input type="text" class="form-control" value="{{ $verifikasi->jumlah_angka_kredit_terakhir }}" disabled />
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="form-group row">
+                                                                                <label class="col-form-label text-right col-lg-3 col-sm-12">Periode Penilaian</label>
+                                                                                <div class="col-lg-9 col-md-9 col-sm-12">
+                                                                                    <div class="input-group date">
+                                                                                        @if($verifikasi->periode_penilaian_terakhir == '1')
+                                                                                        <input type="text" class="form-control" value="Periode 1" disabled />
+                                                                                        @endif
+                                                                                        @if($verifikasi->periode_penilaian_terakhir == '2')
+                                                                                        <input type="text" class="form-control" value="Periode 2" disabled />
+                                                                                        @endif
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="form-group row">
+                                                                                <label class="col-form-label text-right col-lg-3 col-sm-12">Upload File</label>
+                                                                                <div class="col-lg-9 col-md-9 col-sm-12">
+                                                                                    <div class="input-group date">
+                                                                                        <a style="color: blue;">file.pdf</a>
+
+                                                                                    </div>
+                                                                                   </div>
+                                                                            </div>
+                                                                        </div>
+                                                                        @endif
+
+                                                                        @if ($verifikasi->jenis_layanan == '3')
+                                                                        <div class="pb-6" data-wizard-type="step-content">
+                                                                            <h4 class="mb-10 font-weight-bold text-dark">Data Rekomendasi</h4>
+                                                                            <!--begin::Input-->
+                                                                            <div class="form-group row">
+                                                                                <label class="col-form-label text-right col-lg-3 col-sm-12">Nomor PAK</label>
+                                                                                <div class="col-lg-9 col-md-9 col-sm-12">
+                                                                                    <div class="input-group date">
+                                                                                        <input type="text" class="form-control" value="{{ $verifikasi->no_surat_rekomendasi }}"  disabled/>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                            <!--end::Input-->
+                                                                            <!--begin::Input-->
+                                                                            <div class="form-group row">
+                                                                                <label class="col-form-label text-right col-lg-3 col-sm-12">Tanggal PAK</label>
+                                                                                <div class="col-lg-5 col-md-9 col-sm-12">
+                                                                                    <div class="input-group date">
+                                                                                        <input type="text" class="form-control" value="{{ $verifikasi->tgl_surat_rekomendasi }}" id="kt_datepicker_8_modal" disabled/>
+                                                                                        <div class="input-group-append">
+                                                                                            <span class="input-group-text">
+                                                                                                <i class="la la-calendar"></i>
+                                                                                            </span>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                            
+                                                                            <div class="form-group row">
+                                                                                <label class="col-form-label text-right col-lg-3 col-sm-12">Upload File</label>
+                                                                                <div class="col-lg-9 col-md-9 col-sm-12">
+                                                                                    <div class="input-group date">
+                                                                                        <a style="color: blue;">file.pdf</a>
+                                                                                    </div>
+                                                                                   </div>
+                                                                            </div>
+
+                                                                            <div class="form-group row">
+                                                                                <label class="col-form-label text-right col-lg-3 col-sm-12">Surat Pernyataan/Keterangan melaksanakan kegiatan Jabatan fungsional dalam 2 tahun terakhir</label>
+                                                                                <div class="col-lg-9 col-md-9 col-sm-12">
+                                                                                    <div class="input-group date">
+                                                                                        <a style="color: blue;">file.pdf</a>
+                                                                                    </div>
+                                                                                   </div>
+                                                                            </div>
+                                                                        </div>
+                                                                        @endif
+
+                                                                        @if ($verifikasi->jenis_layanan == '1')
                                                                         <div class="pb-6" data-wizard-type="step-content">
                                                                             <h4 class="mb-10 font-weight-bold text-dark">Data Kompetensi
                                                                             </h4>
@@ -508,7 +799,9 @@
                                                                                    </div>
                                                                             </div> 
                                                                         </div>
+                                                                        @endif
 
+                                                                        @if ($verifikasi->jenis_layanan == '1' || $verifikasi->jenis_layanan == '3' )
                                                                         <div class="pb-6" data-wizard-type="step-content">
                                                                             <h4 class="mb-10 font-weight-bold text-dark">Data Formasi Jabatan
                                                                             </h4>
@@ -555,7 +848,9 @@
                                                                                    </div>
                                                                             </div> 
                                                                         </div>
+                                                                        @endif
 
+                                                                        @if ($verifikasi->jenis_layanan == '1' || $verifikasi->jenis_layanan == '3')
                                                                         <div class="pb-6" data-wizard-type="step-content">
                                                                             <h4 class="mb-10 font-weight-bold text-dark">SKP 2 Tahun Terakhir
                                                                             </h4>
@@ -598,6 +893,7 @@
                                                                                 </div>
                                                                             @endforeach
                                                                             
+                                                                            @if ($verifikasi->jenis_layanan == '1')
                                                                             <div class="form-group row">
                                                                                 <label class="col-form-label text-right col-lg-3 col-sm-12">Tgl.Sertifikat/surat</label>
                                                                                 <div class="col-lg-5 col-md-9 col-sm-12">
@@ -606,8 +902,267 @@
                                                                                     </div>
                                                                                 </div>
                                                                             </div>
-                                                                            
+                                                                            @endif
                                                                         </div>
+                                                                        @endif
+
+                                                                        @if ($verifikasi->jenis_layanan == '2')
+                                                                        <div class="pb-6" data-wizard-type="step-content">
+                                                                            <h4 class="mb-10 font-weight-bold text-dark">Data Pemberhentian</h4>
+                                                                            <div class="form-group row">
+                                                                                <label class="col-form-label text-right col-lg-3 col-sm-12">Alasan Pemberhentian</label>
+                                                                                <div class="col-lg-9 col-md-9 col-sm-12">
+                                                                                    <div style="margin-bottom:10px;">
+                                                                                        <label class="radio radio-success">
+                                                                                            <input type="radio" id="radio_1" name="req_alasan_pemberhentian" value="1" {{ ($verifikasi->alasan_pemberhentian =="1")? "checked" : "" }} disabled />
+                                                                                            <span></span>
+                                                                                            <div style="margin-left: 10px;">Mengundurkan diri dari jabatan</div>
+                                                                                        </label>
+                                                                                    </div>
+                                                                                    <div style="margin-bottom:10px;">
+                                                                                        <label class="radio radio-success">
+                                                                                            <input type="radio" id="radio_2" name="req_alasan_pemberhentian" value="2" {{ ($verifikasi->alasan_pemberhentian =="2")? "checked" : "" }} disabled/>
+                                                                                            <span></span>
+                                                                                            <div style="margin-left: 10px;">Diberhentikan sementara sebagai PNS</div>
+                                                                                        </label>
+                                                                                    </div>
+                                                                                    <div style="margin-bottom:10px;">
+                                                                                        <label class="radio radio-success">
+                                                                                            <input type="radio" id="radio_3" name="req_alasan_pemberhentian" value="3" {{ ($verifikasi->alasan_pemberhentian =="3")? "checked" : "" }} disabled/>
+                                                                                            <span></span>
+                                                                                            <div style="margin-left: 10px;">Menjalani cuti diluar tanggungan negara</div>
+                                                                                        </label>
+                                                                                    </div>
+                                                                                    <div style="margin-bottom:10px;">
+                                                                                        <label class="radio radio-success">
+                                                                                            <input type="radio" id="radio_4" name="req_alasan_pemberhentian" value="4" {{ ($verifikasi->alasan_pemberhentian =="4")? "checked" : "" }} disabled/>
+                                                                                            <span></span>
+                                                                                            <div style="margin-left: 10px;">Menjanlani tugas belajar lebih dari 6 (enam) bulan</div>
+                                                                                        </label>
+                                                                                    </div>
+                                                                                    <div style="margin-bottom:10px;">
+                                                                                        <label class="radio radio-success">
+                                                                                            <input type="radio" id="radio_5" name="req_alasan_pemberhentian" value="5" {{ ($verifikasi->alasan_pemberhentian =="5")? "checked" : "" }} disabled/>
+                                                                                            <span></span>
+                                                                                            <div style="margin-left: 10px;">Ditugaskan secara penuh diluar jabatan fungsional</div>
+                                                                                        </label>
+                                                                                    </div>
+                                                                                    <div style="margin-bottom:10px;">
+                                                                                        <label class="radio radio-success">
+                                                                                            <input type="radio" id="radio_6" name="req_alasan_pemberhentian" value="6" {{ ($verifikasi->alasan_pemberhentian =="6")? "checked" : "" }} disabled/>
+                                                                                            <span></span>
+                                                                                            <div style="margin-left: 10px;">Tidak memenuhi syarat jabatan</div>
+                                                                                        </label>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                
+                                                                            <div class="form-group row">
+                                                                                <label class="col-form-label text-right col-lg-3 col-sm-12">Keterangan Alasan</label>
+                                                                                <div class="col-lg-9 col-md-9 col-sm-12">
+                                                                                    <div class="input-group date">
+                                                                                        <textarea class="form-control" rows="3" id="req_ket_alasan_pemberhentian" name="req_ket_alasan_pemberhentian" disabled> {{ $verifikasi->ket_alasan_pemberhentian }} </textarea>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                
+                                                                            <div class="form-group row">
+                                                                                <label class="col-form-label text-rigth col-lg-3 col-sm-12">TMT Pemberhentian</label>
+                                                                                <div class="col-lg-9 col-md-9 col-sm-12">
+                                                                                    <div class="input-group date">
+                                                                                        <input type="text" class="form-control" value="{{ $verifikasi->tmt_pemberhentian }}"  disabled/>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                
+                                                                            <div class="form-group row">
+                                                                                <label class="col-form-label text-right col-lg-3 col-sm-12">Upload/Download File Data Pendukung Lainnya</label>
+                                                                                <div class="col-lg-9 col-md-9 col-sm-12">
+                                                                                    <div class="input-group date">
+                                                                                        <a style="color: blue;">file.pdf</a>
+                                                                                    </div>
+                                                                                   </div>
+                                                                            </div> 
+
+                                                                            <div id="kt_repeater_1">
+                                
+                                                                                @foreach ($notes as $catatans)
+                                                                                <div class="form-group row">
+
+                                                                                    <label class="col-form-label text-right col-lg-3 col-sm-12">Tanggal Catatan</label>
+                                                                                    <div class="col-lg-9 col-md-9 col-sm-12">
+                                                                                        <div class="input-group date">
+                                                                                            <input type="text" class="form-control" value="{{ $catatans->tanggal_catatan }}"  disabled/>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                    
+                                                                                    <label class="col-form-label text-right col-lg-3 col-sm-12">Catatan</label>
+                                                                                    <div class="col-lg-9 col-md-9 col-sm-12">
+                                                                                        <div class="input-group date">
+                                                                                            <input type="text" class="form-control" value="{{ $catatans->catatan }}"  disabled/>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            @endforeach
+                                                                                
+                                                                                <div class="form-group row">
+                                                                                    <label class="col-form-label col-lg-3 col-sm-12"></label>
+                                                                                    <div class="col-lg-9 col-md-9 col-sm-12">
+                                                                                        <div style="margin-bottom:10px;">
+                                                                                            <label class="checkbox checkbox-outline checkbox-outline-2x checkbox-primary">
+                                                                                                <input type="checkbox" id="req_ket" name="req_ket[]" value="1" disabled/>
+                                                                                                <span></span><div style="margin-left: 10px;">Surat Usulan Asli Ditandatangani PPK</div>
+                                                                                            </label>
+                                                                                        </div>
+                                                                                        <div style="margin-bottom:10px;">
+                                                                                            <label class="checkbox checkbox-outline checkbox-outline-2x checkbox-primary">
+                                                                                                <input type="checkbox" id="req_ket" name="req_ket[]" value="2" disabled/>
+                                                                                                <span></span><div style="margin-left: 10px;">Nota Usulan asli yang dilengkapi dengan data formasi dan ditandatangani oleh PPK</div>
+                                                                                            </label>
+                                                                                        </div>
+                                                                                        <div style="margin-bottom:10px;">
+                                                                                            <label class="checkbox checkbox-outline checkbox-outline-2x checkbox-primary">
+                                                                                                <input type="checkbox" id="req_ket" name="req_ket[]" value="3" disabled/>
+                                                                                                <span></span><div style="margin-left: 10px;">Sertifikat/tanda lulus/surat keterangan lulus uji kompetensi</div>
+                                                                                            </label>
+                                                                                        </div>
+                                                                                        <div style="margin-bottom:10px;">
+                                                                                            <label class="checkbox checkbox-outline checkbox-outline-2x checkbox-primary">
+                                                                                                <input type="checkbox" id="req_ket" name="req_ket[]" value="4" disabled/>
+                                                                                                <span></span><div style="margin-left: 10px;">PAK asli 1 tahun terakhir</div>
+                                                                                            </label>
+                                                                                        </div>
+                                                                                        <div style="margin-bottom:10px;">
+                                                                                            <label class="checkbox checkbox-outline checkbox-outline-2x checkbox-primary">
+                                                                                                <input type="checkbox" id="req_ket" name="req_ket[]" value="5" disabled/>
+                                                                                                <span></span><div style="margin-left: 10px;">Salinan sah SK jabatan terakhir</div>
+                                                                                            </label>
+                                                                                        </div>
+                                                                                        <div style="margin-bottom:10px;">
+                                                                                            <label class="checkbox checkbox-outline checkbox-outline-2x checkbox-primary">
+                                                                                                <input type="checkbox" id="req_ket" name="req_ket[]" value="6" disabled/>
+                                                                                                <span></span><div style="margin-left: 10px;">Salinan sah SK Pangkat terakhir</div>
+                                                                                            </label>
+                                                                                        </div>
+                                                                                        <div style="margin-bottom:30px;">
+                                                                                            <label class="checkbox checkbox-outline checkbox-outline-2x checkbox-primary">
+                                                                                                <input type="checkbox" id="req_ket" name="req_ket[]" value="7" disabled/>
+                                                                                                <span></span><div style="margin-left: 10px;">Salinan sah SKP dan Penilaian Prestasi Kerja 2 tahun terakhir</div>
+                                                                                            </label>
+                                                                                        </div>
+                                                                                        <div style="margin-bottom:10px;">
+                                                                                            <label class="checkbox checkbox-outline checkbox-outline-2x checkbox-primary">
+                                                                                                <input type="checkbox" id="req_ket" name="req_ket[]" value="8" disabled/>
+                                                                                                <span></span><div style="margin-left: 10px;">Semua persyaratan dan dokumen benar</div>
+                                                                                            </label>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                        @endif
+
+                                                                        @if ($verifikasi->jenis_layanan == '4' )
+                                                                        <div class="pb-6" data-wizard-type="step-content" data-wizard-state="current">
+                                                                            <h4 class="mb-10 font-weight-bold text-dark">Data Surat</h4>
+                                                                            <!--begin::Input-->
+                                                                            <div class="form-group row">
+                                                                                <label class="col-form-label text-right col-lg-3 col-sm-12">Tanggal Surat Pengantar</label>
+                                                                                <div class="col-lg-5 col-md-9 col-sm-12">
+                                                                                    <div class="input-group date">
+                                                                                        <input type="text" class="form-control" id="kt_datepicker_3_modal"  value="{{ $verifikasi->tanggal_surat_pengantar }}" disabled/>
+                                                                                        <div class="input-group-append">
+                                                                                            <span class="input-group-text">
+                                                                                                {{-- <i class="la la-calendar"></i> --}}
+                                                                                            </span>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="form-group row">
+                                                                                <label class="col-form-label text-right col-lg-3 col-sm-12">No. Surat Pengantar</label>
+                                                                                <div class="col-lg-9 col-md-9 col-sm-12">
+                                                                                    <div class="input-group date">
+                                                                                        <input type="text" class="form-control" value="{{ $verifikasi->no_surat_pengantar }}" disabled />
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                         
+                                                                            <!--end::Input-->
+                                                                            <div class="form-group row">
+                                                                                <label class="col-form-label text-right col-lg-3 col-sm-12">Upload/Download file</label>
+                                                                                <div class="col-lg-9 col-md-9 col-sm-12">
+                                                                                    <div class="input-group date">
+                                                                                    <a style="color: blue;">file.pdf</a>
+                                                                                    </div>
+                                                                                   </div>
+                                                                            </div>
+                                                                        </div>
+
+                                                                        <div class="pb-6" data-wizard-type="step-content" data-wizard-state="current">
+                                                                            <h4 class="mb-10 font-weight-bold text-dark">Data Keppres</h4>
+                                                                            <!--begin::Input-->
+                                                                            <div class="form-group row">
+                                                                                <label class="col-form-label text-right col-lg-3 col-sm-12">No. Keppres</label>
+                                                                                <div class="col-lg-5 col-md-9 col-sm-12">
+                                                                                    <div class="input-group date">
+                                                                                        <input type="text" class="form-control" id="kt_datepicker_3_modal"  value="{{ $verifikasi->no_keppres }}" disabled/>
+                                                                                        <div class="input-group-append">
+                                                                                            <span class="input-group-text">
+                                                                                                {{-- <i class="la la-calendar"></i> --}}
+                                                                                            </span>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="form-group row">
+                                                                                <label class="col-form-label text-right col-lg-3 col-sm-12">Tanggal Keppres</label>
+                                                                                <div class="col-lg-9 col-md-9 col-sm-12">
+                                                                                    <div class="input-group date">
+                                                                                        <input type="text" class="form-control" value="{{ $verifikasi->tanggal_keppres }}" disabled />
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                         
+                                                                            <!--end::Input-->
+                                                                            <div class="form-group row">
+                                                                                <label class="col-form-label text-right col-lg-3 col-sm-12">Upload/Download file</label>
+                                                                                <div class="col-lg-9 col-md-9 col-sm-12">
+                                                                                    <div class="input-group date">
+                                                                                    <a style="color: blue;">file.pdf</a>
+                                                                                    </div>
+                                                                                   </div>
+                                                                            </div>
+                                                                        </div>
+
+                                                                        <div class="pb-6" data-wizard-type="step-content" data-wizard-state="current">
+                                                                            <h4 class="mb-10 font-weight-bold text-dark">Ralat</h4>
+                                                                            <!--begin::Input-->
+                                                                            <div class="form-group row">
+                                                                                <label class="col-form-label text-right col-lg-3 col-sm-12">Alasan Ralat</label>
+                                                                                <div class="col-lg-5 col-md-9 col-sm-12">
+                                                                                    <div class="input-group date">
+                                                                                        <input type="text" class="form-control" id="kt_datepicker_3_modal"  value="{{ $verifikasi->alasan_ralat }}" disabled/>
+                                                                                        <div class="input-group-append">
+                                                                                            <span class="input-group-text">
+                                                                                                {{-- <i class="la la-calendar"></i> --}}
+                                                                                            </span>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                         
+                                                                            <!--end::Input-->
+                                                                            <div class="form-group row">
+                                                                                <label class="col-form-label text-right col-lg-3 col-sm-12">Upload/Download file</label>
+                                                                                <div class="col-lg-9 col-md-9 col-sm-12">
+                                                                                    <div class="input-group date">
+                                                                                    <a style="color: blue;">file.pdf</a>
+                                                                                    </div>
+                                                                                   </div>
+                                                                            </div>
+                                                                        </div>
+                                                                        @endif
                                                                         <!--end: Wizard Step 2-->
                                                                         <!--begin: Wizard Step 2-->
                                                                         

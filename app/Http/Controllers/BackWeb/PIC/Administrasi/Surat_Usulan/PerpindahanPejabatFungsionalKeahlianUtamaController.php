@@ -130,7 +130,7 @@ class PerpindahanPejabatFungsionalKeahlianUtamaController extends Controller
             return redirect()->back()->with(['error' => $validator->errors()])->withInput($input);
         }
 
-        $perpindahans = PengangkatanPemberhentianJFKU::create([
+        $pengangkatans = PengangkatanPemberhentianJFKU::create([
             'tgl_surat_usulan' => $input['req_tanggal_surat_usulan'],
             'no_surat_usulan' => $input['req_no_surat_usulan'],
             'pejabat_menandatangani' => $input['req_jabatan_menandatangani'],
@@ -272,7 +272,7 @@ class PerpindahanPejabatFungsionalKeahlianUtamaController extends Controller
             $pengangkatans->file_skp_2_dukungan_lainnya = implode(',', $files);
         }
 
-        $perpindahans->save();
+        $pengangkatans->save();
 
         $count = count($input['req_tanggal_catatan']);
         for($i=0;$i<$count;$i++) {

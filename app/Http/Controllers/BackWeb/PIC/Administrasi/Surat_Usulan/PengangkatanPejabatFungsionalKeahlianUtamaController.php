@@ -84,6 +84,7 @@ class PengangkatanPejabatFungsionalKeahlianUtamaController extends Controller
     {
 
         $input = $request->all();
+        $id_pengirim = UserManagement::find(Auth::id());
 
         $validator = Validator::make($input, [
             'req_tanggal_surat_usulan' => 'required',
@@ -150,7 +151,7 @@ class PengangkatanPejabatFungsionalKeahlianUtamaController extends Controller
         $pengangkatans = PengangkatanPemberhentianJFKU::create([
             'no_surat_usulan' => $input['req_no_surat_usulan'],
             'tgl_surat_usulan' => $input['req_tanggal_surat_usulan'],
-            'pejabat_ttd' => $input['req_jabatan_menandatangani'],
+            'pejabat_menandatangani' => $input['req_jabatan_menandatangani'],
             'nip' => $input['req_nip'],
             'nama' => $input['req_nama'],
             'tempat_lahir' => $input['req_tempat_lahir'],
@@ -171,16 +172,18 @@ class PengangkatanPejabatFungsionalKeahlianUtamaController extends Controller
             'jabatan_lama' => $input['req_jabatan_lama'],
             'unit_kerja_baru' => $input['req_unit_kerja_baru'],
             'unit_kerja_lama' => $input['req_unit_kerja_lama'],
+            'jabatan_data_kompetensi' => $input['req_jabatan_kompetensi'],
+
             
             'ket' => implode(',', $input['req_ket']),
             'no_sk_jabatan_lama' => $input['req_no_sk_jabatan_lama'],
             'tmt_jabatan_lama' => $input['req_tmt_jabatan_lama'],
-            'no_sertifikat' => $input['req_no_sertifikat'],
+            'nomor_sertifikat' => $input['req_no_sertifikat'],
             'tgl_sertifikat' => $input['req_tgl_sertifikat'],
             'terisi' => $input['req_terisi'],
             'sisa' => $input['req_sisa'],
             'id_pengirim' => $id_pengirim->nip,
-            'jenis_usulan' => Helper::$pengangkatan_pejabat_FKU,
+            'jenis_layanan' => Helper::$pengangkatan_pejabat_FKU,
             'status' => Helper::$pengajuan_usulan
             
         ]);
