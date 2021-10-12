@@ -381,9 +381,7 @@
 															</div>
 															<!--end::Badge-->
 															<!--begin::Content-->
-															<div class="timeline-content d-flex">
-																<div class="font-weight-mormal font-size-lg timeline-content text-muted pl-3">BUP KPP</div>
-															</div>
+															<div class="font-weight-mormal font-size-lg timeline-content text-muted pl-3">BUP KPP</div>
 															<!--end::Content-->
 														</div>
 														<!--end::Item-->
@@ -502,9 +500,7 @@
 															</div>
 															<!--end::Badge-->
 															<!--begin::Content-->
-															<div class="timeline-content d-flex">
-																<div class="font-weight-mormal font-size-lg timeline-content text-muted pl-3">Pembatalan Keppres Pemberhentian</div>
-															</div>
+															<div class="font-weight-mormal font-size-lg timeline-content text-muted pl-3">Pembatalan Keppres Pemberhentian</div>
 															<!--end::Content-->
 														</div>
 														<!--end::Item-->
@@ -551,7 +547,7 @@
 										</div>
 									</div> -->
 									<!--end::Advance Table Widget 2-->
-								</div>
+								<!-- </div> -->
 								<!--begin::Card-->
 								<!--end::Card-->
 								<!--begin::Card-->

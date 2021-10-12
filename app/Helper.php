@@ -10,19 +10,23 @@ class Helper {
     public static $perpindahan_pejabat_FKU = 3;                         // Perpindahan Pejabat Fungsional Keahlian Utama
     public static $ralat_keppres_jabatan_FKU = 4;                       // Ralat Keppres Jabatan Fungsional Keahlian Utama
     public static $pembatalan_keppres_jabatan_FKU = 5;                  // Pembatalan Keppres Jabatan Fungsional Keahlian Utama
+
     public static $pengangkatan_pejabat_NS = 6;                         // Pengangkatan Pejabat Non Struktural
     public static $pemberhentian_pejabat_NS = 7;                        // Pemberhentian Pejabat Non Struktural
     public static $ralat_keppres_jabatan_NS = 8;                        // Ralat Keppres Jabatan Non Struktural
     public static $pembatalan_keppres_jabatan_NS = 9;                   // Pembatalan Keppres Jabatan Non Struktural
+
     public static $pengangkatan_pejabat_lainnya = 10;                   // Pengangkatan Pejabat Lainnya
     public static $pemberhentian_pejabat_lainnya = 11;                  // Pemberhentian Pejabat Lainnya
     public static $ralat_keppres_jabatan_lainnya = 12;                  // Ralat Keppres Jabatan Lainnya
     public static $pembatalan_keppres_jabatan_lainnya = 13;             // Pembatalan Keppres Jabatan Lainnya
     public static $persetujuan_pengangkatan_staf_khusus = 14;           // Persetujuan pengangkatan Staf Khusus Menteri/Kepala Lembaga
+    
     public static $pemberian_kenaikan_pangkat = 15;                     // Pemberian Kenaikan Pangkat
     public static $pembatalan_keppres_kenaikan_pangkat = 16;            // Pembatalan Keppres Kenaikan Pangkat
     public static $pengesahan_kenaikan_pangkat = 17;                    // Pengesahan Kenaikan Pangkat
     public static $ralat_keppres_kepangkatan = 18;                      // Ralat Keppres Kepangkatan
+    
     public static $bup_non_kpp = 19;                                    // BUP Non KPP
     public static $bup_kpp = 20;                                        // BUP KPP
     public static $berhenti_atas_permintaan_sendiri = 21;               // Berhenti Atas Permintaan Sendiri

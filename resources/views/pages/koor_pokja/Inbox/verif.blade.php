@@ -1172,35 +1172,35 @@
                                                                         <!--begin: Wizard Actions-->
                                                                         <div class="d-flex justify-content-between mt-5 pt-10">
                                                                             <div class="mr-2">
-                                                                                <a href="custom/pages/persetujuan.html" type="button" class="btn btn-light-primary font-weight-bolder text-uppercase px-9 py-4">Kembali</a>
+                                                                                <a href="{{ route('koor-pokja.inbox.jfku.index')}}" type="button" class="btn btn-light-primary font-weight-bolder text-uppercase px-9 py-4">Kembali</a>
                                                                             </div>
                                                                             <div>
                                                                                 <table>
                                                                                     <th style="margin-right: 10px;">
-                                                                                        <form method="POST" action="{{ route('koor-pokja.inbox.jfku.store_tolak', ['id' => $verifikasi->id]) }}">
+                                                                                        <form method="POST" action="{{ route('koor-pokja.inbox.jfku.store_tlk') }}">
                                                                                             @csrf 
-                                                                                            <input type="hidden" class="btn btn-danger font-weight-bolder text-uppercase px-9 py-4" name="tolak" value="3">
-                                                                                            <!-- <a type="submit" class="btn btn-danger font-weight-bolder text-uppercase px-9 py-4" style="margin-right: 10px;">Tolak</a> -->
+                                                                                            <input type="hidden" class="btn btn-warning font-weight-bolder text-uppercase px-9 py-4" name="v_id" value="{{ $verifikasi->id }}">
+                                                                                            <input type="hidden" class="btn btn-warning font-weight-bolder text-uppercase px-9 py-4" name="v_jenis" value="{{ $verifikasi->jenis_layanan }}">
                                                                                             <button type="submit" class="btn btn-danger font-weight-bolder text-uppercase px-9 py-4" >
                                                                                                 Tolak
                                                                                             </button>
                                                                                         </form>
                                                                                     </th>
                                                                                     <th style="margin-right: 10px;">
-                                                                                        <form method="POST" action="{{ route('koor-pokja.inbox.jfku.store_proses', ['id' => $verifikasi->id]) }}">
+                                                                                        <form method="POST" action="{{ route('koor-pokja.inbox.jfku.store_proses') }}">
                                                                                             @csrf 
-                                                                                            <input type="hidden" class="btn btn-primary font-weight-bolder text-uppercase px-9 py-4" name="proses" value="1">
-                                                                                            <!-- <a type="submit" class="btn btn-primary font-weight-bolder text-uppercase px-9 py-4" style="margin-right: 10px;">Proses</a> -->
+                                                                                            <input type="hidden" class="btn btn-warning font-weight-bolder text-uppercase px-9 py-4" name="v_id" value="{{ $verifikasi->id }}">
+                                                                                            <input type="hidden" class="btn btn-warning font-weight-bolder text-uppercase px-9 py-4" name="v_jenis" value="{{ $verifikasi->jenis_layanan }}">
                                                                                             <button type="submit" class="btn btn-primary font-weight-bolder text-uppercase px-9 py-4" >
                                                                                                 Proses
                                                                                             </button>
                                                                                         </form>
                                                                                     </th>
                                                                                     <th style="margin-right: 10px;">
-                                                                                        <form method="POST" action="{{ route('koor-pokja.inbox.jfku.store_pending', ['id' => $verifikasi->id]) }}">
+                                                                                        <form method="POST" action="{{ route('koor-pokja.inbox.jfku.store_pending') }}">
                                                                                             @csrf 
-                                                                                            <input type="hidden" class="btn btn-warning font-weight-bolder text-uppercase px-9 py-4" name="pending" value="2">
-                                                                                            <!-- <a type="submit" class="btn btn-warning font-weight-bolder text-uppercase px-9 py-4" style="margin-right: 10px;">Pending</a> -->
+                                                                                            <input type="hidden" class="btn btn-warning font-weight-bolder text-uppercase px-9 py-4" name="v_id" value="{{ $verifikasi->id }}">
+                                                                                            <input type="hidden" class="btn btn-warning font-weight-bolder text-uppercase px-9 py-4" name="v_jenis" value="{{ $verifikasi->jenis_layanan }}">
                                                                                             <button type="submit" class="btn btn-warning font-weight-bolder text-uppercase px-9 py-4" >
                                                                                                 Pending
                                                                                             </button>

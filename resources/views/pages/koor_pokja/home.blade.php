@@ -3,7 +3,7 @@
 
 {{-- Content --}}
 @section('content')
-
+							<!--begin::Card-->
 							<div class="row">
 								<div class="col-lg-5 col-xxl-45">
 									<!--begin::List Widget 9-->
@@ -540,8 +540,6 @@
 								<!--begin::Card-->
 								
 							</div>
-							<!--end::Card-->
-							<!--begin::Card-->
 							<!--end::Card-->
 
 @endsection
