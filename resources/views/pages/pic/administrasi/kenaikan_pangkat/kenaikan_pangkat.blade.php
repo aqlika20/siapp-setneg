@@ -223,7 +223,8 @@
                                         <th>Jenis Usulan</th>
                                         <th>NIP</th>
                                         <th>Nama</th>
-                                        <th>Jabatan</th>
+                                        <th>Jabatan Lama</th>
+                                        <th>Jabatan Baru</th>
                                         <th>Aksi</th>
                                     </tr>
                                 </thead>
@@ -232,11 +233,12 @@
                                     <tr>
                                         <td>{{ $pengangkatan->tanggal_surat_usulan }}</td>
                                         <td>{{ $pengangkatan->no_surat_usulan }}</td>
-                                        <td>{{ $pengangkatan->instansi }}</td>
-                                        <td>{{ $pengangkatan->jenis_usulan }}</td>
-                                        <td>{{ $pengangkatan->nip }}</td>
+                                        <td>{{ $pengangkatan->instansi_pengusul }}</td>
+                                        <td><div style="color: #FFA800;">{{ Helper::defineJenisLayananBy($pengangkatan->jenis_layanan) }}</div></td>
+                                        <td><div style="color: #3699FF;">{{ $pengangkatan->nip }}</div></td>
                                         <td>{{ $pengangkatan->nama }}</td>
-                                        <td>{{ $pengangkatan->jabatan }}</td>
+                                        <td>{{ $pengangkatan->jabatan_lama }}</td>
+                                        <td>{{ $pengangkatan->jabatan_baru }}</td>
                                         <td>Coming Soon..</td>
                                     </tr>
                                 @endforeach

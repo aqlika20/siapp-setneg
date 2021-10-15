@@ -11,7 +11,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 
 use App\UserManagement;
-use App\Pengangkatan;
+use App\KenaikanPangkat;
 use App\Pangkat;
 use App\Periode;
 use App\Helper;
@@ -32,8 +32,9 @@ class KenaikanPangkatController extends Controller
         $currentUser = UserManagement::find(Auth::id());
         $page_title = 'PIC | Administrasi | Kenaikan Pangkat';
         $page_description = 'Kenaikan Pangkat';
-        $pengangkatans = Pengangkatan::where([
-            ['status', '=', Helper::$pengajuan_usulan]
+        $pengangkatans = KenaikanPangkat::where([
+            ['status', '=', Helper::$pengajuan_usulan],
+            ['id_pengirim', '=', $currentUser->nip]
         ])->get();
         return view('pages.pic.administrasi.kenaikan_pangkat.kenaikan_pangkat', compact('page_title', 'page_description', 'currentUser', 'pengangkatans'));
     }

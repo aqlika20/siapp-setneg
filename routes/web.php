@@ -174,14 +174,21 @@ Route::group(['middleware' => ['auth', 'checkRole:2']], function() {
                 Route::get('/verification/{id}', 'BackWeb\Koor_Pokja\Inbox\JFKUController@verification')->name('koor-pokja.inbox.jfku.verif');
                 Route::post('/verification/proses', 'BackWeb\Koor_Pokja\Inbox\JFKUController@store_proses')->name('koor-pokja.inbox.jfku.store_proses');
                 Route::post('/verification/pending', 'BackWeb\Koor_Pokja\Inbox\JFKUController@store_pending')->name('koor-pokja.inbox.jfku.store_pending');
-                Route::post('/verification/tlk', 'BackWeb\Koor_Pokja\Inbox\JFKUController@store_tlk')->name('koor-pokja.inbox.jfku.store_tlk');
+                Route::post('/verification/tolak', 'BackWeb\Koor_Pokja\Inbox\JFKUController@store_tolak')->name('koor-pokja.inbox.jfku.store_tolak');
             });
 
             Route::prefix('/ns')->group(function(){
                 Route::get('/verification/{id}', 'BackWeb\Koor_Pokja\Inbox\JFKUController@verification_ns')->name('koor-pokja.inbox.ns.verif');
-                Route::post('/verification/proses/{id}', 'BackWeb\Koor_Pokja\Inbox\JFKUController@store_proses')->name('koor-pokja.inbox.ns.store_proses');
+                Route::post('/verification/proses', 'BackWeb\Koor_Pokja\Inbox\JFKUController@store_proses')->name('koor-pokja.inbox.ns.store_proses');
                 Route::post('/verification/pending', 'BackWeb\Koor_Pokja\Inbox\JFKUController@store_pending')->name('koor-pokja.inbox.ns.store_pending');
                 Route::post('/verification/tolak', 'BackWeb\Koor_Pokja\Inbox\JFKUController@store_tolak')->name('koor-pokja.inbox.ns.store_tolak');
+            });
+
+            Route::prefix('/lainnya')->group(function(){
+                Route::get('/verification/{id}', 'BackWeb\Koor_Pokja\Inbox\JFKUController@verification_lainnya')->name('koor-pokja.inbox.lainnya.verif');
+                Route::post('/verification/proses', 'BackWeb\Koor_Pokja\Inbox\JFKUController@store_proses')->name('koor-pokja.inbox.lainnya.store_proses');
+                Route::post('/verification/pending', 'BackWeb\Koor_Pokja\Inbox\JFKUController@store_pending')->name('koor-pokja.inbox.lainnya.store_pending');
+                Route::post('/verification/tolak', 'BackWeb\Koor_Pokja\Inbox\JFKUController@store_tolak')->name('koor-pokja.inbox.lainnya.store_tolak');
             });
         });
 

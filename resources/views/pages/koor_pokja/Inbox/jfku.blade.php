@@ -75,6 +75,9 @@
                                                 <tbody>
                                                     @foreach($pengangkatans as $pengangkatan)
                                                         <tr>
+                                                            <!-- <td>{{ Helper::convertDate($pengangkatan->created_at)  }}</td>
+                                                            <td><div style="color: #FFA800;">{{ Helper::defineJenisLayananBy($pengangkatan->jenis_layanan) }}</div></td>
+                                                            <td>{{ Helper::defineStatusBy($pengangkatan->status) }}</td> -->
                                                             <td>{{ $pengangkatan->tgl_surat_usulan }}</td>
                                                             <td>{{ $pengangkatan->no_surat_usulan }}</td>
                                                             <td>{{ $pengangkatan->instansi_pengusul }}</td>
@@ -90,6 +93,9 @@
 
                                                     @foreach($pengangkatans_ns as $pengangkatan_ns)
                                                         <tr>
+                                                            <!-- <td>{{ Helper::convertDate($pengangkatan_ns->created_at) }}</td>
+                                                            <td><div style="color: #FFA800;">{{ Helper::defineJenisLayananBy($pengangkatan_ns->jenis_layanan) }}</div></td>
+                                                            <td>{{ Helper::defineStatusBy($pengangkatan_ns->status) }}</td> -->
                                                             <td>{{ $pengangkatan_ns->tgl_surat_usulan }}</td>
                                                             <td>{{ $pengangkatan_ns->no_surat_usulan }}</td>
                                                             <td>{{ $pengangkatan_ns->instansi_pengusul }}</td>
@@ -102,6 +108,25 @@
                                                             </td>
                                                         </tr>
                                                     @endforeach
+
+                                                    @foreach($lainnyas as $lainnya)
+                                                        <tr>
+                                                            <!-- <td>{{ Helper::convertDate($lainnya->created_at) }}</td>
+                                                            <td><div style="color: #FFA800;">{{ Helper::defineJenisLayananBy($lainnya->jenis_layanan) }}</div></td>
+                                                            <td>{{ Helper::defineStatusBy($lainnya->status) }}</td> -->
+
+                                                            <td>{{ $lainnya->tgl_surat_usulan }}</td>
+                                                            <td>{{ $lainnya->no_surat_usulan }}</td>
+                                                            <td>{{ $lainnya->instansi_pengusul }}</td>
+                                                            <td><div style="color: #FFA800;">{{ Helper::defineJenisLayananBy($lainnya->jenis_layanan) }}</div></td>
+                                                            <td><div style="color: #3699FF;">{{ $lainnya->nip }}</div></td>
+                                                            <td>{{ $lainnya->nama }}</td>
+                                                            <td>
+                                                                <a href="{{route('koor-pokja.inbox.lainnya.verif', ['id' => $lainnya->id])}}"><i class="fa fa-pencil-alt text-success mr-2"></i></a>
+                                                                <a href="{{route('koor-pokja.inbox.distributor.index', ['id' => $lainnya->id])}}"><i class="fa fa-share text-info mr-1"></i></a>
+                                                            </td>
+                                                        </tr>
+                                                    @endforeach
                                                     
                                                 </tbody>
                                             </table>
@@ -111,165 +136,159 @@
                                     <!--begin::Tap pane-->
                                     <div class="tab-pane fade " id="tab_proses" role="tabpanel" aria-labelledby="tab_proses">
                                         <!--begin::Table-->
-                                        <div class="table-responsive">
-                                            <div class="mb-7">
-                                                <div class="row align-items-center">
-                                                    <div class="col-lg-9 col-xl-8">
-                                                        <div class="row align-items-center">
-                                                            <div class="col-md-4 my-2 my-md-0">
-                                                                <div class="input-icon">
-                                                                    <input type="text" class="form-control" placeholder="Search By No Surat" id="no_surat" />
-                                                                    <span>
-                                                                        <i class="flaticon2-search-1 text-muted"></i>
-                                                                    </span>
-                                                                </div>
+                                        <div class="mb-7">
+                                            <div class="row align-items-center">
+                                                <div class="col-lg-9 col-xl-8">
+                                                    <div class="row align-items-center">
+                                                        <div class="col-md-4 my-2 my-md-0">
+                                                            <div class="input-icon">
+                                                                <input type="text" class="form-control" placeholder="Search By No Surat" id="no_surat" />
+                                                                <span>
+                                                                    <i class="flaticon2-search-1 text-muted"></i>
+                                                                </span>
                                                             </div>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
-                                            <!--end::Search Form-->
-                                            <!--begin: Datatable-->
-                                            <table class="datatable cell-border" id="tb_proses">
-                                                <thead>
-                                                    <tr class="text-start text-gray-400 fw-bolder fs-7 text-uppercase gs-0">
-                                                        <th>Tanggal Agenda</th>
-                                                        <th>No Surat</th>
-                                                        <th>Instansi Pengusul</th>
-                                                        <th>Jenis Usulan</th>
-                                                        <th>NIP</th>
-                                                        <th>Nama</th>
-                                                        <th>Aksi</th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody>
-                                                    @foreach($pengangkatans as $pengangkatan)
-                                                        <tr>
-                                                            <td>{{ $pengangkatan->tgl_surat_usulan }}</td>
-                                                            <td>{{ $pengangkatan->no_surat_usulan }}</td>
-                                                            <td>{{ $pengangkatan->instansi_pengusul }}</td>
-                                                            <td><div style="color: #FFA800;">{{ Helper::defineJenisLayananBy($pengangkatan->jenis_layanan) }}</div></td>
-                                                            <td><div style="color: #3699FF;">{{ $pengangkatan->nip }}</div></td>
-                                                            <td>{{ $pengangkatan->nama }}</td>
-                                                        </tr>
-                                                    @endforeach
-                                                    
-                                                </tbody>
-                                            </table>
                                         </div>
+                                        <!--end::Search Form-->
+                                        <!--begin: Datatable-->
+                                        <table class="datatable cell-border" id="tb_proses">
+                                            <thead>
+                                                <tr class="text-start text-gray-400 fw-bolder fs-7 text-uppercase gs-0">
+                                                    <th>Tanggal Agenda</th>
+                                                    <th>No Surat</th>
+                                                    <th>Instansi Pengusul</th>
+                                                    <th>Jenis Usulan</th>
+                                                    <th>NIP</th>
+                                                    <th>Nama</th>
+                                                    <th>Aksi</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                @foreach($pengangkatans as $pengangkatan)
+                                                    <tr>
+                                                        <td>{{ $pengangkatan->tgl_surat_usulan }}</td>
+                                                        <td>{{ $pengangkatan->no_surat_usulan }}</td>
+                                                        <td>{{ $pengangkatan->instansi_pengusul }}</td>
+                                                        <td><div style="color: #FFA800;">{{ Helper::defineJenisLayananBy($pengangkatan->jenis_layanan) }}</div></td>
+                                                        <td><div style="color: #3699FF;">{{ $pengangkatan->nip }}</div></td>
+                                                        <td>{{ $pengangkatan->nama }}</td>
+                                                    </tr>
+                                                @endforeach
+                                                
+                                            </tbody>
+                                        </table>
                                         <!--end::Table-->
                                     </div>
                                     <!--end::Tap pane-->
                                     <!--begin::Tap pane-->
                                     <div class="tab-pane fade " id="tab_pending" role="tabpanel" aria-labelledby="tab_pending">
                                         <!--begin::Table-->
-                                        <div class="table-responsive">
-                                            <div class="mb-7">
-                                                <div class="row align-items-center">
-                                                    <div class="col-lg-9 col-xl-8">
-                                                        <div class="row align-items-center">
-                                                            <div class="col-md-4 my-2 my-md-0">
-                                                                <div class="input-icon">
-                                                                    <input type="text" class="form-control" placeholder="Search By No Surat" id="no_surat" />
-                                                                    <span>
-                                                                        <i class="flaticon2-search-1 text-muted"></i>
-                                                                    </span>
-                                                                </div>
+                                        <div class="mb-7">
+                                            <div class="row align-items-center">
+                                                <div class="col-lg-9 col-xl-8">
+                                                    <div class="row align-items-center">
+                                                        <div class="col-md-4 my-2 my-md-0">
+                                                            <div class="input-icon">
+                                                                <input type="text" class="form-control" placeholder="Search By No Surat" id="no_surat" />
+                                                                <span>
+                                                                    <i class="flaticon2-search-1 text-muted"></i>
+                                                                </span>
                                                             </div>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
-                                            <!--end::Search Form-->
-                                            <!--begin: Datatable-->
-                                            <table class="datatable cell-border" id="tb_pending">
-                                                <thead>
-                                                    <tr class="text-start text-gray-400 fw-bolder fs-7 text-uppercase gs-0">
-                                                        <th>Tanggal Agenda</th>
-                                                        <th>No Surat</th>
-                                                        <th>Instansi Pengusul</th>
-                                                        <th>Jenis Usulan</th>
-                                                        <th>NIP</th>
-                                                        <th>Nama</th>
-                                                        <th>Aksi</th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody>
-                                                    @foreach($jfku_pendings as $jfku_pending)
-                                                        <tr>
-                                                            <td>{{ $jfku_pending->tgl_surat_usulan }}</td>
-                                                            <td>{{ $jfku_pending->no_surat_usulan }}</td>
-                                                            <td>{{ $jfku_pending->instansi_pengusul }}</td>
-                                                            <td><div style="color: #FFA800;">{{ Helper::defineJenisLayananBy($jfku_pending->jenis_layanan) }}</div></td>
-                                                            <td><div style="color: #3699FF;">{{ $jfku_pending->nip }}</div></td>
-                                                            <td>{{ $jfku_pending->nama }}</td>
-                                                            <td>
-                                                                <a href="verifikasi_cek.html" type="button" class="btn btn-warning btn-sm">
-                                                                    Lihat
-                                                                </a>
-                                                            </td>
-                                                        </tr>
-                                                    @endforeach
-                                                </tbody>
-                                            </table>
                                         </div>
+                                        <!--end::Search Form-->
+                                        <!--begin: Datatable-->
+                                        <table class="datatable cell-border" id="tb_pending">
+                                            <thead>
+                                                <tr class="text-start text-gray-400 fw-bolder fs-7 text-uppercase gs-0">
+                                                    <th>Tanggal Agenda</th>
+                                                    <th>No Surat</th>
+                                                    <th>Instansi Pengusul</th>
+                                                    <th>Jenis Usulan</th>
+                                                    <th>NIP</th>
+                                                    <th>Nama</th>
+                                                    <th>Aksi</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                @foreach($jfku_pendings as $jfku_pending)
+                                                    <tr>
+                                                        <td>{{ $jfku_pending->tgl_surat_usulan }}</td>
+                                                        <td>{{ $jfku_pending->no_surat_usulan }}</td>
+                                                        <td>{{ $jfku_pending->instansi_pengusul }}</td>
+                                                        <td><div style="color: #FFA800;">{{ Helper::defineJenisLayananBy($jfku_pending->jenis_layanan) }}</div></td>
+                                                        <td><div style="color: #3699FF;">{{ $jfku_pending->nip }}</div></td>
+                                                        <td>{{ $jfku_pending->nama }}</td>
+                                                        <td>
+                                                            <a href="verifikasi_cek.html" type="button" class="btn btn-warning btn-sm">
+                                                                Lihat
+                                                            </a>
+                                                        </td>
+                                                    </tr>
+                                                @endforeach
+                                            </tbody>
+                                        </table>
                                         <!--end::Table-->
                                     </div>
                                     <!--end::Tap pane-->
                                     <!--begin::Tap pane-->
                                     <div class="tab-pane fade " id="tab_tolak" role="tabpanel" aria-labelledby="tab_tolak">
                                         <!--begin::Table-->
-                                        <div class="table-responsive">
-                                            <div class="mb-7">
-                                                <div class="row align-items-center">
-                                                    <div class="col-lg-9 col-xl-8">
-                                                        <div class="row align-items-center">
-                                                            <div class="col-md-4 my-2 my-md-0">
-                                                                <div class="input-icon">
-                                                                    <input type="text" class="form-control" placeholder="Search By No Surat" id="no_surat" />
-                                                                    <span>
-                                                                        <i class="flaticon2-search-1 text-muted"></i>
-                                                                    </span>
-                                                                </div>
+                                        <div class="mb-7">
+                                            <div class="row align-items-center">
+                                                <div class="col-lg-9 col-xl-8">
+                                                    <div class="row align-items-center">
+                                                        <div class="col-md-4 my-2 my-md-0">
+                                                            <div class="input-icon">
+                                                                <input type="text" class="form-control" placeholder="Search By No Surat" id="no_surat" />
+                                                                <span>
+                                                                    <i class="flaticon2-search-1 text-muted"></i>
+                                                                </span>
                                                             </div>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
-                                            <!--end::Search Form-->
-                                            <!--begin: Datatable-->
-                                            <table class="datatable cell-border" id="tb_tolak">
-                                                <thead>
-                                                    <tr class="text-start text-gray-400 fw-bolder fs-7 text-uppercase gs-0">
-                                                        <th>Tanggal Agenda</th>
-                                                        <th>No Surat</th>
-                                                        <th>Instansi Pengusul</th>
-                                                        <th>Jenis Usulan</th>
-                                                        <th>NIP</th>
-                                                        <th>Nama</th>
-                                                        <th>Aksi</th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody>
-                                                    @foreach($jfku_tolaks as $jfku_tolak)
-                                                        <tr>
-                                                            <td>{{ $jfku_tolak->tgl_surat_usulan }}</td>
-                                                            <td>{{ $jfku_tolak->no_surat_usulan }}</td>
-                                                            <td>{{ $jfku_tolak->instansi_pengusul }}</td>
-                                                            <td><div style="color: #FFA800;">{{ Helper::defineJenisLayananBy($jfku_tolak->jenis_layanan) }}</div></td>
-                                                            <td><div style="color: #3699FF;">{{ $jfku_tolak->nip }}</div></td>
-                                                            <td>{{ $jfku_tolak->nama }}</td>
-                                                            <td>{{ $jfku_tolak->jabatan_fungsional }}</td>
-                                                            <td>
-                                                                <a href="persetujuan.html" type="button" class="btn btn-light-danger btn-sm">
-                                                                    Kembalikan
-                                                                </a>
-                                                            </td>
-                                                        </tr>
-                                                    @endforeach
-                                                </tbody>
-                                            </table>
                                         </div>
+                                        <!--end::Search Form-->
+                                        <!--begin: Datatable-->
+                                        <table class="datatable cell-border" id="tb_tolak">
+                                            <thead>
+                                                <tr class="text-start text-gray-400 fw-bolder fs-7 text-uppercase gs-0">
+                                                    <th>Tanggal Agenda</th>
+                                                    <th>No Surat</th>
+                                                    <th>Instansi Pengusul</th>
+                                                    <th>Jenis Usulan</th>
+                                                    <th>NIP</th>
+                                                    <th>Nama</th>
+                                                    <th>Aksi</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                @foreach($jfku_tolaks as $jfku_tolak)
+                                                    <tr>
+                                                        <td>{{ $jfku_tolak->tgl_surat_usulan }}</td>
+                                                        <td>{{ $jfku_tolak->no_surat_usulan }}</td>
+                                                        <td>{{ $jfku_tolak->instansi_pengusul }}</td>
+                                                        <td><div style="color: #FFA800;">{{ Helper::defineJenisLayananBy($jfku_tolak->jenis_layanan) }}</div></td>
+                                                        <td><div style="color: #3699FF;">{{ $jfku_tolak->nip }}</div></td>
+                                                        <td>{{ $jfku_tolak->nama }}</td>
+                                                        <td>{{ $jfku_tolak->jabatan_fungsional }}</td>
+                                                        <td>
+                                                            <a href="persetujuan.html" type="button" class="btn btn-light-danger btn-sm">
+                                                                Kembalikan
+                                                            </a>
+                                                        </td>
+                                                    </tr>
+                                                @endforeach
+                                            </tbody>
+                                        </table>
                                         <!--end::Table-->
                                     </div>                                    
                                     <!--end::Tap pane-->

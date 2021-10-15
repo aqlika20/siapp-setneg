@@ -225,6 +225,47 @@
                                                     </div>
                                                 </div>
                                             </div>
+
+                                            <div class="form-group row">
+                                                    <label class="col-lg-3 col-form-label">Upload File</label>
+                                                    <div class="col-lg-9">
+                                                    <input id="req_file_data_asn" name="req_file_data_asn[]" type="file" class="file" data-show-preview="false" multiple/>
+                                                        <!-- <div class="dropzone dropzone-multi" id="kt_dropzone_7">
+                                                            <div class="dropzone-panel mb-lg-0 mb-2">
+                                                                <a class="dropzone-select btn btn-light-primary font-weight-bold btn-sm">Attach files</a>
+                                                                <a class="dropzone-upload btn btn-light-primary font-weight-bold btn-sm">Upload All</a>
+                                                                <a class="dropzone-remove-all btn btn-light-primary font-weight-bold btn-sm">Remove All</a>
+                                                            </div>
+                                                            <div class="dropzone-items">
+                                                                <div class="dropzone-item" style="display:none">
+                                                                    <div class="dropzone-file">
+                                                                        <div class="dropzone-filename" title="some_image_file_name.jpg">
+                                                                            <span data-dz-name="">some_image_file_name.jpg</span>
+                                                                            <strong>(<span data-dz-size="">340kb</span>)</strong>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="dropzone-progress">
+                                                                        <div class="progress">
+                                                                            <div class="progress-bar bg-primary" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" data-dz-uploadprogress=""></div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="dropzone-toolbar">
+                                                                        <span class="dropzone-start">
+                                                                            <i class="flaticon2-arrow"></i>
+                                                                        </span>
+                                                                        <span class="dropzone-cancel" data-dz-remove="" style="display: none;">
+                                                                            <i class="flaticon2-cross"></i>
+                                                                        </span>
+                                                                        <span class="dropzone-delete" data-dz-remove="">
+                                                                            <i class="flaticon2-cross"></i>
+                                                                        </span>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div> -->
+                                                        <span class="form-text text-muted">Max file size is 1MB and max number of files is 5.</span>
+                                                    </div>
+                                                </div>
                                             
                                             <div  id="otherFieldDiv">
                                                 <h4 class="mb-10 font-weight-bold text-dark">Data PAK</h4>
@@ -328,7 +369,7 @@
                                                     <label class="col-form-label col-lg-3 col-sm-12">Nomor Klarifikasi</label>
                                                     <div class="col-lg-9 col-md-9 col-sm-12">
                                                         <div class="input-group date">
-                                                            <input type="text" class="form-control" id="req_masa_kerja_gol" name="req_masa_kerja_gol" value="{{old('req_masa_kerja_gol')}}" autocomplete="off"/>
+                                                            <input type="text" class="form-control" id="req_no_klarifikasi_pak" name="req_no_klarifikasi_pak" value="{{old('req_no_klarifikasi_pak')}}" autocomplete="off"/>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -336,7 +377,7 @@
                                                     <label class="col-form-label col-lg-3 col-sm-12">Tanggal Klarifikasi</label>
                                                     <div class="col-lg-5 col-md-9 col-sm-12">
                                                         <div class="input-group date">
-                                                            <input type="text" class="form-control datetimepicker-input my-datepicker" id="req_tanggal_klarifikasi" name="req_tanggal_klarifikasi" data-toggle="datetimepicker" data-target="#req_tanggal_klarifikasi" placeholder="Pilih Tanggal" value="{{old('req_tanggal_klarifikasi')}}" />
+                                                            <input type="text" class="form-control datetimepicker-input my-datepicker" id="req_tanggal_klarifikasi_pak" name="req_tanggal_klarifikasi_pak" data-toggle="datetimepicker" data-target="#req_tanggal_klarifikasi_pak" placeholder="Pilih Tanggal" value="{{old('req_tanggal_klarifikasi_pak')}}" />
                                                             <div class="input-group-append">
                                                                 <span class="input-group-text">
                                                                     <i class="la la-calendar"></i>
@@ -537,8 +578,6 @@
                                                     <span class="form-text text-muted">Max file size is 1MB and max number of files is 5.</span>
                                                 </div>
                                             </div>
-                                           
-                                          
                                         </div>
                                         <!--end: Wizard Step 4-->
 
@@ -1021,7 +1060,7 @@
                     req_no_surat_usulan: 'required',
                     req_jabatan_menandatangani: 'required',
                     req_file_data_usulan: {
-                        extenstion: "docx,doc,xlsx,xls,csv,jpg,png,jpeg,pdf"
+                        extenstion: "jpg,png,jpeg,pdf"
                     },
                     req_nip: 'required',
                     req_nama: 'required',
@@ -1033,25 +1072,42 @@
                     req_pangkat_gol: 'required',
                     req_tmt_gol: 'required',
                     req_file_data_asn: {
-                        extenstion: "docx,doc,xlsx,xls,csv,jpg,png,jpeg,pdf"
+                        extenstion: "jpg,png,jpeg,pdf"
                     },
-                    req_jabatan_fungsional: 'required',
-                    req_no_keppress_jabatan_fungsional: 'required',
-                    req_file_data_jabatan_fungsional: {
-                        extenstion: "docx,doc,xlsx,xls,csv,jpg,png,jpeg,pdf"
-                    },
-                    req_file_ba_pengambilan_sumpah_fungsional: {
-                        extenstion: "docx,doc,xlsx,xls,csv,jpg,png,jpeg,pdf"
-                    },
-                    req_tmt_jabatan_fungsional: 'required',
-                    req_unit_kerja_fungsional: 'required',
 
-                    req_alasan_pemberhentian: 'required',
-                    req_ket_alasan_pemberhentian: 'required',
-                    req_tmt_pemberhentian: 'required',
-                    
-                    req_file_data_pemberhentian: {
-                        extenstion: "docx,doc,xlsx,xls,csv,jpg,png,jpeg,pdf"
+                    req_jabatan_lama: 'required',
+                    req_no_sk_jabatan_lama: 'required',
+                    req_tmt_jabatan_lama: 'required',
+                    req_unit_kerja_lama: 'required',
+                    req_file_jabatan_lama: {
+                        extenstion: "jpg,png,jpeg,pdf"
+                    },
+
+                    req_jabatan_baru: 'required',
+                    req_unit_kerja_baru: 'required',
+                    req_file_jabatan_baru: {
+                        extenstion: "jpg,png,jpeg,pdf"
+                    },
+
+                    req_jabatan_kompetensi: 'required',
+                    req_no_sertifikat: 'required',
+                    req_tgl_sertifikat: 'required',
+                    req_file_data_kompetensi: {
+                        extenstion: "jpg,png,jpeg,pdf"
+                    },
+
+                    req_jumlah: 'required',
+                    req_terisi: 'required',
+                    req_sisa: 'required',
+                    req_file_formasi_jabatan: {
+                        extenstion: "jpg,png,jpeg,pdf"
+                    },
+
+                    req_file_skp_2: {
+                        extenstion: "jpg,png,jpeg,pdf"
+                    },
+                    req_file_skp_2_lainnya: {
+                        extenstion: "jpg,png,jpeg,pdf"
                     },
                     req_tanggal_catatan: 'required',
                     req_catatan: 'required',

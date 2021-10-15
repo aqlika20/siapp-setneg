@@ -40,7 +40,7 @@
                                             <h4 class="mb-10 font-weight-bold text-dark">Data Usulan</h4>
                                             <!--begin::Input-->
                                             <div class="form-group row">
-                                                <label class="col-form-label text-right col-lg-3 col-sm-12">Tanggal Surat usulan</label>
+                                                <label class="col-form-label col-lg-3 col-sm-12">Tanggal Surat usulan</label>
                                                 <div class="col-lg-5 col-md-9 col-sm-12">
                                                     <div class="input-group date">
                                                         <input type="text" class="form-control datetimepicker-input my-datepicker" id="req_tanggal_surat_usulan" name="req_tanggal_surat_usulan" data-toggle="datetimepicker" data-target="#req_tanggal_surat_usulan" placeholder="Pilih Tanggal" value="{{old('req_tanggal_surat_usulan')}}" require/>
@@ -53,7 +53,7 @@
                                                 </div>
                                             </div>
                                             <div class="form-group row">
-                                                <label class="col-form-label text-right col-lg-3 col-sm-12">No. Surat Usulan</label>
+                                                <label class="col-form-label col-lg-3 col-sm-12">No. Surat Usulan</label>
                                                 <div class="col-lg-9 col-md-9 col-sm-12">
                                                     <div class="input-group">
                                                         <input type="text" class="form-control" id="req_no_surat_usulan" name="req_no_surat_usulan" value="{{old('req_no_surat_usulan')}}" autocomplete="off" require/>
@@ -63,7 +63,7 @@
                                             <!--end::Input-->
                                             <!--begin::Input-->
                                             <div class="form-group row">
-                                                <label class="col-form-label text-right col-lg-3 col-sm-12">Pejabat yang Menandatangani</label>
+                                                <label class="col-form-label col-lg-3 col-sm-12">Pejabat yang Menandatangani</label>
                                                 <div class="col-lg-9 col-md-9 col-sm-12">
                                                     <div class="input-group">
                                                         <input type="text"class="form-control" id="req_jabatan_menandatangani" name="req_jabatan_menandatangani" value="{{old('req_jabatan_menandatangani')}}" autocomplete="off" require/>
@@ -73,7 +73,7 @@
                                             <!--end::Input-->
                                             
                                             <div class="form-group row">
-                                                <label class="col-lg-3 col-form-label text-lg-right">Upload/Download File</label>
+                                                <label class="col-lg-3 col-form-label">Upload/Download File</label>
                                                 <div class="col-lg-9">
                                                     <input id="req_file_data_usulan" name="req_file_data_usulan[]" type="file" class="file" data-show-preview="false" multiple/>
                                                     
@@ -121,17 +121,17 @@
                                             <h4 class="mb-10 font-weight-bold text-dark">Data ASN</h4>
                                             <!--begin::Input-->
                                             <div class="form-group row">
-                                                <label class="col-form-label text-right col-lg-3 col-sm-12">NIP</label>
+                                                <label class="col-form-label col-lg-3 col-sm-12">NIP</label>
                                                 <div class="col-lg-9 col-md-9 col-sm-12">
                                                     <div class="input-group date">
-                                                        <input type="text" class="form-control" id="req_nip" name="req_nip" value="{{old('req_nip')}}" autocomplete="off" require/>
+                                                        <input type="number" class="form-control" id="req_nip" name="req_nip" value="{{old('req_nip')}}" autocomplete="off" require/>
                                                     </div>
                                                 </div>
                                             </div>
                                             <!--end::Input-->
                                             <!--begin::Input-->
                                             <div class="form-group row">
-                                                <label class="col-form-label text-right col-lg-3 col-sm-12">Nama</label>
+                                                <label class="col-form-label col-lg-3 col-sm-12">Nama</label>
                                                 <div class="col-lg-9 col-md-9 col-sm-12">
                                                     <div class="input-group date">
                                                         <input type="text" class="form-control" id="req_nama" name="req_nama" value="{{old('req_nama')}}" autocomplete="off" require />
@@ -141,7 +141,7 @@
                                             <!--end::Input-->
                                             <!--begin::Input-->
                                             <div class="form-group row">
-                                                <label class="col-form-label text-right col-lg-3 col-sm-12">Tempat Lahir</label>
+                                                <label class="col-form-label col-lg-3 col-sm-12">Tempat Lahir</label>
                                                 <div class="col-lg-9 col-md-9 col-sm-12">
                                                     <div class="input-group date">
                                                         <input type="text" class="form-control" id="req_tempat_lahir" name="req_tempat_lahir" value="{{old('req_tempat_lahir')}}" autocomplete="off" require />
@@ -151,7 +151,7 @@
                                             <!--end::Input-->
                                             <!--begin::Input-->
                                             <div class="form-group row">
-                                                <label class="col-form-label text-right col-lg-3 col-sm-12">Tanggal Lahir</label>
+                                                <label class="col-form-label col-lg-3 col-sm-12">Tanggal Lahir</label>
                                                 <div class="col-lg-5 col-md-9 col-sm-12">
                                                     <div class="input-group date">
                                                         <input type="text" class="form-control datetimepicker-input my-datepicker" id="req_tanggal_lahir" name="req_tanggal_lahir" data-toggle="datetimepicker" data-target="#req_tanggal_lahir" placeholder="Pilih Tanggal" value="{{old('req_tanggal_lahir')}}" autocomplete="off" require/>
@@ -165,7 +165,7 @@
                                             </div>
                                             <!--end::Input-->
                                             <div class="form-group row">
-                                                <label class="col-form-label text-right col-lg-3 col-sm-12">Pendidikan Terakhir</label>
+                                                <label class="col-form-label col-lg-3 col-sm-12">Pendidikan Terakhir</label>
                                                 <div class="col-lg-9 col-md-9 col-sm-12">
                                                     <div class="input-group date">
                                                         <input type="text" class="form-control" id="req_pendidikan_terakhir" name="req_pendidikan_terakhir" value="{{old('req_pendidikan_terakhir')}}" autocomplete="off" require />
@@ -173,7 +173,7 @@
                                                 </div>
                                             </div>
                                             <div class="form-group row">
-                                                <label class="col-form-label text-right col-lg-3 col-sm-12">Instansi</label>
+                                                <label class="col-form-label col-lg-3 col-sm-12">Instansi</label>
                                                 <div class="col-lg-9 col-md-9 col-sm-12">
                                                     <div class="input-group date">
                                                         <input type="text" class="form-control" id="req_instansi" name="req_instansi" value="{{old('req_instansi')}}" autocomplete="off" require />
@@ -181,9 +181,9 @@
                                                 </div>
                                             </div>
                                             <div class="form-group row">
-                                                <label class="col-lg-3 col-form-label text-lg-right">Upload/Download Nota Usul</label>
+                                                <label class="col-lg-3 col-form-label">Upload/Download Nota Usul</label>
                                                 <div class="col-lg-9">
-                                                    <input id="req_file_nota_usulan" name="req_file_nota_usulan[]" type="file" class="file" data-show-preview="false" multiple/>
+                                                    <input id="req_file_data_asn" name="req_file_data_asn[]" type="file" class="file" data-show-preview="false" multiple/>
                                                     <!-- <div class="dropzone dropzone-multi" id="kt_dropzone_5">
                                                         <div class="dropzone-panel mb-lg-0 mb-2">
                                                             <a class="dropzone-select btn btn-light-primary font-weight-bold btn-sm">Attach files</a>
@@ -221,7 +221,7 @@
                                                 </div>
                                             </div>
                                             <div class="form-group row">
-                                                <label class="col-form-label text-right col-lg-3 col-sm-12">Pangkat (Gol/Ruang)</label>
+                                                <label class="col-form-label col-lg-3 col-sm-12">Pangkat (Gol/Ruang)</label>
                                                 <div class="col-lg-9 col-md-9 col-sm-12">
                                                     <select class="form-control select2" style="width: 230px;" id="req_pangkat_gol" name="req_pangkat_gol">
                                                         <option value="">Choose</option>
@@ -240,7 +240,7 @@
                                                 </div>
                                             </div>
                                             <div class="form-group row">
-                                                <label class="col-form-label text-right col-lg-3 col-sm-12">TMT Gol/Ruang</label>
+                                                <label class="col-form-label col-lg-3 col-sm-12">TMT Gol/Ruang</label>
                                                 <div class="col-lg-5 col-md-9 col-sm-12">
                                                     <div class="input-group date">
                                                         <input type="text" class="form-control datetimepicker-input my-datepicker" id="req_tmt_gol" name="req_tmt_gol" data-toggle="datetimepicker" data-target="#req_tmt_gol" placeholder="Pilih Tanggal" value="{{old('req_tmt_gol')}}" autocomplete="off" require />
@@ -253,7 +253,7 @@
                                                 </div>
                                             </div>
                                             <div class="form-group row">
-                                                <label class="col-form-label text-right col-lg-3 col-sm-12">TMT CPNS</label>
+                                                <label class="col-form-label col-lg-3 col-sm-12">TMT CPNS</label>
                                                 <div class="col-lg-5 col-md-9 col-sm-12">
                                                     <div class="input-group date">
                                                         <input type="text" class="form-control datetimepicker-input my-datepicker" id="req_tmt_cpns" name="req_tmt_cpns" data-toggle="datetimepicker" data-target="#req_tmt_cpns" placeholder="Pilih Tanggal" value="{{old('req_tmt_cpns')}}" autocomplete="off" require />
@@ -266,7 +266,7 @@
                                                 </div>
                                             </div>
                                             <div class="form-group row">
-                                                <label class="col-form-label text-right col-lg-3 col-sm-12">Masa Kerja Golongan</label>
+                                                <label class="col-form-label col-lg-3 col-sm-12">Masa Kerja Golongan</label>
                                                 <div class="col-lg-5 col-md-9 col-sm-12">
                                                     <div class="input-group date">
                                                         <input type="text" class="form-control" id="req_masa_kerja_gol_tahun" name="req_masa_kerja_gol_tahun" value="{{old('req_masa_kerja_gol_tahun')}}" autocomplete="off" require />
@@ -276,7 +276,7 @@
                                                 </div>
                                             </div>
                                             <div class="form-group row">
-                                                <label class="col-form-label text-right col-lg-3 col-sm-12"></label>
+                                                <label class="col-form-label col-lg-3 col-sm-12"></label>
                                                 <div class="col-lg-5 col-md-9 col-sm-12">
                                                     <div class="input-group date">
                                                         <input type="text" class="form-control" id="req_masa_kerja_gol_bulan" name="req_masa_kerja_gol_bulan" value="{{old('req_masa_kerja_gol_bulan')}}" autocomplete="off" require />
@@ -285,9 +285,9 @@
                                                 </div>
                                             </div>
                                             <div class="form-group row">
-                                                <label class="col-lg-3 col-form-label text-lg-right">Upload/Download Nota Usul</label>
+                                                <label class="col-lg-3 col-form-label">Upload/Download Nota Usul</label>
                                                 <div class="col-lg-9">
-                                                    <input id="req_file_nota_usulan_2" name="req_file_nota_usulan_2[]" type="file" class="file" data-show-preview="false" multiple/>
+                                                    <input id="req_file_nota_usulan" name="req_file_nota_usulan[]" type="file" class="file" data-show-preview="false" multiple/>
                                                     <!-- <div class="dropzone dropzone-multi" id="kt_dropzone_6">
                                                         <div class="dropzone-panel mb-lg-0 mb-2">
                                                             <a class="dropzone-select btn btn-light-primary font-weight-bold btn-sm">Attach files</a>
@@ -328,7 +328,7 @@
                                                 <h4 class="mb-10 font-weight-bold text-dark">Data PAK</h4>
                                                 <!--begin::Input-->
                                                 <div class="form-group row">
-                                                    <label class="col-form-label text-right col-lg-3 col-sm-12">Nomor PAK</label>
+                                                    <label class="col-form-label col-lg-3 col-sm-12">Nomor PAK</label>
                                                     <div class="col-lg-9 col-md-9 col-sm-12">
                                                         <div class="input-group date">
                                                             <input type="text" class="form-control" id="req_nomor_pak" name="req_nomor_pak" value="{{old('req_nomor_pak')}}" autocomplete="off" />
@@ -338,7 +338,7 @@
                                                 <!--end::Input-->
                                                 <!--begin::Input-->
                                                 <div class="form-group row">
-                                                    <label class="col-form-label text-right col-lg-3 col-sm-12">Tanggal PAK</label>
+                                                    <label class="col-form-label col-lg-3 col-sm-12">Tanggal PAK</label>
                                                     <div class="col-lg-5 col-md-9 col-sm-12">
                                                         <div class="input-group date">
                                                             <input type="text" class="form-control datetimepicker-input my-datepicker" id="req_tanggal_pak" name="req_tanggal_pak" data-toggle="datetimepicker" data-target="#req_tanggal_pak" placeholder="Pilih Tanggal" value="{{old('req_tanggal_pak')}}" autocomplete="off" />
@@ -351,7 +351,7 @@
                                                     </div>
                                                 </div>
                                                 <div class="form-group row">
-                                                    <label class="col-form-label text-right col-lg-3 col-sm-12">Jumlah Angka Kredit</label>
+                                                    <label class="col-form-label col-lg-3 col-sm-12">Jumlah Angka Kredit</label>
                                                     <div class="col-lg-9 col-md-9 col-sm-12">
                                                         <div class="input-group date">
                                                             <input type="text" class="form-control" id="req_jumlah_angka_kredit" name="req_jumlah_angka_kredit" value="{{old('req_jumlah_angka_kredit')}}" autocomplete="off" />
@@ -359,7 +359,7 @@
                                                     </div>
                                                 </div>
                                                 <div class="form-group row">
-                                                    <label class="col-form-label text-right col-lg-3 col-sm-12">Periode Penilaian</label>
+                                                    <label class="col-form-label col-lg-3 col-sm-12">Periode Penilaian</label>
                                                     <div class="col-lg-9 col-md-9 col-sm-12">
                                                         <select class="form-control select2" id="req_periode_penilaian" name="req_periode_penilaian">
                                                             <option value="">Choose</option>
@@ -378,7 +378,7 @@
                                                     </div>
                                                 </div>
                                                 <div class="form-group row">
-                                                    <label class="col-lg-3 col-form-label text-lg-right">Upload File</label>
+                                                    <label class="col-lg-3 col-form-label">Upload File</label>
                                                     <div class="col-lg-9">
                                                     <input id="req_file_data_pak" name="req_file_data_pak[]" type="file" class="file" data-show-preview="false" multiple/>
                                                         <!-- <div class="dropzone dropzone-multi" id="kt_dropzone_7">
@@ -423,18 +423,18 @@
 
                                                 <!--begin::Input-->
                                                 <div class="form-group row">
-                                                    <label class="col-form-label text-right col-lg-3 col-sm-12">Nomor Klarifikasi</label>
+                                                    <label class="col-form-label col-lg-3 col-sm-12">Nomor Klarifikasi</label>
                                                     <div class="col-lg-9 col-md-9 col-sm-12">
                                                         <div class="input-group date">
-                                                            <input type="text" class="form-control" id="req_masa_kerja_gol" name="req_masa_kerja_gol" value="{{old('req_masa_kerja_gol')}}" autocomplete="off"/>
+                                                            <input type="text" class="form-control" id="req_no_klarifikasi_pak" name="req_no_klarifikasi_pak" value="{{old('req_no_klarifikasi_pak')}}" autocomplete="off"/>
                                                         </div>
                                                     </div>
                                                 </div>
                                                 <div class="form-group row">
-                                                    <label class="col-form-label text-right col-lg-3 col-sm-12">Tanggal Klarifikasi</label>
+                                                    <label class="col-form-label col-lg-3 col-sm-12">Tanggal Klarifikasi</label>
                                                     <div class="col-lg-5 col-md-9 col-sm-12">
                                                         <div class="input-group date">
-                                                            <input type="text" class="form-control datetimepicker-input my-datepicker" id="req_tanggal_klarifikasi" name="req_tanggal_klarifikasi" data-toggle="datetimepicker" data-target="#req_tanggal_klarifikasi" placeholder="Pilih Tanggal" value="{{old('req_tanggal_klarifikasi')}}" />
+                                                            <input type="text" class="form-control datetimepicker-input my-datepicker" id="req_tanggal_klarifikasi_pak" name="req_tanggal_klarifikasi_pak" data-toggle="datetimepicker" data-target="#req_tanggal_klarifikasi_pak" placeholder="Pilih Tanggal" value="{{old('req_tanggal_klarifikasi_pak')}}" />
                                                             <div class="input-group-append">
                                                                 <span class="input-group-text">
                                                                     <i class="la la-calendar"></i>
@@ -444,7 +444,7 @@
                                                     </div>
                                                 </div>
                                                 <div class="form-group row">
-                                                    <label class="col-lg-3 col-form-label text-lg-right">Upload/Download File</label>
+                                                    <label class="col-lg-3 col-form-label">Upload/Download File</label>
                                                     <div class="col-lg-9">
                                                         <input id="req_file_klarifikasi_pak" name="req_file_klarifikasi_pak[]" type="file" class="file" data-show-preview="false" multiple/>
                                                         <!-- <div class="dropzone dropzone-multi" id="kt_dropzone_8">
@@ -492,7 +492,7 @@
                                             <h4 class="mb-10 font-weight-bold text-dark">Data Jabatan</h4>
                                             <!--begin::Select-->
                                             <div class="form-group row">
-                                                <label class="col-form-label text-right col-lg-3 col-sm-12">Jabatan</label>
+                                                <label class="col-form-label col-lg-3 col-sm-12">Jabatan</label>
                                                 <div class="col-lg-9 col-md-9 col-sm-12">
                                                     <div class="input-group date">
                                                         <input type="text" class="form-control" id="req_jabatan" name="req_jabatan" value="{{old('req_jabatan')}}" autocomplete="off" require/>
@@ -500,7 +500,7 @@
                                                 </div>
                                             </div>
                                             <div class="form-group row">
-                                                <label class="col-form-label text-right col-lg-3 col-sm-12">No. Keppress Jabatan</label>
+                                                <label class="col-form-label col-lg-3 col-sm-12">No. Keppress Jabatan</label>
                                                 <div class="col-lg-9 col-md-9 col-sm-12">
                                                     <div class="input-group date">
                                                         <input type="text" class="form-control" id="req_no_keppress_jabatan" name="req_no_keppress_jabatan" value="{{old('req_no_keppress_jabatan')}}" autocomplete="off" require/>
@@ -508,7 +508,7 @@
                                                 </div>
                                             </div>
                                             <div class="form-group row">
-                                                <label class="col-lg-3 col-form-label text-lg-right">Upload/Dowlnoad File</label>
+                                                <label class="col-lg-3 col-form-label">Upload/Dowlnoad File</label>
                                                 <div class="col-lg-9">
                                                     <input id="req_file_jabatan" name="req_file_jabatan[]" type="file" class="file" data-show-preview="false" multiple autocomplete="off" require/>
                                                     <!-- <div class="dropzone dropzone-multi" id="kt_dropzone_9">
@@ -548,7 +548,7 @@
                                                 </div>
                                             </div>
                                             <div class="form-group row">
-                                                <label class="col-lg-3 col-form-label text-lg-right">BA Pengambilan Sumpah/Pelantikan</label>
+                                                <label class="col-lg-3 col-form-label">BA Pengambilan Sumpah/Pelantikan</label>
                                                 <div class="col-lg-9">
                                                     <input id="req_file_pengambilan_sumpah" name="req_file_pengambilan_sumpah[]" type="file" class="file" data-show-preview="false" multiple/>
                                                     <!-- <div class="dropzone dropzone-multi" id="kt_dropzone_10">
@@ -588,7 +588,7 @@
                                                 </div>
                                             </div>
                                             <div class="form-group row">
-                                                <label class="col-form-label text-right col-lg-3 col-sm-12">TMT Jabatan</label>
+                                                <label class="col-form-label col-lg-3 col-sm-12">TMT Jabatan</label>
                                                 <div class="col-lg-5 col-md-9 col-sm-12">
                                                     <div class="input-group date">
                                                         <input type="text" class="form-control datetimepicker-input my-datepicker" id="req_tmt_jabatan" name="req_tmt_jabatan" data-toggle="datetimepicker" data-target="#req_tmt_jabatan" placeholder="Pilih Tanggal" value="{{old('req_tmt_jabatan')}}" autocomplete="off" require />
@@ -601,7 +601,7 @@
                                                 </div>
                                             </div>
                                             <div class="form-group row">
-                                                <label class="col-form-label text-right col-lg-3 col-sm-12">Unit Kerja</label>
+                                                <label class="col-form-label col-lg-3 col-sm-12">Unit Kerja</label>
                                                 <div class="col-lg-9 col-md-9 col-sm-12">
                                                     <div class="input-group date">
                                                         <input type="text" class="form-control" id="req_unit_kerja" name="req_unit_kerja" value="{{old('req_unit_kerja')}}" autocomplete="off" require/>
@@ -619,7 +619,7 @@
 
                                             <!--begin::Input-->
                                             <div class="form-group row">
-                                                <label class="col-form-label text-right col-lg-3 col-sm-12">Pangkat (Gol/Ruang)</label>
+                                                <label class="col-form-label col-lg-3 col-sm-12">Pangkat (Gol/Ruang)</label>
                                                 <div class="col-lg-9 col-md-9 col-sm-12">
                                                     <select class="form-control select2" style="width: 230px;" id="req_pangkat_gol_baru" name="req_pangkat_gol_baru">
                                                         <option value="">Choose</option>
@@ -639,7 +639,7 @@
                                             </div>
 
                                             <div class="form-group row">
-                                                <label class="col-form-label text-right col-lg-3 col-sm-12">TMT (Gol/Ruang)</label>
+                                                <label class="col-form-label col-lg-3 col-sm-12">TMT (Gol/Ruang)</label>
                                                 <div class="col-lg-5 col-md-9 col-sm-12">
                                                     <div class="input-group date">
                                                         <input type="text" class="form-control datetimepicker-input my-datepicker" id="req_tmt_gol_baru" name="req_tmt_gol_baru" data-toggle="datetimepicker" data-target="#req_tmt_gol_baru" placeholder="Pilih Tanggal" value="{{old('req_tmt_gol_baru')}}" autocomplete="off" require/>
@@ -654,7 +654,7 @@
 
                                             
                                             <div class="form-group row">
-                                                <label class="col-form-label text-right col-lg-3 col-sm-12">Masa Kerja Golongan</label>
+                                                <label class="col-form-label col-lg-3 col-sm-12">Masa Kerja Golongan</label>
                                                 <div class="col-lg-5 col-md-9 col-sm-12">
                                                     <div class="input-group date">
                                                         <input type="text" class="form-control" id="req_masa_kerja_gol_tahun_baru" name="req_masa_kerja_gol_tahun_baru" value="{{old('req_masa_kerja_gol_tahun_baru')}}" autocomplete="off" require/>
@@ -665,7 +665,7 @@
                                             </div>
 
                                             <div class="form-group row">
-                                                <label class="col-form-label text-right col-lg-3 col-sm-12"></label>
+                                                <label class="col-form-label col-lg-3 col-sm-12"></label>
                                                 <div class="col-lg-5 col-md-9 col-sm-12">
                                                     <div class="input-group date">
                                                         <input type="text" class="form-control" id="req_masa_kerja_gol_bulan_baru" name="req_masa_kerja_gol_bulan_baru" value="{{old('req_masa_kerja_gol_bulan_baru')}}" autocomplete="off" require/>
@@ -675,7 +675,7 @@
                                             </div>
 
                                             <div class="form-group row">
-                                                <label class="col-form-label text-right col-lg-3 col-sm-12">Periode Kenaikan Pangkat</label>
+                                                <label class="col-form-label col-lg-3 col-sm-12">Periode Kenaikan Pangkat</label>
                                                 <div class="col-lg-9 col-md-9 col-sm-12">
                                                     <select class="form-control select2" id="req_periode_kenaikan" name="req_periode_kenaikan">
                                                         <option value="">Choose</option>
@@ -695,7 +695,7 @@
                                             </div>
 
                                             <div class="form-group row">
-                                                <label class="col-lg-3 col-form-label text-lg-right">Upload/Download File Data Pendukung Lainnya</label>
+                                                <label class="col-lg-3 col-form-label">Upload/Download File Data Pendukung Lainnya</label>
                                                 <div class="col-lg-9">
                                                     <input id="req_file_pendukung" name="req_file_pendukung[]" type="file" class="file" data-show-preview="false" multiple require/>
                                                     <!-- <div class="dropzone dropzone-multi" id="kt_dropzone_11">
@@ -734,67 +734,45 @@
                                                     <span class="form-text text-muted">Max file size is 1MB and max number of files is 5.</span>
                                                 </div>
                                             </div>
-                                            <div class="form-group row">
-                                                <label class="col-lg-3 col-form-label text-lg-right">Tambah Catatan</label>
-                                                <div class="col-lg-9">
-                                                    <input id="req_file_catatan" name="req_file_catatan[]" type="file" class="file" data-show-preview="false" multiple require/>
-                                                    <!-- <div class="dropzone dropzone-multi" id="kt_dropzone_12">
-                                                        <div class="dropzone-panel mb-lg-0 mb-2">
-                                                            <a class="dropzone-select btn btn-light-primary font-weight-bold btn-sm">Attach files</a>
-                                                            <a class="dropzone-upload btn btn-light-primary font-weight-bold btn-sm">Upload All</a>
-                                                            <a class="dropzone-remove-all btn btn-light-primary font-weight-bold btn-sm">Remove All</a>
-                                                        </div>
-                                                        <div class="dropzone-items">
-                                                            <div class="dropzone-item" style="display:none">
-                                                                <div class="dropzone-file">
-                                                                    <div class="dropzone-filename" title="some_image_file_name.jpg">
-                                                                        <span data-dz-name="">some_image_file_name.jpg</span>
-                                                                        <strong>(<span data-dz-size="">340kb</span>)</strong>
+                                            <div id="kt_repeater_1">
+                                                <div class="form-group row">
+                                                    <label class="col-form-label col-lg-3 col-sm-12">Tambah Catatan</label>
+                                                    <div class="col-lg-9 col-md-9 col-sm-12">
+                                                        <!-- <button type="button" class="add_more_item btn btn-sm font-weight-bolder btn-light-primar">Tambah</button> -->
+                                                        <a class="add_more_item btn btn-sm font-weight-bolder btn-light-primary">
+                                                            <i class="la la-plus"></i>Tambah
+                                                        </a>
+                                                    </div>
+                                                </div>
+
+                                                <div data-repeater-item class="form-group">
+                                                    <div class="item_catatan">
+                                                        <div class="item_data">
+                                                            <div class="form-group row">
+                                                                <label class="col-form-label col-lg-3 col-sm-12">Tanggal Catatan</label>
+                                                                <div class="col-lg-5 col-md-9 col-sm-12">
+                                                                    <div class="input-group date">
+                                                                        <input type="text" class="form-control datetimepicker-input my-datepicker" id="req_tanggal_catatan" name="req_tanggal_catatan[]" data-toggle="datetimepicker" data-target="#req_tanggal_catatan" placeholder="Pilih Tanggal" autocomplete="off" require />
+                                                                        <div class="input-group-append">
+                                                                            <span class="input-group-text">
+                                                                                <i class="la la-calendar"></i>
+                                                                            </span>
+                                                                        </div>
                                                                     </div>
                                                                 </div>
-                                                                <div class="dropzone-progress">
-                                                                    <div class="progress">
-                                                                        <div class="progress-bar bg-primary" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" data-dz-uploadprogress=""></div>
+                                                            </div>
+                                                            <div class="form-group row">
+                                                                <label class="col-form-label col-lg-3 col-sm-12">Catatan</label>
+                                                                <div class="col-lg-9 col-md-9 col-sm-12">
+                                                                    <div class="input-group date">
+                                                                        <textarea class="form-control" rows="3" id="req_catatan" name="req_catatan[]" ></textarea>
                                                                     </div>
-                                                                </div>
-                                                                <div class="dropzone-toolbar">
-                                                                    <span class="dropzone-start">
-                                                                        <i class="flaticon2-arrow"></i>
-                                                                    </span>
-                                                                    <span class="dropzone-cancel" data-dz-remove="" style="display: none;">
-                                                                        <i class="flaticon2-cross"></i>
-                                                                    </span>
-                                                                    <span class="dropzone-delete" data-dz-remove="">
-                                                                        <i class="flaticon2-cross"></i>
-                                                                    </span>
                                                                 </div>
                                                             </div>
                                                         </div>
-                                                    </div> -->
-                                                    <span class="form-text text-muted">Max file size is 1MB and max number of files is 5.</span>
-                                                </div>
-                                            </div>
-                                            <div class="form-group row">
-                                                <label class="col-form-label text-right col-lg-3 col-sm-12">Tanggal Catatan</label>
-                                                <div class="col-lg-5 col-md-9 col-sm-12">
-                                                    <div class="input-group date">
-                                                        <input type="text" class="form-control datetimepicker-input my-datepicker" id="req_tanggal_catatan" name="req_tanggal_catatan" data-toggle="datetimepicker" data-target="#req_tanggal_catatan" placeholder="Pilih Tanggal" value="{{old('req_tanggal_catatan')}}" autocomplete="off" require />
-                                                        <div class="input-group-append">
-                                                            <span class="input-group-text">
-                                                                <i class="la la-calendar"></i>
-                                                            </span>
-                                                        </div>
                                                     </div>
                                                 </div>
-                                            </div>
-                                            <div class="form-group row">
-                                                <label class="col-form-label text-right col-lg-3 col-sm-12">Catatan</label>
-                                                <div class="col-lg-9 col-md-9 col-sm-12">
-                                                    <div class="input-group date">
-                                                        <textarea class="form-control" rows="3" id="req_catatan" name="req_catatan" value="{{old('req_catatan')}}"></textarea>
-                                                    </div>
-                                                </div>
-                                            </div>                                            
+                                            </div>	                                           
                                         </div>
 
                                         <div class="d-flex justify-content-between mt-5 pt-10">
@@ -838,12 +816,56 @@
 
 {{-- Scripts Section --}}
 @section('scripts')
-    <script>
-        $('.my-datepicker').datetimepicker({
-            useCurrent:false,
-            format: 'DD-MMM-YYYY'
-        })
+    <script id="tambah_catatan" type="text/x-handlebars-template">
+        <div class="item_data">
+            <div class="form-group row">
+                <label class="col-form-label col-lg-3 col-sm-12">Tanggal Catatan</label>
+                <div class="col-lg-5 col-md-9 col-sm-12">
+                    <div class="input-group date">
+                        <input type="text" class="form-control datetimepicker-input my-datepicker" id="req_tanggal_catatan" name="req_tanggal_catatan[]" data-toggle="datetimepicker" placeholder="Pilih Tanggal" autocomplete="off" require />
+                        <div class="input-group-append">
+                            <span class="input-group-text">
+                                <i class="la la-calendar"></i>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-form-label col-lg-3 col-sm-12">Catatan</label>
+                <div class="col-lg-9 col-md-9 col-sm-12">
+                    <div class="input-group date">
+                        <textarea class="form-control" rows="3" id="req_catatan" name="req_catatan[]"></textarea>
+                    </div>
+                </div>
+            </div>
 
+            <div class="form-group row">
+                <div class="col-lg-9 col-md-9 col-sm-12">
+                    <!-- <button type="button" class="remove_detail btn btn-sm font-weight-bolder btn-light-primar">Hapus</button> -->
+                    <a style="margin-top: 10px;" class="remove_detail btn btn-sm font-weight-bolder btn-light-danger">
+                        <i class="la la-trash-o"></i>Hapus Catatan
+                    </a>
+                </div>
+            </div>
+        </div>
+    </script>
+    <script>
+       refreshDateTimePicker();
+        function refreshDateTimePicker(){
+            
+            $('.my-datepicker').each(function(){
+                $(this).datetimepicker({
+                    useCurrent:false,
+                    format: 'DD-MMM-YYYY'
+                })
+
+                $(this).keydown(function(e){
+                    e.preventDefault();
+                })
+
+            })
+        }
         $('#otherFieldDiv').hide();
 
         $('.my-datepicker').keydown(function(e){
@@ -853,6 +875,37 @@
         $('.select2').select2({
             placeholder: "Choose..."
         })
+
+        $('#kt_repeater_1').repeater({
+            initEmpty: false,
+
+            defaultValues: {
+                'text-input': 'foo'
+            },
+
+            show: function () {
+                $(this).slideDown();
+            },
+
+            hide: function (deleteElement) {
+                $(this).slideUp(deleteElement);
+            }
+        });
+
+        var id = 1;
+
+        $(document).on('click','.add_more_item',function(){
+            var source = $("#tambah_catatan").html();
+            // var template = Handlebars.compile(source);
+            var template = '<div class="item_data"><div class="form-group row"><label class="col-form-label col-lg-3 col-sm-12">Tanggal Catatan</label><div class="col-lg-5 col-md-9 col-sm-12"><div class="input-group date"><input type="text" class="form-control datetimepicker-input my-datepicker" id="req_tanggal_catatan_' + id +'" name="req_tanggal_catatan[]" data-toggle="datetimepicker" data-target="#req_tanggal_catatan_'+ id +'" placeholder="Pilih Tanggal" autocomplete="off" require /><div class="input-group-append"><span class="input-group-text"><i class="la la-calendar"></i></span></div></div></div></div><div class="form-group row"><label class="col-form-label col-lg-3 col-sm-12">Catatan</label><div class="col-lg-9 col-md-9 col-sm-12"><div class="input-group date"><textarea class="form-control" rows="3" id="req_catatan" name="req_catatan[]" ></textarea></div></div></div><div class="form-group row"><div class="col-lg-9 col-md-9 col-sm-12"><!-- <button type="button" class="remove_detail btn btn-sm font-weight-bolder btn-light-primar">Hapus</button> --><a style="margin-top: 10px;" class="remove_detail btn btn-sm font-weight-bolder btn-light-danger"><i class="la la-trash-o"></i>Hapus Catatan</a></div></div></div>'
+            $(this).parent().parent().parent().find(".item_catatan").append(template);
+            id++;
+            refreshDateTimePicker();
+        });
+
+        $(document).on('click','.remove_detail',function(event) {
+            $(this).closest('.item_data').remove();
+        });
 
     </script>
     <script>
@@ -865,51 +918,52 @@
                     req_no_surat_usulan: 'required',
                     req_jabatan_menandatangani: 'required',
                     req_file_data_usulan: {
-                        extenstion: "docx,doc,xlsx,xls,csv,jpg,png,jpeg,pdf"
+                        extenstion: "jpg,png,jpeg,pdf"
                     },
+
                     req_nip: 'required',
                     req_nama: 'required',
                     req_tempat_lahir: 'required',
                     req_tanggal_lahir: 'required'
                     req_pendidikan_terakhir: 'required',
                     req_instansi: 'required',
-                    req_file_nota_usulan: {
-                        extenstion: "docx,doc,xlsx,xls,csv,jpg,png,jpeg,pdf"
+                    req_file_data_asn: {
+                        extenstion: "jpg,png,jpeg,pdf"
                     },
                     req_pangkat_gol: 'required',
                     req_tmt_gol: 'required',
                     req_tmt_cpns: 'required',
                     req_masa_kerja_gol_tahun: 'required',
                     req_masa_kerja_gol_bulan: 'required',
-                    req_file_nota_usulan_2: {
-                        extenstion: "docx,doc,xlsx,xls,csv,jpg,png,jpeg,pdf"
+                    req_file_nota_usulan: {
+                        extenstion: "jpg,png,jpeg,pdf"
                     },
+
                     req_file_data_pak: {
-                        extenstion: "docx,doc,xlsx,xls,csv,jpg,png,jpeg,pdf"
+                        extenstion: "jpg,png,jpeg,pdf"
                     },
                     req_file_klarifikasi_pak: {
-                        extenstion: "docx,doc,xlsx,xls,csv,jpg,png,jpeg,pdf"
+                        extenstion: "jpg,png,jpeg,pdf"
                     },
+
                     req_jabatan: 'required',
                     req_no_keppress_jabatan: 'required',
                     req_file_jabatan: {
-                        extenstion: "docx,doc,xlsx,xls,csv,jpg,png,jpeg,pdf"
+                        extenstion: "jpg,png,jpeg,pdf"
                     },
                     req_file_pengambilan_sumpah: {
-                        extenstion: "docx,doc,xlsx,xls,csv,jpg,png,jpeg,pdf"
+                        extenstion: "jpg,png,jpeg,pdf"
                     },
                     req_tmt_jabatan: 'required',
                     req_unit_kerja: 'required',
+
                     req_pangkat_gol_baru: 'required',
                     req_tmt_gol_baru: 'required',
                     req_masa_kerja_gol_tahun_baru: 'required',
                     req_masa_kerja_gol_bulan_baru: 'required',
                     req_periode_kenaikan: 'required',
                     req_file_pendukung: {
-                        extenstion: "docx,doc,xlsx,xls,csv,jpg,png,jpeg,pdf"
-                    },
-                    req_file_catatan: {
-                        extenstion: "docx,doc,xlsx,xls,csv,jpg,png,jpeg,pdf"
+                        extenstion: "jpg,png,jpeg,pdf"
                     },
                     req_tanggal_catatan: 'required',
                     req_catatan: 'required'

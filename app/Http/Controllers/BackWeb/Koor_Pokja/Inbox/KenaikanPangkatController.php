@@ -11,7 +11,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 
 use App\UserManagement;
-use App\PengangkatanPemberhentianJFKU;
+use App\KenaikanPangkat;
 use App\Pangkat;
 use App\Periode;
 use App\Group;
@@ -33,17 +33,17 @@ class KenaikanPangkatController extends Controller
         $currentUser = UserManagement::find(Auth::id());
         $page_title = 'KemenSetneg | Inbox | Kenaikan Pangkat';
         $page_description = 'Kenaikan Pangkat';
-        $pengangkatans = PengangkatanPemberhentianJFKU::where([
+        $pengangkatans = KenaikanPangkat::where([
             ['status', '=', Helper::$pengajuan_usulan],
             ['distributor_id', '=', null],
             ['group_id', '=', null]
         ])->get();
 
-        $jfku_pendings = PengangkatanPemberhentianJFKU::where([
+        $jfku_pendings = KenaikanPangkat::where([
             ['status', '=', Helper::$pending]
         ])->get();
 
-        $jfku_tolaks = PengangkatanPemberhentianJFKU::where([
+        $jfku_tolaks = KenaikanPangkat::where([
             ['status', '=', Helper::$tolak]
         ])->get();
 
@@ -78,7 +78,7 @@ class KenaikanPangkatController extends Controller
         $currentUser = UserManagement::find(Auth::id());
         $page_title = 'KemenSetneg | Verification';
         $page_description = 'Verification';
-        $verifikasi = PengangkatanPemberhentianJFKU::where('id', $id)->first();
+        $verifikasi = KenaikanPangkat::where('id', $id)->first();
 
         $notes = Catatan::where('jfku_id', $id)->get();
 
@@ -92,7 +92,7 @@ class KenaikanPangkatController extends Controller
     public function store_proses($id, Request $request) 
     {
         $input = $request->all();
-        $pengangkatans = PengangkatanPemberhentianJFKU::where('id', '=', $id)->update(
+        $pengangkatans = KenaikanPangkat::where('id', '=', $id)->update(
             ['status' => $input['proses']]
         );
         return redirect()->route('koor-pokja.inbox.jfku.index')->with(['success'=>'verifikasi Success !!!']);
@@ -101,7 +101,7 @@ class KenaikanPangkatController extends Controller
     public function store_pending($id, Request $request) 
     {
         $input = $request->all();
-        $pengangkatans = PengangkatanPemberhentianJFKU::where('id', '=', $id)->update(
+        $pengangkatans = KenaikanPangkat::where('id', '=', $id)->update(
             ['status' => $input['pending']]
         );
         return redirect()->route('koor-pokja.inbox.jfku.index')->with(['success'=>'verifikasi Success !!!']);
@@ -110,7 +110,7 @@ class KenaikanPangkatController extends Controller
     public function store_tolak($id, Request $request) 
     {
         $input = $request->all();
-        $pengangkatans = PengangkatanPemberhentianJFKU::where('id', '=', $id)->update(
+        $pengangkatans = KenaikanPangkat::where('id', '=', $id)->update(
             ['status' => $input['tolak']]
         );
         return redirect()->route('koor-pokja.inbox.jfku.index')->with(['success'=>'verifikasi Success !!!']);

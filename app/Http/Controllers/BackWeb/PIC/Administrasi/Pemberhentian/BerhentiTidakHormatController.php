@@ -133,7 +133,7 @@ class BerhentiTidakHormatController extends Controller
             
             'ket' => implode(',', $input['req_ket']),
             'id_pengirim' => $id_pengirim->nip,
-            'jenis_layanan' => Helper::$bup_non_kpp,
+            'jenis_layanan' => Helper::$berhenti_tidak_hormat,
             'status' => Helper::$pengajuan_usulan
             
         ]);

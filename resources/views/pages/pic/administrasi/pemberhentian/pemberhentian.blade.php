@@ -473,6 +473,23 @@
                                         <th>Aksi</th>
                                     </tr>
                                 </thead>
+                                <tbody>
+                                @foreach($pengangkatans as $pengangkatan)
+                                    <tr>
+                                        <!-- <td>{{ Helper::convertDate($pengangkatan->created_at)  }}</td>
+                                        <td><div style="color: #FFA800;">{{ Helper::defineJenisLayananBy($pengangkatan->jenis_layanan) }}</div></td>
+                                        <td>{{ Helper::defineStatusBy($pengangkatan->status) }}</td> -->
+
+                                        <td>{{ $pengangkatan->tanggal_surat_usulan }}</td>
+                                        <td>{{ $pengangkatan->no_surat_usulan }}</td>
+                                        <td>{{ $pengangkatan->instansi}}</td>
+                                        <td><div style="color: #FFA800;">{{ Helper::defineJenisLayananBy($pengangkatan->jenis_layanan) }}</div></td>
+                                        <td><div style="color: #3699FF;">{{ $pengangkatan->nip }}</div></td>
+                                        <td>{{ $pengangkatan->nama }}</td>
+                                        <td>{{ Helper::defineStatusBy($pengangkatan->status) }}</td>
+                                    </tr>
+                                @endforeach
+                                </tbody>
                             </table>
                             <!--end: Datatable-->
                         </div>

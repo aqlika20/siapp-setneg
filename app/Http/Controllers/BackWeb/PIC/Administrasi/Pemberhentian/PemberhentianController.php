@@ -11,7 +11,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 
 use App\UserManagement;
-use App\Pengangkatan;
+use App\Pemberhentian;
 use App\Pangkat;
 use App\Periode;
 use App\Helper;
@@ -34,7 +34,10 @@ class PemberhentianController extends Controller
         $currentUser = UserManagement::find(Auth::id());
         $page_title = 'PIC | Administrasi | Pemberhentian';
         $page_description = 'Pemberhentian';
-        // $pengangkatans = Pengangkatan::where('status', 'Prosess')->get();
-        return view('pages.pic.administrasi.pemberhentian.pemberhentian', compact('page_title', 'page_description', 'currentUser'));
+        $pengangkatans = Pemberhentian::where([
+            ['status', '=', Helper::$pengajuan_usulan],
+            ['id_pengirim', '=', $currentUser->nip]
+        ])->get();
+        return view('pages.pic.administrasi.pemberhentian.pemberhentian', compact('page_title', 'page_description', 'currentUser', 'pengangkatans'));
     }
 }

@@ -24,7 +24,6 @@
                             <div>
                                 <div data-wizard-type="step" data-wizard-state="current"></div>
                                 <div data-wizard-type="step"></div>																				
-                                <div data-wizard-type="step"></div>																				
                             </div>
                             <!--end: Wizard Nav-->
                             <!--begin: Wizard Body-->
