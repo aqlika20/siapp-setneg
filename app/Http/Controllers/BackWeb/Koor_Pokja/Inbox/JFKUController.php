@@ -14,7 +14,6 @@ use App\UserManagement;
 use App\PengangkatanPemberhentianJFKU;
 use App\PengangkatanPemberhentianNS;
 use App\PengangkatanPemberhentianLainnya;
-use App\KenaikanPangkat;
 use App\Pangkat;
 use App\Unsur;
 use App\Catatan;
@@ -182,13 +181,7 @@ class JFKUController extends Controller
             );
             return redirect()->route('koor-pokja.inbox.jfku.index')->with(['success'=>'verifikasi Success !!!']);
         }
-        elseif($jenis_layanan == Helper::$pemberian_kenaikan_pangkat || $jenis_layanan == Helper::$pembatalan_keppres_kenaikan_pangkat || $jenis_layanan == Helper::$pengesahan_kenaikan_pangkat || $jenis_layanan == Helper::$ralat_keppres_kepangkatan )
-        {
-            $pengangkatans = KenaikanPangkat::where('id', '=', $id)->update(
-                ['status' => Helper::$pengajuan_usulan]
-            );
-            return redirect()->route('koor-pokja.inbox.jfku.index')->with(['success'=>'verifikasi Success !!!']);
-        }
+        
     }
 
     public function store_pending(Request $request) 
@@ -219,13 +212,7 @@ class JFKUController extends Controller
             );
             return redirect()->route('koor-pokja.inbox.jfku.index')->with(['success'=>'verifikasi Success !!!']);
         }
-        elseif($jenis_layanan == Helper::$pemberian_kenaikan_pangkat || $jenis_layanan == Helper::$pembatalan_keppres_kenaikan_pangkat || $jenis_layanan == Helper::$pengesahan_kenaikan_pangkat || $jenis_layanan == Helper::$ralat_keppres_kepangkatan )
-        {
-            $pengangkatans = KenaikanPangkat::where('id', '=', $id)->update(
-                ['status' => Helper::$pending]
-            );
-            return redirect()->route('koor-pokja.inbox.jfku.index')->with(['success'=>'verifikasi Success !!!']);
-        }
+        
     }
 
     public function store_tolak(Request $request) 
@@ -252,13 +239,6 @@ class JFKUController extends Controller
         elseif($jenis_layanan == Helper::$pengangkatan_pejabat_lainnya || $jenis_layanan == Helper::$pemberhentian_pejabat_lainnya || $jenis_layanan == Helper::$ralat_keppres_jabatan_lainnya || $jenis_layanan == Helper::$pembatalan_keppres_jabatan_lainnya || $jenis_layanan == Helper::$persetujuan_pengangkatan_staf_khusus )
         {
             $pengangkatans = PengangkatanPemberhentianLainnya::where('id', '=', $id)->update(
-                ['status' => Helper::$tolak]
-            );
-            return redirect()->route('koor-pokja.inbox.jfku.index')->with(['success'=>'verifikasi Success !!!']);
-        }
-        elseif($jenis_layanan == Helper::$pemberian_kenaikan_pangkat || $jenis_layanan == Helper::$pembatalan_keppres_kenaikan_pangkat || $jenis_layanan == Helper::$pengesahan_kenaikan_pangkat || $jenis_layanan == Helper::$ralat_keppres_kepangkatan )
-        {
-            $pengangkatans = KenaikanPangkat::where('id', '=', $id)->update(
                 ['status' => Helper::$tolak]
             );
             return redirect()->route('koor-pokja.inbox.jfku.index')->with(['success'=>'verifikasi Success !!!']);

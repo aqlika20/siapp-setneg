@@ -127,25 +127,25 @@ class PengangkatanPejabatFungsionalKeahlianUtamaController extends Controller
             // 'jenis_usulan' => Helper::$pengangkatan_pejabat_FKU,
             // 'status' => Helper::$pengajuan_usulan,
 
-            'req_file_data_usulan.*' => 'max:25000|mimes:docx,doc,xlsx,xls,csv,jpg,png,jpeg,pdf',
-            'req_file_nota_usulan.*' => 'max:25000|mimes:docx,doc,xlsx,xls,csv,jpg,png,jpeg,pdf',
-            'req_file_data_pak.*' => 'max:25000|mimes:docx,doc,xlsx,xls,csv,jpg,png,jpeg,pdf',
-            'req_file_klarifikasi_pak.*' => 'max:25000|mimes:docx,doc,xlsx,xls,csv,jpg,png,jpeg,pdf',
-            'req_file_jabatan.*' => 'max:25000|mimes:docx,doc,xlsx,xls,csv,jpg,png,jpeg,pdf',
-            'req_file_jabatan_lama.*' => 'max:25000|mimes:docx,doc,xlsx,xls,csv,jpg,png,jpeg,pdf',
-            'req_file_jabatan_baru.*' => 'max:25000|mimes:docx,doc,xlsx,xls,csv,jpg,png,jpeg,pdf',
-            'req_file_pengambilan_sumpah.*' => 'max:25000|mimes:docx,doc,xlsx,xls,csv,jpg,png,jpeg,pdf',
-            'req_file_pendukung.*' => 'max:25000|mimes:docx,doc,xlsx,xls,csv,jpg,png,jpeg,pdf',
-            'req_file_catatan.*' => 'max:25000|mimes:docx,doc,xlsx,xls,csv,jpg,png,jpeg,pdf',
-            'req_file_data_kompetensi.*' => 'max:25000|mimes:docx,doc,xlsx,xls,csv,jpg,png,jpeg,pdf',
-            'req_file_formasi_jabatan.*' => 'max:25000|mimes:docx,doc,xlsx,xls,csv,jpg,png,jpeg,pdf',
-            'req_file_skp_2.*' => 'max:25000|mimes:docx,doc,xlsx,xls,csv,jpg,png,jpeg,pdf',
-            'req_file_skp_2_lainnya.*' => 'max:25000|mimes:docx,doc,xlsx,xls,csv,jpg,png,jpeg,pdf',
+            'req_file_data_usulan.*' => 'max:25000|mimes:jpg,png,jpeg,pdf',
+            'req_file_nota_usulan.*' => 'max:25000|mimes:jpg,png,jpeg,pdf',
+            'req_file_data_pak.*' => 'max:25000|mimes:jpg,png,jpeg,pdf',
+            'req_file_klarifikasi_pak.*' => 'max:25000|mimes:jpg,png,jpeg,pdf',
+            'req_file_jabatan.*' => 'max:25000|mimes:jpg,png,jpeg,pdf',
+            'req_file_jabatan_lama.*' => 'max:25000|mimes:jpg,png,jpeg,pdf',
+            'req_file_jabatan_baru.*' => 'max:25000|mimes:jpg,png,jpeg,pdf',
+            'req_file_pengambilan_sumpah.*' => 'max:25000|mimes:jpg,png,jpeg,pdf',
+            'req_file_pendukung.*' => 'max:25000|mimes:jpg,png,jpeg,pdf',
+            'req_file_catatan.*' => 'max:25000|mimes:jpg,png,jpeg,pdf',
+            'req_file_data_kompetensi.*' => 'max:25000|mimes:jpg,png,jpeg,pdf',
+            'req_file_formasi_jabatan.*' => 'max:25000|mimes:jpg,png,jpeg,pdf',
+            'req_file_skp_2.*' => 'max:25000|mimes:jpg,png,jpeg,pdf',
+            'req_file_skp_2_lainnya.*' => 'max:25000|mimes:jpg,png,jpeg,pdf',
 
         ]);
 
         if ($validator->fails()) {
-            return redirect()->back()->with(['error' => $validator->errors()])->withInput($input);
+            return redirect()->back()->with(['error' => $validator->errors()])->withInput($input)->withError($validator->errors());
         }
 
         $pengangkatans = PengangkatanPemberhentianJFKU::create([
@@ -333,6 +333,4 @@ class PengangkatanPejabatFungsionalKeahlianUtamaController extends Controller
 
         return redirect()->route('pic.administrasi.surat-usulan.index')->with(['success'=>'Jabatan Fungsional Success Added!!!']);
     }
-   
-
 }

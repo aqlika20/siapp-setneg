@@ -75,15 +75,15 @@
                                                 <tbody>
                                                     @foreach($pengangkatans as $pengangkatan)
                                                         <tr>
-                                                            <td>{{ $pengangkatan->tgl_surat_usulan }}</td>
+                                                            <td>{{ $pengangkatan->tanggal_surat_usulan }}</td>
                                                             <td>{{ $pengangkatan->no_surat_usulan }}</td>
                                                             <td>{{ $pengangkatan->instansi_pengusul }}</td>
                                                             <td><div style="color: #FFA800;">{{ Helper::defineJenisLayananBy($pengangkatan->jenis_layanan) }}</div></td>
                                                             <td><div style="color: #3699FF;">{{ $pengangkatan->nip }}</div></td>
                                                             <td>{{ $pengangkatan->nama }}</td>
                                                             <td>
-                                                                <a href="{{route('koor-pokja.inbox.jfku.verif', ['id' => $pengangkatan->id])}}"><i class="fa fa-pencil-alt text-success mr-2"></i></a>
-                                                                <a href="{{route('koor-pokja.inbox.distributor.index', ['id' => $pengangkatan->id])}}"><i class="fa fa-share text-info mr-1"></i></a>
+                                                                <a href="{{route('koor-pokja.inbox.kenaikan_pangkat.verif', ['id' => $pengangkatan->id])}}"><i class="fa fa-pencil-alt text-success mr-2"></i></a>
+                                                                <a href="{{route('koor-pokja.inbox.distributor.index', ['id' => $pengangkatan->id], ['jenis_layanan' => $pengangkatan->jenis_layanan])}}"><i class="fa fa-share text-info mr-1"></i></a>
                                                             </td>
                                                         </tr>
                                                     @endforeach

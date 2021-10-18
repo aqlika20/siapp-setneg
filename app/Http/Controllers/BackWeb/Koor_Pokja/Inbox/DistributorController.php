@@ -53,12 +53,8 @@ class DistributorController extends Controller
         $group_roles = [];
 
         foreach($group_users as $user){
-            // if(!isset($group_roles[$user->group])){
-                $group_roles[$user->group][]=$user->role;
-            // }
+            $group_roles[$user->group][]=$user->role;
         }
-
-        // dd($group_roles);
 
 
         return view('pages.koor_pokja.inbox.distributor', compact('page_title', 'page_description', 'currentUser', 'group_lists', 'group_users', 'group_roles', 'pengangkatans'));
@@ -67,6 +63,7 @@ class DistributorController extends Controller
     public function store_group($id, Request $request) 
     {
         $input = $request->all();
+        // dd($input);
         $pengangkatans = PengangkatanPemberhentianJFKU::where('id', '=', $id)->update(
             ['group_id' => $input['group']]
         );

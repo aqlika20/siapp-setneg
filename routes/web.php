@@ -164,9 +164,9 @@ Route::group(['middleware' => ['auth', 'checkRole:2']], function() {
         });
         Route::prefix('/inbox')->group(function(){
             Route::get('/jfku', 'BackWeb\Koor_Pokja\Inbox\JFKUController@index')->name('koor-pokja.inbox.jfku.index');
-            Route::get('/jfku/distributor/{id}', 'BackWeb\Koor_Pokja\Inbox\DistributorController@index')->name('koor-pokja.inbox.distributor.index');
-            Route::post('/jfku/distributor/add/{id}', 'BackWeb\Koor_Pokja\Inbox\DistributorController@store_group')->name('koor-pokja.inbox.distributor.store_group');
-            Route::post('/jfku/distributor/add/distributor/{id}', 'BackWeb\Koor_Pokja\Inbox\DistributorController@store_distributor')->name('koor-pokja.inbox.distributor.store_distributor');
+            Route::get('/jfku/distributor/{id}/{jenis_layanan}', 'BackWeb\Koor_Pokja\Inbox\DistributorController@index')->name('koor-pokja.inbox.distributor.index');
+            Route::post('/jfku/distributor/add/{id}/{jenis_layanan}', 'BackWeb\Koor_Pokja\Inbox\DistributorController@store_group')->name('koor-pokja.inbox.distributor.store_group');
+            Route::post('/jfku/distributor/add/distributor/{id}/{jenis_layanan}', 'BackWeb\Koor_Pokja\Inbox\DistributorController@store_distributor')->name('koor-pokja.inbox.distributor.store_distributor');
             Route::get('/kenaikan-pangkat', 'BackWeb\Koor_Pokja\Inbox\KenaikanPangkatController@index')->name('koor-pokja.inbox.kenaikan-pangkat.index');
             Route::get('/pemberhentian', 'BackWeb\Koor_Pokja\Inbox\PemberhentianController@index')->name('koor-pokja.inbox.pemberhentian.index');
             
@@ -189,6 +189,13 @@ Route::group(['middleware' => ['auth', 'checkRole:2']], function() {
                 Route::post('/verification/proses', 'BackWeb\Koor_Pokja\Inbox\JFKUController@store_proses')->name('koor-pokja.inbox.lainnya.store_proses');
                 Route::post('/verification/pending', 'BackWeb\Koor_Pokja\Inbox\JFKUController@store_pending')->name('koor-pokja.inbox.lainnya.store_pending');
                 Route::post('/verification/tolak', 'BackWeb\Koor_Pokja\Inbox\JFKUController@store_tolak')->name('koor-pokja.inbox.lainnya.store_tolak');
+            });
+
+            Route::prefix('/kenaikan_pangkat')->group(function(){
+                Route::get('/verification/{id}', 'BackWeb\Koor_Pokja\Inbox\KenaikanPangkatController@verification')->name('koor-pokja.inbox.kenaikan_pangkat.verif');
+                Route::post('/verification/proses', 'BackWeb\Koor_Pokja\Inbox\KenaikanPangkatController@store_proses')->name('koor-pokja.inbox.kenaikan_pangkat.store_proses');
+                Route::post('/verification/pending', 'BackWeb\Koor_Pokja\Inbox\KenaikanPangkatController@store_pending')->name('koor-pokja.inbox.kenaikan_pangkat.store_pending');
+                Route::post('/verification/tolak', 'BackWeb\Koor_Pokja\Inbox\KenaikanPangkatController@store_tolak')->name('koor-pokja.inbox.kenaikan_pangkat.store_tolak');
             });
         });
 

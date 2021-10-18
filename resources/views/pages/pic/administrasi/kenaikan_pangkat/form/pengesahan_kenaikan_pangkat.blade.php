@@ -36,7 +36,7 @@
                                         @csrf
                                         @method('PATCH')
                                         <!--begin: Wizard Step 1-->
-                                        <div class="pb-6" data-wizard-type="step-content" data-wizard-state="current">
+                                        <div class="pb-6" style="margin-left: 50px; margin-right: 50px;" data-wizard-type="step-content" data-wizard-state="current">
                                             <h4 class="mb-10 font-weight-bold text-dark">Data Usulan</h4>
                                             <!--begin::Input-->
                                             <div class="form-group row">
@@ -117,7 +117,7 @@
                                         </div>
                                         <!--end: Wizard Step 1-->
                                         <!--begin: Wizard Step 2-->
-                                        <div class="pb-6" data-wizard-type="step-content">
+                                        <div class="pb-6" style="margin-left: 50px; margin-right: 50px;" data-wizard-type="step-content">
                                             <h4 class="mb-10 font-weight-bold text-dark">Data ASN</h4>
                                             <!--begin::Input-->
                                             <div class="form-group row">
@@ -488,7 +488,7 @@
                                         
                                         <!--end: Wizard Step 2-->
                                         <!--begin: Wizard Step 3-->
-                                        <div class="pb-6" data-wizard-type="step-content">
+                                        <div class="pb-6" style="margin-left: 50px; margin-right: 50px;" data-wizard-type="step-content">
                                             <h4 class="mb-10 font-weight-bold text-dark">Data Jabatan</h4>
                                             <!--begin::Select-->
                                             <div class="form-group row">
@@ -614,7 +614,7 @@
                                         
                                         <!--end: Wizard Step 2-->
                                         <!--begin: Wizard Step 2-->
-                                        <div class="pb-6" data-wizard-type="step-content">
+                                        <div class="pb-6" style="margin-left: 50px; margin-right: 50px;" data-wizard-type="step-content">
                                             <h4 class="mb-10 font-weight-bold text-dark">Pangkat Baru</h4>
 
                                             <!--begin::Input-->
@@ -775,7 +775,7 @@
                                             </div>	                                           
                                         </div>
 
-                                        <div class="d-flex justify-content-between mt-5 pt-10">
+                                        <div class="d-flex justify-content-between mt-5 pt-10" style="margin-left: 50px; margin-right: 50px;">
                                             <div class="mr-2">
                                                 <button type="button" class="btn btn-light-primary font-weight-bolder text-uppercase px-9 py-4" data-wizard-type="action-prev">Sebelumnya</button>
                                             </div>
