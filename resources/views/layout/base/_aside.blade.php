@@ -244,7 +244,34 @@
                     </a>
                 </li>
 
-                <li class="menu-item {{ (strpos($page_title, 'JF Muda Madya | Inbox') !== false) ? 'menu-item-active' : '' }}" aria-haspopup="true">
+                <li class="menu-item  menu-item-submenu {{ (strpos(Route::currentRouteName(), 'setting') !== false) ? 'menu-item-active' : '' }}" aria-haspopup="true" data-menu-toggle="hover">
+                    <a href="#" class="menu-link menu-toggle">
+                        <span class="svg-icon menu-icon"><!--begin::Svg Icon | path:media/svg/icons/Layout/Layout-4-blocks.svg-->
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-journal" viewBox="0 0 16 16">
+                                <path d="M3 0h10a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2v-1h1v1a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H3a1 1 0 0 0-1 1v1H1V2a2 2 0 0 1 2-2z"/>
+                                <path d="M1 5v-.5a.5.5 0 0 1 1 0V5h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1H1zm0 3v-.5a.5.5 0 0 1 1 0V8h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1H1zm0 3v-.5a.5.5 0 0 1 1 0v.5h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1H1z"/>
+                            </svg>
+                        </span>
+                        <span class="menu-text">Inbox</span>
+                        <i class="menu-arrow"></i>
+                    </a>
+                    <div class="menu-submenu ">
+                        <span class="menu-arrow"></span>
+                        <ul class="menu-subnav">
+                            <li class="menu-item  menu-item-parent" aria-haspopup="true">
+                                <span class="menu-link"><span class="menu-text">Inbox</span></span>
+                            </li>
+                            <li class="menu-item {{ (strpos($page_title, 'KemenSetneg | Inbox | Usulan') !== false) ? 'menu-item-active' : '' }}" aria-haspopup="true">
+                                <a href="{{ route('jf-ahli.inbox.usulan') }}" class="menu-link "><i class="menu-bullet menu-bullet-line"><span></span></i><span class="menu-text">Usulan</span></a>
+                            </li>
+                            <li class="menu-item {{ (strpos($page_title, 'KemenSetneg | Inbox | Revisi') !== false) ? 'menu-item-active' : '' }}" aria-haspopup="true">
+                                <a href="{{ route('jf-ahli.inbox.revisi') }}" class="menu-link "><i class="menu-bullet menu-bullet-line"><span></span></i><span class="menu-text">Revisi</span></a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+
+                {{-- <li class="menu-item {{ (strpos($page_title, 'JF Muda Madya | Inbox') !== false) ? 'menu-item-active' : '' }}" aria-haspopup="true">
                     <a href="{{ route('jf-ahli.inbox.index') }}" class="menu-link ">
                         <span class="svg-icon menu-icon"><!--begin::Svg Icon | path:media/svg/icons/Design/Layers.svg-->
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-mailbox" viewBox="0 0 16 16">
@@ -254,7 +281,7 @@
                         </span>
                         <span class="menu-text">Inbox</span>
                     </a>
-                </li>
+                </li> --}}
 
                 <li class="menu-item {{ (strpos($page_title, 'JF Muda Madya | Atur Dokument') !== false) ? 'menu-item-active' : '' }}" aria-haspopup="true">
                     <a href="{{ route('jf-ahli.atur-dokument.index') }}" class="menu-link ">

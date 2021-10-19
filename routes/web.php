@@ -220,11 +220,37 @@ Route::group(['middleware' => ['auth', 'checkRole:3']], function() {
         Route::prefix('/home')->group(function(){
             Route::get('/', 'BackWeb\JF_Ahli\HomeController@index')->name('jf-ahli.home.index');
         });
-        Route::get('/inbox', 'BackWeb\JF_Ahli\InboxController@index')->name('jf-ahli.inbox.index');
-        Route::get('/verification/{id}', 'BackWeb\JF_Ahli\VerifikasiController@index')->name('jf-ahli.jfku.verif');
-        Route::post('/verification/proses/{id}', 'BackWeb\JF_Ahli\VerifikasiController@store_proses')->name('jf-ahli.jfku.store_proses');
-        Route::post('/verification/pending/{id}', 'BackWeb\JF_Ahli\VerifikasiController@store_pending')->name('jf-ahli.jfku.store_pending');
-        Route::post('/verification/tolak/{id}', 'BackWeb\JF_Ahli\VerifikasiController@store_tolak')->name('jf-ahli.jfku.store_tolak');
+        Route::prefix('/inbox')->group(function(){
+            Route::get('/usulan', 'BackWeb\JF_Ahli\InboxController@usulan')->name('jf-ahli.inbox.usulan');
+            Route::get('/revisi', 'BackWeb\JF_Ahli\InboxController@revisi')->name('jf-ahli.inbox.revisi');
+
+            Route::prefix('/usulan')->group(function(){
+                Route::get('/verification/{id}', 'BackWeb\JF_Ahli\InboxController@verification')->name('jf-ahli.inbox.usulan.verif');
+                Route::post('/verification/proses', 'BackWeb\JF_Ahli\InboxController@store_proses')->name('jf-ahli.inbox.usulan.store_proses');
+                Route::post('/verification/pending', 'BackWeb\JF_Ahli\InboxController@store_pending')->name('jf-ahli.inbox.usulan.store_pending');
+                Route::post('/verification/tolak', 'BackWeb\JF_Ahli\InboxController@store_tolak')->name('jf-ahli.inbox.usulan.store_tolak');
+            });
+
+            Route::prefix('/ns')->group(function(){
+                Route::get('/verification/{id}', 'BackWeb\JF_Ahli\InboxController@verification_ns')->name('jf-ahli.inbox.usulan.verif_ns');
+            //     Route::post('/verification/proses', 'BackWeb\JF_Ahli\InboxController@store_proses')->name('jf-ahli.inbox.usulan.store_proses');
+            //     Route::post('/verification/pending', 'BackWeb\JF_Ahli\InboxController@store_pending')->name('jf-ahli.inbox.usulan.store_pending');
+            //     Route::post('/verification/tolak', 'BackWeb\JF_Ahli\InboxController@store_tolak')->name('jf-ahli.inbox.usulan.store_tolak');
+            });
+
+            Route::prefix('/lainnya')->group(function(){
+                Route::get('/verification/{id}', 'BackWeb\JF_Ahli\InboxController@verification_lainnya')->name('jf-ahli.inbox.usulan.verif_lainnya');
+                // Route::post('/verification/proses', 'BackWeb\JF_Ahli\InboxController@store_proses')->name('jf-ahli.inbox.usulan.store_proses');
+                // Route::post('/verification/pending', 'BackWeb\JF_Ahli\InboxController@store_pending')->name('jf-ahli.inbox.usulan.store_pending');
+                // Route::post('/verification/tolak', 'BackWeb\JF_Ahli\InboxController@store_tolak')->name('jf-ahli.inbox.usulan.store_tolak');
+            });
+
+        });
+        // Route::get('/inbox', 'BackWeb\JF_Ahli\InboxController@index')->name('jf-ahli.inbox.index');
+        // Route::get('/verification/{id}', 'BackWeb\JF_Ahli\VerifikasiController@index')->name('jf-ahli.jfku.verif');
+        // Route::post('/verification/proses/{id}', 'BackWeb\JF_Ahli\VerifikasiController@store_proses')->name('jf-ahli.jfku.store_proses');
+        // Route::post('/verification/pending/{id}', 'BackWeb\JF_Ahli\VerifikasiController@store_pending')->name('jf-ahli.jfku.store_pending');
+        // Route::post('/verification/tolak/{id}', 'BackWeb\JF_Ahli\VerifikasiController@store_tolak')->name('jf-ahli.jfku.store_tolak');
         
         Route::get('/atur_dokument', 'BackWeb\JF_Ahli\AturDokumentController@index')->name('jf-ahli.atur-dokument.index');
         Route::get('/riwayat', 'BackWeb\JF_Ahli\RiwayatController@index')->name('jf-ahli.riwayat.index');

@@ -48,19 +48,21 @@
                             <!--end::Search Form-->
                             <!--end: Search Form-->
                             <!--begin: Datatable-->
-                            <table class="datatable cell-border" id="jabatan_fungsional">
+                            <table class="datatable cell-border" id="tb_baru">
                                 <thead>
-                                    <tr>
-                                        <th><strong>Nama Dokumen</strong></th>
-                                        <th><strong>Oleh</strong></th>
-                                        <th><strong>Tanggal Upload</strong></th>
-                                        <th><strong>Opsi</strong></th>
+                                    <tr class="text-start text-gray-400 fw-bolder fs-7 text-uppercase gs-0">
+                                        <th>Nama Dokumen</th>
+                                        <th>Oleh</th>
+                                        <th>Tanggal Upload</th>
+                                        <th>Opsi</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr>
-                                       
-                                    </tr>
+                                    <td>Dokumen Pemberhentian</td>
+                                    <td>Murtadin Mahmud</td>
+                                    <td>10 Des 2020</td>
+                                    <td></td>
+                                    
                                 </tbody>
                             </table>
                             <!--end: Datatable-->
