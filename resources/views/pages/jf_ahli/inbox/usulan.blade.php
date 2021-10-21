@@ -85,7 +85,7 @@
                                                             <td><div style="color: #3699FF;">{{ $pengangkatan->nip }}</div></td>
                                                             <td>{{ $pengangkatan->nama }}</td>
                                                             <td>
-                                                                <a href="{{route('jf-ahli.inbox.usulan.verif', ['id' => $pengangkatan->id])}}"><i class="fa fa-pencil-alt text-success mr-2"></i></a>
+                                                                <a href="{{route('jf-ahli.inbox.usulan.verif', ['id' => $pengangkatan->id])}}" type="button" class="btn btn-success font-weight-bold align-items-md-end">Verifikasi</a>
                                                             </td>
                                                         </tr>
                                                     @endforeach
@@ -102,7 +102,7 @@
                                                             <td><div style="color: #3699FF;">{{ $pengangkatan_ns->nip }}</div></td>
                                                             <td>{{ $pengangkatan_ns->nama }}</td>
                                                             <td>
-                                                                <a href="{{route('jf-ahli.inbox.usulan.verif_ns', ['id' => $pengangkatan_ns->id])}}"><i class="fa fa-pencil-alt text-success mr-2"></i></a>
+                                                                <a href="{{route('jf-ahli.inbox.usulan.verif_ns', ['id' => $pengangkatan_ns->id])}}" type="button" class="btn btn-success font-weight-bold align-items-md-end">Verifikasi</a>
                                                             </td>
                                                         </tr>
                                                     @endforeach
@@ -120,7 +120,35 @@
                                                             <td><div style="color: #3699FF;">{{ $lainnya->nip }}</div></td>
                                                             <td>{{ $lainnya->nama }}</td>
                                                             <td>
-                                                                <a href="{{route('jf-ahli.inbox.usulan.verif_lainnya', ['id' => $lainnya->id])}}"><i class="fa fa-pencil-alt text-success mr-2"></i></a>
+                                                                <a href="{{route('jf-ahli.inbox.usulan.verif_lainnya', ['id' => $lainnya->id])}}" type="button" class="btn btn-success font-weight-bold align-items-md-end">Verifikasi</a>
+                                                            </td>
+                                                        </tr>
+                                                    @endforeach
+
+                                                    @foreach($kenaikans as $kenaikan)
+                                                        <tr>
+                                                            <td>{{ $kenaikan->tanggal_surat_usulan }}</td>
+                                                            <td>{{ $kenaikan->no_surat_usulan }}</td>
+                                                            <td>{{ $kenaikan->instansi_pengusul }}</td>
+                                                            <td><div style="color: #FFA800;">{{ Helper::defineJenisLayananBy($kenaikan->jenis_layanan) }}</div></td>
+                                                            <td><div style="color: #3699FF;">{{ $kenaikan->nip }}</div></td>
+                                                            <td>{{ $kenaikan->nama }}</td>
+                                                            <td>
+                                                                <a href="{{route('jf-ahli.inbox.kenaikan_pangkat.verif', ['id' => $lainnya->id])}}" type="button" class="btn btn-success font-weight-bold align-items-md-end">Verifikasi</a>
+                                                            </td>
+                                                        </tr>
+                                                    @endforeach
+
+                                                    @foreach($pemberhentians as $pemberhentian)
+                                                        <tr>
+                                                            <td>{{ $pemberhentian->tgl_surat_usulan }}</td>
+                                                            <td>{{ $pemberhentian->no_surat_usulan }}</td>
+                                                            <td>{{ $pemberhentian->instansi_pengusul }}</td>
+                                                            <td><div style="color: #FFA800;">{{ Helper::defineJenisLayananBy($pemberhentian->jenis_layanan) }}</div></td>
+                                                            <td><div style="color: #3699FF;">{{ $pemberhentian->nip }}</div></td>
+                                                            <td>{{ $pemberhentian->nama }}</td>
+                                                            <td>
+                                                                <a href="{{route('jf-ahli.inbox.pemberhentian.verif', ['id' => $pemberhentian->id])}}" type="button" class="btn btn-success font-weight-bold align-items-md-end">Verifikasi</a>
                                                             </td>
                                                         </tr>
                                                     @endforeach
@@ -223,7 +251,7 @@
                                                         <td><div style="color: #3699FF;">{{ $jfku_pending->nip }}</div></td>
                                                         <td>{{ $jfku_pending->nama }}</td>
                                                         <td>
-                                                            <a href="verifikasi_cek.html" type="button" class="btn btn-warning btn-sm">
+                                                            <a href="verifikasi_cek.html" type="button" class="btn btn-success font-weight-bold align-items-md-end">
                                                                 Lihat
                                                             </a>
                                                         </td>

@@ -298,27 +298,27 @@
                                                 <div>
                                                     <table>
                                                         <th style="margin-right: 10px;">
-                                                            <form method="POST" action="{{ route('koor-pokja.inbox.jfku.store_tolak') }}">
+                                                            <form method="POST" action="{{ route('koor-pokja.inbox.ns.store_tolak') }}">
                                                                 @csrf 
-                                                                <input type="hidden" class="btn btn-warning font-weight-bolder text-uppercase px-9 py-4" name="v_id_tolak" value="{{ $verifikasi_ns->id }}">
-                                                                <input type="hidden" class="btn btn-warning font-weight-bolder text-uppercase px-9 py-4" name="v_jenis_tolak" value="{{ $verifikasi_ns->jenis_layanan }}">
+                                                                <input type="hidden" class="btn btn-warning font-weight-bolder text-uppercase px-9 py-4" name="v_id" value="{{ $verifikasi_ns->id }}">
+                                                                <input type="hidden" class="btn btn-warning font-weight-bolder text-uppercase px-9 py-4" name="v_jenis" value="{{ $verifikasi_ns->jenis_layanan }}">
                                                                 <button type="submit" class="btn btn-danger font-weight-bolder text-uppercase px-9 py-4" >
                                                                     Tolak
                                                                 </button>
                                                             </form>
                                                         </th>
                                                         <th style="margin-right: 10px;">
-                                                            <form method="POST" action="{{ route('koor-pokja.inbox.jfku.store_proses', ['id' => $verifikasi_ns->id]) }}">
+                                                            <form method="POST" action="{{ route('koor-pokja.inbox.ns.store_proses') }}">
                                                                 @csrf 
-                                                                <input type="hidden" class="btn btn-primary font-weight-bolder text-uppercase px-9 py-4" name="proses" value="1">
-                                                                <!-- <a type="submit" class="btn btn-primary font-weight-bolder text-uppercase px-9 py-4" style="margin-right: 10px;">Proses</a> -->
+                                                                <input type="hidden" class="btn btn-warning font-weight-bolder text-uppercase px-9 py-4" name="v_id" value="{{ $verifikasi_ns->id }}">
+                                                                <input type="hidden" class="btn btn-warning font-weight-bolder text-uppercase px-9 py-4" name="v_jenis" value="{{ $verifikasi_ns->jenis_layanan }}">
                                                                 <button type="submit" class="btn btn-primary font-weight-bolder text-uppercase px-9 py-4" >
                                                                     Proses
                                                                 </button>
                                                             </form>
                                                         </th>
                                                         <th style="margin-right: 10px;">
-                                                            <form method="POST" action="{{ route('koor-pokja.inbox.jfku.store_pending') }}">
+                                                            <form method="POST" action="{{ route('koor-pokja.inbox.ns.store_pending') }}">
                                                                 @csrf 
                                                                 <input type="hidden" class="btn btn-warning font-weight-bolder text-uppercase px-9 py-4" name="v_id" value="{{ $verifikasi_ns->id }}">
                                                                 <input type="hidden" class="btn btn-warning font-weight-bolder text-uppercase px-9 py-4" name="v_jenis" value="{{ $verifikasi_ns->jenis_layanan }}">

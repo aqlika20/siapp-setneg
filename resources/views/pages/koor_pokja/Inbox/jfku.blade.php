@@ -86,7 +86,7 @@
                                                             <td>{{ $pengangkatan->nama }}</td>
                                                             <td>
                                                                 <a href="{{route('koor-pokja.inbox.jfku.verif', ['id' => $pengangkatan->id])}}"><i class="fa fa-pencil-alt text-success mr-2"></i></a>
-                                                                <a href="{{route('koor-pokja.inbox.distributor.index', ['id' => $pengangkatan->id])}}"><i class="fa fa-share text-info mr-1"></i></a>
+                                                                <a href="{{route('koor-pokja.inbox.distributor.index', ['id' => $pengangkatan->id, 'jenis_layanan' => $pengangkatan->jenis_layanan])}}"><i class="fa fa-share text-info mr-1"></i></a>
                                                             </td>
                                                         </tr>
                                                     @endforeach
@@ -104,7 +104,7 @@
                                                             <td>{{ $pengangkatan_ns->nama }}</td>
                                                             <td>
                                                                 <a href="{{route('koor-pokja.inbox.ns.verif', ['id' => $pengangkatan_ns->id])}}"><i class="fa fa-pencil-alt text-success mr-2"></i></a>
-                                                                <a href="{{route('koor-pokja.inbox.distributor.index', ['id' => $pengangkatan_ns->id])}}"><i class="fa fa-share text-info mr-1"></i></a>
+                                                                <a href="{{route('koor-pokja.inbox.distributor.index', ['id' => $pengangkatan->id, 'jenis_layanan' => $pengangkatan->jenis_layanan])}}"><i class="fa fa-share text-info mr-1"></i></a>
                                                             </td>
                                                         </tr>
                                                     @endforeach
@@ -123,7 +123,7 @@
                                                             <td>{{ $lainnya->nama }}</td>
                                                             <td>
                                                                 <a href="{{route('koor-pokja.inbox.lainnya.verif', ['id' => $lainnya->id])}}"><i class="fa fa-pencil-alt text-success mr-2"></i></a>
-                                                                <a href="{{route('koor-pokja.inbox.distributor.index', ['id' => $lainnya->id])}}"><i class="fa fa-share text-info mr-1"></i></a>
+                                                                <a href="{{route('koor-pokja.inbox.distributor.index', ['id' => $pengangkatan->id, 'jenis_layanan' => $pengangkatan->jenis_layanan])}}"><i class="fa fa-share text-info mr-1"></i></a>
                                                             </td>
                                                         </tr>
                                                     @endforeach

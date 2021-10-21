@@ -84,18 +84,11 @@ class KenaikanPangkatController extends Controller
         $jabatans = Jabatan::all();
         $unsurs = Unsur::all();
         $periodes = Periode::all();
+        $pangkats = Pangkat::All();
 
         $notes = [];
 
-        if($verifikasi->jenis_layanan == Helper::$pemberian_kenaikan_pangkat)
-        {
-            $notes = Catatan::where([
-                ['id_usulan', '=', $id], ['id_layanan', '=', $verifikasi->jenis_layanan]
-            ])->get();
-
-        }
-
-        elseif($verifikasi->jenis_layanan == Helper::$pengesahan_kenaikan_pangkat)
+        if($verifikasi->jenis_layanan == Helper::$pemberian_kenaikan_pangkat || $verifikasi->jenis_layanan == Helper::$pengesahan_kenaikan_pangkat)
         {
             $notes = Catatan::where([
                 ['id_usulan', '=', $id], ['id_layanan', '=', $verifikasi->jenis_layanan]
@@ -107,7 +100,7 @@ class KenaikanPangkatController extends Controller
             return redirect()->route('pages.koor_pokja.inbox.kenaikan_pangkat')->with(['error'=>'Invalid parameter id.']);
         }
     
-        return view('pages.koor_pokja.inbox.verif_kenaikan_pangkat', compact('page_title', 'page_description', 'currentUser', 'verifikasi', 'jabatans', 'unsurs', 'periodes', 'notes'));
+        return view('pages.koor_pokja.inbox.verif_kenaikan_pangkat', compact('page_title', 'page_description', 'currentUser', 'verifikasi', 'jabatans', 'unsurs', 'periodes', 'notes', 'pangkats'));
     }
 
     public function store_proses(Request $request) 

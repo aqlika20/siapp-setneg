@@ -111,14 +111,24 @@ class JFKUController extends Controller
         $jabatans = Jabatan::all();
         $unsurs = Unsur::all();
         $periodes = Periode::all();
+        $pangkats = Pangkat::All();
 
-        $notes = Catatan::where('id_usulan', $id)->get();
+        $notes = [];
+        // dd($notes);
+
+        if($verifikasi->jenis_layanan == Helper::$pengangkatan_pejabat_FKU || $verifikasi->jenis_layanan == Helper::$pemberhentian_pejabat_FKU || $verifikasi->jenis_layanan == Helper::$perpindahan_pejabat_FKU || $verifikasi->jenis_layanan == Helper::$pembatalan_keppres_jabatan_FKU )
+        {
+            $notes = Catatan::where([
+                ['id_usulan', '=', $id], ['id_layanan', '=', $verifikasi->jenis_layanan]
+            ])->get();
+
+        }
 
         if (!$verifikasi) {
             return redirect()->route('pages.koor_pokja.inbox.jfku')->with(['error'=>'Invalid parameter id.']);
         }
     
-        return view('pages.koor_pokja.inbox.verif', compact('page_title', 'page_description', 'currentUser', 'verifikasi', 'notes', 'jabatans', 'unsurs', 'periodes'));
+        return view('pages.koor_pokja.inbox.verif', compact('page_title', 'page_description', 'currentUser', 'verifikasi', 'notes', 'jabatans', 'unsurs', 'periodes', 'pangkats'));
     }
 
     public function verification_ns($id){
@@ -143,8 +153,6 @@ class JFKUController extends Controller
         $verifikasi_lainnya = PengangkatanPemberhentianLainnya::where('id', $id)->first();
         $jabatans = Jabatan::all();
         $unsurs = Unsur::all();
-
-        // $notes = Catatan::where('id_usulan', $id)->get();
 
         if (!$verifikasi_lainnya) {
             return redirect()->route('pages.koor_pokja.inbox.jfku')->with(['error'=>'Invalid parameter id.']);

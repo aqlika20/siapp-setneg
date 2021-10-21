@@ -861,12 +861,12 @@
 
                                             <div class="d-flex justify-content-between mt-5 pt-10" style="margin-left: 50px; margin-right: 50px;">
                                                 <div class="mr-2">
-                                                    <a href="{{ route('koor-pokja.inbox.kenaikan-pangkat.index')}}" type="button" class="btn btn-light-primary font-weight-bolder text-uppercase px-9 py-4">Kembali</a>
+                                                    <a href="{{ route('jf-ahli.inbox.usulan')}}" type="button" class="btn btn-light-primary font-weight-bolder text-uppercase px-9 py-4">Kembali</a>
                                                 </div>
                                                 <div>
                                                     <table>
                                                         <th style="margin-right: 10px;">
-                                                            <form method="POST" action="{{ route('koor-pokja.inbox.kenaikan_pangkat.store_tolak') }}">
+                                                            <form method="POST" action="{{ route('jf-ahli.inbox.kenaikan_pangkat.store_tolak') }}">
                                                                 @csrf 
                                                                 <input type="hidden" class="btn btn-warning font-weight-bolder text-uppercase px-9 py-4" name="v_id" value="{{ $verifikasi->id }}">
                                                                 <input type="hidden" class="btn btn-warning font-weight-bolder text-uppercase px-9 py-4" name="v_jenis" value="{{ $verifikasi->jenis_layanan }}">
@@ -876,7 +876,7 @@
                                                             </form>
                                                         </th>
                                                         <th style="margin-right: 10px;">
-                                                            <form method="POST" action="{{ route('koor-pokja.inbox.kenaikan_pangkat.store_proses') }}">
+                                                            <form method="POST" action="{{ route('jf-ahli.inbox.kenaikan_pangkat.store_proses') }}">
                                                                 @csrf 
                                                                 <input type="hidden" class="btn btn-warning font-weight-bolder text-uppercase px-9 py-4" name="v_id" value="{{ $verifikasi->id }}">
                                                                 <input type="hidden" class="btn btn-warning font-weight-bolder text-uppercase px-9 py-4" name="v_jenis" value="{{ $verifikasi->jenis_layanan }}">
@@ -886,7 +886,7 @@
                                                             </form>
                                                         </th>
                                                         <th style="margin-right: 10px;">
-                                                            <form method="POST" action="{{ route('koor-pokja.inbox.kenaikan_pangkat.store_pending') }}">
+                                                            <form method="POST" action="{{ route('jf-ahli.inbox.kenaikan_pangkat.store_pending') }}">
                                                                 @csrf 
                                                                 <input type="hidden" class="btn btn-warning font-weight-bolder text-uppercase px-9 py-4" name="v_id" value="{{ $verifikasi->id }}">
                                                                 <input type="hidden" class="btn btn-warning font-weight-bolder text-uppercase px-9 py-4" name="v_jenis" value="{{ $verifikasi->jenis_layanan }}">
