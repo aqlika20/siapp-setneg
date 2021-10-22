@@ -88,6 +88,39 @@
                     </div>
                 </li>
 
+                <li class="menu-item  menu-item-submenu {{ (strpos(Route::currentRouteName(), 'setting') !== false) ? 'menu-item-active' : '' }}" aria-haspopup="true" data-menu-toggle="hover">
+                    <a href="#" class="menu-link menu-toggle">
+                        <span class="svg-icon menu-icon"><!--begin::Svg Icon | path:media/svg/icons/Layout/Layout-4-blocks.svg-->
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-journal" viewBox="0 0 16 16">
+                                <path d="M3 0h10a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2v-1h1v1a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H3a1 1 0 0 0-1 1v1H1V2a2 2 0 0 1 2-2z"/>
+                                <path d="M1 5v-.5a.5.5 0 0 1 1 0V5h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1H1zm0 3v-.5a.5.5 0 0 1 1 0V8h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1H1zm0 3v-.5a.5.5 0 0 1 1 0v.5h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1H1z"/>
+                            </svg>
+                        </span>
+                        <span class="menu-text">Pertek BKN</span>
+                        <i class="menu-arrow"></i>
+                    </a>
+                    <div class="menu-submenu ">
+                        <span class="menu-arrow"></span>
+                        <ul class="menu-subnav">
+                            <li class="menu-item  menu-item-parent" aria-haspopup="true">
+                                <span class="menu-link"><span class="menu-text">Pertek BKN</span></span>
+                            </li>
+                            <li class="menu-item {{ (strpos($page_title, 'PIC | Pertek BKN | Jabatan Fungsional') !== false) ? 'menu-item-active' : '' }}" aria-haspopup="true">
+                                <a href="{{ route('pic.pertek-bkn.surat-usulan.index') }}" class="menu-link "><i class="menu-bullet menu-bullet-line"><span></span></i><span class="menu-text">Jabatan Fungsional</span></a>
+                            </li>
+                            <li class="menu-item {{ (strpos($page_title, 'PIC | Pertek BKN | Kenaikan Pangkat') !== false) ? 'menu-item-active' : '' }}" aria-haspopup="true">
+                                <a href="{{ route('pic.pertek-bkn.kenaikan-pangkat.index') }}" class="menu-link "><i class="menu-bullet menu-bullet-line"><span></span></i><span class="menu-text">Kenaikan Pangkat</span></a>
+                            </li>
+                            <li class="menu-item {{ (strpos($page_title, 'PIC | Pertek BKN | Pemberhentian') !== false) ? 'menu-item-active' : '' }}" aria-haspopup="true">
+                                <a href="{{ route('pic.pertek-bkn.pemberhentian.index') }}" class="menu-link "><i class="menu-bullet menu-bullet-line"><span></span></i><span class="menu-text">Pemberhentian</span></a>
+                            </li>
+                            <!-- <li class="menu-item {{ (strpos($page_title, 'PIC | Pertek BKN | Status Usulan') !== false) ? 'menu-item-active' : '' }}" aria-haspopup="true">
+                                <a href="{{ route('pic.pertek-bkn.status-usulan.index') }}" class="menu-link "><i class="menu-bullet menu-bullet-line"><span></span></i><span class="menu-text">Status Usulan</span></a>
+                            </li> -->
+                        </ul>
+                    </div>
+                </li>
+
                 <li class="menu-item {{ (strpos($page_title, 'PIC | User Management') !== false) ? 'menu-item-active' : '' }}" aria-haspopup="true">
                     <a href="{{ route('pic.inbox.index') }}" class="menu-link ">
                         <span class="svg-icon menu-icon"><!--begin::Svg Icon | path:media/svg/icons/Design/Layers.svg-->

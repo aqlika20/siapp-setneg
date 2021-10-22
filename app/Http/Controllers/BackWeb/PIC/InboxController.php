@@ -34,7 +34,41 @@ class InboxController extends Controller
         $currentUser = UserManagement::find(Auth::id());
         $page_title = 'PIC | Administrasi | Inbox';
         $page_description = 'Inbox';
-        $pengangkatans = PengangkatanPemberhentianJFKU::where('status', 'Prosess')->get();
-        return view('pages.pic.inbox', compact('page_title', 'page_description', 'currentUser', 'pengangkatans'));
+        $pengangkatans = PengangkatanPemberhentianJFKU::where([
+            ['status', '=', Helper::$pending],
+            ['id_pengirim', '=', $currentUser->nip]
+        ])->orwhere(
+            ['status', '=', Helper::$tolak],
+            ['id_pengirim', '=', $currentUser->nip]
+        )->get();
+        $pengangkatans_ns = PengangkatanPemberhentianNS::where([
+            ['status', '=', Helper::$pending],
+            ['id_pengirim', '=', $currentUser->nip]
+        ])->orwhere(
+            ['status', '=', Helper::$tolak],
+            ['id_pengirim', '=', $currentUser->nip]
+        )->get();
+        $lainnyas = PengangkatanPemberhentianLainnya::where([
+            ['status', '=', Helper::$pending],
+            ['id_pengirim', '=', $currentUser->nip]
+        ])->orwhere(
+            ['status', '=', Helper::$tolak],
+            ['id_pengirim', '=', $currentUser->nip]
+        )->get();
+        $kenaikans = KenaikanPangkat::where([
+            ['status', '=', Helper::$pending],
+            ['id_pengirim', '=', $currentUser->nip]
+        ]->orwhere(
+            ['status', '=', Helper::$tolak],
+            ['id_pengirim', '=', $currentUser->nip]
+        ))->get();
+        $pemberhentians = Pemberhentian::where([
+            ['status', '=', Helper::$pending],
+            ['id_pengirim', '=', $currentUser->nip]
+        ])->orwhere(
+            ['status', '=', Helper::$tolak],
+            ['id_pengirim', '=', $currentUser->nip]
+        )->get();
+        return view('pages.pic.inbox', compact('page_title', 'page_description', 'currentUser', 'pengangkatans', 'pengangkatans_ns', 'lainnyas', 'kenaikans', 'pemberhentians'));
     }
 }

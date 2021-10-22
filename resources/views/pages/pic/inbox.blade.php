@@ -15,19 +15,18 @@
                     <div class="card card-custom">
                         <div class="card-header flex-wrap border-0 pt-6 pb-0">
                             <div class="card-title">
-                                <h3 class="card-label">Daftar Pemberhentian
+                                <h3 class="card-label">Inbox
                             </div>
                         </div>
                         <div class="card-body">
-                            <!--begin: Search Form-->
-                            <!--begin::Search Form-->
+                             <!--begin::Search Form-->
                             <div class="mb-7">
                                 <div class="row align-items-center">
-                                    <div class="col-lg col-xl-6">
+                                    <div class="col-lg-9 col-xl-8">
                                         <div class="row align-items-center">
-                                            <div class="col-md-9 my-2 my-md-0">
+                                            <div class="col-md-4 my-2 my-md-0">
                                                 <div class="input-icon">
-                                                    <input type="text" class="form-control" placeholder="Cari..." id="kt_datatable_search_query" />
+                                                    <input type="text" class="form-control" placeholder="Search By No Surat" id="no_surat" />
                                                     <span>
                                                         <i class="flaticon2-search-1 text-muted"></i>
                                                     </span>
@@ -35,36 +34,40 @@
                                             </div>
                                         </div>
                                     </div>
-                                    
                                 </div>
                             </div>
                             <!--end::Search Form-->
-                            <!--end: Search Form-->
                             <!--begin: Datatable-->
-                            <table class="datatable cell-border" id="jabatan_fungsional">
+                            <table class="datatable cell-border" id="tb_administrasi">
                                 <thead>
-                                    <tr>
-                                        <th><strong>Tanggal Agenda</strong></th>
-                                        <th><strong>No Surat</strong></th>
-                                        <th><strong>Instansi Pengusul</strong></th>
-                                        <th><strong>Jenis Usulan</strong></th>
-                                        <th><strong>NIP</strong></th>
-                                        <th><strong>Nama</strong></th>
-                                        <th><strong>Jabatan</strong></th>
-                                        <th><strong>Aksi</strong></th>
+                                    <tr class="text-start text-gray-400 fw-bolder fs-7 text-uppercase gs-0">
+                                        <!-- <th>Tanggal Mengajukan</th>
+                                        <th>Jenis Usulan</th>
+                                        <th>Status</th> -->
+
+                                        <th>Tanggal Agenda</th>
+                                        <th>No Surat</th>
+                                        <th>Instansi Pengusul</th>
+                                        <th>Jenis Usulan</th>
+                                        <th>NIP</th>
+                                        <th>Nama</th>
+                                        <th>Status</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                 @foreach($pengangkatans as $pengangkatan)
                                     <tr>
-                                        <td>{{ $pengangkatan->tanggal_surat_usulan }}</td>
+                                        <!-- <td>{{ Helper::convertDate($pengangkatan->created_at)  }}</td>
+                                        <td><div style="color: #FFA800;">{{ Helper::defineJenisLayananBy($pengangkatan->jenis_layanan) }}</div></td>
+                                        <td>{{ Helper::defineStatusBy($pengangkatan->status) }}</td> -->
+
+                                        <td>{{ $pengangkatan->tgl_surat_usulan }}</td>
                                         <td>{{ $pengangkatan->no_surat_usulan }}</td>
-                                        <td>{{ $pengangkatan->instansi }}</td>
-                                        <td>{{ $pengangkatan->jenis_usulan }}</td>
-                                        <td>{{ $pengangkatan->nip }}</td>
+                                        <td>{{ $pengangkatan->instansi_pengusul }}</td>
+                                        <td><div style="color: #FFA800;">{{ Helper::defineJenisLayananBy($pengangkatan->jenis_layanan) }}</div></td>
+                                        <td><div style="color: #3699FF;">{{ $pengangkatan->nip }}</div></td>
                                         <td>{{ $pengangkatan->nama }}</td>
-                                        <td>{{ $pengangkatan->jabatan }}</td>
-                                        <td>Coming Soon..</td>
+                                        <td>{{ Helper::defineStatusBy($pengangkatan->status) }}</td>
                                     </tr>
                                 @endforeach
                                 </tbody>

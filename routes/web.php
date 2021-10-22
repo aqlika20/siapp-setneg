@@ -31,6 +31,7 @@ Route::group(['middleware' => ['auth', 'checkRole:1']], function() {
         Route::prefix('/home')->group(function(){
             Route::get('/', 'BackWeb\PIC\HomeController@index')->name('pic.home.index');
         });
+
         Route::prefix('/administrasi')->group(function(){
             Route::prefix('/surat-usulan')->group(function(){
                 Route::get('/', 'BackWeb\PIC\Administrasi\Surat_Usulan\JabatanFungsionalController@index')->name('pic.administrasi.surat-usulan.index');
@@ -144,6 +145,119 @@ Route::group(['middleware' => ['auth', 'checkRole:1']], function() {
             
         });
 
+        Route::prefix('/pertek-bkn')->group(function(){
+            Route::prefix('/surat-usulan')->group(function(){
+                Route::get('/', 'BackWeb\PIC\Pertek_BKN\Surat_Usulan\JabatanFungsionalController@index')->name('pic.pertek-bkn.surat-usulan.index');
+                Route::prefix('/form')->group(function(){
+                    Route::get('/pengangkatan-pejabat-fku', 'BackWeb\PIC\Pertek_BKN\Surat_Usulan\PengangkatanPejabatFungsionalKeahlianUtamaController@index')->name('pic.pertek-bkn.surat-usulan.pengangkatan-pejabat-fku.index');
+                    Route::patch('/pengangkatan-pejabat-fku/add', 'BackWeb\PIC\Pertek_BKN\Surat_Usulan\PengangkatanPejabatFungsionalKeahlianUtamaController@store')->name('pic.pertek-bkn.surat-usulan.pengangkatan-pejabat-fku.store');
+
+                    Route::get('/pemberhentian-pejabat-fku', 'BackWeb\PIC\Pertek_BKN\Surat_Usulan\PemberhentianPejabatFungsionalKeahlianUtamaController@index')->name('pic.pertek-bkn.surat-usulan.pemberhentian-pejabat-fku.index');
+                    Route::patch('/pemberhentian-pejabat-fku/add', 'BackWeb\PIC\Pertek_BKN\Surat_Usulan\PemberhentianPejabatFungsionalKeahlianUtamaController@store')->name('pic.pertek-bkn.surat-usulan.pemberhentian-pejabat-fku.store');
+
+                    Route::get('/perpindahan-pejabat-fku', 'BackWeb\PIC\Pertek_BKN\Surat_Usulan\PerpindahanPejabatFungsionalKeahlianUtamaController@index')->name('pic.pertek-bkn.surat-usulan.perpindahan-pejabat-fku.index');
+                    Route::patch('/perpindahan-pejabat-fku/add', 'BackWeb\PIC\Pertek_BKN\Surat_Usulan\PerpindahanPejabatFungsionalKeahlianUtamaController@store')->name('pic.pertek-bkn.surat-usulan.perpindahan-pejabat-fku.store');
+
+                    Route::get('/ralat-keppres-fku', 'BackWeb\PIC\Pertek_BKN\Surat_Usulan\RalatKeppresJabatanFungsionalKeahlianUtamaController@index')->name('pic.pertek-bkn.surat-usulan.ralat-keppres-fku.index');
+                    Route::patch('/ralat-keppres-fku/add', 'BackWeb\PIC\Pertek_BKN\Surat_Usulan\RalatKeppresJabatanFungsionalKeahlianUtamaController@store')->name('pic.pertek-bkn.surat-usulan.ralat-keppres-fku.store');
+
+                    Route::get('/pembatalan-keppres-jabatan-fku', 'BackWeb\PIC\Pertek_BKN\Surat_Usulan\PembatalanKeppresJabatanFungsionalKeahlianUtamaController@index')->name('pic.pertek-bkn.surat-usulan.pembatalan-keppres-jabatan-fku.index');
+                    Route::patch('/pembatalan-keppres-jabatan-fku/add', 'BackWeb\PIC\Pertek_BKN\Surat_Usulan\PembatalanKeppresJabatanFungsionalKeahlianUtamaController@store')->name('pic.pertek-bkn.surat-usulan.pembatalan-keppres-jabatan-fku.store');
+
+
+
+                    Route::get('/pengangkatan-pejabat-ns', 'BackWeb\PIC\Pertek_BKN\Surat_Usulan\PengangkatanPejabatNonStrukturalController@index')->name('pic.pertek-bkn.surat-usulan.pengangkatan-pejabat-ns.index');
+                    Route::patch('/pengangkatan-pejabat-ns/add', 'BackWeb\PIC\Pertek_BKN\Surat_Usulan\PengangkatanPejabatNonStrukturalController@store')->name('pic.pertek-bkn.surat-usulan.pengangkatan-pejabat-ns.store');
+
+                    Route::get('/pemberhentian-pejabat-ns', 'BackWeb\PIC\Pertek_BKN\Surat_Usulan\PemberhentianPejabatNonStrukturalController@index')->name('pic.pertek-bkn.surat-usulan.pemberhentian-pejabat-ns.index');
+                    Route::patch('/pemberhentian-pejabat-ns/add', 'BackWeb\PIC\Pertek_BKN\Surat_Usulan\PemberhentianPejabatNonStrukturalController@store')->name('pic.pertek-bkn.surat-usulan.pemberhentian-pejabat-ns.store');
+
+                    Route::get('/ralat-keppres-jabatan-ns', 'BackWeb\PIC\Pertek_BKN\Surat_Usulan\RalatKeppresJabatanNonStrukturalController@index')->name('pic.pertek-bkn.surat-usulan.ralat-keppres-jabatan-ns.index');
+                    Route::patch('/ralat-keppres-jabatan-ns/add', 'BackWeb\PIC\Pertek_BKN\Surat_Usulan\RalatKeppresJabatanNonStrukturalController@store')->name('pic.pertek-bkn.surat-usulan.ralat-keppres-jabatan-ns.store');
+
+                    Route::get('/pembatalan-keppres-jabatan-ns', 'BackWeb\PIC\Pertek_BKN\Surat_Usulan\PembatalanKeppresJabatanNonStrukturalController@index')->name('pic.pertek-bkn.surat-usulan.pembatalan-keppres-jabatan-ns.index');
+                    Route::patch('/pembatalan-keppres-jabatan-ns/add', 'BackWeb\PIC\Pertek_BKN\Surat_Usulan\PembatalanKeppresJabatanNonStrukturalController@store')->name('pic.pertek-bkn.surat-usulan.pembatalan-keppres-jabatan-ns.store');
+
+
+
+                    Route::get('/pengangkatan-pejabat-lainnya', 'BackWeb\PIC\Pertek_BKN\Surat_Usulan\PengangkatanPejabatLainnyaController@index')->name('pic.pertek-bkn.surat-usulan.pengangkatan-pejabat-lainnya.index');
+                    Route::patch('/pengangkatan-pejabat-lainnya/add', 'BackWeb\PIC\Pertek_BKN\Surat_Usulan\PengangkatanPejabatLainnyaController@store')->name('pic.pertek-bkn.surat-usulan.pengangkatan-pejabat-lainnya.store');
+
+                    Route::get('/pemberhentian-pejabat-lainnya', 'BackWeb\PIC\Pertek_BKN\Surat_Usulan\PemberhentianPejabatLainnyaController@index')->name('pic.pertek-bkn.surat-usulan.pemberhentian-pejabat-lainnya.index');
+                    Route::patch('/pemberhentian-pejabat-lainnya/add', 'BackWeb\PIC\Pertek_BKN\Surat_Usulan\PemberhentianPejabatLainnyaController@store')->name('pic.pertek-bkn.surat-usulan.pemberhentian-pejabat-lainnya.store');
+
+                    Route::get('/ralat-keppres-jabatan-lainnya', 'BackWeb\PIC\Pertek_BKN\Surat_Usulan\RalatKeppresJabatanLainnyaController@index')->name('pic.pertek-bkn.surat-usulan.ralat-keppres-jabatan-lainnya.index');
+                    Route::patch('/ralat-keppres-jabatan-lainnya/add', 'BackWeb\PIC\Pertek_BKN\Surat_Usulan\RalatKeppresJabatanLainnyaController@store')->name('pic.pertek-bkn.surat-usulan.ralat-keppres-jabatan-lainnya.store');
+
+                    Route::get('/pembatalan-keppres-jabatan-lainnya', 'BackWeb\PIC\Pertek_BKN\Surat_Usulan\PembatalanKeppresJabatanLainnyaController@index')->name('pic.pertek-bkn.surat-usulan.pembatalan-keppres-jabatan-lainnya.index');
+                    Route::patch('/pembatalan-keppres-jabatan-lainnya/add', 'BackWeb\PIC\Pertek_BKN\Surat_Usulan\PembatalanKeppresJabatanLainnyaController@store')->name('pic.pertek-bkn.surat-usulan.pembatalan-keppres-jabatan-lainnya.store');
+
+                    Route::get('/persetujuan-pengangkatan-staf-khusus', 'BackWeb\PIC\Pertek_BKN\Surat_Usulan\PersetujuanPengangkatanStafKhususController@index')->name('pic.pertek-bkn.surat-usulan.persetujuan-pengangkatan-staf-khusus.index');
+                    Route::patch('/persetujuan-pengangkatan-staf-khusus/add', 'BackWeb\PIC\Pertek_BKN\Surat_Usulan\PersetujuanPengangkatanStafKhususController@store')->name('pic.pertek-bkn.surat-usulan.persetujuan-pengangkatan-staf-khusus.store');
+                });
+            });
+
+            Route::prefix('/kenaikan_pangkat')->group(function(){
+                Route::get('/', 'BackWeb\PIC\Pertek_BKN\Kenaikan_Pangkat\KenaikanPangkatController@index')->name('pic.pertek-bkn.kenaikan-pangkat.index');
+                Route::prefix('/form')->group(function(){
+                    Route::get('/pemberian-kenaikan-pangkat', 'BackWeb\PIC\Pertek_BKN\Kenaikan_Pangkat\PemberianKenaikanPangkatController@index')->name('pic.pertek-bkn.kenaikan-pangkat.pemberian-kenaikan-pangkat.index');
+                    Route::patch('/pemberian-kenaikan-pangkat/add', 'BackWeb\PIC\Pertek_BKN\Kenaikan_Pangkat\PemberianKenaikanPangkatController@store')->name('pic.pertek-bkn.kenaikan-pangkat.pemberian-kenaikan-pangkat.store');
+
+                    Route::get('/pembatalan-keppres-kenaikan-pangkat', 'BackWeb\PIC\Pertek_BKN\Kenaikan_Pangkat\PembatalanKeppresKenaikanPangkatController@index')->name('pic.pertek-bkn.kenaikan-pangkat.pembatalan-keppres-kenaikan-pangkat.index');
+                    Route::patch('/pembatalan-keppres-kenaikan-pangkat/add', 'BackWeb\PIC\Pertek_BKN\Kenaikan_Pangkat\PembatalanKeppresKenaikanPangkatController@store')->name('pic.pertek-bkn.kenaikan-pangkat.pembatalan-keppres-kenaikan-pangkat.store');
+
+                    Route::get('/pengesahan-kenaikan-pangkat', 'BackWeb\PIC\Pertek_BKN\Kenaikan_Pangkat\PengesahanKenaikanPangkatController@index')->name('pic.pertek-bkn.kenaikan-pangkat.pengesahan-kenaikan-pangkat.index');
+                    Route::patch('/pengesahan-kenaikan-pangkat/add', 'BackWeb\PIC\Pertek_BKN\Kenaikan_Pangkat\PengesahanKenaikanPangkatController@store')->name('pic.pertek-bkn.kenaikan-pangkat.pengesahan-kenaikan-pangkat.store');
+
+                    Route::get('/ralat-keppres-kepangkatan', 'BackWeb\PIC\Pertek_BKN\Kenaikan_Pangkat\RalatKeppresKepangkatanController@index')->name('pic.pertek-bkn.kenaikan-pangkat.ralat-keppres-kepangkatan.index');
+                    Route::patch('/ralat-keppres-kepangkatan/add', 'BackWeb\PIC\Pertek_BKN\Kenaikan_Pangkat\RalatKeppresKepangkatanController@store')->name('pic.pertek-bkn.kenaikan-pangkat.ralat-keppres-kepangkatan.store');
+                });
+            });
+
+            Route::prefix('/pemberhentian')->group(function(){
+                Route::get('/', 'BackWeb\PIC\Pertek_BKN\Pemberhentian\PemberhentianController@index')->name('pic.pertek-bkn.pemberhentian.index');
+                Route::prefix('/form')->group(function(){
+                    Route::get('/bup-non-kpp', 'BackWeb\PIC\Pertek_BKN\Pemberhentian\BUPNonKPPController@index')->name('pic.pertek-bkn.pemberhentian.bup-non-kpp.index');
+                    Route::patch('/bup-non-kpp/add', 'BackWeb\PIC\Pertek_BKN\Pemberhentian\BUPNonKPPController@store')->name('pic.pertek-bkn.pemberhentian.bup-non-kpp.store');
+
+                    Route::get('/bup-kpp', 'BackWeb\PIC\Pertek_BKN\Pemberhentian\BUPKPPController@index')->name('pic.pertek-bkn.pemberhentian.bup-kpp.index');
+                    Route::patch('/bup-kpp/add', 'BackWeb\PIC\Pertek_BKN\Pemberhentian\BUPKPPController@store')->name('pic.pertek-bkn.pemberhentian.bup-kpp.store');
+
+                    Route::get('/berhenti-atas-permintaan-sendiri', 'BackWeb\PIC\Pertek_BKN\Pemberhentian\BerhentiAtasPermintaanSendiriController@index')->name('pic.pertek-bkn.pemberhentian.berhenti-atas-permintaan-sendiri.index');
+                    Route::patch('/berhenti-atas-permintaan-sendiri/add', 'BackWeb\PIC\Pertek_BKN\Pemberhentian\BerhentiAtasPermintaanSendiriController@store')->name('pic.pertek-bkn.pemberhentian.berhenti-atas-permintaan-sendiri.store');
+
+                    Route::get('/non-bup-jda-non-kpp', 'BackWeb\PIC\Pertek_BKN\Pemberhentian\NonBUPJDANonKPPController@index')->name('pic.pertek-bkn.pemberhentian.non-bup-jda-non-kpp.index');
+                    Route::patch('/non-bup-jda-non-kpp/add', 'BackWeb\PIC\Pertek_BKN\Pemberhentian\NonBUPJDANonKPPController@store')->name('pic.pertek-bkn.pemberhentian.non-bup-jda-non-kpp.store');
+
+                    Route::get('/non-bup-jda-kpp', 'BackWeb\PIC\Pertek_BKN\Pemberhentian\NonBUPJDAKPPController@index')->name('pic.pertek-bkn.pemberhentian.non-bup-jda-kpp.index');
+                    Route::patch('/non-bup-jda-kpp/add', 'BackWeb\PIC\Pertek_BKN\Pemberhentian\NonBUPJDAKPPController@store')->name('pic.pertek-bkn.pemberhentian.non-bup-jda-kpp.store');
+
+                    Route::get('/berhenti-tidak-dengan-hormat', 'BackWeb\PIC\Pertek_BKN\Pemberhentian\BerhentiTidakHormatController@index')->name('pic.pertek-bkn.pemberhentian.berhenti-tidak-dengan-hormat.index');
+                    Route::patch('/berhenti-tidak-dengan-hormat/add', 'BackWeb\PIC\Pertek_BKN\Pemberhentian\BerhentiTidakHormatController@store')->name('pic.pertek-bkn.pemberhentian.berhenti-tidak-dengan-hormat.store');
+
+                    Route::get('/anumerta', 'BackWeb\PIC\Pertek_BKN\Pemberhentian\AnumertaController@index')->name('pic.pertek-bkn.pemberhentian.anumerta.index');
+                    Route::patch('/anumerta/add', 'BackWeb\PIC\Pertek_BKN\Pemberhentian\AnumertaController@store')->name('pic.pertek-bkn.pemberhentian.anumerta.store');
+
+                    Route::get('/pemberhentian-sementara', 'BackWeb\PIC\Pertek_BKN\Pemberhentian\PemberhentianSementaraController@index')->name('pic.pertek-bkn.pemberhentian.pemberhentian-sementara.index');
+                    Route::patch('/pemberhentian-sementara/add', 'BackWeb\PIC\Pertek_BKN\Pemberhentian\PemberhentianSementaraController@store')->name('pic.pertek-bkn.pemberhentian.pemberhentian-sementara.store');
+
+                    Route::get('/ralat-keppres-pemberhentian', 'BackWeb\PIC\Pertek_BKN\Pemberhentian\RalatKeppresPemberhentianController@index')->name('pic.pertek-bkn.pemberhentian.ralat-keppres-pemberhentian.index');
+                    Route::patch('/ralat-keppres-pemberhentian/add', 'BackWeb\PIC\Pertek_BKN\Pemberhentian\RalatKeppresPemberhentianController@store')->name('pic.pertek-bkn.pemberhentian.ralat-keppres-pemberhentian.store');
+
+                    Route::get('/pembatalan-keppres-pemberhentian', 'BackWeb\PIC\Pertek_BKN\Pemberhentian\PembatalanKeppresPemberhentianController@index')->name('pic.pertek-bkn.pemberhentian.pembatalan-keppres-pemberhentian.index');
+                    Route::patch('/pembatalan-keppres-pemberhentian/add', 'BackWeb\PIC\Pertek_BKN\Pemberhentian\PembatalanKeppresPemberhentianController@store')->name('pic.pertek-bkn.pemberhentian.pembatalan-keppres-pemberhentian.store');
+
+                    Route::get('/petikan-keppres-yang-hilang', 'BackWeb\PIC\Pertek_BKN\Pemberhentian\PetikanKeppresHilangController@index')->name('pic.pertek-bkn.pemberhentian.petikan-keppres-yang-hilang.index');
+                    Route::patch('/petikan-keppres-yang-hilang/add', 'BackWeb\PIC\Pertek_BKN\Pemberhentian\PetikanKeppresHilangController@store')->name('pic.pertek-bkn.pemberhentian.petikan-keppres-yang-hilang.store');
+                });
+            });
+
+            Route::prefix('/status-usulan')->group(function(){
+                Route::get('/', 'BackWeb\PIC\Pertek_BKN\Status_Usulan\StatusUsulanController@index')->name('pic.pertek-bkn.status-usulan.index');
+            });
+            
+        });
+
         Route::prefix('/inbox')->group(function(){
             Route::get('/', 'BackWeb\PIC\InboxController@index')->name('pic.inbox.index');
         });
@@ -162,6 +276,7 @@ Route::group(['middleware' => ['auth', 'checkRole:2']], function() {
         Route::prefix('/home')->group(function(){
             Route::get('/', 'BackWeb\Koor_Pokja\HomeController@index')->name('koor-pokja.home.index');
         });
+
         Route::prefix('/inbox')->group(function(){
             Route::get('/jfku', 'BackWeb\Koor_Pokja\Inbox\JFKUController@index')->name('koor-pokja.inbox.jfku.index');
             Route::get('/distributor/{id}/{jenis_layanan}', 'BackWeb\Koor_Pokja\Inbox\DistributorController@index')->name('koor-pokja.inbox.distributor.index');
@@ -231,6 +346,7 @@ Route::group(['middleware' => ['auth', 'checkRole:3']], function() {
         Route::prefix('/home')->group(function(){
             Route::get('/', 'BackWeb\JF_Ahli\HomeController@index')->name('jf-ahli.home.index');
         });
+
         Route::prefix('/inbox')->group(function(){
             Route::get('/usulan', 'BackWeb\JF_Ahli\InboxController@usulan')->name('jf-ahli.inbox.usulan');
             Route::get('/revisi', 'BackWeb\JF_Ahli\InboxController@revisi')->name('jf-ahli.inbox.revisi');
