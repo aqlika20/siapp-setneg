@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\backweb\JF_Ahli;
+namespace App\Http\Controllers\BackWeb\Karo\Inbox;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
@@ -23,7 +23,7 @@ use App\Role;
 use App\Helper;
 
 
-class InboxController extends Controller
+class SuratUsulanController extends Controller
 {
     public function __construct()
     {
@@ -45,143 +45,53 @@ class InboxController extends Controller
     //     return view('pages.jf_ahli.inbox', compact('page_title', 'page_description', 'currentUser', 'pengangkatans'));
     // }
 
-    public function usulan() 
+    public function index() 
     {
         $currentUser = UserManagement::find(Auth::id());
-        $page_title = 'JF Muda Madya | inbox | Usulan';
+        $page_title = 'Karo | inbox | Usulan';
         $page_description = 'Inbox';
 
         //jfku
             $pengangkatans = PengangkatanPemberhentianJFKU::where([
-                ['status', '=', Helper::$pengajuan_usulan],
-                ['group_id', '=', $currentUser->groups_id]
-            ])->orwhere([
-                ['status', '=', Helper::$pengajuan_usulan],
-                ['distributor_id', '=', $currentUser->nip]
+                ['status', '=', Helper::$pending]
             ])->get();
 
-            $jfku_pendings = PengangkatanPemberhentianJFKU::where([
-                ['status', '=', Helper::$pending],
-                ['group_id', '=', $currentUser->groups_id]
-            ])->orwhere([
-                ['status', '=', Helper::$pengajuan_usulan],
-                ['distributor_id', '=', $currentUser->nip]
-            ])->get();
-
-            $jfku_tolaks = PengangkatanPemberhentianJFKU::where([
-                ['status', '=', Helper::$tolak],
-                ['group_id', '=', $currentUser->groups_id]
-            ])->orwhere([
-                ['status', '=', Helper::$pengajuan_usulan],
-                ['distributor_id', '=', $currentUser->nip]
-            ])->get();
+            $countDateJFKU = Helper::countDate($pengangkatans);
         //
 
         //non struktural
             $pengangkatans_ns = PengangkatanPemberhentianNS::where([
-                ['status', '=', Helper::$pengajuan_usulan],
-                ['group_id', '=', $currentUser->groups_id]
-            ])->orwhere([
-                ['status', '=', Helper::$pengajuan_usulan],
-                ['distributor_id', '=', $currentUser->nip]
+                ['status', '=', Helper::$pending]
             ])->get();
 
-            $ns_pendings = PengangkatanPemberhentianNS::where([
-                ['status', '=', Helper::$pending],
-                ['group_id', '=', $currentUser->groups_id]
-            ])->orwhere([
-                ['status', '=', Helper::$pengajuan_usulan],
-                ['distributor_id', '=', $currentUser->nip]
-            ])->get();
-
-            $ns_tolaks = PengangkatanPemberhentianNS::where([
-                ['status', '=', Helper::$tolak],
-                ['group_id', '=', $currentUser->groups_id]
-            ])->orwhere([
-                ['status', '=', Helper::$pengajuan_usulan],
-                ['distributor_id', '=', $currentUser->nip]
-            ])->get();
+            $countDateNS = Helper::countDate($pengangkatans_ns);
         //
 
         //lainnya
             $lainnyas = PengangkatanPemberhentianLainnya::where([
-                ['status', '=', Helper::$pengajuan_usulan],
-                ['group_id', '=', $currentUser->groups_id]
-            ])->orwhere([
-                ['status', '=', Helper::$pengajuan_usulan],
-                ['distributor_id', '=', $currentUser->nip]
+                ['status', '=', Helper::$pending]
             ])->get();
 
-            $lainnya_pendings = PengangkatanPemberhentianLainnya::where([
-                ['status', '=', Helper::$pending],
-                ['group_id', '=', $currentUser->groups_id]
-            ])->orwhere([
-                ['status', '=', Helper::$pengajuan_usulan],
-                ['distributor_id', '=', $currentUser->nip]
-            ])->get();
-
-            $lainnya_tolaks = PengangkatanPemberhentianLainnya::where([
-                ['status', '=', Helper::$tolak],
-                ['group_id', '=', $currentUser->groups_id]
-            ])->orwhere([
-                ['status', '=', Helper::$pengajuan_usulan],
-                ['distributor_id', '=', $currentUser->nip]
-            ])->get();
+            $countDateLainnya = Helper::countDate($lainnyas);
         //
 
         //kenaikan Pangkat
             $kenaikans = KenaikanPangkat::where([
-                ['status', '=', Helper::$pengajuan_usulan],
-                ['group_id', '=', $currentUser->groups_id]
-            ])->orwhere([
-                ['status', '=', Helper::$pengajuan_usulan],
-                ['distributor_id', '=', $currentUser->nip]
+                ['status', '=', Helper::$pending]
             ])->get();
 
-            $kenaikan_pendings = KenaikanPangkat::where([
-                ['status', '=', Helper::$pending],
-                ['group_id', '=', $currentUser->groups_id]
-            ])->orwhere([
-                ['status', '=', Helper::$pengajuan_usulan],
-                ['distributor_id', '=', $currentUser->nip]
-            ])->get();
-
-            $kenaikan_tolaks = KenaikanPangkat::where([
-                ['status', '=', Helper::$tolak],
-                ['group_id', '=', $currentUser->groups_id]
-            ])->orwhere([
-                ['status', '=', Helper::$pengajuan_usulan],
-                ['distributor_id', '=', $currentUser->nip]
-            ])->get();
+            $countDateKenaikan = Helper::countDate($kenaikans);
         //
 
         //Pemberhentian
             $pemberhentians = Pemberhentian::where([
-                ['status', '=', Helper::$pengajuan_usulan],
-                ['group_id', '=', $currentUser->groups_id]
-            ])->orwhere([
-                ['status', '=', Helper::$pengajuan_usulan],
-                ['distributor_id', '=', $currentUser->nip]
+                ['status', '=', Helper::$pending]
             ])->get();
 
-            $pemberhentian_pendings = Pemberhentian::where([
-                ['status', '=', Helper::$pending],
-                ['group_id', '=', $currentUser->groups_id]
-            ])->orwhere([
-                ['status', '=', Helper::$pengajuan_usulan],
-                ['distributor_id', '=', $currentUser->nip]
-            ])->get();
-
-            $pemberhentian_tolaks = Pemberhentian::where([
-                ['status', '=', Helper::$tolak],
-                ['group_id', '=', $currentUser->groups_id]
-            ])->orwhere([
-                ['status', '=', Helper::$pengajuan_usulan],
-                ['distributor_id', '=', $currentUser->nip]
-            ])->get();
+            $countDatePemberhentian = Helper::countDate($pemberhentians);
         //
 
-        return view('pages.jf_ahli.inbox.usulan', compact('page_title', 'page_description', 'currentUser', 'pengangkatans', 'jfku_pendings', 'jfku_tolaks', 'pengangkatans_ns', 'ns_pendings', 'ns_tolaks', 'lainnyas', 'lainnya_pendings', 'lainnya_tolaks', 'kenaikans', 'kenaikan_pendings', 'kenaikan_tolaks', 'pemberhentians', 'pemberhentian_pendings', 'pemberhentian_tolaks' ));
+        return view('pages.karo.inbox.surat_usulan', compact('page_title', 'page_description', 'currentUser', 'pengangkatans', 'countDateJFKU', 'countDateNS', 'countDateLainnya', 'countDateKenaikan', 'countDatePemberhentian', 'pengangkatans_ns','lainnyas', 'kenaikans', 'pemberhentians' ));
     }
 
     public function verification($id){

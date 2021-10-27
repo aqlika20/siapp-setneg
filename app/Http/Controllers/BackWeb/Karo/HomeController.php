@@ -1,14 +1,14 @@
 <?php
 
-namespace App\Http\Controllers\BackWeb\PIC;
+namespace App\Http\Controllers\backweb\Karo;
 
-use App\UserManagement;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
+use App\UserManagement;
 
 use App\PengangkatanPemberhentianJFKU;
 use App\PengangkatanPemberhentianNS;
@@ -21,7 +21,6 @@ use Charts;
 
 class HomeController extends Controller
 {
-
     public function __construct()
     {
         $this->middleware('auth');
@@ -30,9 +29,9 @@ class HomeController extends Controller
     public function index() 
     {
         $currentUser = UserManagement::find(Auth::id());
-        $page_title = 'PIC | Home';
+        $page_title = 'Karo | Home';
         $page_description = 'Home';
-
+        
     //pengangkatan
         $count_pengangkatan_jfku = PengangkatanPemberhentianJFKU::where([
             ['jenis_layanan', Helper::$pengangkatan_pejabat_FKU],
@@ -380,10 +379,6 @@ class HomeController extends Controller
         } else{
             $petikan_keppres_hilang = $count_petikan_keppres_hilang;
         }
-
-
-
-        
         
         // $chart = Charts::create('line', 'highcharts');
 
@@ -412,7 +407,7 @@ class HomeController extends Controller
         // $json_chart = json_encode($chart);
         // var_dump($json_chart);
 
-        return view('pages.pic.home', compact('page_title', 'page_description', 'currentUser', 'pengangkatan_jfku', 'pemberhentian_jfku', 'perpindahan_jfku', 'ralat_keppres_jfku', 'pembatalan_keppres_jfku', 'pengangkatan_ns', 'pemberhentian_ns', 'ralat_keppres_ns', 'pembatalan_keppres_ns', 'pengangkatan_pejabat_lainnya', 'pemberhentian_pejabat_lainnya', 'ralat_keppres_jabatan_lainnya', 'pembatalan_keppres_jabatan_lainnya', 'persetujuan_pengangkatan_staf_khusus', 'pemberian_kenaikan_pangkat', 'pembatalan_keppres_kenaikan_pangkat', 'pengesahan_kenaikan_pangkat', 'ralat_keppres_kepangkatan', 'bup_non_kpp', 'bup_kpp', 'berhenti_atas_permintaan_sendiri', 'non_bup_JDA_non_kpp', 'non_bup_JDA_kpp', 'berhenti_tidak_hormat', 'anumerta', 'pemberhentian_sementara', 'ralat_keppres_pemberhentian', 'pembatalan_keppress_pemberhentian', 'petikan_keppres_hilang'));
+        return view('pages.jf_ahli.home', compact('page_title', 'page_description', 'currentUser', 'pengangkatan_jfku', 'pemberhentian_jfku', 'perpindahan_jfku', 'ralat_keppres_jfku', 'pembatalan_keppres_jfku', 'pengangkatan_ns', 'pemberhentian_ns', 'ralat_keppres_ns', 'pembatalan_keppres_ns', 'pengangkatan_pejabat_lainnya', 'pemberhentian_pejabat_lainnya', 'ralat_keppres_jabatan_lainnya', 'pembatalan_keppres_jabatan_lainnya', 'persetujuan_pengangkatan_staf_khusus', 'pemberian_kenaikan_pangkat', 'pembatalan_keppres_kenaikan_pangkat', 'pengesahan_kenaikan_pangkat', 'ralat_keppres_kepangkatan', 'bup_non_kpp', 'bup_kpp', 'berhenti_atas_permintaan_sendiri', 'non_bup_JDA_non_kpp', 'non_bup_JDA_kpp', 'berhenti_tidak_hormat', 'anumerta', 'pemberhentian_sementara', 'ralat_keppres_pemberhentian', 'pembatalan_keppress_pemberhentian', 'petikan_keppres_hilang'));
         // return view('pages.pic.home', ['chart' => $chart], compact('page_title', 'page_description', 'currentUser', 'pengangkatan'));
     }
 }

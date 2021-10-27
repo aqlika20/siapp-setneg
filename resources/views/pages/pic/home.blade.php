@@ -131,7 +131,7 @@
 														<!--begin::Item-->
 														<div class="timeline-item align-items-start">
 															<!--begin::Label-->
-															<div class="timeline-label font-weight-bolder text-dark-75 font-size-xs">0</div>
+															<div class="timeline-label font-weight-bolder text-dark-75 font-size-xs">{{$pengangkatan_ns}}</div>
 															<!--end::Label-->
 															<!--begin::Badge-->
 															<div class="timeline-badge">
@@ -146,7 +146,7 @@
 														<!--begin::Item-->
 														<div class="timeline-item align-items-start">
 															<!--begin::Label-->
-															<div class="timeline-label font-weight-bolder text-dark-75 font-size-lg">0</div>
+															<div class="timeline-label font-weight-bolder text-dark-75 font-size-lg">{{$pemberhentian_ns}}</div>
 															<!--end::Label-->
 															<!--begin::Badge-->
 															<div class="timeline-badge">
@@ -163,7 +163,7 @@
 														<!--begin::Item-->
 														<div class="timeline-item align-items-start">
 															<!--begin::Label-->
-															<div class="timeline-label font-weight-bolder text-dark-75 font-size-lg">0</div>
+															<div class="timeline-label font-weight-bolder text-dark-75 font-size-lg">{{$ralat_keppres_ns}}</div>
 															<!--end::Label-->
 															<!--begin::Badge-->
 															<div class="timeline-badge">
@@ -181,7 +181,7 @@
 														<!--begin::Item-->
 														<div class="timeline-item align-items-start">
 															<!--begin::Label-->
-															<div class="timeline-label font-weight-bolder text-dark-75 font-size-lg">0</div>
+															<div class="timeline-label font-weight-bolder text-dark-75 font-size-lg">{{$pembatalan_keppres_ns}}</div>
 															<!--end::Label-->
 															<!--begin::Badge-->
 															<div class="timeline-badge">
@@ -206,7 +206,7 @@
 														<!--begin::Item-->
 														<div class="timeline-item align-items-start">
 															<!--begin::Label-->
-															<div class="timeline-label font-weight-bolder text-dark-75 font-size-xs">0</div>
+															<div class="timeline-label font-weight-bolder text-dark-75 font-size-xs">{{$pengangkatan_pejabat_lainnya}}</div>
 															<!--end::Label-->
 															<!--begin::Badge-->
 															<div class="timeline-badge">
@@ -221,7 +221,7 @@
 														<!--begin::Item-->
 														<div class="timeline-item align-items-start">
 															<!--begin::Label-->
-															<div class="timeline-label font-weight-bolder text-dark-75 font-size-lg">0</div>
+															<div class="timeline-label font-weight-bolder text-dark-75 font-size-lg">{{$pemberhentian_pejabat_lainnya}}</div>
 															<!--end::Label-->
 															<!--begin::Badge-->
 															<div class="timeline-badge">
@@ -238,7 +238,7 @@
 														<!--begin::Item-->
 														<div class="timeline-item align-items-start">
 															<!--begin::Label-->
-															<div class="timeline-label font-weight-bolder text-dark-75 font-size-lg">0</div>
+															<div class="timeline-label font-weight-bolder text-dark-75 font-size-lg">{{$ralat_keppres_jabatan_lainnya}}</div>
 															<!--end::Label-->
 															<!--begin::Badge-->
 															<div class="timeline-badge">
@@ -256,7 +256,7 @@
 														<!--begin::Item-->
 														<div class="timeline-item align-items-start">
 															<!--begin::Label-->
-															<div class="timeline-label font-weight-bolder text-dark-75 font-size-xs">0</div>
+															<div class="timeline-label font-weight-bolder text-dark-75 font-size-xs">{{$pembatalan_keppres_jabatan_lainnya}}</div>
 															<!--end::Label-->
 															<!--begin::Badge-->
 															<div class="timeline-badge">
@@ -269,7 +269,7 @@
 														</div>
 														<div class="timeline-item align-items-start">
 															<!--begin::Label-->
-															<div class="timeline-label font-weight-bolder text-dark-75 font-size-xs">0</div>
+															<div class="timeline-label font-weight-bolder text-dark-75 font-size-xs">{{$persetujuan_pengangkatan_staf_khusus}}</div>
 															<!--end::Label-->
 															<!--begin::Badge-->
 															<div class="timeline-badge">
@@ -289,7 +289,7 @@
 														<!--begin::Item-->
 														<div class="timeline-item align-items-start">
 															<!--begin::Label-->
-															<div class="timeline-label font-weight-bolder text-dark-75 font-size-lg">0</div>
+															<div class="timeline-label font-weight-bolder text-dark-75 font-size-lg">{{$pemberian_kenaikan_pangkat}}</div>
 															<!--end::Label-->
 															<!--begin::Badge-->
 															<div class="timeline-badge">
@@ -304,7 +304,7 @@
 														<!--begin::Item-->
 														<div class="timeline-item align-items-start">
 															<!--begin::Label-->
-															<div class="timeline-label font-weight-bolder text-dark-75 font-size-lg">0</div>
+															<div class="timeline-label font-weight-bolder text-dark-75 font-size-lg">{{$pembatalan_keppres_kenaikan_pangkat}}</div>
 															<!--end::Label-->
 															<!--begin::Badge-->
 															<div class="timeline-badge">
@@ -321,7 +321,7 @@
 														<!--begin::Item-->
 														<div class="timeline-item align-items-start">
 															<!--begin::Label-->
-															<div class="timeline-label font-weight-bolder text-dark-75 font-size-lg">0</div>
+															<div class="timeline-label font-weight-bolder text-dark-75 font-size-lg">{{$pengesahan_kenaikan_pangkat}}</div>
 															<!--end::Label-->
 															<!--begin::Badge-->
 															<div class="timeline-badge">
@@ -336,7 +336,7 @@
 														<!--begin::Item-->
 														<div class="timeline-item align-items-start">
 															<!--begin::Label-->
-															<div class="timeline-label font-weight-bolder text-dark-75 font-size-lg">0</div>
+															<div class="timeline-label font-weight-bolder text-dark-75 font-size-lg">{{$ralat_keppres_kepangkatan}}</div>
 															<!--end::Label-->
 															<!--begin::Badge-->
 															<div class="timeline-badge">
@@ -358,7 +358,7 @@
 														<!--begin::Item-->
 														<div class="timeline-item align-items-start">
 															<!--begin::Label-->
-															<div class="timeline-label font-weight-bolder text-dark-75 font-size-lg">0</div>
+															<div class="timeline-label font-weight-bolder text-dark-75 font-size-lg">{{$bup_non_kpp}}</div>
 															<!--end::Label-->
 															<!--begin::Badge-->
 															<div class="timeline-badge">
@@ -373,7 +373,7 @@
 														<!--begin::Item-->
 														<div class="timeline-item align-items-start">
 															<!--begin::Label-->
-															<div class="timeline-label font-weight-bolder text-dark-75 font-size-lg">0</div>
+															<div class="timeline-label font-weight-bolder text-dark-75 font-size-lg">{{$bup_kpp}}</div>
 															<!--end::Label-->
 															<!--begin::Badge-->
 															<div class="timeline-badge">
@@ -388,7 +388,7 @@
 														<!--begin::Item-->
 														<div class="timeline-item align-items-start">
 															<!--begin::Label-->
-															<div class="timeline-label font-weight-bolder text-dark-75 font-size-lg">0</div>
+															<div class="timeline-label font-weight-bolder text-dark-75 font-size-lg">{{$berhenti_atas_permintaan_sendiri}}</div>
 															<!--end::Label-->
 															<!--begin::Badge-->
 															<div class="timeline-badge">
@@ -403,7 +403,7 @@
 														<!--begin::Item-->
 														<div class="timeline-item align-items-start">
 															<!--begin::Label-->
-															<div class="timeline-label font-weight-bolder text-dark-75 font-size-lg">0</div>
+															<div class="timeline-label font-weight-bolder text-dark-75 font-size-lg">{{$non_bup_JDA_non_kpp}}</div>
 															<!--end::Label-->
 															<!--begin::Badge-->
 															<div class="timeline-badge">
@@ -418,7 +418,7 @@
 														<!--begin::Item-->
 														<div class="timeline-item align-items-start">
 															<!--begin::Label-->
-															<div class="timeline-label font-weight-bolder text-dark-75 font-size-lg">0</div>
+															<div class="timeline-label font-weight-bolder text-dark-75 font-size-lg">{{$non_bup_JDA_kpp}}</div>
 															<!--end::Label-->
 															<!--begin::Badge-->
 															<div class="timeline-badge">
@@ -434,7 +434,7 @@
 														<!--begin::Item-->
 														<div class="timeline-item align-items-start">
 															<!--begin::Label-->
-															<div class="timeline-label font-weight-bolder text-dark-75 font-size-lg">0</div>
+															<div class="timeline-label font-weight-bolder text-dark-75 font-size-lg">{{$berhenti_tidak_hormat}}</div>
 															<!--end::Label-->
 															<!--begin::Badge-->
 															<div class="timeline-badge">
@@ -449,7 +449,7 @@
 														<!--begin::Item-->
 														<div class="timeline-item align-items-start">
 															<!--begin::Label-->
-															<div class="timeline-label font-weight-bolder text-dark-75 font-size-lg">0</div>
+															<div class="timeline-label font-weight-bolder text-dark-75 font-size-lg">{{$anumerta}}</div>
 															<!--end::Label-->
 															<!--begin::Badge-->
 															<div class="timeline-badge">
@@ -464,7 +464,7 @@
 														<!--begin::Item-->
 														<div class="timeline-item align-items-start">
 															<!--begin::Label-->
-															<div class="timeline-label font-weight-bolder text-dark-75 font-size-lg">0</div>
+															<div class="timeline-label font-weight-bolder text-dark-75 font-size-lg">{{$pemberhentian_sementara}}</div>
 															<!--end::Label-->
 															<!--begin::Badge-->
 															<div class="timeline-badge">
@@ -477,7 +477,7 @@
 														</div>
 														<div class="timeline-item align-items-start">
 															<!--begin::Label-->
-															<div class="timeline-label font-weight-bolder text-dark-75 font-size-lg">0</div>
+															<div class="timeline-label font-weight-bolder text-dark-75 font-size-lg">{{$ralat_keppres_pemberhentian}}</div>
 															<!--end::Label-->
 															<!--begin::Badge-->
 															<div class="timeline-badge">
@@ -492,7 +492,7 @@
 														<!--begin::Item-->
 														<div class="timeline-item align-items-start">
 															<!--begin::Label-->
-															<div class="timeline-label font-weight-bolder text-dark-75 font-size-lg">0</div>
+															<div class="timeline-label font-weight-bolder text-dark-75 font-size-lg">{{$pembatalan_keppress_pemberhentian}}</div>
 															<!--end::Label-->
 															<!--begin::Badge-->
 															<div class="timeline-badge">
@@ -507,7 +507,7 @@
 														<!--begin::Item-->
 														<div class="timeline-item align-items-start">
 															<!--begin::Label-->
-															<div class="timeline-label font-weight-bolder text-dark-75 font-size-lg">0</div>
+															<div class="timeline-label font-weight-bolder text-dark-75 font-size-lg">{{$petikan_keppres_hilang}}</div>
 															<!--end::Label-->
 															<!--begin::Badge-->
 															<div class="timeline-badge">

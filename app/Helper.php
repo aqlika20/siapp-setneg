@@ -251,4 +251,13 @@ class Helper {
         return $date;
     }
 
+    public static function countDate($dates){
+        $countDate = [];
+        foreach($dates as $server_date){
+            $time_created = $server_date->created_at;
+            $countDate = date("d M Y", strtotime("+1 month", strtotime($time_created)));
+        }
+        return $countDate;
+    } 
+
 };

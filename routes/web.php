@@ -260,6 +260,31 @@ Route::group(['middleware' => ['auth', 'checkRole:1']], function() {
 
         Route::prefix('/inbox')->group(function(){
             Route::get('/', 'BackWeb\PIC\InboxController@index')->name('pic.inbox.index');
+
+            Route::prefix('/jfku')->group(function(){
+                Route::get('/verification/{id}', 'BackWeb\PIC\InboxController@verification')->name('pic.inbox.jfku.verif');
+                Route::post('/verification/proses', 'BackWeb\PIC\InboxController@store_proses')->name('pic.inbox.jfku.store_proses');
+            });
+
+            Route::prefix('/ns')->group(function(){
+                Route::get('/verification/{id}', 'BackWeb\PIC\InboxController@verification_ns')->name('pic.inbox.ns.verif');
+                Route::post('/verification/proses', 'BackWeb\PIC\InboxController@store_proses')->name('pic.inbox.ns.store_proses');
+            });
+
+            Route::prefix('/lainnya')->group(function(){
+                Route::get('/verification/{id}', 'BackWeb\PIC\InboxController@verification_lainnya')->name('pic.inbox.lainnya.verif');
+                Route::post('/verification/proses', 'BackWeb\PIC\InboxController@store_proses')->name('pic.inbox.lainnya.store_proses');
+            });
+
+            Route::prefix('/kenaikan_pangkat')->group(function(){
+                Route::get('/verification/{id}', 'BackWeb\PIC\InboxController@verification_kenaikan')->name('pic.inbox.kenaikan_pangkat.verif');
+                Route::post('/verification/proses', 'BackWeb\PIC\InboxController@store_proses')->name('pic.inbox.kenaikan_pangkat.store_proses');
+            });
+
+            Route::prefix('/pemberhentian')->group(function(){
+                Route::get('/verification/{id}', 'BackWeb\PIC\InboxController@verification_pemberhentian')->name('pic.inbox.pemberhentian.verif');
+                Route::post('/verification/proses', 'BackWeb\PIC\InboxController@store_proses')->name('pic.inbox.pemberhentian.store_proses');
+            });
         });
         
         Route::prefix('/faq')->group(function(){
@@ -325,6 +350,10 @@ Route::group(['middleware' => ['auth', 'checkRole:2']], function() {
             Route::get('/', 'BackWeb\Koor_Pokja\PertekController@index')->name('koor-pokja.pertek.index');
         });
 
+        Route::prefix('/rkp-test')->group(function(){
+            Route::get('/', 'BackWeb\Koor_Pokja\RKPController@index')->name('koor-pokja.rkp.index');
+        });
+
         Route::prefix('/atur-dokumen')->group(function(){
             Route::get('/', 'BackWeb\Koor_Pokja\AturDokumenController@index')->name('koor-pokja.atur-dokumen.index');
         });
@@ -341,7 +370,7 @@ Route::group(['middleware' => ['auth', 'checkRole:2']], function() {
 });
 
 // JF Muda Madya
-Route::group(['middleware' => ['auth', 'checkRole:3']], function() {
+Route::group(['middleware' => ['auth', 'checkRole: 3 , 4']], function() {
     Route::prefix('/Jf-Ahli')->group(function(){
         Route::prefix('/home')->group(function(){
             Route::get('/', 'BackWeb\JF_Ahli\HomeController@index')->name('jf-ahli.home.index');
@@ -391,6 +420,21 @@ Route::group(['middleware' => ['auth', 'checkRole:3']], function() {
         Route::get('/atur_dokument', 'BackWeb\JF_Ahli\AturDokumentController@index')->name('jf-ahli.atur-dokument.index');
         Route::get('/riwayat', 'BackWeb\JF_Ahli\RiwayatController@index')->name('jf-ahli.riwayat.index');
         Route::get('/faq', 'BackWeb\JF_Ahli\PengaturanController@faq')->name('jf-ahli.pengaturan.faq');
+
+    });
+}); 
+
+// Karo
+Route::group(['middleware' => ['auth', 'checkRole:5']], function() {
+    Route::prefix('/karo')->group(function(){
+        Route::prefix('/home')->group(function(){
+            Route::get('/', 'BackWeb\Karo\HomeController@index')->name('karo.home.index');
+        });
+
+        Route::prefix('/inbox')->group(function(){
+            Route::get('/usulan', 'BackWeb\Karo\Inbox\SuratUsulanController@index')->name('karo.inbox.usulan');
+            Route::get('/pertek-bkn', 'BackWeb\Karo\Inbox\PertekBKNController@index')->name('karo.inbox.revisi');
+        });
 
     });
 }); 

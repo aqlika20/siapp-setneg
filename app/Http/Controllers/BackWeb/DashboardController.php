@@ -30,9 +30,14 @@ class DashboardController extends Controller
             return redirect()->route('koor-pokja.home.index');
         }
 
-        // JF Ahli
-        if ($currentUser->roles_id == 3) {
+        // JF Ahli Muda & JF Ahli Madya
+        if ($currentUser->roles_id == 3 || $currentUser->roles_id == 4) {
             return redirect()->route('jf-ahli.home.index');
+        }
+
+        // Karo
+        if ($currentUser->roles_id == 5){
+            return redirect()->route('karo.home.index');
         }
     }
 

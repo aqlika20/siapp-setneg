@@ -13,10 +13,10 @@
                 <div class="card card-custom">
                     <div class="card-header flex-wrap border-0 pt-6 pb-0" style="background-color: #FFA800;">
                         <div class="card-title">
-                            <h3 class="card-label">Pengangkatan Pejabat Fungsional Keahlian Utama
+                            <h3 class="card-label">Pembatalan Keppres Pemberhentian
                             <span class="d-block text-muted pt-2 font-size-sm"></span></h3>
                         </div>
-                    </div>
+                    </div>  
                     <div class="card-body p-0">
                         <!--begin: Wizard-->
                         <div class="wizard wizard-3" id="kt_wizard_v3" data-wizard-state="step-first" data-wizard-clickable="true">
