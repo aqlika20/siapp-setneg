@@ -95,12 +95,12 @@ class PemberhentianPejabatFungsionalKeahlianUtamaController extends Controller
             'req_tmt_pemberhentian' => 'required',
             'req_ket.*' => 'required',
             
-            'req_file_data_usulan.*' => 'max:25000|mimes:jpg,png,jpeg,pdf',
-            'req_file_data_asn.*' => 'max:25000|mimes:jpg,png,jpeg,pdf',
-            'req_file_data_pak.*' => 'max:25000|mimes:jpg,png,jpeg,pdf',
-            'req_file_data_jabatan_fungsional.*' => 'max:25000|mimes:jpg,png,jpeg,pdf',
-            'req_file_ba_pengambilan_sumpah_fungsional.*' => 'max:25000|mimes:jpg,png,jpeg,pdf',
-            'req_file_data_pemberhentian.*' => 'max:25000|mimes:jpg,png,jpeg,pdf'
+            'req_file_data_usulan.*' => 'max:5000|mimes:jpg,png,jpeg,pdf',
+            'req_file_data_asn.*' => 'max:5000|mimes:jpg,png,jpeg,pdf',
+            'req_file_data_pak.*' => 'max:5000|mimes:jpg,png,jpeg,pdf',
+            'req_file_data_jabatan_fungsional.*' => 'max:5000|mimes:jpg,png,jpeg,pdf',
+            'req_file_ba_pengambilan_sumpah_fungsional.*' => 'max:5000|mimes:jpg,png,jpeg,pdf',
+            'req_file_data_pemberhentian.*' => 'max:5000|mimes:jpg,png,jpeg,pdf'
         ]);
         
         if ($validator->fails()) {
@@ -148,7 +148,7 @@ class PemberhentianPejabatFungsionalKeahlianUtamaController extends Controller
         if($request->has('req_file_data_usulan')){
             $files = [];
             foreach ($request->file('req_file_data_usulan') as $file) {
-                $filename = round(microtime(true) * 20000).'-'.str_replace(' ','-',$file->getClientOriginalName());
+                $filename = $file->getClientOriginalName();
                 Storage::putFileAs($this->data_usulan_folder, $file, $filename);
                 $files[] = $filename;
             }
@@ -159,7 +159,7 @@ class PemberhentianPejabatFungsionalKeahlianUtamaController extends Controller
         if($request->has('req_file_data_asn')){
             $files = [];
             foreach ($request->file('req_file_data_asn') as $file) {
-                $filename = round(microtime(true) * 20000).'-'.str_replace(' ','-',$file->getClientOriginalName());
+                $filename = $file->getClientOriginalName();
                 Storage::putFileAs($this->data_asn_folder, $file, $filename);
                 $files[] = $filename;
             }
@@ -169,7 +169,7 @@ class PemberhentianPejabatFungsionalKeahlianUtamaController extends Controller
         if($request->has('req_file_data_pak')){
             $files = [];
             foreach ($request->file('req_file_data_pak') as $file) {
-                $filename = round(microtime(true) * 20000).'-'.str_replace(' ','-',$file->getClientOriginalName());
+                $filename = $file->getClientOriginalName();
                 Storage::putFileAs($this->data_pak_folder, $file, $filename);
                 $files[] = $filename;
             }
@@ -179,7 +179,7 @@ class PemberhentianPejabatFungsionalKeahlianUtamaController extends Controller
         if($request->has('req_file_data_jabatan_fungsional')){
             $files = [];
             foreach ($request->file('req_file_data_jabatan_fungsional') as $file) {
-                $filename = round(microtime(true) * 20000).'-'.str_replace(' ','-',$file->getClientOriginalName());
+                $filename = $file->getClientOriginalName();
                 Storage::putFileAs($this->data_jabatan_fungsional_folder, $file, $filename);
                 $files[] = $filename;
             }
@@ -189,7 +189,7 @@ class PemberhentianPejabatFungsionalKeahlianUtamaController extends Controller
         if($request->has('req_file_ba_pengambilan_sumpah_fungsional')){
             $files = [];
             foreach ($request->file('req_file_ba_pengambilan_sumpah_fungsional') as $file) {
-                $filename = round(microtime(true) * 20000).'-'.str_replace(' ','-',$file->getClientOriginalName());
+                $filename = $file->getClientOriginalName();
                 Storage::putFileAs($this->ba_pengambilan_sumpah_fungsional_folder, $file, $filename);
                 $files[] = $filename;
             }
@@ -199,7 +199,7 @@ class PemberhentianPejabatFungsionalKeahlianUtamaController extends Controller
         if($request->has('req_file_data_pemberhentian')){
             $files = [];
             foreach ($request->file('req_file_data_pemberhentian') as $file) {
-                $filename = round(microtime(true) * 20000).'-'.str_replace(' ','-',$file->getClientOriginalName());
+                $filename = $file->getClientOriginalName();
                 Storage::putFileAs($this->data_pemberhentian_folder, $file, $filename);
                 $files[] = $filename;
             }

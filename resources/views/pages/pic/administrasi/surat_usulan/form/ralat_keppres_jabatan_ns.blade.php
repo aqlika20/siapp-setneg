@@ -23,7 +23,8 @@
                             <!--begin: Wizard Nav-->
                             <div>
                                 <div data-wizard-type="step" data-wizard-state="current"></div>
-                                <div data-wizard-type="step"></div>																				
+                                <div data-wizard-type="step"></div>
+                                <div data-wizard-type="step"></div>
                             </div>
                             <!--end: Wizard Nav-->
                             <!--begin: Wizard Body-->
@@ -35,7 +36,78 @@
                                         @method('PATCH')
                                         <!--begin: Wizard Step 1-->
                                         <div class="pb-6" style="margin-left: 50px; margin-right: 50px;" data-wizard-type="step-content" data-wizard-state="current">
-                                            <h4 class="mb-10 font-weight-bold text-dark">Keppres</h4>
+                                            <h4 class="mb-10 font-weight-bold text-dark">Data Surat</h4>
+                                            <!--begin::Input-->
+                                            <div class="form-group row">
+                                                <label class="col-form-label col-lg-3 col-sm-12">Tanggal Surat Pengantar</label>
+                                                <div class="col-lg-5 col-md-9 col-sm-12">
+                                                    <div class="input-group date">
+                                                        <input type="text" class="form-control datetimepicker-input my-datepicker" id="req_tanggal_surat_pengantar" name="req_tanggal_surat_pengantar" data-toggle="datetimepicker" data-target="#req_tanggal_surat_pengantar" placeholder="Pilih Tanggal" value="{{old('req_tanggal_surat_pengantar')}}" require/>
+                                                        <div class="input-group-append">
+                                                            <span class="input-group-text">
+                                                                <i class="la la-calendar"></i>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="form-group row">
+                                                <label class="col-form-label col-lg-3 col-sm-12">No. Surat Pengantar</label>
+                                                <div class="col-lg-9 col-md-9 col-sm-12">
+                                                    <div class="input-group">
+                                                        <input type="text" class="form-control" id="req_no_surat_pengantar" name="req_no_surat_pengantar" value="{{old('req_no_surat_pengantar')}}" autocomplete="off" require/>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="form-group row">
+                                                <label class="col-lg-3 col-form-label">Upload Surat Pengantar</label>
+                                                <div class="col-lg-9">
+                                                    <input id="req_file_surat_pengantar" name="req_file_surat_pengantar[]" type="file" class="file" data-show-preview="false" multiple/>
+                                                    
+                                                    <!-- <div class="dropzone dropzone-multi" id="kt_dropzone_4">
+                                                        <div class="dropzone-panel mb-lg-0 mb-2">
+                                                            <a class="dropzone-select btn btn-light-primary font-weight-bold btn-sm">Attach files</a>
+                                                            <a class="dropzone-upload btn btn-light-primary font-weight-bold btn-sm">Upload All</a>
+                                                            <a class="dropzone-remove-all btn btn-light-primary font-weight-bold btn-sm">Remove All</a>
+                                                        </div>
+                                                        <div class="dropzone-items">
+                                                            <div class="dropzone-item" style="display:none">
+                                                                <div class="dropzone-file">
+                                                                    <div class="dropzone-filename" title="some_image_file_name.jpg">
+                                                                        <span data-dz-name="">some_image_file_name.jpg</span>
+                                                                        <strong>(<span data-dz-size="">340kb</span>)</strong>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="dropzone-progress">
+                                                                    <div class="progress">
+                                                                        <div class="progress-bar bg-primary" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" data-dz-uploadprogress=""></div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="dropzone-toolbar">
+                                                                    <span class="dropzone-start">
+                                                                        <i class="flaticon2-arrow"></i>
+                                                                    </span>
+                                                                    <span class="dropzone-cancel" data-dz-remove="" style="display: none;">
+                                                                        <i class="flaticon2-cross"></i>
+                                                                    </span>
+                                                                    <span class="dropzone-delete" data-dz-remove="">
+                                                                        <i class="flaticon2-cross"></i>
+                                                                    </span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div> -->
+                                                    <span class="form-text text-muted">Max file size is 1MB and max number of files is 5.</span>
+                                                </div>
+                                            </div>
+                                            <!--end::Input-->
+                                            
+                                        </div>
+                                        <!--end: Wizard Step 1-->
+
+                                        <!--begin: Wizard Step 2-->
+                                        <div class="pb-6" style="margin-left: 50px; margin-right: 50px;" data-wizard-type="step-content" data-wizard-state="current">
+                                            <h4 class="mb-10 font-weight-bold text-dark">Data Keppres</h4>
                                             <!--begin::Input-->
                                             <div class="form-group row">
                                                 <label class="col-form-label col-lg-3 col-sm-12">No. Keppres</label>
@@ -45,14 +117,11 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            <!--end::Input-->
-                                            
-                                            <!--begin::Input-->
                                             <div class="form-group row">
                                                 <label class="col-form-label col-lg-3 col-sm-12">Tanggal Keppres</label>
                                                 <div class="col-lg-5 col-md-9 col-sm-12">
                                                     <div class="input-group date">
-                                                        <input type="text" class="form-control datetimepicker-input my-datepicker" id="req_tanggal_keppres" name="req_tanggal_keppres" data-toggle="datetimepicker" data-target="#req_tanggal_keppres" placeholder="Pilih Tanggal" value="{{old('req_tanggal_keppres')}}" require/>
+                                                        <input type="text" class="form-control datetimepicker-input my-datepicker" id="req_tanggal_keppres" name="req_tanggal_keppres" data-toggle="datetimepicker" data-target="#req_tanggal_keppres" placeholder="Pilih Tanggal" value="{{old('req_tanggal_surat_pengantar')}}" require/>
                                                         <div class="input-group-append">
                                                             <span class="input-group-text">
                                                                 <i class="la la-calendar"></i>
@@ -61,168 +130,110 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            <!--end::Input-->
-
-                                            <!--begin::Input-->
+                                            
                                             <div class="form-group row">
-                                                <label class="col-form-label col-lg-3 col-sm-12">Masa Jabatan</label>
-                                                <div class="col-lg-4 col-md-9 col-sm-12">
-                                                    <div class="input-group date">
-                                                        <input type="text" class="form-control datetimepicker-input my-datepicker" name="req_masa_jabatan_start" data-toggle="datetimepicker" data-target="#req_masa_jabatan_start" placeholder="Select Date First" id="req_masa_jabatan_start" value="{{ old('req_masa_jabatan_start') }}"/>
-                                                        <div class="input-group-append">
-                                                            <span class="input-group-text">
-                                                                <i class="la la-calendar"></i>
-                                                            </span>
+                                                <label class="col-lg-3 col-form-label">Upload Keppres</label>
+                                                <div class="col-lg-9">
+                                                    <input id="req_file_keppres" name="req_file_keppres[]" type="file" class="file" data-show-preview="false" multiple/>
+                                                    
+                                                    <!-- <div class="dropzone dropzone-multi" id="kt_dropzone_4">
+                                                        <div class="dropzone-panel mb-lg-0 mb-2">
+                                                            <a class="dropzone-select btn btn-light-primary font-weight-bold btn-sm">Attach files</a>
+                                                            <a class="dropzone-upload btn btn-light-primary font-weight-bold btn-sm">Upload All</a>
+                                                            <a class="dropzone-remove-all btn btn-light-primary font-weight-bold btn-sm">Remove All</a>
                                                         </div>
-                                                    </div>
-                                                    <span class="form-text text-muted">Please input the date from start.</span>
-                                                </div>
-                                                <div>
-                                                    <label class="col-form-label">s/d.</label>
-                                                </div>
-                                                <div class="col-lg-4 col-md-9 col-sm-12">
-                                                    <div class="input-group date">
-                                                        <input type="text" class="form-control datetimepicker-input my-datepicker" name="req_masa_jabatan_end" data-toggle="datetimepicker" data-target="#req_masa_jabatan_end" placeholder="Select Date Last" id="req_masa_jabatan_end" value="{{ old('req_masa_jabatan_end') }}"/>
-                                                        <div class="input-group-append">
-                                                            <span class="input-group-text">
-                                                                <i class="la la-calendar"></i>
-                                                            </span>
+                                                        <div class="dropzone-items">
+                                                            <div class="dropzone-item" style="display:none">
+                                                                <div class="dropzone-file">
+                                                                    <div class="dropzone-filename" title="some_image_file_name.jpg">
+                                                                        <span data-dz-name="">some_image_file_name.jpg</span>
+                                                                        <strong>(<span data-dz-size="">340kb</span>)</strong>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="dropzone-progress">
+                                                                    <div class="progress">
+                                                                        <div class="progress-bar bg-primary" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" data-dz-uploadprogress=""></div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="dropzone-toolbar">
+                                                                    <span class="dropzone-start">
+                                                                        <i class="flaticon2-arrow"></i>
+                                                                    </span>
+                                                                    <span class="dropzone-cancel" data-dz-remove="" style="display: none;">
+                                                                        <i class="flaticon2-cross"></i>
+                                                                    </span>
+                                                                    <span class="dropzone-delete" data-dz-remove="">
+                                                                        <i class="flaticon2-cross"></i>
+                                                                    </span>
+                                                                </div>
+                                                            </div>
                                                         </div>
-                                                    </div>
+                                                    </div> -->
+                                                    <span class="form-text text-muted">Max file size is 1MB and max number of files is 5.</span>
                                                 </div>
                                             </div>
                                             <!--end::Input-->
                                             
                                         </div>
-                                        <!--end: Wizard Step 1-->
-
-                                        <!--begin: Wizard Step 2-->
-                                        <div class="pb-6" style="margin-left: 50px; margin-right: 50px;" data-wizard-type="step-content">
-                                            <!--begin::Input-->
-                                            <div class="form-group row">
-                                                <label class="col-form-label col-lg-3 col-sm-12">TMT</label>
-                                                <div class="col-lg-9 col-md-9 col-sm-12">
-                                                    <div class="input-group date">
-                                                        <input type="text" class="form-control" id="req_tmt" name="req_tmt" value="{{old('req_tmt')}}" autocomplete="off" require/>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <!--end::Input-->
-                                            <!--begin::Input-->
-                                            <div class="form-group row">
-                                                <label class="col-form-label col-lg-3 col-sm-12">Hak keuangan dan Fasilitas</label>
-                                                <div class="col-lg-9 col-md-9 col-sm-12">
-                                                    <div class="input-group date">
-                                                        <input type="text" class="form-control" id="req_hak_keuangan" name="req_hak_keuangan" value="{{old('req_hak_keuangan')}}" autocomplete="off" require />
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <!--end::Input-->
-                                            <!--begin::Input-->
-                                            <div class="form-group row">
-                                                <label class="col-form-label col-lg-3 col-sm-12">Tanggal pelantikan</label>
-                                                <div class="col-lg-5 col-md-9 col-sm-12">
-                                                    <div class="input-group date">
-                                                        <input type="text" class="form-control datetimepicker-input my-datepicker" id="req_tanggal_pelantikan" name="req_tanggal_pelantikan" data-toggle="datetimepicker" data-target="#req_tanggal_pelantikan" placeholder="Pilih Tanggal" value="{{old('req_tanggal_pelantikan')}}" autocomplete="off" require/>
-                                                        <div class="input-group-append">
-                                                            <span class="input-group-text">
-                                                                <i class="la la-calendar"></i>
-                                                            </span>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <!--end::Input-->
-                                            <div class="form-group row">
-                                                <label class="col-form-label col-lg-3 col-sm-12">Yang Melantik</label>
-                                                <div class="col-lg-9 col-md-9 col-sm-12">
-                                                    <div class="input-group date">
-                                                        <input type="text" class="form-control" id="req_yang_melantik" name="req_yang_melantik" value="{{old('req_yang_melantik')}}" autocomplete="off" require />
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="form-group row">
-                                                <label class="col-lg-3 col-form-label">Upload BA Pelantikan</label>
-                                                <div class="col-lg-9">
-                                                    <input id="req_file_ba_pelantikan" name="req_file_ba_pelantikan[]" type="file" class="file" data-show-preview="false" multiple/>
-                                                    <!-- <div class="dropzone dropzone-multi" id="kt_dropzone_5">
-                                                        <div class="dropzone-panel mb-lg-0 mb-2">
-                                                            <a class="dropzone-select btn btn-light-primary font-weight-bold btn-sm">Attach files</a>
-                                                            <a class="dropzone-upload btn btn-light-primary font-weight-bold btn-sm">Upload All</a>
-                                                            <a class="dropzone-remove-all btn btn-light-primary font-weight-bold btn-sm">Remove All</a>
-                                                        </div>
-                                                        <div class="dropzone-items">
-                                                            <div class="dropzone-item" style="display:none">
-                                                                <div class="dropzone-file">
-                                                                    <div class="dropzone-filename" title="some_image_file_name.jpg">
-                                                                        <span data-dz-name="">some_image_file_name.jpg</span>
-                                                                        <strong>(<span data-dz-size="">340kb</span>)</strong>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="dropzone-progress">
-                                                                    <div class="progress">
-                                                                        <div class="progress-bar bg-primary" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" data-dz-uploadprogress=""></div>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="dropzone-toolbar">
-                                                                    <span class="dropzone-start">
-                                                                        <i class="flaticon2-arrow"></i>
-                                                                    </span>
-                                                                    <span class="dropzone-cancel" data-dz-remove="" style="display: none;">
-                                                                        <i class="flaticon2-cross"></i>
-                                                                    </span>
-                                                                    <span class="dropzone-delete" data-dz-remove="">
-                                                                        <i class="flaticon2-cross"></i>
-                                                                    </span>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div> -->
-                                                    <span class="form-text text-muted">Max file size is 1MB and max number of files is 5.</span>
-                                                </div>
-                                            </div>
-                                            <div class="form-group row">
-                                                <label class="col-lg-3 col-form-label">Upload Sumpah Jabatan</label>
-                                                <div class="col-lg-9">
-                                                    <input id="req_file_sumpah_jabatan" name="req_file_sumpah_jabatan[]" type="file" class="file" data-show-preview="false" multiple/>
-                                                    <!-- <div class="dropzone dropzone-multi" id="kt_dropzone_5">
-                                                        <div class="dropzone-panel mb-lg-0 mb-2">
-                                                            <a class="dropzone-select btn btn-light-primary font-weight-bold btn-sm">Attach files</a>
-                                                            <a class="dropzone-upload btn btn-light-primary font-weight-bold btn-sm">Upload All</a>
-                                                            <a class="dropzone-remove-all btn btn-light-primary font-weight-bold btn-sm">Remove All</a>
-                                                        </div>
-                                                        <div class="dropzone-items">
-                                                            <div class="dropzone-item" style="display:none">
-                                                                <div class="dropzone-file">
-                                                                    <div class="dropzone-filename" title="some_image_file_name.jpg">
-                                                                        <span data-dz-name="">some_image_file_name.jpg</span>
-                                                                        <strong>(<span data-dz-size="">340kb</span>)</strong>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="dropzone-progress">
-                                                                    <div class="progress">
-                                                                        <div class="progress-bar bg-primary" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" data-dz-uploadprogress=""></div>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="dropzone-toolbar">
-                                                                    <span class="dropzone-start">
-                                                                        <i class="flaticon2-arrow"></i>
-                                                                    </span>
-                                                                    <span class="dropzone-cancel" data-dz-remove="" style="display: none;">
-                                                                        <i class="flaticon2-cross"></i>
-                                                                    </span>
-                                                                    <span class="dropzone-delete" data-dz-remove="">
-                                                                        <i class="flaticon2-cross"></i>
-                                                                    </span>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div> -->
-                                                    <span class="form-text text-muted">Max file size is 1MB and max number of files is 5.</span>
-                                                </div>
-                                            </div>
-                                        </div>
                                         <!--end: Wizard Step 2-->
+
+                                        <!--begin: Wizard Step 3-->
+                                        <div class="pb-6" style="margin-left: 50px; margin-right: 50px;" data-wizard-type="step-content" data-wizard-state="current">
+                                            <h4 class="mb-10 font-weight-bold text-dark">Ralat</h4>
+                                            <!--begin::Input-->
+                                            <div class="form-group row">
+                                                <label class="col-form-label col-lg-3 col-sm-12">Alasan Ralat</label>
+                                                <div class="col-lg-9 col-md-9 col-sm-12">
+                                                    <div class="input-group">
+                                                        <input type="text" class="form-control" id="req_alasan_ralat" name="req_alasan_ralat" value="{{old('req_alasan_ralat')}}" autocomplete="off" require/>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="form-group row">
+                                                <label class="col-lg-3 col-form-label">Upload Bukti Pendukung</label>
+                                                <div class="col-lg-9">
+                                                    <input id="req_file_bukti_pendukung" name="req_file_bukti_pendukung[]" type="file" class="file" data-show-preview="false" multiple/>
+                                                    
+                                                    <!-- <div class="dropzone dropzone-multi" id="kt_dropzone_4">
+                                                        <div class="dropzone-panel mb-lg-0 mb-2">
+                                                            <a class="dropzone-select btn btn-light-primary font-weight-bold btn-sm">Attach files</a>
+                                                            <a class="dropzone-upload btn btn-light-primary font-weight-bold btn-sm">Upload All</a>
+                                                            <a class="dropzone-remove-all btn btn-light-primary font-weight-bold btn-sm">Remove All</a>
+                                                        </div>
+                                                        <div class="dropzone-items">
+                                                            <div class="dropzone-item" style="display:none">
+                                                                <div class="dropzone-file">
+                                                                    <div class="dropzone-filename" title="some_image_file_name.jpg">
+                                                                        <span data-dz-name="">some_image_file_name.jpg</span>
+                                                                        <strong>(<span data-dz-size="">340kb</span>)</strong>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="dropzone-progress">
+                                                                    <div class="progress">
+                                                                        <div class="progress-bar bg-primary" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" data-dz-uploadprogress=""></div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="dropzone-toolbar">
+                                                                    <span class="dropzone-start">
+                                                                        <i class="flaticon2-arrow"></i>
+                                                                    </span>
+                                                                    <span class="dropzone-cancel" data-dz-remove="" style="display: none;">
+                                                                        <i class="flaticon2-cross"></i>
+                                                                    </span>
+                                                                    <span class="dropzone-delete" data-dz-remove="">
+                                                                        <i class="flaticon2-cross"></i>
+                                                                    </span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div> -->
+                                                    <span class="form-text text-muted">Max file size is 1MB and max number of files is 5.</span>
+                                                </div>
+                                            </div>
+                                            <!--end::Input-->
+                                            
+                                        </div>
+                                        <!--end: Wizard Step 3-->
 
                                         <div class="d-flex justify-content-between mt-5 pt-10" style="margin-left: 50px; margin-right: 50px;">
                                             <div class="mr-2">
@@ -320,20 +331,20 @@
                 errorClass:"error-msg",
                 errorElement:"p",
                 rules:{
-                    req_no_keppres: 'required',
-                    req_tanggal_keppres: 'required',
-                    req_masa_jabatan_start: 'required',
-                    req_masa_jabatan_end: 'required',
-
-                    req_tmt: 'required',
-                    req_hak_keuangan: 'required',
-                    req_tanggal_pelantikan: 'required',
-                    req_yang_melantik: 'required',
-                    
-                    req_file_ba_pelantikan: {
+                    req_tanggal_surat_pengantar: 'required',
+                    req_no_surat_pengantar: 'required',
+                    req_file_surat_pengantar: {
                         extenstion: "jpg,png,jpeg,pdf"
                     },
-                    req_file_sumpah_jabatan: {
+
+                    req_no_keppres: 'required',
+                    req_tanggal_keppres: 'required',
+                    req_file_keppres: {
+                        extenstion: "jpg,png,jpeg,pdf"
+                    },
+
+                    req_alasan_ralat: 'required',
+                    req_file_bukti_pendukung: {
                         extenstion: "jpg,png,jpeg,pdf"
                     }
 

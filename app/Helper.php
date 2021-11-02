@@ -260,4 +260,10 @@ class Helper {
         return $countDate;
     } 
 
+    public static function fileBreak($file_name){
+        $file_name = str_replace(['[', ']', '"',], "", $file_name);
+        $files = explode(",", $file_name);
+        return $files;
+    }
+
 };

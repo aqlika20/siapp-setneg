@@ -90,9 +90,9 @@ class BUPKPPController extends Controller
             'req_catatan' => 'required',
             'req_ket' => 'required',
             
-            'req_file_data_usulan.*' => 'max:25000|mimes:jpg,png,jpeg,pdf',
-            'req_file_data_pak.*' => 'max:25000|mimes:jpg,png,jpeg,pdf',
-            'req_file_klarifikasi_pak.*' => 'max:25000|mimes:jpg,png,jpeg,pdf'
+            'req_file_data_usulan.*' => 'max:5000|mimes:jpg,png,jpeg,pdf',
+            'req_file_data_pak.*' => 'max:5000|mimes:jpg,png,jpeg,pdf',
+            'req_file_klarifikasi_pak.*' => 'max:5000|mimes:jpg,png,jpeg,pdf'
         ]);
 
         if ($validator->fails()) {
@@ -139,7 +139,7 @@ class BUPKPPController extends Controller
         if($request->has('req_file_data_usulan')){
             $files = [];
             foreach ($request->file('req_file_data_usulan') as $file) {
-                $filename = round(microtime(true) * 20000).'-'.str_replace(' ','-',$file->getClientOriginalName());
+                $filename = $file->getClientOriginalName();
                 Storage::putFileAs($this->data_usulan_folder, $file, $filename);
                 $files[] = $filename;
             }
@@ -149,7 +149,7 @@ class BUPKPPController extends Controller
         if($request->has('req_file_data_pak')){
             $files = [];
             foreach ($request->file('req_file_data_pak') as $file) {
-                $filename = round(microtime(true) * 20000).'-'.str_replace(' ','-',$file->getClientOriginalName());
+                $filename = $file->getClientOriginalName();
                 Storage::putFileAs($this->data_pak_folder, $file, $filename);
                 $files[] = $filename;
             }
@@ -159,7 +159,7 @@ class BUPKPPController extends Controller
         if($request->has('req_file_klarifikasi_pak')){
             $files = [];
             foreach ($request->file('req_file_klarifikasi_pak') as $file) {
-                $filename = round(microtime(true) * 20000).'-'.str_replace(' ','-',$file->getClientOriginalName());
+                $filename = $file->getClientOriginalName();
                 Storage::putFileAs($this->klarifikasi_pak_folder, $file, $filename);
                 $files[] = $filename;
             }

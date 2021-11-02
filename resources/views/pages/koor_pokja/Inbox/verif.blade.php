@@ -66,10 +66,44 @@
                                                 <div class="form-group row">
                                                     <label class="col-form-label col-lg-3 col-sm-12">Upload/Download file</label>
                                                     <div class="col-lg-9 col-md-9 col-sm-12">
-                                                        <div class="input-group date">
-                                                        <a style="color: blue;">file.pdf</a>
+                                                        <table>
+                                                            <thead>
+                                                                <tr class="text-start text-gray-400 fw-bolder fs-7 text-uppercase gs-0">
+                                                                    <th style="width: 170px">Nama File</th>
+                                                                    <th>Aksi</th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody>
+                                                            @foreach($file_data_usulans as $file)
+                                                                <tr>
+                                                                    <td><a style="color: blue;" > {{ $file }}</a></td>
+                                                                    <!-- <iframe src="{{url('/storage/app/pengangkatan_pejabat_fungsional_keahlian_utama_attachments/data_usulan/'. $file)}}"></iframe> -->
+                                                                    <!-- <iframe src="{{Storage::url('/storage/app/pengangkatan_pejabat_fungsional_keahlian_utama_attachments/data_usulan/'. $file)}}"></iframe> -->
+                                                                    <!-- <iframe src="{{url('/storage/app/JFKU_Attachments/data_asn/'. $file)}}"></iframe> -->
+                                                                    <iframe src="{{ URL::Storage('/storage/app/pengangkatan_pejabat_fungsional_keahlian_utama_attachments/data_usulan/'.$file, 'Open the pdf!') }}"></iframe>
+                                                                    <td><a id="detail" type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#modal-view" data-file="{{ $file }}">Lihat</a></td>
+                                                                </tr>
+                                                            @endforeach
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                </div>
+                                                <div class="modal fade" id="modal-view">
+                                                    <div class="modal-dialog">
+                                                        <div class="modal-content">
+                                                            <div class="modal-header">
+                                                                <button type="button" class="close" data-dismiss="modal" arial-label="Close">
+                                                                    <span aria-hidden="true">&times;</span>
+                                                                </button>
+                                                                <h4 class="modal-title">View File</h4>
+                                                            </div>
+                                                            <div class="modal-body table-responsive">
+                                                                <p>
+                                                                    <iframe src="{{url('/storege/app/JFKU_Attachments/data_asn/'. $file)}}"></iframe>
+                                                                </p>
+                                                            </div>
                                                         </div>
-                                                        </div>
+                                                    </div>
                                                 </div>
                                             </div>
                                             @endif
@@ -493,7 +527,6 @@
                                             @endif
 
                                             @if ($verifikasi->jenis_layanan == '1' || $verifikasi->jenis_layanan == '3')
-
                                             <div class="pb-6" style="margin-left: 50px; margin-right: 50px;">
                                                 <h4 class="mb-10 font-weight-bold text-dark">Data Jabatan Baru</h4>
                                                 <!--begin::Select-->
@@ -708,14 +741,7 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            @endif
-
-                                            <!--end: Wizard Step 3-->
-                                            <!--begin: Wizard Step 2-->
-                                            
-                                            
-
-                                            
+                                            @endif        
 
                                             @if ($verifikasi->jenis_layanan == '3')
                                             <div class="pb-6" style="margin-left: 50px; margin-right: 50px;">
@@ -1270,6 +1296,15 @@
 
 {{-- Scripts Section --}}
 @section('scripts')
+<script>
+    $(document).ready(function() {
+        $(document).on('click', '#detail', function() {
+            var file = $(this).data('file');
+            $('#file').text(file);
+            $('#modal-view').modal('hide');
+        })
+    })
+</script>
 <script src="{{ asset('js/pages/custom/wizard/wizard-2.js') }}"></script>
 <script src="{{ asset('js/pages/crud/ktdatatable/base/html-table.js') }}" type="text/javascript"></script>
 @endsection

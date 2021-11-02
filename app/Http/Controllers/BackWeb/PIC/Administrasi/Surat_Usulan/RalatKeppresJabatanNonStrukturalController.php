@@ -27,15 +27,17 @@ class RalatKeppresJabatanNonStrukturalController extends Controller
      * only declared here.
      */
     private $attachments_root_folder = "NS_Attachments/";
-    private $data_ba_pelantikan_folder;
-    private $data_sumpah_jabatan_folder;
+    private $data_surat_pengantar_folder;
+    private $data_keppres_folder;
+    private $data_bukti_pendukung_folder;
     
     public function __construct()
     {
         $this->curr_int_time = strtotime(Carbon::now());
         $this->middleware('auth');
-        $this->data_ba_pelantikan_folder = $this->attachments_root_folder . "data_ba_pelantikan/";
-        $this->data_sumpah_jabatan_folder = $this->attachments_root_folder . "data_sumpah_jabatan/";
+        $this->data_surat_pengantar_folder = $this->attachments_root_folder . "data_surat_pengantar/";
+        $this->data_keppres_folder = $this->attachments_root_folder . "data_keppres/";
+        $this->data_bukti_pendukung_folder = $this->attachments_root_folder . "data_bukti_pendukung/";
         
     }
 
@@ -55,18 +57,17 @@ class RalatKeppresJabatanNonStrukturalController extends Controller
         $input = $request->all();
 
         $validator = Validator::make($input, [
+            'req_tanggal_surat_pengantar' => 'required',
+            'req_no_surat_pengantar' => 'required',
+
             'req_no_keppres' => 'required',
             'req_tanggal_keppres' => 'required',
-            'req_masa_jabatan_start' => 'required',
-            'req_masa_jabatan_end' => 'required',
 
-            'req_tmt' => 'required',
-            'req_hak_keuangan' => 'required',
-            'req_tanggal_pelantikan' => 'required',
-            'req_yang_melantik' => 'required',
+            'req_alasan_ralat' => 'required',
 
-            'req_file_ba_pelantikan.*' => 'max:25000|mimes:jpg,png,jpeg,pdf',
-            'req_file_sumpah_jabatan.*' => 'max:25000|mimes:jpg,png,jpeg,pdf'
+            'req_file_surat_pengantar.*' => 'max:5000|mimes:jpg,png,jpeg,pdf',
+            'req_file_keppres.*' => 'max:5000|mimes:jpg,png,jpeg,pdf',
+            'req_file_bukti_pendukung.*' => 'max:5000|mimes:jpg,png,jpeg,pdf'
         
         ]);
 
@@ -75,15 +76,13 @@ class RalatKeppresJabatanNonStrukturalController extends Controller
         }
 
         $pengangkatans = PengangkatanPemberhentianNS::create([
+            'tanggal_surat_pengantar' => $input['req_tanggal_surat_pengantar'],
+            'no_surat_pengantar' => $input['req_no_surat_pengantar'],
+
             'no_keppres' => $input['req_no_keppres'],
             'tanggal_keppres' => $input['req_tanggal_keppres'],
-            'masa_jabatan_start' => $input['req_masa_jabatan_start'],
-            'masa_jabatan_end' => $input['req_masa_jabatan_end'],
 
-            'tmt' => $input['req_tmt'],
-            'hak_keuangan' => $input['req_hak_keuangan'],
-            'tanggal_pelantikan' => $input['req_tanggal_pelantikan'],
-            'yang_melantik' => $input['req_yang_melantik'],
+            'alasan_ralat' => $input['req_alasan_ralat'],
 
             'id_pengirim' => $id_pengirim->nip,
             'jenis_layanan' => Helper::$ralat_keppres_jabatan_NS,
@@ -91,24 +90,34 @@ class RalatKeppresJabatanNonStrukturalController extends Controller
             
         ]);
 
-        if($request->has('req_file_ba_pelantikan')){
+        if($request->has('req_file_surat_pengantar')){
             $files = [];
-            foreach ($request->file('req_file_ba_pelantikan') as $file) {
-                $filename = round(microtime(true) * 20000).'-'.str_replace(' ','-',$file->getClientOriginalName());
-                Storage::putFileAs($this->data_ba_pelantikan_folder, $file, $filename);
+            foreach ($request->file('req_file_surat_pengantar') as $file) {
+                $filename = $file->getClientOriginalName();
+                Storage::putFileAs($this->data_surat_pengantar_folder, $file, $filename);
                 $files[] = $filename;
             }
-            $pengangkatans->file_ba_pelantikan = $files;
+            $pengangkatans->file_surat_pengantar = $files;
         }
 
-        if($request->has('req_file_sumpah_jabatan')){
+        if($request->has('req_file_keppres')){
             $files = [];
-            foreach ($request->file('req_file_sumpah_jabatan') as $file) {
-                $filename = round(microtime(true) * 20000).'-'.str_replace(' ','-',$file->getClientOriginalName());
-                Storage::putFileAs($this->data_sumpah_jabatan_folder, $file, $filename);
+            foreach ($request->file('req_file_keppres') as $file) {
+                $filename = $file->getClientOriginalName();
+                Storage::putFileAs($this->data_keppres_folder, $file, $filename);
                 $files[] = $filename;
             }
-            $pengangkatans->file_sumpah_jabatan = $files;
+            $pengangkatans->file_keppres = $files;
+        }
+
+        if($request->has('req_file_bukti_pendukung')){
+            $files = [];
+            foreach ($request->file('req_file_bukti_pendukung') as $file) {
+                $filename = $file->getClientOriginalName();
+                Storage::putFileAs($this->data_bukti_pendukung_folder, $file, $filename);
+                $files[] = $filename;
+            }
+            $pengangkatans->file_bukti_pendukung = $files;
         }
 
         $pengangkatans->save();

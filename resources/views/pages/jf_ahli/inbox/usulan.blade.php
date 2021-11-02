@@ -48,7 +48,7 @@
                                                         <div class="row align-items-center">
                                                             <div class="col-md-4 my-2 my-md-0">
                                                                 <div class="input-icon">
-                                                                    <input type="text" class="form-control" placeholder="Search By No Surat" id="no_surat" />
+                                                                    <input type="text" class="form-control" placeholder="Search By NIP" id="no_surat" />
                                                                     <span>
                                                                         <i class="flaticon2-search-1 text-muted"></i>
                                                                     </span>
@@ -167,7 +167,7 @@
                                                     <div class="row align-items-center">
                                                         <div class="col-md-4 my-2 my-md-0">
                                                             <div class="input-icon">
-                                                                <input type="text" class="form-control" placeholder="Search By No Surat" id="no_surat" />
+                                                                <input type="text" class="form-control" placeholder="Search By NIP" id="no_surat" />
                                                                 <span>
                                                                     <i class="flaticon2-search-1 text-muted"></i>
                                                                 </span>
@@ -217,7 +217,7 @@
                                                     <div class="row align-items-center">
                                                         <div class="col-md-4 my-2 my-md-0">
                                                             <div class="input-icon">
-                                                                <input type="text" class="form-control" placeholder="Search By No Surat" id="no_surat" />
+                                                                <input type="text" class="form-control" placeholder="Search By NIP" id="no_surat" />
                                                                 <span>
                                                                     <i class="flaticon2-search-1 text-muted"></i>
                                                                 </span>
@@ -271,7 +271,7 @@
                                                     <div class="row align-items-center">
                                                         <div class="col-md-4 my-2 my-md-0">
                                                             <div class="input-icon">
-                                                                <input type="text" class="form-control" placeholder="Search By No Surat" id="no_surat" />
+                                                                <input type="text" class="form-control" placeholder="Search By NIP" id="no_surat" />
                                                                 <span>
                                                                     <i class="flaticon2-search-1 text-muted"></i>
                                                                 </span>

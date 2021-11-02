@@ -28,18 +28,17 @@ class RalatKeppresPemberhentianController extends Controller
      * only declared here.
      */
     private $attachments_root_folder = "pemberhentian_attachments/";
-    private $data_usulan_folder;
-    private $data_pak_folder;
-    private $klarifikasi_pak_folder;
+    private $data_surat_pengantar_folder;
+    private $data_keppres_folder;
+    private $data_bukti_pendukung_folder;
 
     public function __construct()
     {
         $this->curr_int_time = strtotime(Carbon::now());
         $this->middleware('auth');
-        $this->data_usulan_folder = $this->attachments_root_folder . "data_usulan/";
-        $this->data_pak_folder = $this->attachments_root_folder . "data_pak/";
-        $this->klarifikasi_pak_folder = $this->attachments_root_folder . "klarifikasi_pak/";
-        
+        $this->data_surat_pengantar_folder = $this->attachments_root_folder . "data_surat_pengantar/";
+        $this->data_keppres_folder = $this->attachments_root_folder . "data_keppres/";
+        $this->data_bukti_pendukung_folder = $this->attachments_root_folder . "data_bukti_pendukung/";
     }
 
     public function index() 
@@ -59,42 +58,17 @@ class RalatKeppresPemberhentianController extends Controller
         $input = $request->all();
 
         $validator = Validator::make($input, [
-            'req_tanggal_surat_usulan' => 'required',
-            'req_no_surat_usulan' => 'required',
-            'req_jabatan_menandatangani' => 'required',
+            'req_tanggal_surat_pengantar' => 'required',
+            'req_no_surat_pengantar' => 'required',
 
-            'req_nip' => 'required',
-            'req_nama' => 'required',
-            'req_tanggal_lahir' => 'required',
-            'req_pendidikan_terakhir' => 'required',
-            'req_instansi' => 'required',
-            'req_pangkat_gol' => 'required',
-            'req_tmt_gol_baru' => 'required',
+            'req_no_keppres' => 'required',
+            'req_tanggal_keppres' => 'required',
 
-            'req_pangkat_lama' => 'required',
-            'req_gol_ruang_lama' => 'required',
-            'req_tmt_lama' => 'required',
-
-            'req_nomor_pak' => 'nullable',
-            'req_tanggal_pak' => 'nullable',
-            'req_jumlah_angka_kredit' => 'nullable',
-            'req_periode_penilaian' => 'nullable',
+            'req_alasan_ralat' => 'required',
             
-            'req_no_klarifikasi' => 'nullable',
-            'req_tanggal_klarifikasi' => 'nullable',
-
-            'req_jabatan_terakhir' => 'required',
-            'req_unit_kerja_terakhir' => 'required',
-            'req_tmt_berhenti' => 'required',
-            'req_tmt_pensiun' => 'required',
-
-            'req_tanggal_catatan' => 'required',
-            'req_catatan' => 'required',
-            'req_ket' => 'required',
-            
-            'req_file_data_usulan.*' => 'max:25000|mimes:jpg,png,jpeg,pdf',
-            'req_file_data_pak.*' => 'max:25000|mimes:jpg,png,jpeg,pdf',
-            'req_file_klarifikasi_pak.*' => 'max:25000|mimes:jpg,png,jpeg,pdf'
+            'req_file_surat_pengantar.*' => 'max:5000|mimes:jpg,png,jpeg,pdf',
+            'req_file_keppres.*' => 'max:5000|mimes:jpg,png,jpeg,pdf',
+            'req_bukti_pendukung.*' => 'max:5000|mimes:jpg,png,jpeg,pdf'
         ]);
 
         if ($validator->fails()) {
@@ -102,85 +76,51 @@ class RalatKeppresPemberhentianController extends Controller
         }
 
         $pengangkatans = Pemberhentian::create([
-            'tanggal_surat_usulan' => $input['req_tanggal_surat_usulan'],
-            'no_surat_usulan' => $input['req_no_surat_usulan'],
-            'pejabat_menandatangani' => $input['req_jabatan_menandatangani'],
+            'tanggal_surat_pengantar' => $input['req_tanggal_surat_pengantar'],
+            'no_surat_pengantar' => $input['req_no_surat_pengantar'],
 
-            'nip' => $input['req_nip'],
-            'nama' => $input['req_nama'],
-            'tanggal_lahir' => $input['req_tanggal_lahir'],
-            'pendidikan_terakhir' => $input['req_pendidikan_terakhir'],
-            'instansi' => $input['req_instansi'],
-            'pangkat_gol_baru' => $input['req_pangkat_gol'],
-            'tmt_gol_baru' => $input['req_tmt_gol_baru'],
-            
-            'nomor_pak' => $input['req_nomor_pak'],
-            'tanggal_pak' => $input['req_tanggal_pak'],
-            'jumlah_angka_kredit' => $input['req_jumlah_angka_kredit'],
-            'periode_penilaian' => $input['req_periode_penilaian'],
+            'no_keppres' => $input['req_no_keppres'],
+            'tanggal_keppres' => $input['req_tanggal_keppres'],
 
-            'no_klarifikasi' => $input['req_no_klarifikasi'],
-            'tanggal_klarifikasi' => $input['req_tanggal_klarifikasi'],
+            'alasan_ralat' => $input['req_alasan_ralat'],
 
-            'pangkat_lama' => $input['req_pangkat_lama'],
-            'gol_ruang_lama' => $input['req_gol_ruang_lama'],
-            'tmt_lama' => $input['req_tmt_lama'],
-
-            'jabatan_terakhir' => $input['req_jabatan_terakhir'],
-            'unit_kerja_terakhir' => $input['req_unit_kerja_terakhir'],
-            'tmt_berhenti' => $input['req_tmt_berhenti'],
-            'tmt_pensiun' => $input['req_tmt_pensiun'],
-            
-            'ket' => implode(',', $input['req_ket']),
             'id_pengirim' => $id_pengirim->nip,
             'jenis_layanan' => Helper::$ralat_keppres_pemberhentian,
             'status' => Helper::$pengajuan_usulan
             
         ]);
 
-        if($request->has('req_file_data_usulan')){
+        if($request->has('req_file_surat_pengantar')){
             $files = [];
-            foreach ($request->file('req_file_data_usulan') as $file) {
-                $filename = round(microtime(true) * 20000).'-'.str_replace(' ','-',$file->getClientOriginalName());
-                Storage::putFileAs($this->data_usulan_folder, $file, $filename);
+            foreach ($request->file('req_file_surat_pengantar') as $file) {
+                $filename = $file->getClientOriginalName();
+                Storage::putFileAs($this->data_surat_pengantar_folder, $file, $filename);
                 $files[] = $filename;
             }
-            $pengangkatans->file_data_usulan = implode(',', $files);
+            $pengangkatans->file_surat_pengantar = $files;
         }
 
-        if($request->has('req_file_data_pak')){
+        if($request->has('req_file_keppres')){
             $files = [];
-            foreach ($request->file('req_file_data_pak') as $file) {
-                $filename = round(microtime(true) * 20000).'-'.str_replace(' ','-',$file->getClientOriginalName());
-                Storage::putFileAs($this->data_pak_folder, $file, $filename);
+            foreach ($request->file('req_file_keppres') as $file) {
+                $filename = $file->getClientOriginalName();
+                Storage::putFileAs($this->data_keppres_folder, $file, $filename);
                 $files[] = $filename;
             }
-            $pengangkatans->file_data_pak = implode(',', $files);
+            $pengangkatans->file_keppres = $files;
         }
-        
-        if($request->has('req_file_klarifikasi_pak')){
+
+        if($request->has('req_file_bukti_pendukung')){
             $files = [];
-            foreach ($request->file('req_file_klarifikasi_pak') as $file) {
-                $filename = round(microtime(true) * 20000).'-'.str_replace(' ','-',$file->getClientOriginalName());
-                Storage::putFileAs($this->klarifikasi_pak_folder, $file, $filename);
+            foreach ($request->file('req_file_bukti_pendukung') as $file) {
+                $filename = $file->getClientOriginalName();
+                Storage::putFileAs($this->data_bukti_pendukung_folder, $file, $filename);
                 $files[] = $filename;
             }
-            $pengangkatans->file_klarifikasi_pak = implode(',', $files);
+            $pengangkatans->file_bukti_pendukung = $files;
         }
 
         $pengangkatans->save();
-
-        $count = count($input['req_tanggal_catatan']);
-        for($i=0;$i<$count;$i++) {
-            $notes = new Catatan();
-            $notes->id_usulan = $pengangkatans->id;
-            $notes->id_layanan = $pengangkatans->jenis_layanan;
-            $notes->id_pengirim = $id_pengirim->nip;
-            $notes->tanggal_catatan = $input['req_tanggal_catatan'][$i];
-            $notes->catatan = $input['req_catatan'][$i];
-            $notes->save();
-        }
-
 
         return redirect()->route('pic.administrasi.pemberhentian.index')->with(['success'=>'Pemberhentian Success Added!!!']);
     }

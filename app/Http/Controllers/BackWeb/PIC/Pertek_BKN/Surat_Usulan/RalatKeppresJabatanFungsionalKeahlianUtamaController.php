@@ -63,9 +63,9 @@ class RalatKeppresJabatanFungsionalKeahlianUtamaController extends Controller
 
             'req_alasan_ralat' => 'required',
             
-            'req_file_surat_pengantar.*' => 'max:25000|mimes:jpg,png,jpeg,pdf',
-            'req_file_keppres.*' => 'max:25000|mimes:jpg,png,jpeg,pdf',
-            'req_bukti_pendukung.*' => 'max:25000|mimes:jpg,png,jpeg,pdf'
+            'req_file_surat_pengantar.*' => 'max:5000|mimes:jpg,png,jpeg,pdf',
+            'req_file_keppres.*' => 'max:5000|mimes:jpg,png,jpeg,pdf',
+            'req_bukti_pendukung.*' => 'max:5000|mimes:jpg,png,jpeg,pdf'
         ]);
 
         if ($validator->fails()) {
@@ -90,7 +90,7 @@ class RalatKeppresJabatanFungsionalKeahlianUtamaController extends Controller
         if($request->has('req_file_surat_pengantar')){
             $files = [];
             foreach ($request->file('req_file_surat_pengantar') as $file) {
-                $filename = round(microtime(true) * 20000).'-'.str_replace(' ','-',$file->getClientOriginalName());
+                $filename = $file->getClientOriginalName();
                 Storage::putFileAs($this->data_surat_pengantar_folder, $file, $filename);
                 $files[] = $filename;
             }
@@ -100,7 +100,7 @@ class RalatKeppresJabatanFungsionalKeahlianUtamaController extends Controller
         if($request->has('req_file_keppres')){
             $files = [];
             foreach ($request->file('req_file_keppres') as $file) {
-                $filename = round(microtime(true) * 20000).'-'.str_replace(' ','-',$file->getClientOriginalName());
+                $filename = $file->getClientOriginalName();
                 Storage::putFileAs($this->data_keppres_folder, $file, $filename);
                 $files[] = $filename;
             }
@@ -110,7 +110,7 @@ class RalatKeppresJabatanFungsionalKeahlianUtamaController extends Controller
         if($request->has('req_file_bukti_pendukung')){
             $files = [];
             foreach ($request->file('req_file_bukti_pendukung') as $file) {
-                $filename = round(microtime(true) * 20000).'-'.str_replace(' ','-',$file->getClientOriginalName());
+                $filename = $file->getClientOriginalName();
                 Storage::putFileAs($this->data_bukti_pendukung_folder, $file, $filename);
                 $files[] = $filename;
             }

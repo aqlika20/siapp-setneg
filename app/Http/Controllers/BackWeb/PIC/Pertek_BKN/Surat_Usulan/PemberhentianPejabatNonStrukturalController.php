@@ -71,9 +71,9 @@ class PemberhentianPejabatNonStrukturalController extends Controller
             'req_tanggal_keppres' => 'required',
             
            
-            'req_file_surat_pengantar.*' => 'max:25000|mimes:jpg,png,jpeg,pdf',
-            'req_file_dhr.*' => 'max:25000|mimes:jpg,png,jpeg,pdf',
-            'req_file_dukumen_lain_pengangkatan_ns.*' => 'max:25000|mimes:jpg,png,jpeg,pdf'
+            'req_file_surat_pengantar.*' => 'max:5000|mimes:jpg,png,jpeg,pdf',
+            'req_file_dhr.*' => 'max:5000|mimes:jpg,png,jpeg,pdf',
+            'req_file_dukumen_lain_pengangkatan_ns.*' => 'max:5000|mimes:jpg,png,jpeg,pdf'
         
         ]);
 
@@ -102,7 +102,7 @@ class PemberhentianPejabatNonStrukturalController extends Controller
         if($request->has('req_file_surat_pengantar')){
             $files = [];
             foreach ($request->file('req_file_surat_pengantar') as $file) {
-                $filename = round(microtime(true) * 20000).'-'.str_replace(' ','-',$file->getClientOriginalName());
+                $filename = $file->getClientOriginalName();
                 Storage::putFileAs($this->data_surat_pengantar_folder, $file, $filename);
                 $files[] = $filename;
             }
@@ -112,7 +112,7 @@ class PemberhentianPejabatNonStrukturalController extends Controller
         if($request->has('req_file_dhr')){
             $files = [];
             foreach ($request->file('req_file_dhr') as $file) {
-                $filename = round(microtime(true) * 20000).'-'.str_replace(' ','-',$file->getClientOriginalName());
+                $filename = $file->getClientOriginalName();
                 Storage::putFileAs($this->data_dhr_folder, $file, $filename);
                 $files[] = $filename;
             }
@@ -122,7 +122,7 @@ class PemberhentianPejabatNonStrukturalController extends Controller
         if($request->has('req_file_dukumen_lain_pengangkatan_ns')){
             $files = [];
             foreach ($request->file('req_file_dukumen_lain_pengangkatan_ns') as $file) {
-                $filename = round(microtime(true) * 20000).'-'.str_replace(' ','-',$file->getClientOriginalName());
+                $filename = $file->getClientOriginalName();
                 Storage::putFileAs($this->data_dukumen_lain_pengangkatan_ns_folder, $file, $filename);
                 $files[] = $filename;
             }

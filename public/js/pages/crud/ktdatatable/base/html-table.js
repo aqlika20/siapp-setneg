@@ -148,8 +148,8 @@
               width: 200
             }]
           });
-          $('#no_surat').on('change', function () {
-            datatable.search($(this).val().toLowerCase(), 'No Surat');
+          $('#no_surat').on('keyup', function () {
+            datatable.search($(this).val().toLowerCase(), 'NIP');
           });
         };
 
@@ -196,8 +196,8 @@
               width: 200
             }]
           });
-          $('#no_surat2').on('change', function () {
-            datatable.search($(this).val().toLowerCase(), 'No Surat');
+          $('#no_surat2').on('keyup', function () {
+            datatable.search($(this).val().toLowerCase(), 'NIP');
           });
         };
 
@@ -241,8 +241,8 @@
               width: 200
             }]
           });
-          $('#no_surat').on('change', function () {
-            datatable.search($(this).val().toLowerCase(), 'No Surat');
+          $('#no_surat').on('keyup', function () {
+            datatable.search($(this).val().toLowerCase(), 'NIP');
           });
         };
 
@@ -286,8 +286,8 @@
               width: 200
             }]
           });
-          $('#no_surat').on('change', function () {
-            datatable.search($(this).val().toLowerCase(), 'No Surat');
+          $('#no_surat').on('keyup', function () {
+            datatable.search($(this).val().toLowerCase(), 'NIP');
           });
         };
 
@@ -331,8 +331,8 @@
               width: 200
             }]
           });
-          $('#no_surat').on('change', function () {
-            datatable.search($(this).val().toLowerCase(), 'No Surat');
+          $('#no_surat').on('keyup', function () {
+            datatable.search($(this).val().toLowerCase(), 'NIP');
           });
         };
 
@@ -376,8 +376,8 @@
               width: 200
             }]
           });
-          $('#no_surat').on('change', function () {
-            datatable.search($(this).val().toLowerCase(), 'No Surat');
+          $('#no_surat').on('keyup', function () {
+            datatable.search($(this).val().toLowerCase(), 'NIP');
           });
         };
 

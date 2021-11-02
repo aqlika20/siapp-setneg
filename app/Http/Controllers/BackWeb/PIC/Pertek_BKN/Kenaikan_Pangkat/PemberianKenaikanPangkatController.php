@@ -115,16 +115,16 @@ class PemberianKenaikanPangkatController extends Controller
             'req_catatan' => 'required',
             'req_ket' => 'required',
 
-            'req_file_data_usulan.*' => 'max:25000|mimes:jpg,png,jpeg,pdf',
-            'req_file_data_asn.*' => 'max:25000|mimes:jpg,png,jpeg,pdf',
-            'req_file_data_pak.*' => 'max:25000|mimes:jpg,png,jpeg,pdf',
-            'req_file_klarifikasi_pak.*' => 'max:25000|mimes:jpg,png,jpeg,pdf',
-            'req_file_jabatan_lama.*' => 'max:25000|mimes:jpg,png,jpeg,pdf',
-            'req_file_jabatan_baru.*' => 'max:25000|mimes:jpg,png,jpeg,pdf',
-            'req_file_data_kompetensi.*' => 'max:25000|mimes:jpg,png,jpeg,pdf',
-            'req_file_formasi_jabatan.*' => 'max:25000|mimes:jpg,png,jpeg,pdf',
-            'req_file_skp_2.*' => 'max:25000|mimes:jpg,png,jpeg,pdf',
-            'req_file_skp_2_lainnya.*' => 'max:25000|mimes:jpg,png,jpeg,pdf',
+            'req_file_data_usulan.*' => 'max:5000|mimes:jpg,png,jpeg,pdf',
+            'req_file_data_asn.*' => 'max:5000|mimes:jpg,png,jpeg,pdf',
+            'req_file_data_pak.*' => 'max:5000|mimes:jpg,png,jpeg,pdf',
+            'req_file_klarifikasi_pak.*' => 'max:5000|mimes:jpg,png,jpeg,pdf',
+            'req_file_jabatan_lama.*' => 'max:5000|mimes:jpg,png,jpeg,pdf',
+            'req_file_jabatan_baru.*' => 'max:5000|mimes:jpg,png,jpeg,pdf',
+            'req_file_data_kompetensi.*' => 'max:5000|mimes:jpg,png,jpeg,pdf',
+            'req_file_formasi_jabatan.*' => 'max:5000|mimes:jpg,png,jpeg,pdf',
+            'req_file_skp_2.*' => 'max:5000|mimes:jpg,png,jpeg,pdf',
+            'req_file_skp_2_lainnya.*' => 'max:5000|mimes:jpg,png,jpeg,pdf',
 
         ]);
 
@@ -181,7 +181,7 @@ class PemberianKenaikanPangkatController extends Controller
         if($request->has('req_file_data_usulan')){
             $files = [];
             foreach ($request->file('req_file_data_usulan') as $file) {
-                $filename = round(microtime(true) * 20000).'-'.str_replace(' ','-',$file->getClientOriginalName());
+                $filename = $file->getClientOriginalName();
                 Storage::putFileAs($this->data_usulan_folder, $file, $filename);
                 $files[] = $filename;
             }
@@ -191,7 +191,7 @@ class PemberianKenaikanPangkatController extends Controller
         if($request->has('req_file_data_asn')){
             $files = [];
             foreach ($request->file('req_file_data_asn') as $file) {
-                $filename = round(microtime(true) * 20000).'-'.str_replace(' ','-',$file->getClientOriginalName());
+                $filename = $file->getClientOriginalName();
                 Storage::putFileAs($this->data_asn_folder, $file, $filename);
                 $files[] = $filename;
             }
@@ -201,7 +201,7 @@ class PemberianKenaikanPangkatController extends Controller
         if($request->has('req_file_data_pak')){
             $files = [];
             foreach ($request->file('req_file_data_pak') as $file) {
-                $filename = round(microtime(true) * 20000).'-'.str_replace(' ','-',$file->getClientOriginalName());
+                $filename = $file->getClientOriginalName();
                 Storage::putFileAs($this->data_pak_folder, $file, $filename);
                 $files[] = $filename;
             }
@@ -211,7 +211,7 @@ class PemberianKenaikanPangkatController extends Controller
         if($request->has('req_file_klarifikasi_pak')){
             $files = [];
             foreach ($request->file('req_file_klarifikasi_pak') as $file) {
-                $filename = round(microtime(true) * 20000).'-'.str_replace(' ','-',$file->getClientOriginalName());
+                $filename = $file->getClientOriginalName();
                 Storage::putFileAs($this->klarifikasi_pak_folder, $file, $filename);
                 $files[] = $filename;
             }
@@ -221,7 +221,7 @@ class PemberianKenaikanPangkatController extends Controller
         if($request->has('req_file_jabatan_lama')){
             $files = [];
             foreach ($request->file('req_file_jabatan_lama') as $file) {
-                $filename = round(microtime(true) * 20000).'-'.str_replace(' ','-',$file->getClientOriginalName());
+                $filename = $file->getClientOriginalName();
                 Storage::putFileAs($this->data_jabatan_lama_folder, $file, $filename);
                 $files[] = $filename;
             }
@@ -231,7 +231,7 @@ class PemberianKenaikanPangkatController extends Controller
         if($request->has('req_file_jabatan_baru')){
             $files = [];
             foreach ($request->file('req_file_jabatan_baru') as $file) {
-                $filename = round(microtime(true) * 20000).'-'.str_replace(' ','-',$file->getClientOriginalName());
+                $filename = $file->getClientOriginalName();
                 Storage::putFileAs($this->data_jabatan_baru_folder, $file, $filename);
                 $files[] = $filename;
             }
@@ -241,7 +241,7 @@ class PemberianKenaikanPangkatController extends Controller
         if($request->has('req_file_data_kompetensi')){
             $files = [];
             foreach ($request->file('req_file_data_kompetensi') as $file) {
-                $filename = round(microtime(true) * 20000).'-'.str_replace(' ','-',$file->getClientOriginalName());
+                $filename = $file->getClientOriginalName();
                 Storage::putFileAs($this->data_kompetensi_folder, $file, $filename);
                 $files[] = $filename;
             }
@@ -251,7 +251,7 @@ class PemberianKenaikanPangkatController extends Controller
         if($request->has('req_file_formasi_jabatan')){
             $files = [];
             foreach ($request->file('req_file_formasi_jabatan') as $file) {
-                $filename = round(microtime(true) * 20000).'-'.str_replace(' ','-',$file->getClientOriginalName());
+                $filename = $file->getClientOriginalName();
                 Storage::putFileAs($this->formasi_jabatan_folder, $file, $filename);
                 $files[] = $filename;
             }
@@ -261,7 +261,7 @@ class PemberianKenaikanPangkatController extends Controller
         if($request->has('req_file_skp_2')){
             $files = [];
             foreach ($request->file('req_file_skp_2') as $file) {
-                $filename = round(microtime(true) * 20000).'-'.str_replace(' ','-',$file->getClientOriginalName());
+                $filename = $file->getClientOriginalName();
                 Storage::putFileAs($this->skp_2_folder, $file, $filename);
                 $files[] = $filename;
             }
@@ -271,7 +271,7 @@ class PemberianKenaikanPangkatController extends Controller
         if($request->has('req_file_skp_2_lainnya')){
             $files = [];
             foreach ($request->file('req_file_skp_2_lainnya') as $file) {
-                $filename = round(microtime(true) * 20000).'-'.str_replace(' ','-',$file->getClientOriginalName());
+                $filename = $file->getClientOriginalName();
                 Storage::putFileAs($this->skp_2_lainnya_folder, $file, $filename);
                 $files[] = $filename;
             }

@@ -116,6 +116,16 @@ class JFKUController extends Controller
         $notes = [];
         // dd($notes);
 
+        $file_data_usulans = Helper::fileBreak($verifikasi->file_data_usulan);
+        
+        // foreach($file_data_usulans as $file){
+        //     echo "nama file = " . $file . "<br>";
+        // }
+
+        // dd($file_data_usulans);
+
+        
+
         if($verifikasi->jenis_layanan == Helper::$pengangkatan_pejabat_FKU || $verifikasi->jenis_layanan == Helper::$pemberhentian_pejabat_FKU || $verifikasi->jenis_layanan == Helper::$perpindahan_pejabat_FKU || $verifikasi->jenis_layanan == Helper::$pembatalan_keppres_jabatan_FKU )
         {
             $notes = Catatan::where([
@@ -128,7 +138,7 @@ class JFKUController extends Controller
             return redirect()->route('pages.koor_pokja.inbox.jfku')->with(['error'=>'Invalid parameter id.']);
         }
     
-        return view('pages.koor_pokja.inbox.verif', compact('page_title', 'page_description', 'currentUser', 'verifikasi', 'notes', 'jabatans', 'unsurs', 'periodes', 'pangkats'));
+        return view('pages.koor_pokja.inbox.verif', compact('page_title', 'page_description', 'file_data_usulans', 'currentUser', 'verifikasi', 'notes', 'jabatans', 'unsurs', 'periodes', 'pangkats'));
     }
 
     public function verification_ns($id){

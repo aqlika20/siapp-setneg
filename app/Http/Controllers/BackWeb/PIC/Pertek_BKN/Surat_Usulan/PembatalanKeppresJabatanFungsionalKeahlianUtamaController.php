@@ -100,13 +100,13 @@ class PembatalanKeppresJabatanFungsionalKeahlianUtamaController extends Controll
             'req_ket_alasan_pemberhentian' => 'required',
             'req_ket.*' => 'required',
             
-            'req_file_data_usulan.*' => 'max:25000|mimes:docx,doc,xlsx,xls,csv,jpg,png,jpeg,pdf',
-            'req_file_data_asn.*' => 'max:25000|mimes:docx,doc,xlsx,xls,csv,jpg,png,jpeg,pdf',
-            'req_file_data_pak.*' => 'max:25000|mimes:docx,doc,xlsx,xls,csv,jpg,png,jpeg,pdf',
-            'req_file_klarifikasi_pak.*' => 'max:25000|mimes:docx,doc,xlsx,xls,csv,jpg,png,jpeg,pdf',
-            'req_file_data_jabatan_fungsional.*' => 'max:25000|mimes:docx,doc,xlsx,xls,csv,jpg,png,jpeg,pdf',
-            'req_file_data_jabatan_fungsional_2.*' => 'max:25000|mimes:docx,doc,xlsx,xls,csv,jpg,png,jpeg,pdf',
-            'req_file_data_pemberhentian.*' => 'max:25000|mimes:docx,doc,xlsx,xls,csv,jpg,png,jpeg,pdf'
+            'req_file_data_usulan.*' => 'max:5000|mimes:docx,doc,xlsx,xls,csv,jpg,png,jpeg,pdf',
+            'req_file_data_asn.*' => 'max:5000|mimes:docx,doc,xlsx,xls,csv,jpg,png,jpeg,pdf',
+            'req_file_data_pak.*' => 'max:5000|mimes:docx,doc,xlsx,xls,csv,jpg,png,jpeg,pdf',
+            'req_file_klarifikasi_pak.*' => 'max:5000|mimes:docx,doc,xlsx,xls,csv,jpg,png,jpeg,pdf',
+            'req_file_data_jabatan_fungsional.*' => 'max:5000|mimes:docx,doc,xlsx,xls,csv,jpg,png,jpeg,pdf',
+            'req_file_data_jabatan_fungsional_2.*' => 'max:5000|mimes:docx,doc,xlsx,xls,csv,jpg,png,jpeg,pdf',
+            'req_file_data_pemberhentian.*' => 'max:5000|mimes:docx,doc,xlsx,xls,csv,jpg,png,jpeg,pdf'
         ]);
 
         if ($validator->fails()) {
@@ -155,7 +155,7 @@ class PembatalanKeppresJabatanFungsionalKeahlianUtamaController extends Controll
         if($request->has('req_file_data_usulan')){
             $files = [];
             foreach ($request->file('req_file_data_usulan') as $file) {
-                $filename = round(microtime(true) * 20000).'-'.str_replace(' ','-',$file->getClientOriginalName());
+                $filename = $file->getClientOriginalName();
                 Storage::putFileAs($this->data_usulan_folder, $file, $filename);
                 $files[] = $filename;
             }
@@ -166,7 +166,7 @@ class PembatalanKeppresJabatanFungsionalKeahlianUtamaController extends Controll
         if($request->has('req_file_data_asn')){
             $files = [];
             foreach ($request->file('req_file_data_asn') as $file) {
-                $filename = round(microtime(true) * 20000).'-'.str_replace(' ','-',$file->getClientOriginalName());
+                $filename = $file->getClientOriginalName();
                 Storage::putFileAs($this->data_asn_folder, $file, $filename);
                 $files[] = $filename;
             }
@@ -176,7 +176,7 @@ class PembatalanKeppresJabatanFungsionalKeahlianUtamaController extends Controll
         if($request->has('req_file_data_pak')){
             $files = [];
             foreach ($request->file('req_file_data_pak') as $file) {
-                $filename = round(microtime(true) * 20000).'-'.str_replace(' ','-',$file->getClientOriginalName());
+                $filename = $file->getClientOriginalName();
                 Storage::putFileAs($this->data_pak_folder, $file, $filename);
                 $files[] = $filename;
             }
@@ -186,7 +186,7 @@ class PembatalanKeppresJabatanFungsionalKeahlianUtamaController extends Controll
         if($request->has('req_file_klarifikasi_pak')){
             $files = [];
             foreach ($request->file('req_file_klarifikasi_pak') as $file) {
-                $filename = round(microtime(true) * 20000).'-'.str_replace(' ','-',$file->getClientOriginalName());
+                $filename = $file->getClientOriginalName();
                 Storage::putFileAs($this->data_klarifikasi_pak_folder, $file, $filename);
                 $files[] = $filename;
             }
@@ -196,7 +196,7 @@ class PembatalanKeppresJabatanFungsionalKeahlianUtamaController extends Controll
         if($request->has('req_file_data_jabatan_fungsional')){
             $files = [];
             foreach ($request->file('req_file_data_jabatan_fungsional') as $file) {
-                $filename = round(microtime(true) * 20000).'-'.str_replace(' ','-',$file->getClientOriginalName());
+                $filename = $file->getClientOriginalName();
                 Storage::putFileAs($this->data_jabatan_fungsional_folder, $file, $filename);
                 $files[] = $filename;
             }
@@ -206,7 +206,7 @@ class PembatalanKeppresJabatanFungsionalKeahlianUtamaController extends Controll
         if($request->has('req_file_data_jabatan_fungsional_2')){
             $files = [];
             foreach ($request->file('req_file_data_jabatan_fungsional_2') as $file) {
-                $filename = round(microtime(true) * 20000).'-'.str_replace(' ','-',$file->getClientOriginalName());
+                $filename = $file->getClientOriginalName();
                 Storage::putFileAs($this->data_jabatan_fungsional_2_folder, $file, $filename);
                 $files[] = $filename;
             }
@@ -216,7 +216,7 @@ class PembatalanKeppresJabatanFungsionalKeahlianUtamaController extends Controll
         if($request->has('req_file_data_pemberhentian')){
             $files = [];
             foreach ($request->file('req_file_data_pemberhentian') as $file) {
-                $filename = round(microtime(true) * 20000).'-'.str_replace(' ','-',$file->getClientOriginalName());
+                $filename = $file->getClientOriginalName();
                 Storage::putFileAs($this->data_pemberhentian_folder, $file, $filename);
                 $files[] = $filename;
             }

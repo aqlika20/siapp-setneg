@@ -67,8 +67,8 @@ class RalatKeppresJabatanLainnyaController extends Controller
             'req_tanggal_pelantikan' => 'required',
             'req_yang_melantik' => 'required',
 
-            'req_file_ba_pelantikan.*' => 'max:25000|mimes:jpg,png,jpeg,pdf',
-            'req_file_sumpah_jabatan.*' => 'max:25000|mimes:jpg,png,jpeg,pdf'
+            'req_file_ba_pelantikan.*' => 'max:5000|mimes:jpg,png,jpeg,pdf',
+            'req_file_sumpah_jabatan.*' => 'max:5000|mimes:jpg,png,jpeg,pdf'
         ]);
 
         if ($validator->fails()) {
@@ -95,7 +95,7 @@ class RalatKeppresJabatanLainnyaController extends Controller
         if($request->has('req_file_ba_pelantikan')){
             $files = [];
             foreach ($request->file('req_file_ba_pelantikan') as $file) {
-                $filename = round(microtime(true) * 20000).'-'.str_replace(' ','-',$file->getClientOriginalName());
+                $filename = $file->getClientOriginalName();
                 Storage::putFileAs($this->data_ba_pelantikan_folder, $file, $filename);
                 $files[] = $filename;
             }
@@ -105,7 +105,7 @@ class RalatKeppresJabatanLainnyaController extends Controller
         if($request->has('req_file_sumpah_jabatan')){
             $files = [];
             foreach ($request->file('req_file_sumpah_jabatan') as $file) {
-                $filename = round(microtime(true) * 20000).'-'.str_replace(' ','-',$file->getClientOriginalName());
+                $filename = $file->getClientOriginalName();
                 Storage::putFileAs($this->data_sumpah_jabatan_folder, $file, $filename);
                 $files[] = $filename;
             }

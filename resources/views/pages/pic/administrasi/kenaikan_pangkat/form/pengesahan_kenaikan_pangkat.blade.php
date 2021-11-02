@@ -485,8 +485,8 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        
                                         <!--end: Wizard Step 2-->
+
                                         <!--begin: Wizard Step 3-->
                                         <div class="pb-6" style="margin-left: 50px; margin-right: 50px;" data-wizard-type="step-content">
                                             <h4 class="mb-10 font-weight-bold text-dark">Data Jabatan</h4>
@@ -610,10 +610,8 @@
                                             </div>
                                         </div>
                                         <!--end: Wizard Step 3-->
-                                        <!--begin: Wizard Step 2-->
-                                        
-                                        <!--end: Wizard Step 2-->
-                                        <!--begin: Wizard Step 2-->
+
+                                        <!--begin: Wizard Step 4-->
                                         <div class="pb-6" style="margin-left: 50px; margin-right: 50px;" data-wizard-type="step-content">
                                             <h4 class="mb-10 font-weight-bold text-dark">Pangkat Baru</h4>
 
@@ -774,6 +772,7 @@
                                                 </div>
                                             </div>	                                           
                                         </div>
+                                        <!--end: Wizard Step 4-->
 
                                         <div class="d-flex justify-content-between mt-5 pt-10" style="margin-left: 50px; margin-right: 50px;">
                                             <div class="mr-2">
