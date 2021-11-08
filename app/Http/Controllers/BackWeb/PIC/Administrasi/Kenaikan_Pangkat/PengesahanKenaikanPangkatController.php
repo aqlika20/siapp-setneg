@@ -173,7 +173,7 @@ class PengesahanKenaikanPangkatController extends Controller
             $files = [];
             foreach ($request->file('req_file_data_asn') as $file) {
                 $filename = $file->getClientOriginalName();
-                Storage::putFileAs($this->note_usulan_folder, $file, $filename);
+                Storage::putFileAs($this->data_asn_folder, $file, $filename);
                 $files[] = $filename;
             }
             $pengangkatans->file_nota_usulan_asn = $files;

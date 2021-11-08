@@ -117,14 +117,28 @@ class JFKUController extends Controller
         // dd($notes);
 
         $file_data_usulans = Helper::fileBreak($verifikasi->file_data_usulan);
-        
-        // foreach($file_data_usulans as $file){
-        //     echo "nama file = " . $file . "<br>";
-        // }
+        $file_nota_usulan_asns = Helper::fileBreak($verifikasi->file_nota_usulan_asn);
+        $file_data_paks = Helper::fileBreak($verifikasi->file_data_pak);
+        $file_klarifikasi_paks = Helper::fileBreak($verifikasi->file_klarifikasi_pak);
+        $data_jabatan_lamas = Helper::fileBreak($verifikasi->file_data_jabatan_lama);
+        $file_data_pak_terakhirs = Helper::fileBreak($verifikasi->file_data_pak_terakhir);
+        $file_data_jabatan_fungsionals = Helper::fileBreak($verifikasi->file_data_jabatan_fungsional);
+        $file_data_rekomendasis = Helper::fileBreak($verifikasi->file_data_rekomendasi);
+        $file_ba_pengambilan_sumpahs = Helper::fileBreak($verifikasi->file_ba_pengambilan_sumpah);
+        $file_skp_2_dukungan_lainnyas = Helper::fileBreak($verifikasi->file_skp_2_dukungan_lainnya);
+        $file_surat_pernyataan_rekomendasis = Helper::fileBreak($verifikasi->file_surat_pernyataan_rekomendasi);
+        $file_data_kompetensis = Helper::fileBreak($verifikasi->file_data_kompetensi);
+        $file_formasi_jabatans = Helper::fileBreak($verifikasi->file_formasi_jabatan);
+        $file_skp_2s = Helper::fileBreak($verifikasi->file_skp_2);
+        $file_pendukung_pemberhentians = Helper::fileBreak($verifikasi->file_pendukung_pemberhentian);
+        $file_surat_pengantars = Helper::fileBreak($verifikasi->file_surat_pengantar);
+        $file_keppress = Helper::fileBreak($verifikasi->file_keppres);
+        $file_data_jabatan_barus = Helper::fileBreak($verifikasi->file_data_jabatan_baru);
+        $file_ba_pelantikans = Helper::fileBreak($verifikasi->file_ba_pelantikan);
+        $file_sumpah_jabatans = Helper::fileBreak($verifikasi->file_sumpah_jabatan);
 
         // dd($file_data_usulans);
 
-        
 
         if($verifikasi->jenis_layanan == Helper::$pengangkatan_pejabat_FKU || $verifikasi->jenis_layanan == Helper::$pemberhentian_pejabat_FKU || $verifikasi->jenis_layanan == Helper::$perpindahan_pejabat_FKU || $verifikasi->jenis_layanan == Helper::$pembatalan_keppres_jabatan_FKU )
         {
@@ -138,7 +152,7 @@ class JFKUController extends Controller
             return redirect()->route('pages.koor_pokja.inbox.jfku')->with(['error'=>'Invalid parameter id.']);
         }
     
-        return view('pages.koor_pokja.inbox.verif', compact('page_title', 'page_description', 'file_data_usulans', 'currentUser', 'verifikasi', 'notes', 'jabatans', 'unsurs', 'periodes', 'pangkats'));
+        return view('pages.koor_pokja.inbox.verif', compact('page_title', 'page_description', 'file_sumpah_jabatans', 'file_ba_pelantikans', 'file_data_jabatan_barus', 'file_pendukung_pemberhentians', 'file_surat_pengantars', 'file_keppress', 'file_skp_2s', 'file_formasi_jabatans', 'file_skp_2_dukungan_lainnyas', 'file_surat_pernyataan_rekomendasis', 'file_data_kompetensis', 'file_ba_pengambilan_sumpahs', 'file_data_jabatan_fungsionals', 'file_surat_pernyataan_rekomendasis', 'file_data_rekomendasis', 'file_data_pak_terakhirs', 'data_jabatan_lamas', 'file_klarifikasi_paks', 'file_data_paks', 'file_nota_usulan_asns', 'file_data_usulans', 'currentUser', 'verifikasi', 'notes', 'jabatans', 'unsurs', 'periodes', 'pangkats'));
     }
 
     public function verification_ns($id){
@@ -149,11 +163,19 @@ class JFKUController extends Controller
         $jabatans = Jabatan::all();
         $unsurs = Unsur::all();
 
+        $file_surat_pengantars = Helper::fileBreak($verifikasi_ns->file_surat_pengantar);
+        $file_dhrs = Helper::fileBreak($verifikasi_ns->file_dhr);
+        $file_dukumen_lain_pengangkatan_nss = Helper::fileBreak($verifikasi_ns->file_dukumen_lain_pengangkatan_ns);
+        $file_keppress = Helper::fileBreak($verifikasi_ns->file_keppres);
+        $file_bukti_pendukungs = Helper::fileBreak($verifikasi_ns->file_bukti_pendukung);
+        $file_ba_pelantikans = Helper::fileBreak($verifikasi_ns->file_ba_pelantikan);
+        $file_sumpah_jabatans = Helper::fileBreak($verifikasi_ns->file_sumpah_jabatan);
+
         if (!$verifikasi_ns) {
             return redirect()->route('pages.koor_pokja.inbox.jfku')->with(['error'=>'Invalid parameter id.']);
         }
     
-        return view('pages.koor_pokja.inbox.verif_ns', compact('page_title', 'page_description', 'currentUser', 'verifikasi_ns', 'jabatans', 'unsurs'));
+        return view('pages.koor_pokja.inbox.verif_ns', compact('page_title', 'page_description', 'file_sumpah_jabatans', 'file_ba_pelantikans', 'file_bukti_pendukungs', 'file_keppress', 'file_dukumen_lain_pengangkatan_nss', 'file_dhrs', 'file_surat_pengantars', 'currentUser', 'verifikasi_ns', 'jabatans', 'unsurs'));
     }
 
     public function verification_lainnya($id){
@@ -164,11 +186,19 @@ class JFKUController extends Controller
         $jabatans = Jabatan::all();
         $unsurs = Unsur::all();
 
+        $file_surat_pengantars = Helper::fileBreak($verifikasi_lainnya->file_surat_pengantar);
+        $file_dhrs = Helper::fileBreak($verifikasi_lainnya->file_dhr);
+        $file_dukumen_lain_pengangkatan_lainnyas = Helper::fileBreak($verifikasi_lainnya->file_dukumen_lain_pengangkatan_lainnya);
+        $file_keppress = Helper::fileBreak($verifikasi_lainnya->file_keppres);
+        $file_bukti_pendukungs = Helper::fileBreak($verifikasi_lainnya->file_bukti_pendukung);
+        $file_ba_pelantikans = Helper::fileBreak($verifikasi_lainnya->file_ba_pelantikan);
+        $file_sumpah_jabatans = Helper::fileBreak($verifikasi_lainnya->file_sumpah_jabatan);
+
         if (!$verifikasi_lainnya) {
             return redirect()->route('pages.koor_pokja.inbox.jfku')->with(['error'=>'Invalid parameter id.']);
         }
     
-        return view('pages.koor_pokja.inbox.verif_lainnya', compact('page_title', 'page_description', 'currentUser', 'verifikasi_lainnya', 'jabatans', 'unsurs'));
+        return view('pages.koor_pokja.inbox.verif_lainnya', compact('page_title', 'page_description', 'file_sumpah_jabatans', 'file_ba_pelantikans', 'file_bukti_pendukungs', 'file_keppress', 'file_dukumen_lain_pengangkatan_lainnyas', 'file_dhrs', 'file_surat_pengantars', 'currentUser', 'verifikasi_lainnya', 'jabatans', 'unsurs'));
     }
 
     public function store_proses(Request $request) 

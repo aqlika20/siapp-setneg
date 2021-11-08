@@ -30,9 +30,9 @@ class PengangkatanPejabatFungsionalKeahlianUtamaController extends Controller
      * Pengangkatan Pejabat Fungsional Keahlian Utama Attachments root folder
      * only declared here.
      */
-    private $attachments_root_folder = "pengangkatan_pejabat_fungsional_keahlian_utama_attachments/";
+    private $attachments_root_folder = "JFKU_Attachments/";
     private $data_usulan_folder;
-    private $note_usulan_folder;
+    private $data_asn_folder;
     private $note_usulan2_folder;
     private $data_pak_folder;
     private $klarifikasi_pak_folder;
@@ -42,7 +42,6 @@ class PengangkatanPejabatFungsionalKeahlianUtamaController extends Controller
     private $ba_pengambilan_sumpah_folder;
     private $data_pendukung_pangkat_baru_folder;
     private $data_kompetensi_folder;
-    private $tambah_catatan_folder;
     private $formasi_jabatan_folder;
     private $skp_2_folder;
     private $skp_2_lainnya_folder;
@@ -54,7 +53,7 @@ class PengangkatanPejabatFungsionalKeahlianUtamaController extends Controller
         $this->curr_int_time = strtotime(Carbon::now());
         $this->middleware('auth');
         $this->data_usulan_folder = $this->attachments_root_folder . "data_usulan/";
-        $this->note_usulan_folder = $this->attachments_root_folder . "note_usulan/";
+        $this->data_asn_folder = $this->attachments_root_folder . "data_asn/";
         $this->note_usulan2_folder = $this->attachments_root_folder . "note_usulan2/";
         $this->data_pak_folder = $this->attachments_root_folder . "data_pak/";
         $this->klarifikasi_pak_folder = $this->attachments_root_folder . "klarifikasi_pak/";
@@ -64,10 +63,9 @@ class PengangkatanPejabatFungsionalKeahlianUtamaController extends Controller
         $this->data_kompetensi_folder = $this->attachments_root_folder . "data_kompetensi/";
         $this->ba_pengambilan_sumpah_folder = $this->attachments_root_folder . "ba_pengambilan_sumpah/";
         $this->data_pendukung_pangkat_baru_folder = $this->attachments_root_folder . "data_pendukung_pangkat_baru/";
-        $this->tambah_catatan_folder = $this->attachments_root_folder . "tambah_catatan/";
         $this->formasi_jabatan_folder = $this->attachments_root_folder . "formasi_jabatan/";
-        $this->skp_2_folder = $this->attachments_root_folder . "skp_2/";
-        $this->skp_2_lainnya_folder = $this->attachments_root_folder . "skp_2_lainnya/";
+        $this->skp_2_folder = $this->attachments_root_folder . "data_skp_2/";
+        $this->skp_2_lainnya_folder = $this->attachments_root_folder . "data_skp_2_dukungan_lainnya/";
 
     }
 
@@ -202,7 +200,7 @@ class PengangkatanPejabatFungsionalKeahlianUtamaController extends Controller
             $files = [];
             foreach ($request->file('req_file_nota_usulan') as $file) {
                 $filename = $file->getClientOriginalName();
-                Storage::putFileAs($this->note_usulan_folder, $file, $filename);
+                Storage::putFileAs($this->data_asn_folder, $file, $filename);
                 $files[] = $filename;
             }
             $pengangkatans->file_nota_usulan_asn = $files;

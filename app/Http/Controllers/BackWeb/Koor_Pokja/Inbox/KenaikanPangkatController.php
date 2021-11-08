@@ -88,6 +88,21 @@ class KenaikanPangkatController extends Controller
 
         $notes = [];
 
+        $file_data_usulans = Helper::fileBreak($verifikasi->file_data_usulan);
+        $file_nota_usulan_asns = Helper::fileBreak($verifikasi->file_nota_usulan_asn);
+        $file_nota_usulans = Helper::fileBreak($verifikasi->file_nota_usulan);
+        $file_data_paks = Helper::fileBreak($verifikasi->file_data_pak);
+        $file_klarifikasi_paks = Helper::fileBreak($verifikasi->file_klarifikasi_pak);
+        $file_jabatans = Helper::fileBreak($verifikasi->file_jabatan);
+        $file_pengambilan_sumpahs = Helper::fileBreak($verifikasi->file_pengambilan_sumpah);
+        $file_pendukungs  = Helper::fileBreak($verifikasi->file_pendukung);
+        $file_ba_pelantikans  = Helper::fileBreak($verifikasi->file_ba_pelantikan);
+        $file_sumpah_jabatans  = Helper::fileBreak($verifikasi->file_sumpah_jabatan);
+        $file_surat_pengantars  = Helper::fileBreak($verifikasi->file_surat_pengantar);
+        $file_keppress  = Helper::fileBreak($verifikasi->file_keppres);
+        $file_bukti_pendukungs  = Helper::fileBreak($verifikasi->file_bukti_pendukung);
+
+
         if($verifikasi->jenis_layanan == Helper::$pemberian_kenaikan_pangkat || $verifikasi->jenis_layanan == Helper::$pengesahan_kenaikan_pangkat)
         {
             $notes = Catatan::where([
@@ -100,7 +115,7 @@ class KenaikanPangkatController extends Controller
             return redirect()->route('pages.koor_pokja.inbox.kenaikan_pangkat')->with(['error'=>'Invalid parameter id.']);
         }
     
-        return view('pages.koor_pokja.inbox.verif_kenaikan_pangkat', compact('page_title', 'page_description', 'currentUser', 'verifikasi', 'jabatans', 'unsurs', 'periodes', 'notes', 'pangkats'));
+        return view('pages.koor_pokja.inbox.verif_kenaikan_pangkat', compact('page_title', 'page_description', 'file_bukti_pendukungs', 'file_keppress', 'file_surat_pengantars', 'file_sumpah_jabatans', 'file_ba_pelantikans', 'file_pendukungs', 'file_pengambilan_sumpahs', 'file_jabatans', 'file_klarifikasi_paks', 'file_data_paks', 'file_nota_usulans', 'file_nota_usulan_asns', 'file_data_usulans', 'currentUser', 'verifikasi', 'jabatans', 'unsurs', 'periodes', 'notes', 'pangkats'));
     }
 
     public function store_proses(Request $request) 
