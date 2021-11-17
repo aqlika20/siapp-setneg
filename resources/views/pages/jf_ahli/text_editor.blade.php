@@ -50,7 +50,7 @@
                                                                                 <label class="col-form-label text-right col-lg-3 col-sm-12">Tanggal Surat usulan</label>
                                                                                 <div class="col-lg-5 col-md-9 col-sm-12">
                                                                                     <div class="input-group date">
-                                                                                        <input type="text" class="form-control" id="kt_datepicker_3_modal"  value="{{ $verifikasi->tgl_surat_usulan }}" disabled/>
+                                                                                        <input type="text" class="form-control" id="kt_datepicker_3_modal"  value="{{ $verifikasi->tanggal_surat_usulan }}" disabled/>
                                                                                         <div class="input-group-append">
                                                                                             <span class="input-group-text">
                                                                                                 {{-- <i class="la la-calendar"></i> --}}
@@ -494,7 +494,7 @@
                                                                                 <label class="col-form-label text-right col-lg-3 col-sm-12">Tgl.Sertifikat/surat</label>
                                                                                 <div class="col-lg-5 col-md-9 col-sm-12">
                                                                                     <div class="input-group date">
-                                                                                        <input type="text" class="form-control" value="{{ $verifikasi->tgl_sertifikat }}" disabled />
+                                                                                        <input type="text" class="form-control" value="{{ $verifikasi->tanggal_sertifikat }}" disabled />
                                                                                     </div>
                                                                                 </div>
                                                                             </div>
@@ -602,7 +602,7 @@
                                                                                 <label class="col-form-label text-right col-lg-3 col-sm-12">Tgl.Sertifikat/surat</label>
                                                                                 <div class="col-lg-5 col-md-9 col-sm-12">
                                                                                     <div class="input-group date">
-                                                                                        <input type="text" class="form-control" value="{{ $verifikasi->tgl_sertifikat }}" disabled />
+                                                                                        <input type="text" class="form-control" value="{{ $verifikasi->tanggal_sertifikat }}" disabled />
                                                                                     </div>
                                                                                 </div>
                                                                             </div>

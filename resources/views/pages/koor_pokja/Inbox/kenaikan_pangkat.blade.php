@@ -122,13 +122,12 @@
                                                     <th>Jenis Usulan</th>
                                                     <th>NIP</th>
                                                     <th>Nama</th>
-                                                    <th>Aksi</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
-                                                @foreach($pengangkatans as $pengangkatan)
+                                                @foreach($jfku_verifikasis as $pengangkatan)
                                                     <tr>
-                                                        <td>{{ $pengangkatan->tgl_surat_usulan }}</td>
+                                                        <td>{{ $pengangkatan->tanggal_surat_usulan }}</td>
                                                         <td>{{ $pengangkatan->no_surat_usulan }}</td>
                                                         <td>{{ $pengangkatan->instansi_pengusul }}</td>
                                                         <td><div style="color: #FFA800;">{{ Helper::defineJenisLayananBy($pengangkatan->jenis_layanan) }}</div></td>
@@ -177,7 +176,7 @@
                                             <tbody>
                                                 @foreach($jfku_pendings as $jfku_pending)
                                                     <tr>
-                                                        <td>{{ $jfku_pending->tgl_surat_usulan }}</td>
+                                                        <td>{{ $jfku_pending->tanggal_surat_usulan }}</td>
                                                         <td>{{ $jfku_pending->no_surat_usulan }}</td>
                                                         <td>{{ $jfku_pending->instansi_pengusul }}</td>
                                                         <td><div style="color: #FFA800;">{{ Helper::defineJenisLayananBy($jfku_pending->jenis_layanan) }}</div></td>
@@ -231,7 +230,7 @@
                                             <tbody>
                                                 @foreach($jfku_tolaks as $jfku_tolak)
                                                     <tr>
-                                                        <td>{{ $jfku_tolak->tgl_surat_usulan }}</td>
+                                                        <td>{{ $jfku_tolak->tanggal_surat_usulan }}</td>
                                                         <td>{{ $jfku_tolak->no_surat_usulan }}</td>
                                                         <td>{{ $jfku_tolak->instansi_pengusul }}</td>
                                                         <td><div style="color: #FFA800;">{{ Helper::defineJenisLayananBy($jfku_tolak->jenis_layanan) }}</div></td>

@@ -58,35 +58,45 @@ class PengangkatanPejabatLainnyaController extends Controller
         $input = $request->all();
 
         $validator = Validator::make($input, [
-            'req_tanggal_surat_pengantar' => 'required',
-            'req_no_surat_pengantar' => 'required',
+            'tanggal_surat_pengantar' => 'required',
+            'no_surat_pengantar' => 'required',
 
-            'req_jabatan_lainnya' => 'required',
-            'req_unsur' => 'required',
-            'req_nip' => 'required',
-            'req_nama' => 'required',
-            'req_instansi' => 'required',
-            'req_jabatan' => 'required',
+            'jabatan_lainnya' => 'required',
+            'unsur' => 'required',
+            'nip' => 'required',
+            'nama' => 'required',
+            'instansi' => 'required',
+            'jabatan' => 'required',
            
-            'req_file_surat_pengantar.*' => 'max:5000|mimes:jpg,png,jpeg,pdf',
-            'req_file_dhr.*' => 'max:5000|mimes:jpg,png,jpeg,pdf',
-            'req_file_dukumen_lain_pengangkatan_jabatan_lain.*' => 'max:5000|mimes:jpg,png,jpeg,pdf'
+            'file_surat_pengantar.*' => 'required|max:5000|mimes:pdf',
+            'file_dhr.*' => 'required|max:5000|mimes:pdf',
+            'file_dukumen_lain_pengangkatan_jabatan_lain.*' => 'required|max:5000|mimes:pdf'
         ]);
 
         if ($validator->fails()) {
-            return redirect()->back()->with(['error' => $validator->errors()])->withInput($input);
+                // dd($validator->messages()->getMessages());
+            foreach($validator->messages()->getMessages() as $messages) {
+                
+                $e_name = [];
+                // Go through each message for this field.
+                foreach($messages as $message) {
+                    $e_name = $message;
+                }
+                // dd($e_name);
+                return redirect()->back()->with(['error' => $e_name]);
+            }
         }
 
         $pengangkatans = PengangkatanPemberhentianLainnya::create([
-            'tanggal_surat_pengantar' => $input['req_tanggal_surat_pengantar'],
-            'no_surat_pengantar' => $input['req_no_surat_pengantar'],
+            'tanggal_surat_pengantar' => $input['tanggal_surat_pengantar'],
+            'no_surat_pengantar' => $input['no_surat_pengantar'],
             
-            'jabatan_lainnya' => $input['req_jabatan_lainnya'],
-            'unsur' => $input['req_unsur'],
-            'nip' => $input['req_nip'],
-            'nama' => $input['req_nama'],
-            'instansi' => $input['req_instansi'],
-            'jabatan_angkat' => $input['req_jabatan'],
+            'jabatan_lainnya' => $input['jabatan_lainnya'],
+            'unsur' => $input['unsur'],
+            'nip' => $input['nip'],
+            'nama' => $input['nama'],
+            'instansi' => $input['instansi'],
+            'jabatan_angkat' => $input['jabatan'],
 
             'id_pengirim' => $id_pengirim->nip,
             'jenis_layanan' => Helper::$pengangkatan_pejabat_lainnya,
@@ -94,30 +104,30 @@ class PengangkatanPejabatLainnyaController extends Controller
             
         ]);
 
-        if($request->has('req_file_surat_pengantar')){
+        if($request->has('file_surat_pengantar')){
             $files = [];
-            foreach ($request->file('req_file_surat_pengantar') as $file) {
-                $filename = $file->getClientOriginalName();
+            foreach ($request->file('file_surat_pengantar') as $file) {
+                $filename = $file->getClientOriginalName(). ' - ' .$input['nip'];
                 Storage::putFileAs($this->data_surat_pengantar_folder, $file, $filename);
                 $files[] = $filename;
             }
             $pengangkatans->file_surat_pengantar = $files;
         }
 
-        if($request->has('req_file_dhr')){
+        if($request->has('file_dhr')){
             $files = [];
-            foreach ($request->file('req_file_dhr') as $file) {
-                $filename = $file->getClientOriginalName();
+            foreach ($request->file('file_dhr') as $file) {
+                $filename = $file->getClientOriginalName(). ' - ' .$input['nip'];
                 Storage::putFileAs($this->data_dhr_folder, $file, $filename);
                 $files[] = $filename;
             }
             $pengangkatans->file_dhr = $files;
         }
 
-        if($request->has('req_file_dukumen_lain_pengangkatan_jabatan_lain')){
+        if($request->has('file_dukumen_lain_pengangkatan_jabatan_lain')){
             $files = [];
-            foreach ($request->file('req_file_dukumen_lain_pengangkatan_jabatan_lain') as $file) {
-                $filename = $file->getClientOriginalName();
+            foreach ($request->file('file_dukumen_lain_pengangkatan_jabatan_lain') as $file) {
+                $filename = $file->getClientOriginalName(). ' - ' .$input['nip'];
                 Storage::putFileAs($this->data_dukumen_lain_pengangkatan_jabatan_lain_folder, $file, $filename);
                 $files[] = $filename;
             }

@@ -15,7 +15,7 @@ class CreatePengangkatanPemberhentianJfkus extends Migration
     {
         Schema::create('pengangkatan_pemberhentian_jfkus', function (Blueprint $table) {
             $table->id();
-            $table->string('tgl_surat_usulan', 30)->nullable();
+            $table->string('tanggal_surat_usulan', 30)->nullable();
             $table->string('no_surat_usulan', 30)->nullable();
             $table->string('pejabat_menandatangani', 30)->nullable();
             $table->string('file_data_usulan', 30)->nullable();
@@ -54,13 +54,13 @@ class CreatePengangkatanPemberhentianJfkus extends Migration
             $table->string('file_ba_pengambilan_sumpah_pelantikan_fungsional', 30)->nullable();
             $table->string('tmt_jabatan_fungsional', 30)->nullable();
             $table->string('unit_kerja_fungsional', 30)->nullable();
-            $table->string('tgl_penerimaan_keppres', 30)->nullable();
+            $table->string('tanggal_penerimaan_keppres', 30)->nullable();
 
             $table->string('alasan_pemberhentian', 30)->nullable();
             $table->text('ket_alasan_pemberhentian')->nullable();
             $table->string('tmt_pemberhentian', 30)->nullable();
             $table->string('file_pendukung_pemberhentian', 30)->nullable();
-            // $table->string('tgl_catatan_pemberhentian', 30)->nullable();
+            // $table->string('tanggal_catatan_pemberhentian', 30)->nullable();
             // $table->text('catatan_pemberhentian')->nullable();
             $table->string('ket_pemberhentian', 30)->nullable();
 
@@ -81,13 +81,13 @@ class CreatePengangkatanPemberhentianJfkus extends Migration
             $table->string('file_data_jabatan_baru', 30)->nullable();
 
             $table->string('no_surat_rekomendasi', 30)->nullable();
-            $table->string('tgl_surat_rekomendasi', 30)->nullable();
+            $table->string('tanggal_surat_rekomendasi', 30)->nullable();
             $table->string('file_data_rekomendasi', 30)->nullable();
             $table->string('file_surat_pernyataan_rekomendasi', 30)->nullable();
 
             $table->string('jabatan_data_kompetensi', 30)->nullable();
             $table->string('nomor_sertifikat', 30)->nullable();
-            $table->string('tgl_sertifikat', 30)->nullable();
+            $table->string('tanggal_sertifikat', 30)->nullable();
             $table->string('file_data_kompetensi', 30)->nullable();
 
             $table->string('jumlah', 30)->nullable();

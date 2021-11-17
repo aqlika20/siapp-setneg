@@ -580,7 +580,7 @@
                                                         <label class="col-form-label col-lg-3 col-sm-12">Masa Jabatan</label>
                                                         <div class="col-lg-4 col-md-9 col-sm-12">
                                                             <div class="input-group date">
-                                                                <input type="text" class="form-control datetimepicker-input my-datepicker" name="req_masa_jabatan_start" data-toggle="datetimepicker" data-target="#req_masa_jabatan_start" placeholder="Select Date First" id="req_masa_jabatan_start" value="{{ $verifikasi_lainnya->masa_jabatan_start }}" disabled/>
+                                                                <input type="text" class="form-control datetimepicker-input my-datepicker" name="masa_jabatan_start" data-toggle="datetimepicker" data-target="#masa_jabatan_start" placeholder="Select Date First" id="masa_jabatan_start" value="{{ $verifikasi_lainnya->masa_jabatan_start }}" disabled/>
                                                                 <div class="input-group-append">
                                                                     <span class="input-group-text">
                                                                         <i class="la la-calendar"></i>
@@ -593,7 +593,7 @@
                                                         </div>
                                                         <div class="col-lg-4 col-md-9 col-sm-12">
                                                             <div class="input-group date">
-                                                                <input type="text" class="form-control datetimepicker-input my-datepicker" name="req_masa_jabatan_end" data-toggle="datetimepicker" data-target="#req_masa_jabatan_end" placeholder="Select Date Last" id="req_masa_jabatan_end" value="{{ $verifikasi_lainnya->masa_jabatan_end }}" disabled/>
+                                                                <input type="text" class="form-control datetimepicker-input my-datepicker" name="masa_jabatan_end" data-toggle="datetimepicker" data-target="#masa_jabatan_end" placeholder="Select Date Last" id="masa_jabatan_end" value="{{ $verifikasi_lainnya->masa_jabatan_end }}" disabled/>
                                                                 <div class="input-group-append">
                                                                     <span class="input-group-text">
                                                                         <i class="la la-calendar"></i>

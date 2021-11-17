@@ -608,7 +608,7 @@
                                                 <label class="col-form-label text-right col-lg-3 col-sm-12">Tgl.Sertifikat/Surat</label>
                                                 <div class="col-lg-5 col-md-9 col-sm-12">
                                                     <div class="input-group date">
-                                                        <input type="text" class="form-control datetimepicker-input my-datepicker" id="req_tgl_sertifikat" name="req_tgl_sertifikat" data-toggle="datetimepicker" data-target="#req_tgl_sertifikat" placeholder="Pilih Tanggal" value="<?php echo e(old('req_tgl_sertifikat')); ?>" autocomplete="off" require/>
+                                                        <input type="text" class="form-control datetimepicker-input my-datepicker" id="req_tanggal_sertifikat" name="req_tanggal_sertifikat" data-toggle="datetimepicker" data-target="#req_tanggal_sertifikat" placeholder="Pilih Tanggal" value="<?php echo e(old('req_tanggal_sertifikat')); ?>" autocomplete="off" require/>
                                                         <div class="input-group-append">
                                                             <span class="input-group-text">
                                                                 <i class="la la-calendar"></i>
@@ -922,7 +922,7 @@
                                                 <button type="button" class="btn btn-light-primary font-weight-bolder text-uppercase px-9 py-4" data-wizard-type="action-prev">Sebelumnya</button>
                                             </div>
                                             <div>
-                                                <button type="submit" class="btn btn-warning font-weight-bolder text-uppercase px-9 py-4" data-wizard-type="action-submit">Kirim Usulan</button>
+                                                <button type="submit" class="btn btn-warning font-weight-bolder text-uppercase px-9 py-4" data-wizard-type="action-submit" onclick="return confirmation();">Kirim Usulan</button>
                                                 <button type="button" class="btn btn-primary font-weight-bolder text-uppercase px-9 py-4" data-wizard-type="action-next">Berikutnya</button>
                                             </div>
                                         </div>

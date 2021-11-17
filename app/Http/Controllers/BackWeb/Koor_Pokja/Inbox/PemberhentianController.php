@@ -42,12 +42,22 @@ class PemberhentianController extends Controller
             ['group_id', '=', null]
         ])->get();
 
+        $jfku_verifikasis = Pemberhentian::where([
+            ['status', '=', Helper::$verifikasi_pokja]
+        ])->orwhere([
+            ['status', '=', Helper::$verifikasi_jf_ahli]
+        ])->get();
+
         $jfku_pendings = Pemberhentian::where([
-            ['status', '=', Helper::$pending]
+            ['status', '=', Helper::$pending_pokja]
+        ])->orwhere([
+            ['status', '=', Helper::$pending_jf_ahli]
         ])->get();
 
         $jfku_tolaks = Pemberhentian::where([
-            ['status', '=', Helper::$tolak]
+            ['status', '=', Helper::$tolak_pokja]
+        ])->orwhere([
+            ['status', '=', Helper::$tolak_jf_ahli]
         ])->get();
 
         $group_lists = Group::distinct()->get();
@@ -69,7 +79,7 @@ class PemberhentianController extends Controller
             $group_roles[$user->group][]=$user->role;
         }
 
-        return view('pages.koor_pokja.inbox.pemberhentian', compact('page_title', 'page_description', 'currentUser', 'pengangkatans', 'jfku_pendings', 'jfku_tolaks', 'group_lists', 'group_users', 'group_roles'));
+        return view('pages.koor_pokja.inbox.pemberhentian', compact('jfku_verifikasis','page_title', 'page_description', 'currentUser', 'pengangkatans', 'jfku_pendings', 'jfku_tolaks', 'group_lists', 'group_users', 'group_roles'));
     }
 
     public function verification($id){
@@ -119,7 +129,7 @@ class PemberhentianController extends Controller
         if($jenis_layanan == Helper::$bup_non_kpp || $jenis_layanan == Helper::$bup_kpp || $jenis_layanan == Helper::$berhenti_atas_permintaan_sendiri || $jenis_layanan == Helper::$non_bup_JDA_non_kpp || $jenis_layanan == Helper::$non_bup_JDA_kpp || $jenis_layanan == Helper::$berhenti_tidak_hormat || $jenis_layanan == Helper::$anumerta || $jenis_layanan == Helper::$pemberhentian_sementara || $jenis_layanan == Helper::$ralat_keppres_pemberhentian || $jenis_layanan == Helper::$pembatalan_keppress_pemberhentian || $jenis_layanan == Helper::$petikan_keppres_hilang)
         {
             $pengangkatans = Pemberhentian::where('id', '=', $id)->update(
-                ['status' => Helper::$pengajuan_usulan]
+                ['status' => Helper::$verifikasi_pokja]
             );
             return redirect()->route('koor-pokja.inbox.pemberhentian.index')->with(['success'=>'verifikasi Success !!!']);
         }
@@ -134,7 +144,7 @@ class PemberhentianController extends Controller
         if($jenis_layanan == Helper::$bup_non_kpp || $jenis_layanan == Helper::$bup_kpp || $jenis_layanan == Helper::$berhenti_atas_permintaan_sendiri || $jenis_layanan == Helper::$non_bup_JDA_non_kpp || $jenis_layanan == Helper::$non_bup_JDA_kpp || $jenis_layanan == Helper::$berhenti_tidak_hormat || $jenis_layanan == Helper::$anumerta || $jenis_layanan == Helper::$pemberhentian_sementara || $jenis_layanan == Helper::$ralat_keppres_pemberhentian || $jenis_layanan == Helper::$pembatalan_keppress_pemberhentian || $jenis_layanan == Helper::$petikan_keppres_hilang)
         {
             $pengangkatans = Pemberhentian::where('id', '=', $id)->update(
-                ['status' => Helper::$pending]
+                ['status' => Helper::$pending_pokja]
             );
             return redirect()->route('koor-pokja.inbox.pemberhentian.index')->with(['success'=>'verifikasi Success !!!']);          
         }
@@ -149,7 +159,7 @@ class PemberhentianController extends Controller
         if($jenis_layanan == Helper::$bup_non_kpp || $jenis_layanan == Helper::$bup_kpp || $jenis_layanan == Helper::$berhenti_atas_permintaan_sendiri || $jenis_layanan == Helper::$non_bup_JDA_non_kpp || $jenis_layanan == Helper::$non_bup_JDA_kpp || $jenis_layanan == Helper::$berhenti_tidak_hormat || $jenis_layanan == Helper::$anumerta || $jenis_layanan == Helper::$pemberhentian_sementara || $jenis_layanan == Helper::$ralat_keppres_pemberhentian || $jenis_layanan == Helper::$pembatalan_keppress_pemberhentian || $jenis_layanan == Helper::$petikan_keppres_hilang)
         {
             $pengangkatans = Pemberhentian::where('id', '=', $id)->update(
-                ['status' => Helper::$tolak]
+                ['status' => Helper::$tolak_pokja]
             );
             return redirect()->route('koor-pokja.inbox.pemberhentian.index')->with(['success'=>'verifikasi Success !!!']);
         }

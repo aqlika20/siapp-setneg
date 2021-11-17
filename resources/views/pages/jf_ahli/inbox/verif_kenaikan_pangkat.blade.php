@@ -197,7 +197,7 @@
                                                     <label class="col-lg-3 col-form-label">Upload File</label>
                                                     <div class="col-lg-9">
                                                         <a style="color: blue;">file.pdf</a>
-                                                    <!-- <input id="req_file_data_pak_terakhir" name="req_file_data_pak_terakhir[]" type="file" class="file" data-show-preview="false" multiple/>
+                                                    <!-- <input id="file_data_pak_terakhir" name="file_data_pak_terakhir[]" type="file" class="file" data-show-preview="false" multiple/>
                                                         <span class="form-text text-muted">Max file size is 1MB and max number of files is 5.</span> -->
                                                     </div>
                                                 </div>
@@ -728,7 +728,7 @@
                                                     <label class="col-form-label col-lg-3 col-sm-12">Tgl.Sertifikat/Surat</label>
                                                     <div class="col-lg-5 col-md-9 col-sm-12">
                                                         <div class="input-group date">
-                                                            <input type="text" class="form-control" value="{{ $verifikasi->tgl_sertifikat }}" disabled />
+                                                            <input type="text" class="form-control" value="{{ $verifikasi->tanggal_sertifikat }}" disabled />
                                                             <div class="input-group-append">
                                                                 <span class="input-group-text">
                                                                     <i class="la la-calendar"></i>
@@ -846,7 +846,7 @@
                                                     <label class="col-form-label col-lg-3 col-sm-12">Tgl.Sertifikat/surat</label>
                                                     <div class="col-lg-5 col-md-9 col-sm-12">
                                                         <div class="input-group date">
-                                                            <input type="text" class="form-control" value="{{ $verifikasi->tgl_sertifikat }}" disabled />
+                                                            <input type="text" class="form-control" value="{{ $verifikasi->tanggal_sertifikat }}" disabled />
                                                             <div class="input-group-append">
                                                                 <span class="input-group-text">
                                                                     <i class="la la-calendar"></i>

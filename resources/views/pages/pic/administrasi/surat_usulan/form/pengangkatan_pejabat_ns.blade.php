@@ -41,7 +41,7 @@
                                                 <label class="col-form-label col-lg-3 col-sm-12">Tanggal Surat Pengantar</label>
                                                 <div class="col-lg-5 col-md-9 col-sm-12">
                                                     <div class="input-group date">
-                                                        <input type="text" class="form-control datetimepicker-input my-datepicker" id="req_tanggal_surat_pengantar" name="req_tanggal_surat_pengantar" data-toggle="datetimepicker" data-target="#req_tanggal_surat_pengantar" placeholder="Pilih Tanggal" value="{{old('req_tanggal_surat_pengantar')}}" require/>
+                                                        <input type="text" class="form-control datetimepicker-input my-datepicker" id="tanggal_surat_pengantar" name="tanggal_surat_pengantar" data-toggle="datetimepicker" data-target="#tanggal_surat_pengantar" placeholder="Pilih Tanggal" value="{{old('tanggal_surat_pengantar')}}" require/>
                                                         <div class="input-group-append">
                                                             <span class="input-group-text">
                                                                 <i class="la la-calendar"></i>
@@ -54,14 +54,14 @@
                                                 <label class="col-form-label col-lg-3 col-sm-12">No. Surat Pengantar</label>
                                                 <div class="col-lg-9 col-md-9 col-sm-12">
                                                     <div class="input-group">
-                                                        <input type="text" class="form-control" id="req_no_surat_pengantar" name="req_no_surat_pengantar" value="{{old('req_no_surat_pengantar')}}" autocomplete="off" require/>
+                                                        <input type="text" class="form-control" id="no_surat_pengantar" name="no_surat_pengantar" value="{{old('no_surat_pengantar')}}" autocomplete="off" require/>
                                                     </div>
                                                 </div>
                                             </div>
                                             <div class="form-group row">
                                                 <label class="col-lg-3 col-form-label">Upload Surat Pengantar</label>
                                                 <div class="col-lg-9">
-                                                    <input id="req_file_surat_pengantar" name="req_file_surat_pengantar[]" type="file" class="file" data-show-preview="false" multiple/>
+                                                    <input id="file_surat_pengantar" name="file_surat_pengantar[]" type="file" class="file" data-show-preview="false" multiple/>
                                                     
                                                     <!-- <div class="dropzone dropzone-multi" id="kt_dropzone_4">
                                                         <div class="dropzone-panel mb-lg-0 mb-2">
@@ -111,7 +111,7 @@
                                                 <label class="col-form-label col-lg-3 col-sm-12">LNS yang akan diisi</label>
                                                 <div class="col-lg-9 col-md-9 col-sm-12">
                                                     <div class="input-group date">
-                                                        <input type="text" class="form-control" id="req_lns" name="req_lns" value="{{old('req_lns')}}" autocomplete="off" require/>
+                                                        <input type="text" class="form-control" id="lns" name="lns" value="{{old('lns')}}" autocomplete="off" require/>
                                                     </div>
                                                 </div>
                                             </div>
@@ -120,10 +120,10 @@
                                             <div class="form-group row">
                                                 <label class="col-form-label col-lg-3 col-sm-12">Unsur</label>
                                                 <div class="col-lg-9 col-md-9 col-sm-12">
-                                                    <select class="form-control select2" style="width: 230px;" id="req_unsur" name="req_unsur">
+                                                    <select class="form-control select2" style="width: 230px;" id="unsur" name="unsur">
                                                         <option value="">Choose</option>
                                                         @foreach ($unsurs as $unsur)
-                                                        <option value="{{$unsur->id}}" {{ old('req_unsur') == $unsur->id ? 'selected' : '' }}>{{$unsur->nama}}</option>
+                                                        <option value="{{$unsur->id}}" {{ old('unsur') == $unsur->id ? 'selected' : '' }}>{{$unsur->nama}}</option>
                                                         @endforeach
                                                     </select>
                                                     <!-- <div class="input-group date">
@@ -142,7 +142,7 @@
                                                 <label class="col-form-label col-lg-3 col-sm-12">NIP</label>
                                                 <div class="col-lg-9 col-md-9 col-sm-12">
                                                     <div class="input-group date">
-                                                        <input type="number" pattern="[0-9]+([\.,][0-9]+)?" class="form-control" id="req_nip" name="req_nip" value="{{old('req_nip')}}" autocomplete="off" require/>
+                                                        <input type="number" pattern="[0-9]+([\.,][0-9]+)?" class="form-control" id="nip" name="nip" value="{{old('nip')}}" autocomplete="off" require/>
                                                     </div>
                                                 </div>
                                             </div>
@@ -152,7 +152,7 @@
                                                 <label class="col-form-label col-lg-3 col-sm-12">Nama</label>
                                                 <div class="col-lg-9 col-md-9 col-sm-12">
                                                     <div class="input-group date">
-                                                        <input type="text" onkeydown="return /[a-zA-Z0-9\s]+/i.test(event.key)" class="form-control" id="req_nama" name="req_nama" value="{{old('req_nama')}}" autocomplete="off" require />
+                                                        <input type="text" onkeydown="return /[a-zA-Z0-9\s]+/i.test(event.key)" class="form-control" id="nama" name="nama" value="{{old('nama')}}" autocomplete="off" require />
                                                     </div>
                                                 </div>
                                             </div>
@@ -162,7 +162,7 @@
                                                 <label class="col-form-label col-lg-3 col-sm-12">Tanggal Keppres</label>
                                                 <div class="col-lg-5 col-md-9 col-sm-12">
                                                     <div class="input-group date">
-                                                        <input type="text" class="form-control datetimepicker-input my-datepicker" id="req_tanggal_keppres" name="req_tanggal_keppres" data-toggle="datetimepicker" data-target="#req_tanggal_keppres" placeholder="Pilih Tanggal" value="{{old('req_tanggal_keppres')}}" require/>
+                                                        <input type="text" class="form-control datetimepicker-input my-datepicker" id="tanggal_keppres" name="tanggal_keppres" data-toggle="datetimepicker" data-target="#tanggal_keppres" placeholder="Pilih Tanggal" value="{{old('tanggal_keppres')}}" require/>
                                                         <div class="input-group-append">
                                                             <span class="input-group-text">
                                                                 <i class="la la-calendar"></i>
@@ -177,7 +177,7 @@
                                                 <label class="col-form-label col-lg-3 col-sm-12">Instansi</label>
                                                 <div class="col-lg-9 col-md-9 col-sm-12">
                                                     <div class="input-group date">
-                                                        <input type="text" onkeydown="return /[a-zA-Z0-9\s]+/i.test(event.key)" class="form-control" id="req_instansi" name="req_instansi" value="{{old('req_instansi')}}" autocomplete="off" require />
+                                                        <input type="text" onkeydown="return /[a-zA-Z0-9\s]+/i.test(event.key)" class="form-control" id="instansi" name="instansi" value="{{old('instansi')}}" autocomplete="off" require />
                                                     </div>
                                                 </div>
                                             </div>
@@ -186,10 +186,10 @@
                                             <div class="form-group row">
                                                 <label class="col-form-label col-lg-3 col-sm-12">Jabatan Yang Akan di Angkat</label>
                                                 <div class="col-lg-9 col-md-9 col-sm-12">
-                                                    <select class="form-control select2" style="width: 230px;" id="req_jabatan" name="req_jabatan">
+                                                    <select class="form-control select2" style="width: 230px;" id="jabatan" name="jabatan">
                                                         <option value="">Choose</option>
                                                         @foreach ($jabatans as $jabatan)
-                                                            <option value="{{$jabatan->id}}" {{ old('req_jabatan') == $jabatan->id ? 'selected' : '' }}>{{$jabatan->nama}}</option>
+                                                            <option value="{{$jabatan->id}}" {{ old('jabatan') == $jabatan->id ? 'selected' : '' }}>{{$jabatan->nama}}</option>
                                                         @endforeach
                                                     </select>
                                                     <!-- <div class="input-group date">
@@ -207,7 +207,7 @@
                                             <div class="form-group row">
                                                 <label class="col-lg-3 col-form-label">Upload DRH</label>
                                                 <div class="col-lg-9">
-                                                    <input id="req_file_dhr" name="req_file_dhr[]" type="file" class="file" data-show-preview="false" multiple/>
+                                                    <input id="file_dhr" name="file_dhr[]" type="file" class="file" data-show-preview="false" multiple/>
                                                     
                                                     <!-- <div class="dropzone dropzone-multi" id="kt_dropzone_4">
                                                         <div class="dropzone-panel mb-lg-0 mb-2">
@@ -250,7 +250,7 @@
                                             <div class="form-group row">
                                                 <label class="col-lg-3 col-form-label">Upload Dokumen Lainnya</label>
                                                 <div class="col-lg-9">
-                                                    <input id="req_file_dukumen_lain_pengangkatan_ns" name="req_file_dukumen_lain_pengangkatan_ns[]" type="file" class="file" data-show-preview="false" multiple/>
+                                                    <input id="file_dukumen_lain_pengangkatan_ns" name="file_dukumen_lain_pengangkatan_ns[]" type="file" class="file" data-show-preview="false" multiple/>
                                                     
                                                     <!-- <div class="dropzone dropzone-multi" id="kt_dropzone_4">
                                                         <div class="dropzone-panel mb-lg-0 mb-2">
@@ -297,7 +297,7 @@
                                                 <button type="button" class="btn btn-light-primary font-weight-bolder text-uppercase px-9 py-4" data-wizard-type="action-prev">Sebelumnya</button>
                                             </div>
                                             <div>
-                                                <button type="submit" class="btn btn-warning font-weight-bolder text-uppercase px-9 py-4" data-wizard-type="action-submit">Kirim Usulan</button>
+                                                <button type="submit" class="btn btn-warning font-weight-bolder text-uppercase px-9 py-4" data-wizard-type="action-submit" onclick="return confirmation();">Kirim Usulan</button>
                                                 <button type="button" class="btn btn-primary font-weight-bolder text-uppercase px-9 py-4" data-wizard-type="action-next">Berikutnya</button>
                                             </div>
                                         </div>
@@ -347,6 +347,14 @@
             placeholder: "Choose..."
         })
 
+        function confirmation(){
+            if(confirm('are you sure?')){
+                document.getElementById('kt_form').submit();
+            }else{
+                return false;
+            }   
+        }
+
     </script>
     <script>
         $(function(){
@@ -354,22 +362,22 @@
                 errorClass:"error-msg",
                 errorElement:"p",
                 rules:{
-                    req_tanggal_surat_pengantar: 'required',
-                    req_no_surat_pengantar: 'required',
-                    req_file_surat_pengantar: {
-                        extenstion: "jpg,png,jpeg,pdf"
+                    tanggal_surat_pengantar: 'required',
+                    no_surat_pengantar: 'required',
+                    file_surat_pengantar: {
+                        extenstion: "pdf"
                     },
-                    req_lns: 'required',
-                    req_unsur: 'required',
-                    req_nip: 'required',
-                    req_nama: 'required',
-                    req_instansi: 'required',
-                    req_jabatan: 'required',
-                    req_file_dhr: {
-                        extenstion: "jpg,png,jpeg,pdf"
+                    lns: 'required',
+                    unsur: 'required',
+                    nip: 'required',
+                    nama: 'required',
+                    instansi: 'required',
+                    jabatan: 'required',
+                    file_dhr: {
+                        extenstion: "pdf"
                     }
-                    req_file_dukumen_lain_pengangkatan_ns: {
-                        extenstion: "jpg,png,jpeg,pdf"
+                    file_dukumen_lain_pengangkatan_ns: {
+                        extenstion: "pdf"
                     }
                 },
                 submitHandler:function(form){

@@ -492,7 +492,7 @@
                                         <td><div style="color: #FFA800;">{{ Helper::defineJenisLayananBy($pengangkatan->jenis_layanan) }}</div></td>
                                         <td>{{ Helper::defineStatusBy($pengangkatan->status) }}</td> -->
 
-                                        <td>{{ $pengangkatan->tgl_surat_usulan }}</td>
+                                        <td>{{ $pengangkatan->tanggal_surat_usulan }}</td>
                                         <td>{{ $pengangkatan->no_surat_usulan }}</td>
                                         <td>{{ $pengangkatan->instansi_pengusul }}</td>
                                         <td><div style="color: #FFA800;">{{ Helper::defineJenisLayananBy($pengangkatan->jenis_layanan) }}</div></td>
@@ -508,7 +508,7 @@
                                         <td><div style="color: #FFA800;">{{ Helper::defineJenisLayananBy($struktural->jenis_layanan) }}</div></td>
                                         <td>{{ Helper::defineStatusBy($struktural->status) }}</td> -->
 
-                                        <td>{{ $struktural->tgl_surat_usulan }}</td>
+                                        <td>{{ $struktural->tanggal_surat_usulan }}</td>
                                         <td>{{ $struktural->no_surat_usulan }}</td>
                                         <td>{{ $struktural->instansi_pengusul }}</td>
                                         <td><div style="color: #FFA800;">{{ Helper::defineJenisLayananBy($struktural->jenis_layanan) }}</div></td>
@@ -524,7 +524,7 @@
                                         <td><div style="color: #FFA800;">{{ Helper::defineJenisLayananBy($lainnya->jenis_layanan) }}</div></td>
                                         <td>{{ Helper::defineStatusBy($lainnya->status) }}</td> -->
 
-                                        <td>{{ $lainnya->tgl_surat_usulan }}</td>
+                                        <td>{{ $lainnya->tanggal_surat_usulan }}</td>
                                         <td>{{ $lainnya->no_surat_usulan }}</td>
                                         <td>{{ $lainnya->instansi_pengusul }}</td>
                                         <td><div style="color: #FFA800;">{{ Helper::defineJenisLayananBy($lainnya->jenis_layanan) }}</div></td>

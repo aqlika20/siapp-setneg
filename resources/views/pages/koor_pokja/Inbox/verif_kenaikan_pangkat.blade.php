@@ -13,7 +13,7 @@
                     <div class="card card-custom">
                     <div class="card-header flex-wrap border-0 pt-6 pb-0" style="background-color: #FFA800;">
                         <div class="card-title">
-                            <h3 class="card-label">Verifikasi Kenaikan Pangkat
+                            <h3 class="card-label">Verifikasi Kenaikan Pangkat {{Helper::defineJenisLayananBy($verifikasi->jenis_layanan)}}
                             <span class="d-block text-muted pt-2 font-size-sm"></span></h3>
                         </div>
                     </div>
@@ -1035,7 +1035,7 @@
                                                     <label class="col-form-label col-lg-3 col-sm-12">Tgl.Sertifikat/Surat</label>
                                                     <div class="col-lg-5 col-md-9 col-sm-12">
                                                         <div class="input-group date">
-                                                            <input type="text" class="form-control" value="{{ $verifikasi->tgl_sertifikat }}" disabled />
+                                                            <input type="text" class="form-control" value="{{ $verifikasi->tanggal_sertifikat }}" disabled />
                                                             <div class="input-group-append">
                                                                 <span class="input-group-text">
                                                                     <i class="la la-calendar"></i>
@@ -1340,7 +1340,7 @@
                                                         <label class="col-form-label col-lg-3 col-sm-12">Tgl.Sertifikat/surat</label>
                                                         <div class="col-lg-5 col-md-9 col-sm-12">
                                                             <div class="input-group date">
-                                                                <input type="text" class="form-control" value="{{ $verifikasi->tgl_sertifikat }}" disabled />
+                                                                <input type="text" class="form-control" value="{{ $verifikasi->tanggal_sertifikat }}" disabled />
                                                                 <div class="input-group-append">
                                                                     <span class="input-group-text">
                                                                         <i class="la la-calendar"></i>

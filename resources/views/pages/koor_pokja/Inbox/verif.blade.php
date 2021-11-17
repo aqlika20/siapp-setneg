@@ -35,7 +35,7 @@
                                                     <label class="col-form-label col-lg-3 col-sm-12">Tanggal Surat usulan</label>
                                                     <div class="col-lg-5 col-md-9 col-sm-12">
                                                         <div class="input-group date">
-                                                            <input type="text" class="form-control" id="kt_datepicker_3_modal"  value="{{ $verifikasi->tgl_surat_usulan }}" disabled/>
+                                                            <input type="text" class="form-control" id="kt_datepicker_3_modal"  value="{{ $verifikasi->tanggal_surat_usulan }}" disabled/>
                                                             <div class="input-group-append">
                                                                 <span class="input-group-text">
                                                                      <i class="la la-calendar"></i> 
@@ -843,7 +843,7 @@
                                                     <label class="col-form-label col-lg-3 col-sm-12">Tgl. Surat Rekomendasi</label>
                                                     <div class="col-lg-5 col-md-9 col-sm-12">
                                                         <div class="input-group date">
-                                                            <input type="text" class="form-control" value="{{ $verifikasi->tgl_surat_rekomendasi }}" id="kt_datepicker_8_modal" disabled/>
+                                                            <input type="text" class="form-control" value="{{ $verifikasi->tanggal_surat_rekomendasi }}" id="kt_datepicker_8_modal" disabled/>
                                                             <div class="input-group-append">
                                                                 <span class="input-group-text">
                                                                     <i class="la la-calendar"></i>
@@ -955,7 +955,7 @@
                                                     <label class="col-form-label col-lg-3 col-sm-12">Tgl.Sertifikat/surat</label>
                                                     <div class="col-lg-5 col-md-9 col-sm-12">
                                                         <div class="input-group date">
-                                                            <input type="text" class="form-control" value="{{ $verifikasi->tgl_sertifikat }}" disabled />
+                                                            <input type="text" class="form-control" value="{{ $verifikasi->tanggal_sertifikat }}" disabled />
                                                             <div class="input-group-append">
                                                                 <span class="input-group-text">
                                                                     <i class="la la-calendar"></i>
@@ -1181,7 +1181,7 @@
                                                     <label class="col-form-label col-lg-3 col-sm-12">Tgl.Sertifikat/surat</label>
                                                     <div class="col-lg-5 col-md-9 col-sm-12">
                                                         <div class="input-group date">
-                                                            <input type="text" class="form-control" value="{{ $verifikasi->tgl_sertifikat }}" disabled />
+                                                            <input type="text" class="form-control" value="{{ $verifikasi->tanggal_sertifikat }}" disabled />
                                                             <div class="input-group-append">
                                                                 <span class="input-group-text">
                                                                     <i class="la la-calendar"></i>
@@ -1202,42 +1202,42 @@
                                                     <div class="col-lg-9 col-md-9 col-sm-12">
                                                         <div style="margin-bottom:10px;">
                                                             <label class="radio radio-success">
-                                                                <input type="radio" id="radio_1" name="req_alasan_pemberhentian" value="1" {{ ($verifikasi->alasan_pemberhentian =="1")? "checked" : "" }} disabled />
+                                                                <input type="radio" id="radio_1" name="alasan_pemberhentian" value="1" {{ ($verifikasi->alasan_pemberhentian =="1")? "checked" : "" }} disabled />
                                                                 <span></span>
                                                                 <div style="margin-left: 10px;">Mengundurkan diri dari jabatan</div>
                                                             </label>
                                                         </div>
                                                         <div style="margin-bottom:10px;">
                                                             <label class="radio radio-success">
-                                                                <input type="radio" id="radio_2" name="req_alasan_pemberhentian" value="2" {{ ($verifikasi->alasan_pemberhentian =="2")? "checked" : "" }} disabled/>
+                                                                <input type="radio" id="radio_2" name="alasan_pemberhentian" value="2" {{ ($verifikasi->alasan_pemberhentian =="2")? "checked" : "" }} disabled/>
                                                                 <span></span>
                                                                 <div style="margin-left: 10px;">Diberhentikan sementara sebagai PNS</div>
                                                             </label>
                                                         </div>
                                                         <div style="margin-bottom:10px;">
                                                             <label class="radio radio-success">
-                                                                <input type="radio" id="radio_3" name="req_alasan_pemberhentian" value="3" {{ ($verifikasi->alasan_pemberhentian =="3")? "checked" : "" }} disabled/>
+                                                                <input type="radio" id="radio_3" name="alasan_pemberhentian" value="3" {{ ($verifikasi->alasan_pemberhentian =="3")? "checked" : "" }} disabled/>
                                                                 <span></span>
                                                                 <div style="margin-left: 10px;">Menjalani cuti diluar tanggungan negara</div>
                                                             </label>
                                                         </div>
                                                         <div style="margin-bottom:10px;">
                                                             <label class="radio radio-success">
-                                                                <input type="radio" id="radio_4" name="req_alasan_pemberhentian" value="4" {{ ($verifikasi->alasan_pemberhentian =="4")? "checked" : "" }} disabled/>
+                                                                <input type="radio" id="radio_4" name="alasan_pemberhentian" value="4" {{ ($verifikasi->alasan_pemberhentian =="4")? "checked" : "" }} disabled/>
                                                                 <span></span>
                                                                 <div style="margin-left: 10px;">Menjanlani tugas belajar lebih dari 6 (enam) bulan</div>
                                                             </label>
                                                         </div>
                                                         <div style="margin-bottom:10px;">
                                                             <label class="radio radio-success">
-                                                                <input type="radio" id="radio_5" name="req_alasan_pemberhentian" value="5" {{ ($verifikasi->alasan_pemberhentian =="5")? "checked" : "" }} disabled/>
+                                                                <input type="radio" id="radio_5" name="alasan_pemberhentian" value="5" {{ ($verifikasi->alasan_pemberhentian =="5")? "checked" : "" }} disabled/>
                                                                 <span></span>
                                                                 <div style="margin-left: 10px;">Ditugaskan secara penuh diluar jabatan fungsional</div>
                                                             </label>
                                                         </div>
                                                         <div style="margin-bottom:10px;">
                                                             <label class="radio radio-success">
-                                                                <input type="radio" id="radio_6" name="req_alasan_pemberhentian" value="6" {{ ($verifikasi->alasan_pemberhentian =="6")? "checked" : "" }} disabled/>
+                                                                <input type="radio" id="radio_6" name="alasan_pemberhentian" value="6" {{ ($verifikasi->alasan_pemberhentian =="6")? "checked" : "" }} disabled/>
                                                                 <span></span>
                                                                 <div style="margin-left: 10px;">Tidak memenuhi syarat jabatan</div>
                                                             </label>
@@ -1249,7 +1249,7 @@
                                                     <label class="col-form-label col-lg-3 col-sm-12">Keterangan Alasan</label>
                                                     <div class="col-lg-9 col-md-9 col-sm-12">
                                                         <div class="input-group date">
-                                                            <textarea class="form-control" rows="3" id="req_ket_alasan_pemberhentian" name="req_ket_alasan_pemberhentian" disabled> {{ $verifikasi->ket_alasan_pemberhentian }} </textarea>
+                                                            <textarea class="form-control" rows="3" id="ket_alasan_pemberhentian" name="ket_alasan_pemberhentian" disabled> {{ $verifikasi->ket_alasan_pemberhentian }} </textarea>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -1335,49 +1335,49 @@
                                                         <div class="col-lg-9 col-md-9 col-sm-12">
                                                             <div style="margin-bottom:10px;">
                                                                 <label class="checkbox checkbox-outline checkbox-outline-2x checkbox-primary">
-                                                                    <input type="checkbox" id="req_ket" name="req_ket[]" value="1" disabled/>
+                                                                    <input type="checkbox" id="ket" name="ket[]" value="1" disabled/>
                                                                     <span></span><div style="margin-left: 10px;">Surat Usulan Asli Ditandatangani PPK</div>
                                                                 </label>
                                                             </div>
                                                             <div style="margin-bottom:10px;">
                                                                 <label class="checkbox checkbox-outline checkbox-outline-2x checkbox-primary">
-                                                                    <input type="checkbox" id="req_ket" name="req_ket[]" value="2" disabled/>
+                                                                    <input type="checkbox" id="ket" name="ket[]" value="2" disabled/>
                                                                     <span></span><div style="margin-left: 10px;">Nota Usulan asli yang dilengkapi dengan data formasi dan ditandatangani oleh PPK</div>
                                                                 </label>
                                                             </div>
                                                             <div style="margin-bottom:10px;">
                                                                 <label class="checkbox checkbox-outline checkbox-outline-2x checkbox-primary">
-                                                                    <input type="checkbox" id="req_ket" name="req_ket[]" value="3" disabled/>
+                                                                    <input type="checkbox" id="ket" name="ket[]" value="3" disabled/>
                                                                     <span></span><div style="margin-left: 10px;">Sertifikat/tanda lulus/surat keterangan lulus uji kompetensi</div>
                                                                 </label>
                                                             </div>
                                                             <div style="margin-bottom:10px;">
                                                                 <label class="checkbox checkbox-outline checkbox-outline-2x checkbox-primary">
-                                                                    <input type="checkbox" id="req_ket" name="req_ket[]" value="4" disabled/>
+                                                                    <input type="checkbox" id="ket" name="ket[]" value="4" disabled/>
                                                                     <span></span><div style="margin-left: 10px;">PAK asli 1 tahun terakhir</div>
                                                                 </label>
                                                             </div>
                                                             <div style="margin-bottom:10px;">
                                                                 <label class="checkbox checkbox-outline checkbox-outline-2x checkbox-primary">
-                                                                    <input type="checkbox" id="req_ket" name="req_ket[]" value="5" disabled/>
+                                                                    <input type="checkbox" id="ket" name="ket[]" value="5" disabled/>
                                                                     <span></span><div style="margin-left: 10px;">Salinan sah SK jabatan terakhir</div>
                                                                 </label>
                                                             </div>
                                                             <div style="margin-bottom:10px;">
                                                                 <label class="checkbox checkbox-outline checkbox-outline-2x checkbox-primary">
-                                                                    <input type="checkbox" id="req_ket" name="req_ket[]" value="6" disabled/>
+                                                                    <input type="checkbox" id="ket" name="ket[]" value="6" disabled/>
                                                                     <span></span><div style="margin-left: 10px;">Salinan sah SK Pangkat terakhir</div>
                                                                 </label>
                                                             </div>
                                                             <div style="margin-bottom:30px;">
                                                                 <label class="checkbox checkbox-outline checkbox-outline-2x checkbox-primary">
-                                                                    <input type="checkbox" id="req_ket" name="req_ket[]" value="7" disabled/>
+                                                                    <input type="checkbox" id="ket" name="ket[]" value="7" disabled/>
                                                                     <span></span><div style="margin-left: 10px;">Salinan sah SKP dan Penilaian Prestasi Kerja 2 tahun terakhir</div>
                                                                 </label>
                                                             </div>
                                                             <div style="margin-bottom:10px;">
                                                                 <label class="checkbox checkbox-outline checkbox-outline-2x checkbox-primary">
-                                                                    <input type="checkbox" id="req_ket" name="req_ket[]" value="8" disabled/>
+                                                                    <input type="checkbox" id="ket" name="ket[]" value="8" disabled/>
                                                                     <span></span><div style="margin-left: 10px;">Semua persyaratan dan dokumen benar</div>
                                                                 </label>
                                                             </div>

@@ -56,32 +56,42 @@ class RalatKeppresKepangkatanController extends Controller
         $input = $request->all();
 
         $validator = Validator::make($input, [
-            'req_tanggal_surat_pengantar' => 'required',
-            'req_no_surat_pengantar' => 'required',
+            'tanggal_surat_pengantar' => 'required',
+            'no_surat_pengantar' => 'required',
 
-            'req_no_keppres' => 'required',
-            'req_tanggal_keppres' => 'required',
+            'no_keppres' => 'required',
+            'tanggal_keppres' => 'required',
 
-            'req_alasan_ralat' => 'required',
+            'alasan_ralat' => 'required',
             
-            'req_file_surat_pengantar.*' => 'max:5000|mimes:jpg,png,jpeg,pdf',
-            'req_file_keppres.*' => 'max:5000|mimes:jpg,png,jpeg,pdf',
-            'req_bukti_pendukung.*' => 'max:5000|mimes:jpg,png,jpeg,pdf'
+            'file_surat_pengantar.*' => 'required|max:5000|mimes:pdf',
+            'file_keppres.*' => 'required|max:5000|mimes:pdf',
+            'bukti_pendukung.*' => 'required|max:5000|mimes:pdf'
         
         ]);
 
         if ($validator->fails()) {
-            return redirect()->back()->with(['error' => $validator->errors()])->withInput($input);
+                // dd($validator->messages()->getMessages());
+            foreach($validator->messages()->getMessages() as $messages) {
+                
+                $e_name = [];
+                // Go through each message for this field.
+                foreach($messages as $message) {
+                    $e_name = $message;
+                }
+                // dd($e_name);
+                return redirect()->back()->with(['error' => $e_name]);
+            }
         }
 
         $pengangkatans = KenaikanPangkat::create([
-            'tanggal_surat_pengantar' => $input['req_tanggal_surat_pengantar'],
-            'no_surat_pengantar' => $input['req_no_surat_pengantar'],
+            'tanggal_surat_pengantar' => $input['tanggal_surat_pengantar'],
+            'no_surat_pengantar' => $input['no_surat_pengantar'],
 
-            'no_keppres' => $input['req_no_keppres'],
-            'tanggal_keppres' => $input['req_tanggal_keppres'],
+            'no_keppres' => $input['no_keppres'],
+            'tanggal_keppres' => $input['tanggal_keppres'],
 
-            'alasan_ralat' => $input['req_alasan_ralat'],
+            'alasan_ralat' => $input['alasan_ralat'],
 
             'id_pengirim' => $id_pengirim->nip,
             'jenis_layanan' => Helper::$ralat_keppres_kepangkatan,
@@ -89,9 +99,9 @@ class RalatKeppresKepangkatanController extends Controller
             
         ]);
 
-        if($request->has('req_file_surat_pengantar')){
+        if($request->has('file_surat_pengantar')){
             $files = [];
-            foreach ($request->file('req_file_surat_pengantar') as $file) {
+            foreach ($request->file('file_surat_pengantar') as $file) {
                 $filename = $file->getClientOriginalName();
                 Storage::putFileAs($this->data_surat_pengantar_folder, $file, $filename);
                 $files[] = $filename;
@@ -99,9 +109,9 @@ class RalatKeppresKepangkatanController extends Controller
             $pengangkatans->file_surat_pengantar = $files;
         }
 
-        if($request->has('req_file_keppres')){
+        if($request->has('file_keppres')){
             $files = [];
-            foreach ($request->file('req_file_keppres') as $file) {
+            foreach ($request->file('file_keppres') as $file) {
                 $filename = $file->getClientOriginalName();
                 Storage::putFileAs($this->data_keppres_folder, $file, $filename);
                 $files[] = $filename;
@@ -109,9 +119,9 @@ class RalatKeppresKepangkatanController extends Controller
             $pengangkatans->file_keppres = $files;
         }
 
-        if($request->has('req_file_bukti_pendukung')){
+        if($request->has('file_bukti_pendukung')){
             $files = [];
-            foreach ($request->file('req_file_bukti_pendukung') as $file) {
+            foreach ($request->file('file_bukti_pendukung') as $file) {
                 $filename = $file->getClientOriginalName();
                 Storage::putFileAs($this->data_bukti_pendukung_folder, $file, $filename);
                 $files[] = $filename;

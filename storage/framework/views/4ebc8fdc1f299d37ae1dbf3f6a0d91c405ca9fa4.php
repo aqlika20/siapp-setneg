@@ -802,7 +802,7 @@
                                                 <button type="button" class="btn btn-light-primary font-weight-bolder text-uppercase px-9 py-4" data-wizard-type="action-prev">Sebelumnya</button>
                                             </div>
                                             <div>
-                                                <button type="submit" class="btn btn-warning font-weight-bolder text-uppercase px-9 py-4" data-wizard-type="action-submit">Kirim Usulan</button>
+                                                <button type="submit" class="btn btn-warning font-weight-bolder text-uppercase px-9 py-4" data-wizard-type="action-submit" onclick="return confirmation();">Kirim Usulan</button>
                                                 <button type="button" class="btn btn-primary font-weight-bolder text-uppercase px-9 py-4" data-wizard-type="action-next">Berikutnya</button>
                                             </div>
                                         </div>
@@ -865,7 +865,7 @@
                     req_no_surat_usulan: 'required',
                     req_jabatan_menandatangani: 'required',
                     req_file_data_usulan: {
-                        extenstion: "docx,doc,xlsx,xls,csv,jpg,png,jpeg,pdf"
+                        extenstion: "docx,doc,xlsx,xls,csv,pdf"
                     },
                     req_nip: 'required',
                     req_nama: 'required',
@@ -874,7 +874,7 @@
                     req_pendidikan_terakhir: 'required',
                     req_instansi: 'required',
                     req_file_nota_usulan: {
-                        extenstion: "docx,doc,xlsx,xls,csv,jpg,png,jpeg,pdf"
+                        extenstion: "docx,doc,xlsx,xls,csv,pdf"
                     },
                     req_pangkat_gol: 'required',
                     req_tmt_gol: 'required',
@@ -882,21 +882,21 @@
                     req_masa_kerja_gol_tahun: 'required',
                     req_masa_kerja_gol_bulan: 'required',
                     req_file_nota_usulan_2: {
-                        extenstion: "docx,doc,xlsx,xls,csv,jpg,png,jpeg,pdf"
+                        extenstion: "docx,doc,xlsx,xls,csv,pdf"
                     },
                     req_file_data_pak: {
-                        extenstion: "docx,doc,xlsx,xls,csv,jpg,png,jpeg,pdf"
+                        extenstion: "docx,doc,xlsx,xls,csv,pdf"
                     },
                     req_file_klarifikasi_pak: {
-                        extenstion: "docx,doc,xlsx,xls,csv,jpg,png,jpeg,pdf"
+                        extenstion: "docx,doc,xlsx,xls,csv,pdf"
                     },
                     req_jabatan: 'required',
                     req_no_keppress_jabatan: 'required',
                     req_file_jabatan: {
-                        extenstion: "docx,doc,xlsx,xls,csv,jpg,png,jpeg,pdf"
+                        extenstion: "docx,doc,xlsx,xls,csv,pdf"
                     },
                     req_file_pengambilan_sumpah: {
-                        extenstion: "docx,doc,xlsx,xls,csv,jpg,png,jpeg,pdf"
+                        extenstion: "docx,doc,xlsx,xls,csv,pdf"
                     },
                     req_tmt_jabatan: 'required',
                     req_unit_kerja: 'required',
@@ -906,10 +906,10 @@
                     req_masa_kerja_gol_bulan_baru: 'required',
                     req_periode_kenaikan: 'required',
                     req_file_pendukung: {
-                        extenstion: "docx,doc,xlsx,xls,csv,jpg,png,jpeg,pdf"
+                        extenstion: "docx,doc,xlsx,xls,csv,pdf"
                     },
                     req_file_catatan: {
-                        extenstion: "docx,doc,xlsx,xls,csv,jpg,png,jpeg,pdf"
+                        extenstion: "docx,doc,xlsx,xls,csv,pdf"
                     },
                     req_tanggal_catatan: 'required',
                     req_catatan: 'required'

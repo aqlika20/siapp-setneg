@@ -53,7 +53,7 @@ class SuratUsulanController extends Controller
 
         //jfku
             $pengangkatans = PengangkatanPemberhentianJFKU::where([
-                ['status', '=', Helper::$pending]
+                ['status', '=', Helper::$pending_pokja]
             ])->get();
 
             $countDateJFKU = Helper::countDate($pengangkatans);
@@ -61,7 +61,7 @@ class SuratUsulanController extends Controller
 
         //non struktural
             $pengangkatans_ns = PengangkatanPemberhentianNS::where([
-                ['status', '=', Helper::$pending]
+                ['status', '=', Helper::$pending_pokja]
             ])->get();
 
             $countDateNS = Helper::countDate($pengangkatans_ns);
@@ -69,7 +69,7 @@ class SuratUsulanController extends Controller
 
         //lainnya
             $lainnyas = PengangkatanPemberhentianLainnya::where([
-                ['status', '=', Helper::$pending]
+                ['status', '=', Helper::$pending_pokja]
             ])->get();
 
             $countDateLainnya = Helper::countDate($lainnyas);
@@ -77,7 +77,7 @@ class SuratUsulanController extends Controller
 
         //kenaikan Pangkat
             $kenaikans = KenaikanPangkat::where([
-                ['status', '=', Helper::$pending]
+                ['status', '=', Helper::$pending_pokja]
             ])->get();
 
             $countDateKenaikan = Helper::countDate($kenaikans);
@@ -85,7 +85,7 @@ class SuratUsulanController extends Controller
 
         //Pemberhentian
             $pemberhentians = Pemberhentian::where([
-                ['status', '=', Helper::$pending]
+                ['status', '=', Helper::$pending_pokja]
             ])->get();
 
             $countDatePemberhentian = Helper::countDate($pemberhentians);

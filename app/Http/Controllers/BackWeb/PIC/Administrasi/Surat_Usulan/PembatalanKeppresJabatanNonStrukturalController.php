@@ -55,35 +55,45 @@ class PembatalanKeppresJabatanNonStrukturalController extends Controller
         $input = $request->all();
 
         $validator = Validator::make($input, [
-            'req_no_keppres' => 'required',
-            'req_tanggal_keppres' => 'required',
-            'req_masa_jabatan_start' => 'required',
-            'req_masa_jabatan_end' => 'required',
+            'no_keppres' => 'required',
+            'tanggal_keppres' => 'required',
+            'masa_jabatan_start' => 'required',
+            'masa_jabatan_end' => 'required',
 
-            'req_tmt' => 'required',
-            'req_hak_keuangan' => 'required',
-            'req_tanggal_pelantikan' => 'required',
-            'req_yang_melantik' => 'required',
+            'tmt' => 'required',
+            'hak_keuangan' => 'required',
+            'tanggal_pelantikan' => 'required',
+            'yang_melantik' => 'required',
 
-            'req_file_ba_pelantikan.*' => 'max:5000|mimes:jpg,png,jpeg,pdf',
-            'req_file_sumpah_jabatan.*' => 'max:5000|mimes:jpg,png,jpeg,pdf'
+            'file_ba_pelantikan.*' => 'required|max:5000|mimes:pdf',
+            'file_sumpah_jabatan.*' => 'required|max:5000|mimes:pdf'
         
         ]);
 
         if ($validator->fails()) {
-            return redirect()->back()->with(['error' => $validator->errors()])->withInput($input);
+                // dd($validator->messages()->getMessages());
+            foreach($validator->messages()->getMessages() as $messages) {
+                
+                $e_name = [];
+                // Go through each message for this field.
+                foreach($messages as $message) {
+                    $e_name = $message;
+                }
+                // dd($e_name);
+                return redirect()->back()->with(['error' => $e_name]);
+            }
         }
 
         $pengangkatans = PengangkatanPemberhentianNS::create([
-            'no_keppres' => $input['req_no_keppres'],
-            'tanggal_keppres' => $input['req_tanggal_keppres'],
-            'masa_jabatan_start' => $input['req_masa_jabatan_start'],
-            'masa_jabatan_end' => $input['req_masa_jabatan_end'],
+            'no_keppres' => $input['no_keppres'],
+            'tanggal_keppres' => $input['tanggal_keppres'],
+            'masa_jabatan_start' => $input['masa_jabatan_start'],
+            'masa_jabatan_end' => $input['masa_jabatan_end'],
 
-            'tmt' => $input['req_tmt'],
-            'hak_keuangan' => $input['req_hak_keuangan'],
-            'tanggal_pelantikan' => $input['req_tanggal_pelantikan'],
-            'yang_melantik' => $input['req_yang_melantik'],
+            'tmt' => $input['tmt'],
+            'hak_keuangan' => $input['hak_keuangan'],
+            'tanggal_pelantikan' => $input['tanggal_pelantikan'],
+            'yang_melantik' => $input['yang_melantik'],
 
             'id_pengirim' => $id_pengirim->nip,
             'jenis_layanan' => Helper::$pembatalan_keppres_jabatan_NS,
@@ -91,20 +101,20 @@ class PembatalanKeppresJabatanNonStrukturalController extends Controller
             
         ]);
 
-        if($request->has('req_file_ba_pelantikan')){
+        if($request->has('file_ba_pelantikan')){
             $files = [];
-            foreach ($request->file('req_file_ba_pelantikan') as $file) {
-                $filename = $file->getClientOriginalName();
+            foreach ($request->file('file_ba_pelantikan') as $file) {
+                $filename = $file->getClientOriginalName(). ' - ' .$input['nip'];
                 Storage::putFileAs($this->data_ba_pelantikan_folder, $file, $filename);
                 $files[] = $filename;
             }
             $pengangkatans->file_ba_pelantikan = $files;
         }
 
-        if($request->has('req_file_sumpah_jabatan')){
+        if($request->has('file_sumpah_jabatan')){
             $files = [];
-            foreach ($request->file('req_file_sumpah_jabatan') as $file) {
-                $filename = $file->getClientOriginalName();
+            foreach ($request->file('file_sumpah_jabatan') as $file) {
+                $filename = $file->getClientOriginalName(). ' - ' .$input['nip'];
                 Storage::putFileAs($this->data_sumpah_jabatan_folder, $file, $filename);
                 $files[] = $filename;
             }

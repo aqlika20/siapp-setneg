@@ -64,9 +64,9 @@
                                         <td>{{ $pengangkatan->no_surat_usulan }}</td>
                                         <td>{{ $pengangkatan->nama }}</td>
                                         <td><div style="color: #FFA800;">{{ $pengangkatan->nip }}</div></td>
-                                        <td><div style="text-align: center;"><span class="label label-lg label-light-success label-inline">{{ Helper::defineStatusBy($pengangkatan->status) }}</span></div></td>
+                                        <td><div style="text-align: center;"><span class="label label-lg label-light-success label-inline">{{ Helper::definePertek($pengangkatan->nip) }}</span></div></td>
 										<td>
-											<a href="{{route('koor-pokja.inbox.jfku.verif', ['id' => $pengangkatan->id])}}" type="button" class="btn btn-light-warning btn-xs">
+											<a href="{{route('koor-pokja.pertek.jfku.verif', ['id' => $pengangkatan->id])}}" type="button" class="btn btn-light-warning btn-xs">
 												Detail
 											</a>
 											<a href="{{route('koor-pokja.inbox.distributor.index', ['id' => $pengangkatan->id, 'jenis_layanan' => $pengangkatan->jenis_layanan])}}" type="button" class="btn btn-success btn-xs">
@@ -86,12 +86,12 @@
                                         <td>{{ $struktural->no_surat_usulan }}</td>
                                         <td>{{ $struktural->nama }}</td>
                                         <td><div style="color: #FFA800;">{{ $struktural->nip }}</div></td>
-                                        <td><div style="text-align: center;"><span class="label label-lg label-light-success label-inline">{{ Helper::defineStatusBy($struktural->status) }}</span></div></td>
+                                        <td><div style="text-align: center;"><span class="label label-lg label-light-success label-inline">{{ Helper::definePertek($struktural->nip) }}</span></div></td>
 										<td>
-											<a href="{{route('koor-pokja.inbox.ns.verif', ['id' => $struktural->id])}}" type="button" class="btn btn-light-warning btn-xs">
+											<a href="{{route('koor-pokja.pertek.ns.verif', ['id' => $struktural->id])}}" type="button" class="btn btn-light-warning btn-xs">
 												Detail
 											</a>
-											<a href="{{route('koor-pokja.inbox.distributor.index', ['id' => $pengangkatan->id, 'jenis_layanan' => $pengangkatan->jenis_layanan])}}" type="button" class="btn btn-success btn-xs">
+											<a href="{{route('koor-pokja.inbox.distributor.index', ['id' => $struktural->id, 'jenis_layanan' => $struktural->jenis_layanan])}}" type="button" class="btn btn-success btn-xs">
 												Distribusi
 											</a>
 										</td>
@@ -108,12 +108,12 @@
                                         <td>{{ $lainnya->no_surat_usulan }}</td>
                                         <td>{{ $lainnya->nama }}</td>
                                         <td><div style="color: #FFA800;">{{ $lainnya->nip }}</div></td>
-                                        <td><div style="text-align: center;"><span class="label label-lg label-light-success label-inline">{{ Helper::defineStatusBy($lainnya->status) }}</span></div></td>
-										<td>
-											<a href="{{route('koor-pokja.inbox.lainnya.verif', ['id' => $lainnya->id])}}" type="button" class="btn btn-light-warning btn-xs">
+                                        <td><div style="text-align: center;"><span class="label label-lg label-light-success label-inline">{{ Helper::definePertek($lainnya->nip) }}</span></div></td>
+                                        <td>
+											<a href="{{route('koor-pokja.pertek.lainnya.verif', ['id' => $lainnya->id])}}" type="button" class="btn btn-light-warning btn-xs">
 												Detail
 											</a>
-											<a href="{{route('koor-pokja.inbox.distributor.index', ['id' => $pengangkatan->id, 'jenis_layanan' => $pengangkatan->jenis_layanan])}}" type="button" class="btn btn-success btn-xs">
+											<a href="{{route('koor-pokja.inbox.distributor.index', ['id' => $lainnya->id, 'jenis_layanan' => $lainnya->jenis_layanan])}}" type="button" class="btn btn-success btn-xs">
 												Distribusi
 											</a>
 										</td>
@@ -130,12 +130,12 @@
                                         <td>{{ $kenaikan->no_surat_usulan }}</td>
                                         <td>{{ $kenaikan->nama }}</td>
                                         <td><div style="color: #FFA800;">{{ $kenaikan->nip }}</div></td>
-                                        <td><div style="text-align: center;"><span class="label label-lg label-light-success label-inline">{{ Helper::defineStatusBy($kenaikan->status) }}</span></div></td>
+                                        <td><div style="text-align: center;"><span class="label label-lg label-light-success label-inline">{{ Helper::definePertek($kenaikan->nip) }}</span></div></td>
 										<td>
-											<a href="{{route('koor-pokja.inbox.kenaikan_pangkat.verif', ['id' => $kenaikan->id])}}" type="button" class="btn btn-light-warning btn-xs">
+											<a href="{{route('koor-pokja.pertek.kenaikan_pangkat.verif', ['id' => $kenaikan->id])}}" type="button" class="btn btn-light-warning btn-xs">
 												Detail
 											</a>
-											<a href="{{route('koor-pokja.inbox.distributor.index', ['id' => $pengangkatan->id, 'jenis_layanan' => $pengangkatan->jenis_layanan])}}" type="button" class="btn btn-success btn-xs">
+											<a href="{{route('koor-pokja.inbox.distributor.index', ['id' => $kenaikan->id, 'jenis_layanan' => $kenaikan->jenis_layanan])}}" type="button" class="btn btn-success btn-xs">
 												Distribusi
 											</a>
 										</td>
@@ -152,12 +152,12 @@
                                         <td>{{ $pemberhentian->no_surat_usulan }}</td>
                                         <td>{{ $pemberhentian->nama }}</td>
                                         <td><div style="color: #FFA800;">{{ $pemberhentian->nip }}</div></td>
-                                        <td><div style="text-align: center;"><span class="label label-lg label-light-success label-inline">{{ Helper::defineStatusBy($pemberhentian->status) }}</span></div></td>
-										<td>
-											<a href="{{route('koor-pokja.inbox.pemberhentian.verif', ['id' => $pemberhentian->id])}}" type="button" class="btn btn-light-warning btn-xs">
+                                        <td><div style="text-align: center;"><span class="label label-lg label-light-success label-inline">{{ Helper::definePertek($pemberhentian->nip) }}</span></div></td>
+                                        <td>
+											<a href="{{route('koor-pokja.pertek.pemberhentian.verif', ['id' => $pemberhentian->id])}}" type="button" class="btn btn-light-warning btn-xs">
 												Detail
 											</a>	
-											<a href="{{route('koor-pokja.inbox.distributor.index', ['id' => $pengangkatan->id, 'jenis_layanan' => $pengangkatan->jenis_layanan])}}" type="button" class="btn btn-success btn-xs">
+											<a href="{{route('koor-pokja.inbox.distributor.index', ['id' => $pemberhentian->id, 'jenis_layanan' => $pemberhentian->jenis_layanan])}}" type="button" class="btn btn-success btn-xs">
 												Distribusi
 											</a>
 										</td>
