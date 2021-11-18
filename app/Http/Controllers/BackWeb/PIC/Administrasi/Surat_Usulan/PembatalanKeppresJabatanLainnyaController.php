@@ -105,7 +105,7 @@ class PembatalanKeppresJabatanLainnyaController extends Controller
         if($request->has('file_ba_pelantikan')){
             $files = [];
             foreach ($request->file('file_ba_pelantikan') as $file) {
-                $filename = $file->getClientOriginalName(). ' - ' .$input['nip'];
+                $filename = $file->getClientOriginalName(). ' - ' .$id_pengirim->nip;
                 Storage::putFileAs($this->data_ba_pelantikan_folder, $file, $filename);
                 $files[] = $filename;
             }
@@ -115,7 +115,7 @@ class PembatalanKeppresJabatanLainnyaController extends Controller
         if($request->has('file_sumpah_jabatan')){
             $files = [];
             foreach ($request->file('file_sumpah_jabatan') as $file) {
-                $filename = $file->getClientOriginalName(). ' - ' .$input['nip'];
+                $filename = $file->getClientOriginalName(). ' - ' .$id_pengirim->nip;
                 Storage::putFileAs($this->data_sumpah_jabatan_folder, $file, $filename);
                 $files[] = $filename;
             }

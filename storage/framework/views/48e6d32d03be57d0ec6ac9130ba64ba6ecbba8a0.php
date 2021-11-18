@@ -581,7 +581,7 @@
                                                         <label class="col-form-label col-lg-3 col-sm-12">Masa Jabatan</label>
                                                         <div class="col-lg-4 col-md-9 col-sm-12">
                                                             <div class="input-group date">
-                                                                <input type="text" class="form-control datetimepicker-input my-datepicker" name="req_masa_jabatan_start" data-toggle="datetimepicker" data-target="#req_masa_jabatan_start" placeholder="Select Date First" id="req_masa_jabatan_start" value="<?php echo e($verifikasi_lainnya->masa_jabatan_start); ?>" disabled/>
+                                                                <input type="text" class="form-control datetimepicker-input my-datepicker" name="masa_jabatan_start" data-toggle="datetimepicker" data-target="#masa_jabatan_start" placeholder="Select Date First" id="masa_jabatan_start" value="<?php echo e($verifikasi_lainnya->masa_jabatan_start); ?>" disabled/>
                                                                 <div class="input-group-append">
                                                                     <span class="input-group-text">
                                                                         <i class="la la-calendar"></i>
@@ -594,7 +594,7 @@
                                                         </div>
                                                         <div class="col-lg-4 col-md-9 col-sm-12">
                                                             <div class="input-group date">
-                                                                <input type="text" class="form-control datetimepicker-input my-datepicker" name="req_masa_jabatan_end" data-toggle="datetimepicker" data-target="#req_masa_jabatan_end" placeholder="Select Date Last" id="req_masa_jabatan_end" value="<?php echo e($verifikasi_lainnya->masa_jabatan_end); ?>" disabled/>
+                                                                <input type="text" class="form-control datetimepicker-input my-datepicker" name="masa_jabatan_end" data-toggle="datetimepicker" data-target="#masa_jabatan_end" placeholder="Select Date Last" id="masa_jabatan_end" value="<?php echo e($verifikasi_lainnya->masa_jabatan_end); ?>" disabled/>
                                                                 <div class="input-group-append">
                                                                     <span class="input-group-text">
                                                                         <i class="la la-calendar"></i>
@@ -733,8 +733,8 @@
                                                         <th style="margin-right: 10px;">
                                                             <form method="POST" action="<?php echo e(route('koor-pokja.inbox.lainnya.store_tolak')); ?>">
                                                                 <?php echo csrf_field(); ?> 
-                                                                <input type="hidden" class="btn btn-warning font-weight-bolder text-uppercase px-9 py-4" name="v_id_tolak" value="<?php echo e($verifikasi_lainnya->id); ?>">
-                                                                <input type="hidden" class="btn btn-warning font-weight-bolder text-uppercase px-9 py-4" name="v_jenis_tolak" value="<?php echo e($verifikasi_lainnya->jenis_layanan); ?>">
+                                                                <input type="hidden" class="btn btn-warning font-weight-bolder text-uppercase px-9 py-4" name="v_id" value="<?php echo e($verifikasi_lainnya->id); ?>">
+                                                                <input type="hidden" class="btn btn-warning font-weight-bolder text-uppercase px-9 py-4" name="v_jenis" value="<?php echo e($verifikasi_lainnya->jenis_layanan); ?>">
                                                                 <button type="submit" class="btn btn-danger font-weight-bolder text-uppercase px-9 py-4" >
                                                                     Tolak
                                                                 </button>

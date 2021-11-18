@@ -134,7 +134,7 @@
                                                             <td><div style="color: #3699FF;">{{ $kenaikan->nip }}</div></td>
                                                             <td>{{ $kenaikan->nama }}</td>
                                                             <td>
-                                                                <a href="{{route('jf-ahli.inbox.kenaikan_pangkat.verif', ['id' => $lainnya->id])}}" type="button" class="btn btn-success font-weight-bold align-items-md-end">Verifikasi</a>
+                                                                <a href="{{route('jf-ahli.inbox.kenaikan_pangkat.verif', ['id' => $kenaikan->id])}}" type="button" class="btn btn-success font-weight-bold align-items-md-end">Verifikasi</a>
                                                             </td>
                                                         </tr>
                                                     @endforeach

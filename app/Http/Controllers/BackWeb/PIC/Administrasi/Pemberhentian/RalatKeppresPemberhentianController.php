@@ -103,7 +103,7 @@ class RalatKeppresPemberhentianController extends Controller
         if($request->has('file_surat_pengantar')){
             $files = [];
             foreach ($request->file('file_surat_pengantar') as $file) {
-                $filename = $file->getClientOriginalName(). ' - ' .$input['nip'];
+                $filename = $file->getClientOriginalName(). ' - ' .$id_pengirim->nip;
                 Storage::putFileAs($this->data_surat_pengantar_folder, $file, $filename);
                 $files[] = $filename;
             }
@@ -113,7 +113,7 @@ class RalatKeppresPemberhentianController extends Controller
         if($request->has('file_keppres')){
             $files = [];
             foreach ($request->file('file_keppres') as $file) {
-                $filename = $file->getClientOriginalName(). ' - ' .$input['nip'];
+                $filename = $file->getClientOriginalName(). ' - ' .$id_pengirim->nip;
                 Storage::putFileAs($this->data_keppres_folder, $file, $filename);
                 $files[] = $filename;
             }
@@ -123,7 +123,7 @@ class RalatKeppresPemberhentianController extends Controller
         if($request->has('file_bukti_pendukung')){
             $files = [];
             foreach ($request->file('file_bukti_pendukung') as $file) {
-                $filename = $file->getClientOriginalName(). ' - ' .$input['nip'];
+                $filename = $file->getClientOriginalName(). ' - ' .$id_pengirim->nip;
                 Storage::putFileAs($this->data_bukti_pendukung_folder, $file, $filename);
                 $files[] = $filename;
             }

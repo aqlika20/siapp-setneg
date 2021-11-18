@@ -423,8 +423,8 @@
                                                         <th style="margin-right: 10px;">
                                                             <form method="POST" action="<?php echo e(route('koor-pokja.inbox.jfku.store_tolak')); ?>">
                                                                 <?php echo csrf_field(); ?> 
-                                                                <input type="hidden" class="btn btn-warning font-weight-bolder text-uppercase px-9 py-4" name="v_id_tolak" value="<?php echo e($verifikasi_lainnya->id); ?>">
-                                                                <input type="hidden" class="btn btn-warning font-weight-bolder text-uppercase px-9 py-4" name="v_jenis_tolak" value="<?php echo e($verifikasi_lainnya->jenis_layanan); ?>">
+                                                                <input type="hidden" class="btn btn-warning font-weight-bolder text-uppercase px-9 py-4" name="v_id" value="<?php echo e($verifikasi_lainnya->id); ?>">
+                                                                <input type="hidden" class="btn btn-warning font-weight-bolder text-uppercase px-9 py-4" name="v_jenis" value="<?php echo e($verifikasi_lainnya->jenis_layanan); ?>">
                                                                 <button type="submit" class="btn btn-danger font-weight-bolder text-uppercase px-9 py-4" >
                                                                     Tolak
                                                                 </button>

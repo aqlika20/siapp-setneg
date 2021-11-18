@@ -66,7 +66,7 @@
                                         <td><div class="text-success"><?php echo e(Helper::convertDate($pengangkatan->created_at)); ?></div></td>
                                         <td><span class="text-danger"><?php echo e($countDateJFKU); ?></span></td>
 										<td>
-											<a href="<?php echo e(route('koor-pokja.inbox.jfku.verif', ['id' => $pengangkatan->id])); ?>" type="button" class="btn btn-primary btn-xs">
+											<a href="<?php echo e(route('karo.inbox.text-editor.index', ['id' => $pengangkatan->id])); ?>" type="button" class="btn btn-primary btn-xs">
 												Detail
 											</a>
 										</td>
@@ -85,7 +85,7 @@
                                         <td><div class="text-success"><?php echo e(Helper::convertDate($struktural->created_at)); ?></div></td>
                                         <td><span class="text-danger"><?php echo e($countDateNS); ?></span></td>
                                         <td>
-											<a href="<?php echo e(route('koor-pokja.inbox.ns.verif', ['id' => $struktural->id])); ?>" type="button" class="btn btn-primary btn-xs">
+											<a href="<?php echo e(route('karo.inbox.text-editor.ns.index', ['id' => $struktural->id])); ?>" type="button" class="btn btn-primary btn-xs">
 												Detail
 											</a>
 										</td>
@@ -104,7 +104,7 @@
                                         <td><div class="text-success"><?php echo e(Helper::convertDate($lainnya->created_at)); ?></div></td>
                                         <td><span class="text-danger"><?php echo e($countDateLainnya); ?></span></td>
                                         <td>
-											<a href="<?php echo e(route('koor-pokja.inbox.lainnya.verif', ['id' => $lainnya->id])); ?>" type="button" class="btn btn-primary btn-xs">
+											<a href="<?php echo e(route('karo.inbox.text-editor.lain.index', ['id' => $lainnya->id])); ?>" type="button" class="btn btn-primary btn-xs">
 												Detail
 											</a>
 										</td>
@@ -123,7 +123,7 @@
                                         <td><div class="text-success"><?php echo e(Helper::convertDate($kenaikan->created_at)); ?></div></td>
                                         <td><span class="text-danger"><?php echo e($countDateKenaikan); ?></span></td>
                                         <td>
-											<a href="<?php echo e(route('koor-pokja.inbox.kenaikan_pangkat.verif', ['id' => $kenaikan->id])); ?>" type="button" class="btn btn-primary btn-xs">
+											<a href="<?php echo e(route('karo.inbox.text-editor.kenaikan.index', ['id' => $kenaikan->id])); ?>" type="button" class="btn btn-primary btn-xs">
 												Detail
 											</a>
 										</td>
@@ -142,7 +142,7 @@
                                         <td><div class="text-success"><?php echo e(Helper::convertDate($pemberhentian->created_at)); ?></div></td>
                                         <td><span class="text-danger"><?php echo e($countDatePemberhentian); ?></span></td>
                                         <td>
-											<a href="<?php echo e(route('koor-pokja.inbox.pemberhentian.verif', ['id' => $pemberhentian->id])); ?>" type="button" class="btn btn-primary btn-xs">
+											<a href="<?php echo e(route('karo.inbox.text-editor.pemberhentian.index', ['id' => $pemberhentian->id])); ?>" type="button" class="btn btn-primary btn-xs">
 												Detail
 											</a>	
 										</td>

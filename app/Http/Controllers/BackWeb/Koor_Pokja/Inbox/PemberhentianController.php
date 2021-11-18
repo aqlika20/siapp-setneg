@@ -48,7 +48,7 @@ class PemberhentianController extends Controller
             ['status', '=', Helper::$verifikasi_jf_ahli]
         ])->get();
 
-        $jfku_pendings = Pemberhentian::where([
+        $pemberhentian_pendings = Pemberhentian::where([
             ['status', '=', Helper::$pending_pokja]
         ])->orwhere([
             ['status', '=', Helper::$pending_jf_ahli]
@@ -79,7 +79,7 @@ class PemberhentianController extends Controller
             $group_roles[$user->group][]=$user->role;
         }
 
-        return view('pages.koor_pokja.inbox.pemberhentian', compact('jfku_verifikasis','page_title', 'page_description', 'currentUser', 'pengangkatans', 'jfku_pendings', 'jfku_tolaks', 'group_lists', 'group_users', 'group_roles'));
+        return view('pages.koor_pokja.inbox.pemberhentian', compact('jfku_verifikasis','page_title', 'page_description', 'currentUser', 'pengangkatans', 'pemberhentian_pendings', 'jfku_tolaks', 'group_lists', 'group_users', 'group_roles'));
     }
 
     public function verification($id){
@@ -146,7 +146,7 @@ class PemberhentianController extends Controller
             $pengangkatans = Pemberhentian::where('id', '=', $id)->update(
                 ['status' => Helper::$pending_pokja]
             );
-            return redirect()->route('koor-pokja.inbox.pemberhentian.index')->with(['success'=>'verifikasi Success !!!']);          
+            return redirect()->route("koor-pokja.inbox.text-editor.pemberhentian.index", [$id])->with(['success'=>'verifikasi Success !!!']);          
         }
     }
 
@@ -161,7 +161,7 @@ class PemberhentianController extends Controller
             $pengangkatans = Pemberhentian::where('id', '=', $id)->update(
                 ['status' => Helper::$tolak_pokja]
             );
-            return redirect()->route('koor-pokja.inbox.pemberhentian.index')->with(['success'=>'verifikasi Success !!!']);
+            return redirect()->route("koor-pokja.pertek.index")->with(['success'=>'verifikasi Success !!!']);
         }
     }
 

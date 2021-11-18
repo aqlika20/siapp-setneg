@@ -1,13 +1,14 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.1
+-- version 5.0.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 07, 2021 at 08:40 AM
--- Server version: 10.4.21-MariaDB
--- PHP Version: 7.4.23
+-- Generation Time: Nov 17, 2021 at 11:19 AM
+-- Server version: 10.4.11-MariaDB
+-- PHP Version: 7.4.3
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -20,6 +21,30 @@ SET time_zone = "+00:00";
 --
 -- Database: `siapp`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `bkns`
+--
+
+CREATE TABLE `bkns` (
+  `id` int(11) NOT NULL,
+  `nip` varchar(255) NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `bkns`
+--
+
+INSERT INTO `bkns` (`id`, `nip`, `created_at`) VALUES
+(1, '23123', '2021-11-14 07:54:38'),
+(3, '333333', '2021-11-14 08:01:47'),
+(4, '1212121', '2021-11-14 08:01:50'),
+(6, '312321', '2021-11-14 08:29:09'),
+(7, '23123', '2021-11-17 05:19:20'),
+(8, '	\r\n312321', '2021-11-17 08:48:32');
 
 -- --------------------------------------------------------
 
@@ -64,6 +89,53 @@ INSERT INTO `jabatans` (`id`, `nama`, `created_at`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `jenis_layanans`
+--
+
+CREATE TABLE `jenis_layanans` (
+  `id` int(11) NOT NULL,
+  `nama` varchar(255) NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `jenis_layanans`
+--
+
+INSERT INTO `jenis_layanans` (`id`, `nama`, `created_at`) VALUES
+(1, 'Pengangkatan Pejabat Fungsional Keahlian Utama', '2021-11-02 02:23:15'),
+(2, 'Pemberhentian Pejabat Fungsional Keahlian Utama', '2021-11-02 02:23:15'),
+(3, 'Perpindahan Pejabat Fungsional Keahlian Utama', '2021-11-02 02:23:15'),
+(4, 'Ralat Keppres Jabatan Fungsional Keahlian Utama', '2021-11-02 02:23:15'),
+(5, 'Pembatalan Keppres Jabatan Fungsional Keahlian Utama', '2021-11-02 02:23:15'),
+(6, 'Pengangkatan Pejabat Non Struktural', '2021-11-02 02:23:15'),
+(7, 'Pemberhentian Pejabat Non Struktural', '2021-11-02 02:23:15'),
+(8, 'Ralat Keppres Jabatan Non Struktural', '2021-11-02 02:23:15'),
+(9, 'Pembatalan Keppres Jabatan Non Struktural', '2021-11-02 02:23:15'),
+(10, 'Pengangkatan Pejabat Lainnya', '2021-11-02 02:23:15'),
+(11, 'Pemberhentian Pejabat Lainnya', '2021-11-02 02:23:15'),
+(12, 'Ralat Keppres Jabatan Lainnya', '2021-11-02 02:23:15'),
+(13, 'Pembatalan Keppres Jabatan Lainnya', '2021-11-02 02:23:15'),
+(14, 'Persetujuan pengangkatan Staf Khusus Menteri/Kepala Lembaga', '2021-11-02 02:23:15'),
+(15, 'Pemberian Kenaikan Pangkat', '2021-11-02 02:23:15'),
+(16, 'Pembatalan Keppres Kenaikan Pangkat', '2021-11-02 02:23:15'),
+(17, 'Pengesahan Kenaikan Pangkat', '2021-11-02 02:23:15'),
+(18, 'Ralat Keppres Kepangkatan', '2021-11-02 02:23:15'),
+(19, 'BUP Non KPP', '2021-11-02 02:23:15'),
+(20, 'BUP KPP', '2021-11-02 02:23:15'),
+(21, 'Berhenti Atas Permintaan Sendiri', '2021-11-02 02:23:15'),
+(22, 'Non BUP Janda/Duda/Anak non KPP', '2021-11-02 02:23:15'),
+(23, 'Non BUP Janda/Duda/Anak KPP', '2021-11-02 02:23:15'),
+(24, 'Berhenti Tidak Dengan Hormat', '2021-11-02 02:23:15'),
+(25, 'Anumerta', '2021-11-02 02:23:15'),
+(26, 'Pemberhentian Sementara', '2021-11-02 02:23:15'),
+(27, 'Ralat Keppres Pemberhentian', '2021-11-02 02:23:15'),
+(28, 'Pembatalan Keppres Pemberhentian', '2021-11-02 02:23:15'),
+(29, 'Petikan Keppres yang Hilang/Rusak', '2021-11-02 02:23:15');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `kenaikan_pangkats`
 --
 
@@ -78,19 +150,35 @@ CREATE TABLE `kenaikan_pangkats` (
   `tempat_lahir` varchar(255) DEFAULT NULL,
   `tanggal_lahir` varchar(255) DEFAULT NULL,
   `pendidikan_terakhir` varchar(255) DEFAULT NULL,
+  `instansi` varchar(255) DEFAULT NULL,
   `instansi_induk` varchar(255) DEFAULT NULL,
   `instansi_pengusul` varchar(255) DEFAULT NULL,
   `pangkat_gol` int(11) DEFAULT NULL,
   `tmt_gol` varchar(255) DEFAULT NULL,
+  `tmt_cpns` varchar(255) DEFAULT NULL,
+  `masa_kerja_gol_tahun` varchar(100) DEFAULT NULL,
+  `masa_kerja_gol_bulan` varchar(100) DEFAULT NULL,
   `file_nota_usulan_asn` varchar(255) DEFAULT NULL,
+  `file_nota_usulan` varchar(255) DEFAULT NULL,
   `nomor_pak` varchar(255) DEFAULT NULL,
   `tanggal_pak` varchar(255) DEFAULT NULL,
   `jumlah_angka_kredit` varchar(255) DEFAULT NULL,
-  `periode_penilaian` varchar(255) DEFAULT NULL,
+  `periode_penilaian` varchar(30) DEFAULT NULL,
   `file_data_pak` varchar(255) DEFAULT NULL,
   `nomor_klarifikasi` varchar(255) DEFAULT NULL,
   `tanggal_klarifikasi` varchar(255) DEFAULT NULL,
   `file_klarifikasi_pak` varchar(255) DEFAULT NULL,
+  `jabatan` varchar(255) DEFAULT NULL,
+  `no_keppress_jabatan` varchar(255) DEFAULT NULL,
+  `tmt_jabatan` varchar(255) DEFAULT NULL,
+  `unit_kerja` varchar(255) DEFAULT NULL,
+  `file_jabatan` varchar(255) DEFAULT NULL,
+  `file_pengambilan_sumpah` varchar(255) DEFAULT NULL,
+  `pangkat_gol_baru` varchar(255) DEFAULT NULL,
+  `tmt_gol_baru` varchar(255) DEFAULT NULL,
+  `masa_kerja_gol_tahun_baru` varchar(255) DEFAULT NULL,
+  `masa_kerja_gol_bulan_baru` varchar(255) DEFAULT NULL,
+  `periode_kenaikan` varchar(30) DEFAULT NULL,
   `jabatan_lama` varchar(255) DEFAULT NULL,
   `no_sk_jabatan_lama` varchar(255) DEFAULT NULL,
   `tmt_jabatan_lama` varchar(255) DEFAULT NULL,
@@ -100,16 +188,16 @@ CREATE TABLE `kenaikan_pangkats` (
   `unit_kerja_baru` varchar(255) DEFAULT NULL,
   `file_data_jabatan_baru` varchar(255) DEFAULT NULL,
   `jabatan_data_kompetensi` varchar(255) DEFAULT NULL,
-  `nomor_sertifikat` varchar(255) DEFAULT NULL,
-  `tanggal_sertifikat` varchar(255) DEFAULT NULL,
+  `nomor_sertifikat` varchar(100) DEFAULT NULL,
+  `tgl_sertifikat` varchar(255) DEFAULT NULL,
   `file_data_kompetensi` varchar(255) DEFAULT NULL,
-  `jumlah` varchar(255) DEFAULT NULL,
-  `terisi` varchar(255) DEFAULT NULL,
-  `sisa` varchar(255) DEFAULT NULL,
+  `jumlah` varchar(100) DEFAULT NULL,
+  `terisi` varchar(100) DEFAULT NULL,
+  `sisa` varchar(100) DEFAULT NULL,
   `file_formasi_jabatan` varchar(255) DEFAULT NULL,
   `file_skp_2` varchar(255) DEFAULT NULL,
   `file_skp_2_dukungan_lainnya` varchar(255) DEFAULT NULL,
-  `ket` varchar(255) DEFAULT NULL,
+  `ket` varchar(30) DEFAULT NULL,
   `no_keppres` varchar(255) DEFAULT NULL,
   `tanggal_keppres` varchar(255) DEFAULT NULL,
   `masa_jabatan_start` varchar(255) DEFAULT NULL,
@@ -118,8 +206,15 @@ CREATE TABLE `kenaikan_pangkats` (
   `hak_keuangan` varchar(255) DEFAULT NULL,
   `tanggal_pelantikan` varchar(255) DEFAULT NULL,
   `yang_melantik` varchar(255) DEFAULT NULL,
+  `tanggal_surat_pengantar` varchar(50) DEFAULT NULL,
+  `no_surat_pengantar` varchar(50) DEFAULT NULL,
+  `alasan_ralat` varchar(50) DEFAULT NULL,
+  `file_bukti_pendukung` varchar(255) DEFAULT NULL,
+  `file_surat_pengantar` varchar(255) DEFAULT NULL,
+  `file_keppres` varchar(255) DEFAULT NULL,
   `file_ba_pelantikan` varchar(255) DEFAULT NULL,
   `file_sumpah_jabatan` varchar(255) DEFAULT NULL,
+  `file_pendukung` varchar(255) DEFAULT NULL,
   `id_pengirim` bigint(20) NOT NULL,
   `jenis_layanan` int(11) NOT NULL,
   `status` int(11) NOT NULL,
@@ -178,11 +273,36 @@ CREATE TABLE `notes` (
   `id_usulan` bigint(20) DEFAULT NULL,
   `id_layanan` bigint(20) DEFAULT NULL,
   `id_pengirim` bigint(20) DEFAULT NULL,
+  `id_status` bigint(20) DEFAULT NULL,
   `tanggal_catatan` varchar(255) DEFAULT NULL,
   `catatan` text DEFAULT NULL,
   `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
   `updated_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `notes`
+--
+
+INSERT INTO `notes` (`id`, `id_usulan`, `id_layanan`, `id_pengirim`, `id_status`, `tanggal_catatan`, `catatan`, `created_at`, `updated_at`) VALUES
+(1, 1, 1, 111111, NULL, '11/12/2021 8:56 AM', 'dsadasd', '2021-11-11 18:56:36', '2021-11-11 18:56:36'),
+(2, 2, 1, 111111, NULL, '12-Nov-2021', 'dasdsadas', '2021-11-11 19:18:38', '2021-11-11 19:18:38'),
+(3, 1, 1, 111111, NULL, '04-Dec-2021', 'das', '2021-11-13 13:55:25', '2021-11-13 13:55:25'),
+(4, 2, 1, 111111, NULL, '13-Nov-2021', 'sdadas', '2021-11-13 15:29:23', '2021-11-13 15:29:23'),
+(5, 3, 1, 111111, NULL, '13-Nov-2021', 'dasd', '2021-11-13 15:36:30', '2021-11-13 15:36:30'),
+(6, 4, 1, 111111, NULL, '13-Nov-2021', 'dsada', '2021-11-13 16:30:46', '2021-11-13 16:30:46'),
+(7, 5, 1, 111111, NULL, '13-Nov-2021', 'adss', '2021-11-13 16:35:52', '2021-11-13 16:35:52'),
+(8, 2, 1, 111111, NULL, '14-Nov-2021', 'dsada', '2021-11-14 05:25:15', '2021-11-14 05:25:15'),
+(9, 5, 3, 111111, NULL, '14-Nov-2021', 'dsadsa', '2021-11-14 06:50:00', '2021-11-14 06:50:00'),
+(10, 7, 2, 111111, NULL, '14-Nov-2021', 'asdas', '2021-11-14 06:56:55', '2021-11-14 06:56:55'),
+(11, 2, 1, 111111, 28, '16-Nov-2021', 'Catatan RKP', '2021-11-16 08:55:11', '2021-11-17 08:10:05'),
+(12, 11, 1, 111111, NULL, '17-Nov-2021', 'hujiko', '2021-11-17 05:17:22', '2021-11-17 05:17:22'),
+(13, 5, 3, 111111, 27, '17-Nov-2021', 'dasdasd', '2021-11-17 05:20:45', '2021-11-17 08:09:36'),
+(14, 7, 2, 111111, 27, '17-Nov-2021', 'dasdas', '2021-11-17 08:12:22', '2021-11-17 08:12:22'),
+(15, 12, 1, 111111, NULL, '17-Nov-2021', 'sada', '2021-11-17 08:47:32', '2021-11-17 08:47:32'),
+(16, 2, 1, 111111, 27, '17-Nov-2021', 'dsada', '2021-11-17 08:49:27', '2021-11-17 08:49:27'),
+(17, 2, 1, 111111, 27, '24-Nov-2021', 'dasdasa', '2021-11-17 09:02:57', '2021-11-17 09:02:57'),
+(18, 2, 1, 111111, 27, '24-Nov-2021', 'dasdad', '2021-11-17 09:18:19', '2021-11-17 09:18:19');
 
 -- --------------------------------------------------------
 
@@ -282,23 +402,12 @@ CREATE TABLE `pangkat_gols` (
 --
 
 INSERT INTO `pangkat_gols` (`id`, `name`, `golongan`, `ruang`, `created_at`, `updated_at`) VALUES
-(1, 'Juru Muda', 'I', 'a', '2021-09-14 10:47:05', '2021-09-14 10:47:05'),
-(2, 'Juru Muda Tingkat 1', 'I', 'b', '2021-09-14 10:47:05', '2021-09-14 10:47:05'),
-(3, 'Juru', 'I', 'c', '2021-09-14 10:59:16', '2021-09-14 10:59:16'),
-(4, 'Juru Tingkat 1', 'I', 'd', '2021-09-14 10:59:16', '2021-09-14 10:59:16'),
-(5, 'Pengatur Muda', 'II', 'a', '2021-09-14 10:59:16', '2021-09-14 10:59:16'),
-(6, 'Pengatur Muda Tingkat 1', 'II', 'b', '2021-09-14 10:59:16', '2021-09-14 10:59:16'),
-(7, 'Pengatur', 'II', 'c', '2021-09-14 10:59:16', '2021-09-14 10:59:16'),
-(8, 'Pengatur Tingkat 1', 'II', 'd', '2021-09-14 10:59:16', '2021-09-14 10:59:16'),
-(9, 'Penata Muda', 'III', 'a', '2021-09-14 11:06:15', '2021-09-14 11:06:15'),
-(10, 'Penata Muda Tingkat 1', 'III', 'b', '2021-09-14 11:06:15', '2021-09-14 11:06:15'),
-(11, 'Penata ', 'III', 'c', '2021-09-14 11:06:15', '2021-09-14 11:06:15'),
-(12, 'Penata Tingkat 1', 'III', 'd', '2021-09-14 11:06:15', '2021-09-14 11:06:15'),
-(13, 'Pembina', 'IV', 'a', '2021-09-14 11:09:53', '2021-09-14 11:09:53'),
-(14, 'Pembina Tingkat 1', 'IV', 'b', '2021-09-14 11:09:53', '2021-09-14 11:09:53'),
-(15, 'Pembina Utama Muda', 'IV', 'c', '2021-09-14 11:09:53', '2021-09-14 11:09:53'),
-(16, 'Pembina Utama Madya', 'IV', 'd', '2021-09-14 11:09:53', '2021-09-14 11:09:53'),
-(17, 'Pembina Utama', 'IV', 'e', '2021-09-14 11:09:53', '2021-09-14 11:09:53');
+(1, 'Penata Tk.1', 'III', 'd', '2021-09-14 04:06:15', '2021-11-10 07:05:55'),
+(2, 'Pembina', 'IV', 'a', '2021-09-14 04:09:53', '2021-09-14 04:09:53'),
+(3, 'Pembina Tk.1', 'IV', 'b', '2021-09-14 04:09:53', '2021-11-10 07:07:51'),
+(4, 'Pembina Utama Muda', 'IV', 'c', '2021-09-14 04:09:53', '2021-09-14 04:09:53'),
+(5, 'Pembina Utama Madya', 'IV', 'd', '2021-09-14 04:09:53', '2021-09-14 04:09:53'),
+(6, 'Pembina Utama', 'IV', 'e', '2021-09-14 04:09:53', '2021-09-14 04:09:53');
 
 -- --------------------------------------------------------
 
@@ -347,6 +456,22 @@ CREATE TABLE `pemberhentians` (
   `tmt_berhenti` varchar(255) DEFAULT NULL,
   `tmt_pensiun` varchar(255) DEFAULT NULL,
   `ket` varchar(255) DEFAULT NULL,
+  `tanggal_surat_pengantar` varchar(255) DEFAULT NULL,
+  `no_surat_pengantar` varchar(255) DEFAULT NULL,
+  `no_keppres` varchar(255) DEFAULT NULL,
+  `tanggal_keppres` varchar(255) DEFAULT NULL,
+  `alasan_ralat` varchar(255) DEFAULT NULL,
+  `file_surat_pengantar` varchar(255) DEFAULT NULL,
+  `file_keppres` varchar(255) DEFAULT NULL,
+  `file_bukti_pendukung` varchar(255) DEFAULT NULL,
+  `masa_jabatan_start` varchar(255) DEFAULT NULL,
+  `masa_jabatan_end` varchar(255) DEFAULT NULL,
+  `tmt` varchar(255) DEFAULT NULL,
+  `hak_keuangan` varchar(255) DEFAULT NULL,
+  `tanggal_pelantikan` varchar(255) DEFAULT NULL,
+  `yang_melantik` varchar(255) DEFAULT NULL,
+  `file_ba_pelantikan` varchar(255) DEFAULT NULL,
+  `file_sumpah_jabatan` varchar(255) DEFAULT NULL,
   `id_pengirim` bigint(20) NOT NULL,
   `jenis_layanan` int(11) NOT NULL,
   `status` int(11) NOT NULL,
@@ -426,53 +551,39 @@ INSERT INTO `pengangkatans` (`id`, `no_surat_usulan`, `tanggal_surat_usulan`, `p
 
 CREATE TABLE `pengangkatan_pemberhentian_jfkus` (
   `id` bigint(20) UNSIGNED NOT NULL,
-  `tanggal_surat_usulan` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `tanggal_surat_usulan` date DEFAULT NULL,
   `no_surat_usulan` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `ppk_pejabat_yang_diusulkan` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `pejabat_menandatangani` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `file_data_usulan` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `file_surat_usulan` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `nip` bigint(20) UNSIGNED DEFAULT NULL,
   `nama` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `tempat_lahir` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `tanggal_lahir` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `tanggal_lahir` date DEFAULT NULL,
   `pendidikan_terakhir` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `instansi_induk` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `instansi_pengusul` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `pangkat_gol` int(11) DEFAULT NULL,
   `tmt_gol` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `file_nota_usulan_asn` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `file_nota_usulan` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `file_penetapan_kebutuhan_formasi` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `file_ijazah` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `file_pencantuman_gelar` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `nomor_pak` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `tanggal_pak` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `tanggal_pak` date DEFAULT NULL,
   `jumlah_angka_kredit` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `periode_penilaian` int(11) DEFAULT NULL,
   `file_data_pak` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `nomor_klarifikasi` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `tanggal_klarifikasi` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `file_klarifikasi_pak` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `nomor_pak_terakhir` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `tanggal_pak_terakhir` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `jumlah_angka_kredit_terakhir` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `periode_penilaian_terakhir` int(11) DEFAULT NULL,
-  `file_data_pak_terakhir` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `jabatan_fungsional` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `no_keppress_jabatan_fungsional` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `file_data_jabatan_fungsional` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `file_data_jabatan_fungsional_2` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `file_keppres_pengangkatan` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `file_ba_pengambilan_sumpah_pelantikan_fungsional` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `tmt_jabatan_fungsional` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `unit_kerja_fungsional` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `tanggal_penerimaan_keppres` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `alasan_pemberhentian` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `ket_alasan_pemberhentian` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `tmt_pemberhentian` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `file_pendukung_pemberhentian` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `tanggal_catatan_pemberhentian` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `catatan_pemberhentian` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `ket_pemberhentian` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `jabatan` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `no_sk_jabatan` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `tmt_jabatan` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `unit_kerja` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `file_data_jabatan` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `jabatan_lama` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `no_sk_jabatan_lama` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `tmt_jabatan_lama` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
@@ -480,33 +591,36 @@ CREATE TABLE `pengangkatan_pemberhentian_jfkus` (
   `file_data_jabatan_lama` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `jabatan_baru` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `unit_kerja_baru` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `file_data_jabatan_baru` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `no_surat_rekomendasi` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `tanggal_surat_rekomendasi` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `tanggal_surat_rekomendasi` date DEFAULT NULL,
   `file_data_rekomendasi` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `file_surat_pernyataan_rekomendasi` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `jabatan_data_kompetensi` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `file_surat_keterangan_menduduki_jabatan` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `file_surat_keterangan_pengalaman` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `jabatan_kompetensi` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `nomor_sertifikat` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `tanggal_sertifikat` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `tanggal_sertifikat` date DEFAULT NULL,
   `file_data_kompetensi` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `jumlah` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `terisi` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `sisa` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `file_formasi_jabatan` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `file_skp_2` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `file_skp_2_dukungan_lainnya` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `ket` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `tanggal_surat_pengantar` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `tanggal_surat_pengantar` date DEFAULT NULL,
   `no_surat_pengantar` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `no_keppres` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `tanggal_keppres` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `tanggal_keppres` date DEFAULT NULL,
   `alasan_ralat` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `file_surat_pengantar` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `file_keppres` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `file_bukti_pendukung` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `no_sk_pangkat` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `file_sk_pangkat_terakhir` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `file_penilaian_skp` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `file_penilaian_prestasi` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `id_pengirim` bigint(20) NOT NULL,
   `jenis_layanan` int(11) DEFAULT NULL,
   `status` int(11) DEFAULT NULL,
+  `status_bkn` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `distributor_id` int(11) DEFAULT NULL,
   `group_id` int(11) DEFAULT NULL,
   `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
@@ -550,6 +664,9 @@ CREATE TABLE `pengangkatan_pemberhentian_lainnya` (
   `tanggal_surat_persetujuan` varchar(255) DEFAULT NULL,
   `kepada_menteri` varchar(255) DEFAULT NULL,
   `nama_staff_khusus` varchar(255) DEFAULT NULL,
+  `alasan_ralat` varchar(255) DEFAULT NULL,
+  `file_keppres` varchar(255) DEFAULT NULL,
+  `file_bukti_pendukung` varchar(255) DEFAULT NULL,
   `id_pengirim` bigint(20) NOT NULL,
   `jenis_layanan` int(11) NOT NULL,
   `status` int(11) NOT NULL,
@@ -587,8 +704,11 @@ CREATE TABLE `pengangkatan_pemberhentian_ns` (
   `hak_keuangan` varchar(255) DEFAULT NULL,
   `tanggal_pelantikan` varchar(255) DEFAULT NULL,
   `yang_melantik` varchar(255) DEFAULT NULL,
+  `file_keppres` varchar(255) DEFAULT NULL,
+  `file_bukti_pendukung` varchar(255) DEFAULT NULL,
   `file_ba_pelantikan` varchar(255) DEFAULT NULL,
   `file_sumpah_jabatan` varchar(255) DEFAULT NULL,
+  `alasan_ralat` varchar(255) DEFAULT NULL,
   `id_pengirim` bigint(20) NOT NULL,
   `jenis_layanan` int(11) NOT NULL,
   `status` int(11) NOT NULL,
@@ -596,6 +716,23 @@ CREATE TABLE `pengangkatan_pemberhentian_ns` (
   `group_id` int(11) DEFAULT NULL,
   `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
   `updated_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `penolakans`
+--
+
+CREATE TABLE `penolakans` (
+  `id` int(11) NOT NULL,
+  `id_usulan` int(11) NOT NULL,
+  `id_layanan` int(11) NOT NULL,
+  `id_pengirim` int(11) NOT NULL,
+  `id_verifikator` int(11) NOT NULL,
+  `nama_verifikator` varchar(255) NOT NULL,
+  `alasan_penolakan` text NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -623,6 +760,29 @@ INSERT INTO `periodes` (`id`, `name`, `masa_periode`, `created_at`, `updated_at`
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `rkps`
+--
+
+CREATE TABLE `rkps` (
+  `id` int(11) NOT NULL,
+  `pengirim` varchar(255) NOT NULL,
+  `penandatangan` varchar(255) NOT NULL,
+  `penerima` varchar(255) NOT NULL,
+  `no_memo_rkp` varchar(255) NOT NULL,
+  `tanggal_memo` date NOT NULL,
+  `hal` varchar(255) NOT NULL,
+  `id_usulan` bigint(20) NOT NULL,
+  `id_layanan` bigint(20) NOT NULL,
+  `id_pengirim` bigint(20) NOT NULL,
+  `nip` varchar(255) NOT NULL,
+  `status` bigint(20) NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
+  `updated_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `roles`
 --
 
@@ -642,6 +802,59 @@ INSERT INTO `roles` (`id`, `name`, `created_at`) VALUES
 (3, 'JF Ahli Muda', '2021-09-29 14:40:35'),
 (4, 'JF Ahli Madya', '2021-09-29 14:40:35'),
 (5, 'Kepala Biro', '2021-09-29 14:40:35');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `statuses`
+--
+
+CREATE TABLE `statuses` (
+  `id` int(11) NOT NULL,
+  `nama` varchar(255) NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `statuses`
+--
+
+INSERT INTO `statuses` (`id`, `nama`, `created_at`) VALUES
+(1, 'Pengajuan Surat Usulan', '2021-11-02 02:33:30'),
+(2, 'Pending JF Ahli', '2021-11-02 02:33:30'),
+(3, 'Pending Pokja', '2021-11-02 02:33:30'),
+(4, 'Diproses Pokja', '2021-11-02 02:33:30'),
+(5, 'Pengembalian Surat Usulan', '2021-11-02 02:33:30'),
+(6, 'Terima Pertek BKN', '2021-11-02 02:33:30'),
+(7, 'Pengembalian Pertek BKN', '2021-11-02 02:33:30'),
+(8, 'Penyiapan Rancangan Keppres', '2021-11-02 02:33:30'),
+(9, 'Pengajuan Rancangan Keppres', '2021-11-02 02:33:30'),
+(10, 'Penomoran Keppres', '2021-11-02 02:33:30'),
+(11, 'Penyiapan Salinan dan Petikan Keppres', '2021-11-02 02:33:30'),
+(12, 'Pengiriman', '2021-11-02 02:33:30'),
+(13, 'Penyampaian Tanda Terima', '2021-11-02 02:33:30'),
+(14, 'Diverifikasi Pokja', '2021-11-02 02:33:30'),
+(15, 'Diterima', '2021-11-02 02:33:30'),
+(16, 'Tidak Diterima', '2021-11-02 02:33:30'),
+(17, 'Diproses JF Ahli', '2021-11-02 02:33:30');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `surats`
+--
+
+CREATE TABLE `surats` (
+  `id` int(11) NOT NULL,
+  `description` text NOT NULL,
+  `status` varchar(255) NOT NULL,
+  `id_usulan` bigint(20) NOT NULL,
+  `id_layanan` bigint(20) NOT NULL,
+  `nip` varchar(255) NOT NULL,
+  `id_pengirim` bigint(20) NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
+  `updated_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -687,7 +900,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `nip`, `nip_verified_at`, `password`, `roles_id`, `groups_id`, `remember_token`, `created_at`, `updated_at`) VALUES
-(1, 'PIC - Nama', '111111', NULL, '$2y$10$gGqnqq58u00YXuJTOnNJBu2zpu5X8bQxhi86Tx.wk.oTQcZHfte3y', 1, NULL, 'luZbVVzV1Rmswuf2kjvn2P3yCB4w0kOc2KCUBQNkRPIo21On8uQyyCeiPqh9', '2021-09-29 14:41:21', '2021-10-07 06:06:04'),
+(1, 'PIC - Nama', '111111', NULL, '$2y$10$gGqnqq58u00YXuJTOnNJBu2zpu5X8bQxhi86Tx.wk.oTQcZHfte3y', 1, NULL, 'yX3TsXA7O777myrfV5sjKHivSkoGRFTtbEy4RtYYjQJMLa5DO1bQx8gfDVc1', '2021-09-29 14:41:21', '2021-11-17 08:47:37'),
 (2, 'Koordinator Pokja - Nama', '123456', NULL, '$2y$10$gGqnqq58u00YXuJTOnNJBu2zpu5X8bQxhi86Tx.wk.oTQcZHfte3y', 2, 1, NULL, '2021-09-29 14:41:21', '2021-09-29 14:41:21'),
 (3, 'JF Ahli Muda - Nama', '654321', NULL, '$2y$10$gGqnqq58u00YXuJTOnNJBu2zpu5X8bQxhi86Tx.wk.oTQcZHfte3y', 3, 1, NULL, '2021-09-29 14:41:21', '2021-09-29 14:41:21'),
 (4, 'JF Ahli Madya- Nama', '222222', NULL, '$2y$10$gGqnqq58u00YXuJTOnNJBu2zpu5X8bQxhi86Tx.wk.oTQcZHfte3y', 4, 2, NULL, '2021-09-29 14:41:21', '2021-09-29 14:41:21'),
@@ -696,6 +909,12 @@ INSERT INTO `users` (`id`, `name`, `nip`, `nip_verified_at`, `password`, `roles_
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `bkns`
+--
+ALTER TABLE `bkns`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `groups`
@@ -708,6 +927,12 @@ ALTER TABLE `groups`
 -- Indexes for table `jabatans`
 --
 ALTER TABLE `jabatans`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `jenis_layanans`
+--
+ALTER TABLE `jenis_layanans`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -808,6 +1033,12 @@ ALTER TABLE `pengangkatan_pemberhentian_ns`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `penolakans`
+--
+ALTER TABLE `penolakans`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `periodes`
 --
 ALTER TABLE `periodes`
@@ -815,11 +1046,29 @@ ALTER TABLE `periodes`
   ADD UNIQUE KEY `periodes_name_unique` (`name`);
 
 --
+-- Indexes for table `rkps`
+--
+ALTER TABLE `rkps`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `roles`
 --
 ALTER TABLE `roles`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `roles_name_unique` (`name`);
+
+--
+-- Indexes for table `statuses`
+--
+ALTER TABLE `statuses`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `surats`
+--
+ALTER TABLE `surats`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `unsurs`
@@ -841,6 +1090,12 @@ ALTER TABLE `users`
 --
 
 --
+-- AUTO_INCREMENT for table `bkns`
+--
+ALTER TABLE `bkns`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+
+--
 -- AUTO_INCREMENT for table `groups`
 --
 ALTER TABLE `groups`
@@ -851,6 +1106,12 @@ ALTER TABLE `groups`
 --
 ALTER TABLE `jabatans`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT for table `jenis_layanans`
+--
+ALTER TABLE `jenis_layanans`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
 
 --
 -- AUTO_INCREMENT for table `kenaikan_pangkats`
@@ -868,7 +1129,7 @@ ALTER TABLE `migrations`
 -- AUTO_INCREMENT for table `notes`
 --
 ALTER TABLE `notes`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT for table `oauth_clients`
@@ -886,7 +1147,7 @@ ALTER TABLE `oauth_personal_access_clients`
 -- AUTO_INCREMENT for table `pangkat_gols`
 --
 ALTER TABLE `pangkat_gols`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `pemberhentians`
@@ -919,16 +1180,40 @@ ALTER TABLE `pengangkatan_pemberhentian_ns`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
+-- AUTO_INCREMENT for table `penolakans`
+--
+ALTER TABLE `penolakans`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT for table `periodes`
 --
 ALTER TABLE `periodes`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
+-- AUTO_INCREMENT for table `rkps`
+--
+ALTER TABLE `rkps`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT for table `roles`
 --
 ALTER TABLE `roles`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
+-- AUTO_INCREMENT for table `statuses`
+--
+ALTER TABLE `statuses`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+
+--
+-- AUTO_INCREMENT for table `surats`
+--
+ALTER TABLE `surats`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `unsurs`

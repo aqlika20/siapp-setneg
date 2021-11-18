@@ -104,7 +104,7 @@
                                                             <td>{{ $pengangkatan_ns->nama }}</td>
                                                             <td>
                                                                 <a href="{{route('koor-pokja.inbox.ns.verif', ['id' => $pengangkatan_ns->id])}}"><i class="fa fa-pencil-alt text-success mr-2"></i></a>
-                                                                <a href="{{route('koor-pokja.inbox.distributor.index', ['id' => $pengangkatan->id, 'jenis_layanan' => $pengangkatan->jenis_layanan])}}"><i class="fa fa-share text-info mr-1"></i></a>
+                                                                <a href="{{route('koor-pokja.inbox.distributor.index', ['id' => $pengangkatan_ns->id, 'jenis_layanan' => $pengangkatan_ns->jenis_layanan])}}"><i class="fa fa-share text-info mr-1"></i></a>
                                                             </td>
                                                         </tr>
                                                     @endforeach
@@ -123,7 +123,7 @@
                                                             <td>{{ $lainnya->nama }}</td>
                                                             <td>
                                                                 <a href="{{route('koor-pokja.inbox.lainnya.verif', ['id' => $lainnya->id])}}"><i class="fa fa-pencil-alt text-success mr-2"></i></a>
-                                                                <a href="{{route('koor-pokja.inbox.distributor.index', ['id' => $pengangkatan->id, 'jenis_layanan' => $pengangkatan->jenis_layanan])}}"><i class="fa fa-share text-info mr-1"></i></a>
+                                                                <a href="{{route('koor-pokja.inbox.distributor.index', ['id' => $lainnya->id, 'jenis_layanan' => $lainnya->jenis_layanan])}}"><i class="fa fa-share text-info mr-1"></i></a>
                                                             </td>
                                                         </tr>
                                                     @endforeach
@@ -245,7 +245,37 @@
                                                         <td><div style="color: #3699FF;">{{ $jfku_pending->nip }}</div></td>
                                                         <td>{{ $jfku_pending->nama }}</td>
                                                         <td>
-                                                            <a href="verifikasi_cek.html" type="button" class="btn btn-warning btn-sm">
+                                                            <a href="{{route('koor-pokja.inbox.detail-surat-pengembalian.index', ['id' => $jfku_pending->id])}}" type="button" class="btn btn-warning btn-sm">
+                                                                Lihat
+                                                            </a>
+                                                        </td>
+                                                    </tr>
+                                                @endforeach
+                                                @foreach($ns_verifikasis as $ns_verifikasi)
+                                                    <tr>
+                                                        <td>{{ $ns_verifikasi->tanggal_surat_usulan }}</td>
+                                                        <td>{{ $ns_verifikasi->no_surat_usulan }}</td>
+                                                        <td>{{ $ns_verifikasi->instansi_pengusul }}</td>
+                                                        <td><div style="color: #FFA800;">{{ Helper::defineJenisLayananBy($ns_verifikasi->jenis_layanan) }}</div></td>
+                                                        <td><div style="color: #3699FF;">{{ $ns_verifikasi->nip }}</div></td>
+                                                        <td>{{ $ns_verifikasi->nama }}</td>
+                                                        <td>
+                                                            <a href="{{route('koor-pokja.inbox.detail-surat-pengembalian.index', ['id' => $ns_verifikasi->id])}}" type="button" class="btn btn-warning btn-sm">
+                                                                Lihat
+                                                            </a>
+                                                        </td>
+                                                    </tr>
+                                                @endforeach
+                                                @foreach($lainnya_verifikasis as $lainnya_verifikasi)
+                                                    <tr>
+                                                        <td>{{ $lainnya_verifikasi->tanggal_surat_usulan }}</td>
+                                                        <td>{{ $lainnya_verifikasi->no_surat_usulan }}</td>
+                                                        <td>{{ $lainnya_verifikasi->instansi_pengusul }}</td>
+                                                        <td><div style="color: #FFA800;">{{ Helper::defineJenisLayananBy($lainnya_verifikasi->jenis_layanan) }}</div></td>
+                                                        <td><div style="color: #3699FF;">{{ $lainnya_verifikasi->nip }}</div></td>
+                                                        <td>{{ $lainnya_verifikasi->nama }}</td>
+                                                        <td>
+                                                            <a href="{{route('koor-pokja.inbox.detail-surat-pengembalian.index', ['id' => $lainnya_verifikasi->id])}}" type="button" class="btn btn-warning btn-sm">
                                                                 Lihat
                                                             </a>
                                                         </td>
@@ -299,6 +329,38 @@
                                                         <td><div style="color: #3699FF;">{{ $jfku_tolak->nip }}</div></td>
                                                         <td>{{ $jfku_tolak->nama }}</td>
                                                         <td>{{ $jfku_tolak->jabatan_fungsional }}</td>
+                                                        <td>
+                                                            <a href="persetujuan.html" type="button" class="btn btn-light-danger btn-sm">
+                                                                Kembalikan
+                                                            </a>
+                                                        </td>
+                                                    </tr>
+                                                @endforeach
+                                                @foreach($ns_tolaks as $ns_tolak)
+                                                    <tr>
+                                                        <td>{{ $ns_tolak->tanggal_surat_usulan }}</td>
+                                                        <td>{{ $ns_tolak->no_surat_usulan }}</td>
+                                                        <td>{{ $ns_tolak->instansi_pengusul }}</td>
+                                                        <td><div style="color: #FFA800;">{{ Helper::defineJenisLayananBy($ns_tolak->jenis_layanan) }}</div></td>
+                                                        <td><div style="color: #3699FF;">{{ $ns_tolak->nip }}</div></td>
+                                                        <td>{{ $ns_tolak->nama }}</td>
+                                                        <td>{{ $ns_tolak->jabatan_fungsional }}</td>
+                                                        <td>
+                                                            <a href="persetujuan.html" type="button" class="btn btn-light-danger btn-sm">
+                                                                Kembalikan
+                                                            </a>
+                                                        </td>
+                                                    </tr>
+                                                @endforeach
+                                                @foreach($lainnya_tolaks as $lainnya_tolak)
+                                                    <tr>
+                                                        <td>{{ $lainnya_tolak->tanggal_surat_usulan }}</td>
+                                                        <td>{{ $lainnya_tolak->no_surat_usulan }}</td>
+                                                        <td>{{ $lainnya_tolak->instansi_pengusul }}</td>
+                                                        <td><div style="color: #FFA800;">{{ Helper::defineJenisLayananBy($lainnya_tolak->jenis_layanan) }}</div></td>
+                                                        <td><div style="color: #3699FF;">{{ $lainnya_tolak->nip }}</div></td>
+                                                        <td>{{ $lainnya_tolak->nama }}</td>
+                                                        <td>{{ $lainnya_tolak->jabatan_fungsional }}</td>
                                                         <td>
                                                             <a href="persetujuan.html" type="button" class="btn btn-light-danger btn-sm">
                                                                 Kembalikan

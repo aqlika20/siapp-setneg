@@ -48,7 +48,7 @@ class KenaikanPangkatController extends Controller
             ['status', '=', Helper::$verifikasi_jf_ahli]
         ])->get();
 
-        $jfku_pendings = KenaikanPangkat::where([
+        $kenaikan_pendings = KenaikanPangkat::where([
             ['status', '=', Helper::$pending_pokja]
         ])->orwhere([
             ['status', '=', Helper::$pending_jf_ahli]
@@ -79,7 +79,7 @@ class KenaikanPangkatController extends Controller
             $group_roles[$user->group][]=$user->role;
         }
 
-        return view('pages.koor_pokja.inbox.kenaikan_pangkat', compact('jfku_verifikasis', 'page_title', 'page_description', 'currentUser', 'pengangkatans', 'jfku_pendings', 'jfku_tolaks', 'group_lists', 'group_users', 'group_roles'));
+        return view('pages.koor_pokja.inbox.kenaikan_pangkat', compact('jfku_verifikasis', 'page_title', 'page_description', 'currentUser', 'pengangkatans', 'kenaikan_pendings', 'jfku_tolaks', 'group_lists', 'group_users', 'group_roles'));
     }
 
     public function verification($id){
@@ -150,7 +150,7 @@ class KenaikanPangkatController extends Controller
             $pengangkatans = KenaikanPangkat::where('id', '=', $id)->update(
                 ['status' => Helper::$pending_pokja]
             );
-            return redirect()->route('koor-pokja.inbox.kenaikan-pangkat.index')->with(['success'=>'verifikasi Success !!!']);
+            return redirect()->route("koor-pokja.inbox.text-editor.kenaikan.index", [$id])->with(['success'=>'verifikasi Success !!!']);
         }
     }
 
@@ -165,7 +165,7 @@ class KenaikanPangkatController extends Controller
             $pengangkatans = KenaikanPangkat::where('id', '=', $id)->update(
                 ['status' => Helper::$tolak_pokja]
             );
-            return redirect()->route('koor-pokja.inbox.kenaikan-pangkat.index')->with(['success'=>'verifikasi Success !!!']);
+            return redirect()->route("koor-pokja.pertek.index")->with(['success'=>'verifikasi Success !!!']);
         }
     }
 

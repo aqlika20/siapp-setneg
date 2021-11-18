@@ -44,7 +44,7 @@
                                                 <label class="col-form-label col-lg-3 col-sm-12">Tanggal Surat usulan</label>
                                                 <div class="col-lg-5 col-md-9 col-sm-12">
                                                     <div class="input-group date">
-                                                        <input type="text" class="form-control datetimepicker-input my-datepicker" id="req_tanggal_surat_usulan" name="req_tanggal_surat_usulan" data-toggle="datetimepicker" data-target="#req_tanggal_surat_usulan" placeholder="Pilih Tanggal" value="<?php echo e(old('req_tanggal_surat_usulan')); ?>" require/>
+                                                        <input type="text" class="form-control datetimepicker-input my-datepicker" id="tanggal_surat_usulan" name="tanggal_surat_usulan" data-toggle="datetimepicker" data-target="#tanggal_surat_usulan" placeholder="Pilih Tanggal" value="<?php echo e(old('tanggal_surat_usulan')); ?>" require/>
                                                         <div class="input-group-append">
                                                             <span class="input-group-text">
                                                                 <i class="la la-calendar"></i>
@@ -57,7 +57,7 @@
                                                 <label class="col-form-label col-lg-3 col-sm-12">No. Surat Usulan</label>
                                                 <div class="col-lg-9 col-md-9 col-sm-12">
                                                     <div class="input-group">
-                                                        <input type="text" class="form-control" id="req_no_surat_usulan" name="req_no_surat_usulan" value="<?php echo e(old('req_no_surat_usulan')); ?>" autocomplete="off" require/>
+                                                        <input type="text" class="form-control" id="no_surat_usulan" name="no_surat_usulan" value="<?php echo e(old('no_surat_usulan')); ?>" autocomplete="off" require/>
                                                     </div>
                                                 </div>
                                             </div>
@@ -67,7 +67,7 @@
                                                 <label class="col-form-label col-lg-3 col-sm-12">Pejabat yang Menandatangani</label>
                                                 <div class="col-lg-9 col-md-9 col-sm-12">
                                                     <div class="input-group">
-                                                        <input type="text"class="form-control" id="req_jabatan_menandatangani" name="req_jabatan_menandatangani" value="<?php echo e(old('req_jabatan_menandatangani')); ?>" autocomplete="off" require/>
+                                                        <input type="text"class="form-control" id="jabatan_menandatangani" name="jabatan_menandatangani" value="<?php echo e(old('jabatan_menandatangani')); ?>" autocomplete="off" require/>
                                                     </div>
                                                 </div>
                                             </div>
@@ -76,7 +76,7 @@
                                             <div class="form-group row">
                                                 <label class="col-lg-3 col-form-label">Upload/Download File</label>
                                                 <div class="col-lg-9">
-                                                    <input id="req_file_data_usulan" name="req_file_data_usulan[]" type="file" class="file" data-show-preview="false" multiple/>
+                                                    <input id="file_data_usulan" name="file_data_usulan[]" type="file" class="file" data-show-preview="false" multiple/>
                                                     
                                                     <!-- <div class="dropzone dropzone-multi" id="kt_dropzone_4">
                                                         <div class="dropzone-panel mb-lg-0 mb-2">
@@ -126,7 +126,7 @@
                                                 <label class="col-form-label col-lg-3 col-sm-12">NIP</label>
                                                 <div class="col-lg-9 col-md-9 col-sm-12">
                                                     <div class="input-group date">
-                                                        <input type="number" class="form-control" id="req_nip" name="req_nip" value="<?php echo e(old('req_nip')); ?>" autocomplete="off" require/>
+                                                        <input type="number" class="form-control" id="nip" name="nip" value="<?php echo e(old('nip')); ?>" autocomplete="off" require/>
                                                     </div>
                                                 </div>
                                             </div>
@@ -136,7 +136,7 @@
                                                 <label class="col-form-label col-lg-3 col-sm-12">Nama</label>
                                                 <div class="col-lg-9 col-md-9 col-sm-12">
                                                     <div class="input-group date">
-                                                        <input type="text" class="form-control" id="req_nama" name="req_nama" value="<?php echo e(old('req_nama')); ?>" autocomplete="off" require />
+                                                        <input type="text" class="form-control" id="nama" name="nama" value="<?php echo e(old('nama')); ?>" autocomplete="off" require />
                                                     </div>
                                                 </div>
                                             </div>
@@ -146,7 +146,7 @@
                                                 <label class="col-form-label col-lg-3 col-sm-12">Tanggal Lahir</label>
                                                 <div class="col-lg-5 col-md-9 col-sm-12">
                                                     <div class="input-group date">
-                                                        <input type="text" class="form-control datetimepicker-input my-datepicker" id="req_tanggal_lahir" name="req_tanggal_lahir" data-toggle="datetimepicker" data-target="#req_tanggal_lahir" placeholder="Pilih Tanggal" value="<?php echo e(old('req_tanggal_lahir')); ?>" autocomplete="off" require/>
+                                                        <input type="text" class="form-control datetimepicker-input my-datepicker" id="tanggal_lahir" name="tanggal_lahir" data-toggle="datetimepicker" data-target="#tanggal_lahir" placeholder="Pilih Tanggal" value="<?php echo e(old('tanggal_lahir')); ?>" autocomplete="off" require/>
                                                         <div class="input-group-append">
                                                             <span class="input-group-text">
                                                                 <i class="la la-calendar"></i>
@@ -160,7 +160,7 @@
                                                 <label class="col-form-label col-lg-3 col-sm-12">Pendidikan Terakhir</label>
                                                 <div class="col-lg-9 col-md-9 col-sm-12">
                                                     <div class="input-group date">
-                                                        <input type="text" class="form-control" id="req_pendidikan_terakhir" name="req_pendidikan_terakhir" value="<?php echo e(old('req_pendidikan_terakhir')); ?>" autocomplete="off" require />
+                                                        <input type="text" class="form-control" id="pendidikan_terakhir" name="pendidikan_terakhir" value="<?php echo e(old('pendidikan_terakhir')); ?>" autocomplete="off" require />
                                                     </div>
                                                 </div>
                                             </div>
@@ -168,17 +168,17 @@
                                                 <label class="col-form-label col-lg-3 col-sm-12">Instansi</label>
                                                 <div class="col-lg-9 col-md-9 col-sm-12">
                                                     <div class="input-group date">
-                                                        <input type="text" class="form-control" id="req_instansi" name="req_instansi" value="<?php echo e(old('req_instansi')); ?>" autocomplete="off" require />
+                                                        <input type="text" class="form-control" id="instansi" name="instansi" value="<?php echo e(old('instansi')); ?>" autocomplete="off" require />
                                                     </div>
                                                 </div>
                                             </div>
                                             <div class="form-group row">
                                                 <label class="col-form-label col-lg-3 col-sm-12">Pangkat (Gol/Ruang) Baru</label>
                                                 <div class="col-lg-9 col-md-9 col-sm-12">
-                                                    <select class="form-control select2" style="width: 230px;" id="req_pangkat_gol" name="req_pangkat_gol">
+                                                    <select class="form-control select2" style="width: 230px;" id="pangkat_gol" name="pangkat_gol">
                                                         <option value="">Choose</option>
                                                         <?php $__currentLoopData = $pangkats; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $pangkat): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                                                            <option value="<?php echo e($pangkat->id); ?>" <?php echo e(old('req_pangkat_gol') == $pangkat->id ? 'selected' : ''); ?>><?php echo e($pangkat->golongan); ?> | <?php echo e($pangkat->ruang); ?></option>
+                                                            <option value="<?php echo e($pangkat->id); ?>" <?php echo e(old('pangkat_gol') == $pangkat->id ? 'selected' : ''); ?>><?php echo e($pangkat->golongan); ?> | <?php echo e($pangkat->ruang); ?></option>
                                                         <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                                                     </select>
                                                     <!-- <div class="input-group date">
@@ -195,7 +195,7 @@
                                                 <label class="col-form-label col-lg-3 col-sm-12">TMT Gol/Ruang</label>
                                                 <div class="col-lg-5 col-md-9 col-sm-12">
                                                     <div class="input-group date">
-                                                        <input type="text" class="form-control datetimepicker-input my-datepicker" id="req_tmt_gol_baru" name="req_tmt_gol_baru" data-toggle="datetimepicker" data-target="#req_tmt_gol_baru" placeholder="Pilih Tanggal" value="<?php echo e(old('req_tmt_gol_baru')); ?>" autocomplete="off" require />
+                                                        <input type="text" class="form-control datetimepicker-input my-datepicker" id="tmt_gol_baru" name="tmt_gol_baru" data-toggle="datetimepicker" data-target="#tmt_gol_baru" placeholder="Pilih Tanggal" value="<?php echo e(old('tmt_gol_baru')); ?>" autocomplete="off" require />
                                                         <div class="input-group-append">
                                                             <span class="input-group-text">
                                                                 <i class="la la-calendar"></i>
@@ -212,7 +212,7 @@
                                                     <label class="col-form-label col-lg-3 col-sm-12">Nomor PAK</label>
                                                     <div class="col-lg-9 col-md-9 col-sm-12">
                                                         <div class="input-group date">
-                                                            <input type="text" class="form-control" id="req_nomor_pak" name="req_nomor_pak" value="<?php echo e(old('req_nomor_pak')); ?>" autocomplete="off" />
+                                                            <input type="text" class="form-control" id="nomor_pak" name="nomor_pak" value="<?php echo e(old('nomor_pak')); ?>" autocomplete="off" />
                                                         </div>
                                                     </div>
                                                 </div>
@@ -222,7 +222,7 @@
                                                     <label class="col-form-label col-lg-3 col-sm-12">Tanggal PAK</label>
                                                     <div class="col-lg-5 col-md-9 col-sm-12">
                                                         <div class="input-group date">
-                                                            <input type="text" class="form-control datetimepicker-input my-datepicker" id="req_tanggal_pak" name="req_tanggal_pak" data-toggle="datetimepicker" data-target="#req_tanggal_pak" placeholder="Pilih Tanggal" value="<?php echo e(old('req_tanggal_pak')); ?>" autocomplete="off" />
+                                                            <input type="text" class="form-control datetimepicker-input my-datepicker" id="tanggal_pak" name="tanggal_pak" data-toggle="datetimepicker" data-target="#tanggal_pak" placeholder="Pilih Tanggal" value="<?php echo e(old('tanggal_pak')); ?>" autocomplete="off" />
                                                             <div class="input-group-append">
                                                                 <span class="input-group-text">
                                                                     <i class="la la-calendar"></i>
@@ -235,17 +235,17 @@
                                                     <label class="col-form-label col-lg-3 col-sm-12">Jumlah Angka Kredit</label>
                                                     <div class="col-lg-9 col-md-9 col-sm-12">
                                                         <div class="input-group date">
-                                                            <input type="text" class="form-control" id="req_jumlah_angka_kredit" name="req_jumlah_angka_kredit" value="<?php echo e(old('req_jumlah_angka_kredit')); ?>" autocomplete="off" />
+                                                            <input type="text" class="form-control" id="jumlah_angka_kredit" name="jumlah_angka_kredit" value="<?php echo e(old('jumlah_angka_kredit')); ?>" autocomplete="off" />
                                                         </div>
                                                     </div>
                                                 </div>
                                                 <div class="form-group row">
                                                     <label class="col-form-label col-lg-3 col-sm-12">Periode Penilaian</label>
                                                     <div class="col-lg-9 col-md-9 col-sm-12">
-                                                        <select class="form-control select2" id="req_periode_penilaian" name="req_periode_penilaian">
+                                                        <select class="form-control select2" id="periode_penilaian" name="periode_penilaian">
                                                             <option value="">Choose</option>
                                                             <?php $__currentLoopData = $periodes; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $periode): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                                                                <option value="<?php echo e($periode->id); ?>" <?php echo e(old('req_periode_penilaian') == $periode->id ? 'selected' : ''); ?>><?php echo e($periode->name); ?></option>
+                                                                <option value="<?php echo e($periode->id); ?>" <?php echo e(old('periode_penilaian') == $periode->id ? 'selected' : ''); ?>><?php echo e($periode->name); ?></option>
                                                             <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                                                         </select>
                                                         <!-- <div class="input-group date">
@@ -261,7 +261,7 @@
                                                 <div class="form-group row">
                                                     <label class="col-lg-3 col-form-label">Upload File</label>
                                                     <div class="col-lg-9">
-                                                    <input id="req_file_data_pak" name="req_file_data_pak[]" type="file" class="file" data-show-preview="false" multiple/>
+                                                    <input id="file_data_pak" name="file_data_pak[]" type="file" class="file" data-show-preview="false" multiple/>
                                                         <!-- <div class="dropzone dropzone-multi" id="kt_dropzone_7">
                                                             <div class="dropzone-panel mb-lg-0 mb-2">
                                                                 <a class="dropzone-select btn btn-light-primary font-weight-bold btn-sm">Attach files</a>
@@ -307,7 +307,7 @@
                                                     <label class="col-form-label col-lg-3 col-sm-12">Nomor Klarifikasi</label>
                                                     <div class="col-lg-9 col-md-9 col-sm-12">
                                                         <div class="input-group date">
-                                                            <input type="text" class="form-control" id="req_no_klarifikasi" name="req_no_klarifikasi" value="<?php echo e(old('req_no_klarifikasi')); ?>" autocomplete="off"/>
+                                                            <input type="text" class="form-control" id="no_klarifikasi" name="no_klarifikasi" value="<?php echo e(old('no_klarifikasi')); ?>" autocomplete="off"/>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -315,7 +315,7 @@
                                                     <label class="col-form-label col-lg-3 col-sm-12">Tanggal Klarifikasi</label>
                                                     <div class="col-lg-5 col-md-9 col-sm-12">
                                                         <div class="input-group date">
-                                                            <input type="text" class="form-control datetimepicker-input my-datepicker" id="req_tanggal_klarifikasi" name="req_tanggal_klarifikasi" data-toggle="datetimepicker" data-target="#req_tanggal_klarifikasi" placeholder="Pilih Tanggal" value="<?php echo e(old('req_tanggal_klarifikasi')); ?>" />
+                                                            <input type="text" class="form-control datetimepicker-input my-datepicker" id="tanggal_klarifikasi" name="tanggal_klarifikasi" data-toggle="datetimepicker" data-target="#tanggal_klarifikasi" placeholder="Pilih Tanggal" value="<?php echo e(old('tanggal_klarifikasi')); ?>" />
                                                             <div class="input-group-append">
                                                                 <span class="input-group-text">
                                                                     <i class="la la-calendar"></i>
@@ -327,7 +327,7 @@
                                                 <div class="form-group row">
                                                     <label class="col-lg-3 col-form-label">Upload/Download File</label>
                                                     <div class="col-lg-9">
-                                                        <input id="req_file_klarifikasi_pak" name="req_file_klarifikasi_pak[]" type="file" class="file" data-show-preview="false" multiple/>
+                                                        <input id="file_klarifikasi_pak" name="file_klarifikasi_pak[]" type="file" class="file" data-show-preview="false" multiple/>
                                                         <!-- <div class="dropzone dropzone-multi" id="kt_dropzone_8">
                                                             <div class="dropzone-panel mb-lg-0 mb-2">
                                                                 <a class="dropzone-select btn btn-light-primary font-weight-bold btn-sm">Attach files</a>
@@ -376,7 +376,7 @@
                                                 <label class="col-form-label col-lg-3 col-sm-12">Pangkat Lama</label>
                                                 <div class="col-lg-9 col-md-9 col-sm-12">
                                                     <div class="input-group date">
-                                                        <input type="text" class="form-control" id="req_pangkat_lama" name="req_pangkat_lama" value="<?php echo e(old('req_pangkat_lama')); ?>" autocomplete="off" require/>
+                                                        <input type="text" class="form-control" id="pangkat_lama" name="pangkat_lama" value="<?php echo e(old('pangkat_lama')); ?>" autocomplete="off" require/>
                                                     </div>
                                                 </div>
                                             </div>
@@ -384,7 +384,7 @@
                                                 <label class="col-form-label col-lg-3 col-sm-12">Gol. Ruang Lama</label>
                                                 <div class="col-lg-9 col-md-9 col-sm-12">
                                                     <div class="input-group date">
-                                                        <input type="text" class="form-control" id="req_gol_ruang_lama" name="req_gol_ruang_lama" value="<?php echo e(old('req_gol_ruang_lama')); ?>" autocomplete="off" require/>
+                                                        <input type="text" class="form-control" id="gol_ruang_lama" name="gol_ruang_lama" value="<?php echo e(old('gol_ruang_lama')); ?>" autocomplete="off" require/>
                                                     </div>
                                                 </div>
                                             </div>
@@ -392,7 +392,7 @@
                                                 <label class="col-form-label col-lg-3 col-sm-12">TMT Lama</label>
                                                 <div class="col-lg-5 col-md-9 col-sm-12">
                                                     <div class="input-group date">
-                                                        <input type="text" class="form-control datetimepicker-input my-datepicker" id="req_tmt_lama" name="req_tmt_lama" data-toggle="datetimepicker" data-target="#req_tmt_lama" placeholder="Pilih Tanggal" value="<?php echo e(old('req_tmt_lama')); ?>" />
+                                                        <input type="text" class="form-control datetimepicker-input my-datepicker" id="tmt_lama" name="tmt_lama" data-toggle="datetimepicker" data-target="#tmt_lama" placeholder="Pilih Tanggal" value="<?php echo e(old('tmt_lama')); ?>" />
                                                         <div class="input-group-append">
                                                             <span class="input-group-text">
                                                                 <i class="la la-calendar"></i>
@@ -411,7 +411,7 @@
                                                 <label class="col-form-label col-lg-3 col-sm-12">Jabatan Terakhir</label>
                                                 <div class="col-lg-9 col-md-9 col-sm-12">
                                                     <div class="input-group date">
-                                                        <input type="text" class="form-control" id="req_jabatan_terakhir" name="req_jabatan_terakhir" value="<?php echo e(old('req_jabatan_terakhir')); ?>" autocomplete="off" require/>
+                                                        <input type="text" class="form-control" id="jabatan_terakhir" name="jabatan_terakhir" value="<?php echo e(old('jabatan_terakhir')); ?>" autocomplete="off" require/>
                                                     </div>
                                                 </div>
                                             </div>
@@ -419,7 +419,7 @@
                                                 <label class="col-form-label col-lg-3 col-sm-12">Unit Kerja Terakhir</label>
                                                 <div class="col-lg-9 col-md-9 col-sm-12">
                                                     <div class="input-group date">
-                                                        <input type="text" class="form-control" id="req_unit_kerja_terakhir" name="req_unit_kerja_terakhir" value="<?php echo e(old('req_unit_kerja_terakhir')); ?>" autocomplete="off" require/>
+                                                        <input type="text" class="form-control" id="unit_kerja_terakhir" name="unit_kerja_terakhir" value="<?php echo e(old('unit_kerja_terakhir')); ?>" autocomplete="off" require/>
                                                     </div>
                                                 </div>
                                             </div>
@@ -427,7 +427,7 @@
                                                 <label class="col-form-label col-lg-3 col-sm-12">TMT Berhenti</label>
                                                 <div class="col-lg-9 col-md-9 col-sm-12">
                                                     <div class="input-group date">
-                                                        <input type="text" class="form-control" id="req_tmt_berhenti" name="req_tmt_berhenti" value="<?php echo e(old('req_tmt_berhenti')); ?>" autocomplete="off" require/>
+                                                        <input type="text" class="form-control" id="tmt_berhenti" name="tmt_berhenti" value="<?php echo e(old('tmt_berhenti')); ?>" autocomplete="off" require/>
                                                     </div>
                                                 </div>
                                             </div>
@@ -435,7 +435,7 @@
                                                 <label class="col-form-label col-lg-3 col-sm-12">TMT Pensiun</label>
                                                 <div class="col-lg-9 col-md-9 col-sm-12">
                                                     <div class="input-group date">
-                                                        <input type="text" class="form-control" id="req_tmt_pensiun" name="req_tmt_pensiun" value="<?php echo e(old('req_tmt_pensiun')); ?>" autocomplete="off" require/>
+                                                        <input type="text" class="form-control" id="tmt_pensiun" name="tmt_pensiun" value="<?php echo e(old('tmt_pensiun')); ?>" autocomplete="off" require/>
                                                     </div>
                                                 </div>
                                             </div>
@@ -462,7 +462,7 @@
                                                                 <label class="col-form-label col-lg-3 col-sm-12">Tanggal Catatan</label>
                                                                 <div class="col-lg-5 col-md-9 col-sm-12">
                                                                     <div class="input-group date">
-                                                                        <input type="text" class="form-control datetimepicker-input my-datepicker" id="req_tanggal_catatan" name="req_tanggal_catatan[]" data-toggle="datetimepicker" data-target="#req_tanggal_catatan" placeholder="Pilih Tanggal" autocomplete="off" require />
+                                                                        <input type="text" class="form-control datetimepicker-input my-datepicker" id="tanggal_catatan" name="tanggal_catatan[]" data-toggle="datetimepicker" data-target="#tanggal_catatan" placeholder="Pilih Tanggal" autocomplete="off" require />
                                                                         <div class="input-group-append">
                                                                             <span class="input-group-text">
                                                                                 <i class="la la-calendar"></i>
@@ -475,7 +475,7 @@
                                                                 <label class="col-form-label col-lg-3 col-sm-12">Catatan</label>
                                                                 <div class="col-lg-9 col-md-9 col-sm-12">
                                                                     <div class="input-group date">
-                                                                        <textarea class="form-control" rows="3" id="req_catatan" name="req_catatan[]" ></textarea>
+                                                                        <textarea class="form-control" rows="3" id="catatan" name="catatan[]" ></textarea>
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -488,49 +488,49 @@
                                                     <div class="col-lg-9 col-md-9 col-sm-12">
                                                         <div style="margin-bottom:10px;">
                                                             <label class="checkbox checkbox-outline checkbox-outline-2x checkbox-primary">
-                                                                <input type="checkbox" id="req_ket" name="req_ket[]" value="1"/>
+                                                                <input type="checkbox" id="ket" name="ket[]" value="1"/>
                                                                 <span></span><div style="margin-left: 10px;">Surat Usulan Asli Ditandatangani PPK</div>
                                                             </label>
                                                         </div>
                                                         <div style="margin-bottom:10px;">
                                                             <label class="checkbox checkbox-outline checkbox-outline-2x checkbox-primary">
-                                                                <input type="checkbox" id="req_ket" name="req_ket[]" value="2"/>
+                                                                <input type="checkbox" id="ket" name="ket[]" value="2"/>
                                                                 <span></span><div style="margin-left: 10px;">Nota Usulan asli yang dilengkapi dengan data formasi dan ditandatangani oleh PPK</div>
                                                             </label>
                                                         </div>
                                                         <div style="margin-bottom:10px;">
                                                             <label class="checkbox checkbox-outline checkbox-outline-2x checkbox-primary">
-                                                                <input type="checkbox" id="req_ket" name="req_ket[]" value="3"/>
+                                                                <input type="checkbox" id="ket" name="ket[]" value="3"/>
                                                                 <span></span><div style="margin-left: 10px;">Sertifikat/tanda lulus/surat keterangan lulus uji kompetensi</div>
                                                             </label>
                                                         </div>
                                                         <div style="margin-bottom:10px;">
                                                             <label class="checkbox checkbox-outline checkbox-outline-2x checkbox-primary">
-                                                                <input type="checkbox" id="req_ket" name="req_ket[]" value="4"/>
+                                                                <input type="checkbox" id="ket" name="ket[]" value="4"/>
                                                                 <span></span><div style="margin-left: 10px;">PAK asli 1 tahun terakhir</div>
                                                             </label>
                                                         </div>
                                                         <div style="margin-bottom:10px;">
                                                             <label class="checkbox checkbox-outline checkbox-outline-2x checkbox-primary">
-                                                                <input type="checkbox" id="req_ket" name="req_ket[]" value="5"/>
+                                                                <input type="checkbox" id="ket" name="ket[]" value="5"/>
                                                                 <span></span><div style="margin-left: 10px;">Salinan sah SK jabatan terakhir</div>
                                                             </label>
                                                         </div>
                                                         <div style="margin-bottom:10px;">
                                                             <label class="checkbox checkbox-outline checkbox-outline-2x checkbox-primary">
-                                                                <input type="checkbox" id="req_ket" name="req_ket[]" value="6"/>
+                                                                <input type="checkbox" id="ket" name="ket[]" value="6"/>
                                                                 <span></span><div style="margin-left: 10px;">Salinan sah SK Pangkat terakhir</div>
                                                             </label>
                                                         </div>
                                                         <div style="margin-bottom:30px;">
                                                             <label class="checkbox checkbox-outline checkbox-outline-2x checkbox-primary">
-                                                                <input type="checkbox" id="req_ket" name="req_ket[]" value="7"/>
+                                                                <input type="checkbox" id="ket" name="ket[]" value="7"/>
                                                                 <span></span><div style="margin-left: 10px;">Salinan sah SKP dan Penilaian Prestasi Kerja 2 tahun terakhir</div>
                                                             </label>
                                                         </div>
                                                         <div style="margin-bottom:10px;">
                                                             <label class="checkbox checkbox-outline checkbox-outline-2x checkbox-primary">
-                                                                <input type="checkbox" id="req_ket" name="req_ket[]" value="8"/>
+                                                                <input type="checkbox" id="ket" name="ket[]" value="8"/>
                                                                 <span></span><div style="margin-left: 10px;">Semua persyaratan dan dokumen benar</div>
                                                             </label>
                                                         </div>
@@ -587,7 +587,7 @@
                 <label class="col-form-label col-lg-3 col-sm-12">Tanggal Catatan</label>
                 <div class="col-lg-5 col-md-9 col-sm-12">
                     <div class="input-group date">
-                        <input type="text" class="form-control datetimepicker-input my-datepicker" id="req_tanggal_catatan" name="req_tanggal_catatan[]" data-toggle="datetimepicker" placeholder="Pilih Tanggal" autocomplete="off" require />
+                        <input type="text" class="form-control datetimepicker-input my-datepicker" id="tanggal_catatan" name="tanggal_catatan[]" data-toggle="datetimepicker" placeholder="Pilih Tanggal" autocomplete="off" require />
                         <div class="input-group-append">
                             <span class="input-group-text">
                                 <i class="la la-calendar"></i>
@@ -600,7 +600,7 @@
                 <label class="col-form-label col-lg-3 col-sm-12">Catatan</label>
                 <div class="col-lg-9 col-md-9 col-sm-12">
                     <div class="input-group date">
-                        <textarea class="form-control" rows="3" id="req_catatan" name="req_catatan[]"></textarea>
+                        <textarea class="form-control" rows="3" id="catatan" name="catatan[]"></textarea>
                     </div>
                 </div>
             </div>
@@ -660,7 +660,7 @@
         $(document).on('click','.add_more_item',function(){
             var source = $("#tambah_catatan").html();
             // var template = Handlebars.compile(source);
-            var template = '<div class="item_data"><div class="form-group row"><label class="col-form-label col-lg-3 col-sm-12">Tanggal Catatan</label><div class="col-lg-5 col-md-9 col-sm-12"><div class="input-group date"><input type="text" class="form-control datetimepicker-input my-datepicker" id="req_tanggal_catatan_' + id +'" name="req_tanggal_catatan[]" data-toggle="datetimepicker" data-target="#req_tanggal_catatan_'+ id +'" placeholder="Pilih Tanggal" autocomplete="off" require /><div class="input-group-append"><span class="input-group-text"><i class="la la-calendar"></i></span></div></div></div></div><div class="form-group row"><label class="col-form-label col-lg-3 col-sm-12">Catatan</label><div class="col-lg-9 col-md-9 col-sm-12"><div class="input-group date"><textarea class="form-control" rows="3" id="req_catatan" name="req_catatan[]" ></textarea></div></div></div><div class="form-group row"><div class="col-lg-9 col-md-9 col-sm-12"><!-- <button type="button" class="remove_detail btn btn-sm font-weight-bolder btn-light-primar">Hapus</button> --><a style="margin-top: 10px;" class="remove_detail btn btn-sm font-weight-bolder btn-light-danger"><i class="la la-trash-o"></i>Hapus Catatan</a></div></div></div>'
+            var template = '<div class="item_data"><div class="form-group row"><label class="col-form-label col-lg-3 col-sm-12">Tanggal Catatan</label><div class="col-lg-5 col-md-9 col-sm-12"><div class="input-group date"><input type="text" class="form-control datetimepicker-input my-datepicker" id="tanggal_catatan_' + id +'" name="tanggal_catatan[]" data-toggle="datetimepicker" data-target="#tanggal_catatan_'+ id +'" placeholder="Pilih Tanggal" autocomplete="off" require /><div class="input-group-append"><span class="input-group-text"><i class="la la-calendar"></i></span></div></div></div></div><div class="form-group row"><label class="col-form-label col-lg-3 col-sm-12">Catatan</label><div class="col-lg-9 col-md-9 col-sm-12"><div class="input-group date"><textarea class="form-control" rows="3" id="catatan" name="catatan[]" ></textarea></div></div></div><div class="form-group row"><div class="col-lg-9 col-md-9 col-sm-12"><!-- <button type="button" class="remove_detail btn btn-sm font-weight-bolder btn-light-primar">Hapus</button> --><a style="margin-top: 10px;" class="remove_detail btn btn-sm font-weight-bolder btn-light-danger"><i class="la la-trash-o"></i>Hapus Catatan</a></div></div></div>'
             $(this).parent().parent().parent().find(".item_catatan").append(template);
             id++;
             refreshDateTimePicker();
@@ -670,6 +670,14 @@
             $(this).closest('.item_data').remove();
         });
 
+        function confirmation(){
+            if(confirm('are you sure?')){
+                document.getElementById('kt_form').submit();
+            }else{
+                return false;
+            }   
+        }
+
     </script>
     <script>
         $(function(){
@@ -677,39 +685,39 @@
                 errorClass:"error-msg",
                 errorElement:"p",
                 rules:{
-                    req_tanggal_surat_usulan: 'required',
-                    req_no_surat_usulan: 'required',
-                    req_jabatan_menandatangani: 'required',
-                    req_file_data_usulan: {
-                        extension: "jpg,png,jpeg,pdf"
+                    tanggal_surat_usulan: 'required',
+                    no_surat_usulan: 'required',
+                    jabatan_menandatangani: 'required',
+                    file_data_usulan: {
+                        extension: "pdf"
                     },
-                    req_nip: 'required',
-                    req_nama: 'required',
-                    req_tanggal_lahir: 'required'
-                    req_pendidikan_terakhir: 'required',
-                    req_instansi: 'required',
-                    req_pangkat_gol: 'required',
-                    req_tmt_gol_baru: 'required',
+                    nip: 'required',
+                    nama: 'required',
+                    tanggal_lahir: 'required'
+                    pendidikan_terakhir: 'required',
+                    instansi: 'required',
+                    pangkat_gol: 'required',
+                    tmt_gol_baru: 'required',
 
-                    req_file_data_pak: {
-                        extension: "jpg,png,jpeg,pdf"
+                    file_data_pak: {
+                        extension: "pdf"
                     },
-                    req_file_klarifikasi_pak: {
-                        extension: "jpg,png,jpeg,pdf"
+                    file_klarifikasi_pak: {
+                        extension: "pdf"
                     },
 
-                    req_pangkat_lama: 'required',
-                    req_gol_ruang_lama: 'required',
-                    req_tmt_lama: 'required',
+                    pangkat_lama: 'required',
+                    gol_ruang_lama: 'required',
+                    tmt_lama: 'required',
 
-                    req_jabatan_terakhir: 'required',
-                    req_unit_kerja_terakhir: 'required',
-                    req_tmt_berhenti: 'required',
-                    req_tmt_pensiun: 'required',
+                    jabatan_terakhir: 'required',
+                    unit_kerja_terakhir: 'required',
+                    tmt_berhenti: 'required',
+                    tmt_pensiun: 'required',
                     
-                    req_tanggal_catatan: 'required',
-                    req_catatan: 'required',
-                    req_ket: 'required'
+                    tanggal_catatan: 'required',
+                    catatan: 'required',
+                    ket: 'required'
 
                 },
                 submitHandler:function(form){

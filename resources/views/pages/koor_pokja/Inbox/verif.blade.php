@@ -66,7 +66,7 @@
                                                 <div class="form-group row">
                                                     <label class="col-form-label col-lg-3 col-sm-12">Upload/Download file</label>
                                                     <div class="col-lg-9 col-md-9 col-sm-12">
-                                                        @if($verifikasi->file_data_usulan == null)
+                                                        @if($verifikasi->file_surat_usulan == null)
                                                             <h1> - </h1>
                                                         @else
                                                         <table>
@@ -77,10 +77,10 @@
                                                                 </tr>
                                                             </thead>
                                                             <tbody>
-                                                            @foreach($file_data_usulans as $file)
+                                                            @foreach($file_surat_usulans as $file)
                                                                 <tr>
                                                                     <td><a style="color: blue;" > {{ $file }}</a></td>
-                                                                    <td><a id="d_file_data_usulan" type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#file_data_usulan_modal" data-file="{{ $file }}">Lihat</a></td>
+                                                                    <td><a id="d_file_surat_usulan" type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#file_surat_usulan_modal" data-file="{{ $file }}">Lihat</a></td>
                                                                 </tr>
                                                             @endforeach
                                                             </tbody>
@@ -89,13 +89,13 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="modal fade" id="file_data_usulan_modal">
+                                            <div class="modal fade" id="file_surat_usulan_modal">
                                                 <div class="modal-dialog" >
                                                     <div class="modal-content" style="width: 800px !important; height: 800px !important;">
                                                         <div class="modal-header">
-                                                            <h4 class="modal-title" style="font-weight: bold;" id="file_name_file_data_usulan"></h4>
+                                                            <h4 class="modal-title" style="font-weight: bold;" id="file_name_file_surat_usulan"></h4>
                                                         </div>
-                                                        <p id="file_data_usulan"></p>
+                                                        <p id="file_surat_usulan"></p>
                                                     </div>
                                                 </div>
                                             </div>
@@ -256,7 +256,7 @@
                                                 <div class="form-group row">
                                                     <label class="col-lg-3 col-form-label">Upload File</label>
                                                     <div class="col-lg-9 col-md-9 col-sm-12">
-                                                        @if($verifikasi->file_nota_usulan_asn == null)
+                                                        @if($verifikasi->file_nota_usulan == null)
                                                             <h1> - </h1>
                                                         @else
                                                         <table>
@@ -267,10 +267,10 @@
                                                                 </tr>
                                                             </thead>
                                                             <tbody>
-                                                            @foreach($file_nota_usulan_asns as $file)
+                                                            @foreach($file_nota_usulans as $file)
                                                                 <tr>
                                                                     <td><a style="color: blue;" > {{ $file }}</a></td>
-                                                                    <td><a id="d_file_nota_usulan_asn" type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#file_nota_usulan_asn_modal" data-file="{{ $file }}">Lihat</a></td>
+                                                                    <td><a id="d_file_nota_usulan" type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#file_nota_usulan_modal" data-file="{{ $file }}">Lihat</a></td>
                                                                 </tr>
                                                             @endforeach
                                                             </tbody>
@@ -278,13 +278,13 @@
                                                         @endif
                                                     </div>
                                                 </div>
-                                                <div class="modal fade" id="file_nota_usulan_asn_modal">
+                                                <div class="modal fade" id="file_nota_usulan_modal">
                                                     <div class="modal-dialog" >
                                                         <div class="modal-content" style="width: 800px !important; height: 800px !important;">
                                                             <div class="modal-header">
-                                                                <h4 class="modal-title" style="font-weight: bold;" id="file_name_file_nota_usulan_asn"></h4>
+                                                                <h4 class="modal-title" style="font-weight: bold;" id="file_name_file_nota_usulan"></h4>
                                                             </div>
-                                                            <p id="file_nota_usulan_asn"></p>
+                                                            <p id="file_nota_usulan"></p>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -532,7 +532,7 @@
                                                 <div class="form-group row">
                                                     <label class="col-form-label col-lg-3 col-sm-12">Upload/Download File</label>
                                                     <div class="col-lg-9 col-md-9 col-sm-12">
-                                                        @if($verifikasi->file_data_jabatan_lama == null)
+                                                        @if($verifikasi->file_jabatan_lama == null)
                                                             <h1> - </h1>
                                                         @else
                                                         <table>
@@ -543,10 +543,10 @@
                                                                 </tr>
                                                             </thead>
                                                             <tbody>
-                                                            @foreach($data_jabatan_lamas as $file)
+                                                            @foreach($file_jabatan_lamas as $file)
                                                                 <tr>
                                                                     <td><a style="color: blue;" > {{ $file }}</a></td>
-                                                                    <td><a id="d_data_jabatan_lama" type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#data_jabatan_lama_modal" data-file="{{ $file }}">Lihat</a></td>
+                                                                    <td><a id="d_file_jabatan_lama" type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#file_jabatan_lama_modal" data-file="{{ $file }}">Lihat</a></td>
                                                                 </tr>
                                                             @endforeach
                                                             </tbody>
@@ -554,7 +554,7 @@
                                                         @endif
                                                     </div>
                                                 </div>
-                                                <div class="modal fade" id="data_jabatan_lama_modal">
+                                                <div class="modal fade" id="file_jabatan_lama_modal">
                                                     <div class="modal-dialog" >
                                                         <div class="modal-content" style="width: 800px !important; height: 800px !important;">
                                                             <div class="modal-header">
@@ -617,7 +617,7 @@
                                                 <div class="form-group row">
                                                     <label class="col-form-label col-lg-3 col-sm-12">Upload File</label>
                                                     <div class="col-lg-9 col-md-9 col-sm-12">
-                                                        @if($verifikasi->file_data_pak_terakhir == null)
+                                                        @if($verifikasi->file_sk_pangkat_terakhir == null)
                                                             <h1> - </h1>
                                                         @else
                                                         <table>
@@ -628,10 +628,10 @@
                                                                 </tr>
                                                             </thead>
                                                             <tbody>
-                                                            @foreach($file_data_pak_terakhirs as $file)
+                                                            @foreach($file_sk_pangkat_terakhirs as $file)
                                                                 <tr>
                                                                     <td><a style="color: blue;" > {{ $file }}</a></td>
-                                                                    <td><a id="d_file_data_pak_terakhir" type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#file_data_pak_terakhir_modal" data-file="{{ $file }}">Lihat</a></td>
+                                                                    <td><a id="d_file_sk_pangkat_terakhir" type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#file_sk_pangkat_terakhir_modal" data-file="{{ $file }}">Lihat</a></td>
                                                                 </tr>
                                                             @endforeach
                                                             </tbody>
@@ -639,13 +639,13 @@
                                                         @endif
                                                     </div>
                                                 </div>
-                                                <div class="modal fade" id="file_data_pak_terakhir_modal">
+                                                <div class="modal fade" id="file_sk_pangkat_terakhir_modal">
                                                     <div class="modal-dialog" >
                                                         <div class="modal-content" style="width: 800px !important; height: 800px !important;">
                                                             <div class="modal-header">
-                                                                <h4 class="modal-title" style="font-weight: bold;" id="file_name_file_data_pak_terakhir"></h4>
+                                                                <h4 class="modal-title" style="font-weight: bold;" id="file_name_file_sk_pangkat_terakhir"></h4>
                                                             </div>
-                                                            <p id="file_file_data_pak_terakhir"></p>
+                                                            <p id="file_sk_pangkat_terakhir"></p>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -1118,7 +1118,7 @@
                                                 <div class="form-group row">
                                                     <label class="col-form-label col-lg-3 col-sm-12">Upload/Download File Data Pendukung Lainnya</label>
                                                     <div class="col-lg-9 col-md-9 col-sm-12">
-                                                        @if($verifikasi->file_skp_2_dukungan_lainnya == null)
+                                                        @if($verifikasi->file_skp_2_lainnya == null)
                                                             <h1> - </h1>
                                                         @else
                                                         <table>
@@ -1129,10 +1129,10 @@
                                                                 </tr>
                                                             </thead>
                                                             <tbody>
-                                                            @foreach($file_skp_2_dukungan_lainnyas as $file)
+                                                            @foreach($file_skp_2_lainnyas as $file)
                                                                 <tr>
                                                                     <td><a style="color: blue;" > {{ $file }}</a></td>
-                                                                    <td><a id="d_file_skp_2_dukungan_lainnya" type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#file_skp_2_dukungan_lainnya_modal" data-file="{{ $file }}">Lihat</a></td>
+                                                                    <td><a id="d_file_skp_2_lainnya" type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#file_skp_2_lainnya_modal" data-file="{{ $file }}">Lihat</a></td>
                                                                 </tr>
                                                             @endforeach
                                                             </tbody>
@@ -1140,13 +1140,13 @@
                                                         @endif
                                                     </div>
                                                 </div>
-                                                <div class="modal fade" id="file_skp_2_dukungan_lainnya_modal">
+                                                <div class="modal fade" id="file_skp_2_lainnya_modal">
                                                     <div class="modal-dialog" >
                                                         <div class="modal-content" style="width: 800px !important; height: 800px !important;">
                                                             <div class="modal-header">
-                                                                <h4 class="modal-title" style="font-weight: bold;" id="file_name_file_skp_2_dukungan_lainnya"></h4>
+                                                                <h4 class="modal-title" style="font-weight: bold;" id="file_name_file_skp_2_lainnya"></h4>
                                                             </div>
-                                                            <p id="file_skp_2_dukungan_lainnya"></p>
+                                                            <p id="file_skp_2_lainnya"></p>
                                                         </div>
                                                     </div>
                                                 </div> 
@@ -1750,7 +1750,7 @@
 
 
                                             <div class="d-flex justify-content-between mt-5 pt-10" style="margin-left: 50px; margin-right: 50px;">
-                                                <div class="mr-2">
+                                            <div class="mr-2">
                                                     <a href="{{ route('koor-pokja.inbox.jfku.index')}}" type="button" class="btn btn-light-primary font-weight-bolder text-uppercase px-9 py-4">Kembali</a>
                                                 </div>
                                                 <div>
@@ -1823,26 +1823,26 @@
 @section('scripts')
 <script>
     $(document).ready(function() {
-        $(document).on('click', '#d_file_data_usulan', function() {
+        $(document).on('click', '#d_file_surat_usulan', function() {
             var file = $(this).data('file');
-            var link = "<iframe src='/storage/JFKU_Attachments/data_usulan/"+file+"' style='width: 800px !important; height: 800px !important;'></iframe>"
-            $('#file_data_usulan').html(link);
-            $('#file_name_file_data_usulan').text(file);
+            var link = "<iframe src='/storage/JFKU_Attachments/file_surat_usulan/"+file+"' style='width: 800px !important; height: 800px !important;'></iframe>"
+            $('#file_surat_usulan').html(link);
+            $('#file_name_file_surat_usulan').text(file);
 
-            $('#file_data_usulan_modal').modal('hide');
+            $('#file_surat_usulan_modal').modal('hide');
         })
 
-        $(document).on('click', '#d_file_nota_usulan_asn', function() {
+        $(document).on('click', '#d_file_nota_usulan', function() {
             var file = $(this).data('file');
-            var link = "<iframe src='/storage/JFKU_Attachments/data_asn/"+file+"' style='width: 800px !important; height: 800px !important;'></iframe>"
-            $('#file_nota_usulan_asn').html(link);
-            $('#file_name_file_nota_usulan_asn').text(file);
+            var link = "<iframe src='/storage/JFKU_Attachments/file_asn/"+file+"' style='width: 800px !important; height: 800px !important;'></iframe>"
+            $('#file_nota_usulan').html(link);
+            $('#file_name_file_nota_usulan').text(file);
 
-            $('#file_nota_usulan_asn_modal').modal('hide');
+            $('#file_nota_usulan_modal').modal('hide');
         })
         $(document).on('click', '#d_file_data_pak', function() {
             var file = $(this).data('file');
-            var link = "<iframe src='/storage/JFKU_Attachments/data_pak/"+file+"' style='width: 800px !important; height: 800px !important;'></iframe>"
+            var link = "<iframe src='/storage/JFKU_Attachments/file_data_pak/"+file+"' style='width: 800px !important; height: 800px !important;'></iframe>"
             $('#file_data_pak').html(link);
             $('#file_name_file_data_pak').text(file);
 
@@ -1850,39 +1850,39 @@
         })
         $(document).on('click', '#d_file_klarifikasi_pak', function() {
             var file = $(this).data('file');
-            var link = "<iframe src='/storage/JFKU_Attachments/klarifikasi_pak/"+file+"' style='width: 800px !important; height: 800px !important;'></iframe>"
+            var link = "<iframe src='/storage/JFKU_Attachments/file_klarifikasi_pak/"+file+"' style='width: 800px !important; height: 800px !important;'></iframe>"
             $('#file_klarifikasi_pak').html(link);
             $('#file_name_file_klarifikasi_pak').text(file);
 
             $('#file_klarifikasi_pak_modal').modal('hide');
         })
-        $(document).on('click', '#d_data_jabatan_lama', function() {
+        $(document).on('click', '#d_file_jabatan_lama', function() {
             var file = $(this).data('file');
-            var link = "<iframe src='/storage/JFKU_Attachments/data_jabatan_lama/"+file+"' style='width: 800px !important; height: 800px !important;'></iframe>"
+            var link = "<iframe src='/storage/JFKU_Attachments/file_jabatan_lama/"+file+"' style='width: 800px !important; height: 800px !important;'></iframe>"
             $('#file_jabatan_lama').html(link);
             $('#file_name_jabatan_lama').text(file);
 
-            $('#data_jabatan_lama_modal').modal('hide');
+            $('#file_jabatan_lama_modal').modal('hide');
         })
-        $(document).on('click', '#d_file_data_pak_terakhir', function() {
+        $(document).on('click', '#d_file_sk_pangkat_terakhir', function() {
             var file = $(this).data('file');
-            var link = "<iframe src='/storage/JFKU_Attachments/data_pak_terakhir/"+file+"' style='width: 800px !important; height: 800px !important;'></iframe>"
-            $('#file_file_data_pak_terakhir').html(link);
-            $('#file_name_file_data_pak_terakhir').text(file);
+            var link = "<iframe src='/storage/JFKU_Attachments/file_sk_pangkat_terakhir/"+file+"' style='width: 800px !important; height: 800px !important;'></iframe>"
+            $('#file_sk_pangkat_terakhir').html(link);
+            $('#file_name_file_sk_pangkat_terakhir').text(file);
 
-            $('#file_data_pak_terakhir_modal').modal('hide');
+            $('#file_sk_pangkat_terakhir_modal').modal('hide');
         })
         $(document).on('click', '#d_file_data_jabatan_baru', function() {
             var file = $(this).data('file');
-            var link = "<iframe src='/storage/JFKU_Attachments/data_jabatan_baru/"+file+"' style='width: 800px !important; height: 800px !important;'></iframe>"
-            $('#file_file_data_jabatan_baru').html(link);
+            var link = "<iframe src='/storage/JFKU_Attachments/file_data_jabatan_baru/"+file+"' style='width: 800px !important; height: 800px !important;'></iframe>"
+            $('#file_data_jabatan_baru').html(link);
             $('#file_name_file_data_jabatan_baru').text(file);
 
             $('#file_data_jabatan_baru_modal').modal('hide');
         })
         $(document).on('click', '#d_file_ba_pelantikan', function() {
             var file = $(this).data('file');
-            var link = "<iframe src='/storage/JFKU_Attachments/data_bukti_pendukung/"+file+"' style='width: 800px !important; height: 800px !important;'></iframe>"
+            var link = "<iframe src='/storage/JFKU_Attachments/file_ba_pelantikan/"+file+"' style='width: 800px !important; height: 800px !important;'></iframe>"
             $('#file_ba_pelantikan').html(link);
             $('#file_name_file_ba_pelantikan').text(file);
 
@@ -1891,7 +1891,7 @@
         
         $(document).on('click', '#d_file_data_jabatan_fungsional', function() {
             var file = $(this).data('file');
-            var link = "<iframe src='/storage/JFKU_Attachments/data_jabatan_fungsional/"+file+"' style='width: 800px !important; height: 800px !important;'></iframe>"
+            var link = "<iframe src='/storage/JFKU_Attachments/file_data_jabatan_fungsional/"+file+"' style='width: 800px !important; height: 800px !important;'></iframe>"
             $('#file_data_jabatan_fungsional').html(link);
             $('#file_name_file_data_jabatan_fungsional').text(file);
 
@@ -1900,25 +1900,25 @@
 
         $(document).on('click', '#d_file_data_rekomendasi', function() {
             var file = $(this).data('file');
-            var link = "<iframe src='/storage/JFKU_Attachments/data_rekomendasi/"+file+"' style='width: 800px !important; height: 800px !important;'></iframe>"
+            var link = "<iframe src='/storage/JFKU_Attachments/file_data_rekomendasi/"+file+"' style='width: 800px !important; height: 800px !important;'></iframe>"
             $('#file_data_rekomendasi').html(link);
             $('#file_name_file_data_rekomendasi').text(file);
 
             $('#file_data_rekomendasi_modal').modal('hide');
         })
 
-        $(document).on('click', '#d_file_skp_2_dukungan_lainnya', function() {
+        $(document).on('click', '#d_file_skp_2_lainnya', function() {
             var file = $(this).data('file');
-            var link = "<iframe src='/storage/JFKU_Attachments/data_skp_2_dukungan_lainnya/"+file+"' style='width: 800px !important; height: 800px !important;'></iframe>"
-            $('#file_skp_2_dukungan_lainnya').html(link);
-            $('#file_name_file_skp_2_dukungan_lainnya').text(file);
+            var link = "<iframe src='/storage/JFKU_Attachments/file_skp_2_lainnya/"+file+"' style='width: 800px !important; height: 800px !important;'></iframe>"
+            $('#file_skp_2_lainnya').html(link);
+            $('#file_name_file_skp_2_lainnya').text(file);
 
-            $('#file_skp_2_dukungan_lainnya_modal').modal('hide');
+            $('#file_skp_2_lainnya_modal').modal('hide');
         })
 
         $(document).on('click', '#d_file_skp_2', function() {
             var file = $(this).data('file');
-            var link = "<iframe src='/storage/JFKU_Attachments/data_skp_2/"+file+"' style='width: 800px !important; height: 800px !important;'></iframe>"
+            var link = "<iframe src='/storage/JFKU_Attachments/file_skp_2/"+file+"' style='width: 800px !important; height: 800px !important;'></iframe>"
             $('#file_skp_2').html(link);
             $('#file_name_file_skp_2').text(file);
 
@@ -1927,7 +1927,7 @@
 
         $(document).on('click', '#d_file_surat_pernyataan_rekomendasi', function() {
             var file = $(this).data('file');
-            var link = "<iframe src='/storage/JFKU_Attachments/data_surat_pernyataan_rekomendasi/"+file+"' style='width: 800px !important; height: 800px !important;'></iframe>"
+            var link = "<iframe src='/storage/JFKU_Attachments/file_surat_pernyataan_rekomendasi/"+file+"' style='width: 800px !important; height: 800px !important;'></iframe>"
             $('#file_surat_pernyataan_rekomendasi').html(link);
             $('#file_name_file_surat_pernyataan_rekomendasi').text(file);
 
@@ -1936,8 +1936,8 @@
 
         $(document).on('click', '#d_file_data_kompetensi', function() {
             var file = $(this).data('file');
-            var link = "<iframe src='/storage/JFKU_Attachments/data_rekomendasi/"+file+"' style='width: 800px !important; height: 800px !important;'></iframe>"
-            $('#file_file_data_kompetensi').html(link);
+            var link = "<iframe src='/storage/JFKU_Attachments/file_data_kompetensi/"+file+"' style='width: 800px !important; height: 800px !important;'></iframe>"
+            $('#file_data_kompetensi').html(link);
             $('#file_name_file_data_kompetensi').text(file);
 
             $('#file_data_kompetensi_modal').modal('hide');
@@ -1945,7 +1945,7 @@
         
         $(document).on('click', '#d_file_formasi_jabatan', function() {
             var file = $(this).data('file');
-            var link = "<iframe src='/storage/JFKU_Attachments/data_formasi_jabatan/"+file+"' style='width: 800px !important; height: 800px !important;'></iframe>"
+            var link = "<iframe src='/storage/JFKU_Attachments/file_formasi_jabatan/"+file+"' style='width: 800px !important; height: 800px !important;'></iframe>"
             $('#file_formasi_jabatan').html(link);
             $('#file_name_file_formasi_jabatan').text(file);
 
@@ -1954,7 +1954,7 @@
 
         $(document).on('click', '#d_file_pendukung_pemberhentian', function() {
             var file = $(this).data('file');
-            var link = "<iframe src='/storage/JFKU_Attachments/data_pemberhentian/"+file+"' style='width: 800px !important; height: 800px !important;'></iframe>"
+            var link = "<iframe src='/storage/JFKU_Attachments/file_pendukung_pemberhentian/"+file+"' style='width: 800px !important; height: 800px !important;'></iframe>"
             $('#file_pendukung_pemberhentian').html(link);
             $('#file_name_file_pendukung_pemberhentian').text(file);
 
@@ -1963,7 +1963,7 @@
 
         $(document).on('click', '#d_file_surat_pengantar', function() {
             var file = $(this).data('file');
-            var link = "<iframe src='/storage/JFKU_Attachments/data_surat_pengantar/"+file+"' style='width: 800px !important; height: 800px !important;'></iframe>"
+            var link = "<iframe src='/storage/JFKU_Attachments/file_surat_pengantar/"+file+"' style='width: 800px !important; height: 800px !important;'></iframe>"
             $('#file_surat_pengantar').html(link);
             $('#file_name_file_surat_pengantar').text(file);
 
@@ -1972,7 +1972,7 @@
 
         $(document).on('click', '#d_file_keppres', function() {
             var file = $(this).data('file');
-            var link = "<iframe src='/storage/JFKU_Attachments/data_keppres/"+file+"' style='width: 800px !important; height: 800px !important;'></iframe>"
+            var link = "<iframe src='/storage/JFKU_Attachments/file_keppres/"+file+"' style='width: 800px !important; height: 800px !important;'></iframe>"
             $('#file_keppres').html(link);
             $('#file_name_file_keppres').text(file);
 
@@ -1981,7 +1981,7 @@
 
         $(document).on('click', '#d_file_sumpah_jabatan', function() {
             var file = $(this).data('file');
-            var link = "<iframe src='/storage/JFKU_Attachments/data_sumpah_jabatan/"+file+"' style='width: 800px !important; height: 800px !important;'></iframe>"
+            var link = "<iframe src='/storage/JFKU_Attachments/file_sumpah_jabatan/"+file+"' style='width: 800px !important; height: 800px !important;'></iframe>"
             $('#file_sumpah_jabatan').html(link);
             $('#file_name_file_sumpah_jabatan').text(file);
 

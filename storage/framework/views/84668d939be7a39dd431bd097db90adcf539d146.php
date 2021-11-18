@@ -80,7 +80,7 @@
                                                 <label class="col-form-label col-lg-3 col-sm-12">Pejabat yang Menandatangani</label>
                                                 <div class="col-lg-9 col-md-9 col-sm-12">
                                                     <div class="input-group">
-                                                        <input type="text"class="form-control" id="jabatan_menandatangani" name="jabatan_menandatangani" value="<?php echo e(old('jabatan_menandatangani')); ?>" autocomplete="off" require/>
+                                                        <input type="text"class="form-control" id="pejabat_menandatangani" name="pejabat_menandatangani" value="<?php echo e(old('pejabat_menandatangani')); ?>" autocomplete="off" require/>
                                                     </div>
                                                 </div>
                                             </div>
@@ -1318,7 +1318,7 @@
                     tanggal_surat_usulan: 'required',
                     no_surat_usulan: 'required',
                     ppk_pejabat_yang_diusulkan: 'required',
-                    jabatan_menandatangani: 'required',
+                    pejabat_menandatangani: 'required',
                     file_surat_usulan: {
                         extenstion: "pdf"
                     },

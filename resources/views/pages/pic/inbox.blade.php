@@ -70,12 +70,12 @@
                                         <td>{{ $pengangkatan->nama }}</td>
                                         <td>{{ Helper::defineStatusBy($pengangkatan->status) }}</td>
                                         <td>
-                                            @if($pengangkatan->status == Helper::$pending)
+                                            @if($pengangkatan->status == Helper::$usulan_dikembalikan)
                                                 <a href="{{route('pic.inbox.kenaikan_pangkat.verif', ['id' => $pengangkatan->id])}}"><i class="fa fa-pencil-alt text-success mr-2"></i></a>
-                                                <a href="{{route('pic.inbox.kenaikan_pangkat.verif', ['id' => $pengangkatan->id])}}"><i class="fa flaticon2-file mr-2" style="color: #338AFF;"></i></a>
+                                                <a href="{{route('pic.inbox.detail-surat-pengembalian.index', ['id' => $pengangkatan->id])}}"><i class="fa flaticon2-file mr-2" style="color: #338AFF;"></i></a>
                                             @endif
-                                            @if($pengangkatan->status == Helper::$tolak)
-                                                <a href="{{route('koor-pokja.inbox.distributor.index', ['id' => $pengangkatan->id, 'jenis_layanan' => $pengangkatan->jenis_layanan])}}"><i class="fa fa-share text-info mr-1"></i></a>
+                                            @if($pengangkatan->status == Helper::$tolak_jf_ahli || $pengangkatan->status == Helper::$tolak_pokja)
+                                                <a href="{{route('pic.inbox.detail-surat-pengembalian.index', ['id' => $pengangkatan->id])}}"><i class="fa flaticon2-file mr-2" style="color: #338AFF;"></i></a>
                                             @endif
                                         </td>
                                     </tr>
@@ -94,12 +94,12 @@
                                         <td>{{ $ns->nama }}</td>
                                         <td>{{ Helper::defineStatusBy($ns->status) }}</td>
                                         <td>
-                                            @if($ns->status == Helper::$pending)
+                                            @if($ns->status == Helper::$usulan_dikembalikan)
                                                 <a href="{{route('pic.inbox.kenaikan_pangkat.verif', ['id' => $ns->id])}}"><i class="fa fa-pencil-alt text-success mr-2"></i></a>
-                                                <a href="{{route('pic.inbox.kenaikan_pangkat.verif', ['id' => $ns->id])}}"><i class="fa flaticon2-file mr-2" style="color: #338AFF;"></i></a>
+                                                <a href="{{route('pic.inbox.detail-surat-pengembalian.index', ['id' => $ns->id])}}"><i class="fa flaticon2-file mr-2" style="color: #338AFF;"></i></a>
                                             @endif
-                                            @if($ns->status == Helper::$tolak)
-                                                <a href="{{route('koor-pokja.inbox.distributor.index', ['id' => $ns->id, 'jenis_layanan' => $ns->jenis_layanan])}}"><i class="fa fa-share text-info mr-1"></i></a>
+                                            @if($ns->status == Helper::$tolak_jf_ahli || $ns->status == Helper::$tolak_pokja)
+                                                <a href="{{route('pic.inbox.detail-surat-pengembalian.index', ['id' => $ns->id])}}"><i class="fa flaticon2-file mr-2" style="color: #338AFF;"></i></a>
                                             @endif
                                         </td>
                                     </tr>
@@ -118,12 +118,12 @@
                                         <td>{{ $lainnya->nama }}</td>
                                         <td>{{ Helper::defineStatusBy($lainnya->status) }}</td>
                                         <td>
-                                            @if($lainnya->status == Helper::$pending)
+                                            @if($lainnya->status == Helper::$usulan_dikembalikan)
                                                 <a href="{{route('pic.inbox.kenaikan_pangkat.verif', ['id' => $lainnya->id])}}"><i class="fa fa-pencil-alt text-success mr-2"></i></a>
-                                                <a href="{{route('pic.inbox.kenaikan_pangkat.verif', ['id' => $lainnya->id])}}"><i class="fa flaticon2-file mr-2" style="color: #338AFF;"></i></a>
+                                                <a href="{{route('pic.inbox.detail-surat-pengembalian.index', ['id' => $lainnya->id])}}"><i class="fa flaticon2-file mr-2" style="color: #338AFF;"></i></a>
                                             @endif
-                                            @if($lainnya->status == Helper::$tolak)
-                                                <a href="{{route('koor-pokja.inbox.distributor.index', ['id' => $lainnya->id, 'jenis_layanan' => $lainnya->jenis_layanan])}}"><i class="fa fa-share text-info mr-1"></i></a>
+                                            @if($lainnya->status == Helper::$tolak_jf_ahli || $lainnya->status == Helper::$tolak_pokja)
+                                                <a href="{{route('pic.inbox.detail-surat-pengembalian.index', ['id' => $lainnya->id])}}"><i class="fa flaticon2-file mr-2" style="color: #338AFF;"></i></a>
                                             @endif
                                         </td>
                                     </tr>
@@ -142,12 +142,12 @@
                                         <td>{{ $kenaikan->nama }}</td>
                                         <td>{{ Helper::defineStatusBy($kenaikan->status) }}</td>
                                         <td>
-                                            @if($kenaikan->status == Helper::$pending)
+                                            @if($kenaikan->status == Helper::$usulan_dikembalikan)
                                                 <a href="{{route('pic.inbox.kenaikan_pangkat.verif', ['id' => $kenaikan->id])}}"><i class="fa fa-pencil-alt text-success mr-2"></i></a>
-                                                <a href="{{route('pic.inbox.kenaikan_pangkat.verif', ['id' => $kenaikan->id])}}"><i class="fa flaticon2-file mr-2" style="color: #338AFF;"></i></a>
+                                                <a href="{{route('pic.inbox.detail-surat-pengembalian.index', ['id' => $kenaikan->id])}}"><i class="fa flaticon2-file mr-2" style="color: #338AFF;"></i></a>
                                             @endif
-                                            @if($kenaikan->status == Helper::$tolak)
-                                                <a href="{{route('koor-pokja.inbox.distributor.index', ['id' => $kenaikan->id, 'jenis_layanan' => $kenaikan->jenis_layanan])}}"><i class="fa fa-share text-info mr-1"></i></a>
+                                            @if($kenaikan->status == Helper::$tolak_jf_ahli || $kenaikan->status == Helper::$tolak_pokja)
+                                                <a href="{{route('pic.inbox.detail-surat-pengembalian.index', ['id' => $kenaikan->id])}}"><i class="fa flaticon2-file mr-2" style="color: #338AFF;"></i></a>
                                             @endif
                                         </td>
                                     </tr>
@@ -166,12 +166,12 @@
                                         <td>{{ $pemberhentian->nama }}</td>
                                         <td>{{ Helper::defineStatusBy($pemberhentian->status) }}</td>
                                         <td>
-                                            @if($pemberhentian->status == Helper::$pending)
+                                            @if($pemberhentian->status == Helper::$usulan_dikembalikan)
                                                 <a href="{{route('pic.inbox.kenaikan_pangkat.verif', ['id' => $pemberhentian->id])}}"><i class="fa fa-pencil-alt text-success mr-2"></i></a>
-                                                <a href="{{route('pic.inbox.kenaikan_pangkat.verif', ['id' => $pemberhentian->id])}}"><i class="fa flaticon2-file mr-2" style="color: #338AFF;"></i></a>
+                                                <a href="{{route('pic.inbox.detail-surat-pengembalian.index', ['id' => $pemberhentian->id])}}"><i class="fa flaticon2-file mr-2" style="color: #338AFF;"></i></a>
                                             @endif
-                                            @if($pemberhentian->status == Helper::$tolak)
-                                                <a href="{{route('koor-pokja.inbox.distributor.index', ['id' => $pemberhentian->id, 'jenis_layanan' => $pemberhentian->jenis_layanan])}}"><i class="fa fa-share text-info mr-1"></i></a>
+                                            @if($pemberhentian->status == Helper::$tolak_jf_ahli || $pemberhentian->status == Helper::$tolak_pokja)
+                                                <a href="{{route('pic.inbox.detail-surat-pengembalian.index', ['id' => $pemberhentian->id])}}"><i class="fa flaticon2-file mr-2" style="color: #338AFF;"></i></a>
                                             @endif
                                         </td>
                                     </tr>

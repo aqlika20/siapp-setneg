@@ -174,16 +174,16 @@
                                                 </tr>
                                             </thead>
                                             <tbody>
-                                                <?php $__currentLoopData = $jfku_pendings; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $jfku_pending): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                                <?php $__currentLoopData = $kenaikan_pendings; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $kenaikan_pending): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                                     <tr>
-                                                        <td><?php echo e($jfku_pending->tanggal_surat_usulan); ?></td>
-                                                        <td><?php echo e($jfku_pending->no_surat_usulan); ?></td>
-                                                        <td><?php echo e($jfku_pending->instansi_pengusul); ?></td>
-                                                        <td><div style="color: #FFA800;"><?php echo e(Helper::defineJenisLayananBy($jfku_pending->jenis_layanan)); ?></div></td>
-                                                        <td><div style="color: #3699FF;"><?php echo e($jfku_pending->nip); ?></div></td>
-                                                        <td><?php echo e($jfku_pending->nama); ?></td>
+                                                        <td><?php echo e($kenaikan_pending->tanggal_surat_usulan); ?></td>
+                                                        <td><?php echo e($kenaikan_pending->no_surat_usulan); ?></td>
+                                                        <td><?php echo e($kenaikan_pending->instansi_pengusul); ?></td>
+                                                        <td><div style="color: #FFA800;"><?php echo e(Helper::defineJenisLayananBy($kenaikan_pending->jenis_layanan)); ?></div></td>
+                                                        <td><div style="color: #3699FF;"><?php echo e($kenaikan_pending->nip); ?></div></td>
+                                                        <td><?php echo e($kenaikan_pending->nama); ?></td>
                                                         <td>
-                                                            <a href="verifikasi_cek.html" type="button" class="btn btn-warning btn-sm">
+                                                            <a href="<?php echo e(route('koor-pokja.inbox.detail-surat-pengembalian.index', ['id' => $kenaikan_pending->id])); ?>" type="button" class="btn btn-warning btn-sm">
                                                                 Lihat
                                                             </a>
                                                         </td>

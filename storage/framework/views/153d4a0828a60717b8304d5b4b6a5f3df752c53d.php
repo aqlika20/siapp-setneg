@@ -104,7 +104,7 @@
                                                             <td><?php echo e($pengangkatan_ns->nama); ?></td>
                                                             <td>
                                                                 <a href="<?php echo e(route('koor-pokja.inbox.ns.verif', ['id' => $pengangkatan_ns->id])); ?>"><i class="fa fa-pencil-alt text-success mr-2"></i></a>
-                                                                <a href="<?php echo e(route('koor-pokja.inbox.distributor.index', ['id' => $pengangkatan->id, 'jenis_layanan' => $pengangkatan->jenis_layanan])); ?>"><i class="fa fa-share text-info mr-1"></i></a>
+                                                                <a href="<?php echo e(route('koor-pokja.inbox.distributor.index', ['id' => $pengangkatan_ns->id, 'jenis_layanan' => $pengangkatan_ns->jenis_layanan])); ?>"><i class="fa fa-share text-info mr-1"></i></a>
                                                             </td>
                                                         </tr>
                                                     <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
@@ -123,7 +123,7 @@
                                                             <td><?php echo e($lainnya->nama); ?></td>
                                                             <td>
                                                                 <a href="<?php echo e(route('koor-pokja.inbox.lainnya.verif', ['id' => $lainnya->id])); ?>"><i class="fa fa-pencil-alt text-success mr-2"></i></a>
-                                                                <a href="<?php echo e(route('koor-pokja.inbox.distributor.index', ['id' => $pengangkatan->id, 'jenis_layanan' => $pengangkatan->jenis_layanan])); ?>"><i class="fa fa-share text-info mr-1"></i></a>
+                                                                <a href="<?php echo e(route('koor-pokja.inbox.distributor.index', ['id' => $lainnya->id, 'jenis_layanan' => $lainnya->jenis_layanan])); ?>"><i class="fa fa-share text-info mr-1"></i></a>
                                                             </td>
                                                         </tr>
                                                     <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
@@ -245,7 +245,37 @@
                                                         <td><div style="color: #3699FF;"><?php echo e($jfku_pending->nip); ?></div></td>
                                                         <td><?php echo e($jfku_pending->nama); ?></td>
                                                         <td>
-                                                            <a href="verifikasi_cek.html" type="button" class="btn btn-warning btn-sm">
+                                                            <a href="<?php echo e(route('koor-pokja.inbox.detail-surat-pengembalian.index', ['id' => $jfku_pending->id])); ?>" type="button" class="btn btn-warning btn-sm">
+                                                                Lihat
+                                                            </a>
+                                                        </td>
+                                                    </tr>
+                                                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                                                <?php $__currentLoopData = $ns_verifikasis; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $ns_verifikasi): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                                    <tr>
+                                                        <td><?php echo e($ns_verifikasi->tanggal_surat_usulan); ?></td>
+                                                        <td><?php echo e($ns_verifikasi->no_surat_usulan); ?></td>
+                                                        <td><?php echo e($ns_verifikasi->instansi_pengusul); ?></td>
+                                                        <td><div style="color: #FFA800;"><?php echo e(Helper::defineJenisLayananBy($ns_verifikasi->jenis_layanan)); ?></div></td>
+                                                        <td><div style="color: #3699FF;"><?php echo e($ns_verifikasi->nip); ?></div></td>
+                                                        <td><?php echo e($ns_verifikasi->nama); ?></td>
+                                                        <td>
+                                                            <a href="<?php echo e(route('koor-pokja.inbox.detail-surat-pengembalian.index', ['id' => $ns_verifikasi->id])); ?>" type="button" class="btn btn-warning btn-sm">
+                                                                Lihat
+                                                            </a>
+                                                        </td>
+                                                    </tr>
+                                                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                                                <?php $__currentLoopData = $lainnya_verifikasis; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $lainnya_verifikasi): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                                    <tr>
+                                                        <td><?php echo e($lainnya_verifikasi->tanggal_surat_usulan); ?></td>
+                                                        <td><?php echo e($lainnya_verifikasi->no_surat_usulan); ?></td>
+                                                        <td><?php echo e($lainnya_verifikasi->instansi_pengusul); ?></td>
+                                                        <td><div style="color: #FFA800;"><?php echo e(Helper::defineJenisLayananBy($lainnya_verifikasi->jenis_layanan)); ?></div></td>
+                                                        <td><div style="color: #3699FF;"><?php echo e($lainnya_verifikasi->nip); ?></div></td>
+                                                        <td><?php echo e($lainnya_verifikasi->nama); ?></td>
+                                                        <td>
+                                                            <a href="<?php echo e(route('koor-pokja.inbox.detail-surat-pengembalian.index', ['id' => $lainnya_verifikasi->id])); ?>" type="button" class="btn btn-warning btn-sm">
                                                                 Lihat
                                                             </a>
                                                         </td>
@@ -299,6 +329,38 @@
                                                         <td><div style="color: #3699FF;"><?php echo e($jfku_tolak->nip); ?></div></td>
                                                         <td><?php echo e($jfku_tolak->nama); ?></td>
                                                         <td><?php echo e($jfku_tolak->jabatan_fungsional); ?></td>
+                                                        <td>
+                                                            <a href="persetujuan.html" type="button" class="btn btn-light-danger btn-sm">
+                                                                Kembalikan
+                                                            </a>
+                                                        </td>
+                                                    </tr>
+                                                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                                                <?php $__currentLoopData = $ns_tolaks; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $ns_tolak): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                                    <tr>
+                                                        <td><?php echo e($ns_tolak->tanggal_surat_usulan); ?></td>
+                                                        <td><?php echo e($ns_tolak->no_surat_usulan); ?></td>
+                                                        <td><?php echo e($ns_tolak->instansi_pengusul); ?></td>
+                                                        <td><div style="color: #FFA800;"><?php echo e(Helper::defineJenisLayananBy($ns_tolak->jenis_layanan)); ?></div></td>
+                                                        <td><div style="color: #3699FF;"><?php echo e($ns_tolak->nip); ?></div></td>
+                                                        <td><?php echo e($ns_tolak->nama); ?></td>
+                                                        <td><?php echo e($ns_tolak->jabatan_fungsional); ?></td>
+                                                        <td>
+                                                            <a href="persetujuan.html" type="button" class="btn btn-light-danger btn-sm">
+                                                                Kembalikan
+                                                            </a>
+                                                        </td>
+                                                    </tr>
+                                                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                                                <?php $__currentLoopData = $lainnya_tolaks; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $lainnya_tolak): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                                    <tr>
+                                                        <td><?php echo e($lainnya_tolak->tanggal_surat_usulan); ?></td>
+                                                        <td><?php echo e($lainnya_tolak->no_surat_usulan); ?></td>
+                                                        <td><?php echo e($lainnya_tolak->instansi_pengusul); ?></td>
+                                                        <td><div style="color: #FFA800;"><?php echo e(Helper::defineJenisLayananBy($lainnya_tolak->jenis_layanan)); ?></div></td>
+                                                        <td><div style="color: #3699FF;"><?php echo e($lainnya_tolak->nip); ?></div></td>
+                                                        <td><?php echo e($lainnya_tolak->nama); ?></td>
+                                                        <td><?php echo e($lainnya_tolak->jabatan_fungsional); ?></td>
                                                         <td>
                                                             <a href="persetujuan.html" type="button" class="btn btn-light-danger btn-sm">
                                                                 Kembalikan

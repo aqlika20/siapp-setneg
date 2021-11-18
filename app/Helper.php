@@ -57,7 +57,7 @@ class Helper {
                 break;
             
             case '4':
-                $jenis_layanan = 'Ralat Keppres Jabatan Fungsional Keahlian Utama';
+                $jenis_layanan = 'Usulan Lainnya';
                 break;
 
             case '5':
@@ -194,6 +194,7 @@ class Helper {
      public static $tolak_bkn_deputi = 26;
      public static $verifikasi_rkp_pokja = 27;
      public static $verifikasi_rkp_deputi = 28;
+     public static $usulan_dikembalikan = 29;
 
     public static function defineStatusBy($type)
     {
@@ -307,8 +308,12 @@ class Helper {
                 $status = 'RKP Terverifikasi Pokja';
                 break;
 
-            case '27':
+            case '28':
                 $status = 'RKP Terverifikasi Deputi';
+                break;
+
+            case '29':
+                $status = 'Pengajuan Dikembalikan Untuk Direvisi';
                 break;
             
             case '0':
