@@ -1760,9 +1760,88 @@
                                                                 @csrf 
                                                                 <input type="hidden" class="btn btn-warning font-weight-bolder text-uppercase px-9 py-4" name="v_id" value="{{ $verifikasi->id }}">
                                                                 <input type="hidden" class="btn btn-warning font-weight-bolder text-uppercase px-9 py-4" name="v_jenis" value="{{ $verifikasi->jenis_layanan }}">
-                                                                <button type="submit" class="btn btn-danger font-weight-bolder text-uppercase px-9 py-4" >
+                                                                <input type="hidden" class="btn btn-warning font-weight-bolder text-uppercase px-9 py-4" name="v_pengirim" value="{{ $verifikasi->id_pengirim }}">
+                                                                <input type="hidden" class="btn btn-warning font-weight-bolder text-uppercase px-9 py-4" name="v_verifikator" value="{{ $currentUser->nip }}">
+                                                                <input type="hidden" class="btn btn-warning font-weight-bolder text-uppercase px-9 py-4" name="v_nama_verifikator" value="{{ $currentUser->name }}">
+                                                                <a class="btn btn-danger font-weight-bolder text-uppercase px-9 py-4" data-toggle="modal" data-target="#tolak">
                                                                     Tolak
-                                                                </button>
+                                                                </a>
+                                                                <div class="modal fade" id="tolak">
+                                                                    <div class="modal-dialog" >
+                                                                        <div class="modal-content" style="width: 800px !important; height: 800px !important;">
+                                                                            <div class="modal-header">
+                                                                                <h5 class="modal-title" id="exampleModalLabel">Penolakan Surat Usulan</h5>
+                                                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                                                    <i aria-hidden="true" class="ki ki-close"></i>
+                                                                                </button>
+                                                                            </div>
+                                                                            <div class="modal-body">   
+                                                                                <div class="pb-6" data-wizard-type="step-content">
+                                                                                    <div id="otherFieldDiv_2">
+                                                                                        <h4 class="mb-10 font-weight-bold text-danger">Form Penolakan</h4>
+                                                                                            <!--begin::Input-->
+                                                                                            <div class="form-group row">
+                                                                                                <label class="col-form-label text-right col-lg-3 col-sm-12">Jenis Usulan</label>
+                                                                                                <div class="col-lg-9 col-md-9 col-sm-12">
+                                                                                                    <div class="input-group date">
+                                                                                                        <input type="text" class="form-control" disabled value="{{ Helper::defineJenisLayananBy($verifikasi->jenis_layanan) }}"  />
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                            <div class="form-group row">
+                                                                                                <label class="col-form-label text-right col-lg-3 col-sm-12">Nama ASN / Nomor Surat</label>
+                                                                                                <div class="col-lg-5 col-md-9 col-sm-12">
+                                                                                                    <div class="input-group date">
+                                                                                                        <input type="text" class="form-control" disabled value="{{ $verifikasi->nama }}"  />
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                                <div class="col-lg-4 col-md-9 col-sm-12">
+                                                                                                    <div class="input-group date">
+                                                                                                        <input type="text" class="form-control" disabled value="{{ $verifikasi->no_surat_usulan }}"  />
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                            <!--end::Input-->
+                                                                                            <!--begin::Input-->
+                                                                                            <div class="form-group row">
+                                                                                                <label class="col-form-label col-lg-3 col-sm-12">Tanggal Proses Penolakan</label>
+                                                                                                <div class="col-lg-5 col-md-9 col-sm-12">
+                                                                                                    <div class="input-group date">
+                                                                                                        <input type="text" class="form-control datetimepicker-input my-datepicker" id="tanggal_prosess_penolakan" name="tanggal_prosess_penolakan" autocomplete="off" data-toggle="datetimepicker" data-target="#tanggal_prosess_penolakan" placeholder="Pilih Tanggal" value="{{old('tanggal_prosess_penolakan')}}" require/>
+                                                                                                        <div class="input-group-append">
+                                                                                                            <span class="input-group-text">
+                                                                                                                <i class="la la-calendar"></i>
+                                                                                                            </span>
+                                                                                                        </div>
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                            <div class="form-group row ">
+                                                                                                <label class="col-form-label text-right col-lg-3 col-sm-12">Alasan Penolakan</label>
+                                                                                                <div class="col-lg-9 col-md-9 col-sm-12">
+                                                                                                    <div class="input-group ">
+                                                                                                        <textarea class="form-control" rows="3" id="alasan_penolakan" name="alasan_penolakan" autocomplete="off" value="{{old('alasan_penolakan')}}"></textarea>
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                            
+                                                                                        <!--begin::Input-->
+                                                                                    </div>
+                                                                                    <div  id="otherFieldDiv_3">                                             <!--begin::Input-->
+                                                                                        <div class="row ">
+                                                                                            <div class="col-lg-9 ml-lg-auto">
+                                                                                                <button type="submit" id="kt_sweetalert_demo_5" class="btn btn-primary font-weight-bolder text-uppercase px-9 py-4" >
+                                                                                                    Kirim Penolakan
+                                                                                                </button>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                        <!--begin::Input-->
+                                                                                    </div>
+                                                                                </div> 
+                                                                            </div> 
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
                                                             </form>
                                                         </th>
                                                         <th style="margin-right: 10px;">
@@ -1822,6 +1901,68 @@
 {{-- Scripts Section --}}
 @section('scripts')
 <script>
+    refreshDateTimePicker();
+        function refreshDateTimePicker(){
+            
+            $('.my-datepicker').each(function(){
+                $(this).datetimepicker({
+                    useCurrent:false,
+                    format: 'DD-MMM-YYYY'
+                })
+
+                $(this).keydown(function(e){
+                    e.preventDefault();
+                })
+
+            })
+        }
+        $('#otherFieldDiv').hide();
+
+        
+
+        $('.select2').select2({
+            placeholder: "Choose..."
+        })
+
+        $('#kt_repeater_1').repeater({
+            initEmpty: false,
+
+            defaultValues: {
+                'text-input': 'foo'
+            },
+
+            show: function () {
+                $(this).slideDown();
+            },
+
+            hide: function (deleteElement) {
+                $(this).slideUp(deleteElement);
+            }
+        });
+
+        var id = 1;
+
+        $(document).on('click','.add_more_item',function(){
+            var source = $("#tambah_catatan").html();
+            // var template = Handlebars.compile(source);
+            var template = '<div class="item_data"><div class="form-group row"><label class="col-form-label col-lg-3 col-sm-12">Tanggal Catatan</label><div class="col-lg-5 col-md-9 col-sm-12"><div class="input-group date"><input type="text" class="form-control datetimepicker-input my-datepicker" id="tanggal_catatan_' + id +'" name="tanggal_catatan[]" data-toggle="datetimepicker" data-target="#tanggal_catatan_'+ id +'" placeholder="Pilih Tanggal" autocomplete="off" require /><div class="input-group-append"><span class="input-group-text"><i class="la la-calendar"></i></span></div></div></div></div><div class="form-group row"><label class="col-form-label col-lg-3 col-sm-12">Catatan</label><div class="col-lg-9 col-md-9 col-sm-12"><div class="input-group date"><textarea class="form-control" rows="3" id="catatan" name="catatan[]" ></textarea></div></div></div><div class="form-group row"><div class="col-lg-9 col-md-9 col-sm-12"><!-- <button type="button" class="remove_detail btn btn-sm font-weight-bolder btn-light-primar">Hapus</button> --><a style="margin-top: 10px;" class="remove_detail btn btn-sm font-weight-bolder btn-light-danger"><i class="la la-trash-o"></i>Hapus Catatan</a></div></div></div>'
+            $(this).parent().parent().parent().find(".item_catatan").append(template);
+            id++;
+            refreshDateTimePicker();
+        });
+
+        $(document).on('click','.remove_detail',function(event) {
+            $(this).closest('.item_data').remove();
+        });
+
+        function confirmation(){
+            if(confirm('are you sure?')){
+                document.getElementById('kt_form').submit();
+            }else{
+                return false;
+            }   
+        }
+
     $(document).ready(function() {
         $(document).on('click', '#d_file_surat_usulan', function() {
             var file = $(this).data('file');

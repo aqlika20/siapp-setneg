@@ -289,6 +289,10 @@ Route::group(['middleware' => ['auth', 'checkRole:1']], function() {
             Route::prefix('/detail-surat-pengembalian')->group(function(){
                 Route::get('/{id}', 'BackWeb\PIC\DetailSuratPengembalianController@index')->name('pic.inbox.detail-surat-pengembalian.index');
             });
+
+            Route::prefix('/detail-alasan-penolakan')->group(function(){
+                Route::get('/{id}', 'BackWeb\PIC\DetailSuratPenolakanController@index')->name('pic.inbox.detail-alasan-penolakan.index');
+            });
         });
         
 

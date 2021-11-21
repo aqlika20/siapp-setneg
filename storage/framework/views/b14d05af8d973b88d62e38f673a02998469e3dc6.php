@@ -67,7 +67,7 @@
                                                 <div class="form-group row">
                                                     <label class="col-form-label col-lg-3 col-sm-12">Upload/Download file</label>
                                                     <div class="col-lg-9 col-md-9 col-sm-12">
-                                                        <?php if($verifikasi->file_data_usulan == null): ?>
+                                                        <?php if($verifikasi->file_surat_usulan == null): ?>
                                                             <h1> - </h1>
                                                         <?php else: ?>
                                                         <table>
@@ -78,10 +78,10 @@
                                                                 </tr>
                                                             </thead>
                                                             <tbody>
-                                                            <?php $__currentLoopData = $file_data_usulans; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $file): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                                            <?php $__currentLoopData = $file_surat_usulans; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $file): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                                                 <tr>
                                                                     <td><a style="color: blue;" > <?php echo e($file); ?></a></td>
-                                                                    <td><a id="d_file_data_usulan" type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#file_data_usulan_modal" data-file="<?php echo e($file); ?>">Lihat</a></td>
+                                                                    <td><a id="d_file_surat_usulan" type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#file_surat_usulan_modal" data-file="<?php echo e($file); ?>">Lihat</a></td>
                                                                 </tr>
                                                             <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                                                             </tbody>
@@ -90,13 +90,13 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="modal fade" id="file_data_usulan_modal">
+                                            <div class="modal fade" id="file_surat_usulan_modal">
                                                 <div class="modal-dialog" >
                                                     <div class="modal-content" style="width: 800px !important; height: 800px !important;">
                                                         <div class="modal-header">
-                                                            <h4 class="modal-title" style="font-weight: bold;" id="file_name_file_data_usulan"></h4>
+                                                            <h4 class="modal-title" style="font-weight: bold;" id="file_name_file_surat_usulan"></h4>
                                                         </div>
-                                                        <p id="file_data_usulan"></p>
+                                                        <p id="file_surat_usulan"></p>
                                                     </div>
                                                 </div>
                                             </div>
@@ -250,7 +250,7 @@
                                                 <div class="form-group row">
                                                     <label class="col-lg-3 col-form-label">Upload File</label>
                                                     <div class="col-lg-9 col-md-9 col-sm-12">
-                                                        <?php if($verifikasi->file_nota_usulan_asn == null): ?>
+                                                        <?php if($verifikasi->file_nota_usulan == null): ?>
                                                             <h1> - </h1>
                                                         <?php else: ?>
                                                         <table>
@@ -261,10 +261,10 @@
                                                                 </tr>
                                                             </thead>
                                                             <tbody>
-                                                            <?php $__currentLoopData = $file_nota_usulan_asns; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $file): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                                            <?php $__currentLoopData = $file_nota_usulans; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $file): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                                                 <tr>
                                                                     <td><a style="color: blue;" > <?php echo e($file); ?></a></td>
-                                                                    <td><a id="d_file_nota_usulan_asn" type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#file_nota_usulan_asn_modal" data-file="<?php echo e($file); ?>">Lihat</a></td>
+                                                                    <td><a id="d_file_nota_usulan" type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#file_nota_usulan_modal" data-file="<?php echo e($file); ?>">Lihat</a></td>
                                                                 </tr>
                                                             <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                                                             </tbody>
@@ -272,13 +272,13 @@
                                                         <?php endif; ?>
                                                     </div>
                                                 </div>
-                                                <div class="modal fade" id="file_nota_usulan_asn_modal">
+                                                <div class="modal fade" id="file_nota_usulan_modal">
                                                     <div class="modal-dialog" >
                                                         <div class="modal-content" style="width: 800px !important; height: 800px !important;">
                                                             <div class="modal-header">
-                                                                <h4 class="modal-title" style="font-weight: bold;" id="file_name_file_nota_usulan_asn"></h4>
+                                                                <h4 class="modal-title" style="font-weight: bold;" id="file_name_file_nota_usulan"></h4>
                                                             </div>
-                                                            <p id="file_nota_usulan_asn"></p>
+                                                            <p id="file_nota_usulan"></p>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -497,7 +497,7 @@
                                                 <div class="form-group row">
                                                     <label class="col-form-label col-lg-3 col-sm-12">Upload/Download File</label>
                                                     <div class="col-lg-9 col-md-9 col-sm-12">
-                                                        <?php if($verifikasi->file_data_jabatan_lama == null): ?>
+                                                        <?php if($verifikasi->file_jabatan_lama == null): ?>
                                                             <h1> - </h1>
                                                         <?php else: ?>
                                                         <table>
@@ -508,10 +508,10 @@
                                                                 </tr>
                                                             </thead>
                                                             <tbody>
-                                                            <?php $__currentLoopData = $data_jabatan_lamas; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $file): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                                            <?php $__currentLoopData = $file_jabatan_lamas; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $file): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                                                 <tr>
                                                                     <td><a style="color: blue;" > <?php echo e($file); ?></a></td>
-                                                                    <td><a id="d_data_jabatan_lama" type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#data_jabatan_lama_modal" data-file="<?php echo e($file); ?>">Lihat</a></td>
+                                                                    <td><a id="d_file_jabatan_lama" type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#file_jabatan_lama_modal" data-file="<?php echo e($file); ?>">Lihat</a></td>
                                                                 </tr>
                                                             <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                                                             </tbody>
@@ -519,7 +519,7 @@
                                                         <?php endif; ?>
                                                     </div>
                                                 </div>
-                                                <div class="modal fade" id="data_jabatan_lama_modal">
+                                                <div class="modal fade" id="file_jabatan_lama_modal">
                                                     <div class="modal-dialog" >
                                                         <div class="modal-content" style="width: 800px !important; height: 800px !important;">
                                                             <div class="modal-header">
@@ -582,7 +582,7 @@
                                                 <div class="form-group row">
                                                     <label class="col-form-label col-lg-3 col-sm-12">Upload File</label>
                                                     <div class="col-lg-9 col-md-9 col-sm-12">
-                                                        <?php if($verifikasi->file_data_pak_terakhir == null): ?>
+                                                        <?php if($verifikasi->file_sk_pangkat_terakhir == null): ?>
                                                             <h1> - </h1>
                                                         <?php else: ?>
                                                         <table>
@@ -593,10 +593,10 @@
                                                                 </tr>
                                                             </thead>
                                                             <tbody>
-                                                            <?php $__currentLoopData = $file_data_pak_terakhirs; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $file): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                                            <?php $__currentLoopData = $file_sk_pangkat_terakhirs; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $file): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                                                 <tr>
                                                                     <td><a style="color: blue;" > <?php echo e($file); ?></a></td>
-                                                                    <td><a id="d_file_data_pak_terakhir" type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#file_data_pak_terakhir_modal" data-file="<?php echo e($file); ?>">Lihat</a></td>
+                                                                    <td><a id="d_file_sk_pangkat_terakhir" type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#file_sk_pangkat_terakhir_modal" data-file="<?php echo e($file); ?>">Lihat</a></td>
                                                                 </tr>
                                                             <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                                                             </tbody>
@@ -604,13 +604,13 @@
                                                         <?php endif; ?>
                                                     </div>
                                                 </div>
-                                                <div class="modal fade" id="file_data_pak_terakhir_modal">
+                                                <div class="modal fade" id="file_sk_pangkat_terakhir_modal">
                                                     <div class="modal-dialog" >
                                                         <div class="modal-content" style="width: 800px !important; height: 800px !important;">
                                                             <div class="modal-header">
-                                                                <h4 class="modal-title" style="font-weight: bold;" id="file_name_file_data_pak_terakhir"></h4>
+                                                                <h4 class="modal-title" style="font-weight: bold;" id="file_name_file_sk_pangkat_terakhir"></h4>
                                                             </div>
-                                                            <p id="file_file_data_pak_terakhir"></p>
+                                                            <p id="file_sk_pangkat_terakhir"></p>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -1083,7 +1083,7 @@
                                                 <div class="form-group row">
                                                     <label class="col-form-label col-lg-3 col-sm-12">Upload/Download File Data Pendukung Lainnya</label>
                                                     <div class="col-lg-9 col-md-9 col-sm-12">
-                                                        <?php if($verifikasi->file_skp_2_dukungan_lainnya == null): ?>
+                                                        <?php if($verifikasi->file_skp_2_lainnya == null): ?>
                                                             <h1> - </h1>
                                                         <?php else: ?>
                                                         <table>
@@ -1094,10 +1094,10 @@
                                                                 </tr>
                                                             </thead>
                                                             <tbody>
-                                                            <?php $__currentLoopData = $file_skp_2_dukungan_lainnyas; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $file): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                                            <?php $__currentLoopData = $file_skp_2_lainnyas; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $file): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                                                 <tr>
                                                                     <td><a style="color: blue;" > <?php echo e($file); ?></a></td>
-                                                                    <td><a id="d_file_skp_2_dukungan_lainnya" type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#file_skp_2_dukungan_lainnya_modal" data-file="<?php echo e($file); ?>">Lihat</a></td>
+                                                                    <td><a id="d_file_skp_2_lainnya" type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#file_skp_2_lainnya_modal" data-file="<?php echo e($file); ?>">Lihat</a></td>
                                                                 </tr>
                                                             <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                                                             </tbody>
@@ -1105,13 +1105,13 @@
                                                         <?php endif; ?>
                                                     </div>
                                                 </div>
-                                                <div class="modal fade" id="file_skp_2_dukungan_lainnya_modal">
+                                                <div class="modal fade" id="file_skp_2_lainnya_modal">
                                                     <div class="modal-dialog" >
                                                         <div class="modal-content" style="width: 800px !important; height: 800px !important;">
                                                             <div class="modal-header">
-                                                                <h4 class="modal-title" style="font-weight: bold;" id="file_name_file_skp_2_dukungan_lainnya"></h4>
+                                                                <h4 class="modal-title" style="font-weight: bold;" id="file_name_file_skp_2_lainnya"></h4>
                                                             </div>
-                                                            <p id="file_skp_2_dukungan_lainnya"></p>
+                                                            <p id="file_skp_2_lainnya"></p>
                                                         </div>
                                                     </div>
                                                 </div> 
@@ -1715,7 +1715,7 @@
 
 
                                             <div class="d-flex justify-content-between mt-5 pt-10" style="margin-left: 50px; margin-right: 50px;">
-                                                <div class="mr-2">
+                                            <div class="mr-2">
                                                     <a href="<?php echo e(route('koor-pokja.inbox.jfku.index')); ?>" type="button" class="btn btn-light-primary font-weight-bolder text-uppercase px-9 py-4">Kembali</a>
                                                 </div>
                                                 <div>
@@ -1725,9 +1725,88 @@
                                                                 <?php echo csrf_field(); ?> 
                                                                 <input type="hidden" class="btn btn-warning font-weight-bolder text-uppercase px-9 py-4" name="v_id" value="<?php echo e($verifikasi->id); ?>">
                                                                 <input type="hidden" class="btn btn-warning font-weight-bolder text-uppercase px-9 py-4" name="v_jenis" value="<?php echo e($verifikasi->jenis_layanan); ?>">
-                                                                <button type="submit" class="btn btn-danger font-weight-bolder text-uppercase px-9 py-4" >
+                                                                <input type="hidden" class="btn btn-warning font-weight-bolder text-uppercase px-9 py-4" name="v_pengirim" value="<?php echo e($verifikasi->id_pengirim); ?>">
+                                                                <input type="hidden" class="btn btn-warning font-weight-bolder text-uppercase px-9 py-4" name="v_verifikator" value="<?php echo e($currentUser->nip); ?>">
+                                                                <input type="hidden" class="btn btn-warning font-weight-bolder text-uppercase px-9 py-4" name="v_nama_verifikator" value="<?php echo e($currentUser->name); ?>">
+                                                                <a class="btn btn-danger font-weight-bolder text-uppercase px-9 py-4" data-toggle="modal" data-target="#tolak">
                                                                     Tolak
-                                                                </button>
+                                                                </a>
+                                                                <div class="modal fade" id="tolak">
+                                                                    <div class="modal-dialog" >
+                                                                        <div class="modal-content" style="width: 800px !important; height: 800px !important;">
+                                                                            <div class="modal-header">
+                                                                                <h5 class="modal-title" id="exampleModalLabel">Penolakan Surat Usulan</h5>
+                                                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                                                    <i aria-hidden="true" class="ki ki-close"></i>
+                                                                                </button>
+                                                                            </div>
+                                                                            <div class="modal-body">   
+                                                                                <div class="pb-6" data-wizard-type="step-content">
+                                                                                    <div id="otherFieldDiv_2">
+                                                                                        <h4 class="mb-10 font-weight-bold text-danger">Form Penolakan</h4>
+                                                                                            <!--begin::Input-->
+                                                                                            <div class="form-group row">
+                                                                                                <label class="col-form-label text-right col-lg-3 col-sm-12">Jenis Usulan</label>
+                                                                                                <div class="col-lg-9 col-md-9 col-sm-12">
+                                                                                                    <div class="input-group date">
+                                                                                                        <input type="text" class="form-control" disabled value="<?php echo e(Helper::defineJenisLayananBy($verifikasi->jenis_layanan)); ?>"  />
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                            <div class="form-group row">
+                                                                                                <label class="col-form-label text-right col-lg-3 col-sm-12">Nama ASN / Nomor Surat</label>
+                                                                                                <div class="col-lg-5 col-md-9 col-sm-12">
+                                                                                                    <div class="input-group date">
+                                                                                                        <input type="text" class="form-control" disabled value="<?php echo e($verifikasi->nama); ?>"  />
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                                <div class="col-lg-4 col-md-9 col-sm-12">
+                                                                                                    <div class="input-group date">
+                                                                                                        <input type="text" class="form-control" disabled value="<?php echo e($verifikasi->no_surat_usulan); ?>"  />
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                            <!--end::Input-->
+                                                                                            <!--begin::Input-->
+                                                                                            <div class="form-group row">
+                                                                                                <label class="col-form-label col-lg-3 col-sm-12">Tanggal Proses Penolakan</label>
+                                                                                                <div class="col-lg-5 col-md-9 col-sm-12">
+                                                                                                    <div class="input-group date">
+                                                                                                        <input type="text" class="form-control datetimepicker-input my-datepicker" id="tanggal_prosess_penolakan" name="tanggal_prosess_penolakan" data-toggle="datetimepicker" data-target="#tanggal_prosess_penolakan" placeholder="Pilih Tanggal" value="<?php echo e(old('tanggal_prosess_penolakan')); ?>" require/>
+                                                                                                        <div class="input-group-append">
+                                                                                                            <span class="input-group-text">
+                                                                                                                <i class="la la-calendar"></i>
+                                                                                                            </span>
+                                                                                                        </div>
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                            <div class="form-group row ">
+                                                                                                <label class="col-form-label text-right col-lg-3 col-sm-12">Alasan Penolakan</label>
+                                                                                                <div class="col-lg-9 col-md-9 col-sm-12">
+                                                                                                    <div class="input-group ">
+                                                                                                        <textarea class="form-control" rows="3" id="alasan_penolakan" name="alasan_penolakan" value="<?php echo e(old('alasan_penolakan')); ?>"></textarea>
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                            
+                                                                                        <!--begin::Input-->
+                                                                                    </div>
+                                                                                    <div  id="otherFieldDiv_3">                                             <!--begin::Input-->
+                                                                                        <div class="row ">
+                                                                                            <div class="col-lg-9 ml-lg-auto">
+                                                                                                <button type="submit" id="kt_sweetalert_demo_5" class="btn btn-primary font-weight-bolder text-uppercase px-9 py-4" >
+                                                                                                    Kirim Penolakan
+                                                                                                </button>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                        <!--begin::Input-->
+                                                                                    </div>
+                                                                                </div> 
+                                                                            </div> 
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
                                                             </form>
                                                         </th>
                                                         <th style="margin-right: 10px;">
@@ -1787,27 +1866,89 @@
 
 <?php $__env->startSection('scripts'); ?>
 <script>
-    $(document).ready(function() {
-        $(document).on('click', '#d_file_data_usulan', function() {
-            var file = $(this).data('file');
-            var link = "<iframe src='/storage/JFKU_Attachments/data_usulan/"+file+"' style='width: 800px !important; height: 800px !important;'></iframe>"
-            $('#file_data_usulan').html(link);
-            $('#file_name_file_data_usulan').text(file);
+    refreshDateTimePicker();
+        function refreshDateTimePicker(){
+            
+            $('.my-datepicker').each(function(){
+                $(this).datetimepicker({
+                    useCurrent:false,
+                    format: 'DD-MMM-YYYY'
+                })
 
-            $('#file_data_usulan_modal').modal('hide');
+                $(this).keydown(function(e){
+                    e.preventDefault();
+                })
+
+            })
+        }
+        $('#otherFieldDiv').hide();
+
+        
+
+        $('.select2').select2({
+            placeholder: "Choose..."
         })
 
-        $(document).on('click', '#d_file_nota_usulan_asn', function() {
-            var file = $(this).data('file');
-            var link = "<iframe src='/storage/JFKU_Attachments/data_asn/"+file+"' style='width: 800px !important; height: 800px !important;'></iframe>"
-            $('#file_nota_usulan_asn').html(link);
-            $('#file_name_file_nota_usulan_asn').text(file);
+        $('#kt_repeater_1').repeater({
+            initEmpty: false,
 
-            $('#file_nota_usulan_asn_modal').modal('hide');
+            defaultValues: {
+                'text-input': 'foo'
+            },
+
+            show: function () {
+                $(this).slideDown();
+            },
+
+            hide: function (deleteElement) {
+                $(this).slideUp(deleteElement);
+            }
+        });
+
+        var id = 1;
+
+        $(document).on('click','.add_more_item',function(){
+            var source = $("#tambah_catatan").html();
+            // var template = Handlebars.compile(source);
+            var template = '<div class="item_data"><div class="form-group row"><label class="col-form-label col-lg-3 col-sm-12">Tanggal Catatan</label><div class="col-lg-5 col-md-9 col-sm-12"><div class="input-group date"><input type="text" class="form-control datetimepicker-input my-datepicker" id="tanggal_catatan_' + id +'" name="tanggal_catatan[]" data-toggle="datetimepicker" data-target="#tanggal_catatan_'+ id +'" placeholder="Pilih Tanggal" autocomplete="off" require /><div class="input-group-append"><span class="input-group-text"><i class="la la-calendar"></i></span></div></div></div></div><div class="form-group row"><label class="col-form-label col-lg-3 col-sm-12">Catatan</label><div class="col-lg-9 col-md-9 col-sm-12"><div class="input-group date"><textarea class="form-control" rows="3" id="catatan" name="catatan[]" ></textarea></div></div></div><div class="form-group row"><div class="col-lg-9 col-md-9 col-sm-12"><!-- <button type="button" class="remove_detail btn btn-sm font-weight-bolder btn-light-primar">Hapus</button> --><a style="margin-top: 10px;" class="remove_detail btn btn-sm font-weight-bolder btn-light-danger"><i class="la la-trash-o"></i>Hapus Catatan</a></div></div></div>'
+            $(this).parent().parent().parent().find(".item_catatan").append(template);
+            id++;
+            refreshDateTimePicker();
+        });
+
+        $(document).on('click','.remove_detail',function(event) {
+            $(this).closest('.item_data').remove();
+        });
+
+        function confirmation(){
+            if(confirm('are you sure?')){
+                document.getElementById('kt_form').submit();
+            }else{
+                return false;
+            }   
+        }
+
+    $(document).ready(function() {
+        $(document).on('click', '#d_file_surat_usulan', function() {
+            var file = $(this).data('file');
+            var link = "<iframe src='/storage/JFKU_Attachments/file_surat_usulan/"+file+"' style='width: 800px !important; height: 800px !important;'></iframe>"
+            $('#file_surat_usulan').html(link);
+            $('#file_name_file_surat_usulan').text(file);
+
+            $('#file_surat_usulan_modal').modal('hide');
+        })
+
+        $(document).on('click', '#d_file_nota_usulan', function() {
+            var file = $(this).data('file');
+            var link = "<iframe src='/storage/JFKU_Attachments/file_asn/"+file+"' style='width: 800px !important; height: 800px !important;'></iframe>"
+            $('#file_nota_usulan').html(link);
+            $('#file_name_file_nota_usulan').text(file);
+
+            $('#file_nota_usulan_modal').modal('hide');
         })
         $(document).on('click', '#d_file_data_pak', function() {
             var file = $(this).data('file');
-            var link = "<iframe src='/storage/JFKU_Attachments/data_pak/"+file+"' style='width: 800px !important; height: 800px !important;'></iframe>"
+            var link = "<iframe src='/storage/JFKU_Attachments/file_data_pak/"+file+"' style='width: 800px !important; height: 800px !important;'></iframe>"
             $('#file_data_pak').html(link);
             $('#file_name_file_data_pak').text(file);
 
@@ -1815,39 +1956,39 @@
         })
         $(document).on('click', '#d_file_klarifikasi_pak', function() {
             var file = $(this).data('file');
-            var link = "<iframe src='/storage/JFKU_Attachments/klarifikasi_pak/"+file+"' style='width: 800px !important; height: 800px !important;'></iframe>"
+            var link = "<iframe src='/storage/JFKU_Attachments/file_klarifikasi_pak/"+file+"' style='width: 800px !important; height: 800px !important;'></iframe>"
             $('#file_klarifikasi_pak').html(link);
             $('#file_name_file_klarifikasi_pak').text(file);
 
             $('#file_klarifikasi_pak_modal').modal('hide');
         })
-        $(document).on('click', '#d_data_jabatan_lama', function() {
+        $(document).on('click', '#d_file_jabatan_lama', function() {
             var file = $(this).data('file');
-            var link = "<iframe src='/storage/JFKU_Attachments/data_jabatan_lama/"+file+"' style='width: 800px !important; height: 800px !important;'></iframe>"
+            var link = "<iframe src='/storage/JFKU_Attachments/file_jabatan_lama/"+file+"' style='width: 800px !important; height: 800px !important;'></iframe>"
             $('#file_jabatan_lama').html(link);
             $('#file_name_jabatan_lama').text(file);
 
-            $('#data_jabatan_lama_modal').modal('hide');
+            $('#file_jabatan_lama_modal').modal('hide');
         })
-        $(document).on('click', '#d_file_data_pak_terakhir', function() {
+        $(document).on('click', '#d_file_sk_pangkat_terakhir', function() {
             var file = $(this).data('file');
-            var link = "<iframe src='/storage/JFKU_Attachments/data_pak_terakhir/"+file+"' style='width: 800px !important; height: 800px !important;'></iframe>"
-            $('#file_file_data_pak_terakhir').html(link);
-            $('#file_name_file_data_pak_terakhir').text(file);
+            var link = "<iframe src='/storage/JFKU_Attachments/file_sk_pangkat_terakhir/"+file+"' style='width: 800px !important; height: 800px !important;'></iframe>"
+            $('#file_sk_pangkat_terakhir').html(link);
+            $('#file_name_file_sk_pangkat_terakhir').text(file);
 
-            $('#file_data_pak_terakhir_modal').modal('hide');
+            $('#file_sk_pangkat_terakhir_modal').modal('hide');
         })
         $(document).on('click', '#d_file_data_jabatan_baru', function() {
             var file = $(this).data('file');
-            var link = "<iframe src='/storage/JFKU_Attachments/data_jabatan_baru/"+file+"' style='width: 800px !important; height: 800px !important;'></iframe>"
-            $('#file_file_data_jabatan_baru').html(link);
+            var link = "<iframe src='/storage/JFKU_Attachments/file_data_jabatan_baru/"+file+"' style='width: 800px !important; height: 800px !important;'></iframe>"
+            $('#file_data_jabatan_baru').html(link);
             $('#file_name_file_data_jabatan_baru').text(file);
 
             $('#file_data_jabatan_baru_modal').modal('hide');
         })
         $(document).on('click', '#d_file_ba_pelantikan', function() {
             var file = $(this).data('file');
-            var link = "<iframe src='/storage/JFKU_Attachments/data_bukti_pendukung/"+file+"' style='width: 800px !important; height: 800px !important;'></iframe>"
+            var link = "<iframe src='/storage/JFKU_Attachments/file_ba_pelantikan/"+file+"' style='width: 800px !important; height: 800px !important;'></iframe>"
             $('#file_ba_pelantikan').html(link);
             $('#file_name_file_ba_pelantikan').text(file);
 
@@ -1856,7 +1997,7 @@
         
         $(document).on('click', '#d_file_data_jabatan_fungsional', function() {
             var file = $(this).data('file');
-            var link = "<iframe src='/storage/JFKU_Attachments/data_jabatan_fungsional/"+file+"' style='width: 800px !important; height: 800px !important;'></iframe>"
+            var link = "<iframe src='/storage/JFKU_Attachments/file_data_jabatan_fungsional/"+file+"' style='width: 800px !important; height: 800px !important;'></iframe>"
             $('#file_data_jabatan_fungsional').html(link);
             $('#file_name_file_data_jabatan_fungsional').text(file);
 
@@ -1865,25 +2006,25 @@
 
         $(document).on('click', '#d_file_data_rekomendasi', function() {
             var file = $(this).data('file');
-            var link = "<iframe src='/storage/JFKU_Attachments/data_rekomendasi/"+file+"' style='width: 800px !important; height: 800px !important;'></iframe>"
+            var link = "<iframe src='/storage/JFKU_Attachments/file_data_rekomendasi/"+file+"' style='width: 800px !important; height: 800px !important;'></iframe>"
             $('#file_data_rekomendasi').html(link);
             $('#file_name_file_data_rekomendasi').text(file);
 
             $('#file_data_rekomendasi_modal').modal('hide');
         })
 
-        $(document).on('click', '#d_file_skp_2_dukungan_lainnya', function() {
+        $(document).on('click', '#d_file_skp_2_lainnya', function() {
             var file = $(this).data('file');
-            var link = "<iframe src='/storage/JFKU_Attachments/data_skp_2_dukungan_lainnya/"+file+"' style='width: 800px !important; height: 800px !important;'></iframe>"
-            $('#file_skp_2_dukungan_lainnya').html(link);
-            $('#file_name_file_skp_2_dukungan_lainnya').text(file);
+            var link = "<iframe src='/storage/JFKU_Attachments/file_skp_2_lainnya/"+file+"' style='width: 800px !important; height: 800px !important;'></iframe>"
+            $('#file_skp_2_lainnya').html(link);
+            $('#file_name_file_skp_2_lainnya').text(file);
 
-            $('#file_skp_2_dukungan_lainnya_modal').modal('hide');
+            $('#file_skp_2_lainnya_modal').modal('hide');
         })
 
         $(document).on('click', '#d_file_skp_2', function() {
             var file = $(this).data('file');
-            var link = "<iframe src='/storage/JFKU_Attachments/data_skp_2/"+file+"' style='width: 800px !important; height: 800px !important;'></iframe>"
+            var link = "<iframe src='/storage/JFKU_Attachments/file_skp_2/"+file+"' style='width: 800px !important; height: 800px !important;'></iframe>"
             $('#file_skp_2').html(link);
             $('#file_name_file_skp_2').text(file);
 
@@ -1892,7 +2033,7 @@
 
         $(document).on('click', '#d_file_surat_pernyataan_rekomendasi', function() {
             var file = $(this).data('file');
-            var link = "<iframe src='/storage/JFKU_Attachments/data_surat_pernyataan_rekomendasi/"+file+"' style='width: 800px !important; height: 800px !important;'></iframe>"
+            var link = "<iframe src='/storage/JFKU_Attachments/file_surat_pernyataan_rekomendasi/"+file+"' style='width: 800px !important; height: 800px !important;'></iframe>"
             $('#file_surat_pernyataan_rekomendasi').html(link);
             $('#file_name_file_surat_pernyataan_rekomendasi').text(file);
 
@@ -1901,8 +2042,8 @@
 
         $(document).on('click', '#d_file_data_kompetensi', function() {
             var file = $(this).data('file');
-            var link = "<iframe src='/storage/JFKU_Attachments/data_rekomendasi/"+file+"' style='width: 800px !important; height: 800px !important;'></iframe>"
-            $('#file_file_data_kompetensi').html(link);
+            var link = "<iframe src='/storage/JFKU_Attachments/file_data_kompetensi/"+file+"' style='width: 800px !important; height: 800px !important;'></iframe>"
+            $('#file_data_kompetensi').html(link);
             $('#file_name_file_data_kompetensi').text(file);
 
             $('#file_data_kompetensi_modal').modal('hide');
@@ -1910,7 +2051,7 @@
         
         $(document).on('click', '#d_file_formasi_jabatan', function() {
             var file = $(this).data('file');
-            var link = "<iframe src='/storage/JFKU_Attachments/data_formasi_jabatan/"+file+"' style='width: 800px !important; height: 800px !important;'></iframe>"
+            var link = "<iframe src='/storage/JFKU_Attachments/file_formasi_jabatan/"+file+"' style='width: 800px !important; height: 800px !important;'></iframe>"
             $('#file_formasi_jabatan').html(link);
             $('#file_name_file_formasi_jabatan').text(file);
 
@@ -1919,7 +2060,7 @@
 
         $(document).on('click', '#d_file_pendukung_pemberhentian', function() {
             var file = $(this).data('file');
-            var link = "<iframe src='/storage/JFKU_Attachments/data_pemberhentian/"+file+"' style='width: 800px !important; height: 800px !important;'></iframe>"
+            var link = "<iframe src='/storage/JFKU_Attachments/file_pendukung_pemberhentian/"+file+"' style='width: 800px !important; height: 800px !important;'></iframe>"
             $('#file_pendukung_pemberhentian').html(link);
             $('#file_name_file_pendukung_pemberhentian').text(file);
 
@@ -1928,7 +2069,7 @@
 
         $(document).on('click', '#d_file_surat_pengantar', function() {
             var file = $(this).data('file');
-            var link = "<iframe src='/storage/JFKU_Attachments/data_surat_pengantar/"+file+"' style='width: 800px !important; height: 800px !important;'></iframe>"
+            var link = "<iframe src='/storage/JFKU_Attachments/file_surat_pengantar/"+file+"' style='width: 800px !important; height: 800px !important;'></iframe>"
             $('#file_surat_pengantar').html(link);
             $('#file_name_file_surat_pengantar').text(file);
 
@@ -1937,7 +2078,7 @@
 
         $(document).on('click', '#d_file_keppres', function() {
             var file = $(this).data('file');
-            var link = "<iframe src='/storage/JFKU_Attachments/data_keppres/"+file+"' style='width: 800px !important; height: 800px !important;'></iframe>"
+            var link = "<iframe src='/storage/JFKU_Attachments/file_keppres/"+file+"' style='width: 800px !important; height: 800px !important;'></iframe>"
             $('#file_keppres').html(link);
             $('#file_name_file_keppres').text(file);
 
@@ -1946,7 +2087,7 @@
 
         $(document).on('click', '#d_file_sumpah_jabatan', function() {
             var file = $(this).data('file');
-            var link = "<iframe src='/storage/JFKU_Attachments/data_sumpah_jabatan/"+file+"' style='width: 800px !important; height: 800px !important;'></iframe>"
+            var link = "<iframe src='/storage/JFKU_Attachments/file_sumpah_jabatan/"+file+"' style='width: 800px !important; height: 800px !important;'></iframe>"
             $('#file_sumpah_jabatan').html(link);
             $('#file_name_file_sumpah_jabatan').text(file);
 

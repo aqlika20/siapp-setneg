@@ -75,7 +75,7 @@
                                                 <a href="{{route('pic.inbox.detail-surat-pengembalian.index', ['id' => $pengangkatan->id])}}"><i class="fa flaticon2-file mr-2" style="color: #338AFF;"></i></a>
                                             @endif
                                             @if($pengangkatan->status == Helper::$tolak_jf_ahli || $pengangkatan->status == Helper::$tolak_pokja)
-                                                <a href="{{route('pic.inbox.detail-surat-pengembalian.index', ['id' => $pengangkatan->id])}}"><i class="fa flaticon2-file mr-2" style="color: #338AFF;"></i></a>
+                                                <a href="{{route('pic.inbox.detail-alasan-penolakan.index', ['id' => $pengangkatan->id])}}"><i class="fa flaticon2-file mr-2" style="color: #338AFF;"></i></a>
                                             @endif
                                         </td>
                                     </tr>
@@ -99,7 +99,7 @@
                                                 <a href="{{route('pic.inbox.detail-surat-pengembalian.index', ['id' => $ns->id])}}"><i class="fa flaticon2-file mr-2" style="color: #338AFF;"></i></a>
                                             @endif
                                             @if($ns->status == Helper::$tolak_jf_ahli || $ns->status == Helper::$tolak_pokja)
-                                                <a href="{{route('pic.inbox.detail-surat-pengembalian.index', ['id' => $ns->id])}}"><i class="fa flaticon2-file mr-2" style="color: #338AFF;"></i></a>
+                                                <a href="{{route('pic.inbox.detail-alasan-penolakan.index', ['id' => $ns->id])}}"><i class="fa flaticon2-file mr-2" style="color: #338AFF;"></i></a>
                                             @endif
                                         </td>
                                     </tr>
@@ -123,7 +123,7 @@
                                                 <a href="{{route('pic.inbox.detail-surat-pengembalian.index', ['id' => $lainnya->id])}}"><i class="fa flaticon2-file mr-2" style="color: #338AFF;"></i></a>
                                             @endif
                                             @if($lainnya->status == Helper::$tolak_jf_ahli || $lainnya->status == Helper::$tolak_pokja)
-                                                <a href="{{route('pic.inbox.detail-surat-pengembalian.index', ['id' => $lainnya->id])}}"><i class="fa flaticon2-file mr-2" style="color: #338AFF;"></i></a>
+                                                <a href="{{route('pic.inbox.detail-alasan-penolakan.index', ['id' => $lainnya->id])}}"><i class="fa flaticon2-file mr-2" style="color: #338AFF;"></i></a>
                                             @endif
                                         </td>
                                     </tr>
@@ -147,7 +147,7 @@
                                                 <a href="{{route('pic.inbox.detail-surat-pengembalian.index', ['id' => $kenaikan->id])}}"><i class="fa flaticon2-file mr-2" style="color: #338AFF;"></i></a>
                                             @endif
                                             @if($kenaikan->status == Helper::$tolak_jf_ahli || $kenaikan->status == Helper::$tolak_pokja)
-                                                <a href="{{route('pic.inbox.detail-surat-pengembalian.index', ['id' => $kenaikan->id])}}"><i class="fa flaticon2-file mr-2" style="color: #338AFF;"></i></a>
+                                                <a href="{{route('pic.inbox.detail-alasan-penolakan.index', ['id' => $kenaikan->id])}}"><i class="fa flaticon2-file mr-2" style="color: #338AFF;"></i></a>
                                             @endif
                                         </td>
                                     </tr>
@@ -171,7 +171,7 @@
                                                 <a href="{{route('pic.inbox.detail-surat-pengembalian.index', ['id' => $pemberhentian->id])}}"><i class="fa flaticon2-file mr-2" style="color: #338AFF;"></i></a>
                                             @endif
                                             @if($pemberhentian->status == Helper::$tolak_jf_ahli || $pemberhentian->status == Helper::$tolak_pokja)
-                                                <a href="{{route('pic.inbox.detail-surat-pengembalian.index', ['id' => $pemberhentian->id])}}"><i class="fa flaticon2-file mr-2" style="color: #338AFF;"></i></a>
+                                                <a href="{{route('pic.inbox.detail-alasan-penolakan.index', ['id' => $pemberhentian->id])}}"><i class="fa flaticon2-file mr-2" style="color: #338AFF;"></i></a>
                                             @endif
                                         </td>
                                     </tr>

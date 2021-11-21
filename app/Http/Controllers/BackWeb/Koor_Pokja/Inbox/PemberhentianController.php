@@ -13,6 +13,7 @@ use Illuminate\Support\Facades\DB;
 use App\UserManagement;
 use App\Pemberhentian;
 use App\Pangkat;
+use App\Penolakan;
 use App\Jabatan;
 use App\Unsur;
 use App\Periode;
@@ -155,12 +156,25 @@ class PemberhentianController extends Controller
         $input = $request->all();
         $id = $input['v_id'];
         $jenis_layanan = $input['v_jenis'];
+        $id_pengirim = $input['v_pengirim'];
+        $id_verifikator = $input['v_verifikator'];
+        $nama_verifikator = $input['v_nama_verifikator'];
 
         if($jenis_layanan == Helper::$bup_non_kpp || $jenis_layanan == Helper::$bup_kpp || $jenis_layanan == Helper::$berhenti_atas_permintaan_sendiri || $jenis_layanan == Helper::$non_bup_JDA_non_kpp || $jenis_layanan == Helper::$non_bup_JDA_kpp || $jenis_layanan == Helper::$berhenti_tidak_hormat || $jenis_layanan == Helper::$anumerta || $jenis_layanan == Helper::$pemberhentian_sementara || $jenis_layanan == Helper::$ralat_keppres_pemberhentian || $jenis_layanan == Helper::$pembatalan_keppress_pemberhentian || $jenis_layanan == Helper::$petikan_keppres_hilang)
         {
             $pengangkatans = Pemberhentian::where('id', '=', $id)->update(
                 ['status' => Helper::$tolak_pokja]
             );
+
+            $tolaks = Penolakan::create([
+                'id_usulan' => $id,
+                'id_layanan' => $jenis_layanan,
+                'id_pengirim' => $id_pengirim,
+                'id_verifikator' => $id_verifikator,
+                'nama_verifikator' => $nama_verifikator,
+                'tanggal_prosess_penolakan' => Helper::convertDatetoDB($input['tanggal_prosess_penolakan']),
+                'alasan_penolakan' => $input['alasan_penolakan']
+            ]);
             return redirect()->route("koor-pokja.pertek.index")->with(['success'=>'verifikasi Success !!!']);
         }
     }

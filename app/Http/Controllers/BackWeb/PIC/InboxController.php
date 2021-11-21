@@ -45,7 +45,10 @@ class InboxController extends Controller
             ['status', '=', Helper::$usulan_dikembalikan],
             ['id_pengirim', '=', $currentUser->nip]
         ])->orwhere([
-            ['status', '=', Helper::$tolak_karo],
+            ['status', '=', Helper::$tolak_pokja],
+            ['id_pengirim', '=', $currentUser->nip]
+        ])->orwhere([
+            ['status', '=', Helper::$tolak_jf_ahli],
             ['id_pengirim', '=', $currentUser->nip]
         ])->get();
 
@@ -53,7 +56,10 @@ class InboxController extends Controller
             ['status', '=', Helper::$usulan_dikembalikan],
             ['id_pengirim', '=', $currentUser->nip]
         ])->orwhere([
-            ['status', '=', Helper::$tolak_karo],
+            ['status', '=', Helper::$tolak_pokja],
+            ['id_pengirim', '=', $currentUser->nip]
+        ])->orwhere([
+            ['status', '=', Helper::$tolak_jf_ahli],
             ['id_pengirim', '=', $currentUser->nip]
         ])->get();
 
@@ -61,7 +67,10 @@ class InboxController extends Controller
             ['status', '=', Helper::$usulan_dikembalikan],
             ['id_pengirim', '=', $currentUser->nip]
         ])->orwhere([
-            ['status', '=', Helper::$tolak_karo],
+            ['status', '=', Helper::$tolak_pokja],
+            ['id_pengirim', '=', $currentUser->nip]
+        ])->orwhere([
+            ['status', '=', Helper::$tolak_jf_ahli],
             ['id_pengirim', '=', $currentUser->nip]
         ])->get();
 
@@ -69,7 +78,10 @@ class InboxController extends Controller
             ['status', '=', Helper::$usulan_dikembalikan],
             ['id_pengirim', '=', $currentUser->nip]
         ])->orwhere([
-            ['status', '=', Helper::$tolak_karo],
+            ['status', '=', Helper::$tolak_pokja],
+            ['id_pengirim', '=', $currentUser->nip]
+        ])->orwhere([
+            ['status', '=', Helper::$tolak_jf_ahli],
             ['id_pengirim', '=', $currentUser->nip]
         ])->get();
 
@@ -77,7 +89,10 @@ class InboxController extends Controller
             ['status', '=', Helper::$usulan_dikembalikan],
             ['id_pengirim', '=', $currentUser->nip]
         ])->orwhere([
-            ['status', '=', Helper::$tolak_karo],
+            ['status', '=', Helper::$tolak_pokja],
+            ['id_pengirim', '=', $currentUser->nip]
+        ])->orwhere([
+            ['status', '=', Helper::$tolak_jf_ahli],
             ['id_pengirim', '=', $currentUser->nip]
         ])->get();
 

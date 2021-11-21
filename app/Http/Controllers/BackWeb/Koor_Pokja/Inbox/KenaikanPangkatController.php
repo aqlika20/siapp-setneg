@@ -13,6 +13,7 @@ use Illuminate\Support\Facades\DB;
 use App\UserManagement;
 use App\KenaikanPangkat;
 use App\Pangkat;
+use App\Penolakan;
 use App\Jabatan;
 use App\Unsur;
 use App\Periode;
@@ -159,12 +160,24 @@ class KenaikanPangkatController extends Controller
         $input = $request->all();
         $id = $input['v_id'];
         $jenis_layanan = $input['v_jenis'];
+        $id_pengirim = $input['v_pengirim'];
+        $id_verifikator = $input['v_verifikator'];
+        $nama_verifikator = $input['v_nama_verifikator'];
         
         if($jenis_layanan == Helper::$pemberian_kenaikan_pangkat || $jenis_layanan == Helper::$pembatalan_keppres_kenaikan_pangkat || $jenis_layanan == Helper::$pengesahan_kenaikan_pangkat || $jenis_layanan == Helper::$ralat_keppres_kepangkatan )
         {
             $pengangkatans = KenaikanPangkat::where('id', '=', $id)->update(
                 ['status' => Helper::$tolak_pokja]
             );
+            $tolaks = Penolakan::create([
+                'id_usulan' => $id,
+                'id_layanan' => $jenis_layanan,
+                'id_pengirim' => $id_pengirim,
+                'id_verifikator' => $id_verifikator,
+                'nama_verifikator' => $nama_verifikator,
+                'tanggal_prosess_penolakan' => Helper::convertDatetoDB($input['tanggal_prosess_penolakan']),
+                'alasan_penolakan' => $input['alasan_penolakan']
+            ]);
             return redirect()->route("koor-pokja.pertek.index")->with(['success'=>'verifikasi Success !!!']);
         }
     }
