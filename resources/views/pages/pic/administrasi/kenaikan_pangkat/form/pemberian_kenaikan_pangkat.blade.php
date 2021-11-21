@@ -934,7 +934,7 @@
                     nip: 'required',
                     nama: 'required',
                     tempat_lahir: 'required',
-                    tanggal_lahir: 'required'
+                    tanggal_lahir: 'required',
                     pendidikan_terakhir: 'required',
                     instansi: 'required',
                     file_data_asn: {
