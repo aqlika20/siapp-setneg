@@ -13,7 +13,15 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        //
+        $this->app->bind(
+            'bkn.helper',
+            \App\Helpers\BknHelper::class
+        );
+
+        $this->app->bind(
+            'string.helper',
+            \App\Helpers\StringHelper::class
+        );
     }
 
     /**
