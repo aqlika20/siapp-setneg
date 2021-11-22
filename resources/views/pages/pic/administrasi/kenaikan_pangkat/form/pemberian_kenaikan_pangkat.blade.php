@@ -138,6 +138,7 @@
                                                         <input type="text" class="form-control" id="nama" name="nama" value="{{old('nama')}}" autocomplete="off" require />
                                                     </div>
                                                 </div>
+                                                <button id="btn-bkn" class="btn btn-light-primary font-weight-bold">Tarik Data BKN</button>
                                             </div>
                                             <!--end::Input-->
                                             <!--begin::Input-->
