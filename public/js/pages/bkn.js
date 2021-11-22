@@ -30,6 +30,7 @@ $(document).ready(function (e) {
                     $('#instansi').val(data.instansiIndukNama);
                     $('#masa_kerja_gol_tahun').val(data.mkTahun);
                     $('#masa_kerja_gol_bulan').val(data.mkBulan);
+                    $('#pangkat_gol').val(data.golRuangAkhir);
                 }
 
                 $("#btn-bkn").prop('disabled', false);
