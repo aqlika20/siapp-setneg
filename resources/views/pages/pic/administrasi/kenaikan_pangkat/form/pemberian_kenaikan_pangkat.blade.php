@@ -805,7 +805,8 @@
             <!--end: Wizard-->
         </div>
     </div>
-				
+		
+<input type="hidden" id="url-api-fetch-data-bkn" name="url-api-fetch-data-bkn" value="{{ route('api.bkn.fetch-data') }}"/>		
 @endsection
 
 {{-- Styles Section --}}
@@ -984,4 +985,5 @@
     <script src="{{ asset('js/hide.js') }}"></script> 
     <script src="{{ asset('js/pages/crud/file-upload/dropzonejs.js') }}"></script>
     <script src="{{ asset('js/pages/crud/ktdatatable/base/html-table.js') }}" type="text/javascript"></script>
+    <script src="{{ asset('js/pages/bkn.js') }}"></script> 
 @endsection
