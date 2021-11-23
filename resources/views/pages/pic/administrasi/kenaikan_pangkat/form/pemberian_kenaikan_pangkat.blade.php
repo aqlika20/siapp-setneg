@@ -123,11 +123,12 @@
                                             <!--begin::Input-->
                                             <div class="form-group row">
                                                 <label class="col-form-label col-lg-3 col-sm-12">NIP</label>
-                                                <div class="col-lg-9 col-md-9 col-sm-12">
+                                                <div class="col-lg-5 col-md-9 col-sm-12">
                                                     <div class="input-group date">
                                                         <input type="number" class="form-control" id="nip" name="nip" value="{{old('nip')}}" autocomplete="off" require/>
                                                     </div>
                                                 </div>
+                                                <button id="btn-bkn" class="btn btn-light-primary font-weight-bold">Tarik Data BKN</button>
                                             </div>
                                             <!--end::Input-->
                                             <!--begin::Input-->
@@ -138,7 +139,6 @@
                                                         <input type="text" class="form-control" id="nama" name="nama" value="{{old('nama')}}" autocomplete="off" require />
                                                     </div>
                                                 </div>
-                                                <button id="btn-bkn" class="btn btn-light-primary font-weight-bold">Tarik Data BKN</button>
                                             </div>
                                             <!--end::Input-->
                                             <!--begin::Input-->
@@ -227,12 +227,13 @@
                                             <div class="form-group row">
                                                 <label class="col-form-label col-lg-3 col-sm-12">Pangkat (Gol/Ruang)</label>
                                                 <div class="col-lg-9 col-md-9 col-sm-12">
-                                                    <select class="form-control select2" style="width: 230px;" id="pangkat_gol" name="pangkat_gol">
+                                                    <input type="text" class="form-control" id="pangkat_gol" name="pangkat_gol" value="{{old('pangkat_gol')}}" autocomplete="off" require />
+                                                    {{-- <select class="form-control select2" style="width: 230px;" id="pangkat_gol" name="pangkat_gol">
                                                         <option value="">Choose</option>
                                                         @foreach ($pangkats as $pangkat)
                                                             <option value="{{$pangkat->id}}" {{ old('pangkat_gol') == $pangkat->id ? 'selected' : '' }}>{{$pangkat->golongan}} | {{$pangkat->ruang}}</option>
                                                         @endforeach
-                                                    </select>
+                                                    </select> --}}
                                                     <!-- <div class="input-group date">
                                                         <select class="custom-select form-control" id="seeAnotherField">
                                                             <option selected>pilih golongan</option>
@@ -806,8 +807,8 @@
             <!--end: Wizard-->
         </div>
     </div>
-		
-<input type="hidden" id="url-api-fetch-data-bkn" name="url-api-fetch-data-bkn" value="{{ route('api.bkn.fetch-data') }}"/>		
+			
+<input type="hidden" id="url-api-fetch-data-bkn" name="url-api-fetch-data-bkn" value="{{ route('api.bkn.fetch-data') }}"/>
 @endsection
 
 {{-- Styles Section --}}
@@ -855,6 +856,8 @@
                 </div>
             </div>
         </div>
+
+
     </script>
     <script>
         refreshDateTimePicker();
