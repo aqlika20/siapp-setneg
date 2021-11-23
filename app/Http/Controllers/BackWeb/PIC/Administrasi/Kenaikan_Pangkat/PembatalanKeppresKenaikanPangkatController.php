@@ -69,7 +69,7 @@ class PembatalanKeppresKenaikanPangkatController extends Controller
 
         $pengangkatans = KenaikanPangkat::create([
             'no_keppres' => $input['req_no_keppres'],
-            'tanggal_keppres' => $input['req_tanggal_keppres'],
+            'tanggal_keppres' => $input['req_tanggal_keppres'], 
 
             'id_pengirim' => $id_pengirim->nip,
             'jenis_layanan' => Helper::$pembatalan_keppres_kenaikan_pangkat,
