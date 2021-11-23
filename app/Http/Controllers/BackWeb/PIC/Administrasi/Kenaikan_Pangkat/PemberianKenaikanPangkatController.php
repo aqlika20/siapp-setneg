@@ -109,7 +109,6 @@ class PemberianKenaikanPangkatController extends Controller
             'jumlah_angka_kredit' => 'nullable',
             'periode_penilaian' => 'nullable',
             
-<<<<<<< HEAD
             'req_no_klarifikasi_pak' => 'nullable',
             'req_tanggal_klarifikasi_pak' => 'nullable',
 
@@ -122,6 +121,8 @@ class PemberianKenaikanPangkatController extends Controller
 
             'req_masa_jabatan_start' => 'required',
             'req_masa_jabatan_end' => 'required',
+            'req_masa_periode_start' => 'required',
+            'req_masa_periode_end' => 'required',
             'req_ket' => 'required',
             'req_status_hukuman' => 'required',
 
@@ -145,33 +146,7 @@ class PemberianKenaikanPangkatController extends Controller
             'req_file_surat_keputusan_ppk.*' => 'max:5000|mimes:jpg,png,jpeg,pdf',
             'req_file_hukuman.*' => 'max:5000|mimes:jpg,png,jpeg,pdf',
 
-=======
-            'no_klarifikasi_pak' => 'nullable',
-            'tanggal_klarifikasi_pak' => 'nullable',
-            
-            'jabatan' => 'required',
-            'no_keppress_jabatan' => 'required',
-            'tmt_jabatan' => 'required',
-            'unit_kerja' => 'required',
 
-            'pangkat_gol_baru' => 'required',
-            'tmt_gol_baru' => 'required',
-            'masa_kerja_gol_tahun_baru' => 'required',
-            'masa_kerja_gol_bulan_baru' => 'required',
-            'periode_kenaikan' => 'required',
-
-            'tanggal_catatan' => 'required',
-            'catatan' => 'required',
-
-            'file_data_usulan.*' => 'required|max:5000|mimes:pdf',
-            'file_data_asn.*' => 'required|max:5000|mimes:pdf',
-            'file_nota_usulan.*' => 'required|max:5000|mimes:pdf',
-            'file_data_pak.*' => 'required|max:5000|mimes:pdf',
-            'file_klarifikasi_pak.*' => 'required|max:5000|mimes:pdf',
-            'file_jabatan.*' => 'required|max:5000|mimes:pdf',
-            'file_pengambilan_sumpah.*' => 'required|max:5000|mimes:pdf',
-            'file_pendukung.*' => 'required|max:5000|mimes:pdf'
->>>>>>> 7131514090e7cea5f5fe8852851cc65beaa47b35
 
         ]);
 
@@ -206,7 +181,6 @@ class PemberianKenaikanPangkatController extends Controller
             'masa_kerja_gol_tahun' => $input['masa_kerja_gol_tahun'],
             'masa_kerja_gol_bulan' => $input['masa_kerja_gol_bulan'],
             
-<<<<<<< HEAD
             'nomor_pak' => $input['req_nomor_pak'],
             'tanggal_pak' => $input['req_tanggal_pak'],
             'jumlah_angka_kredit' => $input['req_jumlah_angka_kredit'],
@@ -225,40 +199,20 @@ class PemberianKenaikanPangkatController extends Controller
             'masa_kerja_gol_bulan_baru' => $input['req_masa_kerja_gol_bulan_baru'],
             'masa_jabatan_start' => $input['req_masa_jabatan_start'],
             'masa_jabatan_end' => $input['req_masa_jabatan_end'],
-            // 'jabatan_pak' => $input['req_jabatan_pak'],
+            'masa_periode_start' => $input['req_masa_periode_start'],
+            'masa_periode_end' => $input['req_masa_periode_end'],
             'catatan_hukuman' => $input['req_catatan_hukuman'],
             'pangkat_luar_biasa' => $input['req_pangkat_luarbiasa'],
             'status_hukuman' => $input['req_status_hukuman'],
 
             'ket' => implode(',', $input['req_ket']),
-=======
-            'nomor_pak' => $input['nomor_pak'],
-            'tanggal_pak' => $input['tanggal_pak'],
-            'jumlah_angka_kredit' => $input['jumlah_angka_kredit'],
-            'periode_penilaian' => $input['periode_penilaian'],
-
-            'nomor_klarifikasi' => $input['no_klarifikasi_pak'],
-            'tanggal_klarifikasi' => $input['tanggal_klarifikasi_pak'],
-
-            'jabatan' => $input['jabatan'],
-            'no_keppress_jabatan' => $input['no_keppress_jabatan'],
-            'tmt_jabatan' => $input['tmt_jabatan'],
-            'unit_kerja' => $input['unit_kerja'],
-            
-            'pangkat_gol_baru' => $input['pangkat_gol_baru'],
-            'tmt_gol_baru' => $input['tmt_gol_baru'],
-            'masa_kerja_gol_tahun_baru' => $input['masa_kerja_gol_tahun_baru'],
-            'masa_kerja_gol_bulan_baru' => $input['masa_kerja_gol_bulan_baru'],
-            'periode_kenaikan' => $input['periode_kenaikan'],
-
->>>>>>> 7131514090e7cea5f5fe8852851cc65beaa47b35
+           
             'id_pengirim' => $id_pengirim->nip,
             'jenis_layanan' => Helper::$pemberian_kenaikan_pangkat,
             'status' => Helper::$pengajuan_usulan
             
         ]);
 
-<<<<<<< HEAD
         if ($input['req_jabatan_pak'] == 0) {
             $pengangkatans->jabatan_pak = $input['req_jataban_pak_lainnya'];
         } else {
@@ -266,9 +220,7 @@ class PemberianKenaikanPangkatController extends Controller
         }
 
         if($request->has('req_file_data_usulan')){
-=======
-        if($request->has('file_data_usulan')){
->>>>>>> 7131514090e7cea5f5fe8852851cc65beaa47b35
+
             $files = [];
             foreach ($request->file('file_data_usulan') as $file) {
                 $filename = $file->getClientOriginalName();
@@ -278,7 +230,6 @@ class PemberianKenaikanPangkatController extends Controller
             $pengangkatans->file_data_usulan = $files;
         }
 
-<<<<<<< HEAD
         if($request->has('req_file_sk_pangkat_terakhir')){
             $files = [];
             foreach ($request->file('req_file_sk_pangkat_terakhir') as $file) {
@@ -360,9 +311,6 @@ class PemberianKenaikanPangkatController extends Controller
         }
 
         if($request->has('req_file_data_asn')){
-=======
-        if($request->has('file_data_asn')){
->>>>>>> 7131514090e7cea5f5fe8852851cc65beaa47b35
             $files = [];
             foreach ($request->file('file_data_asn') as $file) {
                 $filename = $file->getClientOriginalName();
@@ -435,7 +383,6 @@ class PemberianKenaikanPangkatController extends Controller
 
         $pengangkatans->save();
 
-<<<<<<< HEAD
         // $count = count($input['req_tanggal_catatan']);
         // for($i=0;$i<$count;$i++) {
         //     $notes = new Catatan();
@@ -446,18 +393,7 @@ class PemberianKenaikanPangkatController extends Controller
         //     $notes->catatan = $input['req_catatan'][$i];
         //     $notes->save();
         // }
-=======
-        $count = count($input['tanggal_catatan']);
-        for($i=0;$i<$count;$i++) {
-            $notes = new Catatan();
-            $notes->id_usulan = $pengangkatans->id;
-            $notes->id_layanan = $pengangkatans->jenis_layanan;
-            $notes->id_pengirim = $id_pengirim->nip;
-            $notes->tanggal_catatan = $input['tanggal_catatan'][$i];
-            $notes->catatan = $input['catatan'][$i];
-            $notes->save();
-        }
->>>>>>> 7131514090e7cea5f5fe8852851cc65beaa47b35
+
 
 
         return redirect()->route('pic.administrasi.kenaikan-pangkat.index')->with(['success'=>'Kenaikan Pangkat Success Added!!!']);
