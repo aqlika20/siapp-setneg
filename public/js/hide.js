@@ -1,32 +1,32 @@
-$("#req_pangkat_gol").change(function() {
+$("#pangkat_gol").change(function() {
     if ($(this).val() == "1") {
       $('#otherFieldDiv').show();
     } else {
       $('#otherFieldDiv').hide();
     }
   });
-  $("#req_pangkat_gol").trigger("change");
+  $("#pangkat_gol").trigger("change");
   
-  $("#req_pangkat_gol").change(function() {
+  $("#pangkat_gol").change(function() {
     if ($(this).val() == "2") {
       $('#otherFieldDiv_2').show();
     } else {
       $('#otherFieldDiv_2').hide();
     }
   });
-  $("#req_pangkat_gol").trigger("change");
+  $("#pangkat_gol").trigger("change");
 
-  $("#req_pangkat_gol").change(function() {
+  $("#pangkat_gol").change(function() {
     if ($(this).val() == "3") {
       $('#otherFieldDiv_3').show();
     } else {
       $('#otherFieldDiv_3').hide();
     }
   });
-  $("#req_pangkat_gol").trigger("change");
+  $("#pangkat_gol").trigger("change");
  
 
-  $("#req_pangkat_golGroup").change(function() {
+  $("#pangkat_golGroup").change(function() {
     if ($(this).val() == "yes") {
       $('#otherFieldGroupDiv').show();
       $('#otherField1').attr('required', '');
@@ -41,7 +41,7 @@ $("#req_pangkat_gol").change(function() {
       $('#otherField2').removeAttr('data-error');
     }
   });
-  $("#req_pangkat_golGroup").trigger("change");
+  $("#pangkat_golGroup").trigger("change");
 
     //Javacript for responsive navigation menu
     const menuBtn = document.querySelector(".menu-btn");

@@ -42,42 +42,57 @@ class InboxController extends Controller
         $page_title = 'PIC | Administrasi | Inbox';
         $page_description = 'Inbox';
         $pengangkatans = PengangkatanPemberhentianJFKU::where([
-            ['status', '=', Helper::$pending],
+            ['status', '=', Helper::$usulan_dikembalikan],
             ['id_pengirim', '=', $currentUser->nip]
         ])->orwhere([
-            ['status', '=', Helper::$tolak],
+            ['status', '=', Helper::$tolak_pokja],
+            ['id_pengirim', '=', $currentUser->nip]
+        ])->orwhere([
+            ['status', '=', Helper::$tolak_jf_ahli],
             ['id_pengirim', '=', $currentUser->nip]
         ])->get();
 
         $pengangkatans_ns = PengangkatanPemberhentianNS::where([
-            ['status', '=', Helper::$pending],
+            ['status', '=', Helper::$usulan_dikembalikan],
             ['id_pengirim', '=', $currentUser->nip]
         ])->orwhere([
-            ['status', '=', Helper::$tolak],
+            ['status', '=', Helper::$tolak_pokja],
+            ['id_pengirim', '=', $currentUser->nip]
+        ])->orwhere([
+            ['status', '=', Helper::$tolak_jf_ahli],
             ['id_pengirim', '=', $currentUser->nip]
         ])->get();
 
         $lainnyas = PengangkatanPemberhentianLainnya::where([
-            ['status', '=', Helper::$pending],
+            ['status', '=', Helper::$usulan_dikembalikan],
             ['id_pengirim', '=', $currentUser->nip]
         ])->orwhere([
-            ['status', '=', Helper::$tolak],
+            ['status', '=', Helper::$tolak_pokja],
+            ['id_pengirim', '=', $currentUser->nip]
+        ])->orwhere([
+            ['status', '=', Helper::$tolak_jf_ahli],
             ['id_pengirim', '=', $currentUser->nip]
         ])->get();
 
         $kenaikans = KenaikanPangkat::where([
-            ['status', '=', Helper::$pending],
+            ['status', '=', Helper::$usulan_dikembalikan],
             ['id_pengirim', '=', $currentUser->nip]
         ])->orwhere([
-            ['status', '=', Helper::$tolak],
+            ['status', '=', Helper::$tolak_pokja],
+            ['id_pengirim', '=', $currentUser->nip]
+        ])->orwhere([
+            ['status', '=', Helper::$tolak_jf_ahli],
             ['id_pengirim', '=', $currentUser->nip]
         ])->get();
 
         $pemberhentians = Pemberhentian::where([
-            ['status', '=', Helper::$pending],
+            ['status', '=', Helper::$usulan_dikembalikan],
             ['id_pengirim', '=', $currentUser->nip]
         ])->orwhere([
-            ['status', '=', Helper::$tolak],
+            ['status', '=', Helper::$tolak_pokja],
+            ['id_pengirim', '=', $currentUser->nip]
+        ])->orwhere([
+            ['status', '=', Helper::$tolak_jf_ahli],
             ['id_pengirim', '=', $currentUser->nip]
         ])->get();
 

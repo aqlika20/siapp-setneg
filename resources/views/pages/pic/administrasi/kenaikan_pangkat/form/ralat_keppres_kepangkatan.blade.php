@@ -40,7 +40,11 @@
                                                 <label class="col-form-label col-lg-3 col-sm-12">Tanggal Surat Permohonan</label>
                                                 <div class="col-lg-5 col-md-9 col-sm-12">
                                                     <div class="input-group date">
+<<<<<<< HEAD
                                                         <input type="text" class="form-control datetimepicker-input my-datepicker" id="req_tanggal_surat_permohonan" name="req_tanggal_surat_permohonan" data-toggle="datetimepicker" data-target="#req_tanggal_surat_permohonan" placeholder="Pilih Tanggal" value="{{old('req_tanggal_surat_permohonan')}}" require/>
+=======
+                                                        <input type="text" class="form-control datetimepicker-input my-datepicker" id="tanggal_surat_pengantar" name="tanggal_surat_pengantar" data-toggle="datetimepicker" data-target="#tanggal_surat_pengantar" placeholder="Pilih Tanggal" value="{{old('tanggal_surat_pengantar')}}" require/>
+>>>>>>> 7131514090e7cea5f5fe8852851cc65beaa47b35
                                                         <div class="input-group-append">
                                                             <span class="input-group-text">
                                                                 <i class="la la-calendar"></i>
@@ -54,16 +58,88 @@
                                                 <label class="col-form-label col-lg-3 col-sm-12">No. Surat Permohonan</label>
                                                 <div class="col-lg-9 col-md-9 col-sm-12">
                                                     <div class="input-group">
+<<<<<<< HEAD
                                                         <input type="text" class="form-control" id="req_no_surat_permohonan" name="req_no_surat_permohonan" value="{{old('req_no_surat_permohonan')}}" autocomplete="off" require/>
                                                     </div>
                                                 </div>
                                             </div>
+=======
+                                                        <input type="text" class="form-control" id="no_surat_pengantar" name="no_surat_pengantar" value="{{old('no_surat_pengantar')}}" autocomplete="off" require/>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="form-group row">
+                                                <label class="col-lg-3 col-form-label">Upload Surat Pengantar</label>
+                                                <div class="col-lg-9">
+                                                    <input id="file_surat_pengantar" name="file_surat_pengantar[]" type="file" class="file" data-show-preview="false" multiple/>
+                                                    
+                                                    <!-- <div class="dropzone dropzone-multi" id="kt_dropzone_4">
+                                                        <div class="dropzone-panel mb-lg-0 mb-2">
+                                                            <a class="dropzone-select btn btn-light-primary font-weight-bold btn-sm">Attach files</a>
+                                                            <a class="dropzone-upload btn btn-light-primary font-weight-bold btn-sm">Upload All</a>
+                                                            <a class="dropzone-remove-all btn btn-light-primary font-weight-bold btn-sm">Remove All</a>
+                                                        </div>
+                                                        <div class="dropzone-items">
+                                                            <div class="dropzone-item" style="display:none">
+                                                                <div class="dropzone-file">
+                                                                    <div class="dropzone-filename" title="some_image_file_name.jpg">
+                                                                        <span data-dz-name="">some_image_file_name.jpg</span>
+                                                                        <strong>(<span data-dz-size="">340kb</span>)</strong>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="dropzone-progress">
+                                                                    <div class="progress">
+                                                                        <div class="progress-bar bg-primary" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" data-dz-uploadprogress=""></div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="dropzone-toolbar">
+                                                                    <span class="dropzone-start">
+                                                                        <i class="flaticon2-arrow"></i>
+                                                                    </span>
+                                                                    <span class="dropzone-cancel" data-dz-remove="" style="display: none;">
+                                                                        <i class="flaticon2-cross"></i>
+                                                                    </span>
+                                                                    <span class="dropzone-delete" data-dz-remove="">
+                                                                        <i class="flaticon2-cross"></i>
+                                                                    </span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div> -->
+                                                    <span class="form-text text-muted">Max file size is 1MB and max number of files is 5.</span>
+                                                </div>
+                                            </div>
+                                            <!--end::Input-->
+                                            
+                                        </div>
+                                        <!--end: Wizard Step 1-->
+>>>>>>> 7131514090e7cea5f5fe8852851cc65beaa47b35
 
                                             <div class="form-group row">
                                                 <label class="col-form-label col-lg-3 col-sm-12">Pejabat yang Menandatangani</label>
                                                 <div class="col-lg-9 col-md-9 col-sm-12">
+<<<<<<< HEAD
                                                     <div class="input-group">
                                                         <input type="text"class="form-control" id="req_jabatan_menandatangani" name="req_jabatan_menandatangani" value="{{old('req_jabatan_menandatangani')}}" autocomplete="off" require/>
+=======
+                                                    <div class="input-group date">
+                                                        <input type="text" class="form-control" id="no_keppres" name="no_keppres" value="{{old('no_keppres')}}" autocomplete="off" require/>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!--end::Input-->
+                                            <!--begin::Input-->
+                                            <div class="form-group row">
+                                                <label class="col-form-label col-lg-3 col-sm-12">Tanggal Keppres</label>
+                                                <div class="col-lg-5 col-md-9 col-sm-12">
+                                                    <div class="input-group date">
+                                                        <input type="text" class="form-control datetimepicker-input my-datepicker" id="tanggal_keppres" name="tanggal_keppres" data-toggle="datetimepicker" data-target="#tanggal_keppres" placeholder="Pilih Tanggal" value="{{old('tanggal_keppres')}}" require/>
+                                                        <div class="input-group-append">
+                                                            <span class="input-group-text">
+                                                                <i class="la la-calendar"></i>
+                                                            </span>
+                                                        </div>
+>>>>>>> 7131514090e7cea5f5fe8852851cc65beaa47b35
                                                     </div>
                                                 </div>
                                             </div>
@@ -71,25 +147,41 @@
                                             <div class="form-group row">
                                                 <label class="col-lg-3 col-form-label">Upload Surat Permohonan</label>
                                                 <div class="col-lg-9">
+<<<<<<< HEAD
                                                     <input id="req_file_surat_permohonan" name="req_file_surat_permohonan[]" type="file" class="file" data-show-preview="false" multiple/>
+=======
+                                                    <input id="file_keppres" name="file_keppres[]" type="file" class="file" data-show-preview="false" multiple/>
+>>>>>>> 7131514090e7cea5f5fe8852851cc65beaa47b35
                                                     
                                                     <span class="form-text text-muted">Max file size is 1MB and max number of files is 5.</span>
                                                 </div>
                                             </div>
 
                                             <div class="form-group row">
+<<<<<<< HEAD
                                                 <label class="col-lg-3 col-form-label">Upload Dokumen Klarifikasi</label>
                                                 <div class="col-lg-9">
                                                     <input id="req_file_dokumen_klarifikasi" name="req_file_dokumen_klarifikasi[]" type="file" class="file" data-show-preview="false" multiple/>
                                                     
                                                     <span class="form-text text-muted">Max file size is 1MB and max number of files is 5.</span>
+=======
+                                                <label class="col-form-label col-lg-3 col-sm-12">Alasan Ralat</label>
+                                                <div class="col-lg-9 col-md-9 col-sm-12">
+                                                    <div class="input-group date">
+                                                        <input type="text" class="form-control" id="alasan_ralat" name="alasan_ralat" value="{{old('alasan_ralat')}}" autocomplete="off" require/>
+                                                    </div>
+>>>>>>> 7131514090e7cea5f5fe8852851cc65beaa47b35
                                                 </div>
                                             </div>
 
                                             <div class="form-group row">
                                                 <label class="col-lg-3 col-form-label">Upload Fotokopi SK Yang Diperbaiki</label>
                                                 <div class="col-lg-9">
+<<<<<<< HEAD
                                                     <input id="req_file_fotokopi_sk_diperbaiki" name="req_file_fotokopi_sk_diperbaiki[]" type="file" class="file" data-show-preview="false" multiple/>
+=======
+                                                    <input id="file_bukti_pendukung" name="file_bukti_pendukung[]" type="file" class="file" data-show-preview="false" multiple/>
+>>>>>>> 7131514090e7cea5f5fe8852851cc65beaa47b35
                                                     
                                                     <span class="form-text text-muted">Max file size is 1MB and max number of files is 5.</span>
                                                 </div>
@@ -104,7 +196,7 @@
                                                 
                                             </div>
                                             <div>
-                                                <button type="submit" class="btn btn-warning font-weight-bolder text-uppercase px-9 py-4" data-wizard-type="action-submit">Kirim Usulan</button>
+                                                <button type="submit" class="btn btn-warning font-weight-bolder text-uppercase px-9 py-4" data-wizard-type="action-submit" onclick="return confirmation();">Kirim Usulan</button>
                                                 <button type="button" class="btn btn-primary font-weight-bolder text-uppercase px-9 py-4" data-wizard-type="action-next">Berikutnya</button>
                                             </div>
                                         </div>
@@ -181,12 +273,20 @@
 
 
 
-        $('#req_masa_jabatan_start').on('change.datetimepicker', function(e) {
+        $('#masa_jabatan_start').on('change.datetimepicker', function(e) {
             if(e.date){
                 var min_date = renewDate('min', e.date);
-                applyTimePicker('min', '#req_masa_jabatan_end', min_date);
+                applyTimePicker('min', '#masa_jabatan_end', min_date);
             }
         });
+
+        function confirmation(){
+            if(confirm('are you sure?')){
+                document.getElementById('kt_form').submit();
+            }else{
+                return false;
+            }   
+        }
 
     </script>
     <script>
@@ -195,36 +295,36 @@
                 errorClass:"error-msg",
                 errorElement:"p",
                 rules:{
-                    req_tanggal_surat_pengantar: 'required',
-                    req_no_surat_pengantar: 'required',
-                    req_file_surat_pengantar: {
-                        extenstion: "jpg,png,jpeg,pdf"
+                    tanggal_surat_pengantar: 'required',
+                    no_surat_pengantar: 'required',
+                    file_surat_pengantar: {
+                        extenstion: "pdf"
                     },
-                    req_no_keppres: 'required',
-                    req_tanggal_keppres: 'required',
-                    req_file_keppres: {
-                        extenstion: "jpg,png,jpeg,pdf"
+                    no_keppres: 'required',
+                    tanggal_keppres: 'required',
+                    file_keppres: {
+                        extenstion: "pdf"
                     },
-                    req_alasan_ralat: 'required',
-                    req_file_bukti_pendukung: {
-                        extenstion: "jpg,png,jpeg,pdf"
+                    alasan_ralat: 'required',
+                    file_bukti_pendukung: {
+                        extenstion: "pdf"
                     }
 
-                    // req_no_keppres: 'required',
-                    // req_tanggal_keppres: 'required',
-                    // req_masa_jabatan_start: 'required',
-                    // req_masa_jabatan_end: 'required',
+                    // no_keppres: 'required',
+                    // tanggal_keppres: 'required',
+                    // masa_jabatan_start: 'required',
+                    // masa_jabatan_end: 'required',
 
-                    // req_tmt: 'required',
-                    // req_hak_keuangan: 'required',
-                    // req_tanggal_pelantikan: 'required',
-                    // req_yang_melantik: 'required',
+                    // tmt: 'required',
+                    // hak_keuangan: 'required',
+                    // tanggal_pelantikan: 'required',
+                    // yang_melantik: 'required',
                     
-                    // req_file_ba_pelantikan: {
-                    //     extenstion: "jpg,png,jpeg,pdf"
+                    // file_ba_pelantikan: {
+                    //     extenstion: "pdf"
                     // },
-                    // req_file_sumpah_jabatan: {
-                    //     extenstion: "jpg,png,jpeg,pdf"
+                    // file_sumpah_jabatan: {
+                    //     extenstion: "pdf"
                     // }
 
                 },

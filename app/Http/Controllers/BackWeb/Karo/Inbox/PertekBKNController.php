@@ -11,7 +11,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 
 use App\UserManagement;
-use App\PengangkatanPemberhentianJFKU;
+use App\RKP;
 use App\PengangkatanPemberhentianNS;
 use App\PengangkatanPemberhentianLainnya;
 use App\Pangkat;
@@ -36,15 +36,9 @@ class PertekBKNController extends Controller
         $currentUser = UserManagement::find(Auth::id());
         $page_title = 'Karo | Pertek BKN | Surat Usulan';
         $page_description = 'Surat Usulan';
-        $pengangkatans = PengangkatanPemberhentianJFKU::where([
-            ['status', '=', Helper::$pending]
+        $rkps = RKP::where([
+            ['status', '=', Helper::$verifikasi_rkp_pokja]
         ])->get();
-        $strukturals = PengangkatanPemberhentianNS::where([
-            ['status', '=', Helper::$pending]
-        ])->get();
-        $lainnyas = PengangkatanPemberhentianLainnya::where([
-            ['status', '=', Helper::$pending]
-        ])->get();
-        return view('pages.karo.inbox.pertek_bkn', compact('page_title', 'page_description', 'currentUser', 'pengangkatans', 'strukturals', 'lainnyas'));
+        return view('pages.karo.inbox.pertek_bkn', compact('page_title', 'page_description', 'currentUser', 'rkps'));
     }
 }

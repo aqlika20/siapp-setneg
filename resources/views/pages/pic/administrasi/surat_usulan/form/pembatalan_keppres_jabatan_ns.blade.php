@@ -41,7 +41,7 @@
                                                 <label class="col-form-label col-lg-3 col-sm-12">No. Keppres</label>
                                                 <div class="col-lg-9 col-md-9 col-sm-12">
                                                     <div class="input-group">
-                                                        <input type="text" class="form-control" id="req_no_keppres" name="req_no_keppres" value="{{old('req_no_keppres')}}" autocomplete="off" require/>
+                                                        <input type="text" class="form-control" id="no_keppres" name="no_keppres" value="{{old('no_keppres')}}" autocomplete="off" require/>
                                                     </div>
                                                 </div>
                                             </div>
@@ -52,7 +52,7 @@
                                                 <label class="col-form-label col-lg-3 col-sm-12">Tanggal Keppres</label>
                                                 <div class="col-lg-5 col-md-9 col-sm-12">
                                                     <div class="input-group date">
-                                                        <input type="text" class="form-control datetimepicker-input my-datepicker" id="req_tanggal_keppres" name="req_tanggal_keppres" data-toggle="datetimepicker" data-target="#req_tanggal_keppres" placeholder="Pilih Tanggal" value="{{old('req_tanggal_keppres')}}" require/>
+                                                        <input type="text" class="form-control datetimepicker-input my-datepicker" id="tanggal_keppres" name="tanggal_keppres" data-toggle="datetimepicker" data-target="#tanggal_keppres" placeholder="Pilih Tanggal" value="{{old('tanggal_keppres')}}" autocomplete="off" require/>
                                                         <div class="input-group-append">
                                                             <span class="input-group-text">
                                                                 <i class="la la-calendar"></i>
@@ -65,10 +65,10 @@
 
                                             <!--begin::Input-->
                                             <div class="form-group row">
-                                                <label class="col-form-label col-lg-3 col-sm-12">Masa Jabatan</label>
+                                                <label class="col-form-label col-lg-3 col-sm-12">Periode</label>
                                                 <div class="col-lg-4 col-md-9 col-sm-12">
                                                     <div class="input-group date">
-                                                        <input type="text" class="form-control datetimepicker-input my-datepicker" name="req_masa_jabatan_start" data-toggle="datetimepicker" data-target="#req_masa_jabatan_start" placeholder="Select Date First" id="req_masa_jabatan_start" value="{{ old('req_masa_jabatan_start') }}"/>
+                                                        <input type="text" class="form-control datetimepicker-input my-datepicker" name="masa_jabatan_start" onkeyup="calculate_date()" data-toggle="datetimepicker" data-target="#masa_jabatan_start" placeholder="Select Date First" id="masa_jabatan_start" value="{{ old('masa_jabatan_start') }}"/>
                                                         <div class="input-group-append">
                                                             <span class="input-group-text">
                                                                 <i class="la la-calendar"></i>
@@ -82,7 +82,7 @@
                                                 </div>
                                                 <div class="col-lg-4 col-md-9 col-sm-12">
                                                     <div class="input-group date">
-                                                        <input type="text" class="form-control datetimepicker-input my-datepicker" name="req_masa_jabatan_end" data-toggle="datetimepicker" data-target="#req_masa_jabatan_end" placeholder="Select Date Last" id="req_masa_jabatan_end" value="{{ old('req_masa_jabatan_end') }}"/>
+                                                        <input type="text" class="form-control datetimepicker-input my-datepicker" name="masa_jabatan_end" data-toggle="datetimepicker" data-target="#masa_jabatan_end" placeholder="Select Date Last" id="masa_jabatan_end" value="{{ old('masa_jabatan_end') }}"/>
                                                         <div class="input-group-append">
                                                             <span class="input-group-text">
                                                                 <i class="la la-calendar"></i>
@@ -92,6 +92,15 @@
                                                 </div>
                                             </div>
                                             <!--end::Input-->
+
+                                            <div class="form-group row" id="hahaha">
+                                                <label class="col-form-label col-lg-3 col-sm-12">Masa Jabatan</label>
+                                                <div class="col-lg-9 col-md-9 col-sm-12">
+                                                    <div class="col-form-label col-lg-3 col-sm-12">
+                                                        <p id="masa"></p>
+                                                    </div>
+                                                </div>
+                                            </div>
                                             
                                         </div>
                                         <!--end: Wizard Step 1-->
@@ -103,7 +112,15 @@
                                                 <label class="col-form-label col-lg-3 col-sm-12">TMT</label>
                                                 <div class="col-lg-9 col-md-9 col-sm-12">
                                                     <div class="input-group date">
-                                                        <input type="text" class="form-control" id="req_tmt" name="req_tmt" value="{{old('req_tmt')}}" autocomplete="off" require/>
+                                                        <input type="text" class="form-control" id="tmt" name="tmt" value="{{old('tmt')}}" autocomplete="off" require/>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="form-group row" id="kurang_enam">
+                                                <label class="col-form-label col-lg-3 col-sm-12">6 Bulan Sebelum Berakhir Masa Jabatan</label>
+                                                <div class="col-lg-9 col-md-9 col-sm-12">
+                                                    <div class="col-form-label col-lg-3 col-sm-12">
+                                                        <p id="enam_bulan"></p>
                                                     </div>
                                                 </div>
                                             </div>
@@ -113,7 +130,7 @@
                                                 <label class="col-form-label col-lg-3 col-sm-12">Hak keuangan dan Fasilitas</label>
                                                 <div class="col-lg-9 col-md-9 col-sm-12">
                                                     <div class="input-group date">
-                                                        <input type="text" class="form-control" id="req_hak_keuangan" name="req_hak_keuangan" value="{{old('req_hak_keuangan')}}" autocomplete="off" require />
+                                                        <input type="text" class="form-control" id="hak_keuangan" name="hak_keuangan" value="{{old('hak_keuangan')}}" autocomplete="off" require />
                                                     </div>
                                                 </div>
                                             </div>
@@ -123,7 +140,7 @@
                                                 <label class="col-form-label col-lg-3 col-sm-12">Tanggal pelantikan</label>
                                                 <div class="col-lg-5 col-md-9 col-sm-12">
                                                     <div class="input-group date">
-                                                        <input type="text" class="form-control datetimepicker-input my-datepicker" id="req_tanggal_pelantikan" name="req_tanggal_pelantikan" data-toggle="datetimepicker" data-target="#req_tanggal_pelantikan" placeholder="Pilih Tanggal" value="{{old('req_tanggal_pelantikan')}}" autocomplete="off" require/>
+                                                        <input type="text" class="form-control datetimepicker-input my-datepicker" id="tanggal_pelantikan" name="tanggal_pelantikan" data-toggle="datetimepicker" data-target="#tanggal_pelantikan" placeholder="Pilih Tanggal" value="{{old('tanggal_pelantikan')}}" autocomplete="off" require/>
                                                         <div class="input-group-append">
                                                             <span class="input-group-text">
                                                                 <i class="la la-calendar"></i>
@@ -137,14 +154,14 @@
                                                 <label class="col-form-label col-lg-3 col-sm-12">Yang Melantik</label>
                                                 <div class="col-lg-9 col-md-9 col-sm-12">
                                                     <div class="input-group date">
-                                                        <input type="text" class="form-control" id="req_yang_melantik" name="req_yang_melantik" value="{{old('req_yang_melantik')}}" autocomplete="off" require />
+                                                        <input type="text" class="form-control" id="yang_melantik" name="yang_melantik" value="{{old('yang_melantik')}}" autocomplete="off" require />
                                                     </div>
                                                 </div>
                                             </div>
                                             <div class="form-group row">
                                                 <label class="col-lg-3 col-form-label">Upload BA Pelantikan</label>
                                                 <div class="col-lg-9">
-                                                    <input id="req_file_ba_pelantikan" name="req_file_ba_pelantikan[]" type="file" class="file" data-show-preview="false" multiple/>
+                                                    <input id="file_ba_pelantikan" name="file_ba_pelantikan[]" type="file" class="file" data-show-preview="false" multiple/>
                                                     <!-- <div class="dropzone dropzone-multi" id="kt_dropzone_5">
                                                         <div class="dropzone-panel mb-lg-0 mb-2">
                                                             <a class="dropzone-select btn btn-light-primary font-weight-bold btn-sm">Attach files</a>
@@ -184,7 +201,7 @@
                                             <div class="form-group row">
                                                 <label class="col-lg-3 col-form-label">Upload Sumpah Jabatan</label>
                                                 <div class="col-lg-9">
-                                                    <input id="req_file_sumpah_jabatan" name="req_file_sumpah_jabatan[]" type="file" class="file" data-show-preview="false" multiple/>
+                                                    <input id="file_sumpah_jabatan" name="file_sumpah_jabatan[]" type="file" class="file" data-show-preview="false" multiple/>
                                                     <!-- <div class="dropzone dropzone-multi" id="kt_dropzone_5">
                                                         <div class="dropzone-panel mb-lg-0 mb-2">
                                                             <a class="dropzone-select btn btn-light-primary font-weight-bold btn-sm">Attach files</a>
@@ -230,7 +247,7 @@
                                                 <button type="button" class="btn btn-light-primary font-weight-bolder text-uppercase px-9 py-4" data-wizard-type="action-prev">Sebelumnya</button>
                                             </div>
                                             <div>
-                                                <button type="submit" class="btn btn-warning font-weight-bolder text-uppercase px-9 py-4" data-wizard-type="action-submit">Kirim Usulan</button>
+                                                <button type="submit" class="btn btn-warning font-weight-bolder text-uppercase px-9 py-4" data-wizard-type="action-submit" onclick="return confirmation();">Kirim Usulan</button>
                                                 <button type="button" class="btn btn-primary font-weight-bolder text-uppercase px-9 py-4" data-wizard-type="action-next">Berikutnya</button>
                                             </div>
                                         </div>
@@ -269,7 +286,7 @@
     <script>
         $('.my-datepicker').datetimepicker({
             useCurrent:false,
-            format: 'DD-MMM-YYYY'
+            format: 'DD/MMM/YYYY'
         })
 
         $('.my-datepicker').keydown(function(e){
@@ -279,6 +296,7 @@
         $('.select2').select2({
             placeholder: "Choose..."
         })
+
 
         function applyTimePicker(type, id, date){
             switch(type){
@@ -305,14 +323,77 @@
             return new_date;
         }
 
-
-
-        $('#req_masa_jabatan_start').on('change.datetimepicker', function(e) {
-            if(e.date){
-                var min_date = renewDate('min', e.date);
-                applyTimePicker('min', '#req_masa_jabatan_end', min_date);
+        $('#hahaha').hide();
+        $("#masa_jabatan_end").on('change.datetimepicker', function(e) {
+            if (e.date == null) {
+            $('#hahaha').hide();
+            } else {
+            $('#hahaha').show();
             }
         });
+        
+        $('#kurang_enam').hide();
+        $("#masa_jabatan_end").on('change.datetimepicker', function(e) {
+            if (e.date == null) {
+            $('#kurang_enam').hide();
+            } else {
+            $('#kurang_enam').show();
+            }
+        });
+
+        $("#tanggal_keppres").on('change.datetimepicker', function(e) {
+            var data = e.date.format('DD/MMM/YYYY');
+            document.getElementById("tmt").value = data;
+        });
+
+
+        $('#masa_jabatan_start, #masa_jabatan_end').on('change.datetimepicker', function(e) {
+            if(e.date){
+                var min_date = renewDate('min', e.date);
+                applyTimePicker('min', '#masa_jabatan_end', min_date);
+            }
+            var date_start = new Date(document.getElementById("masa_jabatan_start").value);
+            var date_start_day = date_start.getDate();
+            var date_start_month = date_start.getMonth();
+            var date_start_year = date_start.getFullYear();
+
+            var date_end = new Date(document.getElementById("masa_jabatan_end").value);
+            var date_end_day = date_end.getDate();
+            var date_end_month = date_end.getMonth();
+            var date_end_year = date_end.getFullYear();
+            
+            var calculated_date = 0;
+            if(date_end_month > date_start_month) 
+            {
+                calculated_date = date_end_year - date_start_year;
+            }
+            else
+            { 
+                calculated_date = date_end_year - date_start_year;
+            }
+
+
+            var out_value = calculated_date;
+            document.getElementById("masa").innerHTML = out_value + ' Tahun';
+            getdatadate(date_end);
+            
+
+
+        });
+
+        function getdatadate(date){
+            date.setMonth(date.getMonth() - 6);
+            console.log('hahaha', date);
+            document.getElementById("enam_bulan").innerHTML =  moment(date).format("DD/MMM/YYYY") ;
+        }
+
+        function confirmation(){
+            if(confirm('are you sure?')){
+                document.getElementById('kt_form').submit();
+            }else{
+                return false;
+            }   
+        }
 
     </script>
     <script>
@@ -321,21 +402,21 @@
                 errorClass:"error-msg",
                 errorElement:"p",
                 rules:{
-                    req_no_keppres: 'required',
-                    req_tanggal_keppres: 'required',
-                    req_masa_jabatan_start: 'required',
-                    req_masa_jabatan_end: 'required',
+                    no_keppres: 'required',
+                    tanggal_keppres: 'required',
+                    masa_jabatan_start: 'required',
+                    masa_jabatan_end: 'required',
 
-                    req_tmt: 'required',
-                    req_hak_keuangan: 'required',
-                    req_tanggal_pelantikan: 'required',
-                    req_yang_melantik: 'required',
+                    tmt: 'required',
+                    hak_keuangan: 'required',
+                    tanggal_pelantikan: 'required',
+                    yang_melantik: 'required',
                     
-                    req_file_ba_pelantikan: {
-                        extenstion: "jpg,png,jpeg,pdf"
+                    file_ba_pelantikan: {
+                        extenstion: "pdf"
                     },
-                    req_file_sumpah_jabatan: {
-                        extenstion: "jpg,png,jpeg,pdf"
+                    file_sumpah_jabatan: {
+                        extenstion: "pdf"
                     }
 
                 },

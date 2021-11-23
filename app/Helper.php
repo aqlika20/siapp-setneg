@@ -1,6 +1,7 @@
 <?php
 
 namespace App;
+use App\Bkn;
 
 class Helper {
 
@@ -39,18 +40,6 @@ class Helper {
     public static $pembatalan_keppress_pemberhentian = 28;              // Pembatalan Keppres Pemberhentian
     public static $petikan_keppres_hilang = 29;                         // Petikan Keppres yang Hilang/Rusak
 
-
-    // status
-    public static $pengajuan_usulan = 1;
-    public static $pending = 2;
-    public static $tolak = 3;
-    public static $Diproses_Pokja = 3;
-    public static $pengembalian_surat_usulan = 5;
-    // public static $tolak = 3;
-    // public static $tolak = 3;
-    // public static $tolak = 3;
-    // public static $tolak = 3;
-
     public static function defineJenisLayananBy($type)
     {
         $jenis_layanan = "";
@@ -68,7 +57,7 @@ class Helper {
                 break;
             
             case '4':
-                $jenis_layanan = 'Ralat Keppres Jabatan Fungsional Keahlian Utama';
+                $jenis_layanan = 'Usulan Lainnya';
                 break;
 
             case '5':
@@ -176,6 +165,37 @@ class Helper {
         return $jenis_layanan;
     }
 
+     // status
+     public static $pengajuan_usulan = 1;
+     public static $pending_pokja = 2;
+     public static $pending_jf_ahli = 3;
+     public static $pending_karo = 4;
+     public static $pending_deputi = 5;
+     public static $tolak_pokja = 6;
+     public static $tolak_jf_ahli = 7;
+     public static $tolak_karo = 8;
+     public static $tolak_deputi = 9;
+     public static $verifikasi_pokja = 10;
+     public static $verifikasi_jf_ahli = 11;
+     public static $verifikasi_karo = 12;
+     public static $verifikasi_deputi = 13;
+     public static $pengembalian_surat_usulan = 14;
+     public static $verifikasi_bkn_pokja = 15;
+     public static $verifikasi_bkn_jf_ahli = 16;
+     public static $verifikasi_bkn_karo = 17;
+     public static $verifikasi_bkn_deputi = 18;
+     public static $pending_bkn_pokja = 19;
+     public static $pending_bkn_jf_ahli = 20;
+     public static $pending_bkn_karo = 21;
+     public static $pending_bkn_deputi = 22;
+     public static $tolak_bkn_pokja = 23;
+     public static $tolak_bkn_jf_ahli = 24;
+     public static $tolak_bkn_karo = 25;
+     public static $tolak_bkn_deputi = 26;
+     public static $verifikasi_rkp_pokja = 27;
+     public static $verifikasi_rkp_deputi = 28;
+     public static $usulan_dikembalikan = 29;
+
     public static function defineStatusBy($type)
     {
         $status = "";
@@ -185,55 +205,147 @@ class Helper {
                 break;
 
             case '2':
-                $status = 'Pending';
+                $status = 'Pending Pokja';
                 break;
-
+            
             case '3':
-                $status = 'Tolak';
+                $status = 'Pending JF Ahli';
                 break;
 
             case '4':
-                $status = 'Diproses Pokja';
+                $status = 'Pending Karo';
                 break;
 
             case '5':
-                $status = 'Pengembalian Surat Usulan';
+                $status = 'Pending Deputi';
+                break;
+    
+            case '6':
+                $status = 'Tolak Pokja';
                 break;
 
-            case '6':
-                $status = 'Terima Pertek BKN';
-                break;
-            
             case '7':
-                $status = 'Pengembalian Pertek BKN';
+                $status = 'Tolak JF Ahli';
                 break;
 
             case '8':
-                $status = 'Penyiapan Rancangan Keppres';
+                $status = 'Tolak Karo';
                 break;
 
             case '9':
+                $status = 'Tolak Deputi';
+                break;
+                
+            case '10':
+                $status = 'Diverifikasi Pokja';
+                break;
+                
+            case '11':
+                $status = 'Diverifikasi JF Ahli';
+                break;
+                
+            case '12':
+                $status = 'Diverifikasi Karo';
+                break;
+                
+            case '13':
+                $status = 'Diverifikasi Deputi';
+                break;
+                
+            case '14':
+                $status = 'Pengembalian Surat Usulan';
+                break;
+
+            case '15':
+                $status = 'Pertek Diverifikasi Pokja';
+                break;
+
+            case '16':
+                $status = 'Pertek Diverifikasi JF Ahli';
+                break;
+
+            case '17':
+                $status = 'Pertek Diverifikasi Karo';
+                break;
+
+            case '18':
+                $status = 'Pertek Diverifikasi Deputi';
+                break;
+
+            case '19':
+                $status = 'Pertek Pending Pokja';
+                break;
+
+            case '20':
+                $status = 'Pertek Pending JF Ahli';
+                break;
+
+            case '21':
+                $status = 'Pertek Pending Karo';
+                break;
+
+            case '22':
+                $status = 'Pertek Pending Deputi';
+                break;
+                
+            case '23':
+                $status = 'Pertek Tolak Pokja';
+                break;
+
+            case '24':
+                $status = 'Pertek Tolak JF Ahli';
+                break;
+
+            case '25':
+                $status = 'Pertek Tolak Karo';
+                break;
+
+            case '26':
+                $status = 'Pertek Tolak Deputi';
+                break;
+
+            case '27':
+                $status = 'RKP Terverifikasi Pokja';
+                break;
+
+            case '28':
+                $status = 'RKP Terverifikasi Deputi';
+                break;
+
+            case '29':
+                $status = 'Pengajuan Dikembalikan Untuk Direvisi';
+                break;
+            
+            case '0':
+                $status = 'Terima Pertek BKN';
+                break;
+            
+            case '0':
+                $status = 'Pengembalian Pertek BKN';
+                break;
+
+            case '0':
+                $status = 'Penyiapan Rancangan Keppres';
+                break;
+
+            case '0':
                 $status = 'Pengajuan Rancangan Keppres ';
                 break;
 
-            case '10':
+            case '0':
                 $status = 'Penomoran Keppres';
                 break;
 
-            case '11':
+            case '0':
                 $status = 'Penyiapan Salinan dan Petikan Keppres';
                 break;
             
-            case '12':
+            case '0':
                 $status = 'Pengiriman';
                 break;
 
-            case '13':
+            case '0':
                 $status = 'Penyampaian Tanda Terima';
-                break;
-
-            case '14':
-                $status = 'Diverifikasi Pokja';
                 break;
 
         }
@@ -246,9 +358,32 @@ class Helper {
         return $date;
     }
 
+    public static function convertDatetoDB($date){
+        $date = date('y-m-d', strtotime($date));
+        return $date;
+    }
+
     public static function convertDate($date){
         $date = date('d M Y', strtotime($date));
         return $date;
+    }
+
+    public static function definePertek($nip){
+
+        // $pertek_bkns = Bkn::where([
+        //     ['nip', '=', $nip]
+        // ])->first();
+        $pertek_bkns = Bkn::All();
+        foreach($pertek_bkns as $pertek)
+        {
+            if($pertek->nip != $nip){
+                $status = "Pertek Tersedia";
+            } else {
+                $status = "Pertek Belum Tersedia";
+            }
+        }
+
+        return $status;
     }
 
     public static function countDate($dates){

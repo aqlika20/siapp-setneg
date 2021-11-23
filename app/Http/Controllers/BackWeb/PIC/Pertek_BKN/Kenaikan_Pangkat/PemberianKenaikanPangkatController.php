@@ -73,104 +73,114 @@ class PemberianKenaikanPangkatController extends Controller
         $input = $request->all();
 
         $validator = Validator::make($input, [
-            'req_tanggal_surat_usulan' => 'required',
-            'req_no_surat_usulan' => 'required',
-            'req_jabatan_menandatangani' => 'required',
+            'tanggal_surat_usulan' => 'required',
+            'no_surat_usulan' => 'required',
+            'jabatan_menandatangani' => 'required',
 
-            'req_nip' => 'required',
-            'req_nama' => 'required',
-            'req_tempat_lahir' => 'required',
-            'req_tanggal_lahir' => 'required',
-            'req_pendidikan_terakhir' => 'required',
-            'req_instansi_induk' => 'required',
-            'req_instansi_pengusul' => 'required',
-            'req_pangkat_gol' => 'required',
-            'req_tmt_gol' => 'required',
+            'nip' => 'required',
+            'nama' => 'required',
+            'tempat_lahir' => 'required',
+            'tanggal_lahir' => 'required',
+            'pendidikan_terakhir' => 'required',
+            'instansi_induk' => 'required',
+            'instansi_pengusul' => 'required',
+            'pangkat_gol' => 'required',
+            'tmt_gol' => 'required',
 
-            'req_nomor_pak' => 'nullable',
-            'req_tanggal_pak' => 'nullable',
-            'req_jumlah_angka_kredit' => 'nullable',
-            'req_periode_penilaian' => 'nullable',
+            'nomor_pak' => 'nullable',
+            'tanggal_pak' => 'nullable',
+            'jumlah_angka_kredit' => 'nullable',
+            'periode_penilaian' => 'nullable',
             
-            'req_no_klarifikasi_pak' => 'nullable',
-            'req_tanggal_klarifikasi_pak' => 'nullable',
+            'no_klarifikasi_pak' => 'nullable',
+            'tanggal_klarifikasi_pak' => 'nullable',
             
-            'req_jabatan_lama' => 'nullable',
-            'req_no_sk_jabatan_lama' => 'required',
-            'req_tmt_jabatan_lama' => 'required',
-            'req_unit_kerja_lama' => 'required',
+            'jabatan_lama' => 'nullable',
+            'no_sk_jabatan_lama' => 'required',
+            'tmt_jabatan_lama' => 'required',
+            'unit_kerja_lama' => 'required',
 
-            'req_jabatan_baru' => 'required',
-            'req_unit_kerja_baru' => 'required',
+            'jabatan_baru' => 'required',
+            'unit_kerja_baru' => 'required',
 
-            'req_jabatan_kompetensi' => 'required',
-            'req_no_sertifikat' => 'required',
-            'req_tgl_sertifikat' => 'required',
+            'jabatan_kompetensi' => 'required',
+            'no_sertifikat' => 'required',
+            'tanggal_sertifikat' => 'required',
 
-            'req_jumlah' => 'required',
-            'req_terisi' => 'required',
-            'req_sisa' => 'required',
+            'jumlah' => 'required',
+            'terisi' => 'required',
+            'sisa' => 'required',
 
-            'req_tanggal_catatan' => 'required',
-            'req_catatan' => 'required',
-            'req_ket' => 'required',
+            'tanggal_catatan' => 'required',
+            'catatan' => 'required',
+            'ket' => 'required',
 
-            'req_file_data_usulan.*' => 'max:5000|mimes:jpg,png,jpeg,pdf',
-            'req_file_data_asn.*' => 'max:5000|mimes:jpg,png,jpeg,pdf',
-            'req_file_data_pak.*' => 'max:5000|mimes:jpg,png,jpeg,pdf',
-            'req_file_klarifikasi_pak.*' => 'max:5000|mimes:jpg,png,jpeg,pdf',
-            'req_file_jabatan_lama.*' => 'max:5000|mimes:jpg,png,jpeg,pdf',
-            'req_file_jabatan_baru.*' => 'max:5000|mimes:jpg,png,jpeg,pdf',
-            'req_file_data_kompetensi.*' => 'max:5000|mimes:jpg,png,jpeg,pdf',
-            'req_file_formasi_jabatan.*' => 'max:5000|mimes:jpg,png,jpeg,pdf',
-            'req_file_skp_2.*' => 'max:5000|mimes:jpg,png,jpeg,pdf',
-            'req_file_skp_2_lainnya.*' => 'max:5000|mimes:jpg,png,jpeg,pdf',
+            'file_data_usulan.*' => 'required|max:5000|mimes:pdf',
+            'file_data_asn.*' => 'required|max:5000|mimes:pdf',
+            'file_data_pak.*' => 'required|max:5000|mimes:pdf',
+            'file_klarifikasi_pak.*' => 'required|max:5000|mimes:pdf',
+            'file_jabatan_lama.*' => 'required|max:5000|mimes:pdf',
+            'file_jabatan_baru.*' => 'required|max:5000|mimes:pdf',
+            'file_data_kompetensi.*' => 'required|max:5000|mimes:pdf',
+            'file_formasi_jabatan.*' => 'required|max:5000|mimes:pdf',
+            'file_skp_2.*' => 'required|max:5000|mimes:pdf',
+            'file_skp_2_lainnya.*' => 'required|max:5000|mimes:pdf',
 
         ]);
 
         if ($validator->fails()) {
-            return redirect()->back()->with(['error' => $validator->errors()])->withInput($input);
+                // dd($validator->messages()->getMessages());
+            foreach($validator->messages()->getMessages() as $messages) {
+                
+                $e_name = [];
+                // Go through each message for this field.
+                foreach($messages as $message) {
+                    $e_name = $message;
+                }
+                // dd($e_name);
+                return redirect()->back()->with(['error' => $e_name]);
+            }
         }
 
         $pengangkatans = KenaikanPangkat::create([
-            'tanggal_surat_usulan' => $input['req_tanggal_surat_usulan'],
-            'no_surat_usulan' => $input['req_no_surat_usulan'],
-            'pejabat_menandatangani' => $input['req_jabatan_menandatangani'],
+            'tanggal_surat_usulan' => $input['tanggal_surat_usulan'],
+            'no_surat_usulan' => $input['no_surat_usulan'],
+            'pejabat_menandatangani' => $input['jabatan_menandatangani'],
 
-            'nip' => $input['req_nip'],
-            'nama' => $input['req_nama'],
-            'tempat_lahir' => $input['req_tempat_lahir'],
-            'tanggal_lahir' => $input['req_tanggal_lahir'],
-            'pendidikan_terakhir' => $input['req_pendidikan_terakhir'],
-            'instansi_induk' => $input['req_instansi_induk'],
-            'instansi_pengusul' => $input['req_instansi_pengusul'],
-            'pangkat_gol' => $input['req_pangkat_gol'],
-            'tmt_gol' => $input['req_tmt_gol'],
+            'nip' => $input['nip'],
+            'nama' => $input['nama'],
+            'tempat_lahir' => $input['tempat_lahir'],
+            'tanggal_lahir' => $input['tanggal_lahir'],
+            'pendidikan_terakhir' => $input['pendidikan_terakhir'],
+            'instansi_induk' => $input['instansi_induk'],
+            'instansi_pengusul' => $input['instansi_pengusul'],
+            'pangkat_gol' => $input['pangkat_gol'],
+            'tmt_gol' => $input['tmt_gol'],
             
-            'nomor_pak' => $input['req_nomor_pak'],
-            'tanggal_pak' => $input['req_tanggal_pak'],
-            'jumlah_angka_kredit' => $input['req_jumlah_angka_kredit'],
-            'periode_penilaian' => $input['req_periode_penilaian'],
+            'nomor_pak' => $input['nomor_pak'],
+            'tanggal_pak' => $input['tanggal_pak'],
+            'jumlah_angka_kredit' => $input['jumlah_angka_kredit'],
+            'periode_penilaian' => $input['periode_penilaian'],
 
-            'nomor_klarifikasi' => $input['req_no_klarifikasi_pak'],
-            'tanggal_klarifikasi' => $input['req_tanggal_klarifikasi_pak'],
+            'nomor_klarifikasi' => $input['no_klarifikasi_pak'],
+            'tanggal_klarifikasi' => $input['tanggal_klarifikasi_pak'],
 
-            'jabatan_lama' => $input['req_jabatan_lama'],
-            'no_sk_jabatan_lama' => $input['req_no_sk_jabatan_lama'],
-            'tmt_jabatan_lama' => $input['req_tmt_jabatan_lama'],
-            'unit_kerja_lama' => $input['req_unit_kerja_lama'],
+            'jabatan_lama' => $input['jabatan_lama'],
+            'no_sk_jabatan_lama' => $input['no_sk_jabatan_lama'],
+            'tmt_jabatan_lama' => $input['tmt_jabatan_lama'],
+            'unit_kerja_lama' => $input['unit_kerja_lama'],
             
-            'jabatan_baru' => $input['req_jabatan_baru'],
-            'unit_kerja_baru' => $input['req_unit_kerja_baru'],
+            'jabatan_baru' => $input['jabatan_baru'],
+            'unit_kerja_baru' => $input['unit_kerja_baru'],
             
-            'jabatan_data_kompetensi' => $input['req_jabatan_kompetensi'],
-            'nomor_sertifikat' => $input['req_no_sertifikat'],
-            'tgl_sertifikat' => $input['req_tgl_sertifikat'],
+            'jabatan_data_kompetensi' => $input['jabatan_kompetensi'],
+            'nomor_sertifikat' => $input['no_sertifikat'],
+            'tanggal_sertifikat' => $input['tanggal_sertifikat'],
 
-            'jumlah' => $input['req_jumlah'],
-            'terisi' => $input['req_terisi'],
-            'sisa' => $input['req_sisa'],
-            'ket' => implode(',', $input['req_ket']),
+            'jumlah' => $input['jumlah'],
+            'terisi' => $input['terisi'],
+            'sisa' => $input['sisa'],
+            'ket' => implode(',', $input['ket']),
 
             'id_pengirim' => $id_pengirim->nip,
             'jenis_layanan' => Helper::$pemberian_kenaikan_pangkat,
@@ -178,100 +188,100 @@ class PemberianKenaikanPangkatController extends Controller
             
         ]);
 
-        if($request->has('req_file_data_usulan')){
+        if($request->has('file_data_usulan')){
             $files = [];
-            foreach ($request->file('req_file_data_usulan') as $file) {
-                $filename = $file->getClientOriginalName();
+            foreach ($request->file('file_data_usulan') as $file) {
+                $filename = $file->getClientOriginalName(). ' - ' .$input['nip'];
                 Storage::putFileAs($this->data_usulan_folder, $file, $filename);
                 $files[] = $filename;
             }
             $pengangkatans->file_data_usulan = $files;
         }
 
-        if($request->has('req_file_data_asn')){
+        if($request->has('file_data_asn')){
             $files = [];
-            foreach ($request->file('req_file_data_asn') as $file) {
-                $filename = $file->getClientOriginalName();
+            foreach ($request->file('file_data_asn') as $file) {
+                $filename = $file->getClientOriginalName(). ' - ' .$input['nip'];
                 Storage::putFileAs($this->data_asn_folder, $file, $filename);
                 $files[] = $filename;
             }
             $pengangkatans->file_nota_usulan_asn = $files;
         }
 
-        if($request->has('req_file_data_pak')){
+        if($request->has('file_data_pak')){
             $files = [];
-            foreach ($request->file('req_file_data_pak') as $file) {
-                $filename = $file->getClientOriginalName();
+            foreach ($request->file('file_data_pak') as $file) {
+                $filename = $file->getClientOriginalName(). ' - ' .$input['nip'];
                 Storage::putFileAs($this->data_pak_folder, $file, $filename);
                 $files[] = $filename;
             }
             $pengangkatans->file_data_pak = $files;
         }
 
-        if($request->has('req_file_klarifikasi_pak')){
+        if($request->has('file_klarifikasi_pak')){
             $files = [];
-            foreach ($request->file('req_file_klarifikasi_pak') as $file) {
-                $filename = $file->getClientOriginalName();
+            foreach ($request->file('file_klarifikasi_pak') as $file) {
+                $filename = $file->getClientOriginalName(). ' - ' .$input['nip'];
                 Storage::putFileAs($this->klarifikasi_pak_folder, $file, $filename);
                 $files[] = $filename;
             }
             $pengangkatans->file_klarifikasi_pak = $files;
         }
 
-        if($request->has('req_file_jabatan_lama')){
+        if($request->has('file_jabatan_lama')){
             $files = [];
-            foreach ($request->file('req_file_jabatan_lama') as $file) {
-                $filename = $file->getClientOriginalName();
+            foreach ($request->file('file_jabatan_lama') as $file) {
+                $filename = $file->getClientOriginalName(). ' - ' .$input['nip'];
                 Storage::putFileAs($this->data_jabatan_lama_folder, $file, $filename);
                 $files[] = $filename;
             }
             $pengangkatans->file_data_jabatan_lama = $files;
         }
 
-        if($request->has('req_file_jabatan_baru')){
+        if($request->has('file_jabatan_baru')){
             $files = [];
-            foreach ($request->file('req_file_jabatan_baru') as $file) {
-                $filename = $file->getClientOriginalName();
+            foreach ($request->file('file_jabatan_baru') as $file) {
+                $filename = $file->getClientOriginalName(). ' - ' .$input['nip'];
                 Storage::putFileAs($this->data_jabatan_baru_folder, $file, $filename);
                 $files[] = $filename;
             }
             $pengangkatans->file_data_jabatan_baru = $files;
         }
 
-        if($request->has('req_file_data_kompetensi')){
+        if($request->has('file_data_kompetensi')){
             $files = [];
-            foreach ($request->file('req_file_data_kompetensi') as $file) {
-                $filename = $file->getClientOriginalName();
+            foreach ($request->file('file_data_kompetensi') as $file) {
+                $filename = $file->getClientOriginalName(). ' - ' .$input['nip'];
                 Storage::putFileAs($this->data_kompetensi_folder, $file, $filename);
                 $files[] = $filename;
             }
             $pengangkatans->file_data_kompetensi = $files;
         }
 
-        if($request->has('req_file_formasi_jabatan')){
+        if($request->has('file_formasi_jabatan')){
             $files = [];
-            foreach ($request->file('req_file_formasi_jabatan') as $file) {
-                $filename = $file->getClientOriginalName();
+            foreach ($request->file('file_formasi_jabatan') as $file) {
+                $filename = $file->getClientOriginalName(). ' - ' .$input['nip'];
                 Storage::putFileAs($this->formasi_jabatan_folder, $file, $filename);
                 $files[] = $filename;
             }
             $pengangkatans->file_formasi_jabatan = $files;
         }
 
-        if($request->has('req_file_skp_2')){
+        if($request->has('file_skp_2')){
             $files = [];
-            foreach ($request->file('req_file_skp_2') as $file) {
-                $filename = $file->getClientOriginalName();
+            foreach ($request->file('file_skp_2') as $file) {
+                $filename = $file->getClientOriginalName(). ' - ' .$input['nip'];
                 Storage::putFileAs($this->skp_2_folder, $file, $filename);
                 $files[] = $filename;
             }
             $pengangkatans->file_skp_2 = $files;
         }
 
-        if($request->has('req_file_skp_2_lainnya')){
+        if($request->has('file_skp_2_lainnya')){
             $files = [];
-            foreach ($request->file('req_file_skp_2_lainnya') as $file) {
-                $filename = $file->getClientOriginalName();
+            foreach ($request->file('file_skp_2_lainnya') as $file) {
+                $filename = $file->getClientOriginalName(). ' - ' .$input['nip'];
                 Storage::putFileAs($this->skp_2_lainnya_folder, $file, $filename);
                 $files[] = $filename;
             }
@@ -280,14 +290,14 @@ class PemberianKenaikanPangkatController extends Controller
 
         $pengangkatans->save();
 
-        $count = count($input['req_tanggal_catatan']);
+        $count = count($input['tanggal_catatan']);
         for($i=0;$i<$count;$i++) {
             $notes = new Catatan();
             $notes->id_usulan = $pengangkatans->id;
             $notes->id_layanan = $pengangkatans->jenis_layanan;
             $notes->id_pengirim = $id_pengirim->nip;
-            $notes->tanggal_catatan = $input['req_tanggal_catatan'][$i];
-            $notes->catatan = $input['req_catatan'][$i];
+            $notes->tanggal_catatan = $input['tanggal_catatan'][$i];
+            $notes->catatan = $input['catatan'][$i];
             $notes->save();
         }
 

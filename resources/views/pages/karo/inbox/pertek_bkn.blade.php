@@ -45,65 +45,33 @@
                                         <th>Jenis Usulan</th>
                                         <th>Status</th> -->
 
-                                        <th>Tanggal Agenda</th>
-                                        <th>No Surat</th>
-                                        <th>Instansi Pengusul</th>
-                                        <th>Jenis Usulan</th>
-                                        <th>NIP</th>
-                                        <th>Nama</th>
-                                        <th>Jabatan</th>
-                                        <th>Status</th>
+                                        <th>Pengirim</th>
+                                        <th>Penandatangan</th>
+                                        <th>Penerima</th>
+                                        <th>No Memo RKP</th>
+                                        <th>Tanggal Memo</th>
+                                        <th>Hal</th>
+                                        <th>Aksi</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                @foreach($pengangkatans as $pengangkatan)
+                                @foreach($rkps as $rkp)
                                     <tr>
-                                        <!-- <td>{{ Helper::convertDate($pengangkatan->created_at)  }}</td>
-                                        <td><div style="color: #FFA800;">{{ Helper::defineJenisLayananBy($pengangkatan->jenis_layanan) }}</div></td>
-                                        <td>{{ Helper::defineStatusBy($pengangkatan->status) }}</td> -->
+                                        <!-- <td>{{ Helper::convertDate($rkp->created_at)  }}</td>
+                                        <td><div style="color: #FFA800;">{{ Helper::defineJenisLayananBy($rkp->jenis_layanan) }}</div></td>
+                                        <td>{{ Helper::defineStatusBy($rkp->status) }}</td> -->
 
-                                        <td>{{ $pengangkatan->tgl_surat_usulan }}</td>
-                                        <td>{{ $pengangkatan->no_surat_usulan }}</td>
-                                        <td>{{ $pengangkatan->instansi_pengusul }}</td>
-                                        <td><div style="color: #FFA800;">{{ Helper::defineJenisLayananBy($pengangkatan->jenis_layanan) }}</div></td>
-                                        <td><div style="color: #3699FF;">{{ $pengangkatan->nip }}</div></td>
-                                        <td>{{ $pengangkatan->nama }}</td>
-                                        <td>{{ $pengangkatan->jabatan }}</td>
-                                        <td>{{ Helper::defineStatusBy($pengangkatan->status) }}</td>
-                                    </tr>
-                                @endforeach
-
-                                @foreach($strukturals as $struktural)
-                                    <tr>
-                                        <!-- <td>{{ Helper::convertDate($struktural->created_at) }}</td>
-                                        <td><div style="color: #FFA800;">{{ Helper::defineJenisLayananBy($struktural->jenis_layanan) }}</div></td>
-                                        <td>{{ Helper::defineStatusBy($struktural->status) }}</td> -->
-
-                                        <td>{{ $struktural->tgl_surat_usulan }}</td>
-                                        <td>{{ $struktural->no_surat_usulan }}</td>
-                                        <td>{{ $struktural->instansi_pengusul }}</td>
-                                        <td><div style="color: #FFA800;">{{ Helper::defineJenisLayananBy($struktural->jenis_layanan) }}</div></td>
-                                        <td><div style="color: #3699FF;">{{ $struktural->nip }}</div></td>
-                                        <td>{{ $struktural->nama }}</td>
-                                        <td>{{ $struktural->jabatan }}</td>
-                                        <td>{{ Helper::defineStatusBy($struktural->status) }}</td>
-                                    </tr>
-                                @endforeach
-                                
-                                @foreach($lainnyas as $lainnya)
-                                    <tr>
-                                        <!-- <td>{{ Helper::convertDate($lainnya->created_at) }}</td>
-                                        <td><div style="color: #FFA800;">{{ Helper::defineJenisLayananBy($lainnya->jenis_layanan) }}</div></td>
-                                        <td>{{ Helper::defineStatusBy($lainnya->status) }}</td> -->
-
-                                        <td>{{ $lainnya->tgl_surat_usulan }}</td>
-                                        <td>{{ $lainnya->no_surat_usulan }}</td>
-                                        <td>{{ $lainnya->instansi_pengusul }}</td>
-                                        <td><div style="color: #FFA800;">{{ Helper::defineJenisLayananBy($lainnya->jenis_layanan) }}</div></td>
-                                        <td><div style="color: #3699FF;">{{ $lainnya->nip }}</div></td>
-                                        <td>{{ $lainnya->nama }}</td>
-                                        <td>{{ $lainnya->jabatan }}</td>
-                                        <td>{{ Helper::defineStatusBy($lainnya->status) }}</td>
+                                        <td>{{ $rkp->pengirim }}</td>
+                                        <td>{{ $rkp->penandatangan }}</td>
+                                        <td>{{ $rkp->penerima }}</td>
+                                        <td>{{ $rkp->no_memo_rkp }}</td>
+                                        <td>{{ $rkp->tanggal_memo }}</td>
+                                        <td>{{ $rkp->hal }}</td>
+                                        <td>
+                                            <a href="{{route('karo.inbox.detail.pertek', ['id' => $rkp->id])}}" type="button" class="btn btn-success btn-xs">
+												Detail
+											</a>
+                                        </td>
                                     </tr>
                                 @endforeach
                                 </tbody>
@@ -139,4 +107,4 @@
 @section('scripts')
 <script src="{{ asset('js/pages/custom/wizard/wizard-2.js') }}"></script>
 <script src="{{ asset('js/pages/crud/ktdatatable/base/html-table.js') }}" type="text/javascript"></script>
-@endsection
+@endsection 

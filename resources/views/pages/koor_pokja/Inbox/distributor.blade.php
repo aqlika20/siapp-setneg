@@ -105,14 +105,6 @@
                                             </div>
                                         </div>
                                     @endforeach
-
-                                    <div class="d-flex justify-content-between mt-5 pt-10">
-                                        <div class="mr-2">
-                                        </div>
-                                        <div>
-                                            <a type="button" class="btn btn-primary font-weight-bolder text-uppercase px-9 py-4" href="form/rkp/text_editor.html">Memo RKP</a>
-                                        </div>
-                                    </div>	
                                 </div>
                             </div>
                             <!--end: Datatable-->

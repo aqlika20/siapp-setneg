@@ -285,8 +285,17 @@ Route::group(['middleware' => ['auth', 'checkRole:1']], function() {
                 Route::get('/verification/{id}', 'BackWeb\PIC\InboxController@verification_pemberhentian')->name('pic.inbox.pemberhentian.verif');
                 Route::post('/verification/proses', 'BackWeb\PIC\InboxController@store_proses')->name('pic.inbox.pemberhentian.store_proses');
             });
+
+            Route::prefix('/detail-surat-pengembalian')->group(function(){
+                Route::get('/{id}', 'BackWeb\PIC\DetailSuratPengembalianController@index')->name('pic.inbox.detail-surat-pengembalian.index');
+            });
+
+            Route::prefix('/detail-alasan-penolakan')->group(function(){
+                Route::get('/{id}', 'BackWeb\PIC\DetailSuratPenolakanController@index')->name('pic.inbox.detail-alasan-penolakan.index');
+            });
         });
         
+
         Route::prefix('/faq')->group(function(){
             Route::get('/', 'BackWeb\PIC\FaqController@index')->name('pic.faq.index');
         });
@@ -344,16 +353,113 @@ Route::group(['middleware' => ['auth', 'checkRole:2']], function() {
                 Route::post('/verification/pending', 'BackWeb\Koor_Pokja\Inbox\PemberhentianController@store_pending')->name('koor-pokja.inbox.pemberhentian.store_pending');
                 Route::post('/verification/tolak', 'BackWeb\Koor_Pokja\Inbox\PemberhentianController@store_tolak')->name('koor-pokja.inbox.pemberhentian.store_tolak');
             });
+
+            Route::prefix('/text-editor')->group(function(){
+                Route::get('/{id}', 'BackWeb\Koor_Pokja\Inbox\TextEditorInboxPendingController@index')->name('koor-pokja.inbox.text-editor.index');
+                Route::post('/create', 'BackWeb\Koor_Pokja\Inbox\TextEditorInboxPendingController@store')->name('koor-pokja.inbox.text-editor.store');
+            });
+            
+            Route::prefix('/text-editor-kenaikan')->group(function(){
+                Route::get('/{id}', 'BackWeb\Koor_Pokja\Inbox\TextEditorKenaikanPertekController@index')->name('koor-pokja.inbox.text-editor.kenaikan.index');
+                Route::post('/create', 'BackWeb\Koor_Pokja\Inbox\TextEditorKenaikanPertekController@store')->name('koor-pokja.inbox.text-editor.kenaikan.store');
+            });
+
+            Route::prefix('/text-editor-lain')->group(function(){
+                Route::get('/{id}', 'BackWeb\Koor_Pokja\Inbox\TextEditorLainPertekController@index')->name('koor-pokja.inbox.text-editor.lain.index');
+                Route::post('/create', 'BackWeb\Koor_Pokja\Inbox\TextEditorLainPertekController@store')->name('koor-pokja.inbox.text-editor.lain.store');
+            });
+
+            Route::prefix('/text-editor-ns')->group(function(){
+                Route::get('/{id}', 'BackWeb\Koor_Pokja\Inbox\TextEditorNSPertekController@index')->name('koor-pokja.inbox.text-editor.ns.index');
+                Route::post('/create', 'BackWeb\Koor_Pokja\Inbox\TextEditorNSPertekController@store')->name('koor-pokja.inbox.text-editor.ns.store');
+            });
+
+            Route::prefix('/text-editor-pemberhentian')->group(function(){
+                Route::get('/{id}', 'BackWeb\Koor_Pokja\Inbox\TextEditorPemberhentianPertekController@index')->name('koor-pokja.inbox.text-editor.pemberhentian.index');
+                Route::post('/create', 'BackWeb\Koor_Pokja\Inbox\TextEditorPemberhentianPertekController@store')->name('koor-pokja.inbox.text-editor.pemberhentian.store');
+            });
+
+            Route::prefix('/detail-surat-pengembalian')->group(function(){
+                Route::get('/{id}', 'BackWeb\Koor_Pokja\Inbox\DetailSuratPengembalianController@index')->name('koor-pokja.inbox.detail-surat-pengembalian.index');
+            });
         });
 
         Route::prefix('/pertek')->group(function(){
             Route::get('/', 'BackWeb\Koor_Pokja\PertekController@index')->name('koor-pokja.pertek.index');
+
+            Route::prefix('/jfku')->group(function(){
+                Route::get('/verification/{id}', 'BackWeb\Koor_Pokja\PertekController@verification')->name('koor-pokja.pertek.jfku.verif');
+                Route::post('/verification/proses', 'BackWeb\Koor_Pokja\PertekController@store_proses')->name('koor-pokja.pertek.jfku.store_proses');
+                Route::post('/verification/pending', 'BackWeb\Koor_Pokja\PertekController@store_pending')->name('koor-pokja.pertek.jfku.store_pending');
+                Route::post('/verification/tolak', 'BackWeb\Koor_Pokja\PertekController@store_tolak')->name('koor-pokja.pertek.jfku.store_tolak');
+            });
+
+            Route::prefix('/ns')->group(function(){
+                Route::get('/verification/{id}', 'BackWeb\Koor_Pokja\PertekController@verification_ns')->name('koor-pokja.pertek.ns.verif');
+                Route::post('/verification/proses', 'BackWeb\Koor_Pokja\PertekController@store_proses')->name('koor-pokja.pertek.ns.store_proses');
+                Route::post('/verification/pending', 'BackWeb\Koor_Pokja\PertekController@store_pending')->name('koor-pokja.pertek.ns.store_pending');
+                Route::post('/verification/tolak', 'BackWeb\Koor_Pokja\PertekController@store_tolak')->name('koor-pokja.pertek.ns.store_tolak');
+            });
+
+            Route::prefix('/lainnya')->group(function(){
+                Route::get('/verification/{id}', 'BackWeb\Koor_Pokja\PertekController@verification_lainnya')->name('koor-pokja.pertek.lainnya.verif');
+                Route::post('/verification/proses', 'BackWeb\Koor_Pokja\PertekController@store_proses')->name('koor-pokja.pertek.lainnya.store_proses');
+                Route::post('/verification/pending', 'BackWeb\Koor_Pokja\PertekController@store_pending')->name('koor-pokja.pertek.lainnya.store_pending');
+                Route::post('/verification/tolak', 'BackWeb\Koor_Pokja\PertekController@store_tolak')->name('koor-pokja.pertek.lainnya.store_tolak');
+            });
+
+            Route::prefix('/kenaikan_pangkat')->group(function(){
+                Route::get('/verification/{id}', 'BackWeb\Koor_Pokja\PertekController@verification_kenaikan')->name('koor-pokja.pertek.kenaikan_pangkat.verif');
+                Route::post('/verification/proses', 'BackWeb\Koor_Pokja\PertekController@store_proses_kenaikan')->name('koor-pokja.pertek.kenaikan_pangkat.store_proses');
+                Route::post('/verification/pending', 'BackWeb\Koor_Pokja\PertekController@store_pending_kenaikan')->name('koor-pokja.pertek.kenaikan_pangkat.store_pending');
+                Route::post('/verification/tolak', 'BackWeb\Koor_Pokja\PertekController@store_tolak_kenaikan')->name('koor-pokja.pertek.kenaikan_pangkat.store_tolak');
+            });
+
+            Route::prefix('/pemberhentian')->group(function(){
+                Route::get('/verification/{id}', 'BackWeb\Koor_Pokja\PertekController@verification_pemberhentian')->name('koor-pokja.pertek.pemberhentian.verif');
+                Route::post('/verification/proses', 'BackWeb\Koor_Pokja\PertekController@store_proses_pemberhentian')->name('koor-pokja.pertek.pemberhentian.store_proses');
+                Route::post('/verification/pending', 'BackWeb\Koor_Pokja\PertekController@store_pending_pemberhentian')->name('koor-pokja.pertek.pemberhentian.store_pending');
+                Route::post('/verification/tolak', 'BackWeb\Koor_Pokja\PertekController@store_tolak_pemberhentian')->name('koor-pokja.pertek.pemberhentian.store_tolak');
+            });
+
+            Route::prefix('/text-editor')->group(function(){
+                Route::get('/{id}', 'BackWeb\Koor_Pokja\Inbox\TextEditorController@index')->name('koor-pokja.text-editor.index');
+                Route::post('/create', 'BackWeb\Koor_Pokja\Inbox\TextEditorController@store')->name('koor-pokja.text-editor.store');
+            });
+            
+            Route::prefix('/text-editor-jfku')->group(function(){
+                Route::get('/{id}', 'BackWeb\Koor_Pokja\Inbox\TextEditorJFKUPertekController@index')->name('koor-pokja.text-editor.jfku.pertek.index');
+                Route::post('/create', 'BackWeb\Koor_Pokja\Inbox\TextEditorJFKUPertekController@store')->name('koor-pokja.text-editor.jfku.pertek.store');
+            });
+
+            Route::prefix('/text-editor-kenaikan')->group(function(){
+                Route::get('/{id}', 'BackWeb\Koor_Pokja\Inbox\TextEditorKenaikanPertekController@index')->name('koor-pokja.text-editor.kenaikan.pertek.index');
+                Route::post('/create', 'BackWeb\Koor_Pokja\Inbox\TextEditorKenaikanPertekController@store')->name('koor-pokja.text-editor.kenaikan.pertek.store');
+            });
+
+            Route::prefix('/text-editor-lain')->group(function(){
+                Route::get('/{id}', 'BackWeb\Koor_Pokja\Inbox\TextEditorLainPertekController@index')->name('koor-pokja.text-editor.lain.pertek.index');
+                Route::post('/create', 'BackWeb\Koor_Pokja\Inbox\TextEditorLainPertekController@store')->name('koor-pokja.text-editor.lain.pertek.store');
+            });
+
+            Route::prefix('/text-editor-ns')->group(function(){
+                Route::get('/{id}', 'BackWeb\Koor_Pokja\Inbox\TextEditorNSPertekController@index')->name('koor-pokja.text-editor.ns.pertek.index');
+                Route::post('/create', 'BackWeb\Koor_Pokja\Inbox\TextEditorNSPertekController@store')->name('koor-pokja.text-editor.ns.pertek.store');
+            });
+
+            Route::prefix('/text-editor-pemberhentian')->group(function(){
+                Route::get('/{id}', 'BackWeb\Koor_Pokja\Inbox\TextEditorPemberhentianPertekController@index')->name('koor-pokja.text-editor.pemberhentian.pertek.index');
+                Route::post('/create', 'BackWeb\Koor_Pokja\Inbox\TextEditorPemberhentianPertekController@store')->name('koor-pokja.text-editor.pemberhentian.pertek.store');
+            });
+    
         });
 
-        Route::prefix('/rkp-test')->group(function(){
-            Route::get('/', 'BackWeb\Koor_Pokja\RKPController@index')->name('koor-pokja.rkp.index');
+        Route::prefix('/rkp')->group(function(){
+            Route::get('/{id}', 'BackWeb\Koor_Pokja\RKPController@index')->name('koor-pokja.rkp.index');
+            Route::post('/create', 'BackWeb\Koor_Pokja\RKPController@store')->name('koor-pokja.rkp.store');
         });
 
+        
         Route::prefix('/atur-dokumen')->group(function(){
             Route::get('/', 'BackWeb\Koor_Pokja\AturDokumenController@index')->name('koor-pokja.atur-dokumen.index');
         });
@@ -369,7 +475,7 @@ Route::group(['middleware' => ['auth', 'checkRole:2']], function() {
     });
 });
 
-// JF Muda Madya
+// JF Ahli
 Route::group(['middleware' => ['auth', 'checkRole: 3 , 4']], function() {
     Route::prefix('/Jf-Ahli')->group(function(){
         Route::prefix('/home')->group(function(){
@@ -402,17 +508,42 @@ Route::group(['middleware' => ['auth', 'checkRole: 3 , 4']], function() {
             });
 
             Route::prefix('/kenaikan_pangkat')->group(function(){
-                Route::get('/verification/{id}', 'BackWeb\Koor_Pokja\Inbox\InboxController@verification_kenaikan')->name('jf-ahli.inbox.kenaikan_pangkat.verif');
-                Route::post('/verification/proses', 'BackWeb\Koor_Pokja\Inbox\InboxController@store_proses')->name('jf-ahli.inbox.kenaikan_pangkat.store_proses');
-                Route::post('/verification/pending', 'BackWeb\Koor_Pokja\Inbox\InboxController@store_pending')->name('jf-ahli.inbox.kenaikan_pangkat.store_pending');
-                Route::post('/verification/tolak', 'BackWeb\Koor_Pokja\Inbox\InboxController@store_tolak')->name('jf-ahli.inbox.kenaikan_pangkat.store_tolak');
+                Route::get('/verification/{id}', 'BackWeb\JF_Ahli\InboxController@verification_kenaikan')->name('jf-ahli.inbox.kenaikan_pangkat.verif');
+                Route::post('/verification/proses', 'BackWeb\JF_Ahli\InboxController@store_proses')->name('jf-ahli.inbox.kenaikan_pangkat.store_proses');
+                Route::post('/verification/pending', 'BackWeb\JF_Ahli\InboxController@store_pending')->name('jf-ahli.inbox.kenaikan_pangkat.store_pending');
+                Route::post('/verification/tolak', 'BackWeb\JF_Ahli\InboxController@store_tolak')->name('jf-ahli.inbox.kenaikan_pangkat.store_tolak');
             });
 
             Route::prefix('/pemberhentian')->group(function(){
-                Route::get('/verification/{id}', 'BackWeb\Koor_Pokja\Inbox\InboxController@verification_pemberhentian')->name('jf-ahli.inbox.pemberhentian.verif');
-                Route::post('/verification/proses', 'BackWeb\Koor_Pokja\Inbox\InboxController@store_proses')->name('jf-ahli.inbox.pemberhentian.store_proses');
-                Route::post('/verification/pending', 'BackWeb\Koor_Pokja\Inbox\InboxController@store_pending')->name('jf-ahli.inbox.pemberhentian.store_pending');
-                Route::post('/verification/tolak', 'BackWeb\Koor_Pokja\Inbox\InboxController@store_tolak')->name('jf-ahli.inbox.pemberhentian.store_tolak');
+                Route::get('/verification/{id}', 'BackWeb\JF_Ahli\InboxController@verification_pemberhentian')->name('jf-ahli.inbox.pemberhentian.verif');
+                Route::post('/verification/proses', 'BackWeb\JF_Ahli\InboxController@store_proses')->name('jf-ahli.inbox.pemberhentian.store_proses');
+                Route::post('/verification/pending', 'BackWeb\JF_Ahli\InboxController@store_pending')->name('jf-ahli.inbox.pemberhentian.store_pending');
+                Route::post('/verification/tolak', 'BackWeb\JF_Ahli\InboxController@store_tolak')->name('jf-ahli.inbox.pemberhentian.store_tolak');
+            });
+
+            Route::prefix('/text-editor')->group(function(){
+                Route::get('/{id}', 'BackWeb\JF_Ahli\TextEditorInboxPendingController@index')->name('jf-ahli.inbox.text-editor.index');
+                Route::post('/create', 'BackWeb\JF_Ahli\TextEditorInboxPendingController@store')->name('jf-ahli.inbox.text-editor.store');
+            });
+            
+            Route::prefix('/text-editor-kenaikan')->group(function(){
+                Route::get('/{id}', 'BackWeb\JF_Ahli\TextEditorKenaikanPertekController@index')->name('jf-ahli.inbox.text-editor.kenaikan.index');
+                Route::post('/create', 'BackWeb\JF_Ahli\TextEditorKenaikanPertekController@store')->name('jf-ahli.inbox.text-editor.kenaikan.store');
+            });
+
+            Route::prefix('/text-editor-lain')->group(function(){
+                Route::get('/{id}', 'BackWeb\JF_Ahli\TextEditorLainPertekController@index')->name('jf-ahli.inbox.text-editor.lain.index');
+                Route::post('/create', 'BackWeb\JF_Ahli\TextEditorLainPertekController@store')->name('jf-ahli.inbox.text-editor.lain.store');
+            });
+
+            Route::prefix('/text-editor-ns')->group(function(){
+                Route::get('/{id}', 'BackWeb\JF_Ahli\TextEditorNSPertekController@index')->name('jf-ahli.inbox.text-editor.ns.index');
+                Route::post('/create', 'BackWeb\JF_Ahli\TextEditorNSPertekController@store')->name('jf-ahli.inbox.text-editor.ns.store');
+            });
+
+            Route::prefix('/text-editor-pemberhentian')->group(function(){
+                Route::get('/{id}', 'BackWeb\JF_Ahli\TextEditorPemberhentianPertekController@index')->name('jf-ahli.inbox.text-editor.pemberhentian.index');
+                Route::post('/create', 'BackWeb\JF_Ahli\TextEditorPemberhentianPertekController@store')->name('jf-ahli.inbox.text-editor.pemberhentian.store');
             });
 
         });
@@ -434,6 +565,33 @@ Route::group(['middleware' => ['auth', 'checkRole:5']], function() {
         Route::prefix('/inbox')->group(function(){
             Route::get('/usulan', 'BackWeb\Karo\Inbox\SuratUsulanController@index')->name('karo.inbox.usulan');
             Route::get('/pertek-bkn', 'BackWeb\Karo\Inbox\PertekBKNController@index')->name('karo.inbox.revisi');
+            Route::get('/detail-pertek/{id}', 'BackWeb\Karo\Inbox\DetailPertekBKNController@index')->name('karo.inbox.detail.pertek');
+            Route::post('/detail-pertek/verif', 'BackWeb\Karo\Inbox\DetailPertekBKNController@store')->name('karo.inbox.detail.pertek.store');
+
+            Route::prefix('/text-editor')->group(function(){
+                Route::get('/{id}', 'BackWeb\Karo\Inbox\TextEditorInboxPendingController@index')->name('karo.inbox.text-editor.index');
+                Route::post('/create', 'BackWeb\Karo\Inbox\TextEditorInboxPendingController@store')->name('karo.inbox.text-editor.store');
+            });
+            
+            Route::prefix('/text-editor-kenaikan')->group(function(){
+                Route::get('/{id}', 'BackWeb\Karo\Inbox\TextEditorKenaikanPertekController@index')->name('karo.inbox.text-editor.kenaikan.index');
+                Route::post('/create', 'BackWeb\Karo\Inbox\TextEditorKenaikanPertekController@store')->name('karo.inbox.text-editor.kenaikan.store');
+            });
+
+            Route::prefix('/text-editor-lain')->group(function(){
+                Route::get('/{id}', 'BackWeb\Karo\Inbox\TextEditorLainPertekController@index')->name('karo.inbox.text-editor.lain.index');
+                Route::post('/create', 'BackWeb\Karo\Inbox\TextEditorLainPertekController@store')->name('karo.inbox.text-editor.lain.store');
+            });
+
+            Route::prefix('/text-editor-ns')->group(function(){
+                Route::get('/{id}', 'BackWeb\Karo\Inbox\TextEditorNSPertekController@index')->name('karo.inbox.text-editor.ns.index');
+                Route::post('/create', 'BackWeb\Karo\Inbox\TextEditorNSPertekController@store')->name('karo.inbox.text-editor.ns.store');
+            });
+
+            Route::prefix('/text-editor-pemberhentian')->group(function(){
+                Route::get('/{id}', 'BackWeb\Karo\Inbox\TextEditorPemberhentianPertekController@index')->name('karo.inbox.text-editor.pemberhentian.index');
+                Route::post('/create', 'BackWeb\Karo\Inbox\TextEditorPemberhentianPertekController@store')->name('karo.inbox.text-editor.pemberhentian.store');
+            });
         });
 
     });

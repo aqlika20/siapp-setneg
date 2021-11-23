@@ -9,7 +9,7 @@ class Unsur extends Model
     protected $table = 'unsurs';
 
     protected $fillable = [
-        'id', 'name'
+        'id', 'nama'
     ];
 
     protected $date = [

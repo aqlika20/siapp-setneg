@@ -66,7 +66,7 @@
                                         <td><div class="text-success">{{ Helper::convertDate($pengangkatan->created_at) }}</div></td>
                                         <td><span class="text-danger">{{ $countDateJFKU }}</span></td>
 										<td>
-											<a href="{{route('koor-pokja.inbox.jfku.verif', ['id' => $pengangkatan->id])}}" type="button" class="btn btn-primary btn-xs">
+											<a href="{{route('karo.inbox.text-editor.index', ['id' => $pengangkatan->id])}}" type="button" class="btn btn-primary btn-xs">
 												Detail
 											</a>
 										</td>
@@ -85,7 +85,7 @@
                                         <td><div class="text-success">{{ Helper::convertDate($struktural->created_at) }}</div></td>
                                         <td><span class="text-danger">{{ $countDateNS }}</span></td>
                                         <td>
-											<a href="{{route('koor-pokja.inbox.ns.verif', ['id' => $struktural->id])}}" type="button" class="btn btn-primary btn-xs">
+											<a href="{{route('karo.inbox.text-editor.ns.index', ['id' => $struktural->id])}}" type="button" class="btn btn-primary btn-xs">
 												Detail
 											</a>
 										</td>
@@ -104,7 +104,7 @@
                                         <td><div class="text-success">{{ Helper::convertDate($lainnya->created_at) }}</div></td>
                                         <td><span class="text-danger">{{ $countDateLainnya }}</span></td>
                                         <td>
-											<a href="{{route('koor-pokja.inbox.lainnya.verif', ['id' => $lainnya->id])}}" type="button" class="btn btn-primary btn-xs">
+											<a href="{{route('karo.inbox.text-editor.lain.index', ['id' => $lainnya->id])}}" type="button" class="btn btn-primary btn-xs">
 												Detail
 											</a>
 										</td>
@@ -123,7 +123,7 @@
                                         <td><div class="text-success">{{ Helper::convertDate($kenaikan->created_at) }}</div></td>
                                         <td><span class="text-danger">{{ $countDateKenaikan }}</span></td>
                                         <td>
-											<a href="{{route('koor-pokja.inbox.kenaikan_pangkat.verif', ['id' => $kenaikan->id])}}" type="button" class="btn btn-primary btn-xs">
+											<a href="{{route('karo.inbox.text-editor.kenaikan.index', ['id' => $kenaikan->id])}}" type="button" class="btn btn-primary btn-xs">
 												Detail
 											</a>
 										</td>
@@ -142,7 +142,7 @@
                                         <td><div class="text-success">{{ Helper::convertDate($pemberhentian->created_at) }}</div></td>
                                         <td><span class="text-danger">{{ $countDatePemberhentian }}</span></td>
                                         <td>
-											<a href="{{route('koor-pokja.inbox.pemberhentian.verif', ['id' => $pemberhentian->id])}}" type="button" class="btn btn-primary btn-xs">
+											<a href="{{route('karo.inbox.text-editor.pemberhentian.index', ['id' => $pemberhentian->id])}}" type="button" class="btn btn-primary btn-xs">
 												Detail
 											</a>	
 										</td>

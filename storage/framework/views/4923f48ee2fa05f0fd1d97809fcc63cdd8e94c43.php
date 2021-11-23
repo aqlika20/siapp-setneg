@@ -66,7 +66,7 @@
                                             <!--end::Input-->
                                             <!--begin::Input-->
                                             <div class="form-group row">
-                                                <label class="col-form-label text-right col-lg-3 col-sm-12">Pejabat yang Menandatangani</label>
+                                                <label class="col-form-label text-right col-lg-3 col-sm-12">Jabatan Yang Menandatangani</label>
                                                 <div class="col-lg-9 col-md-9 col-sm-12">
                                                     <div class="input-group">
                                                         <input type="text"class="form-control" id="req_jabatan_menandatangani" name="req_jabatan_menandatangani" value="<?php echo e(old('req_jabatan_menandatangani')); ?>" autocomplete="off" require/>
@@ -865,7 +865,7 @@
                                                 <button type="button" class="btn btn-light-primary font-weight-bolder text-uppercase px-9 py-4" data-wizard-type="action-prev">Sebelumnya</button>
                                             </div>
                                             <div>
-                                                <button type="submit" class="btn btn-warning font-weight-bolder text-uppercase px-9 py-4" data-wizard-type="action-submit">Kirim Usulan</button>
+                                                <button type="submit" class="btn btn-warning font-weight-bolder text-uppercase px-9 py-4" data-wizard-type="action-submit" onclick="return confirmation();">Kirim Usulan</button>
                                                 <button type="button" class="btn btn-primary font-weight-bolder text-uppercase px-9 py-4" data-wizard-type="action-next">Berikutnya</button>
                                             </div>
                                         </div>
@@ -1001,7 +1001,7 @@
                     req_no_surat_usulan: 'required',
                     req_jabatan_menandatangani: 'required',
                     req_file_data_usulan: {
-                        extenstion: "docx,doc,xlsx,xls,csv,jpg,png,jpeg,pdf"
+                        extenstion: "docx,doc,xlsx,xls,csv,pdf"
                     },
                     req_nip: 'required',
                     req_nama: 'required',
@@ -1013,15 +1013,15 @@
                     req_pangkat_gol: 'required',
                     req_tmt_gol: 'required',
                     req_file_data_asn: {
-                        extenstion: "docx,doc,xlsx,xls,csv,jpg,png,jpeg,pdf"
+                        extenstion: "docx,doc,xlsx,xls,csv,pdf"
                     },
                     req_jabatan_fungsional: 'required',
                     req_no_keppress_jabatan_fungsional: 'required',
                     req_file_data_jabatan_fungsional: {
-                        extenstion: "docx,doc,xlsx,xls,csv,jpg,png,jpeg,pdf"
+                        extenstion: "docx,doc,xlsx,xls,csv,pdf"
                     },
                     req_file_ba_pengambilan_sumpah_fungsional: {
-                        extenstion: "docx,doc,xlsx,xls,csv,jpg,png,jpeg,pdf"
+                        extenstion: "docx,doc,xlsx,xls,csv,pdf"
                     },
                     req_tmt_jabatan_fungsional: 'required',
                     req_unit_kerja_fungsional: 'required',
@@ -1031,7 +1031,7 @@
                     req_tmt_pemberhentian: 'required',
                     
                     req_file_data_pemberhentian: {
-                        extenstion: "docx,doc,xlsx,xls,csv,jpg,png,jpeg,pdf"
+                        extenstion: "docx,doc,xlsx,xls,csv,pdf"
                     },
                     req_tanggal_catatan: 'required',
                     req_catatan: 'required',

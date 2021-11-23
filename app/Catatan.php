@@ -9,7 +9,7 @@ class Catatan extends Model
     protected $table = 'notes';
 
     protected $fillable = [
-        'id', 'jfku_id', 'catatan', 'tanggal_catatan'
+        'id', 'id_usulan', 'id_layanan', 'id_pengirim', 'id_status', 'tanggal_catatan', 'catatan'
     ];
 
     protected $date = [

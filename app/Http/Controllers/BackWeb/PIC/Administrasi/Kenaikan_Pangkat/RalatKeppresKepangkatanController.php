@@ -56,6 +56,7 @@ class RalatKeppresKepangkatanController extends Controller
         $input = $request->all();
 
         $validator = Validator::make($input, [
+<<<<<<< HEAD
             'req_tanggal_surat_permohonan' => 'required',
             'req_no_surat_permohonan' => 'required',
             'req_jabatan_menandatangani' => 'required',
@@ -63,17 +64,50 @@ class RalatKeppresKepangkatanController extends Controller
             'req_file_surat_permohonan.*' => 'max:5000|mimes:jpg,png,jpeg,pdf',
             'req_file_dokumen_klarifikasi.*' => 'max:5000|mimes:jpg,png,jpeg,pdf',
             'req_file_fotokopi_sk_diperbaiki.*' => 'max:5000|mimes:jpg,png,jpeg,pdf'
+=======
+            'tanggal_surat_pengantar' => 'required',
+            'no_surat_pengantar' => 'required',
+
+            'no_keppres' => 'required',
+            'tanggal_keppres' => 'required',
+
+            'alasan_ralat' => 'required',
+            
+            'file_surat_pengantar.*' => 'required|max:5000|mimes:pdf',
+            'file_keppres.*' => 'required|max:5000|mimes:pdf',
+            'bukti_pendukung.*' => 'required|max:5000|mimes:pdf'
+>>>>>>> 7131514090e7cea5f5fe8852851cc65beaa47b35
         
         ]);
 
         if ($validator->fails()) {
-            return redirect()->back()->with(['error' => $validator->errors()])->withInput($input);
+                // dd($validator->messages()->getMessages());
+            foreach($validator->messages()->getMessages() as $messages) {
+                
+                $e_name = [];
+                // Go through each message for this field.
+                foreach($messages as $message) {
+                    $e_name = $message;
+                }
+                // dd($e_name);
+                return redirect()->back()->with(['error' => $e_name]);
+            }
         }
 
         $pengangkatans = KenaikanPangkat::create([
+<<<<<<< HEAD
             'tanggal_surat_permohonan' => $input['req_tanggal_surat_permohonan'],
             'no_surat_permohonan' => $input['req_no_surat_permohonan'],
             'pejabat_menandatangani' => $input['req_jabatan_menandatangani'],
+=======
+            'tanggal_surat_pengantar' => $input['tanggal_surat_pengantar'],
+            'no_surat_pengantar' => $input['no_surat_pengantar'],
+
+            'no_keppres' => $input['no_keppres'],
+            'tanggal_keppres' => $input['tanggal_keppres'],
+
+            'alasan_ralat' => $input['alasan_ralat'],
+>>>>>>> 7131514090e7cea5f5fe8852851cc65beaa47b35
 
             'id_pengirim' => $id_pengirim->nip,
             'jenis_layanan' => Helper::$ralat_keppres_kepangkatan,
@@ -81,9 +115,15 @@ class RalatKeppresKepangkatanController extends Controller
             
         ]);
 
+<<<<<<< HEAD
         if($request->has('req_file_surat_permohonan')){
             $files = [];
             foreach ($request->file('req_file_surat_permohonan') as $file) {
+=======
+        if($request->has('file_surat_pengantar')){
+            $files = [];
+            foreach ($request->file('file_surat_pengantar') as $file) {
+>>>>>>> 7131514090e7cea5f5fe8852851cc65beaa47b35
                 $filename = $file->getClientOriginalName();
                 Storage::putFileAs($this->data_surat_permohonan_folder, $file, $filename);
                 $files[] = $filename;
@@ -91,9 +131,15 @@ class RalatKeppresKepangkatanController extends Controller
             $pengangkatans->file_surat_permohonan = $files;
         }
 
+<<<<<<< HEAD
         if($request->has('req_file_dokumen_klarifikasi')){
             $files = [];
             foreach ($request->file('req_file_dokumen_klarifikasi') as $file) {
+=======
+        if($request->has('file_keppres')){
+            $files = [];
+            foreach ($request->file('file_keppres') as $file) {
+>>>>>>> 7131514090e7cea5f5fe8852851cc65beaa47b35
                 $filename = $file->getClientOriginalName();
                 Storage::putFileAs($this->data_dokumen_klarifikasi_folder, $file, $filename);
                 $files[] = $filename;
@@ -101,9 +147,15 @@ class RalatKeppresKepangkatanController extends Controller
             $pengangkatans->file_dokumen_klarifikasi = $files;
         }
 
+<<<<<<< HEAD
         if($request->has('req_file_fotokopi_sk_diperbaiki')){
             $files = [];
             foreach ($request->file('req_file_fotokopi_sk_diperbaiki') as $file) {
+=======
+        if($request->has('file_bukti_pendukung')){
+            $files = [];
+            foreach ($request->file('file_bukti_pendukung') as $file) {
+>>>>>>> 7131514090e7cea5f5fe8852851cc65beaa47b35
                 $filename = $file->getClientOriginalName();
                 Storage::putFileAs($this->data_file_fotokopi_sk_diperbaiki_folder, $file, $filename);
                 $files[] = $filename;

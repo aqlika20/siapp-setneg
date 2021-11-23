@@ -551,7 +551,7 @@
                                 <tbody>
                                 <?php $__currentLoopData = $pengangkatans; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $pengangkatan): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                     <tr>
-                                        <td><?php echo e($pengangkatan->tgl_surat_usulan); ?></td>
+                                        <td><?php echo e($pengangkatan->tanggal_surat_usulan); ?></td>
                                         <td><?php echo e($pengangkatan->no_surat_usulan); ?></td>
                                         <td><?php echo e($pengangkatan->instansi_pengusul); ?></td>
                                         <td><?php echo e(Helper::defineJenisLayananBy($pengangkatan->jenis_layanan)); ?></td>
