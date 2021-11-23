@@ -321,7 +321,7 @@
             return new_date;
         }
 
-        ('#hahaha').hide();
+        $('#hahaha').hide();
         $("#masa_jabatan_end").on('change.datetimepicker', function(e) {
             if (e.date == null) {
             $('#hahaha').hide();

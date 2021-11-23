@@ -315,14 +315,69 @@
             return new_date;
         }
 
+        $('#hahaha').hide();
+        $("#masa_jabatan_end").on('change.datetimepicker', function(e) {
+            if (e.date == null) {
+            $('#hahaha').hide();
+            } else {
+            $('#hahaha').show();
+            }
+        });
+        
+        $('#kurang_enam').hide();
+        $("#masa_jabatan_end").on('change.datetimepicker', function(e) {
+            if (e.date == null) {
+            $('#kurang_enam').hide();
+            } else {
+            $('#kurang_enam').show();
+            }
+        });
+
+        $("#tanggal_keppres").on('change.datetimepicker', function(e) {
+            var data = e.date.format('DD/MMM/YYYY');
+            document.getElementById("tmt").value = data;
+        });
 
 
-        $('#masa_jabatan_start').on('change.datetimepicker', function(e) {
+        $('#masa_jabatan_start, #masa_jabatan_end').on('change.datetimepicker', function(e) {
             if(e.date){
                 var min_date = renewDate('min', e.date);
                 applyTimePicker('min', '#masa_jabatan_end', min_date);
             }
+            var date_start = new Date(document.getElementById("masa_jabatan_start").value);
+            var date_start_day = date_start.getDate();
+            var date_start_month = date_start.getMonth();
+            var date_start_year = date_start.getFullYear();
+
+            var date_end = new Date(document.getElementById("masa_jabatan_end").value);
+            var date_end_day = date_end.getDate();
+            var date_end_month = date_end.getMonth();
+            var date_end_year = date_end.getFullYear();
+            
+            var calculated_date = 0;
+            if(date_end_month > date_start_month) 
+            {
+                calculated_date = date_end_year - date_start_year;
+            }
+            else
+            { 
+                calculated_date = date_end_year - date_start_year;
+            }
+
+
+            var out_value = calculated_date;
+            document.getElementById("masa").innerHTML = out_value + ' Tahun';
+            getdatadate(date_end);
+            
+
+
         });
+
+        function getdatadate(date){
+            date.setMonth(date.getMonth() - 6);
+            console.log('hahaha', date);
+            document.getElementById("enam_bulan").innerHTML =  moment(date).format("DD/MMM/YYYY") ;
+        }
 
         function confirmation(){
             if(confirm('are you sure?')){
