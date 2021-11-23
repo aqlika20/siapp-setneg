@@ -423,33 +423,33 @@ Route::group(['middleware' => ['auth', 'checkRole:2']], function() {
             });
 
             Route::prefix('/text-editor')->group(function(){
-                Route::get('/{id}', 'BackWeb\Koor_Pokja\TextEditorController@index')->name('koor-pokja.text-editor.index');
-                Route::post('/create', 'BackWeb\Koor_Pokja\TextEditorController@store')->name('koor-pokja.text-editor.store');
+                Route::get('/{id}', 'BackWeb\Koor_Pokja\Inbox\TextEditorController@index')->name('koor-pokja.text-editor.index');
+                Route::post('/create', 'BackWeb\Koor_Pokja\Inbox\TextEditorController@store')->name('koor-pokja.text-editor.store');
             });
             
             Route::prefix('/text-editor-jfku')->group(function(){
-                Route::get('/{id}', 'BackWeb\Koor_Pokja\TextEditorJFKUPertekController@index')->name('koor-pokja.text-editor.jfku.pertek.index');
-                Route::post('/create', 'BackWeb\Koor_Pokja\TextEditorJFKUPertekController@store')->name('koor-pokja.text-editor.jfku.pertek.store');
+                Route::get('/{id}', 'BackWeb\Koor_Pokja\Inbox\TextEditorJFKUPertekController@index')->name('koor-pokja.text-editor.jfku.pertek.index');
+                Route::post('/create', 'BackWeb\Koor_Pokja\Inbox\TextEditorJFKUPertekController@store')->name('koor-pokja.text-editor.jfku.pertek.store');
             });
 
             Route::prefix('/text-editor-kenaikan')->group(function(){
-                Route::get('/{id}', 'BackWeb\Koor_Pokja\TextEditorKenaikanPertekController@index')->name('koor-pokja.text-editor.kenaikan.pertek.index');
-                Route::post('/create', 'BackWeb\Koor_Pokja\TextEditorKenaikanPertekController@store')->name('koor-pokja.text-editor.kenaikan.pertek.store');
+                Route::get('/{id}', 'BackWeb\Koor_Pokja\Inbox\TextEditorKenaikanPertekController@index')->name('koor-pokja.text-editor.kenaikan.pertek.index');
+                Route::post('/create', 'BackWeb\Koor_Pokja\Inbox\TextEditorKenaikanPertekController@store')->name('koor-pokja.text-editor.kenaikan.pertek.store');
             });
 
             Route::prefix('/text-editor-lain')->group(function(){
-                Route::get('/{id}', 'BackWeb\Koor_Pokja\TextEditorLainPertekController@index')->name('koor-pokja.text-editor.lain.pertek.index');
-                Route::post('/create', 'BackWeb\Koor_Pokja\TextEditorLainPertekController@store')->name('koor-pokja.text-editor.lain.pertek.store');
+                Route::get('/{id}', 'BackWeb\Koor_Pokja\Inbox\TextEditorLainPertekController@index')->name('koor-pokja.text-editor.lain.pertek.index');
+                Route::post('/create', 'BackWeb\Koor_Pokja\Inbox\TextEditorLainPertekController@store')->name('koor-pokja.text-editor.lain.pertek.store');
             });
 
             Route::prefix('/text-editor-ns')->group(function(){
-                Route::get('/{id}', 'BackWeb\Koor_Pokja\TextEditorNSPertekController@index')->name('koor-pokja.text-editor.ns.pertek.index');
-                Route::post('/create', 'BackWeb\Koor_Pokja\TextEditorNSPertekController@store')->name('koor-pokja.text-editor.ns.pertek.store');
+                Route::get('/{id}', 'BackWeb\Koor_Pokja\Inbox\TextEditorNSPertekController@index')->name('koor-pokja.text-editor.ns.pertek.index');
+                Route::post('/create', 'BackWeb\Koor_Pokja\Inbox\TextEditorNSPertekController@store')->name('koor-pokja.text-editor.ns.pertek.store');
             });
 
             Route::prefix('/text-editor-pemberhentian')->group(function(){
-                Route::get('/{id}', 'BackWeb\Koor_Pokja\TextEditorPemberhentianPertekController@index')->name('koor-pokja.text-editor.pemberhentian.pertek.index');
-                Route::post('/create', 'BackWeb\Koor_Pokja\TextEditorPemberhentianPertekController@store')->name('koor-pokja.text-editor.pemberhentian.pertek.store');
+                Route::get('/{id}', 'BackWeb\Koor_Pokja\Inbox\TextEditorPemberhentianPertekController@index')->name('koor-pokja.text-editor.pemberhentian.pertek.index');
+                Route::post('/create', 'BackWeb\Koor_Pokja\Inbox\TextEditorPemberhentianPertekController@store')->name('koor-pokja.text-editor.pemberhentian.pertek.store');
             });
     
         });

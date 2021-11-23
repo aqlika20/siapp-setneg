@@ -56,7 +56,7 @@
                                                 <!--end::Input-->
                                                 <!--begin::Input-->
                                                 <div class="form-group row">
-                                                    <label class="col-form-label col-lg-3 col-sm-12">Pejabat yang Menandatangani</label>
+                                                    <label class="col-form-label col-lg-3 col-sm-12">Jabatan Yang Menandatangani</label>
                                                     <div class="col-lg-9 col-md-9 col-sm-12">
                                                         <div class="input-group date">
                                                             <input type="text" class="form-control" value="<?php echo e($verifikasi->pejabat_menandatangani); ?>" disabled  />

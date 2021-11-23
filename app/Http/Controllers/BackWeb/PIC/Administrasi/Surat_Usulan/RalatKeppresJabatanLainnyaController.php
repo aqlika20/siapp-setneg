@@ -69,7 +69,7 @@ class RalatKeppresJabatanLainnyaController extends Controller
 
             'file_surat_pengantar.*' => 'required|max:5000|mimes:pdf',
             'file_keppres.*' => 'required|max:5000|mimes:pdf',
-            'file_bukti_pendukung.*' => 'required|max:5000|mimes:pdf'
+            'file_bukti_pendukung.*' => 'max:5000|mimes:pdf'
         ]);
 
         if ($validator->fails()) {

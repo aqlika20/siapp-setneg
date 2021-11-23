@@ -64,6 +64,7 @@ class DetailSuratPengembalianController extends Controller
 
         $surats = [];
         
+        dd($pengangkatans);
         if($pengangkatans->jenis_layanan == Helper::$pengangkatan_pejabat_FKU || $pengangkatans->jenis_layanan == Helper::$pemberhentian_pejabat_FKU || $pengangkatans->jenis_layanan == Helper::$perpindahan_pejabat_FKU || $pengangkatans->jenis_layanan == Helper::$ralat_keppres_jabatan_FKU || $pengangkatans->jenis_layanan == Helper::$pembatalan_keppres_jabatan_FKU)
         {
             

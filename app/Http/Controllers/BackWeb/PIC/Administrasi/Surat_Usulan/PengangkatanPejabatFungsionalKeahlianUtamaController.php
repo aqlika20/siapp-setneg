@@ -110,8 +110,8 @@ class PengangkatanPejabatFungsionalKeahlianUtamaController extends Controller
         //             'jabatan_lama' => 'required',
         //             'tmt_jabatan_lama' => 'required',
         //             'no_sk_jabatan_lama' => 'required',
-        //             'unit_kerja_baru' => 'required',
-        //             'unit_kerja_lama' => 'required',
+        //             'satuan_organisasi_baru' => 'required',
+        //             'satuan_organisasi_lama' => 'required',
         //             'jabatan_kompetensi' => 'required',
         //             'tanggal_catatan' => 'required',
         //             'catatan' => 'required',
@@ -167,11 +167,11 @@ class PengangkatanPejabatFungsionalKeahlianUtamaController extends Controller
                     'jabatan_lama' => 'required',
                     'no_sk_jabatan_lama' => 'required',
                     'tmt_jabatan_lama' => 'required',
-                    'unit_kerja_lama' => 'required',
+                    'satuan_organisasi_lama' => 'required',
                     'file_jabatan_lama.*' => 'required|max:5000|mimes:pdf',
 
                     'jabatan_baru' => 'required',
-                    'unit_kerja_baru' => 'required',
+                    'satuan_organisasi_baru' => 'required',
 
                     'jabatan_kompetensi' => 'required',
                     'no_sertifikat' => 'required',
@@ -231,10 +231,10 @@ class PengangkatanPejabatFungsionalKeahlianUtamaController extends Controller
             'jabatan_lama' => $input['jabatan_lama'],
             'no_sk_jabatan_lama' => $input['no_sk_jabatan_lama'],
             'tmt_jabatan_lama' => $input['tmt_jabatan_lama'],
-            'unit_kerja_lama' => $input['unit_kerja_lama'],
+            'satuan_organisasi_lama' => $input['satuan_organisasi_lama'],
 
             'jabatan_baru' => $input['jabatan_baru'],
-            'unit_kerja_baru' => $input['unit_kerja_baru'],
+            'satuan_organisasi_baru' => $input['satuan_organisasi_baru'],
 
             'jabatan_data_kompetensi' => $input['jabatan_kompetensi'],
             'nomor_sertifikat' => $input['no_sertifikat'],

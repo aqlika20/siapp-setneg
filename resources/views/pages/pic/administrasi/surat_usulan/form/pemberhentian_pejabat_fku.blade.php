@@ -72,7 +72,7 @@
                                             <!--end::Input-->
                                             <!--begin::Input-->
                                             <div class="form-group row">
-                                                <label class="col-form-label col-lg-3 col-sm-12">Pejabat yang Menandatangani</label>
+                                                <label class="col-form-label col-lg-3 col-sm-12">Jabatan Yang Menandatangani</label>
                                                 <div class="col-lg-9 col-md-9 col-sm-12">
                                                     <div class="input-group">
                                                         <input type="text" class="form-control" id="pejabat_menandatangani" name="pejabat_menandatangani" value="{{old('pejabat_menandatangani')}}" autocomplete="off" require/>
@@ -132,11 +132,12 @@
                                             <!--begin::Input-->
                                             <div class="form-group row">
                                                 <label class="col-form-label col-lg-3 col-sm-12">NIP</label>
-                                                <div class="col-lg-9 col-md-9 col-sm-12">
+                                                <div class="col-lg-5 col-md-9 col-sm-12">
                                                     <div class="input-group date">
                                                         <input type="number" pattern="[0-9]+([\.,][0-9]+)?" class="form-control" id="nip" name="nip" value="{{old('nip')}}" autocomplete="off" require/>
                                                     </div>
                                                 </div>
+                                                <button id="btn-bkn" class="btn btn-light-primary font-weight-bold">Tarik Data BKN</button>
                                             </div>
                                             <!--end::Input-->
                                             <!--begin::Input-->
@@ -382,10 +383,10 @@
                                                 </div>
                                             </div>
                                             <div class="form-group row">
-                                                <label class="col-form-label col-lg-3 col-sm-12">Unit Kerja</label>
+                                                <label class="col-form-label col-lg-3 col-sm-12">Satuan Organisasi</label>
                                                 <div class="col-lg-9 col-md-9 col-sm-12">
                                                     <div class="input-group date">
-                                                        <input type="text" class="form-control" id="unit_kerja_fungsional" name="unit_kerja_fungsional" value="{{old('unit_kerja_fungsional')}}" autocomplete="off" require/>
+                                                        <input type="text" class="form-control" id="satuan_organisasi" name="satuan_organisasi" value="{{old('satuan_organisasi')}}" autocomplete="off" require/>
                                                     </div>
                                                 </div>
                                             </div>
@@ -394,7 +395,7 @@
                                         
                                         <!--begin: Wizard Step 4-->
                                         <div class="pb-6" style="margin-left: 50px; margin-right: 50px;" data-wizard-type="step-content">
-                                            <h4 class="mb-10 font-weight-bold text-dark">Pangkat Terakhir</h4>
+                                            <h4 class="mb-10 font-weight-bold text-dark">Data Pangkat</h4>
                                             <div class="form-group row">
                                                 <label class="col-form-label col-lg-3 col-sm-12">Nomor SK Pangkat</label>
                                                 <div class="col-lg-9 col-md-9 col-sm-12">
@@ -476,7 +477,7 @@
                                                 </div>
                                             </div>
                                             <div  id="otherFieldDiv">
-                                                <h4 class="mb-10 font-weight-bold text-dark">Data PAK Terakhir</h4>
+                                                <h4 class="mb-10 font-weight-bold text-dark">Data Dokumen Penetapan Angka Kredit (PAK) Terakhir</h4>
                                                 <!--begin::Input-->
                                                 <div class="form-group row">
                                                     <label class="col-form-label col-lg-3 col-sm-12">Nomor PAK</label>
@@ -829,7 +830,7 @@
             <!--end: Wizard-->
         </div>
     </div>
-				
+    <input type="hidden" id="url-api-fetch-data-bkn" name="url-api-fetch-data-bkn" value="{{ route('api.bkn.fetch-data') }}"/>
 @endsection
 
 {{-- Styles Section --}}
@@ -979,7 +980,7 @@
                         extenstion: "pdf"
                     },
                     tmt_jabatan_fungsional: 'required',
-                    unit_kerja_fungsional: 'required',
+                    satuan_organisasi: 'required',
 
                     no_sk_pangkat: 'required',
                     pangkat_gol: 'required',
@@ -1015,4 +1016,5 @@
     <script src="{{ asset('js/hide.js') }}"></script>
     <script src="{{ asset('js/pages/crud/file-upload/dropzonejs.js') }}"></script>
     <script src="{{ asset('js/pages/crud/ktdatatable/base/html-table.js') }}" type="text/javascript"></script>
+    <script src="{{ asset('js/pages/bkn-surat-usulan-pejabat-fku.js') }}"></script>
 @endsection

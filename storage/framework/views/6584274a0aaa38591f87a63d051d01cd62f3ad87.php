@@ -55,6 +55,7 @@
                                                             </span>
                                                         </div>
                                                     </div>
+                                                    <!-- <p id="maksimal_satu_tahun">ssss</p> -->
                                                 </div>
                                             </div>
                                             <!--end::Input-->
@@ -80,7 +81,7 @@
                                             <!--end::Input-->
                                             <!--begin::Input-->
                                             <div class="form-group row">
-                                                <label class="col-form-label col-lg-3 col-sm-12">Pejabat yang Menandatangani</label>
+                                                <label class="col-form-label col-lg-3 col-sm-12">Jabatan Yang Menandatangani</label>
                                                 <div class="col-lg-9 col-md-9 col-sm-12">
                                                     <div class="input-group">
                                                         <input type="text"class="form-control" id="pejabat_menandatangani" name="pejabat_menandatangani" value="<?php echo e(old('pejabat_menandatangani')); ?>" autocomplete="off" require/>
@@ -438,10 +439,10 @@
                                                 </div>
                                             </div>
                                             <div class="form-group row">
-                                                <label class="col-form-label col-lg-3 col-sm-12">Unit Kerja</label>
+                                                <label class="col-form-label col-lg-3 col-sm-12">Satuan Organisasi Lama</label>
                                                 <div class="col-lg-9 col-md-9 col-sm-12">
                                                     <div class="input-group date">
-                                                        <input type="text" class="form-control" id="unit_kerja_lama" name="unit_kerja_lama" value="<?php echo e(old('unit_kerja_lama')); ?>" autocomplete="off" require/>
+                                                        <input type="text" class="form-control" id="satuan_organisasi_lama" name="satuan_organisasi_lama" value="<?php echo e(old('satuan_organisasi_lama')); ?>" autocomplete="off" require/>
                                                     </div>
                                                 </div>
                                             </div>
@@ -504,10 +505,10 @@
                                                 </div>
                                             </div>
                                             <div class="form-group row">
-                                                <label class="col-form-label col-lg-3 col-sm-12">Unit Kerja</label>
+                                                <label class="col-form-label col-lg-3 col-sm-12">Satuan Organisasi Baru</label>
                                                 <div class="col-lg-9 col-md-9 col-sm-12">
                                                     <div class="input-group date">
-                                                        <input type="text" class="form-control" id="unit_kerja_baru" name="unit_kerja_baru" value="<?php echo e(old('unit_kerja_baru')); ?>" autocomplete="off" require/>
+                                                        <input type="text" class="form-control" id="satuan_organisasi_baru" name="satuan_organisasi_baru" value="<?php echo e(old('satuan_organisasi_baru')); ?>" autocomplete="off" require/>
                                                     </div>
                                                 </div>
                                             </div>
@@ -538,7 +539,7 @@
                                             </div>
 
                                             <div class="form-group row">
-                                                <label class="col-form-label col-lg-3 col-sm-12">Tgl.Sertifikat/Surat</label>
+                                                <label class="col-form-label col-lg-3 col-sm-12">Tgl.Sertifikat/Surat Kompetensi</label>
                                                 <div class="col-lg-5 col-md-9 col-sm-12">
                                                     <div class="input-group date">
                                                         <input type="text" class="form-control datetimepicker-input my-datepicker" id="tanggal_sertifikat" name="tanggal_sertifikat" data-toggle="datetimepicker" data-target="#tanggal_sertifikat" placeholder="Pilih Tanggal" value="<?php echo e(old('tanggal_sertifikat')); ?>" autocomplete="off" require/>
@@ -597,7 +598,7 @@
 
                                         <!--begin: Wizard Step 6-->
                                         <div class="pb-6" style="margin-left: 50px; margin-right: 50px;" data-wizard-type="step-content">
-                                            <h4 class="mb-10 font-weight-bold text-dark">Pangkat Terakhir</h4>
+                                            <h4 class="mb-10 font-weight-bold text-dark">Data Pangkat</h4>
 
                                             <div class="form-group row">
                                                 <label class="col-form-label col-lg-3 col-sm-12">Nomor SK Pangkat</label>
@@ -682,7 +683,7 @@
                                             </div>
 
                                             <div  id="otherFieldDiv">
-                                                <h4 class="mb-10 font-weight-bold text-dark">Data PAK</h4>
+                                                <h4 class="mb-10 font-weight-bold text-dark">Data Dokumen Penetapan Angka Kredit (PAK)</h4>
                                                 <!--begin::Input-->
                                                 <div class="form-group row">
                                                     <label class="col-form-label col-lg-3 col-sm-12">Nomor PAK</label>
@@ -1114,6 +1115,37 @@
 
             })
         }
+
+        $('#tanggal_surat_usulan').on('change.datetimepicker', function(e) {
+            // var input_date = e.data;
+            var input_date = new Date(document.getElementById("tanggal_surat_usulan").value);
+            var input_date_day = input_date.getDate();
+            var input_date_month = input_date.getMonth();
+            var input_date_year = input_date.getFullYear();
+            
+            var today = new Date();
+            var today_day = today.getDate();
+            var today_month = today.getMonth();
+            var today_year = today.getFullYear();
+
+            var calculated_date = 0;
+
+            var td = dateFromDay(today_year, input_date_day);
+            var ip = dateFromDay(input_date_year);
+            consol.log("haha", td);
+            calculated_date = td - ip;
+            
+            if(calculated_date >= 365){
+                document.getElementById("maksimal_satu_tahun").innerHTML = 'gagal';
+            } else {
+                document.getElementById("maksimal_satu_tahun").innerHTML = 'lulus';
+            }
+            
+            
+
+
+        });
+
         $('#otherFieldDiv').hide();
 
         
@@ -1201,13 +1233,13 @@
                     jabatan_lama: 'required',
                     no_sk_jabatan_lama: 'required',
                     tmt_jabatan_lama: 'required',
-                    unit_kerja_lama: 'required',
+                    satuan_organisasi_lama: 'required',
                     file_data_jabatan_lama: {
                         extenstion: "pdf"
                     },
 
                     jabatan_baru: 'required',
-                    unit_kerja_baru: 'required',
+                    satuan_organisasi_baru: 'required',
 
                     jabatan_kompetensi: 'required',
                     no_sertifikat: 'required',

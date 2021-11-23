@@ -119,7 +119,7 @@
                                             <!--begin::Input-->
                                             <div class="form-group row">
                                                 <label class="col-form-label col-lg-3 col-sm-12">Unsur</label>
-                                                <div class="col-lg-9 col-md-9 col-sm-12">
+                                                <div class="col-lg-3 col-md-9 col-sm-12">
                                                     <select class="form-control select2" style="width: 230px;" id="unsur" name="unsur">
                                                         <option value="">Choose</option>
                                                         <?php $__currentLoopData = $unsurs; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $unsur): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
@@ -134,6 +134,26 @@
                                                             <option value="3">Golongan 3</option>
                                                         </select>
                                                     </div> -->
+                                                </div>
+                                                <div class="col-lg-3 col-md-9 col-sm-12" id="unsur_non">
+                                                    <select class="form-control select2" style="width: 230px;" id="unsur_non_pemerintah" name="unsur_non_pemerintah">
+                                                        <option value="">Choose</option>
+                                                        <?php $__currentLoopData = $unsur_nons; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $unsur_non): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                                            <option value="<?php echo e($unsur_non->id); ?>" <?php echo e(old('unsur_non') == $unsur_non->id ? 'selected' : ''); ?>><?php echo e($unsur_non->nama); ?></option>
+                                                        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                                                        <option value="0" <?php echo e(old('unsur_non') ? 'selected' : ''); ?>>Lainnya</option>
+                                                    </select>
+                                                </div>
+                                                
+                                            </div>
+                                            <!--end::Input-->
+                                            <!--begin::Input-->
+                                            <div class="form-group row" style="margin-left: 25%;" id="tambah_unsur">
+                                                <label class="col-form-label col-lg-3 col-sm-12">Tambah Unsur Non Pemerintah</label>
+                                                <div class="col-lg-3 col-md-9 col-sm-12">
+                                                    <div class="input-group date">
+                                                        <input type="text" class="form-control" id="tambah_unsur_non_pemerintah" name="tambah_unsur_non_pemerintah" value="<?php echo e(old('tambah_unsur_non_pemerintah')); ?>" autocomplete="off" require/>
+                                                    </div>
                                                 </div>
                                             </div>
                                             <!--end::Input-->
@@ -333,6 +353,28 @@
         $('.select2').select2({
             placeholder: "Choose..."
         })
+
+        $('#unsur_non').hide();
+
+        $("#unsur").change(function() {
+            if ($(this).val() == "2") {
+            $('#unsur_non').show();
+            } else {
+            $('#unsur_non').hide();
+            }
+        });
+        $("#unsur").trigger("change");
+
+        $('#tambah_unsur').hide();
+
+        $("#unsur_non_pemerintah").change(function() {
+            if ($(this).val() == "0") {
+            $('#tambah_unsur').show();
+            } else {
+            $('#tambah_unsur').hide();
+            }
+        });
+        $("#tambah_unsur").trigger("change");
 
         function confirmation(){
             if(confirm('are you sure?')){

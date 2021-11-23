@@ -73,7 +73,7 @@ class PemberhentianPejabatNonStrukturalController extends Controller
            
             'file_surat_pengantar.*' => 'required|max:5000|mimes:pdf',
             'file_dhr.*' => 'required|max:5000|mimes:pdf',
-            'file_dukumen_lain_pengangkatan_ns.*' => 'required|max:5000|mimes:pdf'
+            'file_dukumen_lain_pengangkatan_ns.*' => 'max:5000|mimes:pdf'
         
         ]);
 

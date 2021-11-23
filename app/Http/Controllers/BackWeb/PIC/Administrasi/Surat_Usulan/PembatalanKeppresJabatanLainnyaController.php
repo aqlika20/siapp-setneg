@@ -67,8 +67,8 @@ class PembatalanKeppresJabatanLainnyaController extends Controller
             'tanggal_pelantikan' => 'required',
             'yang_melantik' => 'required',
 
-            'file_ba_pelantikan.*' => 'required|max:5000|mimes:pdf',
-            'file_sumpah_jabatan.*' => 'required|max:5000|mimes:pdf'
+            'file_ba_pelantikan.*' => 'max:5000|mimes:pdf',
+            'file_sumpah_jabatan.*' => 'max:5000|mimes:pdf'
         ]);
 
         if ($validator->fails()) {

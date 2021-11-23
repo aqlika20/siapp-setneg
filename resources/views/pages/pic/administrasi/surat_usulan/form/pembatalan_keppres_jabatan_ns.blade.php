@@ -52,7 +52,7 @@
                                                 <label class="col-form-label col-lg-3 col-sm-12">Tanggal Keppres</label>
                                                 <div class="col-lg-5 col-md-9 col-sm-12">
                                                     <div class="input-group date">
-                                                        <input type="text" class="form-control datetimepicker-input my-datepicker" id="tanggal_keppres" name="tanggal_keppres" data-toggle="datetimepicker" data-target="#tanggal_keppres" placeholder="Pilih Tanggal" value="{{old('tanggal_keppres')}}" require/>
+                                                        <input type="text" class="form-control datetimepicker-input my-datepicker" id="tanggal_keppres" name="tanggal_keppres" data-toggle="datetimepicker" data-target="#tanggal_keppres" placeholder="Pilih Tanggal" value="{{old('tanggal_keppres')}}" autocomplete="off" require/>
                                                         <div class="input-group-append">
                                                             <span class="input-group-text">
                                                                 <i class="la la-calendar"></i>
@@ -65,10 +65,10 @@
 
                                             <!--begin::Input-->
                                             <div class="form-group row">
-                                                <label class="col-form-label col-lg-3 col-sm-12">Masa Jabatan</label>
+                                                <label class="col-form-label col-lg-3 col-sm-12">Periode</label>
                                                 <div class="col-lg-4 col-md-9 col-sm-12">
                                                     <div class="input-group date">
-                                                        <input type="text" class="form-control datetimepicker-input my-datepicker" name="masa_jabatan_start" data-toggle="datetimepicker" data-target="#masa_jabatan_start" placeholder="Select Date First" id="masa_jabatan_start" value="{{ old('masa_jabatan_start') }}"/>
+                                                        <input type="text" class="form-control datetimepicker-input my-datepicker" name="masa_jabatan_start" onkeyup="calculate_date()" data-toggle="datetimepicker" data-target="#masa_jabatan_start" placeholder="Select Date First" id="masa_jabatan_start" value="{{ old('masa_jabatan_start') }}"/>
                                                         <div class="input-group-append">
                                                             <span class="input-group-text">
                                                                 <i class="la la-calendar"></i>
@@ -92,6 +92,15 @@
                                                 </div>
                                             </div>
                                             <!--end::Input-->
+
+                                            <div class="form-group row" id="hahaha">
+                                                <label class="col-form-label col-lg-3 col-sm-12">Masa Jabatan</label>
+                                                <div class="col-lg-9 col-md-9 col-sm-12">
+                                                    <div class="col-form-label col-lg-3 col-sm-12">
+                                                        <p id="masa"></p>
+                                                    </div>
+                                                </div>
+                                            </div>
                                             
                                         </div>
                                         <!--end: Wizard Step 1-->
@@ -104,6 +113,14 @@
                                                 <div class="col-lg-9 col-md-9 col-sm-12">
                                                     <div class="input-group date">
                                                         <input type="text" class="form-control" id="tmt" name="tmt" value="{{old('tmt')}}" autocomplete="off" require/>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="form-group row" id="kurang_enam">
+                                                <label class="col-form-label col-lg-3 col-sm-12">6 Bulan Sebelum Berakhir Masa Jabatan</label>
+                                                <div class="col-lg-9 col-md-9 col-sm-12">
+                                                    <div class="col-form-label col-lg-3 col-sm-12">
+                                                        <p id="enam_bulan"></p>
                                                     </div>
                                                 </div>
                                             </div>
@@ -269,7 +286,7 @@
     <script>
         $('.my-datepicker').datetimepicker({
             useCurrent:false,
-            format: 'DD-MMM-YYYY'
+            format: 'DD/MMM/YYYY'
         })
 
         $('.my-datepicker').keydown(function(e){
@@ -279,6 +296,7 @@
         $('.select2').select2({
             placeholder: "Choose..."
         })
+
 
         function applyTimePicker(type, id, date){
             switch(type){
@@ -305,14 +323,69 @@
             return new_date;
         }
 
+        $('#hahaha').hide();
+        $("#masa_jabatan_end").on('change.datetimepicker', function(e) {
+            if (e.date == null) {
+            $('#hahaha').hide();
+            } else {
+            $('#hahaha').show();
+            }
+        });
+        
+        $('#kurang_enam').hide();
+        $("#masa_jabatan_end").on('change.datetimepicker', function(e) {
+            if (e.date == null) {
+            $('#kurang_enam').hide();
+            } else {
+            $('#kurang_enam').show();
+            }
+        });
+
+        $("#tanggal_keppres").on('change.datetimepicker', function(e) {
+            var data = e.date.format('DD/MMM/YYYY');
+            document.getElementById("tmt").value = data;
+        });
 
 
-        $('#masa_jabatan_start').on('change.datetimepicker', function(e) {
+        $('#masa_jabatan_start, #masa_jabatan_end').on('change.datetimepicker', function(e) {
             if(e.date){
                 var min_date = renewDate('min', e.date);
                 applyTimePicker('min', '#masa_jabatan_end', min_date);
             }
+            var date_start = new Date(document.getElementById("masa_jabatan_start").value);
+            var date_start_day = date_start.getDate();
+            var date_start_month = date_start.getMonth();
+            var date_start_year = date_start.getFullYear();
+
+            var date_end = new Date(document.getElementById("masa_jabatan_end").value);
+            var date_end_day = date_end.getDate();
+            var date_end_month = date_end.getMonth();
+            var date_end_year = date_end.getFullYear();
+            
+            var calculated_date = 0;
+            if(date_end_month > date_start_month) 
+            {
+                calculated_date = date_end_year - date_start_year;
+            }
+            else
+            { 
+                calculated_date = date_end_year - date_start_year;
+            }
+
+
+            var out_value = calculated_date;
+            document.getElementById("masa").innerHTML = out_value + ' Tahun';
+            getdatadate(date_end);
+            
+
+
         });
+
+        function getdatadate(date){
+            date.setMonth(date.getMonth() - 6);
+            console.log('hahaha', date);
+            document.getElementById("enam_bulan").innerHTML =  moment(date).format("DD/MMM/YYYY") ;
+        }
 
         function confirmation(){
             if(confirm('are you sure?')){

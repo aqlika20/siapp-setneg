@@ -103,7 +103,7 @@ class PemberhentianPejabatFungsionalKeahlianUtamaController extends Controller
             'jabatan_fungsional' => 'required',
             'no_keppress_jabatan_fungsional' => 'required',
             'tmt_jabatan_fungsional' => 'required',
-            'unit_kerja_fungsional' => 'required',
+            'satuan_organisasi_fungsional' => 'required',
             'file_data_pak.*' => 'required|max:5000|mimes:pdf',
             
             'alasan_pemberhentian' => 'required',
@@ -149,7 +149,7 @@ class PemberhentianPejabatFungsionalKeahlianUtamaController extends Controller
             'jabatan_fungsional' => $input['jabatan_fungsional'],
             'no_keppress_jabatan_fungsional' => $input['no_keppress_jabatan_fungsional'],
             'tmt_jabatan_fungsional' => $input['tmt_jabatan_fungsional'],
-            'unit_kerja_fungsional' => $input['unit_kerja_fungsional'],
+            'satuan_organisasi_fungsional' => $input['satuan_organisasi_fungsional'],
 
             'no_sk_pangkat' => $input['no_sk_pangkat'],
             'pangkat_gol' => $input['pangkat_gol'],

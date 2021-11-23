@@ -376,7 +376,7 @@ class Helper {
         $pertek_bkns = Bkn::All();
         foreach($pertek_bkns as $pertek)
         {
-            if($pertek->nip == $nip){
+            if($pertek->nip != $nip){
                 $status = "Pertek Tersedia";
             } else {
                 $status = "Pertek Belum Tersedia";

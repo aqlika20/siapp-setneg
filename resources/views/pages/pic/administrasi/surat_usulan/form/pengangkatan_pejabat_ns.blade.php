@@ -38,6 +38,14 @@
                                             <h4 class="mb-10 font-weight-bold text-dark">Data Surat</h4>
                                             <!--begin::Input-->
                                             <div class="form-group row">
+                                                <label class="col-form-label col-lg-3 col-sm-12">No. Surat Pengantar</label>
+                                                <div class="col-lg-9 col-md-9 col-sm-12">
+                                                    <div class="input-group">
+                                                        <input type="text" class="form-control" id="no_surat_pengantar" name="no_surat_pengantar" value="{{old('no_surat_pengantar')}}" autocomplete="off" require/>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="form-group row">
                                                 <label class="col-form-label col-lg-3 col-sm-12">Tanggal Surat Pengantar</label>
                                                 <div class="col-lg-5 col-md-9 col-sm-12">
                                                     <div class="input-group date">
@@ -47,14 +55,6 @@
                                                                 <i class="la la-calendar"></i>
                                                             </span>
                                                         </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="form-group row">
-                                                <label class="col-form-label col-lg-3 col-sm-12">No. Surat Pengantar</label>
-                                                <div class="col-lg-9 col-md-9 col-sm-12">
-                                                    <div class="input-group">
-                                                        <input type="text" class="form-control" id="no_surat_pengantar" name="no_surat_pengantar" value="{{old('no_surat_pengantar')}}" autocomplete="off" require/>
                                                     </div>
                                                 </div>
                                             </div>
@@ -116,10 +116,11 @@
                                                 </div>
                                             </div>
                                             <!--end::Input-->
+                                            
                                             <!--begin::Input-->
                                             <div class="form-group row">
                                                 <label class="col-form-label col-lg-3 col-sm-12">Unsur</label>
-                                                <div class="col-lg-9 col-md-9 col-sm-12">
+                                                <div class="col-lg-3 col-md-9 col-sm-12">
                                                     <select class="form-control select2" style="width: 230px;" id="unsur" name="unsur">
                                                         <option value="">Choose</option>
                                                         @foreach ($unsurs as $unsur)
@@ -135,9 +136,28 @@
                                                         </select>
                                                     </div> -->
                                                 </div>
+                                                <div class="col-lg-3 col-md-9 col-sm-12" id="unsur_non">
+                                                    <select class="form-control select2" style="width: 230px;" id="unsur_non_pemerintah" name="unsur_non_pemerintah">
+                                                        <option value="">Choose</option>
+                                                        @foreach ($unsur_nons as $unsur_non)
+                                                            <option value="{{$unsur_non->id}}" {{ old('unsur_non') == $unsur_non->id ? 'selected' : '' }}>{{$unsur_non->nama}}</option>
+                                                        @endforeach
+                                                        <option value="0" {{ old('unsur_non') ? 'selected' : '' }}>Lainnya</option>
+                                                    </select>
+                                                </div>
+                                                
                                             </div>
                                             <!--end::Input-->
                                             <!--begin::Input-->
+                                            <div class="form-group row" style="margin-left: 25%;" id="tambah_unsur">
+                                                <label class="col-form-label col-lg-3 col-sm-12">Tambah Unsur Non Pemerintah</label>
+                                                <div class="col-lg-3 col-md-9 col-sm-12">
+                                                    <div class="input-group date">
+                                                        <input type="text" class="form-control" id="tambah_unsur_non_pemerintah" name="tambah_unsur_non_pemerintah" value="{{old('tambah_unsur_non_pemerintah')}}" autocomplete="off" require/>
+                                                    </div>
+                                                </div>
+                                            </div>
+
                                             <div class="form-group row">
                                                 <label class="col-form-label col-lg-3 col-sm-12">NIP</label>
                                                 <div class="col-lg-9 col-md-9 col-sm-12">
@@ -159,21 +179,6 @@
                                             <!--end::Input-->
                                             <!--begin::Input-->
                                             <div class="form-group row">
-                                                <label class="col-form-label col-lg-3 col-sm-12">Tanggal Keppres</label>
-                                                <div class="col-lg-5 col-md-9 col-sm-12">
-                                                    <div class="input-group date">
-                                                        <input type="text" class="form-control datetimepicker-input my-datepicker" id="tanggal_keppres" name="tanggal_keppres" data-toggle="datetimepicker" data-target="#tanggal_keppres" placeholder="Pilih Tanggal" value="{{old('tanggal_keppres')}}" require/>
-                                                        <div class="input-group-append">
-                                                            <span class="input-group-text">
-                                                                <i class="la la-calendar"></i>
-                                                            </span>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <!--end::Input-->
-                                            <!--begin::Input-->
-                                            <div class="form-group row">
                                                 <label class="col-form-label col-lg-3 col-sm-12">Instansi</label>
                                                 <div class="col-lg-9 col-md-9 col-sm-12">
                                                     <div class="input-group date">
@@ -184,7 +189,7 @@
                                             <!--end::Input-->
                                             <!--begin::Input-->
                                             <div class="form-group row">
-                                                <label class="col-form-label col-lg-3 col-sm-12">Jabatan Yang Akan di Angkat</label>
+                                                <label class="col-form-label col-lg-3 col-sm-12">Jabatan Yang Akan Diangkat / Diberhentikan</label>
                                                 <div class="col-lg-9 col-md-9 col-sm-12">
                                                     <select class="form-control select2" style="width: 230px;" id="jabatan" name="jabatan">
                                                         <option value="">Choose</option>
@@ -336,7 +341,7 @@
     <script>
         $('.my-datepicker').datetimepicker({
             useCurrent:false,
-            format: 'DD-MMM-YYYY'
+            format: 'DD/MMM/YYYY'
         })
 
         $('.my-datepicker').keydown(function(e){
@@ -346,6 +351,30 @@
         $('.select2').select2({
             placeholder: "Choose..."
         })
+
+        
+
+        $('#unsur_non').hide();
+
+        $("#unsur").change(function() {
+            if ($(this).val() == "2") {
+            $('#unsur_non').show();
+            } else {
+            $('#unsur_non').hide();
+            }
+        });
+        $("#unsur").trigger("change");
+
+        $('#tambah_unsur').hide();
+
+        $("#unsur_non_pemerintah").change(function() {
+            if ($(this).val() == "0") {
+            $('#tambah_unsur').show();
+            } else {
+            $('#tambah_unsur').hide();
+            }
+        });
+        $("#tambah_unsur").trigger("change");
 
         function confirmation(){
             if(confirm('are you sure?')){

@@ -56,7 +56,7 @@
                                                 <!--end::Input-->
                                                 <!--begin::Input-->
                                                 <div class="form-group row">
-                                                    <label class="col-form-label col-lg-3 col-sm-12">Pejabat yang Menandatangani</label>
+                                                    <label class="col-form-label col-lg-3 col-sm-12">Jabatan Yang Menandatangani</label>
                                                     <div class="col-lg-9 col-md-9 col-sm-12">
                                                         <div class="input-group date">
                                                             <input type="text" class="form-control" value="<?php echo e($verifikasi->pejabat_menandatangani); ?>" disabled  />
@@ -1772,7 +1772,7 @@
                                                                                                 <label class="col-form-label col-lg-3 col-sm-12">Tanggal Proses Penolakan</label>
                                                                                                 <div class="col-lg-5 col-md-9 col-sm-12">
                                                                                                     <div class="input-group date">
-                                                                                                        <input type="text" class="form-control datetimepicker-input my-datepicker" id="tanggal_prosess_penolakan" name="tanggal_prosess_penolakan" data-toggle="datetimepicker" data-target="#tanggal_prosess_penolakan" placeholder="Pilih Tanggal" value="<?php echo e(old('tanggal_prosess_penolakan')); ?>" require/>
+                                                                                                        <input type="text" class="form-control datetimepicker-input my-datepicker" id="tanggal_prosess_penolakan" name="tanggal_prosess_penolakan" autocomplete="off" data-toggle="datetimepicker" data-target="#tanggal_prosess_penolakan" placeholder="Pilih Tanggal" value="<?php echo e(old('tanggal_prosess_penolakan')); ?>" require/>
                                                                                                         <div class="input-group-append">
                                                                                                             <span class="input-group-text">
                                                                                                                 <i class="la la-calendar"></i>
@@ -1785,7 +1785,7 @@
                                                                                                 <label class="col-form-label text-right col-lg-3 col-sm-12">Alasan Penolakan</label>
                                                                                                 <div class="col-lg-9 col-md-9 col-sm-12">
                                                                                                     <div class="input-group ">
-                                                                                                        <textarea class="form-control" rows="3" id="alasan_penolakan" name="alasan_penolakan" value="<?php echo e(old('alasan_penolakan')); ?>"></textarea>
+                                                                                                        <textarea class="form-control" rows="3" id="alasan_penolakan" name="alasan_penolakan" autocomplete="off" value="<?php echo e(old('alasan_penolakan')); ?>"></textarea>
                                                                                                     </div>
                                                                                                 </div>
                                                                                             </div>

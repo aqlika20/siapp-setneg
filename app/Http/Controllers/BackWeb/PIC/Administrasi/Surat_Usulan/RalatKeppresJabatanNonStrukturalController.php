@@ -55,19 +55,19 @@ class RalatKeppresJabatanNonStrukturalController extends Controller
 
         $id_pengirim = UserManagement::find(Auth::id());
         $input = $request->all();
-
+if($input['unsur'] == 'pemerintah')
         $validator = Validator::make($input, [
             'tanggal_surat_pengantar' => 'required',
             'no_surat_pengantar' => 'required',
+            'file_surat_pengantar.*' => 'required|max:5000|mimes:pdf',
 
             'no_keppres' => 'required',
             'tanggal_keppres' => 'required',
 
             'alasan_ralat' => 'required',
 
-            'file_surat_pengantar.*' => 'required|max:5000|mimes:pdf',
             'file_keppres.*' => 'required|max:5000|mimes:pdf',
-            'file_bukti_pendukung.*' => 'required|max:5000|mimes:pdf'
+            'file_bukti_pendukung.*' => 'max:5000|mimes:pdf'
         
         ]);
 

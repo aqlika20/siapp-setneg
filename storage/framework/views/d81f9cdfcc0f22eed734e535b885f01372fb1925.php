@@ -63,7 +63,7 @@
                                             <!--end::Input-->
                                             <!--begin::Input-->
                                             <div class="form-group row">
-                                                <label class="col-form-label col-lg-3 col-sm-12">Pejabat yang Menandatangani</label>
+                                                <label class="col-form-label col-lg-3 col-sm-12">Jabatan Yang Menandatangani</label>
                                                 <div class="col-lg-9 col-md-9 col-sm-12">
                                                     <div class="input-group">
                                                         <input type="text"class="form-control" id="jabatan_menandatangani" name="jabatan_menandatangani" value="<?php echo e(old('jabatan_menandatangani')); ?>" autocomplete="off" require/>
@@ -138,6 +138,7 @@
                                                         <input type="text" class="form-control" id="nama" name="nama" value="<?php echo e(old('nama')); ?>" autocomplete="off" require />
                                                     </div>
                                                 </div>
+                                                <button id="btn-bkn" class="btn btn-light-primary font-weight-bold">Tarik Data BKN</button>
                                             </div>
                                             <!--end::Input-->
                                             <!--begin::Input-->
@@ -805,7 +806,8 @@
             <!--end: Wizard-->
         </div>
     </div>
-				
+		
+<input type="hidden" id="url-api-fetch-data-bkn" name="url-api-fetch-data-bkn" value="<?php echo e(route('api.bkn.fetch-data')); ?>"/>		
 <?php $__env->stopSection(); ?>
 
 
@@ -934,7 +936,7 @@
                     nip: 'required',
                     nama: 'required',
                     tempat_lahir: 'required',
-                    tanggal_lahir: 'required'
+                    tanggal_lahir: 'required',
                     pendidikan_terakhir: 'required',
                     instansi: 'required',
                     file_data_asn: {
@@ -984,5 +986,7 @@
     <script src="<?php echo e(asset('js/hide.js')); ?>"></script> 
     <script src="<?php echo e(asset('js/pages/crud/file-upload/dropzonejs.js')); ?>"></script>
     <script src="<?php echo e(asset('js/pages/crud/ktdatatable/base/html-table.js')); ?>" type="text/javascript"></script>
+    <script src="<?php echo e(asset('js/pages/bkn.js')); ?>"></script> 
 <?php $__env->stopSection(); ?>
+
 <?php echo $__env->make('layout.default', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH D:\Project\siapp\resources\views/pages/pic/administrasi/kenaikan_pangkat/form/pemberian_kenaikan_pangkat.blade.php ENDPATH**/ ?>

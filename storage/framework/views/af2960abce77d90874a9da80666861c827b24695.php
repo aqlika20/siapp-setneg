@@ -279,7 +279,7 @@
     <script>
         $('.my-datepicker').datetimepicker({
             useCurrent:false,
-            format: 'DD-MMM-YYYY'
+            format: 'DD/MMM/YYYY'
         })
 
         $('.my-datepicker').keydown(function(e){
