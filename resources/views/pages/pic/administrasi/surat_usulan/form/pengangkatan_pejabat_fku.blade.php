@@ -140,11 +140,12 @@
                                             <!--begin::Input-->
                                             <div class="form-group row">
                                                 <label class="col-form-label col-lg-3 col-sm-12">NIP</label>
-                                                <div class="col-lg-9 col-md-9 col-sm-12">
+                                                <div class="col-lg-5 col-md-9 col-sm-12">
                                                     <div class="input-group date">
                                                         <input type="number" class="form-control" id="nip" name="nip" value="{{old('nip')}}" autocomplete="off" require/>
                                                     </div>
                                                 </div>
+                                                <button id="btn-bkn" class="btn btn-light-primary font-weight-bold">Tarik Data BKN</button>
                                             </div>
                                             <!--end::Input-->
                                             <!--begin::Input-->
@@ -1049,7 +1050,8 @@
             <!--end: Wizard-->
         </div>
     </div>
-				
+
+<input type="hidden" id="url-api-fetch-data-bkn" name="url-api-fetch-data-bkn" value="{{ route('api.bkn.fetch-data') }}"/>
 @endsection
 
 {{-- Styles Section --}}
@@ -1178,7 +1180,7 @@
                     nip: 'required',
                     nama: 'required',
                     tempat_lahir: 'required',
-                    tanggal_lahir: 'required'
+                    tanggal_lahir: 'required',
                     pendidikan_terakhir: 'required',
                     instansi_induk: 'required',
                     instansi_pengusul: 'required',
@@ -1238,7 +1240,7 @@
                     },
                     file_skp_2_lainnya: {
                         extenstion: "pdf"
-                    }
+                    },
 
                     ket: 'required'
                 },
@@ -1253,4 +1255,5 @@
     <script src="{{ asset('js/hide.js') }}"></script> 
     <script src="{{ asset('js/pages/crud/file-upload/dropzonejs.js') }}"></script>
     <script src="{{ asset('js/pages/crud/ktdatatable/base/html-table.js') }}" type="text/javascript"></script>
+    <script src="{{ asset('js/pages/bkn-surat-usulan-pejabat-fku.js') }}"></script> 
 @endsection
