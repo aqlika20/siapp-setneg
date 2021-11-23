@@ -25,15 +25,16 @@ class PembatalanKeppresKenaikanPangkatController extends Controller
      * only declared here.
      */
     private $attachments_root_folder = "Kenaikan_Pangkat_Attachments/";
-    private $data_ba_pelantikan_folder;
-    private $data_sumpah_jabatan_folder;
+    private $data_surat_permohonan_folder;
+    private $data_keppres_dibatalkan_folder;
+    private $data_alasan_folder;
     
     public function __construct()
     {
         $this->curr_int_time = strtotime(Carbon::now());
         $this->middleware('auth');
-        $this->data_ba_pelantikan_folder = $this->attachments_root_folder . "data_ba_pelantikan/";
-        $this->data_sumpah_jabatan_folder = $this->attachments_root_folder . "data_sumpah_jabatan/";
+        $this->data_keppres_dibatalkan_folder = $this->attachments_root_folder . "data_keppres_dibatalkan/";
+        $this->data_alasan_folder = $this->attachments_root_folder . "data_alasan/";
         
     }
 
@@ -54,17 +55,12 @@ class PembatalanKeppresKenaikanPangkatController extends Controller
         $validator = Validator::make($input, [
             'req_no_keppres' => 'required',
             'req_tanggal_keppres' => 'required',
-            'req_masa_jabatan_start' => 'required',
-            'req_masa_jabatan_end' => 'required',
+            'req_alasan_pembatalan' => 'required',
 
-            'req_tmt' => 'required',
-            'req_hak_keuangan' => 'required',
-            'req_tanggal_pelantikan' => 'required',
-            'req_yang_melantik' => 'required',
+            'req_file_surat_permohonan.*' => 'max:5000|mimes:jpg,png,jpeg,pdf',
+            'req_file_keppres_dibatalkan.*' => 'max:5000|mimes:jpg,png,jpeg,pdf',
+            'req_file_alasan.*' => 'max:5000|mimes:jpg,png,jpeg,pdf'
 
-            'req_file_ba_pelantikan.*' => 'max:5000|mimes:jpg,png,jpeg,pdf',
-            'req_file_sumpah_jabatan.*' => 'max:5000|mimes:jpg,png,jpeg,pdf'
-        
         ]);
 
         if ($validator->fails()) {
@@ -74,13 +70,6 @@ class PembatalanKeppresKenaikanPangkatController extends Controller
         $pengangkatans = KenaikanPangkat::create([
             'no_keppres' => $input['req_no_keppres'],
             'tanggal_keppres' => $input['req_tanggal_keppres'],
-            'masa_jabatan_start' => $input['req_masa_jabatan_start'],
-            'masa_jabatan_end' => $input['req_masa_jabatan_end'],
-
-            'tmt' => $input['req_tmt'],
-            'hak_keuangan' => $input['req_hak_keuangan'],
-            'tanggal_pelantikan' => $input['req_tanggal_pelantikan'],
-            'yang_melantik' => $input['req_yang_melantik'],
 
             'id_pengirim' => $id_pengirim->nip,
             'jenis_layanan' => Helper::$pembatalan_keppres_kenaikan_pangkat,
@@ -88,24 +77,40 @@ class PembatalanKeppresKenaikanPangkatController extends Controller
             
         ]);
 
-        if($request->has('req_file_ba_pelantikan')){
-            $files = [];
-            foreach ($request->file('req_file_ba_pelantikan') as $file) {
-                $filename = $file->getClientOriginalName();
-                Storage::putFileAs($this->data_ba_pelantikan_folder, $file, $filename);
-                $files[] = $filename;
-            }
-            $pengangkatans->file_ba_pelantikan = $files;
+        if ($input['req_alasan_pembatalan'] == 0) {
+            $pengangkatans->alasan_pembatalan = $input['req_alasan_pembatalan_lainnya'];
+        } else {
+            $pengangkatans->alasan_pembatalan = $input['req_alasan_pembatalan'];
         }
 
-        if($request->has('req_file_sumpah_jabatan')){
+        if($request->has('req_file_surat_permohonan')){
             $files = [];
-            foreach ($request->file('req_file_sumpah_jabatan') as $file) {
+            foreach ($request->file('req_file_surat_permohonan') as $file) {
                 $filename = $file->getClientOriginalName();
-                Storage::putFileAs($this->data_sumpah_jabatan_folder, $file, $filename);
+                Storage::putFileAs($this->data_surat_permohonan_folder, $file, $filename);
                 $files[] = $filename;
             }
-            $pengangkatans->file_sumpah_jabatan = $files;
+            $pengangkatans->file_surat_permohonan = $files;
+        }
+
+        if($request->has('req_file_keppres_dibatalkan')){
+            $files = [];
+            foreach ($request->file('req_file_keppres_dibatalkan') as $file) {
+                $filename = $file->getClientOriginalName();
+                Storage::putFileAs($this->data_keppres_dibatalkan_folder, $file, $filename);
+                $files[] = $filename;
+            }
+            $pengangkatans->file_keppres_dibatalkan = $files;
+        }
+
+        if($request->has('req_file_alasan')){
+            $files = [];
+            foreach ($request->file('req_file_alasan') as $file) {
+                $filename = $file->getClientOriginalName();
+                Storage::putFileAs($this->data_alasan_folder, $file, $filename);
+                $files[] = $filename;
+            }
+            $pengangkatans->file_alasan = $files;
         }
 
         $pengangkatans->save();

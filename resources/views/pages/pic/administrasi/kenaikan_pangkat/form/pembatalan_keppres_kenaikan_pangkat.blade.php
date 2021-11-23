@@ -23,7 +23,6 @@
                             <!--begin: Wizard Nav-->
                             <div>
                                 <div data-wizard-type="step" data-wizard-state="current"></div>
-                                <div data-wizard-type="step"></div>																		
                             </div>
                             <!--end: Wizard Nav-->
                             <!--begin: Wizard Body-->
@@ -61,172 +60,64 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            <!--end::Input-->
 
-                                            <!--begin::Input-->
                                             <div class="form-group row">
-                                                <label class="col-form-label col-lg-3 col-sm-12">Masa Jabatan</label>
-                                                <div class="col-lg-4 col-md-9 col-sm-12">
-                                                    <div class="input-group date">
-                                                        <input type="text" class="form-control datetimepicker-input my-datepicker" name="req_masa_jabatan_start" data-toggle="datetimepicker" data-target="#req_masa_jabatan_start" placeholder="Select Date First" id="req_masa_jabatan_start" value="{{ old('req_masa_jabatan_start') }}"/>
-                                                        <div class="input-group-append">
-                                                            <span class="input-group-text">
-                                                                <i class="la la-calendar"></i>
-                                                            </span>
-                                                        </div>
-                                                    </div>
-                                                    <span class="form-text text-muted">Please input the date from start.</span>
-                                                </div>
-                                                <div>
-                                                    <label class="col-form-label">s/d.</label>
-                                                </div>
-                                                <div class="col-lg-4 col-md-9 col-sm-12">
-                                                    <div class="input-group date">
-                                                        <input type="text" class="form-control datetimepicker-input my-datepicker" name="req_masa_jabatan_end" data-toggle="datetimepicker" data-target="#req_masa_jabatan_end" placeholder="Select Date Last" id="req_masa_jabatan_end" value="{{ old('req_masa_jabatan_end') }}"/>
-                                                        <div class="input-group-append">
-                                                            <span class="input-group-text">
-                                                                <i class="la la-calendar"></i>
-                                                            </span>
-                                                        </div>
-                                                    </div>
+                                                <label class="col-form-label col-lg-3 col-sm-12">Alasan Pembatalan</label>
+                                                <div class="col-lg-9 col-md-9 col-sm-12">
+                                                    <select class="form-control select22" style="width: 230px;" id="req_alasan_pembatalan" name="req_alasan_pembatalan">
+                                                        <option value="">Choose</option>
+                                                        <option value="1">Meninggal Dunia Sebelum Periode Kenaikan Pangkat</option>
+                                                        <option value="2">Alasan Terkait Dengan Jabatan</option>
+                                                        <option value="0">Lainnya</option>
+                                                    </select>
                                                 </div>
                                             </div>
-                                            <!--end::Input-->
-                                            
-                                        </div>
-                                        <!--end: Wizard Step 1-->
 
-                                        <!--begin: Wizard Step 2-->
-                                        <div class="pb-6" style="margin-left: 50px; margin-right: 50px;" data-wizard-type="step-content">
-                                            <!--begin::Input-->
-                                            <div class="form-group row">
-                                                <label class="col-form-label col-lg-3 col-sm-12">TMT</label>
-                                                <div class="col-lg-9 col-md-9 col-sm-12">
-                                                    <div class="input-group date">
-                                                        <input type="text" class="form-control" id="req_tmt" name="req_tmt" value="{{old('req_tmt')}}" autocomplete="off" require/>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <!--end::Input-->
-                                            <!--begin::Input-->
-                                            <div class="form-group row">
-                                                <label class="col-form-label col-lg-3 col-sm-12">Hak keuangan dan Fasilitas</label>
-                                                <div class="col-lg-9 col-md-9 col-sm-12">
-                                                    <div class="input-group date">
-                                                        <input type="text" class="form-control" id="req_hak_keuangan" name="req_hak_keuangan" value="{{old('req_hak_keuangan')}}" autocomplete="off" require />
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <!--end::Input-->
-                                            <!--begin::Input-->
-                                            <div class="form-group row">
-                                                <label class="col-form-label col-lg-3 col-sm-12">Tanggal pelantikan</label>
-                                                <div class="col-lg-5 col-md-9 col-sm-12">
-                                                    <div class="input-group date">
-                                                        <input type="text" class="form-control datetimepicker-input my-datepicker" id="req_tanggal_pelantikan" name="req_tanggal_pelantikan" data-toggle="datetimepicker" data-target="#req_tanggal_pelantikan" placeholder="Pilih Tanggal" value="{{old('req_tanggal_pelantikan')}}" autocomplete="off" require/>
-                                                        <div class="input-group-append">
-                                                            <span class="input-group-text">
-                                                                <i class="la la-calendar"></i>
-                                                            </span>
+                                            <div  id="otherAlasanPembatalan">
+                                                <div class="form-group row">
+                                                    <label class="col-form-label col-lg-3 col-sm-12">Alasan Pembatalan(Lainnya)</label>
+                                                    <div class="col-lg-9 col-md-9 col-sm-12">
+                                                        <div class="input-group date">
+                                                            <input type="text" class="form-control" id="req_alasan_pembatalan_lainnya" name="req_alasan_pembatalan_lainnya" value="{{old('req_alasan_pembatalan_lainnya')}}" autocomplete="off" />
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
-                                            <!--end::Input-->
+
                                             <div class="form-group row">
-                                                <label class="col-form-label col-lg-3 col-sm-12">Yang Melantik</label>
-                                                <div class="col-lg-9 col-md-9 col-sm-12">
-                                                    <div class="input-group date">
-                                                        <input type="text" class="form-control" id="req_yang_melantik" name="req_yang_melantik" value="{{old('req_yang_melantik')}}" autocomplete="off" require />
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="form-group row">
-                                                <label class="col-lg-3 col-form-label">Upload BA Pelantikan</label>
+                                                <label class="col-lg-3 col-form-label">Upload Surat Permohonan</label>
                                                 <div class="col-lg-9">
-                                                    <input id="req_file_ba_pelantikan" name="req_file_ba_pelantikan[]" type="file" class="file" data-show-preview="false" multiple/>
-                                                    <!-- <div class="dropzone dropzone-multi" id="kt_dropzone_5">
-                                                        <div class="dropzone-panel mb-lg-0 mb-2">
-                                                            <a class="dropzone-select btn btn-light-primary font-weight-bold btn-sm">Attach files</a>
-                                                            <a class="dropzone-upload btn btn-light-primary font-weight-bold btn-sm">Upload All</a>
-                                                            <a class="dropzone-remove-all btn btn-light-primary font-weight-bold btn-sm">Remove All</a>
-                                                        </div>
-                                                        <div class="dropzone-items">
-                                                            <div class="dropzone-item" style="display:none">
-                                                                <div class="dropzone-file">
-                                                                    <div class="dropzone-filename" title="some_image_file_name.jpg">
-                                                                        <span data-dz-name="">some_image_file_name.jpg</span>
-                                                                        <strong>(<span data-dz-size="">340kb</span>)</strong>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="dropzone-progress">
-                                                                    <div class="progress">
-                                                                        <div class="progress-bar bg-primary" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" data-dz-uploadprogress=""></div>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="dropzone-toolbar">
-                                                                    <span class="dropzone-start">
-                                                                        <i class="flaticon2-arrow"></i>
-                                                                    </span>
-                                                                    <span class="dropzone-cancel" data-dz-remove="" style="display: none;">
-                                                                        <i class="flaticon2-cross"></i>
-                                                                    </span>
-                                                                    <span class="dropzone-delete" data-dz-remove="">
-                                                                        <i class="flaticon2-cross"></i>
-                                                                    </span>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div> -->
+                                                    <input id="req_file_surat_permohonan" name="req_file_surat_permohonan[]" type="file" class="file" data-show-preview="false" multiple/>
+                                                    
                                                     <span class="form-text text-muted">Max file size is 1MB and max number of files is 5.</span>
                                                 </div>
                                             </div>
+
                                             <div class="form-group row">
-                                                <label class="col-lg-3 col-form-label">Upload Sumpah Jabatan</label>
+                                                <label class="col-lg-3 col-form-label">Upload Keppres Yang Dibatalkan</label>
                                                 <div class="col-lg-9">
-                                                    <input id="req_file_sumpah_jabatan" name="req_file_sumpah_jabatan[]" type="file" class="file" data-show-preview="false" multiple/>
-                                                    <!-- <div class="dropzone dropzone-multi" id="kt_dropzone_5">
-                                                        <div class="dropzone-panel mb-lg-0 mb-2">
-                                                            <a class="dropzone-select btn btn-light-primary font-weight-bold btn-sm">Attach files</a>
-                                                            <a class="dropzone-upload btn btn-light-primary font-weight-bold btn-sm">Upload All</a>
-                                                            <a class="dropzone-remove-all btn btn-light-primary font-weight-bold btn-sm">Remove All</a>
-                                                        </div>
-                                                        <div class="dropzone-items">
-                                                            <div class="dropzone-item" style="display:none">
-                                                                <div class="dropzone-file">
-                                                                    <div class="dropzone-filename" title="some_image_file_name.jpg">
-                                                                        <span data-dz-name="">some_image_file_name.jpg</span>
-                                                                        <strong>(<span data-dz-size="">340kb</span>)</strong>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="dropzone-progress">
-                                                                    <div class="progress">
-                                                                        <div class="progress-bar bg-primary" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" data-dz-uploadprogress=""></div>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="dropzone-toolbar">
-                                                                    <span class="dropzone-start">
-                                                                        <i class="flaticon2-arrow"></i>
-                                                                    </span>
-                                                                    <span class="dropzone-cancel" data-dz-remove="" style="display: none;">
-                                                                        <i class="flaticon2-cross"></i>
-                                                                    </span>
-                                                                    <span class="dropzone-delete" data-dz-remove="">
-                                                                        <i class="flaticon2-cross"></i>
-                                                                    </span>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div> -->
+                                                    <input id="req_file_keppres_dibatalkan" name="req_file_keppres_dibatalkan[]" type="file" class="file" data-show-preview="false" multiple/>
+                                                    
                                                     <span class="form-text text-muted">Max file size is 1MB and max number of files is 5.</span>
                                                 </div>
                                             </div>
+
+                                            <div class="form-group row">
+                                                <label class="col-lg-3 col-form-label">Upload Akta Meninggal Dunia / Alasan Terkait Dengan Jabatan / Lainnya</label>
+                                                <div class="col-lg-9">
+                                                    <input id="req_file_alasan" name="req_file_alasan[]" type="file" class="file" data-show-preview="false" multiple/>
+                                                    
+                                                    <span class="form-text text-muted">Max file size is 1MB and max number of files is 5.</span>
+                                                </div>
+                                            </div>
+
+                                            <!--end::Input-->                                            
                                         </div>
-                                        <!--end: Wizard Step 2-->
+                                        <!--end: Wizard Step 1-->                                      
 
                                         <div class="d-flex justify-content-between mt-5 pt-10" style="margin-left: 50px; margin-right: 50px;">
                                             <div class="mr-2">
-                                                <button type="button" class="btn btn-light-primary font-weight-bolder text-uppercase px-9 py-4" data-wizard-type="action-prev">Sebelumnya</button>
+                                                
                                             </div>
                                             <div>
                                                 <button type="submit" class="btn btn-warning font-weight-bolder text-uppercase px-9 py-4" data-wizard-type="action-submit">Kirim Usulan</button>
@@ -303,6 +194,18 @@
 
             return new_date;
         }
+
+        $('#otherAlasanPembatalan').hide();
+
+        $("#req_alasan_pembatalan").change(function() {
+            if ($(this).val() == "0") {
+            $('#otherAlasanPembatalan').show();
+            } else {
+            $('#otherAlasanPembatalan').hide();
+            }
+        });
+        $("#otherAlasanPembatalan").trigger("change");
+
 
 
 

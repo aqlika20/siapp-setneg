@@ -147,7 +147,7 @@
                                                                             <!--end::Icon-->
                                                                             <!--begin::Title-->
                                                                             <div class="d-flex flex-column flex-grow-1 mr-2">
-                                                                                <a href="{{ route('pic.administrasi.kenaikan-pangkat.pengesahan-kenaikan-pangkat.index') }}" class="font-weight-bold text-dark-75 text-hover-primary font-size-lg mb-1">Pengesahan Kenaikan Pangkat</a>
+                                                                                <a href="{{ route('pic.administrasi.kenaikan-pangkat.pengesahan-kenaikan-pangkat.index') }}" class="font-weight-bold text-dark-75 text-hover-primary font-size-lg mb-1">Petikan Yang Hilang/Rusak</a>
                                                                             </div>
                                                                             <!--end::Title-->
                                                                             <!--begin::Lable-->

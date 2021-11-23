@@ -27,17 +27,17 @@ class RalatKeppresKepangkatanController extends Controller
      * only declared here.
      */
     private $attachments_root_folder = "Kenaikan_Pangkat_Attachments/";
-    private $data_surat_pengantar_folder;
-    private $data_keppres_folder;
-    private $data_bukti_pendukung_folder;
+    private $data_surat_permohonan_folder;
+    private $data_dokumen_klarifikasi_folder;
+    private $data_file_fotokopi_sk_diperbaiki_folder;
     
     public function __construct()
     {
         $this->curr_int_time = strtotime(Carbon::now());
         $this->middleware('auth');
-        $this->data_surat_pengantar_folder = $this->attachments_root_folder . "data_surat_pengantar/";
-        $this->data_keppres_folder = $this->attachments_root_folder . "data_keppres/";
-        $this->data_bukti_pendukung_folder = $this->attachments_root_folder . "data_bukti_pendukung/";
+        $this->data_surat_permohonan_folder = $this->attachments_root_folder . "data_surat_permohonan/";
+        $this->data_dokumen_klarifikasi_folder = $this->attachments_root_folder . "data_dokumen_klarifikasi/";
+        $this->data_file_fotokopi_sk_diperbaiki_folder= $this->attachments_root_folder . "data_file_fotokopi_sk_diperbaiki/";
         
     }
 
@@ -56,17 +56,13 @@ class RalatKeppresKepangkatanController extends Controller
         $input = $request->all();
 
         $validator = Validator::make($input, [
-            'req_tanggal_surat_pengantar' => 'required',
-            'req_no_surat_pengantar' => 'required',
-
-            'req_no_keppres' => 'required',
-            'req_tanggal_keppres' => 'required',
-
-            'req_alasan_ralat' => 'required',
+            'req_tanggal_surat_permohonan' => 'required',
+            'req_no_surat_permohonan' => 'required',
+            'req_jabatan_menandatangani' => 'required',
             
-            'req_file_surat_pengantar.*' => 'max:5000|mimes:jpg,png,jpeg,pdf',
-            'req_file_keppres.*' => 'max:5000|mimes:jpg,png,jpeg,pdf',
-            'req_bukti_pendukung.*' => 'max:5000|mimes:jpg,png,jpeg,pdf'
+            'req_file_surat_permohonan.*' => 'max:5000|mimes:jpg,png,jpeg,pdf',
+            'req_file_dokumen_klarifikasi.*' => 'max:5000|mimes:jpg,png,jpeg,pdf',
+            'req_file_fotokopi_sk_diperbaiki.*' => 'max:5000|mimes:jpg,png,jpeg,pdf'
         
         ]);
 
@@ -75,13 +71,9 @@ class RalatKeppresKepangkatanController extends Controller
         }
 
         $pengangkatans = KenaikanPangkat::create([
-            'tanggal_surat_pengantar' => $input['req_tanggal_surat_pengantar'],
-            'no_surat_pengantar' => $input['req_no_surat_pengantar'],
-
-            'no_keppres' => $input['req_no_keppres'],
-            'tanggal_keppres' => $input['req_tanggal_keppres'],
-
-            'alasan_ralat' => $input['req_alasan_ralat'],
+            'tanggal_surat_permohonan' => $input['req_tanggal_surat_permohonan'],
+            'no_surat_permohonan' => $input['req_no_surat_permohonan'],
+            'pejabat_menandatangani' => $input['req_jabatan_menandatangani'],
 
             'id_pengirim' => $id_pengirim->nip,
             'jenis_layanan' => Helper::$ralat_keppres_kepangkatan,
@@ -89,34 +81,34 @@ class RalatKeppresKepangkatanController extends Controller
             
         ]);
 
-        if($request->has('req_file_surat_pengantar')){
+        if($request->has('req_file_surat_permohonan')){
             $files = [];
-            foreach ($request->file('req_file_surat_pengantar') as $file) {
+            foreach ($request->file('req_file_surat_permohonan') as $file) {
                 $filename = $file->getClientOriginalName();
-                Storage::putFileAs($this->data_surat_pengantar_folder, $file, $filename);
+                Storage::putFileAs($this->data_surat_permohonan_folder, $file, $filename);
                 $files[] = $filename;
             }
-            $pengangkatans->file_surat_pengantar = $files;
+            $pengangkatans->file_surat_permohonan = $files;
         }
 
-        if($request->has('req_file_keppres')){
+        if($request->has('req_file_dokumen_klarifikasi')){
             $files = [];
-            foreach ($request->file('req_file_keppres') as $file) {
+            foreach ($request->file('req_file_dokumen_klarifikasi') as $file) {
                 $filename = $file->getClientOriginalName();
-                Storage::putFileAs($this->data_keppres_folder, $file, $filename);
+                Storage::putFileAs($this->data_dokumen_klarifikasi_folder, $file, $filename);
                 $files[] = $filename;
             }
-            $pengangkatans->file_keppres = $files;
+            $pengangkatans->file_dokumen_klarifikasi = $files;
         }
 
-        if($request->has('req_file_bukti_pendukung')){
+        if($request->has('req_file_fotokopi_sk_diperbaiki')){
             $files = [];
-            foreach ($request->file('req_file_bukti_pendukung') as $file) {
+            foreach ($request->file('req_file_fotokopi_sk_diperbaiki') as $file) {
                 $filename = $file->getClientOriginalName();
-                Storage::putFileAs($this->data_bukti_pendukung_folder, $file, $filename);
+                Storage::putFileAs($this->data_file_fotokopi_sk_diperbaiki_folder, $file, $filename);
                 $files[] = $filename;
             }
-            $pengangkatans->file_bukti_pendukung = $files;
+            $pengangkatans->file_fotokopi_sk_diperbaiki = $files;
         }
 
 
