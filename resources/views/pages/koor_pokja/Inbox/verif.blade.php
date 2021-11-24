@@ -391,7 +391,7 @@
                                                     </div>
                                                 </div>
                                                 <div class="form-group row">
-                                                    <label class="col-form-label col-lg-3 col-sm-12">No. Keppress Jabatan</label>
+                                                    <label class="col-form-label col-lg-3 col-sm-12">Nomor Keppres Pengangkatan <br><a style="color:grey; font-size:12px;">(Contoh: 1/M Tahun 2021)</a></label>
                                                     <div class="col-lg-9 col-md-9 col-sm-12">
                                                         <div class="input-group date">
                                                             <input type="text" class="form-control" value="{{ $verifikasi->no_keppress_jabatan_fungsional }}" disabled />
@@ -399,9 +399,9 @@
                                                     </div>
                                                 </div>
                                                 <div class="form-group row">
-                                                    <label class="col-form-label col-lg-3 col-sm-12">Upload File</label>
+                                                    <label class="col-form-label col-lg-3 col-sm-12">Upload Keppres Pengangkatan</label>
                                                     <div class="col-lg-9 col-md-9 col-sm-12">
-                                                        @if($verifikasi->file_data_jabatan_fungsional == null)
+                                                        @if($verifikasi->file_keppres_pengangkatan == null)
                                                             <h1> - </h1>
                                                         @else
                                                         <table>
@@ -412,10 +412,10 @@
                                                                 </tr>
                                                             </thead>
                                                             <tbody>
-                                                            @foreach($file_data_jabatan_fungsionals as $file)
+                                                            @foreach($file_keppres_pengangkatans as $file)
                                                                 <tr>
                                                                     <td><a style="color: blue;" > {{ $file }}</a></td>
-                                                                    <td><a id="d_file_data_jabatan_fungsional" type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#file_data_jabatan_fungsional_modal" data-file="{{ $file }}">Lihat</a></td>
+                                                                    <td><a id="d_file_keppres_pengangkatan" type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#file_keppres_pengangkatan_modal" data-file="{{ $file }}">Lihat</a></td>
                                                                 </tr>
                                                             @endforeach
                                                             </tbody>
@@ -423,18 +423,18 @@
                                                         @endif
                                                     </div>
                                                 </div>
-                                                <div class="modal fade" id="file_data_jabatan_fungsional_modal">
+                                                <div class="modal fade" id="file_keppres_pengangkatan_modal">
                                                     <div class="modal-dialog" >
                                                         <div class="modal-content" style="width: 800px !important; height: 800px !important;">
                                                             <div class="modal-header">
-                                                                <h4 class="modal-title" style="font-weight: bold;" id="file_name_file_data_jabatan_fungsional"></h4>
+                                                                <h4 class="modal-title" style="font-weight: bold;" id="file_name_file_keppres_pengangkatan"></h4>
                                                             </div>
-                                                            <p id="file_data_jabatan_fungsional"></p>
+                                                            <p id="file_keppres_pengangkatan"></p>
                                                         </div>
                                                     </div>
                                                 </div>
                                                 <div class="form-group row">
-                                                    <label class="col-form-label col-lg-3 col-sm-12">BA Pengambilan Sumpah Pelantikan</label>
+                                                    <label class="col-form-label col-lg-3 col-sm-12">BA Pengambilan Sumpah/Pelantikan</label>
                                                     <div class="col-lg-9 col-md-9 col-sm-12">
                                                         @if($verifikasi->file_ba_pelantikan == null)
                                                             <h1> - </h1>
@@ -491,7 +491,7 @@
                                                 </div>
                                             </div>
                                             @endif  
-                                            
+
                                             @if ($verifikasi->jenis_layanan == '1' || $verifikasi->jenis_layanan == '2' || $verifikasi->jenis_layanan == '3')
                                             <div class="pb-6" style="margin-left: 50px; margin-right: 50px;">
                                                 <h4 class="mb-10 font-weight-bold text-dark">Data Jabatan Lama</h4>
