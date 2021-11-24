@@ -30,25 +30,37 @@
                                             @if ($verifikasi->jenis_layanan == '1' || $verifikasi->jenis_layanan == '2' || $verifikasi->jenis_layanan == '3')
                                             <div class="pb-6" style="margin-left: 50px; margin-right: 50px;" >
                                                 <h4 class="mb-10 font-weight-bold text-dark">Data Usulan</h4>
-                                                <!--begin::Input-->
                                                 <div class="form-group row">
                                                     <label class="col-form-label col-lg-3 col-sm-12">Tanggal Surat usulan</label>
                                                     <div class="col-lg-5 col-md-9 col-sm-12">
                                                         <div class="input-group date">
-                                                            <input type="text" class="form-control" id="kt_datepicker_3_modal"  value="{{ $verifikasi->tanggal_surat_usulan }}" disabled/>
+                                                            <input type="text" class="form-control" value="{{ $verifikasi->tanggal_surat_usulan }}" disabled/>
                                                             <div class="input-group-append">
                                                                 <span class="input-group-text">
-                                                                     <i class="la la-calendar"></i> 
+                                                                    <i class="la la-calendar"></i>
                                                                 </span>
                                                             </div>
                                                         </div>
+                                                        <!-- <p id="maksimal_satu_tahun">ssss</p> -->
                                                     </div>
                                                 </div>
+                                                <!--end::Input-->
+                                                <!--begin::Input-->
                                                 <div class="form-group row">
                                                     <label class="col-form-label col-lg-3 col-sm-12">No. Surat Usulan</label>
                                                     <div class="col-lg-9 col-md-9 col-sm-12">
-                                                        <div class="input-group date">
+                                                        <div class="input-group">
                                                             <input type="text" class="form-control" value="{{ $verifikasi->no_surat_usulan }}" disabled />
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!--end::Input-->
+                                                <!--begin::Input-->
+                                                <div class="form-group row">
+                                                    <label class="col-form-label col-lg-3 col-sm-12">PPK Pejabat yang Diusulkan</label>
+                                                    <div class="col-lg-9 col-md-9 col-sm-12">
+                                                        <div class="input-group">
+                                                            <input type="text" class="form-control" value="{{ $verifikasi->ppk_pejabat_yang_diusulkan }}" disabled />
                                                         </div>
                                                     </div>
                                                 </div>
@@ -57,14 +69,14 @@
                                                 <div class="form-group row">
                                                     <label class="col-form-label col-lg-3 col-sm-12">Jabatan Yang Menandatangani</label>
                                                     <div class="col-lg-9 col-md-9 col-sm-12">
-                                                        <div class="input-group date">
-                                                            <input type="text" class="form-control" value="{{ $verifikasi->pejabat_menandatangani }}" disabled  />
+                                                        <div class="input-group">
+                                                            <input type="text" class="form-control" value="{{ $verifikasi->pejabat_menandatangani }}" disabled/>
                                                         </div>
                                                     </div>
                                                 </div>
                                                 <!--end::Input-->
                                                 <div class="form-group row">
-                                                    <label class="col-form-label col-lg-3 col-sm-12">Upload/Download file</label>
+                                                    <label class="col-form-label col-lg-3 col-sm-12">Upload Surat Usulan</label>
                                                     <div class="col-lg-9 col-md-9 col-sm-12">
                                                         @if($verifikasi->file_surat_usulan == null)
                                                             <h1> - </h1>
@@ -117,10 +129,10 @@
                                                 <!--end::Input-->
                                                 <!--begin::Input-->
                                                 <div class="form-group row">
-                                                    <label class="col-form-label col-lg-3 col-sm-12">Nama</label>
+                                                    <label class="col-form-label col-lg-3 col-sm-12">Nama dan Gelar</label>
                                                     <div class="col-lg-9 col-md-9 col-sm-12">
                                                         <div class="input-group date">
-                                                            <input type="text" class="form-control" value="{{ $verifikasi->nama }}" disabled  />
+                                                            <input type="text" class="form-control" value="{{ $verifikasi->nama }}" disabled />
                                                         </div>
                                                     </div>
                                                 </div>
@@ -140,7 +152,7 @@
                                                     <label class="col-form-label col-lg-3 col-sm-12">Tanggal lahir</label>
                                                     <div class="col-lg-5 col-md-9 col-sm-12">
                                                         <div class="input-group date">
-                                                            <input type="text" class="form-control" value="{{ $verifikasi->tanggal_lahir }}" id="kt_datepicker_4_modal" disabled/>
+                                                            <input type="text" class="form-control" value="{{ $verifikasi->tanggal_lahir }}" disabled/>
                                                             <div class="input-group-append">
                                                                 <span class="input-group-text">
                                                                     <i class="la la-calendar"></i>
@@ -150,6 +162,7 @@
                                                     </div>
                                                 </div>
                                                 <!--end::Input-->
+                                                <!--begin::Input-->
                                                 <div class="form-group row">
                                                     <label class="col-form-label col-lg-3 col-sm-12">Pendidikan Terakhir</label>
                                                     <div class="col-lg-9 col-md-9 col-sm-12">
@@ -158,6 +171,8 @@
                                                         </div>
                                                     </div>
                                                 </div>
+                                                <!--end::Input-->
+                                                <!--begin::Input-->
                                                 <div class="form-group row">
                                                     <label class="col-form-label col-lg-3 col-sm-12">Instansi Induk</label>
                                                     <div class="col-lg-9 col-md-9 col-sm-12">
@@ -166,6 +181,8 @@
                                                         </div>
                                                     </div>
                                                 </div>
+                                                <!--end::Input-->
+                                                <!--begin::Input-->
                                                 <div class="form-group row">
                                                     <label class="col-form-label col-lg-3 col-sm-12">Instansi Pengusul</label>
                                                     <div class="col-lg-9 col-md-9 col-sm-12">
@@ -174,87 +191,40 @@
                                                         </div>
                                                     </div>
                                                 </div>
-                                                {{-- <div class="form-group row">
-                                                    <label class="col-form-label col-lg-3 col-sm-12">Upload/Download file</label>
-                                                    <div class="col-lg-9 col-md-9 col-sm-12">
-                                                        <div class="input-group date">
-                                                            <a style="color: blue;">file.pdf</a>
-                                                        </div>
-                                                        </div>
-                                                </div> --}}
+                                                <!--end::Input-->
+                                                <!--begin::Input-->
                                                 <div class="form-group row">
-                                                    <label class="col-form-label col-lg-3 col-sm-12">Pangkat (Gol/Ruang)</label>
+                                                    <label class="col-form-label col-lg-3 col-sm-12">Jumlah</label>
                                                     <div class="col-lg-9 col-md-9 col-sm-12">
                                                         <div class="input-group date">
-                                                            @if($verifikasi->pangkat_gol == '1')
-                                                            <input type="text" class="form-control" value="Juru Muda (I/A)" disabled />
-                                                            @endif
-                                                            @if($verifikasi->pangkat_gol == 2)
-                                                            <input type="text" class="form-control" value="Juru Muda Tingkat 1 (I/B)" disabled />
-                                                            @endif
-                                                            @if($verifikasi->pangkat_gol == 3)
-                                                            <input type="text" class="form-control" value="Juru (I/C)" disabled />
-                                                            @endif
-                                                            @if($verifikasi->pangkat_gol == 4)
-                                                            <input type="text" class="form-control" value="Juru Tingakat 1 (I/D)" disabled />
-                                                            @endif
-                                                            @if($verifikasi->pangkat_gol == 5)
-                                                            <input type="text" class="form-control" value="Pengatur Muda (II/A)" disabled />
-                                                            @endif
-                                                            @if($verifikasi->pangkat_gol == 6)
-                                                            <input type="text" class="form-control" value="Pengatur Muda Tingkat I (II/B)" disabled />
-                                                            @endif
-                                                            @if($verifikasi->pangkat_gol == 7)
-                                                            <input type="text" class="form-control" value="Pengatur (II/C)" disabled />
-                                                            @endif
-                                                            @if($verifikasi->pangkat_gol == 8)
-                                                            <input type="text" class="form-control" value="Pengatur Tingkat I (II/D)" disabled />
-                                                            @endif
-                                                            @if($verifikasi->pangkat_gol == 9)
-                                                            <input type="text" class="form-control" value="Penata Muda (III/A)" disabled />
-                                                            @endif
-                                                            @if($verifikasi->pangkat_gol == 10)
-                                                            <input type="text" class="form-control" value="Penata Muda Tingkat I (III/B)" disabled />
-                                                            @endif
-                                                            @if($verifikasi->pangkat_gol == 11)
-                                                            <input type="text" class="form-control" value="Penata (III/C)" disabled />
-                                                            @endif
-                                                            @if($verifikasi->pangkat_gol == 12)
-                                                            <input type="text" class="form-control" value="Penata Tingakat I (III/D)" disabled />
-                                                            @endif
-                                                            @if($verifikasi->pangkat_gol == 13)
-                                                            <input type="text" class="form-control" value="Pembina (IV/A)" disabled />
-                                                            @endif
-                                                            @if($verifikasi->pangkat_gol == 14)
-                                                            <input type="text" class="form-control" value="Pembina Tingkat 1 (IV/B)" disabled />
-                                                            @endif
-                                                            @if($verifikasi->pangkat_gol == 15)
-                                                            <input type="text" class="form-control" value="Pembina Utama Muda (IV/C)" disabled />
-                                                            @endif
-                                                            @if($verifikasi->pangkat_gol == 16)
-                                                            <input type="text" class="form-control" value="Pembina Utama Madya (IV/D)" disabled />
-                                                            @endif
-                                                            @if($verifikasi->pangkat_gol == 17)
-                                                            <input type="text" class="form-control" value="Pembina Utama (IV/E)" disabled />
-                                                            @endif
+                                                            <input type="text" class="form-control" value="{{ $verifikasi->jumlah }}"  disabled/>
                                                         </div>
                                                     </div>
                                                 </div>
+                                                <!--end::Input-->
+                                                <!--begin::Input-->
                                                 <div class="form-group row">
-                                                    <label class="col-form-label col-lg-3 col-sm-12">TMT Gol/Ruang</label>
+                                                    <label class="col-form-label col-lg-3 col-sm-12">Terisi</label>
                                                     <div class="col-lg-5 col-md-9 col-sm-12">
                                                         <div class="input-group date">
-                                                            <input type="text" class="form-control" value="{{ $verifikasi->tmt_gol }}" id="kt_datepicker_5_modal" disabled />
-                                                            <div class="input-group-append">
-                                                                <span class="input-group-text">
-                                                                    <i class="la la-calendar"></i>
-                                                                </span>
-                                                            </div>
+                                                            <input type="text" class="form-control" value="{{ $verifikasi->terisi }}" id="kt_datepicker_10_modal" disabled/>
                                                         </div>
                                                     </div>
                                                 </div>
+                                                <!--end::Input-->
+                                                <!--begin::Input-->
                                                 <div class="form-group row">
-                                                    <label class="col-lg-3 col-form-label">Upload File</label>
+                                                    <label class="col-form-label col-lg-3 col-sm-12">Sisa</label>
+                                                    <div class="col-lg-5 col-md-9 col-sm-12">
+                                                        <div class="input-group date">
+                                                            <input type="text" class="form-control" value="{{ $verifikasi->sisa }}" disabled />
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!--end::Input-->
+                                                <!--begin::Input-->
+                                                <div class="form-group row">
+                                                    <label class="col-lg-3 col-form-label">Upload Nota Usulan</label>
                                                     <div class="col-lg-9 col-md-9 col-sm-12">
                                                         @if($verifikasi->file_nota_usulan == null)
                                                             <h1> - </h1>
@@ -288,251 +258,14 @@
                                                         </div>
                                                     </div>
                                                 </div>
-                                                {{-- <div class="form-group row">
-                                                    <label class="col-form-label col-lg-3 col-sm-12">TMT CPNS</label>
-                                                    <div class="col-lg-5 col-md-9 col-sm-12">
-                                                        <div class="input-group date">
-                                                            <input type="text" class="form-control" value="" id="kt_datepicker_6_modal" />
-                                                            <div class="input-group-append">
-                                                                <span class="input-group-text">
-                                                                    <i class="la la-calendar"></i>
-                                                                </span>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div> --}}
-                                                {{-- <div class="form-group row">
-                                                    <label class="col-form-label col-lg-3 col-sm-12">Masa Kerja Golongan</label>
-                                                    <div class="col-lg-5 col-md-9 col-sm-12">
-                                                        <div class="input-group date">
-                                                            <input type="text" class="form-control" value=""  />
-                                                            <label class="col-form-label text-left col-lg-3 col-sm-12">Tahun</label>
-
-                                                        </div>
-                                                    </div>
-                                                </div> --}}
-                                                {{-- <div class="form-group row">
-                                                    <label class="col-form-label col-lg-3 col-sm-12"></label>
-                                                    <div class="col-lg-5 col-md-9 col-sm-12">
-                                                        <div class="input-group date">
-                                                            <input type="text" class="form-control" value=""  />
-                                                            <label class="col-form-label text-left col-lg-3 col-sm-12">Bulan</label>
-                                                        </div>
-                                                    </div>
-                                                </div> --}}
-                                                <!-- <div class="form-group row">
-                                                    <label class="col-form-label col-lg-3 col-sm-12">Upload/Download File SK Pangkat Terakhir</label>
-                                                    <div class="col-lg-9 col-md-9 col-sm-12">
-                                                        <div class="input-group date">
-                                                            <a style="color: blue;">file.pdf</a>
-                                                        </div>
-                                                        </div>
-                                                </div> -->
-                                            </div>
+                                                <!--end::Input-->
                                             @endif
-                                            <!--end: Wizard Step 2-->
-
-                                            @if ($verifikasi->jenis_layanan == '1' || $verifikasi->jenis_layanan == '3')
-                                                @if ($verifikasi->pangkat_gol == '1')
-                                                    @if ($verifikasi->nomor_pak != '')
-                                                    <div class="pb-6" style="margin-left: 50px; margin-right: 50px;">
-                                                        <h4 class="mb-10 font-weight-bold text-dark">Data PAK</h4>
-                                                        <!--begin::Input-->
-                                                        <div class="form-group row">
-                                                            <label class="col-form-label col-lg-3 col-sm-12">Nomor PAK</label>
-                                                            <div class="col-lg-9 col-md-9 col-sm-12">
-                                                                <div class="input-group date">
-                                                                    <input type="text" class="form-control" value="{{ $verifikasi->nomor_pak }}"  disabled/>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <!--end::Input-->
-                                                        <!--begin::Input-->
-                                                        <div class="form-group row">
-                                                            <label class="col-form-label col-lg-3 col-sm-12">Tanggal PAK</label>
-                                                            <div class="col-lg-5 col-md-9 col-sm-12">
-                                                                <div class="input-group date">
-                                                                    <input type="text" class="form-control" value="{{ $verifikasi->tanggal_pak }}" id="kt_datepicker_8_modal" disabled/>
-                                                                    <div class="input-group-append">
-                                                                        <span class="input-group-text">
-                                                                            <i class="la la-calendar"></i>
-                                                                        </span>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="form-group row">
-                                                            <label class="col-form-label col-lg-3 col-sm-12">Jumlah Angka Kredit</label>
-                                                            <div class="col-lg-9 col-md-9 col-sm-12">
-                                                                <div class="input-group date">
-                                                                    <input type="text" class="form-control" value="{{ $verifikasi->jumlah_angka_kredit }}" disabled />
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="form-group row">
-                                                            <label class="col-form-label col-lg-3 col-sm-12">Periode Penilaian</label>
-                                                            <div class="col-lg-9 col-md-9 col-sm-12">
-                                                                <div class="input-group date">
-                                                                    @foreach ($periodes as $periode)
-                                                                        @if($verifikasi->periode_penilaian == $periode->id)
-                                                                        <input type="text" class="form-control" value="{{$periode->name}}" disabled />
-                                                                        @endif
-                                                                    @endforeach
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="form-group row">
-                                                            <label class="col-form-label col-lg-3 col-sm-12">Upload File</label>
-                                                            <div class="col-lg-9 col-md-9 col-sm-12">
-                                                                @if($verifikasi->file_data_pak == null)
-                                                                    <h1> - </h1>
-                                                                @else
-                                                                <table>
-                                                                    <thead>
-                                                                        <tr class="text-start text-gray-400 fw-bolder fs-7 text-uppercase gs-0">
-                                                                            <th style="width: 170px">Nama File</th>
-                                                                            <th>Aksi</th>
-                                                                        </tr>
-                                                                    </thead>
-                                                                    <tbody>
-                                                                    @foreach($file_data_paks as $file)
-                                                                        <tr>
-                                                                            <td><a style="color: blue;" > {{ $file }}</a></td>
-                                                                            <td><a id="d_file_data_pak" type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#file_data_pak_modal" data-file="{{ $file }}">Lihat</a></td>
-                                                                        </tr>
-                                                                    @endforeach
-                                                                    </tbody>
-                                                                </table>
-                                                                @endif
-                                                            </div>
-                                                        </div>
-                                                        <div class="modal fade" id="file_data_pak_modal">
-                                                            <div class="modal-dialog" >
-                                                                <div class="modal-content" style="width: 800px !important; height: 800px !important;">
-                                                                    <div class="modal-header">
-                                                                        <h4 class="modal-title" style="font-weight: bold;" id="file_name_file_data_pak"></h4>
-                                                                    </div>
-                                                                    <p id="file_data_pak"></p>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    @endif
-                                                    @if ($verifikasi->nomor_klarifikasi != '')
-                                                    <!--begin: Wizard Step 2-->
-                                                    <div class="pb-6" style="margin-left: 50px; margin-right: 50px;">
-                                                        <h4 class="mb-10 font-weight-bold text-dark">Klarifikasi PAK
-                                                            <span class="form-text text-muted"><small>Khusus untuk PAK yang dikeluarkan oleh Kemenkes & Kemendikbud</small></span>
-                                                        </h4>
-
-                                                        <!--begin::Input-->
-                                                        <div class="form-group row">
-                                                            <label class="col-form-label col-lg-3 col-sm-12">Nomor Klarifikasi</label>
-                                                            <div class="col-lg-9 col-md-9 col-sm-12">
-                                                                <div class="input-group date">
-                                                                    <input type="text" class="form-control" value="{{ $verifikasi->nomor_klarifikasi }}" disabled />
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="form-group row">
-                                                            <label class="col-form-label col-lg-3 col-sm-12">Tanggal Klarifikasi</label>
-                                                            <div class="col-lg-5 col-md-9 col-sm-12">
-                                                                <div class="input-group date">
-                                                                    <input type="text" class="form-control" value="{{ $verifikasi->tanggal_klarifikasi }}" id="kt_datepicker_9_modal" disabled/>
-                                                                    <div class="input-group-append">
-                                                                        <span class="input-group-text">
-                                                                            <i class="la la-calendar"></i>
-                                                                        </span>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="form-group row">
-                                                            <label class="col-form-label col-lg-3 col-sm-12">Upload/Download File</label>
-                                                            <div class="col-lg-9 col-md-9 col-sm-12">
-                                                                @if($verifikasi->file_klarifikasi_pak == null)
-                                                                    <h1> - </h1>
-                                                                @else
-                                                                <table>
-                                                                    <thead>
-                                                                        <tr class="text-start text-gray-400 fw-bolder fs-7 text-uppercase gs-0">
-                                                                            <th style="width: 170px">Nama File</th>
-                                                                            <th>Aksi</th>
-                                                                        </tr>
-                                                                    </thead>
-                                                                    <tbody>
-                                                                    @foreach($file_klarifikasi_paks as $file)
-                                                                        <tr>
-                                                                            <td><a style="color: blue;" > {{ $file }}</a></td>
-                                                                            <td><a id="d_file_klarifikasi_pak" type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#file_klarifikasi_pak_modal" data-file="{{ $file }}">Lihat</a></td>
-                                                                        </tr>
-                                                                    @endforeach
-                                                                    </tbody>
-                                                                </table>
-                                                                @endif
-                                                            </div>
-                                                        </div>
-                                                        <div class="modal fade" id="file_klarifikasi_pak_modal">
-                                                            <div class="modal-dialog" >
-                                                                <div class="modal-content" style="width: 800px !important; height: 800px !important;">
-                                                                    <div class="modal-header">
-                                                                        <h4 class="modal-title" style="font-weight: bold;" id="file_name_file_klarifikasi_pak"></h4>
-                                                                    </div>
-                                                                    <p id="file_klarifikasi_pak"></p>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    @endif
-                                                @endif
-                                            @endif
-
-                                            <!--begin: Wizard Step 3-->
-                                            @if ($verifikasi->jenis_layanan == '1' || $verifikasi->jenis_layanan == '3')
-                                            <div class="pb-6" style="margin-left: 50px; margin-right: 50px;">
-                                                <h4 class="mb-10 font-weight-bold text-dark">Data Jabatan Lama</h4>
-                                                <!--begin::Select-->
+                                            @if ($verifikasi->jenis_layanan == '1' || $verifikasi->jenis_layanan == '2')
+                                                <!--begin::Input-->
                                                 <div class="form-group row">
-                                                    <label class="col-form-label col-lg-3 col-sm-12">Jabatan</label>
+                                                    <label class="col-lg-3 col-form-label">Upload Penetapan kebutuhan formasi dari KemenPANRB</label>
                                                     <div class="col-lg-9 col-md-9 col-sm-12">
-                                                        <div class="input-group date">
-                                                            <input type="text" class="form-control" value="{{ $verifikasi->jabatan_lama }}"  disabled/>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="form-group row">
-                                                    <label class="col-form-label col-lg-3 col-sm-12">No. SK Jabatan</label>
-                                                    <div class="col-lg-9 col-md-9 col-sm-12">
-                                                        <div class="input-group date">
-                                                            <input type="text" class="form-control" value="{{ $verifikasi->no_sk_jabatan_lama }}" disabled />
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="form-group row">
-                                                    <label class="col-form-label col-lg-3 col-sm-12">TMT Jabatan</label>
-                                                    <div class="col-lg-5 col-md-9 col-sm-12">
-                                                        <div class="input-group date">
-                                                            <input type="text" class="form-control" value="{{ $verifikasi->tmt_jabatan_lama }}" id="kt_datepicker_9_modal" disabled/>
-                                                            <div class="input-group-append">
-                                                                <span class="input-group-text">
-                                                                    <i class="la la-calendar"></i>
-                                                                </span>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="form-group row">
-                                                    <label class="col-form-label col-lg-3 col-sm-12">Unit Kerja</label>
-                                                    <div class="col-lg-9 col-md-9 col-sm-12">
-                                                        <div class="input-group date">
-                                                            <input type="text" class="form-control" value="{{ $verifikasi->unit_kerja_lama }}" disabled />
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="form-group row">
-                                                    <label class="col-form-label col-lg-3 col-sm-12">Upload/Download File</label>
-                                                    <div class="col-lg-9 col-md-9 col-sm-12">
-                                                        @if($verifikasi->file_jabatan_lama == null)
+                                                        @if($verifikasi->file_penetapan_kebutuhan_formasi == null)
                                                             <h1> - </h1>
                                                         @else
                                                         <table>
@@ -543,10 +276,10 @@
                                                                 </tr>
                                                             </thead>
                                                             <tbody>
-                                                            @foreach($file_jabatan_lamas as $file)
+                                                            @foreach($file_penetapan_kebutuhan_formasis as $file)
                                                                 <tr>
                                                                     <td><a style="color: blue;" > {{ $file }}</a></td>
-                                                                    <td><a id="d_file_jabatan_lama" type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#file_jabatan_lama_modal" data-file="{{ $file }}">Lihat</a></td>
+                                                                    <td><a id="d_file_penetapan_kebutuhan_formasi" type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#file_penetapan_kebutuhan_formasi_modal" data-file="{{ $file }}">Lihat</a></td>
                                                                 </tr>
                                                             @endforeach
                                                             </tbody>
@@ -554,70 +287,22 @@
                                                         @endif
                                                     </div>
                                                 </div>
-                                                <div class="modal fade" id="file_jabatan_lama_modal">
+                                                <div class="modal fade" id="file_penetapan_kebutuhan_formasi_modal">
                                                     <div class="modal-dialog" >
                                                         <div class="modal-content" style="width: 800px !important; height: 800px !important;">
                                                             <div class="modal-header">
-                                                                <h4 class="modal-title" style="font-weight: bold;" id="file_name_jabatan_lama"></h4>
+                                                                <h4 class="modal-title" style="font-weight: bold;" id="file_name_file_penetapan_kebutuhan_formasi"></h4>
                                                             </div>
-                                                            <p id="file_jabatan_lama"></p>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            @endif
-
-                                            @if ($verifikasi->jenis_layanan == '2' && $verifikasi->nomor_pak_terakhir != '')
-                                            <div class="pb-6" style="margin-left: 50px; margin-right: 50px;">
-                                                <h4 class="mb-10 font-weight-bold text-dark">Data PAK Terakhir</h4>
-                                                <!--begin::Input-->
-                                                <div class="form-group row">
-                                                    <label class="col-form-label col-lg-3 col-sm-12">Nomor PAK</label>
-                                                    <div class="col-lg-9 col-md-9 col-sm-12">
-                                                        <div class="input-group date">
-                                                            <input type="text" class="form-control" value="{{ $verifikasi->nomor_pak_terakhir }}"  disabled/>
+                                                            <p id="file_penetapan_kebutuhan_formasi"></p>
                                                         </div>
                                                     </div>
                                                 </div>
                                                 <!--end::Input-->
                                                 <!--begin::Input-->
                                                 <div class="form-group row">
-                                                    <label class="col-form-label col-lg-3 col-sm-12">Tanggal PAK</label>
-                                                    <div class="col-lg-5 col-md-9 col-sm-12">
-                                                        <div class="input-group date">
-                                                            <input type="text" class="form-control" value="{{ $verifikasi->tanggal_pak_terakhir }}" id="kt_datepicker_8_modal" disabled/>
-                                                            <div class="input-group-append">
-                                                                <span class="input-group-text">
-                                                                    <i class="la la-calendar"></i>
-                                                                </span>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="form-group row">
-                                                    <label class="col-form-label col-lg-3 col-sm-12">Jumlah Angka Kredit</label>
+                                                    <label class="col-lg-3 col-form-label">Upload Ijazah terakhir</label>
                                                     <div class="col-lg-9 col-md-9 col-sm-12">
-                                                        <div class="input-group date">
-                                                            <input type="text" class="form-control" value="{{ $verifikasi->jumlah_angka_kredit_terakhir }}" disabled />
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="form-group row">
-                                                    <label class="col-form-label col-lg-3 col-sm-12">Periode Penilaian</label>
-                                                    <div class="col-lg-9 col-md-9 col-sm-12">
-                                                        <div class="input-group date">
-                                                            @foreach ($periodes as $periode)
-                                                                @if($verifikasi->periode_penilaian_terakhir == $periode->id)
-                                                                <input type="text" class="form-control" value="{{$periode->name}}" disabled />
-                                                                @endif
-                                                            @endforeach
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="form-group row">
-                                                    <label class="col-form-label col-lg-3 col-sm-12">Upload File</label>
-                                                    <div class="col-lg-9 col-md-9 col-sm-12">
-                                                        @if($verifikasi->file_sk_pangkat_terakhir == null)
+                                                        @if($verifikasi->file_ijazah == null)
                                                             <h1> - </h1>
                                                         @else
                                                         <table>
@@ -628,10 +313,10 @@
                                                                 </tr>
                                                             </thead>
                                                             <tbody>
-                                                            @foreach($file_sk_pangkat_terakhirs as $file)
+                                                            @foreach($file_ijazahs as $file)
                                                                 <tr>
                                                                     <td><a style="color: blue;" > {{ $file }}</a></td>
-                                                                    <td><a id="d_file_sk_pangkat_terakhir" type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#file_sk_pangkat_terakhir_modal" data-file="{{ $file }}">Lihat</a></td>
+                                                                    <td><a id="d_file_ijazah" type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#file_ijazah_modal" data-file="{{ $file }}">Lihat</a></td>
                                                                 </tr>
                                                             @endforeach
                                                             </tbody>
@@ -639,76 +324,58 @@
                                                         @endif
                                                     </div>
                                                 </div>
-                                                <div class="modal fade" id="file_sk_pangkat_terakhir_modal">
+                                                <div class="modal fade" id="file_ijazah_modal">
                                                     <div class="modal-dialog" >
                                                         <div class="modal-content" style="width: 800px !important; height: 800px !important;">
                                                             <div class="modal-header">
-                                                                <h4 class="modal-title" style="font-weight: bold;" id="file_name_file_sk_pangkat_terakhir"></h4>
+                                                                <h4 class="modal-title" style="font-weight: bold;" id="file_name_file_ijazah"></h4>
                                                             </div>
-                                                            <p id="file_sk_pangkat_terakhir"></p>
+                                                            <p id="file_ijazah"></p>
                                                         </div>
                                                     </div>
                                                 </div>
-                                            </div>
+                                                <!--end::Input-->
+                                                <!--begin::Input-->
+                                                <div class="form-group row">
+                                                    <label class="col-lg-3 col-form-label">Upload Pencantuman Gelar Akademik (GPA)</label>
+                                                    <div class="col-lg-9 col-md-9 col-sm-12">
+                                                        @if($verifikasi->file_pencantuman_gelar == null)
+                                                            <h1> - </h1>
+                                                        @else
+                                                        <table>
+                                                            <thead>
+                                                                <tr class="text-start text-gray-400 fw-bolder fs-7 text-uppercase gs-0">
+                                                                    <th style="width: 170px">Nama File</th>
+                                                                    <th>Aksi</th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody>
+                                                            @foreach($file_pencantuman_gelars as $file)
+                                                                <tr>
+                                                                    <td><a style="color: blue;" > {{ $file }}</a></td>
+                                                                    <td><a id="d_file_pencantuman_gelar" type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#file_pencantuman_gelar_modal" data-file="{{ $file }}">Lihat</a></td>
+                                                                </tr>
+                                                            @endforeach
+                                                            </tbody>
+                                                        </table>
+                                                        @endif
+                                                    </div>
+                                                </div>
+                                                <div class="modal fade" id="file_pencantuman_gelar_modal">
+                                                    <div class="modal-dialog" >
+                                                        <div class="modal-content" style="width: 800px !important; height: 800px !important;">
+                                                            <div class="modal-header">
+                                                                <h4 class="modal-title" style="font-weight: bold;" id="file_name_file_pencantuman_gelar"></h4>
+                                                            </div>
+                                                            <p id="file_pencantuman_gelar"></p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!--end::Input-->
                                             @endif
-
-                                            @if ($verifikasi->jenis_layanan == '1' || $verifikasi->jenis_layanan == '3')
-                                            <div class="pb-6" style="margin-left: 50px; margin-right: 50px;">
-                                                <h4 class="mb-10 font-weight-bold text-dark">Data Jabatan Baru</h4>
-                                                <!--begin::Select-->
-                                                <div class="form-group row">
-                                                    <label class="col-form-label col-lg-3 col-sm-12">Jabatan</label>
-                                                    <div class="col-lg-9 col-md-9 col-sm-12">
-                                                        <div class="input-group date">
-                                                            <input type="text" class="form-control" value="{{ $verifikasi->jabatan_baru }}"  disabled/>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                
-                                                <div class="form-group row">
-                                                    <label class="col-form-label col-lg-3 col-sm-12">Unit Kerja</label>
-                                                    <div class="col-lg-9 col-md-9 col-sm-12">
-                                                        <div class="input-group date">
-                                                            <input type="text" class="form-control" value="{{ $verifikasi->unit_kerja_baru }}" disabled />
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="form-group row">
-                                                    <label class="col-form-label col-lg-3 col-sm-12">Upload/Download File</label>
-                                                    <div class="col-lg-9 col-md-9 col-sm-12">
-                                                        @if($verifikasi->file_data_jabatan_baru == null)
-                                                            <h1> - </h1>
-                                                        @else
-                                                        <table>
-                                                            <thead>
-                                                                <tr class="text-start text-gray-400 fw-bolder fs-7 text-uppercase gs-0">
-                                                                    <th style="width: 170px">Nama File</th>
-                                                                    <th>Aksi</th>
-                                                                </tr>
-                                                            </thead>
-                                                            <tbody>
-                                                            @foreach($file_data_jabatan_barus as $file)
-                                                                <tr>
-                                                                    <td><a style="color: blue;" > {{ $file }}</a></td>
-                                                                    <td><a id="d_file_data_jabatan_baru" type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#file_data_jabatan_baru_modal" data-file="{{ $file }}">Lihat</a></td>
-                                                                </tr>
-                                                            @endforeach
-                                                            </tbody>
-                                                        </table>
-                                                        @endif
-                                                    </div>
-                                                </div>
-                                                <div class="modal fade" id="file_data_jabatan_baru_modal">
-                                                    <div class="modal-dialog" >
-                                                        <div class="modal-content" style="width: 800px !important; height: 800px !important;">
-                                                            <div class="modal-header">
-                                                                <h4 class="modal-title" style="font-weight: bold;" id="file_name_file_data_jabatan_baru"></h4>
-                                                            </div>
-                                                            <p id="file_file_data_jabatan_baru"></p>
-                                                        </div>
-                                                    </div>
-                                                </div>
+                                            @if ($verifikasi->jenis_layanan == '1' || $verifikasi->jenis_layanan == '2' || $verifikasi->jenis_layanan == '3')
                                             </div>
+                                            <!--end: Wizard Step 2-->
                                             @endif
 
                                             @if ($verifikasi->jenis_layanan == '2')
@@ -824,26 +491,37 @@
                                                 </div>
                                             </div>
                                             @endif  
-
-                                            @if ($verifikasi->jenis_layanan == '3')
+                                            
+                                            @if ($verifikasi->jenis_layanan == '1' || $verifikasi->jenis_layanan == '2' || $verifikasi->jenis_layanan == '3')
                                             <div class="pb-6" style="margin-left: 50px; margin-right: 50px;">
-                                                <h4 class="mb-10 font-weight-bold text-dark">Data Rekomendasi</h4>
+                                                <h4 class="mb-10 font-weight-bold text-dark">Data Jabatan Lama</h4>
+                                                <!--end::Input-->
                                                 <!--begin::Input-->
                                                 <div class="form-group row">
-                                                    <label class="col-form-label col-lg-3 col-sm-12">Nomor Surat Rekomendasi</label>
+                                                    <label class="col-form-label col-lg-3 col-sm-12">Jabatan</label>
                                                     <div class="col-lg-9 col-md-9 col-sm-12">
                                                         <div class="input-group date">
-                                                            <input type="text" class="form-control" value="{{ $verifikasi->no_surat_rekomendasi }}"  disabled/>
+                                                            <input type="text" class="form-control" value="{{ $verifikasi->jabatan_lama }}" disabled/>
                                                         </div>
                                                     </div>
                                                 </div>
                                                 <!--end::Input-->
                                                 <!--begin::Input-->
                                                 <div class="form-group row">
-                                                    <label class="col-form-label col-lg-3 col-sm-12">Tgl. Surat Rekomendasi</label>
+                                                    <label class="col-form-label col-lg-3 col-sm-12">No. SK Jabatan</label>
+                                                    <div class="col-lg-9 col-md-9 col-sm-12">
+                                                        <div class="input-group date">
+                                                            <input type="text" class="form-control" value="{{ $verifikasi->no_sk_jabatan_lama }}" disabled />
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!--end::Input-->
+                                                <!--begin::Input-->
+                                                <div class="form-group row">
+                                                    <label class="col-form-label col-lg-3 col-sm-12">TMT Jabatan</label>
                                                     <div class="col-lg-5 col-md-9 col-sm-12">
                                                         <div class="input-group date">
-                                                            <input type="text" class="form-control" value="{{ $verifikasi->tanggal_surat_rekomendasi }}" id="kt_datepicker_8_modal" disabled/>
+                                                            <input type="text" class="form-control" value="{{ $verifikasi->tmt_jabatan_lama }}" id="kt_datepicker_9_modal" disabled/>
                                                             <div class="input-group-append">
                                                                 <span class="input-group-text">
                                                                     <i class="la la-calendar"></i>
@@ -852,11 +530,22 @@
                                                         </div>
                                                     </div>
                                                 </div>
-                                                
+                                                <!--end::Input-->
+                                                <!--begin::Input-->
                                                 <div class="form-group row">
-                                                    <label class="col-form-label col-lg-3 col-sm-12">Upload/Download File</label>
+                                                    <label class="col-form-label col-lg-3 col-sm-12">Satuan Organisasi Lama</label>
                                                     <div class="col-lg-9 col-md-9 col-sm-12">
-                                                        @if($verifikasi->file_data_rekomendasi == null)
+                                                        <div class="input-group date">
+                                                            <input type="text" class="form-control" value="{{ $verifikasi->satuan_organisasi_lama }}" disabled />
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!--end::Input-->
+                                                <!--begin::Input-->
+                                                <div class="form-group row">
+                                                    <label class="col-form-label col-lg-3 col-sm-12">Upload SK Jabatan sebelumnya</label>
+                                                    <div class="col-lg-9 col-md-9 col-sm-12">
+                                                        @if($verifikasi->file_data_jabatan_lama == null)
                                                             <h1> - </h1>
                                                         @else
                                                         <table>
@@ -867,10 +556,10 @@
                                                                 </tr>
                                                             </thead>
                                                             <tbody>
-                                                            @foreach($file_data_rekomendasis as $file)
+                                                            @foreach($file_data_jabatan_lamas as $file)
                                                                 <tr>
                                                                     <td><a style="color: blue;" > {{ $file }}</a></td>
-                                                                    <td><a id="d_file_data_rekomendasi" type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#file_data_rekomendasi_modal" data-file="{{ $file }}">Lihat</a></td>
+                                                                    <td><a id="d_file_data_jabatan_lama" type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#file_data_jabatan_lama_modal" data-file="{{ $file }}">Lihat</a></td>
                                                                 </tr>
                                                             @endforeach
                                                             </tbody>
@@ -878,81 +567,72 @@
                                                         @endif
                                                     </div>
                                                 </div>
-                                                <div class="modal fade" id="file_data_rekomendasi_modal">
+                                                <div class="modal fade" id="file_data_jabatan_lama_modal">
                                                     <div class="modal-dialog" >
                                                         <div class="modal-content" style="width: 800px !important; height: 800px !important;">
                                                             <div class="modal-header">
-                                                                <h4 class="modal-title" style="font-weight: bold;" id="file_name_file_data_rekomendasi"></h4>
+                                                                <h4 class="modal-title" style="font-weight: bold;" id="file_name_jabatan_lama"></h4>
                                                             </div>
-                                                            <p id="file_data_rekomendasi"></p>
+                                                            <p id="file_data_jabatan_lama"></p>
                                                         </div>
                                                     </div>
                                                 </div>
-
-                                                <div class="form-group row">
-                                                    <label class="col-form-label col-lg-3 col-sm-12">Surat Pernyataan/Keterangan melaksanakan kegiatan Jabatan fungsional dalam 2 tahun terakhir</label>
-                                                    <div class="col-lg-9 col-md-9 col-sm-12">
-                                                        @if($verifikasi->file_surat_pernyataan_rekomendasi == null)
-                                                            <h1> - </h1>
-                                                        @else
-                                                        <table>
-                                                            <thead>
-                                                                <tr class="text-start text-gray-400 fw-bolder fs-7 text-uppercase gs-0">
-                                                                    <th style="width: 170px">Nama File</th>
-                                                                    <th>Aksi</th>
-                                                                </tr>
-                                                            </thead>
-                                                            <tbody>
-                                                            @foreach($file_surat_pernyataan_rekomendasis as $file)
-                                                                <tr>
-                                                                    <td><a style="color: blue;" > {{ $file }}</a></td>
-                                                                    <td><a id="d_file_surat_pernyataan_rekomendasi" type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#file_surat_pernyataan_rekomendasi_modal" data-file="{{ $file }}">Lihat</a></td>
-                                                                </tr>
-                                                            @endforeach
-                                                            </tbody>
-                                                        </table>
-                                                        @endif
-                                                    </div>
-                                                </div>
-                                                <div class="modal fade" id="file_surat_pernyataan_rekomendasi_modal">
-                                                    <div class="modal-dialog" >
-                                                        <div class="modal-content" style="width: 800px !important; height: 800px !important;">
-                                                            <div class="modal-header">
-                                                                <h4 class="modal-title" style="font-weight: bold;" id="file_name_file_surat_pernyataan_rekomendasi"></h4>
-                                                            </div>
-                                                            <p id="file_surat_pernyataan_rekomendasi"></p>
-                                                        </div>
-                                                    </div>
-                                                </div>
+                                                <!--end::Input-->
                                             </div>
                                             @endif
 
-                                            @if ($verifikasi->jenis_layanan == '1')
+                                            @if ($verifikasi->jenis_layanan == '1' || $verifikasi->jenis_layanan == '2' || $verifikasi->jenis_layanan == '3')
                                             <div class="pb-6" style="margin-left: 50px; margin-right: 50px;">
-                                                <h4 class="mb-10 font-weight-bold text-dark">Data Kompetensi
-                                                </h4>
-
+                                                <h4 class="mb-10 font-weight-bold text-dark">Data Jabatan Baru</h4>
                                                 <!--begin::Input-->
                                                 <div class="form-group row">
                                                     <label class="col-form-label col-lg-3 col-sm-12">Jabatan</label>
                                                     <div class="col-lg-9 col-md-9 col-sm-12">
                                                         <div class="input-group date">
-                                                            <input type="text" class="form-control" value="{{ $verifikasi->jabatan_data_kompetensi }}"  disabled/>
+                                                            <input type="text" class="form-control" value="{{ $verifikasi->jabatan_baru }}"  disabled/>
                                                         </div>
                                                     </div>
                                                 </div>
+                                                <!--end::Input-->
+                                                <!--begin::Input-->
+                                                <div class="form-group row">
+                                                    <label class="col-form-label col-lg-3 col-sm-12">Satuan Organisasi Baru</label>
+                                                    <div class="col-lg-9 col-md-9 col-sm-12">
+                                                        <div class="input-group date">
+                                                            <input type="text" class="form-control" value="{{ $verifikasi->satuan_organisasi_baru }}" disabled />
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!--end::Input-->
+                                            </div>
+                                            @endif
 
+                                            @if ($verifikasi->jenis_layanan == '1' || $verifikasi->jenis_layanan == '2')
+                                            <div class="pb-6" style="margin-left: 50px; margin-right: 50px;">
+                                                <h4 class="mb-10 font-weight-bold text-dark">Data Kompetensi</h4>
+                                                <!--begin::Input-->
+                                                <div class="form-group row">
+                                                    <label class="col-form-label col-lg-3 col-sm-12">Jabatan</label>
+                                                    <div class="col-lg-9 col-md-9 col-sm-12">
+                                                        <div class="input-group date">
+                                                            <input type="text" class="form-control" value="{{ $verifikasi->jabatan_kompetensi }}" disabled/>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!--end::Input-->
+                                                <!--begin::Input-->
                                                 <div class="form-group row">
                                                     <label class="col-form-label col-lg-3 col-sm-12">Nomor Sertifikat/Surat</label>
                                                     <div class="col-lg-5 col-md-9 col-sm-12">
                                                         <div class="input-group date">
-                                                            <input type="text" class="form-control" value="{{ $verifikasi->nomor_sertifikat }}" id="kt_datepicker_10_modal" disabled/>
+                                                            <input type="text" class="form-control" value="{{ $verifikasi->nomor_sertifikat }}" disabled/>
                                                         </div>
                                                     </div>
                                                 </div>
-
+                                                <!--end::Input-->
+                                                <!--begin::Input-->
                                                 <div class="form-group row">
-                                                    <label class="col-form-label col-lg-3 col-sm-12">Tgl.Sertifikat/surat</label>
+                                                    <label class="col-form-label col-lg-3 col-sm-12">Tgl.Sertifikat/Surat Kompetensi</label>
                                                     <div class="col-lg-5 col-md-9 col-sm-12">
                                                         <div class="input-group date">
                                                             <input type="text" class="form-control" value="{{ $verifikasi->tanggal_sertifikat }}" disabled />
@@ -964,9 +644,10 @@
                                                         </div>
                                                     </div>
                                                 </div>
-                                                
+                                                <!--end::Input-->
+                                                <!--begin::Input-->
                                                 <div class="form-group row">
-                                                    <label class="col-form-label col-lg-3 col-sm-12">Upload/Download File Data Pendukung Lainnya</label>
+                                                    <label class="col-form-label col-lg-3 col-sm-12">Upload Sertifikat Uji Kompetensi.</label>
                                                     <div class="col-lg-9 col-md-9 col-sm-12">
                                                         @if($verifikasi->file_data_kompetensi == null)
                                                             <h1> - </h1>
@@ -1000,8 +681,586 @@
                                                         </div>
                                                     </div>
                                                 </div>
+                                                <!--end::Input-->
                                             </div>
                                             @endif
+sd
+                                            @if ($verifikasi->jenis_layanan == '2')
+                                            <div class="pb-6" style="margin-left: 50px; margin-right: 50px;">
+                                                <h4 class="mb-10 font-weight-bold text-dark">Data Rekomendasi</h4>
+                                                <!--begin::Input-->
+                                                <div class="form-group row">
+                                                    <label class="col-form-label col-lg-3 col-sm-12">Nomor Surat Rekomendasi</label>
+                                                    <div class="col-lg-9 col-md-9 col-sm-12">
+                                                        <div class="input-group date">
+                                                            <input type="text" class="form-control" value="{{ $verifikasi->no_surat_rekomendasi }}" disabled/>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!--end::Input-->
+                                                <!--begin::Input-->
+                                                <div class="form-group row">
+                                                    <label class="col-form-label col-lg-3 col-sm-12">Tanggal Surat Rekomendasi</label>
+                                                    <div class="col-lg-5 col-md-9 col-sm-12">
+                                                        <div class="input-group date">
+                                                            <input type="text" class="form-control" value="{{ $verifikasi->tanggal_surat_rekomendasi }}" disabled/>
+                                                            <div class="input-group-append">
+                                                                <span class="input-group-text">
+                                                                    <i class="la la-calendar"></i>
+                                                                </span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!--end::Input-->
+                                                <!--begin::Input-->
+                                                <div class="form-group row">
+                                                    <label class="col-form-label col-lg-3 col-sm-12">Upload Surat Rekomendasi</label>
+                                                    <div class="col-lg-9 col-md-9 col-sm-12">
+                                                        @if($verifikasi->file_data_rekomendasi == null)
+                                                            <h1> - </h1>
+                                                        @else
+                                                        <table>
+                                                            <thead>
+                                                                <tr class="text-start text-gray-400 fw-bolder fs-7 text-uppercase gs-0">
+                                                                    <th style="width: 170px">Nama File</th>
+                                                                    <th>Aksi</th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody>
+                                                            @foreach($file_data_rekomendasis as $file)
+                                                                <tr>
+                                                                    <td><a style="color: blue;" > {{ $file }}</a></td>
+                                                                    <td><a id="d_file_data_rekomendasi" type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#file_data_rekomendasi_modal" data-file="{{ $file }}">Lihat</a></td>
+                                                                </tr>
+                                                            @endforeach
+                                                            </tbody>
+                                                        </table>
+                                                        @endif
+                                                    </div>
+                                                </div>
+                                                <div class="modal fade" id="file_data_rekomendasi_modal">
+                                                    <div class="modal-dialog" >
+                                                        <div class="modal-content" style="width: 800px !important; height: 800px !important;">
+                                                            <div class="modal-header">
+                                                                <h4 class="modal-title" style="font-weight: bold;" id="file_name_file_data_rekomendasi"></h4>
+                                                            </div>
+                                                            <p id="file_data_rekomendasi"></p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!--end::Input-->
+                                                <!--begin::Input-->
+                                                <div class="form-group row">
+                                                    <label class="col-lg-3 col-form-label">Surat Keterangan Masih Menduduki Jabatan <br><a style="color:grey; font-size:12px;">(Ditandatangani Paling Rendah Pyb)</a></label>
+                                                    <div class="col-lg-9 col-md-9 col-sm-12">
+                                                        @if($verifikasi->file_surat_keterangan_menduduki_jabatan == null)
+                                                            <h1> - </h1>
+                                                        @else
+                                                        <table>
+                                                            <thead>
+                                                                <tr class="text-start text-gray-400 fw-bolder fs-7 text-uppercase gs-0">
+                                                                    <th style="width: 170px">Nama File</th>
+                                                                    <th>Aksi</th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody>
+                                                            @foreach($file_surat_keterangan_menduduki_jabatans as $file)
+                                                                <tr>
+                                                                    <td><a style="color: blue;" > {{ $file }}</a></td>
+                                                                    <td><a id="d_file_surat_keterangan_menduduki_jabatan" type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#file_surat_keterangan_menduduki_jabatan_modal" data-file="{{ $file }}">Lihat</a></td>
+                                                                </tr>
+                                                            @endforeach
+                                                            </tbody>
+                                                        </table>
+                                                        @endif
+                                                    </div>
+                                                </div>
+                                                <div class="modal fade" id="file_surat_keterangan_menduduki_jabatan_modal">
+                                                    <div class="modal-dialog" >
+                                                        <div class="modal-content" style="width: 800px !important; height: 800px !important;">
+                                                            <div class="modal-header">
+                                                                <h4 class="modal-title" style="font-weight: bold;" id="file_name_file_surat_keterangan_menduduki_jabatan"></h4>
+                                                            </div>
+                                                            <p id="file_surat_keterangan_menduduki_jabatan"></p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!--end::Input-->
+                                                <!--begin::Input-->
+                                                <div class="form-group row">
+                                                    <label class="col-lg-3 col-form-label">Upload Surat Keterangan Memiliki Pengalaman Minimal 2 Tahun Dalam JF Yang Akan Diduduki</label>
+                                                    <div class="col-lg-9 col-md-9 col-sm-12">
+                                                        @if($verifikasi->file_surat_keterangan_pengalaman == null)
+                                                            <h1> - </h1>
+                                                        @else
+                                                        <table>
+                                                            <thead>
+                                                                <tr class="text-start text-gray-400 fw-bolder fs-7 text-uppercase gs-0">
+                                                                    <th style="width: 170px">Nama File</th>
+                                                                    <th>Aksi</th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody>
+                                                            @foreach($file_surat_keterangan_pengalamans as $file)
+                                                                <tr>
+                                                                    <td><a style="color: blue;" > {{ $file }}</a></td>
+                                                                    <td><a id="d_file_surat_keterangan_pengalaman" type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#file_surat_keterangan_pengalaman_modal" data-file="{{ $file }}">Lihat</a></td>
+                                                                </tr>
+                                                            @endforeach
+                                                            </tbody>
+                                                        </table>
+                                                        @endif
+                                                    </div>
+                                                </div>
+                                                <div class="modal fade" id="file_surat_keterangan_pengalaman_modal">
+                                                    <div class="modal-dialog" >
+                                                        <div class="modal-content" style="width: 800px !important; height: 800px !important;">
+                                                            <div class="modal-header">
+                                                                <h4 class="modal-title" style="font-weight: bold;" id="file_name_file_surat_keterangan_pengalaman"></h4>
+                                                            </div>
+                                                            <p id="file_surat_keterangan_pengalaman"></p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!--end::Input-->
+                                            </div>
+                                            @endif
+
+                                            @if ($verifikasi->jenis_layanan == '1' || $verifikasi->jenis_layanan == '2')
+                                            <div class="pb-6" style="margin-left: 50px; margin-right: 50px;">
+                                                <h4 class="mb-10 font-weight-bold text-dark">Data Pangkat</h4>
+                                                <!--begin::Input-->
+                                                <div class="form-group row">
+                                                    <label class="col-form-label col-lg-3 col-sm-12">Nomor SK Pangkat</label>
+                                                    <div class="col-lg-9 col-md-9 col-sm-12">
+                                                        <div class="input-group date">
+                                                            <input type="text" class="form-control" value="{{ $verifikasi->no_sk_pangkat }}" disabled/>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!--end::Input-->
+                                                <!--begin::Input-->
+                                                <div class="form-group row">
+                                                    <label class="col-form-label col-lg-3 col-sm-12">Pangkat (Gol/Ruang)</label>
+                                                    <div class="col-lg-5 col-md-9 col-sm-12">
+                                                        <div class="input-group date">
+                                                            <input type="text" class="form-control" value="{{ $verifikasi->pangkat_gol }}" disabled/>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!--end::Input-->
+                                                <!--begin::Input-->
+                                                <div class="form-group row">
+                                                    <label class="col-form-label col-lg-3 col-sm-12">TMT</label>
+                                                    <div class="col-lg-5 col-md-9 col-sm-12">
+                                                        <div class="input-group date">
+                                                            <input type="text" class="form-control" value="{{ $verifikasi->tmt_gol }}" disabled />
+                                                            <div class="input-group-append">
+                                                                <span class="input-group-text">
+                                                                    <i class="la la-calendar"></i>
+                                                                </span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!--end::Input-->
+                                                <!--begin::Input-->
+                                                <div class="form-group row">
+                                                    <label class="col-form-label col-lg-3 col-sm-12">Upload SK pangkat terakhir</label>
+                                                    <div class="col-lg-9 col-md-9 col-sm-12">
+                                                        @if($verifikasi->file_sk_pangkat_terakhir == null)
+                                                            <h1> - </h1>
+                                                        @else
+                                                        <table>
+                                                            <thead>
+                                                                <tr class="text-start text-gray-400 fw-bolder fs-7 text-uppercase gs-0">
+                                                                    <th style="width: 170px">Nama File</th>
+                                                                    <th>Aksi</th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody>
+                                                            @foreach($file_sk_pangkat_terakhirs as $file)
+                                                                <tr>
+                                                                    <td><a style="color: blue;" > {{ $file }}</a></td>
+                                                                    <td><a id="d_file_sk_pangkat_terakhir" type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#file_sk_pangkat_terakhir_modal" data-file="{{ $file }}">Lihat</a></td>
+                                                                </tr>
+                                                            @endforeach
+                                                            </tbody>
+                                                        </table>
+                                                        @endif
+                                                    </div>
+                                                </div>
+                                                <div class="modal fade" id="file_sk_pangkat_terakhir_modal">
+                                                    <div class="modal-dialog" >
+                                                        <div class="modal-content" style="width: 800px !important; height: 800px !important;">
+                                                            <div class="modal-header">
+                                                                <h4 class="modal-title" style="font-weight: bold;" id="file_name_file_sk_pangkat_terakhir"></h4>
+                                                            </div>
+                                                            <p id="file_sk_pangkat_terakhir"></p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!--end::Input-->
+                                            </div>
+                                            @endif
+
+                                            @if ($verifikasi->jenis_layanan == '1' || $verifikasi->jenis_layanan == '2' || $verifikasi->jenis_layanan == '3')
+                                                @if ($verifikasi->pangkat_gol == '1')
+                                                    @if ($verifikasi->nomor_pak != '')
+                                                    <div class="pb-6" style="margin-left: 50px; margin-right: 50px;">
+                                                        <h4 class="mb-10 font-weight-bold text-dark">Data Dokumen Penetapan Angka Kredit (PAK)</h4>
+                                                        <!--begin::Input-->
+                                                        <div class="form-group row">
+                                                            <label class="col-form-label col-lg-3 col-sm-12">Nomor PAK</label>
+                                                            <div class="col-lg-9 col-md-9 col-sm-12">
+                                                                <div class="input-group date">
+                                                                    <input type="text" class="form-control" value="{{ $verifikasi->nomor_pak }}"  disabled/>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <!--end::Input-->
+                                                        <!--begin::Input-->
+                                                        <div class="form-group row">
+                                                            <label class="col-form-label col-lg-3 col-sm-12">Jumlah Angka Kredit</label>
+                                                            <div class="col-lg-9 col-md-9 col-sm-12">
+                                                                <div class="input-group date">
+                                                                    <input type="text" class="form-control" value="{{ $verifikasi->jumlah_angka_kredit }}" disabled />
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <!--end::Input-->
+                                                        <!--begin::Input-->
+                                                        <div class="form-group row">
+                                                            <label class="col-form-label col-lg-3 col-sm-12">Tanggal ditetapkan</label>
+                                                            <div class="col-lg-5 col-md-9 col-sm-12">
+                                                                <div class="input-group date">
+                                                                    <input type="text" class="form-control" value="{{ $verifikasi->tanggal_pak }}" disabled/>
+                                                                    <div class="input-group-append">
+                                                                        <span class="input-group-text">
+                                                                            <i class="la la-calendar"></i>
+                                                                        </span>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <!--end::Input-->
+                                                        <!--begin::Input-->
+                                                        <div class="form-group row">
+                                                            <label class="col-form-label col-lg-3 col-sm-12">Upload Dokumen PAK</label>
+                                                            <div class="col-lg-9 col-md-9 col-sm-12">
+                                                                @if($verifikasi->file_data_pak == null)
+                                                                    <h1> - </h1>
+                                                                @else
+                                                                <table>
+                                                                    <thead>
+                                                                        <tr class="text-start text-gray-400 fw-bolder fs-7 text-uppercase gs-0">
+                                                                            <th style="width: 170px">Nama File</th>
+                                                                            <th>Aksi</th>
+                                                                        </tr>
+                                                                    </thead>
+                                                                    <tbody>
+                                                                    @foreach($file_data_paks as $file)
+                                                                        <tr>
+                                                                            <td><a style="color: blue;" > {{ $file }}</a></td>
+                                                                            <td><a id="d_file_data_pak" type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#file_data_pak_modal" data-file="{{ $file }}">Lihat</a></td>
+                                                                        </tr>
+                                                                    @endforeach
+                                                                    </tbody>
+                                                                </table>
+                                                                @endif
+                                                            </div>
+                                                        </div>
+                                                        <div class="modal fade" id="file_data_pak_modal">
+                                                            <div class="modal-dialog" >
+                                                                <div class="modal-content" style="width: 800px !important; height: 800px !important;">
+                                                                    <div class="modal-header">
+                                                                        <h4 class="modal-title" style="font-weight: bold;" id="file_name_file_data_pak"></h4>
+                                                                    </div>
+                                                                    <p id="file_data_pak"></p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <!--end::Input-->
+                                                        <!--begin::Input-->
+                                                        <div class="form-group row">
+                                                            <label class="col-form-label col-lg-3 col-sm-12">Upload Dokumen Klarifikasi PAK</label>
+                                                            <div class="col-lg-9 col-md-9 col-sm-12">
+                                                                @if($verifikasi->file_klarifikasi_pak == null)
+                                                                    <h1> - </h1>
+                                                                @else
+                                                                <table>
+                                                                    <thead>
+                                                                        <tr class="text-start text-gray-400 fw-bolder fs-7 text-uppercase gs-0">
+                                                                            <th style="width: 170px">Nama File</th>
+                                                                            <th>Aksi</th>
+                                                                        </tr>
+                                                                    </thead>
+                                                                    <tbody>
+                                                                    @foreach($file_klarifikasi_paks as $file)
+                                                                        <tr>
+                                                                            <td><a style="color: blue;" > {{ $file }}</a></td>
+                                                                            <td><a id="d_file_klarifikasi_pak" type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#file_klarifikasi_pak_modal" data-file="{{ $file }}">Lihat</a></td>
+                                                                        </tr>
+                                                                    @endforeach
+                                                                    </tbody>
+                                                                </table>
+                                                                @endif
+                                                            </div>
+                                                        </div>
+                                                        <div class="modal fade" id="file_klarifikasi_pak_modal">
+                                                            <div class="modal-dialog" >
+                                                                <div class="modal-content" style="width: 800px !important; height: 800px !important;">
+                                                                    <div class="modal-header">
+                                                                        <h4 class="modal-title" style="font-weight: bold;" id="file_name_file_klarifikasi_pak"></h4>
+                                                                    </div>
+                                                                    <p id="file_klarifikasi_pak"></p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <!--end::Input-->
+                                                    </div>
+                                                    @endif
+                                                @endif
+                                            @endif
+                                            <!--begin: Wizard Step 3-->
+                                            
+                                            @if ($verifikasi->jenis_layanan == '1' || $verifikasi->jenis_layanan == '2' || $verifikasi->jenis_layanan == '3')
+                                            <div class="pb-6" style="margin-left: 50px; margin-right: 50px;">
+                                                <h4 class="mb-10 font-weight-bold text-dark">Penilaian SKP dan Penilaian Prestasi Kerja 2 tahun terakhir
+                                                </h4>
+
+                                                <div class="form-group row">
+                                                    <label class="col-form-label col-lg-3 col-sm-12">Upload Penilaian SKP</label>
+                                                    <div class="col-lg-9 col-md-9 col-sm-12">
+                                                        @if($verifikasi->file_penilaian_skp == null)
+                                                            <h1> - </h1>
+                                                        @else
+                                                        <table>
+                                                            <thead>
+                                                                <tr class="text-start text-gray-400 fw-bolder fs-7 text-uppercase gs-0">
+                                                                    <th style="width: 170px">Nama File</th>
+                                                                    <th>Aksi</th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody>
+                                                            @foreach($file_penilaian_skps as $file)
+                                                                <tr>
+                                                                    <td><a style="color: blue;" > {{ $file }}</a></td>
+                                                                    <td><a id="d_file_penilaian_skp" type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#file_penilaian_skp_modal" data-file="{{ $file }}">Lihat</a></td>
+                                                                </tr>
+                                                            @endforeach
+                                                            </tbody>
+                                                        </table>
+                                                        @endif
+                                                    </div>
+                                                </div>
+                                                <div class="modal fade" id="file_penilaian_skp_modal">
+                                                    <div class="modal-dialog" >
+                                                        <div class="modal-content" style="width: 800px !important; height: 800px !important;">
+                                                            <div class="modal-header">
+                                                                <h4 class="modal-title" style="font-weight: bold;" id="file_name_file_penilaian_skp"></h4>
+                                                            </div>
+                                                            <p id="file_penilaian_skp"></p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="form-group row">
+                                                    <label class="col-form-label col-lg-3 col-sm-12">Upload Penilaian Prestasi Kerja 2 Tahun Terakhir</label>
+                                                    <div class="col-lg-9 col-md-9 col-sm-12">
+                                                        @if($verifikasi->file_penilaian_prestasi == null)
+                                                            <h1> - </h1>
+                                                        @else
+                                                        <table>
+                                                            <thead>
+                                                                <tr class="text-start text-gray-400 fw-bolder fs-7 text-uppercase gs-0">
+                                                                    <th style="width: 170px">Nama File</th>
+                                                                    <th>Aksi</th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody>
+                                                            @foreach($file_penilaian_prestasis as $file)
+                                                                <tr>
+                                                                    <td><a style="color: blue;" > {{ $file }}</a></td>
+                                                                    <td><a id="d_file_penilaian_prestasi" type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#file_penilaian_prestasi_modal" data-file="{{ $file }}">Lihat</a></td>
+                                                                </tr>
+                                                            @endforeach
+                                                            </tbody>
+                                                        </table>
+                                                        @endif
+                                                    </div>
+                                                </div>
+                                                <div class="modal fade" id="file_penilaian_prestasi_modal">
+                                                    <div class="modal-dialog" >
+                                                        <div class="modal-content" style="width: 800px !important; height: 800px !important;">
+                                                            <div class="modal-header">
+                                                                <h4 class="modal-title" style="font-weight: bold;" id="file_name_file_penilaian_prestasi"></h4>
+                                                            </div>
+                                                            <p id="file_penilaian_prestasi"></p>
+                                                        </div>
+                                                    </div>
+                                                </div> 
+
+                                                <div class="form-group row">
+                                                    <label class="col-form-label col-lg-3 col-sm-12">Upload Dokumen Pendukung Lainnya</label>
+                                                    <div class="col-lg-9 col-md-9 col-sm-12">
+                                                        @if($verifikasi->file_skp_2_dukungan_lainnya == null)
+                                                            <h1> - </h1>
+                                                        @else
+                                                        <table>
+                                                            <thead>
+                                                                <tr class="text-start text-gray-400 fw-bolder fs-7 text-uppercase gs-0">
+                                                                    <th style="width: 170px">Nama File</th>
+                                                                    <th>Aksi</th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody>
+                                                            @foreach($file_skp_2_dukungan_lainnyas as $file)
+                                                                <tr>
+                                                                    <td><a style="color: blue;" > {{ $file }}</a></td>
+                                                                    <td><a id="d_file_skp_2_dukungan_lainnya" type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#file_skp_2_dukungan_lainnya_modal" data-file="{{ $file }}">Lihat</a></td>
+                                                                </tr>
+                                                            @endforeach
+                                                            </tbody>
+                                                        </table>
+                                                        @endif
+                                                    </div>
+                                                </div>
+                                                <div class="modal fade" id="file_skp_2_dukungan_lainnya_modal">
+                                                    <div class="modal-dialog" >
+                                                        <div class="modal-content" style="width: 800px !important; height: 800px !important;">
+                                                            <div class="modal-header">
+                                                                <h4 class="modal-title" style="font-weight: bold;" id="file_name_file_skp_2_dukungan_lainnya"></h4>
+                                                            </div>
+                                                            <p id="file_skp_2_dukungan_lainnya"></p>
+                                                        </div>
+                                                    </div>
+                                                </div> 
+
+                                                @foreach ($notes as $catatans)
+                                                    <div class="form-group row">
+
+                                                        <label class="col-form-label col-lg-3 col-sm-12">Tanggal Catatan</label>
+                                                        <div class="col-lg-9 col-md-9 col-sm-12">
+                                                            <div class="input-group date">
+                                                                <input type="text" class="form-control" value="{{ $catatans->tanggal_catatan }}"  disabled/>
+                                                                <div class="input-group-append">
+                                                                <span class="input-group-text">
+                                                                    <i class="la la-calendar"></i>
+                                                                </span>
+                                                            </div>
+                                                            </div>
+                                                        </div>
+                                                        
+                                                        <label class="col-form-label col-lg-3 col-sm-12">Catatan</label>
+                                                        <div class="col-lg-9 col-md-9 col-sm-12">
+                                                            <div class="input-group date">
+                                                                <input type="text" class="form-control" value="{{ $catatans->catatan }}"  disabled/>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                @endforeach
+                                            </div>
+                                            @endif
+
+
+
+
+
+
+                                            @if ($verifikasi->jenis_layanan == '2' && $verifikasi->nomor_pak_terakhir != '')
+                                            <div class="pb-6" style="margin-left: 50px; margin-right: 50px;">
+                                                <h4 class="mb-10 font-weight-bold text-dark">Data PAK Terakhir</h4>
+                                                <!--begin::Input-->
+                                                <div class="form-group row">
+                                                    <label class="col-form-label col-lg-3 col-sm-12">Nomor PAK</label>
+                                                    <div class="col-lg-9 col-md-9 col-sm-12">
+                                                        <div class="input-group date">
+                                                            <input type="text" class="form-control" value="{{ $verifikasi->nomor_pak_terakhir }}"  disabled/>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!--end::Input-->
+                                                <!--begin::Input-->
+                                                <div class="form-group row">
+                                                    <label class="col-form-label col-lg-3 col-sm-12">Tanggal PAK</label>
+                                                    <div class="col-lg-5 col-md-9 col-sm-12">
+                                                        <div class="input-group date">
+                                                            <input type="text" class="form-control" value="{{ $verifikasi->tanggal_pak_terakhir }}" id="kt_datepicker_8_modal" disabled/>
+                                                            <div class="input-group-append">
+                                                                <span class="input-group-text">
+                                                                    <i class="la la-calendar"></i>
+                                                                </span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group row">
+                                                    <label class="col-form-label col-lg-3 col-sm-12">Jumlah Angka Kredit</label>
+                                                    <div class="col-lg-9 col-md-9 col-sm-12">
+                                                        <div class="input-group date">
+                                                            <input type="text" class="form-control" value="{{ $verifikasi->jumlah_angka_kredit_terakhir }}" disabled />
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group row">
+                                                    <label class="col-form-label col-lg-3 col-sm-12">Periode Penilaian</label>
+                                                    <div class="col-lg-9 col-md-9 col-sm-12">
+                                                        <div class="input-group date">
+                                                            @foreach ($periodes as $periode)
+                                                                @if($verifikasi->periode_penilaian_terakhir == $periode->id)
+                                                                <input type="text" class="form-control" value="{{$periode->name}}" disabled />
+                                                                @endif
+                                                            @endforeach
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group row">
+                                                    <label class="col-form-label col-lg-3 col-sm-12">Upload File</label>
+                                                    <div class="col-lg-9 col-md-9 col-sm-12">
+                                                        @if($verifikasi->file_sk_pangkat_terakhir == null)
+                                                            <h1> - </h1>
+                                                        @else
+                                                        <table>
+                                                            <thead>
+                                                                <tr class="text-start text-gray-400 fw-bolder fs-7 text-uppercase gs-0">
+                                                                    <th style="width: 170px">Nama File</th>
+                                                                    <th>Aksi</th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody>
+                                                            @foreach($file_sk_pangkat_terakhirs as $file)
+                                                                <tr>
+                                                                    <td><a style="color: blue;" > {{ $file }}</a></td>
+                                                                    <td><a id="d_file_sk_pangkat_terakhir" type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#file_sk_pangkat_terakhir_modal" data-file="{{ $file }}">Lihat</a></td>
+                                                                </tr>
+                                                            @endforeach
+                                                            </tbody>
+                                                        </table>
+                                                        @endif
+                                                    </div>
+                                                </div>
+                                                <div class="modal fade" id="file_sk_pangkat_terakhir_modal">
+                                                    <div class="modal-dialog" >
+                                                        <div class="modal-content" style="width: 800px !important; height: 800px !important;">
+                                                            <div class="modal-header">
+                                                                <h4 class="modal-title" style="font-weight: bold;" id="file_name_file_sk_pangkat_terakhir"></h4>
+                                                            </div>
+                                                            <p id="file_sk_pangkat_terakhir"></p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            @endif
+
+                                            
+
+                                            
+
+                                           
+
+                                            
 
                                             @if ($verifikasi->jenis_layanan == '1' || $verifikasi->jenis_layanan == '3' )
                                             <div class="pb-6" style="margin-left: 50px; margin-right: 50px;">
@@ -1009,32 +1268,7 @@
                                                 </h4>
 
                                                 <!--begin::Input-->
-                                                <div class="form-group row">
-                                                    <label class="col-form-label col-lg-3 col-sm-12">Jumlah</label>
-                                                    <div class="col-lg-9 col-md-9 col-sm-12">
-                                                        <div class="input-group date">
-                                                            <input type="text" class="form-control" value="{{ $verifikasi->jumlah }}"  disabled/>
-                                                        </div>
-                                                    </div>
-                                                </div>
-
-                                                <div class="form-group row">
-                                                    <label class="col-form-label col-lg-3 col-sm-12">Terisi</label>
-                                                    <div class="col-lg-5 col-md-9 col-sm-12">
-                                                        <div class="input-group date">
-                                                            <input type="text" class="form-control" value="{{ $verifikasi->terisi }}" id="kt_datepicker_10_modal" disabled/>
-                                                        </div>
-                                                    </div>
-                                                </div>
-
-                                                <div class="form-group row">
-                                                    <label class="col-form-label col-lg-3 col-sm-12">Sisa</label>
-                                                    <div class="col-lg-5 col-md-9 col-sm-12">
-                                                        <div class="input-group date">
-                                                            <input type="text" class="form-control" value="{{ $verifikasi->sisa }}" disabled />
-                                                        </div>
-                                                    </div>
-                                                </div>
+                                                
                                                 
                                                 <div class="form-group row">
                                                     <label class="col-form-label col-lg-3 col-sm-12">Upload/Download File Data Pendukung Lainnya</label>
@@ -1074,125 +1308,7 @@
                                             </div>
                                             @endif
 
-                                            @if ($verifikasi->jenis_layanan == '1' || $verifikasi->jenis_layanan == '3')
-                                            <div class="pb-6" style="margin-left: 50px; margin-right: 50px;">
-                                                <h4 class="mb-10 font-weight-bold text-dark">SKP 2 Tahun Terakhir
-                                                </h4>
-
-                                                <div class="form-group row">
-                                                    <label class="col-form-label col-lg-3 col-sm-12">Upload/Download File</label>
-                                                    <div class="col-lg-9 col-md-9 col-sm-12">
-                                                        @if($verifikasi->file_skp_2 == null)
-                                                            <h1> - </h1>
-                                                        @else
-                                                        <table>
-                                                            <thead>
-                                                                <tr class="text-start text-gray-400 fw-bolder fs-7 text-uppercase gs-0">
-                                                                    <th style="width: 170px">Nama File</th>
-                                                                    <th>Aksi</th>
-                                                                </tr>
-                                                            </thead>
-                                                            <tbody>
-                                                            @foreach($file_skp_2s as $file)
-                                                                <tr>
-                                                                    <td><a style="color: blue;" > {{ $file }}</a></td>
-                                                                    <td><a id="d_file_skp_2" type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#file_skp_2_modal" data-file="{{ $file }}">Lihat</a></td>
-                                                                </tr>
-                                                            @endforeach
-                                                            </tbody>
-                                                        </table>
-                                                        @endif
-                                                    </div>
-                                                </div>
-                                                <div class="modal fade" id="file_skp_2_modal">
-                                                    <div class="modal-dialog" >
-                                                        <div class="modal-content" style="width: 800px !important; height: 800px !important;">
-                                                            <div class="modal-header">
-                                                                <h4 class="modal-title" style="font-weight: bold;" id="file_name_file_skp_2"></h4>
-                                                            </div>
-                                                            <p id="file_skp_2"></p>
-                                                        </div>
-                                                    </div>
-                                                </div>
-
-                                                <div class="form-group row">
-                                                    <label class="col-form-label col-lg-3 col-sm-12">Upload/Download File Data Pendukung Lainnya</label>
-                                                    <div class="col-lg-9 col-md-9 col-sm-12">
-                                                        @if($verifikasi->file_skp_2_lainnya == null)
-                                                            <h1> - </h1>
-                                                        @else
-                                                        <table>
-                                                            <thead>
-                                                                <tr class="text-start text-gray-400 fw-bolder fs-7 text-uppercase gs-0">
-                                                                    <th style="width: 170px">Nama File</th>
-                                                                    <th>Aksi</th>
-                                                                </tr>
-                                                            </thead>
-                                                            <tbody>
-                                                            @foreach($file_skp_2_lainnyas as $file)
-                                                                <tr>
-                                                                    <td><a style="color: blue;" > {{ $file }}</a></td>
-                                                                    <td><a id="d_file_skp_2_lainnya" type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#file_skp_2_lainnya_modal" data-file="{{ $file }}">Lihat</a></td>
-                                                                </tr>
-                                                            @endforeach
-                                                            </tbody>
-                                                        </table>
-                                                        @endif
-                                                    </div>
-                                                </div>
-                                                <div class="modal fade" id="file_skp_2_lainnya_modal">
-                                                    <div class="modal-dialog" >
-                                                        <div class="modal-content" style="width: 800px !important; height: 800px !important;">
-                                                            <div class="modal-header">
-                                                                <h4 class="modal-title" style="font-weight: bold;" id="file_name_file_skp_2_lainnya"></h4>
-                                                            </div>
-                                                            <p id="file_skp_2_lainnya"></p>
-                                                        </div>
-                                                    </div>
-                                                </div> 
-
-                                                @foreach ($notes as $catatans)
-                                                    
-                                                    <div class="form-group row">
-
-                                                        <label class="col-form-label col-lg-3 col-sm-12">Tanggal Catatan</label>
-                                                        <div class="col-lg-9 col-md-9 col-sm-12">
-                                                            <div class="input-group date">
-                                                                <input type="text" class="form-control" value="{{ $catatans->tanggal_catatan }}"  disabled/>
-                                                                <div class="input-group-append">
-                                                                <span class="input-group-text">
-                                                                    <i class="la la-calendar"></i>
-                                                                </span>
-                                                            </div>
-                                                            </div>
-                                                        </div>
-                                                        
-                                                        <label class="col-form-label col-lg-3 col-sm-12">Catatan</label>
-                                                        <div class="col-lg-9 col-md-9 col-sm-12">
-                                                            <div class="input-group date">
-                                                                <input type="text" class="form-control" value="{{ $catatans->catatan }}"  disabled/>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                @endforeach
-                                                
-                                                @if ($verifikasi->jenis_layanan == '1')
-                                                <div class="form-group row">
-                                                    <label class="col-form-label col-lg-3 col-sm-12">Tgl.Sertifikat/surat</label>
-                                                    <div class="col-lg-5 col-md-9 col-sm-12">
-                                                        <div class="input-group date">
-                                                            <input type="text" class="form-control" value="{{ $verifikasi->tanggal_sertifikat }}" disabled />
-                                                            <div class="input-group-append">
-                                                                <span class="input-group-text">
-                                                                    <i class="la la-calendar"></i>
-                                                                </span>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                @endif
-                                            </div>
-                                            @endif
+                                            
 
                                             @if ($verifikasi->jenis_layanan == '2')
                                             <div class="pb-6" style="margin-left: 50px; margin-right: 50px;">

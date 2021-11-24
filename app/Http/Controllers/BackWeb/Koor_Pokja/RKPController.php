@@ -133,4 +133,17 @@ class RKPController extends Controller
        
         
     }
+
+    public function laporan($id) {
+        $currentUser = UserManagement::find(Auth::id());
+        $rkp = RKP::where('id', $id)->first();
+    
+        $notes = [];
+
+        
+        $notes = Catatan::where([
+            ['id_usulan', '=', $rkp->id_usulan], ['id_layanan', '=', $rkp->id_layanan], ['id_status', '=', Helper::$verifikasi_rkp_pokja]
+        ])->get();
+        
+    }
 }

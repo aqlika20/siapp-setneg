@@ -40,7 +40,6 @@ class TextEditorController extends Controller
         
         $notes = [];
 
-        
         $notes = Catatan::where([
             ['id_usulan', '=', $rkp->id_usulan], ['id_layanan', '=', $rkp->id_layanan], ['id_status', '=', Helper::$verifikasi_rkp_pokja]
         ])->get();

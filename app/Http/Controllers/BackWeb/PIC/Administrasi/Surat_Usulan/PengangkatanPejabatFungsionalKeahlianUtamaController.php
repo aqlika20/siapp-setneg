@@ -69,8 +69,8 @@ class PengangkatanPejabatFungsionalKeahlianUtamaController extends Controller
     public function index() 
     {
         $currentUser = UserManagement::find(Auth::id());
-        $page_title = 'PIC | Administrasi | Surat Usulan | Pengangkatan Jabatan Fungsional Keahlian Utama';
-        $page_description = 'Pengangkatan Jabatan Fungsional Keahlian Utama';
+        $page_title = 'PIC | Administrasi | Surat Usulan | Pengangkatan Pejabat Fungsional Ahli Utama melalui Promosi';
+        $page_description = 'Pengangkatan Pejabat Fungsional Ahli Utama melalui Promosi';
         $pangkats = Pangkat::All();
         $periodes = Periode::All();
         return view('pages.pic.administrasi.surat_usulan.form.pengangkatan_pejabat_fku', compact('page_title', 'page_description', 'currentUser', 'pangkats', 'periodes'));
