@@ -236,7 +236,7 @@ class PengangkatanPejabatFungsionalKeahlianUtamaController extends Controller
             'jabatan_baru' => $input['jabatan_baru'],
             'satuan_organisasi_baru' => $input['satuan_organisasi_baru'],
 
-            'jabatan_data_kompetensi' => $input['jabatan_kompetensi'],
+            'jabatan_kompetensi' => $input['jabatan_kompetensi'],
             'nomor_sertifikat' => $input['no_sertifikat'],
             'tanggal_sertifikat' => Helper::convertDatetoDB($input['tanggal_sertifikat']), 
 

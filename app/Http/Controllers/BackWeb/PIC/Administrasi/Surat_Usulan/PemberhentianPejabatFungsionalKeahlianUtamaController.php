@@ -99,12 +99,14 @@ class PemberhentianPejabatFungsionalKeahlianUtamaController extends Controller
             'nomor_pak' => 'nullable',
             'tanggal_pak' => 'nullable',
             'jumlah_angka_kredit' => 'nullable',
+            'file_data_pak.*' => 'required|max:5000|mimes:pdf',
             
             'jabatan_fungsional' => 'required',
             'no_keppress_jabatan_fungsional' => 'required',
             'tmt_jabatan_fungsional' => 'required',
             'satuan_organisasi_fungsional' => 'required',
-            'file_data_pak.*' => 'required|max:5000|mimes:pdf',
+            'file_keppres_pengangkatan.*' => 'required|max:5000|mimes:pdf',
+            'file_ba_pengambilan_sumpah_fungsional.*' => 'required|max:5000|mimes:pdf',
             
             'alasan_pemberhentian' => 'required',
             'ket_alasan_pemberhentian' => 'required',

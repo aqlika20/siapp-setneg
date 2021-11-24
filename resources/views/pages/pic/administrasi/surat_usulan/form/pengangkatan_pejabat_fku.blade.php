@@ -143,7 +143,7 @@
                                                 <label class="col-form-label col-lg-3 col-sm-12">NIP</label>
                                                 <div class="col-lg-5 col-md-9 col-sm-12">
                                                     <div class="input-group date">
-                                                        <input type="number" class="form-control" id="nip" name="nip" value="{{old('nip')}}" autocomplete="off" require/>
+                                                        <input type="number" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" maxlength="18"  class="form-control" id="nip" name="nip" value="{{old('nip')}}" autocomplete="off" require/>
                                                     </div>
                                                 </div>
                                                 <button id="btn-bkn" class="btn btn-light-primary font-weight-bold">Tarik Data BKN</button>
@@ -1117,44 +1117,35 @@
             })
         }
 
-        $('#tanggal_surat_usulan').on('change.datetimepicker', function(e) {
-            // var input_date = e.data;
-            var input_date = new Date(document.getElementById("tanggal_surat_usulan").value);
-            var input_date_day = input_date.getDate();
-            var input_date_month = input_date.getMonth();
-            var input_date_year = input_date.getFullYear();
+        // $('#tanggal_surat_usulan').on('change.datetimepicker', function(e) {
+        //     // var input_date = e.data;
+        //     var input_date = new Date(document.getElementById("tanggal_surat_usulan").value);
+        //     var input_date_day = input_date.getDate();
+        //     var input_date_month = input_date.getMonth();
+        //     var input_date_year = input_date.getFullYear();
             
-            var today = new Date();
-            var today_day = today.getDate();
-            var today_month = today.getMonth();
-            var today_year = today.getFullYear();
+        //     var today = new Date();
+        //     var today_day = today.getDate();
+        //     var today_month = today.getMonth();
+        //     var today_year = today.getFullYear();
 
-            var calculated_date = 0;
+        //     var calculated_date = 0;
 
-            var td = dateFromDay(today_year, input_date_day);
-            var ip = dateFromDay(input_date_year);
-            consol.log("haha", td);
-            calculated_date = td - ip;
+        //     var td = dateFromDay(today_year, input_date_day);
+        //     var ip = dateFromDay(input_date_year);
+        //     consol.log("haha", td);
+        //     calculated_date = td - ip;
             
-            if(calculated_date >= 365){
-                document.getElementById("maksimal_satu_tahun").innerHTML = 'gagal';
-            } else {
-                document.getElementById("maksimal_satu_tahun").innerHTML = 'lulus';
-            }
+        //     if(calculated_date >= 365){
+        //         document.getElementById("maksimal_satu_tahun").innerHTML = 'gagal';
+        //     } else {
+        //         document.getElementById("maksimal_satu_tahun").innerHTML = 'lulus';
+        //     }
             
             
 
 
-        });
-
-        $date1 = Carbon::parse('2022-11-24'); // ini dipake buat inputannya, nanti tinggal ganti aja ama variable
-        
-        $date2 = Carbon::parse('2021-11-23'); // ini yang akan ditanbah kan setahun
-        $addOneYear = $date2->addYear();
-        
-        $result = $addOneYear->greaterThan($date1); //  returnnya boolean, klo lebih besar dari setahun hasilnya false, klo tidak lebih besar hasilnya true
-        dd($date1, $addOneYear, $result);
-        
+        // });        
 
         $('#otherFieldDiv').hide();
 

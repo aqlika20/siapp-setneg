@@ -386,7 +386,7 @@
                                                 <label class="col-form-label col-lg-3 col-sm-12">Satuan Organisasi</label>
                                                 <div class="col-lg-9 col-md-9 col-sm-12">
                                                     <div class="input-group date">
-                                                        <input type="text" class="form-control" id="satuan_organisasi" name="satuan_organisasi" value="{{old('satuan_organisasi')}}" autocomplete="off" require/>
+                                                        <input type="text" class="form-control" id="satuan_organisasi_fungsional" name="satuan_organisasi_fungsional" value="{{old('satuan_organisasi_fungsional')}}" autocomplete="off" require/>
                                                     </div>
                                                 </div>
                                             </div>
@@ -498,7 +498,7 @@
                                                 </div>
                                                 <!--begin::Input-->
                                                 <div class="form-group row">
-                                                    <label class="col-form-label col-lg-3 col-sm-12">Tanggal PAK</label>
+                                                    <label class="col-form-label col-lg-3 col-sm-12">Tanggal Ditetapkan</label>
                                                     <div class="col-lg-5 col-md-9 col-sm-12">
                                                         <div class="input-group date">
                                                             <input type="text" class="form-control datetimepicker-input my-datepicker" id="tanggal_pak" name="tanggal_pak" data-toggle="datetimepicker" data-target="#tanggal_pak" placeholder="Pilih Tanggal" value="{{old('tanggal_pak')}}" autocomplete="off" />
@@ -980,7 +980,7 @@
                         extenstion: "pdf"
                     },
                     tmt_jabatan_fungsional: 'required',
-                    satuan_organisasi: 'required',
+                    satuan_organisasi_fungsional: 'required',
 
                     no_sk_pangkat: 'required',
                     pangkat_gol: 'required',

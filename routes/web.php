@@ -382,6 +382,31 @@ Route::group(['middleware' => ['auth', 'checkRole:2']], function() {
             Route::prefix('/detail-surat-pengembalian')->group(function(){
                 Route::get('/{id}', 'BackWeb\Koor_Pokja\Inbox\DetailSuratPengembalianController@index')->name('koor-pokja.inbox.detail-surat-pengembalian.index');
             });
+
+            Route::prefix('/lsn')->group(function(){
+                Route::get('/', 'BackWeb\Koor_Pokja\Inbox\JabatanFungsionalController@index')->name('koor-pokja.inbox.lsn.index');
+                Route::prefix('/form')->group(function(){
+
+                    Route::get('/pengangkatan-pejabat-ns', 'BackWeb\Koor_Pokja\Inbox\PengangkatanPejabatNonStrukturalController@index')->name('koor-pokja.inbox.pengangkatan-pejabat-ns.index');
+                    Route::patch('/pengangkatan-pejabat-ns/add', 'BackWeb\Koor_Pokja\Inbox\PengangkatanPejabatNonStrukturalController@store')->name('koor-pokja.inbox.pengangkatan-pejabat-ns.store');
+
+                    Route::get('/pemberhentian-pejabat-ns', 'BackWeb\Koor_Pokja\Inbox\PemberhentianPejabatNonStrukturalController@index')->name('koor-pokja.inbox.pemberhentian-pejabat-ns.index');
+                    Route::patch('/pemberhentian-pejabat-ns/add', 'BackWeb\Koor_Pokja\Inbox\PemberhentianPejabatNonStrukturalController@store')->name('koor-pokja.inbox.pemberhentian-pejabat-ns.store');
+
+                    Route::get('/ralat-keppres-jabatan-ns', 'BackWeb\Koor_Pokja\Inbox\RalatKeppresJabatanNonStrukturalController@index')->name('koor-pokja.inbox.ralat-keppres-jabatan-ns.index');
+                    Route::patch('/ralat-keppres-jabatan-ns/add', 'BackWeb\Koor_Pokja\Inbox\RalatKeppresJabatanNonStrukturalController@store')->name('koor-pokja.inbox.ralat-keppres-jabatan-ns.store');
+
+                    Route::get('/pembatalan-keppres-jabatan-ns', 'BackWeb\Koor_Pokja\Inbox\PembatalanKeppresJabatanNonStrukturalController@index')->name('koor-pokja.inbox.pembatalan-keppres-jabatan-ns.index');
+                    Route::patch('/pembatalan-keppres-jabatan-ns/add', 'BackWeb\Koor_Pokja\Inbox\PembatalanKeppresJabatanNonStrukturalController@store')->name('koor-pokja.inbox.pembatalan-keppres-jabatan-ns.store');
+
+
+                    Route::get('/persetujuan-pengangkatan-staf-khusus', 'BackWeb\Koor_Pokja\Inbox\PersetujuanPengangkatanStafKhususController@index')->name('koor-pokja.inbox.persetujuan-pengangkatan-staf-khusus.index');
+                    Route::patch('/persetujuan-pengangkatan-staf-khusus/add', 'BackWeb\Koor_Pokja\Inbox\PersetujuanPengangkatanStafKhususController@store')->name('koor-pokja.inbox.persetujuan-pengangkatan-staf-khusus.store');
+                    
+                    Route::get('/persetujuan-pengangkatan-staf-khusus', 'BackWeb\Koor_Pokja\Inbox\PersetujuanPengangkatanStafKhususController@index')->name('koor-pokja.inbox.persetujuan-pengangkatan-staf-khusus.index');
+                    Route::patch('/persetujuan-pengangkatan-staf-khusus/add', 'BackWeb\Koor_Pokja\Inbox\PersetujuanPengangkatanStafKhususController@store')->name('koor-pokja.inbox.persetujuan-pengangkatan-staf-khusus.store');
+                });
+            });
         });
 
         Route::prefix('/pertek')->group(function(){

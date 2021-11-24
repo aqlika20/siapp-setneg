@@ -393,7 +393,19 @@ class Helper {
             $countDate = date("d M Y", strtotime("+1 month", strtotime($time_created)));
         }
         return $countDate;
-    } 
+    }
+    
+    public static function countDateMasa($date_start, $date_end){
+        $age = date_diff(date_create($date_end), date_create($date_start));
+        $calculate = $age->format("%y");
+        return $calculate;
+    }
+
+    public static function defineDate($date_start, $date_end, $date_keppes, $date_pelantikan){
+        $age = date_diff(date_create($date_end), date_create($date_start));
+        $calculate = $age->format("%y");
+        return $calculate;
+    }
 
     public static function fileBreak($file_name){
         $file_name = str_replace(['[', ']', '"',], "", $file_name);
