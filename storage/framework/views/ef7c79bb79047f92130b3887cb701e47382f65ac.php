@@ -627,12 +627,12 @@
                                             </div>
 
                                             <div class="form-group row">
-                                                <label class="col-form-label col-lg-3 col-sm-12">Jabatan PAK</label>
+                                                <label class="col-form-label col-lg-3 col-sm-12">Jabatan</label>
                                                 <div class="col-lg-9 col-md-9 col-sm-12">
                                                     <select class="form-control select22" style="width: 230px;" id="req_jabatan_pak" name="req_jabatan_pak">
                                                         <option value="">Choose</option>
                                                         <?php $__currentLoopData = $jabatanPaks; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $jabatanPak): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                                                            <option value="<?php echo e($jabatanPak->name); ?>"><?php echo e($jabatanPak->name); ?></option>
+                                                            <option value="<?php echo e($jabatanPak->id); ?>"><?php echo e($jabatanPak->name); ?></option>
                                                         <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                                                         <option value="0">Lainnya</option>
                                                     </select>

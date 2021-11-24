@@ -109,7 +109,7 @@ class Helper {
                 break;
 
             case '17':
-                $jenis_layanan = 'Pengesahan Kenaikan Pangkat';
+                $jenis_layanan = 'Petikan Yang Hilang/Rusak';
                 break;
 
             case '18':

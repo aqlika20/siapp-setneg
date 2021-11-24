@@ -666,12 +666,12 @@
                                             </div>
 
                                             <div class="form-group row">
-                                                <label class="col-form-label col-lg-3 col-sm-12">Jabatan PAK</label>
+                                                <label class="col-form-label col-lg-3 col-sm-12">Jabatan</label>
                                                 <div class="col-lg-9 col-md-9 col-sm-12">
                                                     <select class="form-control select22" style="width: 230px;" id="req_jabatan_pak" name="req_jabatan_pak">
                                                         <option value="">Choose</option>
                                                         @foreach ($jabatanPaks as $jabatanPak)
-                                                            <option value="{{$jabatanPak->name}}">{{$jabatanPak->name}}</option>
+                                                            <option value="{{$jabatanPak->id}}">{{$jabatanPak->name}}</option>
                                                         @endforeach
                                                         <option value="0">Lainnya</option>
                                                     </select>

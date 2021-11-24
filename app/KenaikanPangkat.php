@@ -22,4 +22,10 @@ class KenaikanPangkat extends Model
         return $this->belongsTo('App\Catatan');
     }
 
+    public function pendidikan()
+    {
+        return $this->belongsTo('App\Pendidikan');
+    }
+
+
 }
