@@ -53,8 +53,8 @@ class PembatalanKeppresKenaikanPangkatController extends Controller
         $input = $request->all();
 
         $validator = Validator::make($input, [
-            'req_no_keppres' => 'required',
-            'req_tanggal_keppres' => 'required',
+            'no_keppres' => 'required',
+            'tanggal_keppres' => 'required',
             'req_alasan_pembatalan' => 'required',
 
             'req_file_surat_permohonan.*' => 'max:5000|mimes:jpg,png,jpeg,pdf',
@@ -68,8 +68,8 @@ class PembatalanKeppresKenaikanPangkatController extends Controller
         }
 
         $pengangkatans = KenaikanPangkat::create([
-            'no_keppres' => $input['req_no_keppres'],
-            'tanggal_keppres' => $input['req_tanggal_keppres'], 
+            'no_keppres' => $input['no_keppres'],
+            'tanggal_keppres' => $input['tanggal_keppres'], 
 
             'id_pengirim' => $id_pengirim->nip,
             'jenis_layanan' => Helper::$pembatalan_keppres_kenaikan_pangkat,

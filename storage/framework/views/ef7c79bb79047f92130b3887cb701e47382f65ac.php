@@ -77,11 +77,13 @@
                                                 <label class="col-form-label col-lg-3 col-sm-12">Periode Kenaikan Pangkat</label>
                                                 <div class="col-lg-4 col-md-9 col-sm-12">
                                                     <div class="input-group date">
-                                                        <input type="text" class="form-control datetimepicker-input my-datepicker" name="req_masa_periode_start" data-toggle="datetimepicker" data-target="#req_masa_periode_start" placeholder="Select Date First" id="req_masa_periode_start" value="<?php echo e(old('req_masa_periode_start')); ?>"/>
+                                                        <select class="form-control" style="width: 230px;" id="req_masa_periode_start" name="req_masa_periode_start">
+                                                            <option value="" disabled selected>Choose</option>
+                                                                <option value="1">April</option>
+                                                                <option value="1">Oktober</option>
+                                                        </select>
                                                         <div class="input-group-append">
-                                                            <span class="input-group-text">
-                                                                <i class="la la-calendar"></i>
-                                                            </span>
+                                                        </span>
                                                         </div>
                                                     </div>
                                                     <span class="form-text text-muted">Please input the date from start.</span>
@@ -91,13 +93,16 @@
                                                 </div>
                                                 <div class="col-lg-4 col-md-9 col-sm-12">
                                                     <div class="input-group date">
-                                                        <input type="text" class="form-control datetimepicker-input my-datepicker" name="req_masa_periode_end" data-toggle="datetimepicker" data-target="#req_masa_periode_end" placeholder="Select Date Last" id="req_masa_periode_end" value="<?php echo e(old('req_masa_periode_end')); ?>"/>
+                                                        <select class="form-control" style="width: 230px;" id="req_masa_periode_end" name="req_masa_periode_end">
+                                                            <option value="" disabled selected>Choose</option>
+                                                                <option value="1">29 Februari</option>
+                                                                <option value="2">31 Agustus</option>
+                                                        </select>
                                                         <div class="input-group-append">
-                                                            <span class="input-group-text">
-                                                                <i class="la la-calendar"></i>
-                                                            </span>
+                                                        </span>
                                                         </div>
                                                     </div>
+                                                    <span class="form-text text-muted">Please input the date from start.</span>
                                                 </div>
                                             </div>
                                             
@@ -121,7 +126,7 @@
                                                 <label class="col-form-label col-lg-3 col-sm-12">NIP</label>
                                                 <div class="col-lg-5 col-md-9 col-sm-12">
                                                     <div class="input-group date">
-                                                        <input type="number" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" maxlength="18" class="form-control" id="req_nip" name="req_nip" value="<?php echo e(old('req_nip')); ?>" autocomplete="off" require/>
+                                                        <input type="number" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" maxlength="18" class="form-control" id="nip" name="nip" value="<?php echo e(old('nip')); ?>" autocomplete="off" require/>
                                                     </div>
                                                 </div>
                                                 <button id="btn-bkn" class="btn btn-light-primary font-weight-bold">Tarik Data BKN</button>
@@ -165,7 +170,7 @@
                                             <div class="form-group row">
                                                 <label class="col-form-label col-lg-3 col-sm-12">Pendidikan Terakhir</label>
                                                 <div class="col-lg-9 col-md-9 col-sm-12">
-                                                    <select class="form-control select22" style="width: 230px;" id="req_pendidikan_terakhir" name="req_pendidikan_terakhir">
+                                                    <select class="form-control select22" style="width: 230px;" id="pendidikan_terakhir" name="pendidikan_terakhir">
                                                         <option value="">Choose</option>
                                                         <?php $__currentLoopData = $pendidikans; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $pendidikan_terakhir): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                                             <option value="<?php echo e($pendidikan_terakhir->id); ?>"><?php echo e($pendidikan_terakhir->name); ?></option>
@@ -187,8 +192,12 @@
                                             <div class="form-group row">
                                                 <label class="col-form-label col-lg-3 col-sm-12">Pangkat (Gol/Ruang)</label>
                                                 <div class="col-lg-9 col-md-9 col-sm-12">
-                                                    <input type="text" class="form-control" id="pangkat_gol" name="pangkat_gol" value="<?php echo e(old('pangkat_gol')); ?>" autocomplete="off" require />
-                                                    
+                                                    <select class="form-control select2" style="width: 230px;" id="pangkat_gol" name="pangkat_gol">
+                                                        <option value="">Choose</option>
+                                                        <?php $__currentLoopData = $pangkats; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $pangkat): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                                            <option value="<?php echo e($pangkat->id); ?>" <?php echo e(old('pangkat_gol') == $pangkat->id ? 'selected' : ''); ?>><?php echo e($pangkat->golongan); ?> | <?php echo e($pangkat->ruang); ?></option>
+                                                        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                                                    </select>
                                                     <!-- <div class="input-group date">
                                                         <select class="custom-select form-control" id="seeAnotherField">
                                                             <option selected>pilih golongan</option>
@@ -293,7 +302,7 @@
                                                     <label class="col-form-label col-lg-3 col-sm-12">Nomor PAK</label>
                                                     <div class="col-lg-9 col-md-9 col-sm-12">
                                                         <div class="input-group date">
-                                                            <input type="text" class="form-control" id="nomor_pak" name="nomor_pak" value="<?php echo e(old('nomor_pak')); ?>" autocomplete="off" />
+                                                            <input type="text" class="form-control" id="req_nomor_pak" name="req_nomor_pak" value="<?php echo e(old('req_nomor_pak')); ?>" autocomplete="off" />
                                                         </div>
                                                     </div>
                                                 </div>
@@ -937,6 +946,14 @@
         })
 
         $('.select22').select2({
+            placeholder: "Choose..."
+        })
+
+        $('.select222').select2({
+            placeholder: "Choose..."
+        })
+
+        $('.selects2222').select2({
             placeholder: "Choose..."
         })
 

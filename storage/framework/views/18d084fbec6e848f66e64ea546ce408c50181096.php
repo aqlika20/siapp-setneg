@@ -48,7 +48,7 @@
                                                         <div class="row align-items-center">
                                                             <div class="col-md-4 my-2 my-md-0">
                                                                 <div class="input-icon">
-                                                                    <input type="text" class="form-control" placeholder="Search By No Surat" id="no_surat" />
+                                                                    <input type="text" class="form-control" placeholder="Search By NIP" id="no_surat" />
                                                                     <span>
                                                                         <i class="flaticon2-search-1 text-muted"></i>
                                                                     </span>
@@ -83,7 +83,7 @@
                                                             <td><?php echo e($pengangkatan->nama); ?></td>
                                                             <td>
                                                                 <a href="<?php echo e(route('koor-pokja.inbox.kenaikan_pangkat.verif', ['id' => $pengangkatan->id])); ?>"><i class="fa fa-pencil-alt text-success mr-2"></i></a>
-                                                                <a href="<?php echo e(route('koor-pokja.inbox.distributor.index', ['id' => $pengangkatan->id], ['jenis_layanan' => $pengangkatan->jenis_layanan])); ?>"><i class="fa fa-share text-info mr-1"></i></a>
+                                                                <a href="<?php echo e(route('koor-pokja.inbox.distributor.index', ['id' => $pengangkatan->id, 'jenis_layanan' => $pengangkatan->jenis_layanan])); ?>"><i class="fa fa-share text-info mr-1"></i></a>
                                                             </td>
                                                         </tr>
                                                     <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
@@ -101,7 +101,7 @@
                                                     <div class="row align-items-center">
                                                         <div class="col-md-4 my-2 my-md-0">
                                                             <div class="input-icon">
-                                                                <input type="text" class="form-control" placeholder="Search By No Surat" id="no_surat" />
+                                                                <input type="text" class="form-control" placeholder="Search By NIP" id="no_surat" />
                                                                 <span>
                                                                     <i class="flaticon2-search-1 text-muted"></i>
                                                                 </span>
@@ -122,13 +122,12 @@
                                                     <th>Jenis Usulan</th>
                                                     <th>NIP</th>
                                                     <th>Nama</th>
-                                                    <th>Aksi</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
-                                                <?php $__currentLoopData = $pengangkatans; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $pengangkatan): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                                <?php $__currentLoopData = $jfku_verifikasis; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $pengangkatan): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                                     <tr>
-                                                        <td><?php echo e($pengangkatan->tgl_surat_usulan); ?></td>
+                                                        <td><?php echo e($pengangkatan->tanggal_surat_usulan); ?></td>
                                                         <td><?php echo e($pengangkatan->no_surat_usulan); ?></td>
                                                         <td><?php echo e($pengangkatan->instansi_pengusul); ?></td>
                                                         <td><div style="color: #FFA800;"><?php echo e(Helper::defineJenisLayananBy($pengangkatan->jenis_layanan)); ?></div></td>
@@ -150,7 +149,7 @@
                                                     <div class="row align-items-center">
                                                         <div class="col-md-4 my-2 my-md-0">
                                                             <div class="input-icon">
-                                                                <input type="text" class="form-control" placeholder="Search By No Surat" id="no_surat" />
+                                                                <input type="text" class="form-control" placeholder="Search By NIP" id="no_surat" />
                                                                 <span>
                                                                     <i class="flaticon2-search-1 text-muted"></i>
                                                                 </span>
@@ -175,16 +174,16 @@
                                                 </tr>
                                             </thead>
                                             <tbody>
-                                                <?php $__currentLoopData = $jfku_pendings; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $jfku_pending): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                                <?php $__currentLoopData = $kenaikan_pendings; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $kenaikan_pending): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                                     <tr>
-                                                        <td><?php echo e($jfku_pending->tgl_surat_usulan); ?></td>
-                                                        <td><?php echo e($jfku_pending->no_surat_usulan); ?></td>
-                                                        <td><?php echo e($jfku_pending->instansi_pengusul); ?></td>
-                                                        <td><div style="color: #FFA800;"><?php echo e(Helper::defineJenisLayananBy($jfku_pending->jenis_layanan)); ?></div></td>
-                                                        <td><div style="color: #3699FF;"><?php echo e($jfku_pending->nip); ?></div></td>
-                                                        <td><?php echo e($jfku_pending->nama); ?></td>
+                                                        <td><?php echo e($kenaikan_pending->tanggal_surat_usulan); ?></td>
+                                                        <td><?php echo e($kenaikan_pending->no_surat_usulan); ?></td>
+                                                        <td><?php echo e($kenaikan_pending->instansi_pengusul); ?></td>
+                                                        <td><div style="color: #FFA800;"><?php echo e(Helper::defineJenisLayananBy($kenaikan_pending->jenis_layanan)); ?></div></td>
+                                                        <td><div style="color: #3699FF;"><?php echo e($kenaikan_pending->nip); ?></div></td>
+                                                        <td><?php echo e($kenaikan_pending->nama); ?></td>
                                                         <td>
-                                                            <a href="verifikasi_cek.html" type="button" class="btn btn-warning btn-sm">
+                                                            <a href="<?php echo e(route('koor-pokja.inbox.detail-surat-pengembalian.index', ['id' => $kenaikan_pending->id])); ?>" type="button" class="btn btn-warning btn-sm">
                                                                 Lihat
                                                             </a>
                                                         </td>
@@ -204,7 +203,7 @@
                                                     <div class="row align-items-center">
                                                         <div class="col-md-4 my-2 my-md-0">
                                                             <div class="input-icon">
-                                                                <input type="text" class="form-control" placeholder="Search By No Surat" id="no_surat" />
+                                                                <input type="text" class="form-control" placeholder="Search By NIP" id="no_surat" />
                                                                 <span>
                                                                     <i class="flaticon2-search-1 text-muted"></i>
                                                                 </span>
@@ -231,7 +230,7 @@
                                             <tbody>
                                                 <?php $__currentLoopData = $jfku_tolaks; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $jfku_tolak): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                                     <tr>
-                                                        <td><?php echo e($jfku_tolak->tgl_surat_usulan); ?></td>
+                                                        <td><?php echo e($jfku_tolak->tanggal_surat_usulan); ?></td>
                                                         <td><?php echo e($jfku_tolak->no_surat_usulan); ?></td>
                                                         <td><?php echo e($jfku_tolak->instansi_pengusul); ?></td>
                                                         <td><div style="color: #FFA800;"><?php echo e(Helper::defineJenisLayananBy($jfku_tolak->jenis_layanan)); ?></div></td>

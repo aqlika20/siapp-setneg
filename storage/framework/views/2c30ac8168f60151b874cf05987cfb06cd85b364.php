@@ -104,7 +104,7 @@
                                                 
                                             </div>
                                             <div>
-                                                <button type="submit" class="btn btn-warning font-weight-bolder text-uppercase px-9 py-4" data-wizard-type="action-submit">Kirim Usulan</button>
+                                                <button type="submit" class="btn btn-warning font-weight-bolder text-uppercase px-9 py-4" data-wizard-type="action-submit" onclick="return confirmation();">Kirim Usulan</button>
                                                 <button type="button" class="btn btn-primary font-weight-bolder text-uppercase px-9 py-4" data-wizard-type="action-next">Berikutnya</button>
                                             </div>
                                         </div>
@@ -181,12 +181,20 @@
 
 
 
-        $('#req_masa_jabatan_start').on('change.datetimepicker', function(e) {
+        $('#masa_jabatan_start').on('change.datetimepicker', function(e) {
             if(e.date){
                 var min_date = renewDate('min', e.date);
-                applyTimePicker('min', '#req_masa_jabatan_end', min_date);
+                applyTimePicker('min', '#masa_jabatan_end', min_date);
             }
         });
+
+        function confirmation(){
+            if(confirm('are you sure?')){
+                document.getElementById('kt_form').submit();
+            }else{
+                return false;
+            }   
+        }
 
     </script>
     <script>
@@ -195,36 +203,36 @@
                 errorClass:"error-msg",
                 errorElement:"p",
                 rules:{
-                    req_tanggal_surat_pengantar: 'required',
-                    req_no_surat_pengantar: 'required',
-                    req_file_surat_pengantar: {
-                        extenstion: "jpg,png,jpeg,pdf"
+                    tanggal_surat_pengantar: 'required',
+                    no_surat_pengantar: 'required',
+                    file_surat_pengantar: {
+                        extenstion: "pdf"
                     },
-                    req_no_keppres: 'required',
-                    req_tanggal_keppres: 'required',
-                    req_file_keppres: {
-                        extenstion: "jpg,png,jpeg,pdf"
+                    no_keppres: 'required',
+                    tanggal_keppres: 'required',
+                    file_keppres: {
+                        extenstion: "pdf"
                     },
-                    req_alasan_ralat: 'required',
-                    req_file_bukti_pendukung: {
-                        extenstion: "jpg,png,jpeg,pdf"
+                    alasan_ralat: 'required',
+                    file_bukti_pendukung: {
+                        extenstion: "pdf"
                     }
 
-                    // req_no_keppres: 'required',
-                    // req_tanggal_keppres: 'required',
-                    // req_masa_jabatan_start: 'required',
-                    // req_masa_jabatan_end: 'required',
+                    // no_keppres: 'required',
+                    // tanggal_keppres: 'required',
+                    // masa_jabatan_start: 'required',
+                    // masa_jabatan_end: 'required',
 
-                    // req_tmt: 'required',
-                    // req_hak_keuangan: 'required',
-                    // req_tanggal_pelantikan: 'required',
-                    // req_yang_melantik: 'required',
+                    // tmt: 'required',
+                    // hak_keuangan: 'required',
+                    // tanggal_pelantikan: 'required',
+                    // yang_melantik: 'required',
                     
-                    // req_file_ba_pelantikan: {
-                    //     extenstion: "jpg,png,jpeg,pdf"
+                    // file_ba_pelantikan: {
+                    //     extenstion: "pdf"
                     // },
-                    // req_file_sumpah_jabatan: {
-                    //     extenstion: "jpg,png,jpeg,pdf"
+                    // file_sumpah_jabatan: {
+                    //     extenstion: "pdf"
                     // }
 
                 },

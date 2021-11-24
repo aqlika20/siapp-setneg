@@ -40,7 +40,7 @@
                                                 <label class="col-form-label col-lg-3 col-sm-12">No. Keppres</label>
                                                 <div class="col-lg-9 col-md-9 col-sm-12">
                                                     <div class="input-group">
-                                                        <input type="text" class="form-control" id="req_no_keppres" name="req_no_keppres" value="<?php echo e(old('req_no_keppres')); ?>" autocomplete="off" require/>
+                                                        <input type="text" class="form-control" id="no_keppres" name="no_keppres" value="<?php echo e(old('no_keppres')); ?>" autocomplete="off" require/>
                                                     </div>
                                                 </div>
                                             </div>
@@ -51,7 +51,7 @@
                                                 <label class="col-form-label col-lg-3 col-sm-12">Tanggal Keppres</label>
                                                 <div class="col-lg-5 col-md-9 col-sm-12">
                                                     <div class="input-group date">
-                                                        <input type="text" class="form-control datetimepicker-input my-datepicker" id="req_tanggal_keppres" name="req_tanggal_keppres" data-toggle="datetimepicker" data-target="#req_tanggal_keppres" placeholder="Pilih Tanggal" value="<?php echo e(old('req_tanggal_keppres')); ?>" require/>
+                                                        <input type="text" class="form-control datetimepicker-input my-datepicker" id="tanggal_keppres" name="tanggal_keppres" data-toggle="datetimepicker" data-target="#tanggal_keppres" placeholder="Pilih Tanggal" value="<?php echo e(old('tanggal_keppres')); ?>" require/>
                                                         <div class="input-group-append">
                                                             <span class="input-group-text">
                                                                 <i class="la la-calendar"></i>
@@ -120,7 +120,7 @@
                                                 
                                             </div>
                                             <div>
-                                                <button type="submit" class="btn btn-warning font-weight-bolder text-uppercase px-9 py-4" data-wizard-type="action-submit">Kirim Usulan</button>
+                                                <button type="submit" class="btn btn-warning font-weight-bolder text-uppercase px-9 py-4" data-wizard-type="action-submit" onclick="return confirmation();">Kirim Usulan</button>
                                                 <button type="button" class="btn btn-primary font-weight-bolder text-uppercase px-9 py-4" data-wizard-type="action-next">Berikutnya</button>
                                             </div>
                                         </div>
@@ -209,12 +209,20 @@
 
 
 
-        $('#req_masa_jabatan_start').on('change.datetimepicker', function(e) {
+        $('#masa_jabatan_start').on('change.datetimepicker', function(e) {
             if(e.date){
                 var min_date = renewDate('min', e.date);
-                applyTimePicker('min', '#req_masa_jabatan_end', min_date);
+                applyTimePicker('min', '#masa_jabatan_end', min_date);
             }
         });
+
+        function confirmation(){
+            if(confirm('are you sure?')){
+                document.getElementById('kt_form').submit();
+            }else{
+                return false;
+            }   
+        }
 
     </script>
     <script>
@@ -223,21 +231,21 @@
                 errorClass:"error-msg",
                 errorElement:"p",
                 rules:{
-                    req_no_keppres: 'required',
-                    req_tanggal_keppres: 'required',
-                    req_masa_jabatan_start: 'required',
-                    req_masa_jabatan_end: 'required',
+                    no_keppres: 'required',
+                    tanggal_keppres: 'required',
+                    masa_jabatan_start: 'required',
+                    masa_jabatan_end: 'required',
 
-                    req_tmt: 'required',
-                    req_hak_keuangan: 'required',
-                    req_tanggal_pelantikan: 'required',
-                    req_yang_melantik: 'required',
+                    tmt: 'required',
+                    hak_keuangan: 'required',
+                    tanggal_pelantikan: 'required',
+                    yang_melantik: 'required',
                     
-                    req_file_ba_pelantikan: {
-                        extenstion: "jpg,png,jpeg,pdf"
+                    file_ba_pelantikan: {
+                        extenstion: "pdf"
                     },
-                    req_file_sumpah_jabatan: {
-                        extenstion: "jpg,png,jpeg,pdf"
+                    file_sumpah_jabatan: {
+                        extenstion: "pdf"
                     }
 
                 },

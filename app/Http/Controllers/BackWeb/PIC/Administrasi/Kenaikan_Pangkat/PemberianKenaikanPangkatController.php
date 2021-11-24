@@ -112,10 +112,6 @@ class PemberianKenaikanPangkatController extends Controller
             'req_no_klarifikasi_pak' => 'nullable',
             'req_tanggal_klarifikasi_pak' => 'nullable',
 
-            'req_pangkat_gol_baru' => 'required',
-            'req_tmt_gol_baru' => 'required',
-            'req_masa_kerja_gol_tahun_baru' => 'required',
-            'req_masa_kerja_gol_bulan_baru' => 'required',
             'req_unit_kerja_lama' => 'required',
             'req_tmt_jabatan_lama' => 'required',
 
@@ -182,27 +178,26 @@ class PemberianKenaikanPangkatController extends Controller
             'masa_kerja_gol_bulan' => $input['masa_kerja_gol_bulan'],
             
             'nomor_pak' => $input['req_nomor_pak'],
-            'tanggal_pak' => $input['req_tanggal_pak'],
-            'jumlah_angka_kredit' => $input['req_jumlah_angka_kredit'],
-            'periode_penilaian' => $input['req_periode_penilaian'],
+            'tanggal_pak' => $input['tanggal_pak'],
+            'jumlah_angka_kredit' => $input['jumlah_angka_kredit'],
+            'periode_penilaian' => $input['periode_penilaian'],
 
-            'nomor_klarifikasi' => $input['req_no_klarifikasi_pak'],
-            'tanggal_klarifikasi' => $input['req_tanggal_klarifikasi_pak'],
+            'nomor_klarifikasi' => $input['no_klarifikasi_pak'],
+            'tanggal_klarifikasi' => $input['tanggal_klarifikasi_pak'],
             'no_sk_jabatan_lama' => $input['req_no_sk_jabatan_lama'],
             'jabatan_lama' => $input['req_jabatan_lama'],
             'tmt_jabatan_lama' => $input['req_tmt_jabatan_lama'],
             'unit_kerja_lama' => $input['req_unit_kerja_lama'],
 
-            'pangkat_gol_baru' => $input['req_pangkat_gol_baru'],
-            'tmt_gol_baru' => $input['req_tmt_gol_baru'],
-            'masa_kerja_gol_tahun_baru' => $input['req_masa_kerja_gol_tahun_baru'],
-            'masa_kerja_gol_bulan_baru' => $input['req_masa_kerja_gol_bulan_baru'],
+            'tmt_gol_baru' => $input['tmt_gol_baru'],
+            'masa_kerja_gol_tahun_baru' => $input['masa_kerja_gol_tahun_baru'],
+            'masa_kerja_gol_bulan_baru' => $input['masa_kerja_gol_bulan_baru'],
             'masa_jabatan_start' => $input['req_masa_jabatan_start'],
             'masa_jabatan_end' => $input['req_masa_jabatan_end'],
             'masa_periode_start' => $input['req_masa_periode_start'],
             'masa_periode_end' => $input['req_masa_periode_end'],
             'catatan_hukuman' => $input['req_catatan_hukuman'],
-            'pangkat_luar_biasa' => $input['req_pangkat_luarbiasa'],
+            // 'pangkat_luar_biasa' => $input['req_pangkat_luarbiasa'],
             'status_hukuman' => $input['req_status_hukuman'],
 
             'ket' => implode(',', $input['req_ket']),
@@ -217,6 +212,12 @@ class PemberianKenaikanPangkatController extends Controller
             $pengangkatans->jabatan_pak = $input['req_jataban_pak_lainnya'];
         } else {
             $pengangkatans->jabatan_pak = $input['req_jabatan_pak'];
+        }
+
+        if($request->has('req_pangkat_luarbiasa')){
+            $pengangkatans->pangkat_luar_biasa = $input['req_pangkat_luarbiasa'];
+        }else{
+            $pengangkatans->pangkat_luar_biasa = 0;
         }
 
         if($request->has('req_file_data_usulan')){
