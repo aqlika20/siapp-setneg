@@ -384,7 +384,7 @@ Route::group(['middleware' => ['auth', 'checkRole:2']], function() {
             });
 
             Route::prefix('/lsn')->group(function(){
-                Route::get('/', 'BackWeb\Koor_Pokja\Inbox\LnsController@index')->name('koor-pokja.inbox.lns.index');
+                Route::get('/', 'BackWeb\Koor_Pokja\Inbox\LNSController@index')->name('koor-pokja.inbox.lns.index');
                 Route::prefix('/form')->group(function(){
 
                     Route::get('/pengangkatan-pejabat-ns', 'BackWeb\Koor_Pokja\Inbox\PengangkatanPejabatNonStrukturalController@index')->name('koor-pokja.inbox.pengangkatan-pejabat-ns.index');
