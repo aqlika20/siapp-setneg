@@ -41,6 +41,7 @@ class PertekController extends Controller
 
     public function index() 
     {
+        // Ardi
         $currentUser = UserManagement::find(Auth::id());
         $page_title = 'KemenSetneg | Pertek';
         $page_description = 'Pertek';
@@ -52,7 +53,7 @@ class PertekController extends Controller
             ['status', '=', Helper::$verifikasi_jf_ahli],
             ['nip', '!=', null]
         ])->get();
-    
+     
 
         $strukturals = PengangkatanPemberhentianNS::where([
             ['status', '=', Helper::$verifikasi_pokja],
