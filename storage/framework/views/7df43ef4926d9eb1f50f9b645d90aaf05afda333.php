@@ -78,7 +78,7 @@
                                                             <!-- <td><?php echo e(Helper::convertDate($pengangkatan->created_at)); ?></td>
                                                             <td><div style="color: #FFA800;"><?php echo e(Helper::defineJenisLayananBy($pengangkatan->jenis_layanan)); ?></div></td>
                                                             <td><?php echo e(Helper::defineStatusBy($pengangkatan->status)); ?></td> -->
-                                                            <td><?php echo e($pengangkatan->tgl_surat_usulan); ?></td>
+                                                            <td><?php echo e($pengangkatan->tanggal_surat_usulan); ?></td>
                                                             <td><?php echo e($pengangkatan->no_surat_usulan); ?></td>
                                                             <td><?php echo e($pengangkatan->instansi_pengusul); ?></td>
                                                             <td><div style="color: #FFA800;"><?php echo e(Helper::defineJenisLayananBy($pengangkatan->jenis_layanan)); ?></div></td>
@@ -95,7 +95,7 @@
                                                             <!-- <td><?php echo e(Helper::convertDate($pengangkatan_ns->created_at)); ?></td>
                                                             <td><div style="color: #FFA800;"><?php echo e(Helper::defineJenisLayananBy($pengangkatan_ns->jenis_layanan)); ?></div></td>
                                                             <td><?php echo e(Helper::defineStatusBy($pengangkatan_ns->status)); ?></td> -->
-                                                            <td><?php echo e($pengangkatan_ns->tgl_surat_usulan); ?></td>
+                                                            <td><?php echo e($pengangkatan_ns->tanggal_surat_usulan); ?></td>
                                                             <td><?php echo e($pengangkatan_ns->no_surat_usulan); ?></td>
                                                             <td><?php echo e($pengangkatan_ns->instansi_pengusul); ?></td>
                                                             <td><div style="color: #FFA800;"><?php echo e(Helper::defineJenisLayananBy($pengangkatan_ns->jenis_layanan)); ?></div></td>
@@ -113,7 +113,7 @@
                                                             <td><div style="color: #FFA800;"><?php echo e(Helper::defineJenisLayananBy($lainnya->jenis_layanan)); ?></div></td>
                                                             <td><?php echo e(Helper::defineStatusBy($lainnya->status)); ?></td> -->
 
-                                                            <td><?php echo e($lainnya->tgl_surat_usulan); ?></td>
+                                                            <td><?php echo e($lainnya->tanggal_surat_usulan); ?></td>
                                                             <td><?php echo e($lainnya->no_surat_usulan); ?></td>
                                                             <td><?php echo e($lainnya->instansi_pengusul); ?></td>
                                                             <td><div style="color: #FFA800;"><?php echo e(Helper::defineJenisLayananBy($lainnya->jenis_layanan)); ?></div></td>
@@ -134,14 +134,14 @@
                                                             <td><div style="color: #3699FF;"><?php echo e($kenaikan->nip); ?></div></td>
                                                             <td><?php echo e($kenaikan->nama); ?></td>
                                                             <td>
-                                                                <a href="<?php echo e(route('jf-ahli.inbox.kenaikan_pangkat.verif', ['id' => $lainnya->id])); ?>" type="button" class="btn btn-success font-weight-bold align-items-md-end">Verifikasi</a>
+                                                                <a href="<?php echo e(route('jf-ahli.inbox.kenaikan_pangkat.verif', ['id' => $kenaikan->id])); ?>" type="button" class="btn btn-success font-weight-bold align-items-md-end">Verifikasi</a>
                                                             </td>
                                                         </tr>
                                                     <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
 
                                                     <?php $__currentLoopData = $pemberhentians; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $pemberhentian): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                                         <tr>
-                                                            <td><?php echo e($pemberhentian->tgl_surat_usulan); ?></td>
+                                                            <td><?php echo e($pemberhentian->tanggal_surat_usulan); ?></td>
                                                             <td><?php echo e($pemberhentian->no_surat_usulan); ?></td>
                                                             <td><?php echo e($pemberhentian->instansi_pengusul); ?></td>
                                                             <td><div style="color: #FFA800;"><?php echo e(Helper::defineJenisLayananBy($pemberhentian->jenis_layanan)); ?></div></td>
@@ -194,7 +194,7 @@
                                             <tbody>
                                                 <?php $__currentLoopData = $pengangkatans; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $pengangkatan): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                                     <tr>
-                                                        <td><?php echo e($pengangkatan->tgl_surat_usulan); ?></td>
+                                                        <td><?php echo e($pengangkatan->tanggal_surat_usulan); ?></td>
                                                         <td><?php echo e($pengangkatan->no_surat_usulan); ?></td>
                                                         <td><?php echo e($pengangkatan->instansi_pengusul); ?></td>
                                                         <td><div style="color: #FFA800;"><?php echo e(Helper::defineJenisLayananBy($pengangkatan->jenis_layanan)); ?></div></td>
@@ -244,7 +244,7 @@
                                             <tbody>
                                                 <?php $__currentLoopData = $jfku_pendings; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $jfku_pending): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                                     <tr>
-                                                        <td><?php echo e($jfku_pending->tgl_surat_usulan); ?></td>
+                                                        <td><?php echo e($jfku_pending->tanggal_surat_usulan); ?></td>
                                                         <td><?php echo e($jfku_pending->no_surat_usulan); ?></td>
                                                         <td><?php echo e($jfku_pending->instansi_pengusul); ?></td>
                                                         <td><div style="color: #FFA800;"><?php echo e(Helper::defineJenisLayananBy($jfku_pending->jenis_layanan)); ?></div></td>
@@ -298,7 +298,7 @@
                                             <tbody>
                                                 <?php $__currentLoopData = $jfku_tolaks; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $jfku_tolak): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                                     <tr>
-                                                        <td><?php echo e($jfku_tolak->tgl_surat_usulan); ?></td>
+                                                        <td><?php echo e($jfku_tolak->tanggal_surat_usulan); ?></td>
                                                         <td><?php echo e($jfku_tolak->no_surat_usulan); ?></td>
                                                         <td><?php echo e($jfku_tolak->instansi_pengusul); ?></td>
                                                         <td><div style="color: #FFA800;"><?php echo e(Helper::defineJenisLayananBy($jfku_tolak->jenis_layanan)); ?></div></td>

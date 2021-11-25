@@ -143,7 +143,7 @@ class KenaikanPangkatController extends Controller
             return redirect()->route('pages.koor_pokja.inbox.kenaikan_pangkat')->with(['error'=>'Invalid parameter id.']);
         }
     
-        return view('pages.koor_pokja.inbox.verif_kenaikan_pangkat', compact('page_title', 'page_description', 'file_nota_usulans', 'file_data_usulans', 'file_sk_pangkat_terakhirs', 'file_sk_jabatans', 'file_data_paks', 'file_klarifikasi_paks', 'file_baps', 'file_spps', 'file_hukumans', 'file_skp_1_tahun_terakhirs', 'file_skp_2_tahun_terakhirs', 'file_surat_keputusan_ppks', 'currentUser', 'verifikasi', 'jabatans', 'unsurs', 'periodes', 'notes', 'pangkats', 'pendidikans', 'pendidikan_terakhirs', 'pangkat_gol_barus','jabatan_paks', 'file_surat_permohonans', 'file_keppres_dibatalkans','file_alasans', 'file_fotokopi_sk_hilangs', 'file_dokumen_klarifikasis', 'file_fotokopi_sk_diperbaikis'));
+        return view('pages.koor_pokja.inbox.verif_kenaikan_pangkat', compact('page_title', 'page_description', 'file_nota_usulans', 'file_data_usulans', 'file_sk_pangkat_terakhirs', 'file_sk_jabatans', 'file_data_paks', 'file_klarifikasi_paks', 'file_baps', 'file_spps', 'file_hukumans', 'file_skp_1_tahun_terakhirs', 'file_skp_2_tahun_terakhirs', 'file_surat_keputusan_ppks', 'currentUser', 'verifikasi', 'jabatans', 'unsurs', 'periodes', 'notes', 'pangkats', 'pendidikans', 'pendidikan_terakhirs', 'pangkat_gol_barus','jabatan_paks', 'file_surat_permohonans', 'file_keppres_dibatalkans','file_alasans', 'file_fotokopi_sk_hilangs', 'file_dokumen_klarifikasis', 'file_fotokopi_sk_diperbaikis', 'file_surat_kehilangans'));
     }
 
     public function store_proses(Request $request) 

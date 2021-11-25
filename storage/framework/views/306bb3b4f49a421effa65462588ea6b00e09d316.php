@@ -948,7 +948,7 @@
                                                                 <?php $__currentLoopData = $file_skp_2_tahun_terakhirs; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $file): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                                                 <tr>
                                                                     <td><a style="color: blue;" > <?php echo e($file); ?></a></td>
-                                                                    <td><a id="d_skp_2_tahun_terakhir" type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#skp_2_tahun_terakhir_modal" data-file="<?php echo e($file); ?>">Lihat</a></td>
+                                                                    <td><a id="d_file_skp_2_tahun_terakhir" type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#file_skp_2_tahun_terakhir_modal" data-file="<?php echo e($file); ?>">Lihat</a></td>
                                                                 </tr>
                                                                 <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                                                             </tbody>
