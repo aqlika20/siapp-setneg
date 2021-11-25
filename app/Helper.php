@@ -2,6 +2,7 @@
 
 namespace App;
 use App\Bkn;
+use DateTime;
 
 class Helper {
 
@@ -109,7 +110,7 @@ class Helper {
                 break;
 
             case '17':
-                $jenis_layanan = 'Pengesahan Kenaikan Pangkat';
+                $jenis_layanan = 'Petikan Yang Hilang/Rusak';
                 break;
 
             case '18':
@@ -396,6 +397,8 @@ class Helper {
     }
     
     public static function countDateMasa($date_start, $date_end){
+        $date_start = new DateTime($date_start);
+        $date_end = new DateTime($date_end);
         $age = date_diff(date_create($date_end), date_create($date_start));
         $calculate = $age->format("%y");
         return $calculate;

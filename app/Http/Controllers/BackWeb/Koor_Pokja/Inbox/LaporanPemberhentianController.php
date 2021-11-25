@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\BackWeb\PIC\Administrasi\Surat_Usulan;
+namespace App\Http\Controllers\BackWeb\Koor_Pokja\Inbox;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
@@ -18,7 +18,7 @@ use App\Helper;
 
 use Carbon\Carbon;
 
-class PersetujuanPengangkatanStafKhususController extends Controller
+class LaporanPemberhentianController extends Controller
 {
     private $curr_int_time;
 
@@ -44,10 +44,10 @@ class PersetujuanPengangkatanStafKhususController extends Controller
     public function index() 
     {
         $currentUser = UserManagement::find(Auth::id());
-        $page_title = 'PIC | Administrasi | Surat Usulan | Persetujuan pengangkatan Staf Khusus Menteri / Kepala Lembaga';
-        $page_description = 'Persetujuan pengangkatan Staf Khusus Menteri / Kepala Lembaga';
+        $page_title = 'KemenSetneg | Inbox | Laporan Pemberhentian';
+        $page_description = 'Laporan Pemberhentian';
         $jabatans = Jabatan::All();
-        return view('pages.pic.administrasi.surat_usulan.form.persetujuan_pengangkatan_staf_khusus', compact('page_title', 'page_description', 'currentUser', 'jabatans'));
+        return view('pages.koor_pokja.inbox.laporan_pemberhentian', compact('page_title', 'page_description', 'currentUser', 'jabatans'));
     }
 
     // ========= function create basic information =============
@@ -147,7 +147,7 @@ class PersetujuanPengangkatanStafKhususController extends Controller
 
         $pengangkatans->save();
 
-        return redirect()->route('pic.administrasi.surat-usulan.index')->with(['success'=>'Jabatan Staff Lainnya Success Added!!!']);
+        return redirect()->route('koor-pokja.inbox.lns.index')->with(['success'=>'Jabatan Staff Lainnya Success Added!!!']);
     }
    
 

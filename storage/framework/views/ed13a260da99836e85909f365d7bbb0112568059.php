@@ -1,8 +1,8 @@
-{{-- Extends layout --}}
-@extends('layout.default')
 
-{{-- Content --}}
-@section('content')
+
+
+
+<?php $__env->startSection('content'); ?>
 
     <!--begin::Content-->
     <div class="content d-flex flex-column flex-column-fluid" id="kt_content">	
@@ -13,7 +13,7 @@
                 <div class="card card-custom">
                     <div class="card-header flex-wrap border-0 pt-6 pb-0" style="background-color: #FFA800;">
                         <div class="card-title">
-                            <h3 class="card-label">Pemberhentian Pejabat Non Struktural
+                            <h3 class="card-label">Pembatalan Keppres Jabatan Non Struktural
                             <span class="d-block text-muted pt-2 font-size-sm"></span></h3>
                         </div>
                     </div>
@@ -30,26 +30,29 @@
                             <div class="row justify-content-center py-10 px-8 py-lg-12 px-lg-10">
                                 <div class="col-xl-20 col-xxl-12">
                                     <!--begin: Wizard Form-->
-                                    <form class="form" id="kt_form" action="{{ route('pic.administrasi.surat-usulan.pemberhentian-pejabat-ns.store') }}" enctype="multipart/form-data" method="POST">
-                                        @csrf
-                                        @method('PATCH')
+                                    <form class="form" id="kt_form" action="<?php echo e(route('koor-pokja.inbox.pembatalan-keppres-jabatan-ns.store')); ?>" enctype="multipart/form-data" method="POST">
+                                        <?php echo csrf_field(); ?>
+                                        <?php echo method_field('PATCH'); ?>
                                         <!--begin: Wizard Step 1-->
                                         <div class="pb-6" style="margin-left: 50px; margin-right: 50px;" data-wizard-type="step-content" data-wizard-state="current">
-                                            <h4 class="mb-10 font-weight-bold text-dark">Data Surat</h4>
+                                            <h4 class="mb-10 font-weight-bold text-dark">Keppres</h4>
                                             <!--begin::Input-->
                                             <div class="form-group row">
-                                                <label class="col-form-label col-lg-3 col-sm-12">No. Surat Pengantar</label>
+                                                <label class="col-form-label col-lg-3 col-sm-12">No. Keppres</label>
                                                 <div class="col-lg-9 col-md-9 col-sm-12">
                                                     <div class="input-group">
-                                                        <input type="text" class="form-control" id="no_surat_pengantar" name="no_surat_pengantar" value="{{old('no_surat_pengantar')}}" autocomplete="off" require/>
+                                                        <input type="text" class="form-control" id="no_keppres" name="no_keppres" value="<?php echo e(old('no_keppres')); ?>" autocomplete="off" require/>
                                                     </div>
                                                 </div>
                                             </div>
+                                            <!--end::Input-->
+                                            
+                                            <!--begin::Input-->
                                             <div class="form-group row">
-                                                <label class="col-form-label col-lg-3 col-sm-12">Tanggal Surat Pengantar</label>
+                                                <label class="col-form-label col-lg-3 col-sm-12">Tanggal Keppres</label>
                                                 <div class="col-lg-5 col-md-9 col-sm-12">
                                                     <div class="input-group date">
-                                                        <input type="text" class="form-control datetimepicker-input my-datepicker" id="tanggal_surat_pengantar" name="tanggal_surat_pengantar" data-toggle="datetimepicker" data-target="#tanggal_surat_pengantar" placeholder="Pilih Tanggal" value="{{old('tanggal_surat_pengantar')}}" require/>
+                                                        <input type="text" class="form-control datetimepicker-input my-datepicker" id="tanggal_keppres" name="tanggal_keppres" data-toggle="datetimepicker" data-target="#tanggal_keppres" placeholder="Pilih Tanggal" value="<?php echo e(old('tanggal_keppres')); ?>" autocomplete="off" require/>
                                                         <div class="input-group-append">
                                                             <span class="input-group-text">
                                                                 <i class="la la-calendar"></i>
@@ -58,48 +61,46 @@
                                                     </div>
                                                 </div>
                                             </div>
+                                            <!--end::Input-->
+
+                                            <!--begin::Input-->
                                             <div class="form-group row">
-                                                <label class="col-lg-3 col-form-label">Upload Surat Pengantar</label>
-                                                <div class="col-lg-9">
-                                                    <input id="file_surat_pengantar" name="file_surat_pengantar[]" type="file" class="file" data-show-preview="false" multiple/>
-                                                    
-                                                    <!-- <div class="dropzone dropzone-multi" id="kt_dropzone_4">
-                                                        <div class="dropzone-panel mb-lg-0 mb-2">
-                                                            <a class="dropzone-select btn btn-light-primary font-weight-bold btn-sm">Attach files</a>
-                                                            <a class="dropzone-upload btn btn-light-primary font-weight-bold btn-sm">Upload All</a>
-                                                            <a class="dropzone-remove-all btn btn-light-primary font-weight-bold btn-sm">Remove All</a>
+                                                <label class="col-form-label col-lg-3 col-sm-12">Periode</label>
+                                                <div class="col-lg-4 col-md-9 col-sm-12">
+                                                    <div class="input-group date">
+                                                        <input type="text" class="form-control datetimepicker-input my-datepicker" name="masa_jabatan_start" onkeyup="calculate_date()" data-toggle="datetimepicker" data-target="#masa_jabatan_start" placeholder="Select Date First" id="masa_jabatan_start" value="<?php echo e(old('masa_jabatan_start')); ?>"/>
+                                                        <div class="input-group-append">
+                                                            <span class="input-group-text">
+                                                                <i class="la la-calendar"></i>
+                                                            </span>
                                                         </div>
-                                                        <div class="dropzone-items">
-                                                            <div class="dropzone-item" style="display:none">
-                                                                <div class="dropzone-file">
-                                                                    <div class="dropzone-filename" title="some_image_file_name.jpg">
-                                                                        <span data-dz-name="">some_image_file_name.jpg</span>
-                                                                        <strong>(<span data-dz-size="">340kb</span>)</strong>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="dropzone-progress">
-                                                                    <div class="progress">
-                                                                        <div class="progress-bar bg-primary" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" data-dz-uploadprogress=""></div>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="dropzone-toolbar">
-                                                                    <span class="dropzone-start">
-                                                                        <i class="flaticon2-arrow"></i>
-                                                                    </span>
-                                                                    <span class="dropzone-cancel" data-dz-remove="" style="display: none;">
-                                                                        <i class="flaticon2-cross"></i>
-                                                                    </span>
-                                                                    <span class="dropzone-delete" data-dz-remove="">
-                                                                        <i class="flaticon2-cross"></i>
-                                                                    </span>
-                                                                </div>
-                                                            </div>
+                                                    </div>
+                                                    <span class="form-text text-muted">Please input the date from start.</span>
+                                                </div>
+                                                <div>
+                                                    <label class="col-form-label">s/d.</label>
+                                                </div>
+                                                <div class="col-lg-4 col-md-9 col-sm-12">
+                                                    <div class="input-group date">
+                                                        <input type="text" class="form-control datetimepicker-input my-datepicker" name="masa_jabatan_end" data-toggle="datetimepicker" data-target="#masa_jabatan_end" placeholder="Select Date Last" id="masa_jabatan_end" value="<?php echo e(old('masa_jabatan_end')); ?>"/>
+                                                        <div class="input-group-append">
+                                                            <span class="input-group-text">
+                                                                <i class="la la-calendar"></i>
+                                                            </span>
                                                         </div>
-                                                    </div> -->
-                                                    <span class="form-text text-muted">Max file size is 1MB and max number of files is 5.</span>
+                                                    </div>
                                                 </div>
                                             </div>
                                             <!--end::Input-->
+
+                                            <div class="form-group row" id="hahaha">
+                                                <label class="col-form-label col-lg-3 col-sm-12">Masa Jabatan</label>
+                                                <div class="col-lg-9 col-md-9 col-sm-12">
+                                                    <div class="col-form-label col-lg-3 col-sm-12">
+                                                        <p id="masa"></p>
+                                                    </div>
+                                                </div>
+                                            </div>
                                             
                                         </div>
                                         <!--end: Wizard Step 1-->
@@ -108,93 +109,60 @@
                                         <div class="pb-6" style="margin-left: 50px; margin-right: 50px;" data-wizard-type="step-content">
                                             <!--begin::Input-->
                                             <div class="form-group row">
-                                                <label class="col-form-label col-lg-3 col-sm-12">LNS yang akan diisi</label>
+                                                <label class="col-form-label col-lg-3 col-sm-12">TMT</label>
                                                 <div class="col-lg-9 col-md-9 col-sm-12">
                                                     <div class="input-group date">
-                                                        <input type="text" class="form-control" id="lns" name="lns" value="{{old('lns')}}" autocomplete="off" require/>
+                                                        <input type="text" class="form-control" id="tmt" name="tmt" value="<?php echo e(old('tmt')); ?>" autocomplete="off" require/>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="form-group row" id="kurang_enam">
+                                                <label class="col-form-label col-lg-3 col-sm-12">6 Bulan Sebelum Berakhir Masa Jabatan</label>
+                                                <div class="col-lg-9 col-md-9 col-sm-12">
+                                                    <div class="col-form-label col-lg-3 col-sm-12">
+                                                        <p id="enam_bulan"></p>
                                                     </div>
                                                 </div>
                                             </div>
                                             <!--end::Input-->
                                             <!--begin::Input-->
                                             <div class="form-group row">
-                                                <label class="col-form-label col-lg-3 col-sm-12">Unsur</label>
-                                                <div class="col-lg-9 col-md-9 col-sm-12">
-                                                    <select class="form-control select2" style="width: 230px;" id="unsur" name="unsur">
-                                                        <option value="">Choose</option>
-                                                        @foreach ($unsurs as $unsur)
-                                                        <option value="{{$unsur->id}}" {{ old('unsur') == $unsur->id ? 'selected' : '' }}>{{$unsur->nama}}</option>
-                                                        @endforeach
-                                                    </select>
-                                                    <!-- <div class="input-group date">
-                                                        <select class="custom-select form-control" id="seeAnotherField">
-                                                            <option selected>pilih golongan</option>
-                                                            <option value="1">Golongan 1</option>
-                                                            <option value="2">Golongan 2</option>
-                                                            <option value="3">Golongan 3</option>
-                                                        </select>
-                                                    </div> -->
-                                                </div>
-                                            </div>
-                                            <!--end::Input-->
-                                            <!--begin::Input-->
-                                            <div class="form-group row">
-                                                <label class="col-form-label col-lg-3 col-sm-12">NIP</label>
+                                                <label class="col-form-label col-lg-3 col-sm-12">Hak keuangan dan Fasilitas</label>
                                                 <div class="col-lg-9 col-md-9 col-sm-12">
                                                     <div class="input-group date">
-                                                        <input type="number" pattern="[0-9]+([\.,][0-9]+)?" class="form-control" id="nip" name="nip" value="{{old('nip')}}" autocomplete="off" require/>
+                                                        <input type="text" class="form-control" id="hak_keuangan" name="hak_keuangan" value="<?php echo e(old('hak_keuangan')); ?>" autocomplete="off" require />
                                                     </div>
                                                 </div>
                                             </div>
                                             <!--end::Input-->
                                             <!--begin::Input-->
                                             <div class="form-group row">
-                                                <label class="col-form-label col-lg-3 col-sm-12">Nama</label>
-                                                <div class="col-lg-9 col-md-9 col-sm-12">
+                                                <label class="col-form-label col-lg-3 col-sm-12">Tanggal pelantikan</label>
+                                                <div class="col-lg-5 col-md-9 col-sm-12">
                                                     <div class="input-group date">
-                                                        <input type="text" onkeydown="return /[a-zA-Z0-9\s]+/i.test(event.key)" class="form-control" id="nama" name="nama" value="{{old('nama')}}" autocomplete="off" require />
+                                                        <input type="text" class="form-control datetimepicker-input my-datepicker" id="tanggal_pelantikan" name="tanggal_pelantikan" data-toggle="datetimepicker" data-target="#tanggal_pelantikan" placeholder="Pilih Tanggal" value="<?php echo e(old('tanggal_pelantikan')); ?>" autocomplete="off" require/>
+                                                        <div class="input-group-append">
+                                                            <span class="input-group-text">
+                                                                <i class="la la-calendar"></i>
+                                                            </span>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
                                             <!--end::Input-->
-                                            <!--begin::Input-->
                                             <div class="form-group row">
-                                                <label class="col-form-label col-lg-3 col-sm-12">Instansi</label>
+                                                <label class="col-form-label col-lg-3 col-sm-12">Yang Melantik</label>
                                                 <div class="col-lg-9 col-md-9 col-sm-12">
                                                     <div class="input-group date">
-                                                        <input type="text" onkeydown="return /[a-zA-Z0-9\s]+/i.test(event.key)" class="form-control" id="instansi" name="instansi" value="{{old('instansi')}}" autocomplete="off" require />
+                                                        <input type="text" class="form-control" id="yang_melantik" name="yang_melantik" value="<?php echo e(old('yang_melantik')); ?>" autocomplete="off" require />
                                                     </div>
                                                 </div>
                                             </div>
-                                            <!--end::Input-->
-                                            <!--begin::Input-->
                                             <div class="form-group row">
-                                                <label class="col-form-label col-lg-3 col-sm-12">Jabatan Yang Akan di Berhentikan</label>
-                                                <div class="col-lg-9 col-md-9 col-sm-12">
-                                                    <select class="form-control select2" style="width: 230px;" id="jabatan" name="jabatan">
-                                                        <option value="">Choose</option>
-                                                        @foreach ($jabatans as $jabatan)
-                                                            <option value="{{$jabatan->id}}" {{ old('jabatan') == $jabatan->id ? 'selected' : '' }}>{{$jabatan->nama}}</option>
-                                                        @endforeach
-                                                    </select>
-                                                    <!-- <div class="input-group date">
-                                                        <select class="custom-select form-control" id="seeAnotherField">
-                                                            <option selected>pilih golongan</option>
-                                                            <option value="1">Golongan 1</option>
-                                                            <option value="2">Golongan 2</option>
-                                                            <option value="3">Golongan 3</option>
-                                                        </select>
-                                                    </div> -->
-                                                </div>
-                                            </div>
-                                            <!--end::Input-->
-                                            <!--begin::Input-->
-                                            <div class="form-group row">
-                                                <label class="col-lg-3 col-form-label">Upload DRH</label>
+                                                <label class="col-lg-3 col-form-label">Upload BA Pelantikan</label>
                                                 <div class="col-lg-9">
-                                                    <input id="file_dhr" name="file_dhr[]" type="file" class="file" data-show-preview="false" multiple/>
-                                                    
-                                                    <!-- <div class="dropzone dropzone-multi" id="kt_dropzone_4">
+                                                    <input id="file_ba_pelantikan" name="file_ba_pelantikan[]" type="file" class="file" data-show-preview="false" multiple/>
+                                                    <!-- <div class="dropzone dropzone-multi" id="kt_dropzone_5">
                                                         <div class="dropzone-panel mb-lg-0 mb-2">
                                                             <a class="dropzone-select btn btn-light-primary font-weight-bold btn-sm">Attach files</a>
                                                             <a class="dropzone-upload btn btn-light-primary font-weight-bold btn-sm">Upload All</a>
@@ -230,14 +198,11 @@
                                                     <span class="form-text text-muted">Max file size is 1MB and max number of files is 5.</span>
                                                 </div>
                                             </div>
-                                            <!--end::Input-->
-                                            <!--begin::Input-->
                                             <div class="form-group row">
-                                                <label class="col-lg-3 col-form-label">Upload Dokumen Lainnya</label>
+                                                <label class="col-lg-3 col-form-label">Upload Sumpah Jabatan</label>
                                                 <div class="col-lg-9">
-                                                    <input id="file_dukumen_lain_pengangkatan_ns" name="file_dukumen_lain_pengangkatan_ns[]" type="file" class="file" data-show-preview="false" multiple/>
-                                                    
-                                                    <!-- <div class="dropzone dropzone-multi" id="kt_dropzone_4">
+                                                    <input id="file_sumpah_jabatan" name="file_sumpah_jabatan[]" type="file" class="file" data-show-preview="false" multiple/>
+                                                    <!-- <div class="dropzone dropzone-multi" id="kt_dropzone_5">
                                                         <div class="dropzone-panel mb-lg-0 mb-2">
                                                             <a class="dropzone-select btn btn-light-primary font-weight-bold btn-sm">Attach files</a>
                                                             <a class="dropzone-upload btn btn-light-primary font-weight-bold btn-sm">Upload All</a>
@@ -273,10 +238,10 @@
                                                     <span class="form-text text-muted">Max file size is 1MB and max number of files is 5.</span>
                                                 </div>
                                             </div>
-                                            <!--end::Input-->
                                         </div>
                                         <!--end: Wizard Step 2-->
 
+                                        <!--start: Wizard Actions-->
                                         <div class="d-flex justify-content-between mt-5 pt-10" style="margin-left: 50px; margin-right: 50px;">
                                             <div class="mr-2">
                                                 <button type="button" class="btn btn-light-primary font-weight-bolder text-uppercase px-9 py-4" data-wizard-type="action-prev">Sebelumnya</button>
@@ -296,7 +261,7 @@
                         <!--end: Wizard-->                      
                     </div>
                     <div class="modal-footer">
-                        <a href="{{ route('pic.administrasi.surat-usulan.index') }}"type="button" class="btn btn-light-danger font-weight-bold">Batalkan</a>
+                        <a href="<?php echo e(route('koor-pokja.inbox.lns.index')); ?>"type="button" class="btn btn-light-danger font-weight-bold">Batalkan</a>
                     </div>
                 </div>
             </div>
@@ -304,20 +269,20 @@
         </div>
     </div>
 				
-@endsection
+<?php $__env->stopSection(); ?>
 
-{{-- Styles Section --}}
-@section('styles')
+
+<?php $__env->startSection('styles'); ?>
 <style>
     td {  
         background-color: #86dcec;    
         
     }
 </style>
-@endsection
+<?php $__env->stopSection(); ?>
 
-{{-- Scripts Section --}}
-@section('scripts')
+
+<?php $__env->startSection('scripts'); ?>
     <script>
         $('.my-datepicker').datetimepicker({
             useCurrent:false,
@@ -331,6 +296,96 @@
         $('.select2').select2({
             placeholder: "Choose..."
         })
+
+
+        function applyTimePicker(type, id, date){
+            switch(type){
+                case 'min':
+                    $(id).datetimepicker('minDate', date);
+                    break;
+                case 'max':
+                    $(id).datetimepicker('maxDate', date);
+                    break;
+            }
+        }
+
+        function renewDate(type, date){
+            var new_date = null;
+            switch(type){
+                case 'min':
+                    new_date = moment(date).add(1, "days");
+                    break;
+                case 'max':
+                    new_date = moment(date).subtract(1, "days");
+                    break;
+            }
+
+            return new_date;
+        }
+
+        $('#hahaha').hide();
+        $("#masa_jabatan_end").on('change.datetimepicker', function(e) {
+            if (e.date == null) {
+            $('#hahaha').hide();
+            } else {
+            $('#hahaha').show();
+            }
+        });
+        
+        $('#kurang_enam').hide();
+        $("#masa_jabatan_end").on('change.datetimepicker', function(e) {
+            if (e.date == null) {
+            $('#kurang_enam').hide();
+            } else {
+            $('#kurang_enam').show();
+            }
+        });
+
+        $("#tanggal_keppres").on('change.datetimepicker', function(e) {
+            var data = e.date.format('DD/MMM/YYYY');
+            document.getElementById("tmt").value = data;
+        });
+
+
+        $('#masa_jabatan_start, #masa_jabatan_end').on('change.datetimepicker', function(e) {
+            if(e.date){
+                var min_date = renewDate('min', e.date);
+                applyTimePicker('min', '#masa_jabatan_end', min_date);
+            }
+            var date_start = new Date(document.getElementById("masa_jabatan_start").value);
+            var date_start_day = date_start.getDate();
+            var date_start_month = date_start.getMonth();
+            var date_start_year = date_start.getFullYear();
+
+            var date_end = new Date(document.getElementById("masa_jabatan_end").value);
+            var date_end_day = date_end.getDate();
+            var date_end_month = date_end.getMonth();
+            var date_end_year = date_end.getFullYear();
+            
+            var calculated_date = 0;
+            if(date_end_month > date_start_month) 
+            {
+                calculated_date = date_end_year - date_start_year;
+            }
+            else
+            { 
+                calculated_date = date_end_year - date_start_year;
+            }
+
+
+            var out_value = calculated_date;
+            document.getElementById("masa").innerHTML = out_value + ' Tahun';
+            getdatadate(date_end);
+            
+
+
+        });
+
+        function getdatadate(date){
+            date.setMonth(date.getMonth() - 6);
+            console.log('hahaha', date);
+            document.getElementById("enam_bulan").innerHTML =  moment(date).format("DD/MMM/YYYY") ;
+        }
 
         function confirmation(){
             if(confirm('are you sure?')){
@@ -347,21 +402,20 @@
                 errorClass:"error-msg",
                 errorElement:"p",
                 rules:{
-                    tanggal_surat_pengantar: 'required',
-                    no_surat_pengantar: 'required',
-                    file_surat_pengantar: {
+                    no_keppres: 'required',
+                    tanggal_keppres: 'required',
+                    masa_jabatan_start: 'required',
+                    masa_jabatan_end: 'required',
+
+                    tmt: 'required',
+                    hak_keuangan: 'required',
+                    tanggal_pelantikan: 'required',
+                    yang_melantik: 'required',
+                    
+                    file_ba_pelantikan: {
                         extenstion: "pdf"
                     },
-                    lns: 'required',
-                    unsur: 'required',
-                    nip: 'required',
-                    nama: 'required',
-                    instansi: 'required',
-                    jabatan: 'required',
-                    file_dhr: {
-                        extenstion: "pdf"
-                    }
-                    file_dukumen_lain_pengangkatan_ns: {
+                    file_sumpah_jabatan: {
                         extenstion: "pdf"
                     }
 
@@ -373,7 +427,8 @@
         })
 
     </script>
-    <script src="{{ asset('js/pages/custom/wizard/wizard-3.js') }}"></script>
-    <script src="{{ asset('js/pages/crud/file-upload/dropzonejs.js') }}"></script>
-    <script src="{{ asset('js/pages/crud/ktdatatable/base/html-table.js') }}" type="text/javascript"></script>
-@endsection
+    <script src="<?php echo e(asset('js/pages/custom/wizard/wizard-3.js')); ?>"></script>
+    <script src="<?php echo e(asset('js/pages/crud/file-upload/dropzonejs.js')); ?>"></script>
+    <script src="<?php echo e(asset('js/pages/crud/ktdatatable/base/html-table.js')); ?>" type="text/javascript"></script>
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('layout.default', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH D:\Project\siapp\resources\views/pages/koor_pokja/inbox/pembatalan_keppres_jabatan_ns.blade.php ENDPATH**/ ?>

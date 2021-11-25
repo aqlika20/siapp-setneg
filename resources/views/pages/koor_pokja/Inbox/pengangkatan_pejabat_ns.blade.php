@@ -30,7 +30,7 @@
                             <div class="row justify-content-center py-10 px-8 py-lg-12 px-lg-10">
                                 <div class="col-xl-20 col-xxl-12">
                                     <!--begin: Wizard Form-->
-                                    <form class="form" id="kt_form" action="{{ route('pic.administrasi.surat-usulan.pengangkatan-pejabat-ns.store') }}" enctype="multipart/form-data" method="POST">
+                                    <form class="form" id="kt_form" action="{{ route('koor-pokja.inbox.pengangkatan-pejabat-ns.store') }}" enctype="multipart/form-data" method="POST">
                                         @csrf
                                         @method('PATCH')
                                         <!--begin: Wizard Step 1-->
@@ -316,7 +316,7 @@
                         <!--end: Wizard-->                      
                     </div>
                     <div class="modal-footer">
-                        <a href="{{ route('pic.administrasi.surat-usulan.index') }}"type="button" class="btn btn-light-danger font-weight-bold">Batalkan</a>
+                        <a href="{{ route('koor-pokja.inbox.lns.index') }}"type="button" class="btn btn-light-danger font-weight-bold">Batalkan</a>
                     </div>
                 </div>
             </div>

@@ -39,13 +39,13 @@ class PemberianKenaikanPangkatController extends Controller
     private $ba_pengambilan_sumpah_folder;
     private $data_pendukung_pangkat_baru_folder;
     private $data_sk_pangkat_terakhir_folder;
-    private $data_sk_jabatan;
-    private $data_bap;
-    private $data_spp;
-    private $data_sk_1_tahun_terakhir;
-    private $data_sk_2_tahun_terakhir;
-    private $data_keputusan_ppk;
-    private $data_file_hukuman;
+    private $data_sk_jabatan_folder;
+    private $data_bap_folder;
+    private $data_spp_folder;
+    private $data_sk_1_tahun_terakhir_folder;
+    private $data_sk_2_tahun_terakhir_folder;
+    private $data_keputusan_ppk_folder;
+    private $data_file_hukuman_folder;
     public function __construct()
     {
         $this->curr_int_time = strtotime(Carbon::now());
@@ -99,6 +99,7 @@ class PemberianKenaikanPangkatController extends Controller
             'pendidikan_terakhir' => 'required',
             'instansi' => 'required',
             'pangkat_gol' => 'required',
+            'pangkat_gol_baru' => 'required',
             'tmt_gol' => 'required',
             'tmt_cpns' => 'required',
             'masa_kerja_gol_tahun' => 'required',
@@ -125,7 +126,7 @@ class PemberianKenaikanPangkatController extends Controller
             'req_no_sk_jabatan_lama' => 'required',
             'req_jabatan_lama' => 'required',
             'req_jabatan_pak' => 'required', 
-            'req_file_data_usulan.*' => 'max:5000|mimes:jpg,png,jpeg,pdf',
+            'file_data_usulan.*' => 'max:5000|mimes:jpg,png,jpeg,pdf',
             'req_file_data_asn.*' => 'max:5000|mimes:jpg,png,jpeg,pdf',
             'req_file_nota_usulan.*' => 'max:5000|mimes:jpg,png,jpeg,pdf',
             'req_file_data_pak.*' => 'max:5000|mimes:jpg,png,jpeg,pdf',
@@ -172,6 +173,7 @@ class PemberianKenaikanPangkatController extends Controller
             'pendidikan_terakhir' => $input['pendidikan_terakhir'],
             'instansi' => $input['instansi'],
             'pangkat_gol' => $input['pangkat_gol'],
+            'pangkat_gol_baru' => $input['pangkat_gol_baru'],
             'tmt_gol' => $input['tmt_gol'],
             'tmt_cpns' => $input['tmt_cpns'],
             'masa_kerja_gol_tahun' => $input['masa_kerja_gol_tahun'],
@@ -209,10 +211,12 @@ class PemberianKenaikanPangkatController extends Controller
         ]);
 
         if ($input['req_jabatan_pak'] == 0) {
-            $pengangkatans->jabatan_pak = $input['req_jataban_pak_lainnya'];
+            $pengangkatans->jabatan_pak = $input['req_jabatan_pak'];
+            $pengangkatans->jabatan_pak_lainnya = $input['req_jataban_pak_lainnya'];
         } else {
             $pengangkatans->jabatan_pak = $input['req_jabatan_pak'];
         }
+
 
         if($request->has('req_pangkat_luarbiasa')){
             $pengangkatans->pangkat_luar_biasa = $input['req_pangkat_luarbiasa'];
@@ -220,7 +224,7 @@ class PemberianKenaikanPangkatController extends Controller
             $pengangkatans->pangkat_luar_biasa = 0;
         }
 
-        if($request->has('req_file_data_usulan')){
+        if($request->has('file_data_usulan')){
 
             $files = [];
             foreach ($request->file('file_data_usulan') as $file) {
@@ -245,7 +249,7 @@ class PemberianKenaikanPangkatController extends Controller
             $files = [];
             foreach ($request->file('req_file_sk_jabatan') as $file) {
                 $filename = $file->getClientOriginalName();
-                Storage::putFileAs($this->data_sk_jabatan, $file, $filename);
+                Storage::putFileAs($this->data_sk_jabatan_folder, $file, $filename);
                 $files[] = $filename;
             }
             $pengangkatans->file_sk_jabatan = $files;
@@ -295,7 +299,7 @@ class PemberianKenaikanPangkatController extends Controller
             $files = [];
             foreach ($request->file('req_file_surat_keputusan_ppk') as $file) {
                 $filename = $file->getClientOriginalName();
-                Storage::putFileAs($this->data_keputusan_ppk, $file, $filename);
+                Storage::putFileAs($this->data_keputusan_ppk_folder, $file, $filename);
                 $files[] = $filename;
             }
             $pengangkatans->file_surat_keputusan_ppk = $files;
@@ -305,7 +309,7 @@ class PemberianKenaikanPangkatController extends Controller
             $files = [];
             foreach ($request->file('req_file_hukuman') as $file) {
                 $filename = $file->getClientOriginalName();
-                Storage::putFileAs($this->data_file_hukuman, $file, $filename);
+                Storage::putFileAs($this->data_file_hukuman_folder, $file, $filename);
                 $files[] = $filename;
             }
             $pengangkatans->file_hukuman = $files;

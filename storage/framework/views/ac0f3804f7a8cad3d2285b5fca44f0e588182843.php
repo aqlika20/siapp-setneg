@@ -65,7 +65,7 @@
                                                 <label class="col-form-label col-lg-3 col-sm-12">Alasan Pembatalan</label>
                                                 <div class="col-lg-9 col-md-9 col-sm-12">
                                                     <select class="form-control select22" style="width: 230px;" id="req_alasan_pembatalan" name="req_alasan_pembatalan">
-                                                        <option value="">Choose</option>
+                                                        <option value="" disabled selected>Choose</option>
                                                         <option value="1">Meninggal Dunia Sebelum Periode Kenaikan Pangkat</option>
                                                         <option value="2">Alasan Terkait Dengan Jabatan</option>
                                                         <option value="0">Lainnya</option>

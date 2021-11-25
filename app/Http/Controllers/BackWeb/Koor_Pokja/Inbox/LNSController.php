@@ -34,8 +34,8 @@ class LNSController extends Controller
     public function index() 
     {
         $currentUser = UserManagement::find(Auth::id());
-        $page_title = 'PIC | Administrasi | Surat Usulan';
-        $page_description = 'Surat Usulan';
+        $page_title = 'KemenSetneg | Inbox | Modul Kontrol LNS';
+        $page_description = 'Modul Kontrol LNS';
         $strukturals = PengangkatanPemberhentianNS::where([
             ['status', '=', Helper::$pengajuan_usulan],
             ['id_pengirim', '=', $currentUser->nip]
@@ -44,6 +44,6 @@ class LNSController extends Controller
             ['status', '=', Helper::$pengajuan_usulan],
             ['id_pengirim', '=', $currentUser->nip]
         ])->get();
-        return view('pages.pic.administrasi.surat_usulan.jabatan_fungsional', compact('page_title', 'page_description', 'currentUser', 'strukturals', 'lainnyas'));
+        return view('pages.koor_pokja.inbox.lns', compact('page_title', 'page_description', 'currentUser', 'strukturals', 'lainnyas'));
     }
 }

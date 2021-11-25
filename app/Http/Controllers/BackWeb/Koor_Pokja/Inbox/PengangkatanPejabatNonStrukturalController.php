@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\BackWeb\PIC\Administrasi\Surat_Usulan;
+namespace App\Http\Controllers\BackWeb\Koor_Pokja\Inbox;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
@@ -45,12 +45,12 @@ class PengangkatanPejabatNonStrukturalController extends Controller
     public function index() 
     {
         $currentUser = UserManagement::find(Auth::id());
-        $page_title = 'PIC | Administrasi | Surat Usulan | Pengangkatan Pejabat Non Struktural';
+        $page_title = 'KemenSetneg | Inbox | Pengangkatan Pejabat Non Struktural';
         $page_description = 'Pengangkatan Pejabat Non Struktural';
         $jabatans = Jabatan::All();
         $unsurs = Unsur::All();
         $unsur_nons = UnsurNon::All();
-        return view('pages.pic.administrasi.surat_usulan.form.pengangkatan_pejabat_ns', compact('page_title', 'page_description', 'currentUser', 'jabatans', 'unsurs', 'unsur_nons'));
+        return view('pages.koor_pokja.inbox.pengangkatan_pejabat_ns', compact('page_title', 'page_description', 'currentUser', 'jabatans', 'unsurs', 'unsur_nons'));
     }
 
     // ========= function create basic information =============
@@ -140,7 +140,7 @@ class PengangkatanPejabatNonStrukturalController extends Controller
     
             $pengangkatans->save();
     
-            return redirect()->route('pic.administrasi.surat-usulan.index')->with(['success'=>'Jabatan Non Struktural Success Added!!!']);
+            return redirect()->route('koor-pokja.inbox.lns.index')->with(['success'=>'Jabatan Non Struktural Success Added!!!']);
 
         } else {
             $validator = Validator::make($input, [
@@ -234,7 +234,7 @@ class PengangkatanPejabatNonStrukturalController extends Controller
     
             $pengangkatans->save();
     
-            return redirect()->route('pic.administrasi.surat-usulan.index')->with(['success'=>'Jabatan Non Struktural Success Added!!!']);
+            return redirect()->route('koor-pokja.inbox.lns.index')->with(['success'=>'Jabatan Non Struktural Success Added!!!']);
         }
 
         

@@ -384,7 +384,7 @@ Route::group(['middleware' => ['auth', 'checkRole:2']], function() {
             });
 
             Route::prefix('/lsn')->group(function(){
-                Route::get('/', 'BackWeb\Koor_Pokja\Inbox\JabatanFungsionalController@index')->name('koor-pokja.inbox.lsn.index');
+                Route::get('/', 'BackWeb\Koor_Pokja\Inbox\LnsController@index')->name('koor-pokja.inbox.lns.index');
                 Route::prefix('/form')->group(function(){
 
                     Route::get('/pengangkatan-pejabat-ns', 'BackWeb\Koor_Pokja\Inbox\PengangkatanPejabatNonStrukturalController@index')->name('koor-pokja.inbox.pengangkatan-pejabat-ns.index');
@@ -400,11 +400,12 @@ Route::group(['middleware' => ['auth', 'checkRole:2']], function() {
                     Route::patch('/pembatalan-keppres-jabatan-ns/add', 'BackWeb\Koor_Pokja\Inbox\PembatalanKeppresJabatanNonStrukturalController@store')->name('koor-pokja.inbox.pembatalan-keppres-jabatan-ns.store');
 
 
-                    Route::get('/persetujuan-pengangkatan-staf-khusus', 'BackWeb\Koor_Pokja\Inbox\PersetujuanPengangkatanStafKhususController@index')->name('koor-pokja.inbox.persetujuan-pengangkatan-staf-khusus.index');
-                    Route::patch('/persetujuan-pengangkatan-staf-khusus/add', 'BackWeb\Koor_Pokja\Inbox\PersetujuanPengangkatanStafKhususController@store')->name('koor-pokja.inbox.persetujuan-pengangkatan-staf-khusus.store');
                     
                     Route::get('/persetujuan-pengangkatan-staf-khusus', 'BackWeb\Koor_Pokja\Inbox\PersetujuanPengangkatanStafKhususController@index')->name('koor-pokja.inbox.persetujuan-pengangkatan-staf-khusus.index');
                     Route::patch('/persetujuan-pengangkatan-staf-khusus/add', 'BackWeb\Koor_Pokja\Inbox\PersetujuanPengangkatanStafKhususController@store')->name('koor-pokja.inbox.persetujuan-pengangkatan-staf-khusus.store');
+                    
+                    Route::get('/laporan-pemberhentian', 'BackWeb\Koor_Pokja\Inbox\LaporanPemberhentianController@index')->name('koor-pokja.inbox.laporan-pemberhentian.index');
+                    Route::patch('/laporan-pemberhentian/add', 'BackWeb\Koor_Pokja\Inbox\LaporanPemberhentianController@store')->name('koor-pokja.inbox.laporan-pemberhentian.store');
                 });
             });
         });

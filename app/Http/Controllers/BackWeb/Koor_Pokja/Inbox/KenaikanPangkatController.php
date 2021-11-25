@@ -19,6 +19,8 @@ use App\Unsur;
 use App\Periode;
 use App\Catatan;
 use App\Group;
+use App\Pendidikan;
+use App\JabatanPAK;
 use App\Helper;
 
 use Carbon\Carbon;
@@ -92,22 +94,29 @@ class KenaikanPangkatController extends Controller
         $unsurs = Unsur::all();
         $periodes = Periode::all();
         $pangkats = Pangkat::All();
+        $pendidikans = Pendidikan::All();
 
         $notes = [];
 
         $file_data_usulans = Helper::fileBreak($verifikasi->file_data_usulan);
-        $file_nota_usulan_asns = Helper::fileBreak($verifikasi->file_nota_usulan_asn);
         $file_nota_usulans = Helper::fileBreak($verifikasi->file_nota_usulan);
+        $file_sk_pangkat_terakhirs = Helper::fileBreak($verifikasi->file_sk_pangkat_terakhir);
+        $file_sk_jabatans = Helper::fileBreak($verifikasi->file_sk_jabatan);
         $file_data_paks = Helper::fileBreak($verifikasi->file_data_pak);
         $file_klarifikasi_paks = Helper::fileBreak($verifikasi->file_klarifikasi_pak);
-        $file_jabatans = Helper::fileBreak($verifikasi->file_jabatan);
-        $file_pengambilan_sumpahs = Helper::fileBreak($verifikasi->file_pengambilan_sumpah);
-        $file_pendukungs  = Helper::fileBreak($verifikasi->file_pendukung);
-        $file_ba_pelantikans  = Helper::fileBreak($verifikasi->file_ba_pelantikan);
-        $file_sumpah_jabatans  = Helper::fileBreak($verifikasi->file_sumpah_jabatan);
-        $file_surat_pengantars  = Helper::fileBreak($verifikasi->file_surat_pengantar);
-        $file_keppress  = Helper::fileBreak($verifikasi->file_keppres);
-        $file_bukti_pendukungs  = Helper::fileBreak($verifikasi->file_bukti_pendukung);
+        $file_baps = Helper::fileBreak($verifikasi->file_bap);
+        $file_spps = Helper::fileBreak($verifikasi->file_spp);
+        $file_hukumans = Helper::fileBreak($verifikasi->file_hukuman);
+        $file_skp_1_tahun_terakhirs = Helper::fileBreak($verifikasi->file_skp_1_tahun_terakhir);
+        $file_skp_2_tahun_terakhirs = Helper::fileBreak($verifikasi->file_skp_2_tahun_terakhir);
+        $file_surat_keputusan_ppks = Helper::fileBreak($verifikasi->file_surat_keputusan_ppk);
+        $file_surat_permohonans = Helper::fileBreak($verifikasi->file_surat_permohonan);
+        $file_keppres_dibatalkans = Helper::fileBreak($verifikasi->file_keppres_dibatalkan);
+        $file_alasans = Helper::fileBreak($verifikasi->file_alasan);
+        $file_fotokopi_sk_hilangs = Helper::fileBreak($verifikasi->file_fotokopi_sk_hilang);
+        $file_surat_kehilangans = Helper::fileBreak($verifikasi->file_surat_kehilangan);
+        $file_dokumen_klarifikasis = Helper::fileBreak($verifikasi->file_dokumen_klarifikasi);
+        $file_fotokopi_sk_diperbaikis = Helper::fileBreak($verifikasi->file_fotokopi_sk_diperbaiki);
 
 
         if($verifikasi->jenis_layanan == Helper::$pemberian_kenaikan_pangkat || $verifikasi->jenis_layanan == Helper::$pengesahan_kenaikan_pangkat)
@@ -118,11 +127,23 @@ class KenaikanPangkatController extends Controller
 
         }
 
+        $pendidikan_terakhirs = Pendidikan::where([
+            ['id', '=' , $verifikasi->pendidikan_terakhir]
+        ])->get();
+
+        $pangkat_gol_barus = Pangkat::where([
+            ['id', '=' , $verifikasi->pangkat_gol_baru]
+        ])->get();
+
+        $jabatan_paks = JabatanPAK::where([
+            ['id', '=' , $verifikasi->jabatan_pak]
+        ])->get();
+
         if (!$verifikasi) {
             return redirect()->route('pages.koor_pokja.inbox.kenaikan_pangkat')->with(['error'=>'Invalid parameter id.']);
         }
     
-        return view('pages.koor_pokja.inbox.verif_kenaikan_pangkat', compact('page_title', 'page_description', 'file_bukti_pendukungs', 'file_keppress', 'file_surat_pengantars', 'file_sumpah_jabatans', 'file_ba_pelantikans', 'file_pendukungs', 'file_pengambilan_sumpahs', 'file_jabatans', 'file_klarifikasi_paks', 'file_data_paks', 'file_nota_usulans', 'file_nota_usulan_asns', 'file_data_usulans', 'currentUser', 'verifikasi', 'jabatans', 'unsurs', 'periodes', 'notes', 'pangkats'));
+        return view('pages.koor_pokja.inbox.verif_kenaikan_pangkat', compact('page_title', 'page_description', 'file_nota_usulans', 'file_data_usulans', 'file_sk_pangkat_terakhirs', 'file_sk_jabatans', 'file_data_paks', 'file_klarifikasi_paks', 'file_baps', 'file_spps', 'file_hukumans', 'file_skp_1_tahun_terakhirs', 'file_skp_2_tahun_terakhirs', 'file_surat_keputusan_ppks', 'currentUser', 'verifikasi', 'jabatans', 'unsurs', 'periodes', 'notes', 'pangkats', 'pendidikans', 'pendidikan_terakhirs', 'pangkat_gol_barus','jabatan_paks', 'file_surat_permohonans', 'file_keppres_dibatalkans','file_alasans', 'file_fotokopi_sk_hilangs', 'file_dokumen_klarifikasis', 'file_fotokopi_sk_diperbaikis'));
     }
 
     public function store_proses(Request $request) 

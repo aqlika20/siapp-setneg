@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\BackWeb\PIC\Administrasi\Surat_Usulan;
+namespace App\Http\Controllers\BackWeb\Koor_Pokja\Inbox;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
@@ -11,26 +11,25 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 
 use App\UserManagement;
-use App\PengangkatanPemberhentianNS;
+use App\PengangkatanPemberhentianLainnya;
 use App\Jabatan;
 use App\Unsur;
 use App\Helper;
 
 use Carbon\Carbon;
 
-class PemberhentianPejabatNonStrukturalController extends Controller
+class PersetujuanPengangkatanStafKhususController extends Controller
 {
     private $curr_int_time;
 
-   /**
-     * Pengangkatan Pejabat Non Struktural Attachments root folder
+    /**
+     * Ralat Keppres Jabatan Lainnya Attachments root folder
      * only declared here.
      */
-    private $attachments_root_folder = "NS_Attachments/";
+    private $attachments_root_folder = "Pengangkatan_Jabatan_Lainnya_Attachments/";
     private $data_surat_pengantar_folder;
     private $data_dhr_folder;
-    private $data_dukumen_lain_pengangkatan_ns_folder;
-
+    private $data_dukumen_lain_pengangkatan_jabatan_lain_folder;
 
     public function __construct()
     {
@@ -38,18 +37,17 @@ class PemberhentianPejabatNonStrukturalController extends Controller
         $this->middleware('auth');
         $this->data_surat_pengantar_folder = $this->attachments_root_folder . "data_surat_pengantar/";
         $this->data_dhr_folder = $this->attachments_root_folder . "data_dhr/";
-        $this->data_dukumen_lain_pengangkatan_ns_folder = $this->attachments_root_folder . "data_dukumen_lain_pengangkatan_ns/";
+        $this->data_dukumen_lain_pengangkatan_jabatan_lain_folder = $this->attachments_root_folder . "data_dukumen_lain_pengangkatan_jabatan_lain/";
         
     }
 
     public function index() 
     {
         $currentUser = UserManagement::find(Auth::id());
-        $page_title = 'PIC | Administrasi | Surat Usulan | Pemberhentian Pejabat Non Struktural';
-        $page_description = 'Pemberhentian Pejabat Non Struktural';
+        $page_title = 'KemenSetneg | Inbox | Persetujuan pengangkatan Staf Khusus Menteri / Kepala Lembaga';
+        $page_description = 'Persetujuan pengangkatan Staf Khusus Menteri / Kepala Lembaga';
         $jabatans = Jabatan::All();
-        $unsurs = Unsur::All();
-        return view('pages.pic.administrasi.surat_usulan.form.pemberhentian_pejabat_ns', compact('page_title', 'page_description', 'currentUser', 'jabatans', 'unsurs'));
+        return view('pages.koor_pokja.inbox.persetujuan_pengangkatan_staf_khusus', compact('page_title', 'page_description', 'currentUser', 'jabatans'));
     }
 
     // ========= function create basic information =============
@@ -62,19 +60,22 @@ class PemberhentianPejabatNonStrukturalController extends Controller
             'tanggal_surat_pengantar' => 'required',
             'no_surat_pengantar' => 'required',
 
-            'lns' => 'required',
-            'unsur' => 'required',
-            'nip' => 'required',
-            'nama' => 'required',
+            'jabatan_lainnya' => 'required',
+            'formasi' => 'required',
+            'formasi_terisi_start' => 'required',
+            'formasi_terisi_end' => 'required',
             'instansi' => 'required',
+            'nama' => 'required',
             'jabatan' => 'required',
-            'tanggal_keppres' => 'required',
-            
+
+            'no_surat_persetujuan' => 'required',
+            'tanggal_surat_persetujuan' => 'required',
+            'kepada_menteri' => 'required',
+            'nama_staff_khusus' => 'required',
            
             'file_surat_pengantar.*' => 'required|max:5000|mimes:pdf',
             'file_dhr.*' => 'required|max:5000|mimes:pdf',
-            'file_dukumen_lain_pengangkatan_ns.*' => 'max:5000|mimes:pdf'
-        
+            'file_dukumen_lain_pengangkatan_jabatan_lain.*' => 'max:5000|mimes:pdf'
         ]);
 
         if ($validator->fails()) {
@@ -91,20 +92,25 @@ class PemberhentianPejabatNonStrukturalController extends Controller
             }
         }
 
-        $pengangkatans = PengangkatanPemberhentianNS::create([
+        $pengangkatans = PengangkatanPemberhentianLainnya::create([
             'tanggal_surat_pengantar' => $input['tanggal_surat_pengantar'],
             'no_surat_pengantar' => $input['no_surat_pengantar'],
-            
-            'lns' => $input['lns'],
-            'unsur' => $input['unsur'],
-            'nip' => $input['nip'],
-            'nama' => $input['nama'],
-            'instansi' => $input['instansi'],
-            'jabatan_berhenti' => $input['jabatan'],
-            'tanggal_keppres' => $input['tanggal_keppres'],
 
+            'jabatan_lainnya' => $input['jabatan_lainnya'],
+            'formasi' => $input['formasi'],
+            'formasi_terisi_start' => $input['formasi_terisi_start'],
+            'formasi_terisi_end' => $input['formasi_terisi_end'],
+            'instansi' => $input['instansi'],
+            'nama' => $input['nama'],
+            'jabatan_angkat' => $input['jabatan'],
+            
+            'no_surat_persetujuan' => $input['no_surat_persetujuan'],
+            'tanggal_surat_persetujuan' => $input['tanggal_surat_persetujuan'],
+            'kepada_menteri' => $input['kepada_menteri'],
+            'nama_staff_khusus' => $input['nama_staff_khusus'],
+            
             'id_pengirim' => $id_pengirim->nip,
-            'jenis_layanan' => Helper::$pemberhentian_pejabat_NS,
+            'jenis_layanan' => Helper::$persetujuan_pengangkatan_staf_khusus,
             'status' => Helper::$pengajuan_usulan
             
         ]);
@@ -129,19 +135,19 @@ class PemberhentianPejabatNonStrukturalController extends Controller
             $pengangkatans->file_dhr = $files;
         }
 
-        if($request->has('file_dukumen_lain_pengangkatan_ns')){
+        if($request->has('file_dukumen_lain_pengangkatan_jabatan_lain')){
             $files = [];
-            foreach ($request->file('file_dukumen_lain_pengangkatan_ns') as $file) {
+            foreach ($request->file('file_dukumen_lain_pengangkatan_jabatan_lain') as $file) {
                 $filename = $file->getClientOriginalName(). ' - ' .$input['nip'];
-                Storage::putFileAs($this->data_dukumen_lain_pengangkatan_ns_folder, $file, $filename);
+                Storage::putFileAs($this->data_dukumen_lain_pengangkatan_jabatan_lain_folder, $file, $filename);
                 $files[] = $filename;
             }
-            $pengangkatans->file_dukumen_lain_pengangkatan_ns = $files;
+            $pengangkatans->file_dukumen_lain_pengangkatan_lainnya = $files;
         }
 
         $pengangkatans->save();
 
-        return redirect()->route('pic.administrasi.surat-usulan.index')->with(['success'=>'Jabatan Non Struktural Success Added!!!']);
+        return redirect()->route('koor-pokja.inbox.lns.index')->with(['success'=>'Jabatan Staff Lainnya Success Added!!!']);
     }
    
 

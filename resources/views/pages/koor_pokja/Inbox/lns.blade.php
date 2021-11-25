@@ -15,7 +15,7 @@
                     <div class="card card-custom">
                         <div class="card-header flex-wrap border-0 pt-6 pb-0">
                             <div class="card-title">
-                                <h3 class="card-label">Modul Kontrol LNS (POKJA)
+                                <h3 class="card-label">Modul Kontrol LNS
                             </div>
                             <div class="card-toolbar">
                                 <!--begin::Button-->
@@ -107,7 +107,7 @@
                                                                             <!--end::Icon-->
                                                                             <!--begin::Title-->
                                                                             <div class="d-flex flex-column flex-grow-1 mr-2">
-                                                                                <a href="{{ route('pic.administrasi.surat-usulan.pengangkatan-pejabat-ns.index') }}" class="font-weight-bold text-dark-75 text-hover-primary font-size-lg mb-1">Pengangkatan Pejabat Non Struktural dan Pejabat Lainnya</a>
+                                                                                <a href="{{ route('koor-pokja.inbox.pengangkatan-pejabat-ns.index') }}" class="font-weight-bold text-dark-75 text-hover-primary font-size-lg mb-1">Pengangkatan Pejabat Non Struktural dan Pejabat Lainnya</a>
                                                                             </div>
                                                                             <!--end::Title-->
                                                                             <!--begin::Lable-->
@@ -131,7 +131,7 @@
                                                                             <!--end::Icon-->
                                                                             <!--begin::Title-->
                                                                             <div class="d-flex flex-column flex-grow-1 mr-2">
-                                                                                <a href="{{ route('pic.administrasi.surat-usulan.pemberhentian-pejabat-ns.index') }}" class="font-weight-bold text-dark-75 text-hover-primary font-size-lg mb-1">Pemberhentian Pejabat Non Struktural dan Pejabat Lainnya</a>
+                                                                                <a href="{{ route('koor-pokja.inbox.pemberhentian-pejabat-ns.index') }}" class="font-weight-bold text-dark-75 text-hover-primary font-size-lg mb-1">Pemberhentian Pejabat Non Struktural dan Pejabat Lainnya</a>
                                                                             </div>
                                                                             <!--end::Title-->
                                                                             <!--begin::Lable-->
@@ -155,7 +155,7 @@
                                                                             <!--end::Icon-->
                                                                             <!--begin::Title-->
                                                                             <div class="d-flex flex-column flex-grow-1 mr-2">
-                                                                                <a href="{{ route('pic.administrasi.surat-usulan.perpanjangan-ns.index') }}" class="font-weight-bold text-dark-75 text-hover-primary font-size-lg mb-1">Perpanjangan Pejabat Non Struktural dan Pejabat Lainnya</a>
+                                                                                <a href="{{ route('koor-pokja.inbox.ralat-keppres-jabatan-ns.index') }}" class="font-weight-bold text-dark-75 text-hover-primary font-size-lg mb-1">Perpanjangan Pejabat Non Struktural dan Pejabat Lainnya</a>
                                                                             </div>
                                                                             <!--end::Title-->
                                                                             <!--begin::Lable-->
@@ -179,7 +179,7 @@
                                                                             <!--end::Icon-->
                                                                             <!--begin::Title-->
                                                                             <div class="d-flex flex-column flex-grow-1 mr-2">
-                                                                                <a href="{{ route('pic.administrasi.surat-usulan.ralat-keppres-jabatan-ns.index') }}" class="font-weight-bold text-dark-75 text-hover-primary font-size-lg mb-1">Usulan Lainnya Non Struktural dan Pejabat Lainnya</a>
+                                                                                <a href="{{ route('koor-pokja.inbox.pembatalan-keppres-jabatan-ns.index') }}" class="font-weight-bold text-dark-75 text-hover-primary font-size-lg mb-1">Usulan Lainnya Non Struktural dan Pejabat Lainnya</a>
                                                                             </div>
                                                                             <!--end::Title-->
                                                                             <!--begin::Lable-->
@@ -208,7 +208,7 @@
                                                                             <!--end::Icon-->
                                                                             <!--begin::Title-->
                                                                             <div class="d-flex flex-column flex-grow-1 mr-2">
-                                                                                <a href="{{ route('pic.administrasi.surat-usulan.persetujuan-pengangkatan-staf-khusus.index') }}" class="font-weight-bold text-dark-75 text-hover-primary font-size-lg mb-1">Persetujuan pengangkatan Staf Khusus Menteri/Kepala Lembaga</a>
+                                                                                <a href="{{ route('koor-pokja.inbox.persetujuan-pengangkatan-staf-khusus.index') }}" class="font-weight-bold text-dark-75 text-hover-primary font-size-lg mb-1">Persetujuan pengangkatan Staf Khusus Menteri/Kepala Lembaga</a>
                                                                                 <div class="wizard-desc">Produk Surat Dinas</div>
                                                                             </div>
                                                                             <!--end::Title-->
@@ -231,7 +231,7 @@
                                                                             <!--end::Icon-->
                                                                             <!--begin::Title-->
                                                                             <div class="d-flex flex-column flex-grow-1 mr-2">
-                                                                                <a href="{{ route('pic.administrasi.surat-usulan.persetujuan-pengangkatan-staf-khusus.index') }}" class="font-weight-bold text-dark-75 text-hover-primary font-size-lg mb-1">Laporan Pemberhentian</a>
+                                                                                <a href="{{ route('koor-pokja.inbox.persetujuan-pengangkatan-staf-khusus.index') }}" class="font-weight-bold text-dark-75 text-hover-primary font-size-lg mb-1">Laporan Pemberhentian</a>
                                                                             </div>
                                                                             <!--end::Title-->
                                                                         </div>
@@ -323,7 +323,7 @@
                                         <td>{{ Helper::defineStatusBy($struktural->status) }}</td> -->
 
                                         <td>{{ Helper::defineJenisLayananBy($struktural->jenis_layanan) }}</td>
-                                        <td>{{ Helper::countDateMasa($struktural->masa_jabatan_start, $struktural->masa_jabatan_end) }}</td>
+                                        <td> </td>
                                         <td>{{ $struktural->no_keppres }}</td>
                                         <td>{{ $struktural->tanggal_keppres }}</td>
                                         <td>{{ $struktural->tanggal_pelantikan }}</td>
@@ -338,7 +338,7 @@
                                         <td>{{ Helper::defineStatusBy($lainnya->status) }}</td> -->
 
                                         <td>{{ Helper::defineJenisLayananBy($lainnya->jenis_layanan) }}</td>
-                                        <td>{{ Helper::countDateMasa($lainnya->masa_jabatan_start, $lainnya->masa_jabatan_end) }}</td>
+                                        <td></td>
                                         <td>{{ $lainnya->no_keppres }}</td>
                                         <td>{{ $lainnya->tanggal_keppres }}</td>
                                         <td>{{ $lainnya->tanggal_pelantikan }}</td>

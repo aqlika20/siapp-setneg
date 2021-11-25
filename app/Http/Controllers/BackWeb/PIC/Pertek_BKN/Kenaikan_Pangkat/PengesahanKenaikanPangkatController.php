@@ -55,8 +55,8 @@ class PengesahanKenaikanPangkatController extends Controller
     public function index() 
     {
         $currentUser = UserManagement::find(Auth::id());
-        $page_title = 'PIC | Pertek BKN | Kenaikan Pangkat | Pengesahan Kenaikan Pangkat';
-        $page_description = 'Pengesahan Kenaikan Pangkat';
+        $page_title = 'PIC | Pertek BKN | Kenaikan Pangkat | Petikan Yang Hilang/Rusak';
+        $page_description = 'Petikan Yang Hilang/Rusak';
         $pangkats = Pangkat::All();
         $periodes = Periode::All();
         return view('pages.pic.pertek_bkn.kenaikan_pangkat.form.pengesahan_kenaikan_pangkat', compact('page_title', 'page_description', 'currentUser', 'pangkats', 'periodes'));

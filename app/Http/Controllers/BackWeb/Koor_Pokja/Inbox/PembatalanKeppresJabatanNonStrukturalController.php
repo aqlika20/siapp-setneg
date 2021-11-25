@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\BackWeb\PIC\Administrasi\Surat_Usulan;
+namespace App\Http\Controllers\BackWeb\Koor_Pokja\Inbox;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
@@ -42,9 +42,9 @@ class PembatalanKeppresJabatanNonStrukturalController extends Controller
     public function index() 
     {
         $currentUser = UserManagement::find(Auth::id());
-        $page_title = 'PIC | Administrasi | Surat Usulan | Pembatalan Keppres Jabatan Non Struktural';
+        $page_title = 'KemenSetneg | Inbox | Pembatalan Keppres Jabatan Non Struktural';
         $page_description = 'Pembatalan Keppres Jabatan Non Struktural';
-        return view('pages.pic.administrasi.surat_usulan.form.pembatalan_keppres_jabatan_ns', compact('page_title', 'page_description', 'currentUser'));
+        return view('pages.koor_pokja.inbox.pembatalan_keppres_jabatan_ns', compact('page_title', 'page_description', 'currentUser'));
     }
 
     // ========= function create basic information =============
@@ -123,7 +123,7 @@ class PembatalanKeppresJabatanNonStrukturalController extends Controller
 
         $pengangkatans->save();
 
-        return redirect()->route('pic.administrasi.surat-usulan.index')->with(['success'=>'Jabatan Fungsional Success Added!!!']);
+        return redirect()->route('koor-pokja.inbox.lns.index')->with(['success'=>'Jabatan Fungsional Success Added!!!']);
     }
    
 
