@@ -97,8 +97,8 @@ class PertekController extends Controller
         $notes = [];
         // dd($notes);
 
-        $file_data_usulans = Helper::fileBreak($verifikasi->file_data_usulan);
-        $file_nota_usulan_asns = Helper::fileBreak($verifikasi->file_nota_usulan_asn);
+        $file_surat_usulans = Helper::fileBreak($verifikasi->file_surat_usulan);
+        $file_nota_usulans = Helper::fileBreak($verifikasi->file_nota_usulan);
         $file_data_paks = Helper::fileBreak($verifikasi->file_data_pak);
         $file_klarifikasi_paks = Helper::fileBreak($verifikasi->file_klarifikasi_pak);
         $data_jabatan_lamas = Helper::fileBreak($verifikasi->file_data_jabatan_lama);
@@ -117,6 +117,18 @@ class PertekController extends Controller
         $file_data_jabatan_barus = Helper::fileBreak($verifikasi->file_data_jabatan_baru);
         $file_ba_pelantikans = Helper::fileBreak($verifikasi->file_ba_pelantikan);
         $file_sumpah_jabatans = Helper::fileBreak($verifikasi->file_sumpah_jabatan);
+        $file_penetapan_kebutuhan_formasis = Helper::fileBreak($verifikasi->file_penetapan_kebutuhan_formasi);
+        $file_ijazahs = Helper::fileBreak($verifikasi->file_ijazah);
+        $file_pencantuman_gelars = Helper::fileBreak($verifikasi->file_pencantuman_gelar);
+        $file_data_jabatan_lamas = Helper::fileBreak($verifikasi->file_data_jabatan_lama);
+        $file_sk_pangkat_terakhirs = Helper::fileBreak($verifikasi->file_sk_pangkat_terakhir);
+        $file_penilaian_skps = Helper::fileBreak($verifikasi->file_penilaian_skp);
+        $file_penilaian_prestasis = Helper::fileBreak($verifikasi->file_penilaian_prestasi);
+        $file_surat_keterangan_menduduki_jabatans = Helper::fileBreak($verifikasi->file_surat_keterangan_menduduki_jabatan);
+        $file_surat_keterangan_pengalamans = Helper::fileBreak($verifikasi->file_surat_keterangan_pengalaman);
+        $file_keppres_pengangkatans = Helper::fileBreak($verifikasi->file_keppres_pengangkatan);
+        $file_ba_pengambilan_sumpah_pelantikan_fungsionals = Helper::fileBreak($verifikasi->file_ba_pengambilan_sumpah_pelantikan_fungsional);
+        $file_bukti_pendukungs = Helper::fileBreak($verifikasi->file_bukti_pendukung);
 
         // dd($file_data_usulans);
 
@@ -133,7 +145,7 @@ class PertekController extends Controller
             return redirect()->route('pages.koor_pokja.pertek')->with(['error'=>'Invalid parameter id.']);
         }
 
-        return view('pages.koor_pokja.verif_bkn', compact('page_title', 'page_description', 'file_sumpah_jabatans', 'file_ba_pelantikans', 'file_data_jabatan_barus', 'file_pendukung_pemberhentians', 'file_surat_pengantars', 'file_keppress', 'file_skp_2s', 'file_formasi_jabatans', 'file_skp_2_dukungan_lainnyas', 'file_surat_pernyataan_rekomendasis', 'file_data_kompetensis', 'file_ba_pengambilan_sumpahs', 'file_data_jabatan_fungsionals', 'file_surat_pernyataan_rekomendasis', 'file_data_rekomendasis', 'file_data_pak_terakhirs', 'data_jabatan_lamas', 'file_klarifikasi_paks', 'file_data_paks', 'file_nota_usulan_asns', 'file_data_usulans', 'currentUser', 'verifikasi', 'notes', 'jabatans', 'unsurs', 'periodes', 'pangkats'));
+        return view('pages.koor_pokja.verif_bkn', compact('page_title', 'page_description', 'file_bukti_pendukungs', 'file_ba_pengambilan_sumpah_pelantikan_fungsionals', 'file_keppres_pengangkatans', 'file_surat_keterangan_pengalamans', 'file_surat_keterangan_menduduki_jabatans', 'file_penilaian_prestasis', 'file_penilaian_skps', 'file_sk_pangkat_terakhirs', 'file_data_jabatan_lamas', 'file_pencantuman_gelars', 'file_ijazahs', 'file_penetapan_kebutuhan_formasis', 'file_sumpah_jabatans', 'file_ba_pelantikans', 'file_data_jabatan_barus', 'file_pendukung_pemberhentians', 'file_surat_pengantars', 'file_keppress', 'file_skp_2s', 'file_formasi_jabatans', 'file_skp_2_dukungan_lainnyas', 'file_surat_pernyataan_rekomendasis', 'file_data_kompetensis', 'file_ba_pengambilan_sumpahs', 'file_data_jabatan_fungsionals', 'file_surat_pernyataan_rekomendasis', 'file_data_rekomendasis', 'file_data_pak_terakhirs', 'data_jabatan_lamas', 'file_klarifikasi_paks', 'file_data_paks', 'file_nota_usulans', 'file_surat_usulans', 'currentUser', 'verifikasi', 'notes', 'jabatans', 'unsurs', 'periodes', 'pangkats'));
     }
 
     public function verification_ns($id){

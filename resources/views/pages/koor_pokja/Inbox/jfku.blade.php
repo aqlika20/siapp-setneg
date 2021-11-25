@@ -90,44 +90,6 @@
                                                             </td>
                                                         </tr>
                                                     @endforeach
-
-                                                    @foreach($pengangkatans_ns as $pengangkatan_ns)
-                                                        <tr>
-                                                            <!-- <td>{{ Helper::convertDate($pengangkatan_ns->created_at) }}</td>
-                                                            <td><div style="color: #FFA800;">{{ Helper::defineJenisLayananBy($pengangkatan_ns->jenis_layanan) }}</div></td>
-                                                            <td>{{ Helper::defineStatusBy($pengangkatan_ns->status) }}</td> -->
-                                                            <td>{{ $pengangkatan_ns->tanggal_surat_usulan }}</td>
-                                                            <td>{{ $pengangkatan_ns->no_surat_usulan }}</td>
-                                                            <td>{{ $pengangkatan_ns->instansi_pengusul }}</td>
-                                                            <td><div style="color: #FFA800;">{{ Helper::defineJenisLayananBy($pengangkatan_ns->jenis_layanan) }}</div></td>
-                                                            <td><div style="color: #3699FF;">{{ $pengangkatan_ns->nip }}</div></td>
-                                                            <td>{{ $pengangkatan_ns->nama }}</td>
-                                                            <td>
-                                                                <a href="{{route('koor-pokja.inbox.ns.verif', ['id' => $pengangkatan_ns->id])}}"><i class="fa fa-pencil-alt text-success mr-2"></i></a>
-                                                                <a href="{{route('koor-pokja.inbox.distributor.index', ['id' => $pengangkatan_ns->id, 'jenis_layanan' => $pengangkatan_ns->jenis_layanan])}}"><i class="fa fa-share text-info mr-1"></i></a>
-                                                            </td>
-                                                        </tr>
-                                                    @endforeach
-
-                                                    @foreach($lainnyas as $lainnya)
-                                                        <tr>
-                                                            <!-- <td>{{ Helper::convertDate($lainnya->created_at) }}</td>
-                                                            <td><div style="color: #FFA800;">{{ Helper::defineJenisLayananBy($lainnya->jenis_layanan) }}</div></td>
-                                                            <td>{{ Helper::defineStatusBy($lainnya->status) }}</td> -->
-
-                                                            <td>{{ $lainnya->tanggal_surat_usulan }}</td>
-                                                            <td>{{ $lainnya->no_surat_usulan }}</td>
-                                                            <td>{{ $lainnya->instansi_pengusul }}</td>
-                                                            <td><div style="color: #FFA800;">{{ Helper::defineJenisLayananBy($lainnya->jenis_layanan) }}</div></td>
-                                                            <td><div style="color: #3699FF;">{{ $lainnya->nip }}</div></td>
-                                                            <td>{{ $lainnya->nama }}</td>
-                                                            <td>
-                                                                <a href="{{route('koor-pokja.inbox.lainnya.verif', ['id' => $lainnya->id])}}"><i class="fa fa-pencil-alt text-success mr-2"></i></a>
-                                                                <a href="{{route('koor-pokja.inbox.distributor.index', ['id' => $lainnya->id, 'jenis_layanan' => $lainnya->jenis_layanan])}}"><i class="fa fa-share text-info mr-1"></i></a>
-                                                            </td>
-                                                        </tr>
-                                                    @endforeach
-                                                    
                                                 </tbody>
                                             </table>
                                         <!--end::Table-->

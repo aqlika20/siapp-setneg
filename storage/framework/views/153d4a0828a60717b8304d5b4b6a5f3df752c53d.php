@@ -90,44 +90,6 @@
                                                             </td>
                                                         </tr>
                                                     <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-
-                                                    <?php $__currentLoopData = $pengangkatans_ns; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $pengangkatan_ns): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                                                        <tr>
-                                                            <!-- <td><?php echo e(Helper::convertDate($pengangkatan_ns->created_at)); ?></td>
-                                                            <td><div style="color: #FFA800;"><?php echo e(Helper::defineJenisLayananBy($pengangkatan_ns->jenis_layanan)); ?></div></td>
-                                                            <td><?php echo e(Helper::defineStatusBy($pengangkatan_ns->status)); ?></td> -->
-                                                            <td><?php echo e($pengangkatan_ns->tanggal_surat_usulan); ?></td>
-                                                            <td><?php echo e($pengangkatan_ns->no_surat_usulan); ?></td>
-                                                            <td><?php echo e($pengangkatan_ns->instansi_pengusul); ?></td>
-                                                            <td><div style="color: #FFA800;"><?php echo e(Helper::defineJenisLayananBy($pengangkatan_ns->jenis_layanan)); ?></div></td>
-                                                            <td><div style="color: #3699FF;"><?php echo e($pengangkatan_ns->nip); ?></div></td>
-                                                            <td><?php echo e($pengangkatan_ns->nama); ?></td>
-                                                            <td>
-                                                                <a href="<?php echo e(route('koor-pokja.inbox.ns.verif', ['id' => $pengangkatan_ns->id])); ?>"><i class="fa fa-pencil-alt text-success mr-2"></i></a>
-                                                                <a href="<?php echo e(route('koor-pokja.inbox.distributor.index', ['id' => $pengangkatan_ns->id, 'jenis_layanan' => $pengangkatan_ns->jenis_layanan])); ?>"><i class="fa fa-share text-info mr-1"></i></a>
-                                                            </td>
-                                                        </tr>
-                                                    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-
-                                                    <?php $__currentLoopData = $lainnyas; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $lainnya): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                                                        <tr>
-                                                            <!-- <td><?php echo e(Helper::convertDate($lainnya->created_at)); ?></td>
-                                                            <td><div style="color: #FFA800;"><?php echo e(Helper::defineJenisLayananBy($lainnya->jenis_layanan)); ?></div></td>
-                                                            <td><?php echo e(Helper::defineStatusBy($lainnya->status)); ?></td> -->
-
-                                                            <td><?php echo e($lainnya->tanggal_surat_usulan); ?></td>
-                                                            <td><?php echo e($lainnya->no_surat_usulan); ?></td>
-                                                            <td><?php echo e($lainnya->instansi_pengusul); ?></td>
-                                                            <td><div style="color: #FFA800;"><?php echo e(Helper::defineJenisLayananBy($lainnya->jenis_layanan)); ?></div></td>
-                                                            <td><div style="color: #3699FF;"><?php echo e($lainnya->nip); ?></div></td>
-                                                            <td><?php echo e($lainnya->nama); ?></td>
-                                                            <td>
-                                                                <a href="<?php echo e(route('koor-pokja.inbox.lainnya.verif', ['id' => $lainnya->id])); ?>"><i class="fa fa-pencil-alt text-success mr-2"></i></a>
-                                                                <a href="<?php echo e(route('koor-pokja.inbox.distributor.index', ['id' => $lainnya->id, 'jenis_layanan' => $lainnya->jenis_layanan])); ?>"><i class="fa fa-share text-info mr-1"></i></a>
-                                                            </td>
-                                                        </tr>
-                                                    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-                                                    
                                                 </tbody>
                                             </table>
                                         <!--end::Table-->
