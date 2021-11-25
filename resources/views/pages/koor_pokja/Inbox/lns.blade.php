@@ -327,7 +327,6 @@
                                         <td>{{ $struktural->no_keppres }}</td>
                                         <td>{{ $struktural->tanggal_keppres }}</td>
                                         <td>{{ $struktural->tanggal_pelantikan }}</td>
-                                        <!-- <td>{{ Helper::defineDate($struktural->masa_jabatan_start, $struktural->masa_jabatan_end, $struktural->tanggal_keppres, $struktural->tanggal_pelantikan) }}</td> -->
                                     </tr>
                                 @endforeach
                                 

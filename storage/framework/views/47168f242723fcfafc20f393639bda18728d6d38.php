@@ -327,7 +327,6 @@
                                         <td><?php echo e($struktural->no_keppres); ?></td>
                                         <td><?php echo e($struktural->tanggal_keppres); ?></td>
                                         <td><?php echo e($struktural->tanggal_pelantikan); ?></td>
-                                        <!-- <td><?php echo e(Helper::defineDate($struktural->masa_jabatan_start, $struktural->masa_jabatan_end, $struktural->tanggal_keppres, $struktural->tanggal_pelantikan)); ?></td> -->
                                     </tr>
                                 <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                                 
