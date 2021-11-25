@@ -947,7 +947,7 @@
                                                                 @foreach($file_skp_2_tahun_terakhirs as $file)
                                                                 <tr>
                                                                     <td><a style="color: blue;" > {{ $file }}</a></td>
-                                                                    <td><a id="d_skp_2_tahun_terakhir" type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#skp_2_tahun_terakhir_modal" data-file="{{ $file }}">Lihat</a></td>
+                                                                    <td><a id="d_file_skp_2_tahun_terakhir" type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#file_skp_2_tahun_terakhir_modal" data-file="{{ $file }}">Lihat</a></td>
                                                                 </tr>
                                                                 @endforeach
                                                             </tbody>
