@@ -42,7 +42,7 @@
                                                 <label class="col-form-label col-lg-3 col-sm-12">Tanggal Surat Pengantar</label>
                                                 <div class="col-lg-5 col-md-9 col-sm-12">
                                                     <div class="input-group date">
-                                                        <input type="text" class="form-control datetimepicker-input my-datepicker" id="req_tanggal_surat_pengantar" name="req_tanggal_surat_pengantar" data-toggle="datetimepicker" data-target="#req_tanggal_surat_pengantar" placeholder="Pilih Tanggal" value="<?php echo e(old('req_tanggal_surat_pengantar')); ?>" require/>
+                                                        <input type="text" class="form-control datetimepicker-input my-datepicker" id="tanggal_surat_pengantar" name="tanggal_surat_pengantar" data-toggle="datetimepicker" data-target="#tanggal_surat_pengantar" placeholder="Pilih Tanggal" value="<?php echo e(old('tanggal_surat_pengantar')); ?>" require/>
                                                         <div class="input-group-append">
                                                             <span class="input-group-text">
                                                                 <i class="la la-calendar"></i>
@@ -55,14 +55,14 @@
                                                 <label class="col-form-label col-lg-3 col-sm-12">No. Surat Pengantar</label>
                                                 <div class="col-lg-9 col-md-9 col-sm-12">
                                                     <div class="input-group">
-                                                        <input type="text" class="form-control" id="req_no_surat_pengantar" name="req_no_surat_pengantar" value="<?php echo e(old('req_no_surat_pengantar')); ?>" autocomplete="off" require/>
+                                                        <input type="text" class="form-control" id="no_surat_pengantar" name="no_surat_pengantar" value="<?php echo e(old('no_surat_pengantar')); ?>" autocomplete="off" require/>
                                                     </div>
                                                 </div>
                                             </div>
                                             <div class="form-group row">
                                                 <label class="col-lg-3 col-form-label">Upload Surat Pengantar</label>
                                                 <div class="col-lg-9">
-                                                    <input id="req_file_surat_pengantar" name="req_file_surat_pengantar[]" type="file" class="file" data-show-preview="false" multiple/>
+                                                    <input id="file_surat_pengantar" name="file_surat_pengantar[]" type="file" class="file" data-show-preview="false" multiple/>
                                                     
                                                     <!-- <div class="dropzone dropzone-multi" id="kt_dropzone_4">
                                                         <div class="dropzone-panel mb-lg-0 mb-2">
@@ -113,7 +113,7 @@
                                                 <label class="col-form-label col-lg-3 col-sm-12">No. Keppres</label>
                                                 <div class="col-lg-9 col-md-9 col-sm-12">
                                                     <div class="input-group date">
-                                                        <input type="text" class="form-control" id="req_no_keppres" name="req_no_keppres" value="<?php echo e(old('req_no_keppres')); ?>" autocomplete="off" require/>
+                                                        <input type="text" class="form-control" id="no_keppres" name="no_keppres" value="<?php echo e(old('no_keppres')); ?>" autocomplete="off" require/>
                                                     </div>
                                                 </div>
                                             </div>
@@ -123,7 +123,7 @@
                                                 <label class="col-form-label col-lg-3 col-sm-12">Tanggal Keppres</label>
                                                 <div class="col-lg-5 col-md-9 col-sm-12">
                                                     <div class="input-group date">
-                                                        <input type="text" class="form-control datetimepicker-input my-datepicker" id="req_tanggal_keppres" name="req_tanggal_keppres" data-toggle="datetimepicker" data-target="#req_tanggal_keppres" placeholder="Pilih Tanggal" value="<?php echo e(old('req_tanggal_keppres')); ?>" require/>
+                                                        <input type="text" class="form-control datetimepicker-input my-datepicker" id="tanggal_keppres" name="tanggal_keppres" data-toggle="datetimepicker" data-target="#tanggal_keppres" placeholder="Pilih Tanggal" value="<?php echo e(old('tanggal_keppres')); ?>" require/>
                                                         <div class="input-group-append">
                                                             <span class="input-group-text">
                                                                 <i class="la la-calendar"></i>
@@ -137,7 +137,7 @@
                                             <div class="form-group row">
                                                 <label class="col-lg-3 col-form-label">Upload Keppres</label>
                                                 <div class="col-lg-9">
-                                                    <input id="req_file_keppres" name="req_file_keppres[]" type="file" class="file" data-show-preview="false" multiple/>
+                                                    <input id="file_keppres" name="file_keppres[]" type="file" class="file" data-show-preview="false" multiple/>
                                                     
                                                     <!-- <div class="dropzone dropzone-multi" id="kt_dropzone_4">
                                                         <div class="dropzone-panel mb-lg-0 mb-2">
@@ -187,7 +187,7 @@
                                                 <label class="col-form-label col-lg-3 col-sm-12">Alasan Ralat</label>
                                                 <div class="col-lg-9 col-md-9 col-sm-12">
                                                     <div class="input-group date">
-                                                        <input type="text" class="form-control" id="req_alasan_ralat" name="req_alasan_ralat" value="<?php echo e(old('req_alasan_ralat')); ?>" autocomplete="off" require/>
+                                                        <input type="text" class="form-control" id="alasan_ralat" name="alasan_ralat" value="<?php echo e(old('alasan_ralat')); ?>" autocomplete="off" require/>
                                                     </div>
                                                 </div>
                                             </div>
@@ -197,7 +197,7 @@
                                             <div class="form-group row">
                                                 <label class="col-lg-3 col-form-label">Upload Bukti Pendukung</label>
                                                 <div class="col-lg-9">
-                                                    <input id="req_file_bukti_pendukung" name="req_file_bukti_pendukung[]" type="file" class="file" data-show-preview="false" multiple/>
+                                                    <input id="file_bukti_pendukung" name="file_bukti_pendukung[]" type="file" class="file" data-show-preview="false" multiple/>
                                                     
                                                     <!-- <div class="dropzone dropzone-multi" id="kt_dropzone_4">
                                                         <div class="dropzone-panel mb-lg-0 mb-2">
@@ -303,18 +303,18 @@
                 errorClass:"error-msg",
                 errorElement:"p",
                 rules:{
-                    req_tanggal_surat_pengantar: 'required',
-                    req_no_surat_pengantar: 'required',
-                    req_file_surat_pengantar: {
+                    tanggal_surat_pengantar: 'required',
+                    no_surat_pengantar: 'required',
+                    file_surat_pengantar: {
                         extenstion: "jpg,png,jpeg,pdf"
                     },
-                    req_no_keppres: 'required',
-                    req_tanggal_keppres: 'required',
-                    req_file_keppres: {
+                    no_keppres: 'required',
+                    tanggal_keppres: 'required',
+                    file_keppres: {
                         extenstion: "jpg,png,jpeg,pdf"
                     },
-                    req_alasan_ralat: 'required',
-                    req_file_bukti_pendukung: {
+                    alasan_ralat: 'required',
+                    file_bukti_pendukung: {
                         extenstion: "jpg,png,jpeg,pdf"
                     }
 

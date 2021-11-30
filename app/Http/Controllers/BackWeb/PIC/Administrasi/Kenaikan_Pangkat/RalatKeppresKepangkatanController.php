@@ -56,13 +56,13 @@ class RalatKeppresKepangkatanController extends Controller
         $input = $request->all();
 
         $validator = Validator::make($input, [
-            'req_tanggal_surat_permohonan' => 'required',
-            'req_no_surat_permohonan' => 'required',
-            'req_jabatan_menandatangani' => 'required',
+            'tanggal_surat_permohonan' => 'required',
+            'no_surat_permohonan' => 'required',
+            'jabatan_menandatangani' => 'required',
             
-            'req_file_surat_permohonan.*' => 'max:5000|mimes:jpg,png,jpeg,pdf',
-            'req_file_dokumen_klarifikasi.*' => 'max:5000|mimes:jpg,png,jpeg,pdf',
-            'req_file_fotokopi_sk_diperbaiki.*' => 'max:5000|mimes:jpg,png,jpeg,pdf'
+            'file_surat_permohonan.*' => 'max:5000|mimes:jpg,png,jpeg,pdf',
+            'file_dokumen_klarifikasi.*' => 'max:5000|mimes:jpg,png,jpeg,pdf',
+            'file_fotokopi_sk_diperbaiki.*' => 'max:5000|mimes:jpg,png,jpeg,pdf'
         
         ]);
 
@@ -81,9 +81,9 @@ class RalatKeppresKepangkatanController extends Controller
         }
 
         $pengangkatans = KenaikanPangkat::create([
-            'tanggal_surat_permohonan' => $input['req_tanggal_surat_permohonan'],
-            'no_surat_permohonan' => $input['req_no_surat_permohonan'],
-            'pejabat_menandatangani' => $input['req_jabatan_menandatangani'],
+            'tanggal_surat_permohonan' => $input['tanggal_surat_permohonan'],
+            'no_surat_permohonan' => $input['no_surat_permohonan'],
+            'pejabat_menandatangani' => $input['jabatan_menandatangani'],
 
             'id_pengirim' => $id_pengirim->nip,
             'jenis_layanan' => Helper::$ralat_keppres_kepangkatan,
@@ -91,9 +91,9 @@ class RalatKeppresKepangkatanController extends Controller
             
         ]);
 
-        if($request->has('req_file_surat_permohonan')){
+        if($request->has('file_surat_permohonan')){
             $files = [];
-            foreach ($request->file('req_file_surat_permohonan') as $file) {
+            foreach ($request->file('file_surat_permohonan') as $file) {
                 $filename = $file->getClientOriginalName();
                 Storage::putFileAs($this->data_surat_permohonan_folder, $file, $filename);
                 $files[] = $filename;
@@ -101,9 +101,9 @@ class RalatKeppresKepangkatanController extends Controller
             $pengangkatans->file_surat_permohonan = $files;
         }
 
-        if($request->has('req_file_dokumen_klarifikasi')){
+        if($request->has('file_dokumen_klarifikasi')){
             $files = [];
-            foreach ($request->file('req_file_dokumen_klarifikasi') as $file) {
+            foreach ($request->file('file_dokumen_klarifikasi') as $file) {
                 $filename = $file->getClientOriginalName();
                 Storage::putFileAs($this->data_dokumen_klarifikasi_folder, $file, $filename);
                 $files[] = $filename;
@@ -111,9 +111,9 @@ class RalatKeppresKepangkatanController extends Controller
             $pengangkatans->file_dokumen_klarifikasi = $files;
         }
 
-        if($request->has('req_file_fotokopi_sk_diperbaiki')){
+        if($request->has('file_fotokopi_sk_diperbaiki')){
             $files = [];
-            foreach ($request->file('req_file_fotokopi_sk_diperbaiki') as $file) {
+            foreach ($request->file('file_fotokopi_sk_diperbaiki') as $file) {
                 $filename = $file->getClientOriginalName();
                 Storage::putFileAs($this->data_file_fotokopi_sk_diperbaiki_folder, $file, $filename);
                 $files[] = $filename;

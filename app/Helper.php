@@ -40,6 +40,8 @@ class Helper {
     public static $ralat_keppres_pemberhentian = 27;                    // Ralat Keppres Pemberhentian
     public static $pembatalan_keppress_pemberhentian = 28;              // Pembatalan Keppres Pemberhentian
     public static $petikan_keppres_hilang = 29;                         // Petikan Keppres yang Hilang/Rusak
+    public static $masa_persiapan_pensiun = 30;                         // Masa Persiapan Pensiun
+    public static $permasalahan_kepegawaian_lainnya = 31;                         // Permasalahan Kepegawaian Lainnya
 
     public static function defineJenisLayananBy($type)
     {
@@ -159,6 +161,14 @@ class Helper {
             
             case '29':
                 $jenis_layanan = 'Petikan Keppres yang Hilang/Rusak';
+                break;
+
+            case '30':
+                $jenis_layanan = 'Masa Persiapan Pensiun';
+                break;
+
+            case '31':
+                $jenis_layanan = 'Permasalahan Kepegawaian Lainnya';
                 break;
 
         }
@@ -374,15 +384,29 @@ class Helper {
         // $pertek_bkns = Bkn::where([
         //     ['nip', '=', $nip]
         // ])->first();
-        $pertek_bkns = Bkn::All();
+
+        // $pertek_bkns = Bkn::All();
+        $pertek_bkns = Bkn::select('nip')->where('nip', $nip)->get();
+        
+        // dd($pertek_bkns);
+        $nip_bkn = [];
         foreach($pertek_bkns as $pertek)
         {
-            if($pertek->nip != $nip){
-                $status = "Pertek Tersedia";
-            } else {
-                $status = "Pertek Belum Tersedia";
-            }
+            $nip_bkn = $pertek->nip;
         }
+        
+        if($nip_bkn == $nip){
+            $status = "Pertek Tersedia";
+        }
+        elseif($nip_bkn == null){
+            $status = "Pertek Belum Tersedia";
+        }
+        // foreach($pertek_bkns as $pertek)
+        // {
+        //     // dd($pertek->nip);
+        // }
+        // dd($pertek_bkns->nip);
+        
 
         return $status;
     }

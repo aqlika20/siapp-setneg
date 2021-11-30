@@ -64,7 +64,7 @@
                                             <div class="form-group row">
                                                 <label class="col-form-label col-lg-3 col-sm-12">Alasan Pembatalan</label>
                                                 <div class="col-lg-9 col-md-9 col-sm-12">
-                                                    <select class="form-control select22" style="width: 230px;" id="req_alasan_pembatalan" name="req_alasan_pembatalan">
+                                                    <select class="form-control select22" style="width: 230px;" id="alasan_pembatalan" name="alasan_pembatalan">
                                                         <option value="" disabled selected>Choose</option>
                                                         <option value="1">Meninggal Dunia Sebelum Periode Kenaikan Pangkat</option>
                                                         <option value="2">Alasan Terkait Dengan Jabatan</option>
@@ -78,7 +78,7 @@
                                                     <label class="col-form-label col-lg-3 col-sm-12">Alasan Pembatalan(Lainnya)</label>
                                                     <div class="col-lg-9 col-md-9 col-sm-12">
                                                         <div class="input-group date">
-                                                            <input type="text" class="form-control" id="req_alasan_pembatalan_lainnya" name="req_alasan_pembatalan_lainnya" value="{{old('req_alasan_pembatalan_lainnya')}}" autocomplete="off" />
+                                                            <input type="text" class="form-control" id="alasan_pembatalan_lainnya" name="alasan_pembatalan_lainnya" value="{{old('alasan_pembatalan_lainnya')}}" autocomplete="off" />
                                                         </div>
                                                     </div>
                                                 </div>
@@ -87,7 +87,7 @@
                                             <div class="form-group row">
                                                 <label class="col-lg-3 col-form-label">Upload Surat Permohonan</label>
                                                 <div class="col-lg-9">
-                                                    <input id="req_file_surat_permohonan" name="req_file_surat_permohonan[]" type="file" class="file" data-show-preview="false" multiple/>
+                                                    <input id="file_surat_permohonan" name="file_surat_permohonan[]" type="file" class="file" data-show-preview="false" multiple/>
                                                     
                                                     <span class="form-text text-muted">Max file size is 1MB and max number of files is 5.</span>
                                                 </div>
@@ -96,7 +96,7 @@
                                             <div class="form-group row">
                                                 <label class="col-lg-3 col-form-label">Upload Keppres Yang Dibatalkan</label>
                                                 <div class="col-lg-9">
-                                                    <input id="req_file_keppres_dibatalkan" name="req_file_keppres_dibatalkan[]" type="file" class="file" data-show-preview="false" multiple/>
+                                                    <input id="file_keppres_dibatalkan" name="file_keppres_dibatalkan[]" type="file" class="file" data-show-preview="false" multiple/>
                                                     
                                                     <span class="form-text text-muted">Max file size is 1MB and max number of files is 5.</span>
                                                 </div>
@@ -105,7 +105,7 @@
                                             <div class="form-group row">
                                                 <label class="col-lg-3 col-form-label">Upload Akta Meninggal Dunia / Alasan Terkait Dengan Jabatan / Lainnya</label>
                                                 <div class="col-lg-9">
-                                                    <input id="req_file_alasan" name="req_file_alasan[]" type="file" class="file" data-show-preview="false" multiple/>
+                                                    <input id="file_alasan" name="file_alasan[]" type="file" class="file" data-show-preview="false" multiple/>
                                                     
                                                     <span class="form-text text-muted">Max file size is 1MB and max number of files is 5.</span>
                                                 </div>
@@ -197,7 +197,7 @@
 
         $('#otherAlasanPembatalan').hide();
 
-        $("#req_alasan_pembatalan").change(function() {
+        $("#alasan_pembatalan").change(function() {
             if ($(this).val() == "0") {
             $('#otherAlasanPembatalan').show();
             } else {

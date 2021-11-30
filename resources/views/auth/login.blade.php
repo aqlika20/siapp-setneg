@@ -22,8 +22,14 @@
                             <label class="text-info"><strong>PIC</strong></label>
                             <div class="text-info"> User  : <strong>111111</strong> and password <strong>testestes</strong></div>
                             <br>
-                            <label class="text-info"><strong>Koordinator Pokja</strong></label>
+                            <label class="text-info"><strong>Koordinator Pokja P4</strong></label>
                             <div class="text-info"> User  : <strong>123456</strong> and password <strong>testestes</strong></div>
+                            <br>
+                            <label class="text-info"><strong>Koordinator Pokja KP</strong></label>
+                            <div class="text-info"> User  : <strong>444444</strong> and password <strong>testestes</strong></div>
+                            <br>
+                            <label class="text-info"><strong>Koordinator Pokja Pensiun</strong></label>
+                            <div class="text-info"> User  : <strong>555555</strong> and password <strong>testestes</strong></div>
                             <br>
                             <label class="text-info"><strong>JF Ahli Muda </strong></label>
                             <div class="text-info"> User  : <strong>654321</strong> and password <strong>testestes</strong></div>

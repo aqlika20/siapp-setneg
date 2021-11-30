@@ -29,16 +29,16 @@ class RalatKeppresPemberhentianController extends Controller
      */
     private $attachments_root_folder = "pemberhentian_attachments/";
     private $data_surat_pengantar_folder;
-    private $data_keppres_folder;
-    private $data_bukti_pendukung_folder;
+    private $file_data_dokumen_klarifikasi_folder;
+    private $file_petikan_asli_sk_pensiun_folder;
 
     public function __construct()
     {
         $this->curr_int_time = strtotime(Carbon::now());
         $this->middleware('auth');
-        $this->data_surat_pengantar_folder = $this->attachments_root_folder . "data_surat_pengantar/";
-        $this->data_keppres_folder = $this->attachments_root_folder . "data_keppres/";
-        $this->data_bukti_pendukung_folder = $this->attachments_root_folder . "data_bukti_pendukung/";
+        $this->file_surat_permohonan_folder = $this->attachments_root_folder . "file_surat_permohonan/";
+        $this->file_data_dokumen_klarifikasi_folder = $this->attachments_root_folder . "file_data_dokumen_klarifikasi/";
+        $this->file_petikan_asli_sk_pensiun_folder = $this->attachments_root_folder . "file_petikan_asli_sk_pensiun/";
     }
 
     public function index() 
@@ -58,17 +58,21 @@ class RalatKeppresPemberhentianController extends Controller
         $input = $request->all();
 
         $validator = Validator::make($input, [
-            'tanggal_surat_pengantar' => 'required',
-            'no_surat_pengantar' => 'required',
+            'tanggal_surat_permohonan' => 'required',
+            'no_surat_permohonan' => 'required',
+            'file_surat_permohonan.*' => 'required|max:5000|mimes:pdf',
+            'file_data_dokumen_klarifikasi.*' => 'required|max:5000|mimes:pdf',
+            'file_petikan_asli_sk_pensiun.*' => 'required|max:5000|mimes:pdf',
+            'catatan' => 'required',
 
+            'nip' => 'required',
+            'nama' => 'required',
+            'alamat' => 'required',
             'no_keppres' => 'required',
             'tanggal_keppres' => 'required',
-
-            'alasan_ralat' => 'required',
-            
-            'file_surat_pengantar.*' => 'required|max:5000|mimes:pdf',
-            'file_keppres.*' => 'required|max:5000|mimes:pdf',
-            'bukti_pendukung.*' => 'required|max:5000|mimes:pdf'
+            'no_urut' => 'required',
+            'data_salah' => 'required',
+            'seharusnya' => 'required'
         ]);
 
         if ($validator->fails()) {
@@ -86,13 +90,18 @@ class RalatKeppresPemberhentianController extends Controller
         }
 
         $pengangkatans = Pemberhentian::create([
-            'tanggal_surat_pengantar' => $input['tanggal_surat_pengantar'],
-            'no_surat_pengantar' => $input['no_surat_pengantar'],
+            'tanggal_surat_permohonan' => Helper::convertDatetoDB($input['tanggal_surat_permohonan']),
+            'no_surat_permohonan' => $input['no_surat_permohonan'],
+            'catatan' => $input['catatan'],
 
+            'nip' => $input['nip'],
+            'nama' => $input['nama'],
+            'alamat' => $input['alamat'],
             'no_keppres' => $input['no_keppres'],
-            'tanggal_keppres' => $input['tanggal_keppres'],
-
-            'alasan_ralat' => $input['alasan_ralat'],
+            'tanggal_keppres' => Helper::convertDatetoDB($input['tanggal_keppres']),
+            'no_urut' => $input['no_urut'],
+            'data_salah' => $input['data_salah'],
+            'seharusnya' => $input['seharusnya'],
 
             'id_pengirim' => $id_pengirim->nip,
             'jenis_layanan' => Helper::$ralat_keppres_pemberhentian,
@@ -100,34 +109,34 @@ class RalatKeppresPemberhentianController extends Controller
             
         ]);
 
-        if($request->has('file_surat_pengantar')){
+        if($request->has('file_surat_permohonan')){
             $files = [];
-            foreach ($request->file('file_surat_pengantar') as $file) {
+            foreach ($request->file('file_surat_permohonan') as $file) {
                 $filename = $file->getClientOriginalName(). ' - ' .$id_pengirim->nip;
-                Storage::putFileAs($this->data_surat_pengantar_folder, $file, $filename);
+                Storage::putFileAs($this->file_surat_permohonan_folder, $file, $filename);
                 $files[] = $filename;
             }
-            $pengangkatans->file_surat_pengantar = $files;
+            $pengangkatans->file_surat_permohonan = $files;
         }
 
-        if($request->has('file_keppres')){
+        if($request->has('file_data_dokumen_klarifikasi')){
             $files = [];
-            foreach ($request->file('file_keppres') as $file) {
+            foreach ($request->file('file_data_dokumen_klarifikasi') as $file) {
                 $filename = $file->getClientOriginalName(). ' - ' .$id_pengirim->nip;
-                Storage::putFileAs($this->data_keppres_folder, $file, $filename);
+                Storage::putFileAs($this->file_data_dokumen_klarifikasi_folder, $file, $filename);
                 $files[] = $filename;
             }
-            $pengangkatans->file_keppres = $files;
+            $pengangkatans->file_data_dokumen_klarifikasi = $files;
         }
 
-        if($request->has('file_bukti_pendukung')){
+        if($request->has('file_petikan_asli_sk_pensiun')){
             $files = [];
-            foreach ($request->file('file_bukti_pendukung') as $file) {
+            foreach ($request->file('file_petikan_asli_sk_pensiun') as $file) {
                 $filename = $file->getClientOriginalName(). ' - ' .$id_pengirim->nip;
-                Storage::putFileAs($this->data_bukti_pendukung_folder, $file, $filename);
+                Storage::putFileAs($this->file_petikan_asli_sk_pensiun_folder, $file, $filename);
                 $files[] = $filename;
             }
-            $pengangkatans->file_bukti_pendukung = $files;
+            $pengangkatans->file_petikan_asli_sk_pensiun = $files;
         }
 
         $pengangkatans->save();

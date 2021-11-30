@@ -55,11 +55,11 @@ class PembatalanKeppresKenaikanPangkatController extends Controller
         $validator = Validator::make($input, [
             'no_keppres' => 'required',
             'tanggal_keppres' => 'required',
-            'req_alasan_pembatalan' => 'required',
+            'alasan_pembatalan' => 'required',
 
-            'req_file_surat_permohonan.*' => 'max:5000|mimes:jpg,png,jpeg,pdf',
-            'req_file_keppres_dibatalkan.*' => 'max:5000|mimes:jpg,png,jpeg,pdf',
-            'req_file_alasan.*' => 'max:5000|mimes:jpg,png,jpeg,pdf'
+            'file_surat_permohonan.*' => 'max:5000|mimes:jpg,png,jpeg,pdf',
+            'file_keppres_dibatalkan.*' => 'max:5000|mimes:jpg,png,jpeg,pdf',
+            'file_alasan.*' => 'max:5000|mimes:jpg,png,jpeg,pdf'
 
         ]);
 
@@ -77,15 +77,15 @@ class PembatalanKeppresKenaikanPangkatController extends Controller
             
         ]);
 
-        if ($input['req_alasan_pembatalan'] == 0) {
-            $pengangkatans->alasan_pembatalan = $input['req_alasan_pembatalan_lainnya'];
+        if ($input['alasan_pembatalan'] == 0) {
+            $pengangkatans->alasan_pembatalan = $input['alasan_pembatalan_lainnya'];
         } else {
-            $pengangkatans->alasan_pembatalan = $input['req_alasan_pembatalan'];
+            $pengangkatans->alasan_pembatalan = $input['alasan_pembatalan'];
         }
 
-        if($request->has('req_file_surat_permohonan')){
+        if($request->has('file_surat_permohonan')){
             $files = [];
-            foreach ($request->file('req_file_surat_permohonan') as $file) {
+            foreach ($request->file('file_surat_permohonan') as $file) {
                 $filename = $file->getClientOriginalName();
                 Storage::putFileAs($this->data_surat_permohonan_folder, $file, $filename);
                 $files[] = $filename;
@@ -93,9 +93,9 @@ class PembatalanKeppresKenaikanPangkatController extends Controller
             $pengangkatans->file_surat_permohonan = $files;
         }
 
-        if($request->has('req_file_keppres_dibatalkan')){
+        if($request->has('file_keppres_dibatalkan')){
             $files = [];
-            foreach ($request->file('req_file_keppres_dibatalkan') as $file) {
+            foreach ($request->file('file_keppres_dibatalkan') as $file) {
                 $filename = $file->getClientOriginalName();
                 Storage::putFileAs($this->data_keppres_dibatalkan_folder, $file, $filename);
                 $files[] = $filename;
@@ -103,9 +103,9 @@ class PembatalanKeppresKenaikanPangkatController extends Controller
             $pengangkatans->file_keppres_dibatalkan = $files;
         }
 
-        if($request->has('req_file_alasan')){
+        if($request->has('file_alasan')){
             $files = [];
-            foreach ($request->file('req_file_alasan') as $file) {
+            foreach ($request->file('file_alasan') as $file) {
                 $filename = $file->getClientOriginalName();
                 Storage::putFileAs($this->data_alasan_folder, $file, $filename);
                 $files[] = $filename;

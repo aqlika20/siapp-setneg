@@ -28,23 +28,27 @@ class PetikanKeppresHilangController extends Controller
      * only declared here.
      */
     private $attachments_root_folder = "pemberhentian_attachments/";
-    private $data_ba_pelantikan_folder;
-    private $data_sumpah_jabatan_folder;
+    private $file_surat_permohonan_folder;
+    private $file_surat_keterangan_kehilangan_polisi_folder;
+    private $file_surat_keterangan_kehilangan_folder;
+    private $file_fotokopi_sk_hilang_folder;
 
     public function __construct()
     {
         $this->curr_int_time = strtotime(Carbon::now());
         $this->middleware('auth');
-        $this->data_ba_pelantikan_folder = $this->attachments_root_folder . "data_ba_pelantikan/";
-        $this->data_sumpah_jabatan_folder = $this->attachments_root_folder . "data_sumpah_jabatan/";
+        $this->file_surat_permohonan_folder = $this->attachments_root_folder . "file_surat_permohonan/";
+        $this->file_surat_keterangan_kehilangan_polisi_folder = $this->attachments_root_folder . "file_surat_keterangan_kehilangan_polisi/";
+        $this->file_surat_keterangan_kehilangan_folder = $this->attachments_root_folder . "file_surat_keterangan_kehilangan/";
+        $this->file_fotokopi_sk_hilang_folder = $this->attachments_root_folder . "file_fotokopi_sk_hilang/";
         
     }
 
     public function index() 
     {
         $currentUser = UserManagement::find(Auth::id());
-        $page_title = 'PIC | Administrasi | Pemberhentian | Petikan Keppres yang Hilang/Rusak';
-        $page_description = 'Petikan Keppres yang Hilang/Rusak';
+        $page_title = 'PIC | Administrasi | Pemberhentian | Legalisir Petikan Keputusan Presiden yang Hilang atau Rusak';
+        $page_description = 'Legalisir Petikan Keputusan Presiden yang Hilang atau Rusak';
         $pangkats = Pangkat::All();
         $periodes = Periode::All();
         return view('pages.pic.administrasi.pemberhentian.form.petikan_keppres_hilang', compact('page_title', 'page_description', 'currentUser', 'pangkats', 'periodes'));
@@ -57,18 +61,22 @@ class PetikanKeppresHilangController extends Controller
         $input = $request->all();
 
         $validator = Validator::make($input, [
+            'no_surat_permohonan' => 'required',
+            'tanggal_surat_permohonan' => 'required',
+            'file_surat_permohonan.*' => 'required|max:5000|mimes:pdf',
+            'file_surat_keterangan_kehilangan_polisi.*' => 'required|max:5000|mimes:pdf',
+            'nama_kantor_polisi' => 'required',
+            'no_surat_kehilangan' => 'required',
+            'tanggal_surat_kehilangan' => 'required',
+            'file_surat_keterangan_kehilangan.*' => 'required|max:5000|mimes:pdf',
+            'file_fotokopi_sk_hilang.*' => 'required|max:5000|mimes:pdf',
+
+            'nip' => 'required',
+            'nama' => 'required',
+            'alamat' => 'required',
             'no_keppres' => 'required',
             'tanggal_keppres' => 'required',
-            'masa_jabatan_start' => 'required',
-            'masa_jabatan_end' => 'required',
-
-            'tmt' => 'required',
-            'hak_keuangan' => 'required',
-            'tanggal_pelantikan' => 'required',
-            'yang_melantik' => 'required',
-
-            'file_ba_pelantikan.*' => 'required|max:5000|mimes:pdf',
-            'file_sumpah_jabatan.*' => 'required|max:5000|mimes:pdf'
+            'no_urut' => 'required'
         ]);
 
         if ($validator->fails()) {
@@ -86,15 +94,18 @@ class PetikanKeppresHilangController extends Controller
         }
 
         $pengangkatans = Pemberhentian::create([
-            'no_keppres' => $input['no_keppres'],
-            'tanggal_keppres' => $input['tanggal_keppres'],
-            'masa_jabatan_start' => $input['masa_jabatan_start'],
-            'masa_jabatan_end' => $input['masa_jabatan_end'],
+            'no_surat_permohonan' => $input['no_surat_permohonan'],
+            'tanggal_surat_permohonan' => Helper::convertDatetoDB($input['tanggal_surat_permohonan']),
+            'nama_kantor_polisi' => $input['nama_kantor_polisi'],
+            'no_surat_kehilangan' => $input['no_surat_kehilangan'],
+            'tanggal_surat_kehilangan' => Helper::convertDatetoDB($input['tanggal_surat_kehilangan']),
 
-            'tmt' => $input['tmt'],
-            'hak_keuangan' => $input['hak_keuangan'],
-            'tanggal_pelantikan' => $input['tanggal_pelantikan'],
-            'yang_melantik' => $input['yang_melantik'],
+            'nip' => $input['nip'],
+            'nama' => $input['nama'],
+            'alamat' => $input['alamat'],
+            'no_keppres' => $input['no_keppres'],
+            'tanggal_keppres' => Helper::convertDatetoDB($input['tanggal_keppres']),
+            'no_urut' => $input['no_urut'],
 
             'id_pengirim' => $id_pengirim->nip,
             'jenis_layanan' => Helper::$petikan_keppres_hilang,
@@ -102,24 +113,44 @@ class PetikanKeppresHilangController extends Controller
             
         ]);
 
-        if($request->has('file_ba_pelantikan')){
+        if($request->has('file_surat_permohonan')){
             $files = [];
-            foreach ($request->file('file_ba_pelantikan') as $file) {
+            foreach ($request->file('file_surat_permohonan') as $file) {
                 $filename = $file->getClientOriginalName(). ' - ' .$id_pengirim->nip;
-                Storage::putFileAs($this->data_ba_pelantikan_folder, $file, $filename);
+                Storage::putFileAs($this->file_surat_permohonan_folder, $file, $filename);
                 $files[] = $filename;
             }
-            $pengangkatans->file_ba_pelantikan = $files;
+            $pengangkatans->file_surat_permohonan = $files;
         }
 
-        if($request->has('file_sumpah_jabatan')){
+        if($request->has('file_surat_keterangan_kehilangan_polisi')){
             $files = [];
-            foreach ($request->file('file_sumpah_jabatan') as $file) {
+            foreach ($request->file('file_surat_keterangan_kehilangan_polisi') as $file) {
                 $filename = $file->getClientOriginalName(). ' - ' .$id_pengirim->nip;
-                Storage::putFileAs($this->data_sumpah_jabatan_folder, $file, $filename);
+                Storage::putFileAs($this->file_surat_keterangan_kehilangan_polisi_folder, $file, $filename);
                 $files[] = $filename;
             }
-            $pengangkatans->file_sumpah_jabatan = $files;
+            $pengangkatans->file_surat_keterangan_kehilangan_polisi = $files;
+        }
+        
+        if($request->has('file_surat_keterangan_kehilangan')){
+            $files = [];
+            foreach ($request->file('file_surat_keterangan_kehilangan') as $file) {
+                $filename = $file->getClientOriginalName(). ' - ' .$id_pengirim->nip;
+                Storage::putFileAs($this->file_surat_keterangan_kehilangan_folder, $file, $filename);
+                $files[] = $filename;
+            }
+            $pengangkatans->file_surat_keterangan_kehilangan = $files;
+        }
+
+        if($request->has('file_fotokopi_sk_hilang')){
+            $files = [];
+            foreach ($request->file('file_fotokopi_sk_hilang') as $file) {
+                $filename = $file->getClientOriginalName(). ' - ' .$id_pengirim->nip;
+                Storage::putFileAs($this->file_fotokopi_sk_hilang_folder, $file, $filename);
+                $files[] = $filename;
+            }
+            $pengangkatans->file_fotokopi_sk_hilang = $files;
         }
 
 

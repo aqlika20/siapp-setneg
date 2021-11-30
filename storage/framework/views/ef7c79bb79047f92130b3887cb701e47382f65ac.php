@@ -77,7 +77,7 @@
                                                 <label class="col-form-label col-lg-3 col-sm-12">Periode Kenaikan Pangkat</label>
                                                 <div class="col-lg-4 col-md-9 col-sm-12">
                                                     <div class="input-group date">
-                                                        <select class="form-control" style="width: 230px;" id="req_masa_periode_start" name="req_masa_periode_start">
+                                                        <select class="form-control" style="width: 230px;" id="masa_periode_start" name="masa_periode_start">
                                                             <option value="" disabled selected>Choose</option>
                                                                 <option value="1">April</option>
                                                                 <option value="1">Oktober</option>
@@ -93,7 +93,7 @@
                                                 </div>
                                                 <div class="col-lg-4 col-md-9 col-sm-12">
                                                     <div class="input-group date">
-                                                        <select class="form-control" style="width: 230px;" id="req_masa_periode_end" name="req_masa_periode_end">
+                                                        <select class="form-control" style="width: 230px;" id="masa_periode_end" name="masa_periode_end">
                                                             <option value="" disabled selected>Choose</option>
                                                                 <option value="1">29 Februari</option>
                                                                 <option value="2">31 Agustus</option>
@@ -302,7 +302,7 @@
                                                     <label class="col-form-label col-lg-3 col-sm-12">Nomor PAK</label>
                                                     <div class="col-lg-9 col-md-9 col-sm-12">
                                                         <div class="input-group date">
-                                                            <input type="text" class="form-control" id="req_nomor_pak" name="req_nomor_pak" value="<?php echo e(old('req_nomor_pak')); ?>" autocomplete="off" />
+                                                            <input type="text" class="form-control" id="nomor_pak" name="nomor_pak" value="<?php echo e(old('nomor_pak')); ?>" autocomplete="off" />
                                                         </div>
                                                     </div>
                                                 </div>
@@ -466,7 +466,7 @@
                                                 <label class="col-form-label col-lg-3 col-sm-12">Jabatan Lama</label>
                                                 <div class="col-lg-9 col-md-9 col-sm-12">
                                                     <div class="input-group date">
-                                                        <input type="text" class="form-control" id="req_jabatan_lama" name="req_jabatan_lama" value="<?php echo e(old('req_jabatan_lama')); ?>" autocomplete="off" require/>
+                                                        <input type="text" class="form-control" id="jabatan_lama" name="jabatan_lama" value="<?php echo e(old('jabatan_lama')); ?>" autocomplete="off" require/>
                                                     </div>
                                                 </div>
                                             </div>
@@ -474,7 +474,7 @@
                                                 <label class="col-form-label col-lg-3 col-sm-12">No. SK Jabatan</label>
                                                 <div class="col-lg-9 col-md-9 col-sm-12">
                                                     <div class="input-group date">
-                                                        <input type="text" class="form-control" id="req_no_sk_jabatan_lama" name="req_no_sk_jabatan_lama" value="<?php echo e(old('req_no_sk_jabatan_lama')); ?>" autocomplete="off" onkeydown="return /[a-zA-Z0-9\s]+/i.test(event.key)" require/>
+                                                        <input type="text" class="form-control" id="no_sk_jabatan_lama" name="no_sk_jabatan_lama" value="<?php echo e(old('no_sk_jabatan_lama')); ?>" autocomplete="off" onkeydown="return /[a-zA-Z0-9\s]+/i.test(event.key)" require/>
                                                     </div>
                                                 </div>
                                             </div>
@@ -482,7 +482,7 @@
                                                 <label class="col-form-label col-lg-3 col-sm-12">TMT Jabatan</label>
                                                 <div class="col-lg-5 col-md-9 col-sm-12">
                                                     <div class="input-group date">
-                                                        <input type="text" class="form-control datetimepicker-input my-datepicker" id="req_tmt_jabatan_lama" name="req_tmt_jabatan_lama" data-toggle="datetimepicker" data-target="#req_tmt_jabatan_lama" placeholder="Pilih Tanggal" value="<?php echo e(old('req_tmt_jabatan_lama')); ?>" autocomplete="off" require/>
+                                                        <input type="text" class="form-control datetimepicker-input my-datepicker" id="tmt_jabatan_lama" name="tmt_jabatan_lama" data-toggle="datetimepicker" data-target="#tmt_jabatan_lama" placeholder="Pilih Tanggal" value="<?php echo e(old('tmt_jabatan_lama')); ?>" autocomplete="off" require/>
                                                         <div class="input-group-append">
                                                             <span class="input-group-text">
                                                                 <i class="la la-calendar"></i>
@@ -495,14 +495,14 @@
                                                 <label class="col-form-label col-lg-3 col-sm-12">Unit Kerja</label>
                                                 <div class="col-lg-9 col-md-9 col-sm-12">
                                                     <div class="input-group date">
-                                                        <input type="text" class="form-control" id="req_unit_kerja_lama" name="req_unit_kerja_lama" value="<?php echo e(old('req_unit_kerja_lama')); ?>" autocomplete="off" require/>
+                                                        <input type="text" class="form-control" id="unit_kerja_lama" name="unit_kerja_lama" value="<?php echo e(old('unit_kerja_lama')); ?>" autocomplete="off" require/>
                                                     </div>
                                                 </div>
                                             </div>
                                             <div class="form-group row">
                                                 <label class="col-lg-3 col-form-label">Upload SK Pangkat Terakhir</label>
                                                 <div class="col-lg-9">
-                                                    <input id="req_file_sk_pangkat_terakhir" name="req_file_sk_pangkat_terakhir[]" type="file" class="file" data-show-preview="false" multiple autocomplete="off" require/>
+                                                    <input id="file_sk_pangkat_terakhir" name="file_sk_pangkat_terakhir[]" type="file" class="file" data-show-preview="false" multiple autocomplete="off" require/>
                                                     
                                                     <span class="form-text text-muted">Max file size is 1MB and max number of files is 5.</span>
                                                 </div>
@@ -577,7 +577,7 @@
                                                 <label class="col-form-label col-lg-3 col-sm-12">Periode Masa Jabatan</label>
                                                 <div class="col-lg-4 col-md-9 col-sm-12">
                                                     <div class="input-group date">
-                                                        <input type="text" class="form-control datetimepicker-input my-datepicker" name="req_masa_jabatan_start" data-toggle="datetimepicker" data-target="#req_masa_jabatan_start" placeholder="Select Date First" id="req_masa_jabatan_start" value="<?php echo e(old('req_masa_jabatan_start')); ?>"/>
+                                                        <input type="text" class="form-control datetimepicker-input my-datepicker" name="masa_jabatan_start" data-toggle="datetimepicker" data-target="#masa_jabatan_start" placeholder="Select Date First" id="masa_jabatan_start" value="<?php echo e(old('masa_jabatan_start')); ?>"/>
                                                         <div class="input-group-append">
                                                             <span class="input-group-text">
                                                                 <i class="la la-calendar"></i>
@@ -591,7 +591,7 @@
                                                 </div>
                                                 <div class="col-lg-4 col-md-9 col-sm-12">
                                                     <div class="input-group date">
-                                                        <input type="text" class="form-control datetimepicker-input my-datepicker" name="req_masa_jabatan_end" data-toggle="datetimepicker" data-target="#req_masa_jabatan_end" placeholder="Select Date Last" id="req_masa_jabatan_end" value="<?php echo e(old('req_masa_jabatan_end')); ?>"/>
+                                                        <input type="text" class="form-control datetimepicker-input my-datepicker" name="masa_jabatan_end" data-toggle="datetimepicker" data-target="#masa_jabatan_end" placeholder="Select Date Last" id="masa_jabatan_end" value="<?php echo e(old('masa_jabatan_end')); ?>"/>
                                                         <div class="input-group-append">
                                                             <span class="input-group-text">
                                                                 <i class="la la-calendar"></i>
@@ -604,7 +604,7 @@
                                             <div class="form-group row">
                                                 <label class="col-lg-3 col-form-label">Upload SK Jabatan</label>
                                                 <div class="col-lg-9">
-                                                    <input id="req_file_sk_jabatan" name="req_file_sk_jabatan[]" type="file" class="file" data-show-preview="false" multiple require/>
+                                                    <input id="file_sk_jabatan" name="file_sk_jabatan[]" type="file" class="file" data-show-preview="false" multiple require/>
                                                     
                                                     <span class="form-text text-muted">Max file size is 1MB and max number of files is 5.</span>
                                                 </div>
@@ -612,7 +612,7 @@
                                             <div class="form-group row">
                                                 <label class="col-lg-3 col-form-label">Upload BAP</label>
                                                 <div class="col-lg-9">
-                                                    <input id="req_file_bap" name="req_file_bap[]" type="file" class="file" data-show-preview="false" multiple require/>
+                                                    <input id="file_bap" name="file_bap[]" type="file" class="file" data-show-preview="false" multiple require/>
                                                     
                                                     <span class="form-text text-muted">Max file size is 1MB and max number of files is 5.</span>
                                                 </div>
@@ -620,7 +620,7 @@
                                             <div class="form-group row">
                                                 <label class="col-lg-3 col-form-label">Upload SPP</label>
                                                 <div class="col-lg-9">
-                                                    <input id="req_file_spp" name="req_file_spp[]" type="file" class="file" data-show-preview="false" multiple require/>
+                                                    <input id="file_spp" name="file_spp[]" type="file" class="file" data-show-preview="false" multiple require/>
                                                     
                                                     <span class="form-text text-muted">Max file size is 1MB and max number of files is 5.</span>
                                                 </div>
@@ -629,7 +629,7 @@
                                             <div class="form-group row">
                                                 <label class="col-form-label col-lg-3 col-sm-12">Jabatan</label>
                                                 <div class="col-lg-9 col-md-9 col-sm-12">
-                                                    <select class="form-control select22" style="width: 230px;" id="req_jabatan_pak" name="req_jabatan_pak">
+                                                    <select class="form-control select22" style="width: 230px;" id="jabatan_pak" name="jabatan_pak">
                                                         <option value="">Choose</option>
                                                         <?php $__currentLoopData = $jabatanPaks; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $jabatanPak): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                                             <option value="<?php echo e($jabatanPak->id); ?>"><?php echo e($jabatanPak->name); ?></option>
@@ -644,7 +644,7 @@
                                                     <label class="col-form-label col-lg-3 col-sm-12">Jabatan</label>
                                                     <div class="col-lg-9 col-md-9 col-sm-12">
                                                         <div class="input-group date">
-                                                            <input type="text" class="form-control" id="req_jataban_pak_lainnya" name="req_jataban_pak_lainnya" value="<?php echo e(old('req_jataban_pak_lainnya')); ?>" autocomplete="off" />
+                                                            <input type="text" class="form-control" id="jataban_pak_lainnya" name="jataban_pak_lainnya" value="<?php echo e(old('jataban_pak_lainnya')); ?>" autocomplete="off" />
                                                         </div>
                                                     </div>
                                                 </div>
@@ -654,7 +654,7 @@
                                                 <div class="form-group row">
                                                     <label class="col-lg-3 col-form-label">Upload PAK/Klarifikasi</label>
                                                     <div class="col-lg-9">
-                                                        <input id="req_file_jabatan_pak_klarifikasi" name="req_file_jabatan_pak_klarifikasi[]" type="file" class="file" data-show-preview="false" multiple require/>
+                                                        <input id="file_jabatan_pak_klarifikasi" name="file_jabatan_pak_klarifikasi[]" type="file" class="file" data-show-preview="false" multiple require/>
                                                         
                                                         <span class="form-text text-muted">Max file size is 1MB and max number of files is 5.</span>
                                                     </div>
@@ -670,10 +670,10 @@
                                             <div class="form-group row">
                                                 <label class="col-form-label col-lg-3 col-sm-12">Status Hukuman</label>
                                                 <div class="col-lg-9 col-md-9 col-sm-12">
-                                                    <select class="form-control select22" style="width: 230px;" id="req_status_hukuman" name="req_status_hukuman">
+                                                    <select class="form-control select22" style="width: 230px;" id="status_hukuman" name="status_hukuman">
                                                         <option value="">Choose</option>
-                                                        <option value="1" <?php echo e(old('req_status_hukuman') ? 'selected' : ''); ?>>Pernah Dijatuhi Hukuman</option>
-                                                        <option value="2" <?php echo e(old('req_status_hukuman') ? 'selected' : ''); ?>>Tidak Pernah Dijatuhi Hukuman</option>
+                                                        <option value="1" <?php echo e(old('status_hukuman') ? 'selected' : ''); ?>>Pernah Dijatuhi Hukuman</option>
+                                                        <option value="2" <?php echo e(old('status_hukuman') ? 'selected' : ''); ?>>Tidak Pernah Dijatuhi Hukuman</option>
                                                     </select>
                                                 </div>
                                             </div>
@@ -682,7 +682,7 @@
                                                 <div class="form-group row">
                                                     <label class="col-lg-3 col-form-label">Upload Surat Keputusan Penjatuhan Hukuman Disiplin</label>
                                                     <div class="col-lg-9">
-                                                        <input id="req_file_hukuman" name="req_file_hukuman[]" type="file" class="file" data-show-preview="false" multiple require/>
+                                                        <input id="file_hukuman" name="file_hukuman[]" type="file" class="file" data-show-preview="false" multiple require/>
                                                         
                                                         <span class="form-text text-muted">Max file size is 1MB and max number of files is 5.</span>
                                                     </div>
@@ -692,7 +692,7 @@
                                                     <label class="col-form-label col-lg-3 col-sm-12">Catatan</label>
                                                     <div class="col-lg-9 col-md-9 col-sm-12">
                                                         <div class="input-group date">
-                                                            <textarea class="form-control" rows="3" id="req_catatan_hukuman" name="req_catatan_hukuman" ></textarea>
+                                                            <textarea class="form-control" rows="3" id="catatan_hukuman" name="catatan_hukuman" ></textarea>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -703,7 +703,7 @@
                                                 <div class="col-lg-9 col-md-9 col-sm-12">
                                                     <div style="margin-bottom:10px;">
                                                         <label class="checkbox checkbox-outline checkbox-outline-2x checkbox-primary">
-                                                            <input type="checkbox" id="req_pangkat_luarbiasa" name="req_pangkat_luarbiasa" value="1"/>
+                                                            <input type="checkbox" id="pangkat_luarbiasa" name="pangkat_luarbiasa" value="1"/>
                                                             <span></span><div style="margin-left: 10px;">Kenaikan Pangkat Luar Biasa</div>
                                                         </label>
                                                     </div>
@@ -714,7 +714,7 @@
                                                 <div class="form-group row">
                                                     <label class="col-lg-3 col-form-label">Upload Surat Keputusan PPK</label>
                                                     <div class="col-lg-9">
-                                                        <input id="req_file_surat_keputusan_ppk" name="req_file_surat_keputusan_ppk[]" type="file" class="file" data-show-preview="false" multiple require/>
+                                                        <input id="file_surat_keputusan_ppk" name="file_surat_keputusan_ppk[]" type="file" class="file" data-show-preview="false" multiple require/>
                                                         
                                                         <span class="form-text text-muted">Max file size is 1MB and max number of files is 5.</span>
                                                     </div>
@@ -724,7 +724,7 @@
                                             <div class="form-group row">
                                                 <label class="col-lg-3 col-form-label">Upload SKP 1 Tahun Terakhir</label>
                                                 <div class="col-lg-9">
-                                                    <input id="req_file_skp_1_tahun_terakhir" name="req_file_skp_1_tahun_terakhir[]" type="file" class="file" data-show-preview="false" multiple require/>
+                                                    <input id="file_skp_1_tahun_terakhir" name="file_skp_1_tahun_terakhir[]" type="file" class="file" data-show-preview="false" multiple require/>
                                                     
                                                     <span class="form-text text-muted">Max file size is 1MB and max number of files is 5.</span>
                                                 </div>
@@ -733,7 +733,7 @@
                                             <div class="form-group row">
                                                 <label class="col-lg-3 col-form-label">Upload SKP 2 Tahun Terakhir</label>
                                                 <div class="col-lg-9">
-                                                    <input id="req_file_skp_2_tahun_terakhir" name="req_file_skp_2_tahun_terakhir[]" type="file" class="file" data-show-preview="false" multiple require/>
+                                                    <input id="file_skp_2_tahun_terakhir" name="file_skp_2_tahun_terakhir[]" type="file" class="file" data-show-preview="false" multiple require/>
                                                     
                                                     <span class="form-text text-muted">Max file size is 1MB and max number of files is 5.</span>
                                                 </div>
@@ -744,49 +744,49 @@
                                                 <div class="col-lg-9 col-md-9 col-sm-12">
                                                     <div style="margin-bottom:10px;">
                                                         <label class="checkbox checkbox-outline checkbox-outline-2x checkbox-primary">
-                                                            <input type="checkbox" id="req_ket" name="req_ket[]" value="1"/>
+                                                            <input type="checkbox" id="ket" name="ket[]" value="1"/>
                                                             <span></span><div style="margin-left: 10px;">Surat Usulan Asli Ditandatangani PPK</div>
                                                         </label>
                                                     </div>
                                                     <div style="margin-bottom:10px;">
                                                         <label class="checkbox checkbox-outline checkbox-outline-2x checkbox-primary">
-                                                            <input type="checkbox" id="req_ket" name="req_ket[]" value="2"/>
+                                                            <input type="checkbox" id="ket" name="ket[]" value="2"/>
                                                             <span></span><div style="margin-left: 10px;">Nota Usulan asli yang dilengkapi dengan data formasi dan ditandatangani oleh PPK</div>
                                                         </label>
                                                     </div>
                                                     <div style="margin-bottom:10px;">
                                                         <label class="checkbox checkbox-outline checkbox-outline-2x checkbox-primary">
-                                                            <input type="checkbox" id="req_ket" name="req_ket[]" value="3"/>
+                                                            <input type="checkbox" id="ket" name="ket[]" value="3"/>
                                                             <span></span><div style="margin-left: 10px;">Sertifikat/tanda lulus/surat keterangan lulus uji kompetensi</div>
                                                         </label>
                                                     </div>
                                                     <div style="margin-bottom:10px;">
                                                         <label class="checkbox checkbox-outline checkbox-outline-2x checkbox-primary">
-                                                            <input type="checkbox" id="req_ket" name="req_ket[]" value="4"/>
+                                                            <input type="checkbox" id="ket" name="ket[]" value="4"/>
                                                             <span></span><div style="margin-left: 10px;">PAK asli 1 tahun terakhir</div>
                                                         </label>
                                                     </div>
                                                     <div style="margin-bottom:10px;">
                                                         <label class="checkbox checkbox-outline checkbox-outline-2x checkbox-primary">
-                                                            <input type="checkbox" id="req_ket" name="req_ket[]" value="5"/>
+                                                            <input type="checkbox" id="ket" name="ket[]" value="5"/>
                                                             <span></span><div style="margin-left: 10px;">Salinan sah SK jabatan terakhir</div>
                                                         </label>
                                                     </div>
                                                     <div style="margin-bottom:10px;">
                                                         <label class="checkbox checkbox-outline checkbox-outline-2x checkbox-primary">
-                                                            <input type="checkbox" id="req_ket" name="req_ket[]" value="6"/>
+                                                            <input type="checkbox" id="ket" name="ket[]" value="6"/>
                                                             <span></span><div style="margin-left: 10px;">Salinan sah SK Pangkat terakhir</div>
                                                         </label>
                                                     </div>
                                                     <div style="margin-bottom:30px;">
                                                         <label class="checkbox checkbox-outline checkbox-outline-2x checkbox-primary">
-                                                            <input type="checkbox" id="req_ket" name="req_ket[]" value="7"/>
+                                                            <input type="checkbox" id="ket" name="ket[]" value="7"/>
                                                             <span></span><div style="margin-left: 10px;">Salinan sah SKP dan Penilaian Prestasi Kerja 2 tahun terakhir</div>
                                                         </label>
                                                     </div>
                                                     <div style="margin-bottom:10px;">
                                                         <label class="checkbox checkbox-outline checkbox-outline-2x checkbox-primary">
-                                                            <input type="checkbox" id="req_ket" name="req_ket[]" value="8"/>
+                                                            <input type="checkbox" id="ket" name="ket[]" value="8"/>
                                                             <span></span><div style="margin-left: 10px;">Semua persyaratan dan dokumen benar</div>
                                                         </label>
                                                     </div>
@@ -861,7 +861,7 @@
         $('#pangkatLuarBiasa').hide();
 
 
-        $("#req_jabatan_pak").change(function() {
+        $("#jabatan_pak").change(function() {
             if ($(this).val() == "0") {
             $('#otherJabatanPAKLainnya').show();
             } else {
@@ -870,7 +870,7 @@
         });
         $("#otherJabatanPAKLainnya").trigger("change");
         
-        $("#req_jabatan_pak").change(function() {
+        $("#jabatan_pak").change(function() {
             if ($(this).val() != "0") {
             $('#otherJabatanPAK').show();
             } else {
@@ -879,7 +879,7 @@
         });
         $("#otherJabatanPAK").trigger("change");
 
-        $("#req_status_hukuman").change(function() {
+        $("#status_hukuman").change(function() {
             if ($(this).val() == "1") {
             $('#pernah').show();
             } else {
@@ -889,7 +889,7 @@
         $("#pernah").trigger("change");
 
         $(function () {
-        $("#req_pangkat_luarbiasa").click(function () {
+        $("#pangkat_luarbiasa").click(function () {
             if ($(this).is(":checked")) {
                 $("#pangkatLuarBiasa").show();
             } else {
@@ -925,17 +925,17 @@
             return new_date;
         }
 
-        $('#req_masa_jabatan_start').on('change.datetimepicker', function(e) {
+        $('#masa_jabatan_start').on('change.datetimepicker', function(e) {
             if(e.date){
                 var min_date = renewDate('min', e.date);
-                applyTimePicker('min', '#req_masa_jabatan_end', min_date);
+                applyTimePicker('min', '#masa_jabatan_end', min_date);
             }
         });
 
-        $('#req_masa_periode_start').on('change.datetimepicker', function(e) {
+        $('#masa_periode_start').on('change.datetimepicker', function(e) {
             if(e.date){
                 var min_date = renewDate('min', e.date);
-                applyTimePicker('min', '#req_masa_periode_end', min_date);
+                applyTimePicker('min', '#masa_periode_end', min_date);
             }
         });
 
@@ -978,7 +978,7 @@
         // $(document).on('click','.add_more_item',function(){
         //     var source = $("#tambah_catatan").html();
         //     // var template = Handlebars.compile(source);
-        //     var template = '<div class="item_data"><div class="form-group row"><label class="col-form-label col-lg-3 col-sm-12">Tanggal Catatan</label><div class="col-lg-5 col-md-9 col-sm-12"><div class="input-group date"><input type="text" class="form-control datetimepicker-input my-datepicker" id="req_tanggal_catatan_' + id +'" name="req_tanggal_catatan[]" data-toggle="datetimepicker" data-target="#req_tanggal_catatan_'+ id +'" placeholder="Pilih Tanggal" autocomplete="off" require /><div class="input-group-append"><span class="input-group-text"><i class="la la-calendar"></i></span></div></div></div></div><div class="form-group row"><label class="col-form-label col-lg-3 col-sm-12">Catatan</label><div class="col-lg-9 col-md-9 col-sm-12"><div class="input-group date"><textarea class="form-control" rows="3" id="req_catatan" name="req_catatan[]" ></textarea></div></div></div><div class="form-group row"><div class="col-lg-9 col-md-9 col-sm-12"><!-- <button type="button" class="remove_detail btn btn-sm font-weight-bolder btn-light-primar">Hapus</button> --><a style="margin-top: 10px;" class="remove_detail btn btn-sm font-weight-bolder btn-light-danger"><i class="la la-trash-o"></i>Hapus Catatan</a></div></div></div>'
+        //     var template = '<div class="item_data"><div class="form-group row"><label class="col-form-label col-lg-3 col-sm-12">Tanggal Catatan</label><div class="col-lg-5 col-md-9 col-sm-12"><div class="input-group date"><input type="text" class="form-control datetimepicker-input my-datepicker" id="tanggal_catatan_' + id +'" name="tanggal_catatan[]" data-toggle="datetimepicker" data-target="#tanggal_catatan_'+ id +'" placeholder="Pilih Tanggal" autocomplete="off" require /><div class="input-group-append"><span class="input-group-text"><i class="la la-calendar"></i></span></div></div></div></div><div class="form-group row"><label class="col-form-label col-lg-3 col-sm-12">Catatan</label><div class="col-lg-9 col-md-9 col-sm-12"><div class="input-group date"><textarea class="form-control" rows="3" id="catatan" name="catatan[]" ></textarea></div></div></div><div class="form-group row"><div class="col-lg-9 col-md-9 col-sm-12"><!-- <button type="button" class="remove_detail btn btn-sm font-weight-bolder btn-light-primar">Hapus</button> --><a style="margin-top: 10px;" class="remove_detail btn btn-sm font-weight-bolder btn-light-danger"><i class="la la-trash-o"></i>Hapus Catatan</a></div></div></div>'
         //     $(this).parent().parent().parent().find(".item_catatan").append(template);
         //     id++;
         //     refreshDateTimePicker();
@@ -1028,9 +1028,9 @@
                         extenstion: "pdf"
                     },
 
-                    req_jabatan: 'required',
-                    req_no_keppress_jabatan: 'required',
-                    req_file_sk_pangkat_terakhir: {
+                    jabatan: 'required',
+                    no_keppress_jabatan: 'required',
+                    file_sk_pangkat_terakhir: {
                         extenstion: "jpg,png,jpeg,pdf"
                     },
                     file_pengambilan_sumpah: {

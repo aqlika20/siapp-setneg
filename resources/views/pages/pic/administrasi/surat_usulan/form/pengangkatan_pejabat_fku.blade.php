@@ -683,7 +683,7 @@
                                                 </div>
                                             </div>
 
-                                            <div  id="otherFieldDiv">
+                                            <div id="otherFieldDiv">
                                                 <h4 class="mb-10 font-weight-bold text-dark">Data Dokumen Penetapan Angka Kredit (PAK)</h4>
                                                 <!--begin::Input-->
                                                 <div class="form-group row">

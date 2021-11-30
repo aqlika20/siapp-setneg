@@ -12,6 +12,7 @@ use Illuminate\Support\Facades\DB;
 
 use App\UserManagement;
 use App\Pemberhentian;
+use App\Pendidikan;
 use App\Pangkat;
 use App\Penolakan;
 use App\Jabatan;
@@ -92,6 +93,7 @@ class PemberhentianController extends Controller
         $unsurs = Unsur::all();
         $periodes = Periode::all();
         $pangkats = Pangkat::All();
+        $pendidikans = Pendidikan::All();
 
         
         $notes = [];
@@ -100,11 +102,25 @@ class PemberhentianController extends Controller
         $file_data_usulans = Helper::fileBreak($verifikasi->file_data_usulan);
         $file_data_paks = Helper::fileBreak($verifikasi->file_data_pak);
         $file_klarifikasi_paks = Helper::fileBreak($verifikasi->file_klarifikasi_pak);
-        $file_surat_pengantars  = Helper::fileBreak($verifikasi->file_surat_pengantar);
-        $file_keppress  = Helper::fileBreak($verifikasi->file_keppres);
-        $file_bukti_pendukungs  = Helper::fileBreak($verifikasi->file_bukti_pendukung);
-        $file_ba_pelantikans  = Helper::fileBreak($verifikasi->file_ba_pelantikan);
-        $file_sumpah_jabatans  = Helper::fileBreak($verifikasi->file_sumpah_jabatan);
+        $file_ijasahs  = Helper::fileBreak($verifikasi->file_ijasah);
+        $file_sk_pangkat_terakhirs  = Helper::fileBreak($verifikasi->file_sk_pangkat_terakhir);
+        $file_sk_jabatan_terakhirs  = Helper::fileBreak($verifikasi->file_sk_jabatan_terakhir);
+        $file_berita_acara_pelantikans  = Helper::fileBreak($verifikasi->file_berita_acara_pelantikan);
+        $file_pas_fotos  = Helper::fileBreak($verifikasi->file_pas_foto);
+        $file_sk_tidak_pernah_dijatuhi_hukumans  = Helper::fileBreak($verifikasi->file_sk_tidak_pernah_dijatuhi_hukuman);
+        $file_sk_tidak_sedang_dalam_hukum_dpcps  = Helper::fileBreak($verifikasi->file_sk_tidak_sedang_dalam_hukum_dpcp);
+        $file_data_pernyataan_permohonan_apss  = Helper::fileBreak($verifikasi->file_data_pernyataan_permohonan_aps);
+        $file_akte_kematians  = Helper::fileBreak($verifikasi->file_akte_kematian);
+        $file_putusan_pengadilan_inkrachs  = Helper::fileBreak($verifikasi->file_putusan_pengadilan_inkrach);
+        $file_data_pendukung_terkaits  = Helper::fileBreak($verifikasi->file_data_pendukung_terkait);
+        $file_surat_keputusan_pengangkatan_sebagai_pejabats  = Helper::fileBreak($verifikasi->file_surat_keputusan_pengangkatan_sebagai_pejabat);
+        $file_surat_permohonans  = Helper::fileBreak($verifikasi->file_surat_permohonan);
+        $file_data_dokumen_klarifikasis  = Helper::fileBreak($verifikasi->file_data_dokumen_klarifikasi);
+        $file_petikan_asli_sk_pensiuns  = Helper::fileBreak($verifikasi->file_petikan_asli_sk_pensiun);
+        $file_keppres_yang_dibatalkans  = Helper::fileBreak($verifikasi->file_keppres_yang_dibatalkan);
+        $file_surat_keterangan_kehilangan_polisis  = Helper::fileBreak($verifikasi->file_surat_keterangan_kehilangan_polisi);
+        $file_surat_keterangan_kehilangans  = Helper::fileBreak($verifikasi->file_surat_keterangan_kehilangan);
+        $file_data_pendukung_lainnyas  = Helper::fileBreak($verifikasi->file_data_pendukung_lainnya);
 
         if($verifikasi->jenis_layanan == Helper::$bup_non_kpp || $verifikasi->jenis_layanan == Helper::$bup_kpp || $verifikasi->jenis_layanan == Helper::$berhenti_atas_permintaan_sendiri || $verifikasi->jenis_layanan == Helper::$non_bup_JDA_non_kpp || $verifikasi->jenis_layanan == Helper::$non_bup_JDA_kpp || $verifikasi->jenis_layanan == Helper::$berhenti_tidak_hormat || $verifikasi->jenis_layanan == Helper::$anumerta || $verifikasi->jenis_layanan == Helper::$pemberhentian_sementara || $verifikasi->jenis_layanan == Helper::$ralat_keppres_pemberhentian || $verifikasi->jenis_layanan == Helper::$pembatalan_keppress_pemberhentian || $verifikasi->jenis_layanan == Helper::$petikan_keppres_hilang)
         {
@@ -118,7 +134,7 @@ class PemberhentianController extends Controller
             return redirect()->route('pages.koor_pokja.inbox.Pemberhentian')->with(['error'=>'Invalid parameter id.']);
         }
     
-        return view('pages.koor_pokja.inbox.verif_pemberhentian', compact('page_title', 'page_description', 'file_sumpah_jabatans', 'file_ba_pelantikans', 'file_bukti_pendukungs', 'file_keppress', 'file_surat_pengantars', 'file_klarifikasi_paks', 'file_data_paks', 'file_data_usulans', 'currentUser', 'verifikasi', 'jabatans', 'unsurs', 'periodes', 'notes', 'pangkats'));
+        return view('pages.koor_pokja.inbox.verif_pemberhentian', compact('pendidikans', 'file_data_pendukung_lainnyas', 'file_surat_keterangan_kehilangans', 'file_surat_keterangan_kehilangan_polisis', 'file_keppres_yang_dibatalkans', 'file_petikan_asli_sk_pensiuns', 'file_data_dokumen_klarifikasis', 'file_surat_permohonans', 'file_surat_keputusan_pengangkatan_sebagai_pejabats', 'file_data_pendukung_terkaits', 'file_putusan_pengadilan_inkrachs', 'file_akte_kematians', 'file_data_pernyataan_permohonan_apss', 'file_sk_tidak_sedang_dalam_hukum_dpcps', 'file_sk_tidak_pernah_dijatuhi_hukumans', 'file_pas_fotos', 'file_berita_acara_pelantikans', 'file_sk_jabatan_terakhirs', 'file_sk_pangkat_terakhirs', 'file_ijasahs', 'page_title', 'page_description', 'file_klarifikasi_paks', 'file_data_paks', 'file_data_usulans', 'currentUser', 'verifikasi', 'jabatans', 'unsurs', 'periodes', 'notes', 'pangkats'));
     }
 
     public function store_proses(Request $request) 
@@ -127,12 +143,12 @@ class PemberhentianController extends Controller
         $id = $input['v_id'];
         $jenis_layanan = $input['v_jenis'];
 
-        if($jenis_layanan == Helper::$bup_non_kpp || $jenis_layanan == Helper::$bup_kpp || $jenis_layanan == Helper::$berhenti_atas_permintaan_sendiri || $jenis_layanan == Helper::$non_bup_JDA_non_kpp || $jenis_layanan == Helper::$non_bup_JDA_kpp || $jenis_layanan == Helper::$berhenti_tidak_hormat || $jenis_layanan == Helper::$anumerta || $jenis_layanan == Helper::$pemberhentian_sementara || $jenis_layanan == Helper::$ralat_keppres_pemberhentian || $jenis_layanan == Helper::$pembatalan_keppress_pemberhentian || $jenis_layanan == Helper::$petikan_keppres_hilang)
+        if($jenis_layanan == Helper::$bup_non_kpp || $jenis_layanan == Helper::$bup_kpp || $jenis_layanan == Helper::$berhenti_atas_permintaan_sendiri || $jenis_layanan == Helper::$non_bup_JDA_non_kpp || $jenis_layanan == Helper::$non_bup_JDA_kpp || $jenis_layanan == Helper::$berhenti_tidak_hormat || $jenis_layanan == Helper::$anumerta || $jenis_layanan == Helper::$pemberhentian_sementara || $jenis_layanan == Helper::$ralat_keppres_pemberhentian || $jenis_layanan == Helper::$pembatalan_keppress_pemberhentian || $jenis_layanan == Helper::$petikan_keppres_hilang || $jenis_layanan == Helper::$masa_persiapan_pensiun || $jenis_layanan == Helper::$permasalahan_kepegawaian_lainnya)
         {
             $pengangkatans = Pemberhentian::where('id', '=', $id)->update(
                 ['status' => Helper::$verifikasi_pokja]
             );
-            return redirect()->route('koor-pokja.inbox.pemberhentian.index')->with(['success'=>'verifikasi Success !!!']);
+            return redirect()->route('koor-pokja.inbox.pemberhentian.index')->with(['success'=>'Verifikasi Success !!!']);
         }
     }
 
@@ -142,12 +158,12 @@ class PemberhentianController extends Controller
         $id = $input['v_id'];
         $jenis_layanan = $input['v_jenis'];
 
-        if($jenis_layanan == Helper::$bup_non_kpp || $jenis_layanan == Helper::$bup_kpp || $jenis_layanan == Helper::$berhenti_atas_permintaan_sendiri || $jenis_layanan == Helper::$non_bup_JDA_non_kpp || $jenis_layanan == Helper::$non_bup_JDA_kpp || $jenis_layanan == Helper::$berhenti_tidak_hormat || $jenis_layanan == Helper::$anumerta || $jenis_layanan == Helper::$pemberhentian_sementara || $jenis_layanan == Helper::$ralat_keppres_pemberhentian || $jenis_layanan == Helper::$pembatalan_keppress_pemberhentian || $jenis_layanan == Helper::$petikan_keppres_hilang)
+        if($jenis_layanan == Helper::$bup_non_kpp || $jenis_layanan == Helper::$bup_kpp || $jenis_layanan == Helper::$berhenti_atas_permintaan_sendiri || $jenis_layanan == Helper::$non_bup_JDA_non_kpp || $jenis_layanan == Helper::$non_bup_JDA_kpp || $jenis_layanan == Helper::$berhenti_tidak_hormat || $jenis_layanan == Helper::$anumerta || $jenis_layanan == Helper::$pemberhentian_sementara || $jenis_layanan == Helper::$ralat_keppres_pemberhentian || $jenis_layanan == Helper::$pembatalan_keppress_pemberhentian || $jenis_layanan == Helper::$petikan_keppres_hilang || $jenis_layanan == Helper::$masa_persiapan_pensiun || $jenis_layanan == Helper::$permasalahan_kepegawaian_lainnya)
         {
             $pengangkatans = Pemberhentian::where('id', '=', $id)->update(
                 ['status' => Helper::$pending_pokja]
             );
-            return redirect()->route("koor-pokja.inbox.text-editor.pemberhentian.index", [$id])->with(['success'=>'verifikasi Success !!!']);          
+            return redirect()->route("koor-pokja.inbox.text-editor.pemberhentian.index", [$id])->with(['warning'=>'Pendung Success !!!']);          
         }
     }
 
@@ -160,7 +176,7 @@ class PemberhentianController extends Controller
         $id_verifikator = $input['v_verifikator'];
         $nama_verifikator = $input['v_nama_verifikator'];
 
-        if($jenis_layanan == Helper::$bup_non_kpp || $jenis_layanan == Helper::$bup_kpp || $jenis_layanan == Helper::$berhenti_atas_permintaan_sendiri || $jenis_layanan == Helper::$non_bup_JDA_non_kpp || $jenis_layanan == Helper::$non_bup_JDA_kpp || $jenis_layanan == Helper::$berhenti_tidak_hormat || $jenis_layanan == Helper::$anumerta || $jenis_layanan == Helper::$pemberhentian_sementara || $jenis_layanan == Helper::$ralat_keppres_pemberhentian || $jenis_layanan == Helper::$pembatalan_keppress_pemberhentian || $jenis_layanan == Helper::$petikan_keppres_hilang)
+        if($jenis_layanan == Helper::$bup_non_kpp || $jenis_layanan == Helper::$bup_kpp || $jenis_layanan == Helper::$berhenti_atas_permintaan_sendiri || $jenis_layanan == Helper::$non_bup_JDA_non_kpp || $jenis_layanan == Helper::$non_bup_JDA_kpp || $jenis_layanan == Helper::$berhenti_tidak_hormat || $jenis_layanan == Helper::$anumerta || $jenis_layanan == Helper::$pemberhentian_sementara || $jenis_layanan == Helper::$ralat_keppres_pemberhentian || $jenis_layanan == Helper::$pembatalan_keppress_pemberhentian || $jenis_layanan == Helper::$petikan_keppres_hilang || $jenis_layanan == Helper::$masa_persiapan_pensiun || $jenis_layanan == Helper::$permasalahan_kepegawaian_lainnya)
         {
             $pengangkatans = Pemberhentian::where('id', '=', $id)->update(
                 ['status' => Helper::$tolak_pokja]
@@ -175,7 +191,7 @@ class PemberhentianController extends Controller
                 'tanggal_prosess_penolakan' => Helper::convertDatetoDB($input['tanggal_prosess_penolakan']),
                 'alasan_penolakan' => $input['alasan_penolakan']
             ]);
-            return redirect()->route("koor-pokja.pertek.index")->with(['success'=>'verifikasi Success !!!']);
+            return redirect()->route("koor-pokja.inbox.pemberhentian.index")->with(['danger'=>'Tolak Success !!!']);
         }
     }
 

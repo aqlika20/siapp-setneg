@@ -41,7 +41,7 @@
                                                 <label class="col-form-label col-lg-3 col-sm-12">No. Keppres</label>
                                                 <div class="col-lg-9 col-md-9 col-sm-12">
                                                     <div class="input-group">
-                                                        <input type="text" class="form-control" id="req_no_keppres" name="req_no_keppres" value="<?php echo e(old('req_no_keppres')); ?>" autocomplete="off" require/>
+                                                        <input type="text" class="form-control" id="no_keppres" name="no_keppres" value="<?php echo e(old('no_keppres')); ?>" autocomplete="off" require/>
                                                     </div>
                                                 </div>
                                             </div>
@@ -52,7 +52,7 @@
                                                 <label class="col-form-label col-lg-3 col-sm-12">Tanggal Keppres</label>
                                                 <div class="col-lg-5 col-md-9 col-sm-12">
                                                     <div class="input-group date">
-                                                        <input type="text" class="form-control datetimepicker-input my-datepicker" id="req_tanggal_keppres" name="req_tanggal_keppres" data-toggle="datetimepicker" data-target="#req_tanggal_keppres" placeholder="Pilih Tanggal" value="<?php echo e(old('req_tanggal_keppres')); ?>" require/>
+                                                        <input type="text" class="form-control datetimepicker-input my-datepicker" id="tanggal_keppres" name="tanggal_keppres" data-toggle="datetimepicker" data-target="#tanggal_keppres" placeholder="Pilih Tanggal" value="<?php echo e(old('tanggal_keppres')); ?>" require/>
                                                         <div class="input-group-append">
                                                             <span class="input-group-text">
                                                                 <i class="la la-calendar"></i>
@@ -68,7 +68,7 @@
                                                 <label class="col-form-label col-lg-3 col-sm-12">Masa Jabatan</label>
                                                 <div class="col-lg-4 col-md-9 col-sm-12">
                                                     <div class="input-group date">
-                                                        <input type="text" class="form-control datetimepicker-input my-datepicker" name="req_masa_jabatan_start" data-toggle="datetimepicker" data-target="#req_masa_jabatan_start" placeholder="Select Date First" id="req_masa_jabatan_start" value="<?php echo e(old('req_masa_jabatan_start')); ?>"/>
+                                                        <input type="text" class="form-control datetimepicker-input my-datepicker" name="masa_jabatan_start" data-toggle="datetimepicker" data-target="#masa_jabatan_start" placeholder="Select Date First" id="masa_jabatan_start" value="<?php echo e(old('masa_jabatan_start')); ?>"/>
                                                         <div class="input-group-append">
                                                             <span class="input-group-text">
                                                                 <i class="la la-calendar"></i>
@@ -82,7 +82,7 @@
                                                 </div>
                                                 <div class="col-lg-4 col-md-9 col-sm-12">
                                                     <div class="input-group date">
-                                                        <input type="text" class="form-control datetimepicker-input my-datepicker" name="req_masa_jabatan_end" data-toggle="datetimepicker" data-target="#req_masa_jabatan_end" placeholder="Select Date Last" id="req_masa_jabatan_end" value="<?php echo e(old('req_masa_jabatan_end')); ?>"/>
+                                                        <input type="text" class="form-control datetimepicker-input my-datepicker" name="masa_jabatan_end" data-toggle="datetimepicker" data-target="#masa_jabatan_end" placeholder="Select Date Last" id="masa_jabatan_end" value="<?php echo e(old('masa_jabatan_end')); ?>"/>
                                                         <div class="input-group-append">
                                                             <span class="input-group-text">
                                                                 <i class="la la-calendar"></i>
@@ -103,7 +103,7 @@
                                                 <label class="col-form-label col-lg-3 col-sm-12">TMT</label>
                                                 <div class="col-lg-9 col-md-9 col-sm-12">
                                                     <div class="input-group date">
-                                                        <input type="text" class="form-control" id="req_tmt" name="req_tmt" value="<?php echo e(old('req_tmt')); ?>" autocomplete="off" require/>
+                                                        <input type="text" class="form-control" id="tmt" name="tmt" value="<?php echo e(old('tmt')); ?>" autocomplete="off" require/>
                                                     </div>
                                                 </div>
                                             </div>
@@ -113,7 +113,7 @@
                                                 <label class="col-form-label col-lg-3 col-sm-12">Hak keuangan dan Fasilitas</label>
                                                 <div class="col-lg-9 col-md-9 col-sm-12">
                                                     <div class="input-group date">
-                                                        <input type="text" class="form-control" id="req_hak_keuangan" name="req_hak_keuangan" value="<?php echo e(old('req_hak_keuangan')); ?>" autocomplete="off" require />
+                                                        <input type="text" class="form-control" id="hak_keuangan" name="hak_keuangan" value="<?php echo e(old('hak_keuangan')); ?>" autocomplete="off" require />
                                                     </div>
                                                 </div>
                                             </div>
@@ -123,7 +123,7 @@
                                                 <label class="col-form-label col-lg-3 col-sm-12">Tanggal pelantikan</label>
                                                 <div class="col-lg-5 col-md-9 col-sm-12">
                                                     <div class="input-group date">
-                                                        <input type="text" class="form-control datetimepicker-input my-datepicker" id="req_tanggal_pelantikan" name="req_tanggal_pelantikan" data-toggle="datetimepicker" data-target="#req_tanggal_pelantikan" placeholder="Pilih Tanggal" value="<?php echo e(old('req_tanggal_pelantikan')); ?>" autocomplete="off" require/>
+                                                        <input type="text" class="form-control datetimepicker-input my-datepicker" id="tanggal_pelantikan" name="tanggal_pelantikan" data-toggle="datetimepicker" data-target="#tanggal_pelantikan" placeholder="Pilih Tanggal" value="<?php echo e(old('tanggal_pelantikan')); ?>" autocomplete="off" require/>
                                                         <div class="input-group-append">
                                                             <span class="input-group-text">
                                                                 <i class="la la-calendar"></i>
@@ -137,14 +137,14 @@
                                                 <label class="col-form-label col-lg-3 col-sm-12">Yang Melantik</label>
                                                 <div class="col-lg-9 col-md-9 col-sm-12">
                                                     <div class="input-group date">
-                                                        <input type="text" class="form-control" id="req_yang_melantik" name="req_yang_melantik" value="<?php echo e(old('req_yang_melantik')); ?>" autocomplete="off" require />
+                                                        <input type="text" class="form-control" id="yang_melantik" name="yang_melantik" value="<?php echo e(old('yang_melantik')); ?>" autocomplete="off" require />
                                                     </div>
                                                 </div>
                                             </div>
                                             <div class="form-group row">
                                                 <label class="col-lg-3 col-form-label">Upload BA Pelantikan</label>
                                                 <div class="col-lg-9">
-                                                    <input id="req_file_ba_pelantikan" name="req_file_ba_pelantikan[]" type="file" class="file" data-show-preview="false" multiple/>
+                                                    <input id="file_ba_pelantikan" name="file_ba_pelantikan[]" type="file" class="file" data-show-preview="false" multiple/>
                                                     <!-- <div class="dropzone dropzone-multi" id="kt_dropzone_5">
                                                         <div class="dropzone-panel mb-lg-0 mb-2">
                                                             <a class="dropzone-select btn btn-light-primary font-weight-bold btn-sm">Attach files</a>
@@ -184,7 +184,7 @@
                                             <div class="form-group row">
                                                 <label class="col-lg-3 col-form-label">Upload Sumpah Jabatan</label>
                                                 <div class="col-lg-9">
-                                                    <input id="req_file_sumpah_jabatan" name="req_file_sumpah_jabatan[]" type="file" class="file" data-show-preview="false" multiple/>
+                                                    <input id="file_sumpah_jabatan" name="file_sumpah_jabatan[]" type="file" class="file" data-show-preview="false" multiple/>
                                                     <!-- <div class="dropzone dropzone-multi" id="kt_dropzone_5">
                                                         <div class="dropzone-panel mb-lg-0 mb-2">
                                                             <a class="dropzone-select btn btn-light-primary font-weight-bold btn-sm">Attach files</a>
@@ -306,10 +306,10 @@
 
 
 
-        $('#req_masa_jabatan_start').on('change.datetimepicker', function(e) {
+        $('#masa_jabatan_start').on('change.datetimepicker', function(e) {
             if(e.date){
                 var min_date = renewDate('min', e.date);
-                applyTimePicker('min', '#req_masa_jabatan_end', min_date);
+                applyTimePicker('min', '#masa_jabatan_end', min_date);
             }
         });
 
@@ -320,20 +320,20 @@
                 errorClass:"error-msg",
                 errorElement:"p",
                 rules:{
-                    req_no_keppres: 'required',
-                    req_tanggal_keppres: 'required',
-                    req_masa_jabatan_start: 'required',
-                    req_masa_jabatan_end: 'required',
+                    no_keppres: 'required',
+                    tanggal_keppres: 'required',
+                    masa_jabatan_start: 'required',
+                    masa_jabatan_end: 'required',
 
-                    req_tmt: 'required',
-                    req_hak_keuangan: 'required',
-                    req_tanggal_pelantikan: 'required',
-                    req_yang_melantik: 'required',
+                    tmt: 'required',
+                    hak_keuangan: 'required',
+                    tanggal_pelantikan: 'required',
+                    yang_melantik: 'required',
                     
-                    req_file_ba_pelantikan: {
+                    file_ba_pelantikan: {
                         extenstion: "jpg,png,jpeg,pdf"
                     },
-                    req_file_sumpah_jabatan: {
+                    file_sumpah_jabatan: {
                         extenstion: "jpg,png,jpeg,pdf"
                     }
 

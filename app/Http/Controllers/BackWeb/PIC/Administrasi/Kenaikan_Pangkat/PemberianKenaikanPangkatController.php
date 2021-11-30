@@ -110,38 +110,38 @@ class PemberianKenaikanPangkatController extends Controller
             'jumlah_angka_kredit' => 'nullable',
             'periode_penilaian' => 'nullable',
             
-            'req_no_klarifikasi_pak' => 'nullable',
-            'req_tanggal_klarifikasi_pak' => 'nullable',
+            'no_klarifikasi_pak' => 'nullable',
+            'tanggal_klarifikasi_pak' => 'nullable',
 
-            'req_unit_kerja_lama' => 'required',
-            'req_tmt_jabatan_lama' => 'required',
+            'unit_kerja_lama' => 'required',
+            'tmt_jabatan_lama' => 'required',
 
-            'req_masa_jabatan_start' => 'required',
-            'req_masa_jabatan_end' => 'required',
-            'req_masa_periode_start' => 'required',
-            'req_masa_periode_end' => 'required',
-            'req_ket' => 'required',
-            'req_status_hukuman' => 'required',
+            'masa_jabatan_start' => 'required',
+            'masa_jabatan_end' => 'required',
+            'masa_periode_start' => 'required',
+            'masa_periode_end' => 'required',
+            'ket' => 'required',
+            'status_hukuman' => 'required',
 
-            'req_no_sk_jabatan_lama' => 'required',
-            'req_jabatan_lama' => 'required',
-            'req_jabatan_pak' => 'required', 
+            'no_sk_jabatan_lama' => 'required',
+            'jabatan_lama' => 'required',
+            'jabatan_pak' => 'required', 
             'file_data_usulan.*' => 'max:5000|mimes:jpg,png,jpeg,pdf',
-            'req_file_data_asn.*' => 'max:5000|mimes:jpg,png,jpeg,pdf',
-            'req_file_nota_usulan.*' => 'max:5000|mimes:jpg,png,jpeg,pdf',
-            'req_file_data_pak.*' => 'max:5000|mimes:jpg,png,jpeg,pdf',
-            'req_file_klarifikasi_pak.*' => 'max:5000|mimes:jpg,png,jpeg,pdf',
-            'req_file_jabatan.*' => 'max:5000|mimes:jpg,png,jpeg,pdf',
-            'req_file_pengambilan_sumpah.*' => 'max:5000|mimes:jpg,png,jpeg,pdf',
-            'req_file_pendukung.*' => 'max:5000|mimes:jpg,png,jpeg,pdf',
-            'req_file_sk_pangkat_terakhir.*' => 'max:5000|mimes:jpg,png,jpeg,pdf',
-            'req_file_sk_jabatan.*' => 'max:5000|mimes:jpg,png,jpeg,pdf',
-            'req_file_bap.*' => 'max:5000|mimes:jpg,png,jpeg,pdf',
-            'req_file_spp.*' => 'max:5000|mimes:jpg,png,jpeg,pdf',
-            'req_file_skp_1_tahun_terakhir.*' => 'max:5000|mimes:jpg,png,jpeg,pdf',
-            'req_file_skp_2_tahun_terakhir.*' => 'max:5000|mimes:jpg,png,jpeg,pdf',
-            'req_file_surat_keputusan_ppk.*' => 'max:5000|mimes:jpg,png,jpeg,pdf',
-            'req_file_hukuman.*' => 'max:5000|mimes:jpg,png,jpeg,pdf',
+            'file_data_asn.*' => 'max:5000|mimes:jpg,png,jpeg,pdf',
+            'file_nota_usulan.*' => 'max:5000|mimes:jpg,png,jpeg,pdf',
+            'file_data_pak.*' => 'max:5000|mimes:jpg,png,jpeg,pdf',
+            'file_klarifikasi_pak.*' => 'max:5000|mimes:jpg,png,jpeg,pdf',
+            'file_jabatan.*' => 'max:5000|mimes:jpg,png,jpeg,pdf',
+            'file_pengambilan_sumpah.*' => 'max:5000|mimes:jpg,png,jpeg,pdf',
+            'file_pendukung.*' => 'max:5000|mimes:jpg,png,jpeg,pdf',
+            'file_sk_pangkat_terakhir.*' => 'max:5000|mimes:jpg,png,jpeg,pdf',
+            'file_sk_jabatan.*' => 'max:5000|mimes:jpg,png,jpeg,pdf',
+            'file_bap.*' => 'max:5000|mimes:jpg,png,jpeg,pdf',
+            'file_spp.*' => 'max:5000|mimes:jpg,png,jpeg,pdf',
+            'file_skp_1_tahun_terakhir.*' => 'max:5000|mimes:jpg,png,jpeg,pdf',
+            'file_skp_2_tahun_terakhir.*' => 'max:5000|mimes:jpg,png,jpeg,pdf',
+            'file_surat_keputusan_ppk.*' => 'max:5000|mimes:jpg,png,jpeg,pdf',
+            'file_hukuman.*' => 'max:5000|mimes:jpg,png,jpeg,pdf',
 
 
 
@@ -179,30 +179,30 @@ class PemberianKenaikanPangkatController extends Controller
             'masa_kerja_gol_tahun' => $input['masa_kerja_gol_tahun'],
             'masa_kerja_gol_bulan' => $input['masa_kerja_gol_bulan'],
             
-            'nomor_pak' => $input['req_nomor_pak'],
+            'nomor_pak' => $input['nomor_pak'],
             'tanggal_pak' => $input['tanggal_pak'],
             'jumlah_angka_kredit' => $input['jumlah_angka_kredit'],
             'periode_penilaian' => $input['periode_penilaian'],
 
             'nomor_klarifikasi' => $input['no_klarifikasi_pak'],
             'tanggal_klarifikasi' => $input['tanggal_klarifikasi_pak'],
-            'no_sk_jabatan_lama' => $input['req_no_sk_jabatan_lama'],
-            'jabatan_lama' => $input['req_jabatan_lama'],
-            'tmt_jabatan_lama' => $input['req_tmt_jabatan_lama'],
-            'unit_kerja_lama' => $input['req_unit_kerja_lama'],
+            'no_sk_jabatan_lama' => $input['no_sk_jabatan_lama'],
+            'jabatan_lama' => $input['jabatan_lama'],
+            'tmt_jabatan_lama' => $input['tmt_jabatan_lama'],
+            'unit_kerja_lama' => $input['unit_kerja_lama'],
 
             'tmt_gol_baru' => $input['tmt_gol_baru'],
             'masa_kerja_gol_tahun_baru' => $input['masa_kerja_gol_tahun_baru'],
             'masa_kerja_gol_bulan_baru' => $input['masa_kerja_gol_bulan_baru'],
-            'masa_jabatan_start' => $input['req_masa_jabatan_start'],
-            'masa_jabatan_end' => $input['req_masa_jabatan_end'],
-            'masa_periode_start' => $input['req_masa_periode_start'],
-            'masa_periode_end' => $input['req_masa_periode_end'],
-            'catatan_hukuman' => $input['req_catatan_hukuman'],
-            // 'pangkat_luar_biasa' => $input['req_pangkat_luarbiasa'],
-            'status_hukuman' => $input['req_status_hukuman'],
+            'masa_jabatan_start' => $input['masa_jabatan_start'],
+            'masa_jabatan_end' => $input['masa_jabatan_end'],
+            'masa_periode_start' => $input['masa_periode_start'],
+            'masa_periode_end' => $input['masa_periode_end'],
+            'catatan_hukuman' => $input['catatan_hukuman'],
+            // 'pangkat_luar_biasa' => $input['pangkat_luarbiasa'],
+            'status_hukuman' => $input['status_hukuman'],
 
-            'ket' => implode(',', $input['req_ket']),
+            'ket' => implode(',', $input['ket']),
            
             'id_pengirim' => $id_pengirim->nip,
             'jenis_layanan' => Helper::$pemberian_kenaikan_pangkat,
@@ -210,16 +210,16 @@ class PemberianKenaikanPangkatController extends Controller
             
         ]);
 
-        if ($input['req_jabatan_pak'] == 0) {
-            $pengangkatans->jabatan_pak = $input['req_jabatan_pak'];
-            $pengangkatans->jabatan_pak_lainnya = $input['req_jataban_pak_lainnya'];
+        if ($input['jabatan_pak'] == 0) {
+            $pengangkatans->jabatan_pak = $input['jabatan_pak'];
+            $pengangkatans->jabatan_pak_lainnya = $input['jataban_pak_lainnya'];
         } else {
-            $pengangkatans->jabatan_pak = $input['req_jabatan_pak'];
+            $pengangkatans->jabatan_pak = $input['jabatan_pak'];
         }
 
 
-        if($request->has('req_pangkat_luarbiasa')){
-            $pengangkatans->pangkat_luar_biasa = $input['req_pangkat_luarbiasa'];
+        if($request->has('pangkat_luarbiasa')){
+            $pengangkatans->pangkat_luar_biasa = $input['pangkat_luarbiasa'];
         }else{
             $pengangkatans->pangkat_luar_biasa = 0;
         }
@@ -235,9 +235,9 @@ class PemberianKenaikanPangkatController extends Controller
             $pengangkatans->file_data_usulan = $files;
         }
 
-        if($request->has('req_file_sk_pangkat_terakhir')){
+        if($request->has('file_sk_pangkat_terakhir')){
             $files = [];
-            foreach ($request->file('req_file_sk_pangkat_terakhir') as $file) {
+            foreach ($request->file('file_sk_pangkat_terakhir') as $file) {
                 $filename = $file->getClientOriginalName();
                 Storage::putFileAs($this->data_sk_pangkat_terakhir_folder, $file, $filename);
                 $files[] = $filename;
@@ -245,9 +245,9 @@ class PemberianKenaikanPangkatController extends Controller
             $pengangkatans->file_sk_pangkat_terakhir = $files;
         }
 
-        if($request->has('req_file_sk_jabatan')){
+        if($request->has('file_sk_jabatan')){
             $files = [];
-            foreach ($request->file('req_file_sk_jabatan') as $file) {
+            foreach ($request->file('file_sk_jabatan') as $file) {
                 $filename = $file->getClientOriginalName();
                 Storage::putFileAs($this->data_sk_jabatan_folder, $file, $filename);
                 $files[] = $filename;
@@ -255,9 +255,9 @@ class PemberianKenaikanPangkatController extends Controller
             $pengangkatans->file_sk_jabatan = $files;
         }
 
-        if($request->has('req_file_bap')){
+        if($request->has('file_bap')){
             $files = [];
-            foreach ($request->file('req_file_bap') as $file) {
+            foreach ($request->file('file_bap') as $file) {
                 $filename = $file->getClientOriginalName();
                 Storage::putFileAs($this->data_bap_folder, $file, $filename);
                 $files[] = $filename;
@@ -265,9 +265,9 @@ class PemberianKenaikanPangkatController extends Controller
             $pengangkatans->file_bap = $files;
         }
 
-        if($request->has('req_file_spp')){
+        if($request->has('file_spp')){
             $files = [];
-            foreach ($request->file('req_file_spp') as $file) {
+            foreach ($request->file('file_spp') as $file) {
                 $filename = $file->getClientOriginalName();
                 Storage::putFileAs($this->data_spp_folder, $file, $filename);
                 $files[] = $filename;
@@ -275,9 +275,9 @@ class PemberianKenaikanPangkatController extends Controller
             $pengangkatans->file_spp = $files;
         }
 
-        if($request->has('req_file_skp_1_tahun_terakhir')){
+        if($request->has('file_skp_1_tahun_terakhir')){
             $files = [];
-            foreach ($request->file('req_file_skp_1_tahun_terakhir') as $file) {
+            foreach ($request->file('file_skp_1_tahun_terakhir') as $file) {
                 $filename = $file->getClientOriginalName();
                 Storage::putFileAs($this->data_sk_1_tahun_terakhir_folder, $file, $filename);
                 $files[] = $filename;
@@ -285,9 +285,9 @@ class PemberianKenaikanPangkatController extends Controller
             $pengangkatans->file_skp_1_tahun_terakhir = $files;
         }
 
-        if($request->has('req_file_skp_2_tahun_terakhir')){
+        if($request->has('file_skp_2_tahun_terakhir')){
             $files = [];
-            foreach ($request->file('req_file_skp_2_tahun_terakhir') as $file) {
+            foreach ($request->file('file_skp_2_tahun_terakhir') as $file) {
                 $filename = $file->getClientOriginalName();
                 Storage::putFileAs($this->data_sk_2_tahun_terakhir_folder, $file, $filename);
                 $files[] = $filename;
@@ -295,9 +295,9 @@ class PemberianKenaikanPangkatController extends Controller
             $pengangkatans->file_skp_2_tahun_terakhir = $files;
         }
 
-        if($request->has('req_file_surat_keputusan_ppk')){
+        if($request->has('file_surat_keputusan_ppk')){
             $files = [];
-            foreach ($request->file('req_file_surat_keputusan_ppk') as $file) {
+            foreach ($request->file('file_surat_keputusan_ppk') as $file) {
                 $filename = $file->getClientOriginalName();
                 Storage::putFileAs($this->data_keputusan_ppk_folder, $file, $filename);
                 $files[] = $filename;
@@ -305,9 +305,9 @@ class PemberianKenaikanPangkatController extends Controller
             $pengangkatans->file_surat_keputusan_ppk = $files;
         }
 
-        if($request->has('req_file_hukuman')){
+        if($request->has('file_hukuman')){
             $files = [];
-            foreach ($request->file('req_file_hukuman') as $file) {
+            foreach ($request->file('file_hukuman') as $file) {
                 $filename = $file->getClientOriginalName();
                 Storage::putFileAs($this->data_file_hukuman_folder, $file, $filename);
                 $files[] = $filename;
@@ -315,7 +315,7 @@ class PemberianKenaikanPangkatController extends Controller
             $pengangkatans->file_hukuman = $files;
         }
 
-        if($request->has('req_file_data_asn')){
+        if($request->has('file_data_asn')){
             $files = [];
             foreach ($request->file('file_data_asn') as $file) {
                 $filename = $file->getClientOriginalName();
@@ -388,14 +388,14 @@ class PemberianKenaikanPangkatController extends Controller
 
         $pengangkatans->save();
 
-        // $count = count($input['req_tanggal_catatan']);
+        // $count = count($input['tanggal_catatan']);
         // for($i=0;$i<$count;$i++) {
         //     $notes = new Catatan();
         //     $notes->id_usulan = $pengangkatans->id;
         //     $notes->id_layanan = $pengangkatans->jenis_layanan;
         //     $notes->id_pengirim = $id_pengirim->nip;
-        //     $notes->tanggal_catatan = $input['req_tanggal_catatan'][$i];
-        //     $notes->catatan = $input['req_catatan'][$i];
+        //     $notes->tanggal_catatan = $input['tanggal_catatan'][$i];
+        //     $notes->catatan = $input['catatan'][$i];
         //     $notes->save();
         // }
 

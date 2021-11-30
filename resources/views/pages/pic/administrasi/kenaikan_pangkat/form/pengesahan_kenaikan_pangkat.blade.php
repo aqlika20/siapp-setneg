@@ -40,7 +40,7 @@
                                                 <label class="col-form-label col-lg-3 col-sm-12">Tanggal Surat Permohonan</label>
                                                 <div class="col-lg-5 col-md-9 col-sm-12">
                                                     <div class="input-group date">
-                                                        <input type="text" class="form-control datetimepicker-input my-datepicker" id="req_tanggal_surat_permohonan" name="req_tanggal_surat_permohonan" data-toggle="datetimepicker" data-target="#req_tanggal_surat_permohonan" placeholder="Pilih Tanggal" value="{{old('req_tanggal_surat_permohonan')}}" require/>
+                                                        <input type="text" class="form-control datetimepicker-input my-datepicker" id="tanggal_surat_permohonan" name="tanggal_surat_permohonan" data-toggle="datetimepicker" data-target="#tanggal_surat_permohonan" placeholder="Pilih Tanggal" value="{{old('tanggal_surat_permohonan')}}" require/>
                                                         <div class="input-group-append">
                                                             <span class="input-group-text">
                                                                 <i class="la la-calendar"></i>
@@ -53,7 +53,7 @@
                                                 <label class="col-form-label col-lg-3 col-sm-12">No. Surat Permohonan</label>
                                                 <div class="col-lg-9 col-md-9 col-sm-12">
                                                     <div class="input-group">
-                                                        <input type="text" class="form-control" id="req_no_surat_permohonan" name="req_no_surat_permohonan" value="{{old('req_no_surat_permohonan')}}" autocomplete="off" require/>
+                                                        <input type="text" class="form-control" id="no_surat_permohonan" name="no_surat_permohonan" value="{{old('no_surat_permohonan')}}" autocomplete="off" require/>
                                                     </div>
                                                 </div>
                                             </div>
@@ -73,11 +73,11 @@
                                                 <label class="col-lg-3 col-form-label">Opsi</label>
                                                 <div class="col-lg-9">
                                                     <label class="checkbox checkbox-outline checkbox-outline-2x checkbox-primary">
-                                                        <input type="radio" id="req_opsi" name="req_opsi" onclick="javascript:yesnoCheck();" value="1"/>
+                                                        <input type="radio" id="opsi" name="opsi" onclick="javascript:yesnoCheck();" value="1"/>
                                                         <span></span><div style="margin-left: 10px;">Hilang</div>
                                                     </label>
                                                     <label class="checkbox checkbox-outline checkbox-outline-2x checkbox-primary">
-                                                        <input type="radio" id="req_opsi" name="req_opsi" onclick="javascript:yesnoCheck();" value="2"/>
+                                                        <input type="radio" id="opsi" name="opsi" onclick="javascript:yesnoCheck();" value="2"/>
                                                         <span></span><div style="margin-left: 10px;">Rusak</div>
                                                     </label>
                                                 </div>
@@ -87,7 +87,7 @@
                                                 <div class="form-group row">
                                                     <label class="col-lg-3 col-form-label">Upload Surat Keterangan Kehilangan Dari Polisi</label>
                                                     <div class="col-lg-9">
-                                                        <input id="req_file_surat_kehilangan" name="req_file_surat_kehilangan[]" type="file" class="file" data-show-preview="false" multiple/>
+                                                        <input id="file_surat_kehilangan" name="file_surat_kehilangan[]" type="file" class="file" data-show-preview="false" multiple/>
                                                         
                                                         <span class="form-text text-muted">Max file size is 1MB and max number of files is 5.</span>
                                                     </div>
@@ -98,7 +98,7 @@
                                                 <div class="form-group row">
                                                     <label class="col-lg-3 col-form-label">Upload Fotokopi SK Yang Hilang/Rusak</label>
                                                     <div class="col-lg-9">
-                                                        <input id="req_file_fotokopi_sk_hilang" name="req_file_fotokopi_sk_hilang[]" type="file" class="file" data-show-preview="false" multiple/>
+                                                        <input id="file_fotokopi_sk_hilang" name="file_fotokopi_sk_hilang[]" type="file" class="file" data-show-preview="false" multiple/>
                                                         
                                                         <span class="form-text text-muted">Max file size is 1MB and max number of files is 5.</span>
                                                     </div>
@@ -108,7 +108,7 @@
                                             <div class="form-group row">
                                                 <label class="col-lg-3 col-form-label">Upload Surat Permohonan</label>
                                                 <div class="col-lg-9">
-                                                    <input id="req_file_surat_permohonan" name="req_file_surat_permohonan[]" type="file" class="file" data-show-preview="false" multiple/>
+                                                    <input id="file_surat_permohonan" name="file_surat_permohonan[]" type="file" class="file" data-show-preview="false" multiple/>
                                                     
                                                     <span class="form-text text-muted">Max file size is 1MB and max number of files is 5.</span>
                                                 </div>
@@ -211,7 +211,7 @@
         $('#otherFieldDiv').hide();
 
     function yesnoCheck() {
-        if (document.getElementById('req_opsi').checked) {
+        if (document.getElementById('opsi').checked) {
             document.getElementById('hilang').style.display = 'block';
     }
         else document.getElementById('hilang').style.display = 'none';

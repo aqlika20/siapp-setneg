@@ -40,7 +40,7 @@
                                                 <label class="col-form-label col-lg-3 col-sm-12">Tanggal Surat Permohonan</label>
                                                 <div class="col-lg-5 col-md-9 col-sm-12">
                                                     <div class="input-group date">
-                                                        <input type="text" class="form-control datetimepicker-input my-datepicker" id="req_tanggal_surat_permohonan" name="req_tanggal_surat_permohonan" data-toggle="datetimepicker" data-target="#req_tanggal_surat_permohonan" placeholder="Pilih Tanggal" value="<?php echo e(old('req_tanggal_surat_permohonan')); ?>" require/>
+                                                        <input type="text" class="form-control datetimepicker-input my-datepicker" id="tanggal_surat_permohonan" name="tanggal_surat_permohonan" data-toggle="datetimepicker" data-target="#tanggal_surat_permohonan" placeholder="Pilih Tanggal" value="<?php echo e(old('tanggal_surat_permohonan')); ?>" require/>
                                                         <div class="input-group-append">
                                                             <span class="input-group-text">
                                                                 <i class="la la-calendar"></i>
@@ -54,7 +54,7 @@
                                                 <label class="col-form-label col-lg-3 col-sm-12">No. Surat Permohonan</label>
                                                 <div class="col-lg-9 col-md-9 col-sm-12">
                                                     <div class="input-group">
-                                                        <input type="text" class="form-control" id="req_no_surat_permohonan" name="req_no_surat_permohonan" value="<?php echo e(old('req_no_surat_permohonan')); ?>" autocomplete="off" require/>
+                                                        <input type="text" class="form-control" id="no_surat_permohonan" name="no_surat_permohonan" value="<?php echo e(old('no_surat_permohonan')); ?>" autocomplete="off" require/>
                                                     </div>
                                                 </div>
                                             </div>
@@ -63,7 +63,7 @@
                                                 <label class="col-form-label col-lg-3 col-sm-12">Jabatan yang Menandatangani</label>
                                                 <div class="col-lg-9 col-md-9 col-sm-12">
                                                     <div class="input-group">
-                                                        <input type="text"class="form-control" id="req_jabatan_menandatangani" name="req_jabatan_menandatangani" value="<?php echo e(old('req_jabatan_menandatangani')); ?>" autocomplete="off" require/>
+                                                        <input type="text"class="form-control" id="jabatan_menandatangani" name="jabatan_menandatangani" value="<?php echo e(old('jabatan_menandatangani')); ?>" autocomplete="off" require/>
                                                     </div>
                                                 </div>
                                             </div>
@@ -71,7 +71,7 @@
                                             <div class="form-group row">
                                                 <label class="col-lg-3 col-form-label">Upload Surat Permohonan</label>
                                                 <div class="col-lg-9">
-                                                    <input id="req_file_surat_permohonan" name="req_file_surat_permohonan[]" type="file" class="file" data-show-preview="false" multiple/>
+                                                    <input id="file_surat_permohonan" name="file_surat_permohonan[]" type="file" class="file" data-show-preview="false" multiple/>
                                                     
                                                     <span class="form-text text-muted">Max file size is 1MB and max number of files is 5.</span>
                                                 </div>
@@ -80,7 +80,7 @@
                                             <div class="form-group row">
                                                 <label class="col-lg-3 col-form-label">Upload Dokumen Klarifikasi</label>
                                                 <div class="col-lg-9">
-                                                    <input id="req_file_dokumen_klarifikasi" name="req_file_dokumen_klarifikasi[]" type="file" class="file" data-show-preview="false" multiple/>
+                                                    <input id="file_dokumen_klarifikasi" name="file_dokumen_klarifikasi[]" type="file" class="file" data-show-preview="false" multiple/>
                                                     
                                                     <span class="form-text text-muted">Max file size is 1MB and max number of files is 5.</span>
                                                 </div>
@@ -89,7 +89,7 @@
                                             <div class="form-group row">
                                                 <label class="col-lg-3 col-form-label">Upload Fotokopi SK Yang Diperbaiki</label>
                                                 <div class="col-lg-9">
-                                                    <input id="req_file_fotokopi_sk_diperbaiki" name="req_file_fotokopi_sk_diperbaiki[]" type="file" class="file" data-show-preview="false" multiple/>
+                                                    <input id="file_fotokopi_sk_diperbaiki" name="file_fotokopi_sk_diperbaiki[]" type="file" class="file" data-show-preview="false" multiple/>
                                                     
                                                     <span class="form-text text-muted">Max file size is 1MB and max number of files is 5.</span>
                                                 </div>

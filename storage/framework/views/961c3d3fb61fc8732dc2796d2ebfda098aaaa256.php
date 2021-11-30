@@ -1661,14 +1661,14 @@
 
                                             <div class="d-flex justify-content-between mt-5 pt-10" style="margin-left: 50px; margin-right: 50px;">
                                                 <div class="mr-2">
-                                                    <a href="<?php echo e(route('koor-pokja.inbox.jfku.index')); ?>" type="button" class="btn btn-light-primary font-weight-bolder text-uppercase px-9 py-4">Kembali</a>
+                                                    <a href="<?php echo e(route('jf-ahli.inbox.usulan')); ?>" type="button" class="btn btn-light-primary font-weight-bolder text-uppercase px-9 py-4">Kembali</a>
                                                 </div>
                                                 <div>
                                                     <table>
                                                         <th style="margin-right: 10px;">
-                                                            <form method="POST" action="<?php echo e(route('koor-pokja.inbox.jfku.store_tolak')); ?>">
+                                                            <form method="POST" action="<?php echo e(route('jf-ahli.inbox.usulan.store_tolak')); ?>">
                                                                 <?php echo csrf_field(); ?> 
-                                                                <input type="hidden" class="btn btn-warning font-weight-bolder text-uppercase px-9 py-4" name="v_id" value="<?php echo e($verifikasi->id); ?>">
+                                                                <<input type="hidden" class="btn btn-warning font-weight-bolder text-uppercase px-9 py-4" name="v_id" value="<?php echo e($verifikasi->id); ?>">
                                                                 <input type="hidden" class="btn btn-warning font-weight-bolder text-uppercase px-9 py-4" name="v_jenis" value="<?php echo e($verifikasi->jenis_layanan); ?>">
                                                                 <input type="hidden" class="btn btn-warning font-weight-bolder text-uppercase px-9 py-4" name="v_pengirim" value="<?php echo e($verifikasi->id_pengirim); ?>">
                                                                 <input type="hidden" class="btn btn-warning font-weight-bolder text-uppercase px-9 py-4" name="v_verifikator" value="<?php echo e($currentUser->nip); ?>">
@@ -1775,6 +1775,7 @@
                                                             </form>
                                                         </th>
                                                     </table>
+
                                                 </div>
                                             </div>
                                             <!--end: Wizard Actions-->

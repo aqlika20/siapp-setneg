@@ -66,12 +66,18 @@
                                         <td><div style="color: #FFA800;"><?php echo e($pengangkatan->nip); ?></div></td>
                                         <td><div style="text-align: center;"><span class="label label-lg label-light-success label-inline"><?php echo e(Helper::definePertek($pengangkatan->nip)); ?></span></div></td>
 										<td>
-											<a href="<?php echo e(route('koor-pokja.pertek.jfku.verif', ['id' => $pengangkatan->id])); ?>" type="button" class="btn btn-light-warning btn-xs">
-												Detail
-											</a>
-											<a href="<?php echo e(route('koor-pokja.inbox.distributor.index', ['id' => $pengangkatan->id, 'jenis_layanan' => $pengangkatan->jenis_layanan])); ?>" type="button" class="btn btn-success btn-xs">
-												Distribusi
-											</a>
+                                            <?php if(  Helper::definePertek($pengangkatan->nip)  == "Pertek Tersedia" ): ?>
+                                                <a href="<?php echo e(route('koor-pokja.pertek.jfku.verif', ['id' => $pengangkatan->id])); ?>" type="button" class="btn btn-light-warning btn-xs">
+                                                    Detail
+                                                </a>
+                                                <a href="<?php echo e(route('koor-pokja.inbox.distributor.index', ['id' => $pengangkatan->id, 'jenis_layanan' => $pengangkatan->jenis_layanan])); ?>" type="button" class="btn btn-success btn-xs">
+                                                    Distribusi
+                                                </a>
+                                            <?php else: ?>
+                                                <a href="<?php echo e(route('koor-pokja.inbox.distributor.index', ['id' => $pengangkatan->id, 'jenis_layanan' => $pengangkatan->jenis_layanan])); ?>" type="button" class="btn btn-success btn-xs">
+                                                    Distribusi
+                                                </a>
+                                            <?php endif; ?>
 										</td>
                                     </tr>
                                 <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
@@ -88,12 +94,18 @@
                                         <td><div style="color: #FFA800;"><?php echo e($struktural->nip); ?></div></td>
                                         <td><div style="text-align: center;"><span class="label label-lg label-light-success label-inline"><?php echo e(Helper::definePertek($struktural->nip)); ?></span></div></td>
 										<td>
-											<a href="<?php echo e(route('koor-pokja.pertek.ns.verif', ['id' => $struktural->id])); ?>" type="button" class="btn btn-light-warning btn-xs">
-												Detail
-											</a>
-											<a href="<?php echo e(route('koor-pokja.inbox.distributor.index', ['id' => $struktural->id, 'jenis_layanan' => $struktural->jenis_layanan])); ?>" type="button" class="btn btn-success btn-xs">
-												Distribusi
-											</a>
+                                            <?php if(  Helper::definePertek($struktural->nip)  == "Pertek Tersedia" ): ?>
+                                                <a href="<?php echo e(route('koor-pokja.pertek.ns.verif', ['id' => $struktural->id])); ?>" type="button" class="btn btn-light-warning btn-xs">
+                                                    Detail
+                                                </a>
+                                                <a href="<?php echo e(route('koor-pokja.inbox.distributor.index', ['id' => $struktural->id, 'jenis_layanan' => $struktural->jenis_layanan])); ?>" type="button" class="btn btn-success btn-xs">
+                                                    Distribusi
+                                                </a>
+                                            <?php else: ?>
+                                                <a href="<?php echo e(route('koor-pokja.inbox.distributor.index', ['id' => $struktural->id, 'jenis_layanan' => $struktural->jenis_layanan])); ?>" type="button" class="btn btn-success btn-xs">
+                                                    Distribusi
+                                                </a>
+                                            <?php endif; ?>
 										</td>
                                     </tr>
                                 <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
@@ -110,56 +122,18 @@
                                         <td><div style="color: #FFA800;"><?php echo e($lainnya->nip); ?></div></td>
                                         <td><div style="text-align: center;"><span class="label label-lg label-light-success label-inline"><?php echo e(Helper::definePertek($lainnya->nip)); ?></span></div></td>
                                         <td>
+                                        <?php if(  Helper::definePertek($lainnya->nip)  == "Pertek Tersedia" ): ?>
 											<a href="<?php echo e(route('koor-pokja.pertek.lainnya.verif', ['id' => $lainnya->id])); ?>" type="button" class="btn btn-light-warning btn-xs">
 												Detail
 											</a>
 											<a href="<?php echo e(route('koor-pokja.inbox.distributor.index', ['id' => $lainnya->id, 'jenis_layanan' => $lainnya->jenis_layanan])); ?>" type="button" class="btn btn-success btn-xs">
 												Distribusi
 											</a>
-										</td>
-                                    </tr>
-                                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-
-                                <?php $__currentLoopData = $kenaikans; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $kenaikan): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                                    <tr>
-                                        <!-- <td><?php echo e(Helper::convertDate($kenaikan->created_at)); ?></td>
-                                        <td><div style="color: #FFA800;"><?php echo e(Helper::defineJenisLayananBy($kenaikan->jenis_layanan)); ?></div></td>
-                                        <td><?php echo e(Helper::defineStatusBy($kenaikan->status)); ?></td> -->
-
-										<td><?php echo e(Helper::defineJenisLayananBy($kenaikan->jenis_layanan)); ?></td>
-                                        <td><?php echo e($kenaikan->no_surat_usulan); ?></td>
-                                        <td><?php echo e($kenaikan->nama); ?></td>
-                                        <td><div style="color: #FFA800;"><?php echo e($kenaikan->nip); ?></div></td>
-                                        <td><div style="text-align: center;"><span class="label label-lg label-light-success label-inline"><?php echo e(Helper::definePertek($kenaikan->nip)); ?></span></div></td>
-										<td>
-											<a href="<?php echo e(route('koor-pokja.pertek.kenaikan_pangkat.verif', ['id' => $kenaikan->id])); ?>" type="button" class="btn btn-light-warning btn-xs">
-												Detail
-											</a>
-											<a href="<?php echo e(route('koor-pokja.inbox.distributor.index', ['id' => $kenaikan->id, 'jenis_layanan' => $kenaikan->jenis_layanan])); ?>" type="button" class="btn btn-success btn-xs">
+                                        <?php else: ?>
+                                            <a href="<?php echo e(route('koor-pokja.inbox.distributor.index', ['id' => $lainnya->id, 'jenis_layanan' => $lainnya->jenis_layanan])); ?>" type="button" class="btn btn-success btn-xs">
 												Distribusi
 											</a>
-										</td>
-                                    </tr>
-                                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-
-                                <?php $__currentLoopData = $pemberhentians; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $pemberhentian): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                                    <tr>
-                                        <!-- <td><?php echo e(Helper::convertDate($pemberhentian->created_at)); ?></td>
-                                        <td><div style="color: #FFA800;"><?php echo e(Helper::defineJenisLayananBy($pemberhentian->jenis_layanan)); ?></div></td>
-                                        <td><?php echo e(Helper::defineStatusBy($pemberhentian->status)); ?></td> -->
-
-										<td><?php echo e(Helper::defineJenisLayananBy($pemberhentian->jenis_layanan)); ?></td>
-                                        <td><?php echo e($pemberhentian->no_surat_usulan); ?></td>
-                                        <td><?php echo e($pemberhentian->nama); ?></td>
-                                        <td><div style="color: #FFA800;"><?php echo e($pemberhentian->nip); ?></div></td>
-                                        <td><div style="text-align: center;"><span class="label label-lg label-light-success label-inline"><?php echo e(Helper::definePertek($pemberhentian->nip)); ?></span></div></td>
-                                        <td>
-											<a href="<?php echo e(route('koor-pokja.pertek.pemberhentian.verif', ['id' => $pemberhentian->id])); ?>" type="button" class="btn btn-light-warning btn-xs">
-												Detail
-											</a>	
-											<a href="<?php echo e(route('koor-pokja.inbox.distributor.index', ['id' => $pemberhentian->id, 'jenis_layanan' => $pemberhentian->jenis_layanan])); ?>" type="button" class="btn btn-success btn-xs">
-												Distribusi
-											</a>
+                                        <?php endif; ?>
 										</td>
                                     </tr>
                                 <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>

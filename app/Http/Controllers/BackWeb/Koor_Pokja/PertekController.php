@@ -209,21 +209,25 @@ class PertekController extends Controller
             $pengangkatans = PengangkatanPemberhentianJFKU::where('id', '=', $id)->update(
                 ['status' => Helper::$verifikasi_bkn_pokja]
             ); 
-            return redirect()->route("koor-pokja.rkp.index", [$id])->with(['success'=>'verifikasi Success !!!']);
+            return redirect()->route("koor-pokja.pertek.index")->with(['success'=>'verifikasi Success !!!']);
+            // return redirect()->route("koor-pokja.rkp.index", [$id])->with(['success'=>'verifikasi Success !!!']);
         } 
         elseif($jenis_layanan == Helper::$pengangkatan_pejabat_NS || $jenis_layanan == Helper::$pemberhentian_pejabat_NS || $jenis_layanan == Helper::$ralat_keppres_jabatan_NS || $jenis_layanan == Helper::$pembatalan_keppres_jabatan_NS )
         {
             $pengangkatans = PengangkatanPemberhentianNS::where('id', '=', $id)->update(
                 ['status' => Helper::$verifikasi_bkn_pokja]
             );
-            return redirect()->route("koor-pokja.rkp.index", [$id])->with(['success'=>'verifikasi Success !!!']);
+            return redirect()->route("koor-pokja.pertek.index")->with(['success'=>'verifikasi Success !!!']);
+            // return redirect()->route("koor-pokja.rkp.index", [$id])->with(['success'=>'verifikasi Success !!!']);
         }
+        // }
         elseif($jenis_layanan == Helper::$pengangkatan_pejabat_lainnya || $jenis_layanan == Helper::$pemberhentian_pejabat_lainnya || $jenis_layanan == Helper::$ralat_keppres_jabatan_lainnya || $jenis_layanan == Helper::$pembatalan_keppres_jabatan_lainnya || $jenis_layanan == Helper::$persetujuan_pengangkatan_staf_khusus )
         {
             $pengangkatans = PengangkatanPemberhentianLainnya::where('id', '=', $id)->update(
                 ['status' => Helper::$verifikasi_bkn_pokja]
             );
-            return redirect()->route("koor-pokja.rkp.index", [$id])->with(['success'=>'verifikasi Success !!!']);
+            return redirect()->route("koor-pokja.pertek.index")->with(['success'=>'verifikasi Success !!!']);
+            // return redirect()->route("koor-pokja.rkp.index", [$id])->with(['success'=>'verifikasi Success !!!']);
         }
         
     }

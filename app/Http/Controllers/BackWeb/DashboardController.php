@@ -25,9 +25,17 @@ class DashboardController extends Controller
             return redirect()->route('pic.home.index');
         }
 
-        // Koordinator Pokja
+        // Koordinator Pokja P4
         if ($currentUser->roles_id == 2) {
             return redirect()->route('koor-pokja.home.index');
+        }
+        // Koordinator Pokja KP
+        if ($currentUser->roles_id == 6) {
+            return redirect()->route('koor-pokja-kp.home.index');
+        }
+        // Koordinator Pokja Pensiun
+        if ($currentUser->roles_id == 7) {
+            return redirect()->route('koor-pokja-pensiun.home.index');
         }
 
         // JF Ahli Muda & JF Ahli Madya

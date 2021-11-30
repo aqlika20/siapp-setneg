@@ -127,32 +127,6 @@
                                         <div class="mr-2">
                                         </div>
                                         <div>
-                                            @if($pengangkatan->jenis_layanan == Helper::$pengangkatan_pejabat_FKU || $pengangkatan->jenis_layanan == Helper::$pemberhentian_pejabat_FKU || $pengangkatan->jenis_layanan == Helper::$perpindahan_pejabat_FKU || $pengangkatan->jenis_layanan == Helper::$ralat_keppres_jabatan_FKU || $pengangkatan->jenis_layanan == Helper::$pembatalan_keppres_jabatan_FKU)
-                                                <input type="hidden" class="btn btn-warning font-weight-bolder text-uppercase px-9 py-4" name="v_id" value="{{ $pengangkatan->id }}">
-                                                <input type="hidden" class="btn btn-warning font-weight-bolder text-uppercase px-9 py-4" name="v_jenis" value="{{ $pengangkatan->jenis_layanan }}">
-                                                <input type="hidden" class="btn btn-warning font-weight-bolder text-uppercase px-9 py-4" name="v_nip" value="{{ $pengangkatan->nip }}">
-                                                <input type="hidden" class="btn btn-warning font-weight-bolder text-uppercase px-9 py-4" name="v_pengirim" value="{{ $pengangkatan->id_pengirim }}">
-                                            @elseif($ns->jenis_layanan == Helper::$pengangkatan_pejabat_NS || $ns->jenis_layanan == Helper::$pemberhentian_pejabat_NS || $ns->jenis_layanan == Helper::$ralat_keppres_jabatan_NS || $ns->jenis_layanan == Helper::$pembatalan_keppres_jabatan_NS )
-                                                <input type="hidden" class="btn btn-warning font-weight-bolder text-uppercase px-9 py-4" name="v_id" value="{{ $ns->id }}">
-                                                <input type="hidden" class="btn btn-warning font-weight-bolder text-uppercase px-9 py-4" name="v_jenis" value="{{ $ns->jenis_layanan }}">
-                                                <input type="hidden" class="btn btn-warning font-weight-bolder text-uppercase px-9 py-4" name="v_nip" value="{{ $ns->nip }}">
-                                                <input type="hidden" class="btn btn-warning font-weight-bolder text-uppercase px-9 py-4" name="v_pengirim" value="{{ $ns->id_pengirim }}">
-                                            @elseif($lainnya->jenis_layanan == Helper::$pengangkatan_pejabat_lainnya || $lainnya->jenis_layanan == Helper::$pemberhentian_pejabat_lainnya || $lainnya->jenis_layanan == Helper::$ralat_keppres_jabatan_lainnya || $lainnya->jenis_layanan == Helper::$pembatalan_keppres_jabatan_lainnya || $lainnya->jenis_layanan == Helper::$persetujuan_pengangkatan_staf_khusus)
-                                                <input type="hidden" class="btn btn-warning font-weight-bolder text-uppercase px-9 py-4" name="v_id" value="{{ $lainnya->id }}">
-                                                <input type="hidden" class="btn btn-warning font-weight-bolder text-uppercase px-9 py-4" name="v_jenis" value="{{ $lainnya->jenis_layanan }}">
-                                                <input type="hidden" class="btn btn-warning font-weight-bolder text-uppercase px-9 py-4" name="v_nip" value="{{ $lainnya->nip }}">
-                                                <input type="hidden" class="btn btn-warning font-weight-bolder text-uppercase px-9 py-4" name="v_pengirim" value="{{ $lainnya->id_pengirim }}">
-                                            @elseif($kenaikan->jenis_layanan == Helper::$pemberian_kenaikan_pangkat || $kenaikan->jenis_layanan == Helper::$pembatalan_keppres_kenaikan_pangkat || $kenaikan->jenis_layanan == Helper::$pengesahan_kenaikan_pangkat || $kenaikan->jenis_layanan == Helper::$ralat_keppres_kepangkatan)
-                                                <input type="hidden" class="btn btn-warning font-weight-bolder text-uppercase px-9 py-4" name="v_id" value="{{ $kenaikan->id }}">
-                                                <input type="hidden" class="btn btn-warning font-weight-bolder text-uppercase px-9 py-4" name="v_jenis" value="{{ $kenaikan->jenis_layanan }}">
-                                                <input type="hidden" class="btn btn-warning font-weight-bolder text-uppercase px-9 py-4" name="v_nip" value="{{ $kenaikan->nip }}">
-                                                <input type="hidden" class="btn btn-warning font-weight-bolder text-uppercase px-9 py-4" name="v_pengirim" value="{{ $kenaikan->id_pengirim }}">
-                                            @elseif($pemberhentian->jenis_layanan == Helper::$bup_non_kpp || $pemberhentian->jenis_layanan == Helper::$bup_kpp || $pemberhentian->jenis_layanan == Helper::$berhenti_atas_permintaan_sendiri || $pemberhentian->jenis_layanan == Helper::$non_bup_JDA_non_kpp || $pemberhentian->jenis_layanan == Helper::$non_bup_JDA_kpp || $pemberhentian->jenis_layanan == Helper::$berhenti_tidak_hormat || $pemberhentian->jenis_layanan == Helper::$anumerta || $pemberhentian->jenis_layanan == Helper::$pemberhentian_sementara || $pemberhentian->jenis_layanan == Helper::$ralat_keppres_pemberhentian || $pemberhentian->jenis_layanan == Helper::$pembatalan_keppress_pemberhentian || $pemberhentian->jenis_layanan == Helper::$petikan_keppres_hilang)
-                                                <input type="hidden" class="btn btn-warning font-weight-bolder text-uppercase px-9 py-4" name="v_id" value="{{ $pemberhentian->id }}">
-                                                <input type="hidden" class="btn btn-warning font-weight-bolder text-uppercase px-9 py-4" name="v_jenis" value="{{ $pemberhentian->jenis_layanan }}">
-                                                <input type="hidden" class="btn btn-warning font-weight-bolder text-uppercase px-9 py-4" name="v_nip" value="{{ $pemberhentian->nip }}">
-                                                <input type="hidden" class="btn btn-warning font-weight-bolder text-uppercase px-9 py-4" name="v_pengirim" value="{{ $pemberhentian->id_pengirim }}">
-                                            @endif
                                             <button type="submit" class="btn btn-primary font-weight-bolder text-uppercase px-9 py-4" data-wizard-type="action-submit" onclick="return confirmation();">RKP</button>
                                         </div>
                                     </div>

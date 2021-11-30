@@ -35,6 +35,14 @@ class RKPController extends Controller
         
     }
 
+    public function home() 
+    {
+        $currentUser = UserManagement::find(Auth::id());
+        $page_title = 'Koordinator Pokja | RKP';
+        $page_description = 'RKP';
+        return view('pages.koor_pokja.rkp', compact('page_title', 'page_description', 'currentUser'));
+    }
+
     public function index($id) 
     {
         $currentUser = UserManagement::find(Auth::id());

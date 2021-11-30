@@ -28,15 +28,15 @@ class PembatalanKeppresPemberhentianController extends Controller
      * only declared here.
      */
     private $attachments_root_folder = "pemberhentian_attachments/";
-    private $data_ba_pelantikan_folder;
-    private $data_sumpah_jabatan_folder;
+    private $file_data_usulan_folder;
+    private $file_keppres_yang_dibatalkan_folder;
 
     public function __construct()
     {
         $this->curr_int_time = strtotime(Carbon::now());
         $this->middleware('auth');
-        $this->data_ba_pelantikan_folder = $this->attachments_root_folder . "data_ba_pelantikan/";
-        $this->data_sumpah_jabatan_folder = $this->attachments_root_folder . "data_sumpah_jabatan/";
+        $this->file_data_usulan_folder = $this->attachments_root_folder . "file_data_usulan/";
+        $this->file_keppres_yang_dibatalkan_folder = $this->attachments_root_folder . "file_keppres_yang_dibatalkan/";
         
     }
 
@@ -57,18 +57,20 @@ class PembatalanKeppresPemberhentianController extends Controller
         $input = $request->all();
 
         $validator = Validator::make($input, [
-            'no_keppres' => 'required',
-            'tanggal_keppres' => 'required',
-            'masa_jabatan_start' => 'required',
-            'masa_jabatan_end' => 'required',
+            'tanggal_surat_usulan' => 'required',
+            'no_surat_usulan' => 'required',
+            'jabatan_menandatangani' => 'required',
+            'file_data_usulan.*' => 'required|max:5000|mimes:pdf',
+            'file_keppres_yang_dibatalkan.*' => 'required|max:5000|mimes:pdf',
+            'catatan' => 'required',
 
-            'tmt' => 'required',
-            'hak_keuangan' => 'required',
-            'tanggal_pelantikan' => 'required',
-            'yang_melantik' => 'required',
-
-            'file_ba_pelantikan.*' => 'required|max:5000|mimes:pdf',
-            'file_sumpah_jabatan.*' => 'required|max:5000|mimes:pdf'
+            'nip' => 'required',
+            'nama' => 'required',
+            'jabatan' => 'required',
+            'pangkat_terakhir' => 'required',
+            'nomor_keppres_dibatalkan' => 'required',
+            'instansi_induk' => 'required',
+            'no_urut' => 'required'
         ]);
 
         if ($validator->fails()) {
@@ -86,15 +88,18 @@ class PembatalanKeppresPemberhentianController extends Controller
         }
 
         $pengangkatans = Pemberhentian::create([
-            'no_keppres' => $input['no_keppres'],
-            'tanggal_keppres' => $input['tanggal_keppres'],
-            'masa_jabatan_start' => $input['masa_jabatan_start'],
-            'masa_jabatan_end' => $input['masa_jabatan_end'],
+            'tanggal_surat_usulan' => Helper::convertDatetoDB($input['tanggal_surat_usulan']),
+            'no_surat_usulan' => $input['no_surat_usulan'],
+            'jabatan_menandatangani' => $input['jabatan_menandatangani'],
+            'catatan' => $input['catatan'],
 
-            'tmt' => $input['tmt'],
-            'hak_keuangan' => $input['hak_keuangan'],
-            'tanggal_pelantikan' => $input['tanggal_pelantikan'],
-            'yang_melantik' => $input['yang_melantik'],
+            'nip' => $input['nip'],
+            'nama' => $input['nama'],
+            'jabatan' => $input['jabatan'],
+            'pangkat_terakhir' => $input['pangkat_terakhir'],
+            'nomor_keppres_dibatalkan' => $input['nomor_keppres_dibatalkan'],
+            'instansi_induk' => $input['instansi_induk'],
+            'no_urut' => $input['no_urut'],
 
             'id_pengirim' => $id_pengirim->nip,
             'jenis_layanan' => Helper::$pembatalan_keppress_pemberhentian,
@@ -102,24 +107,24 @@ class PembatalanKeppresPemberhentianController extends Controller
             
         ]);
 
-        if($request->has('file_ba_pelantikan')){
+        if($request->has('file_data_usulan')){
             $files = [];
-            foreach ($request->file('file_ba_pelantikan') as $file) {
+            foreach ($request->file('file_data_usulan') as $file) {
                 $filename = $file->getClientOriginalName(). ' - ' .$id_pengirim->nip;
-                Storage::putFileAs($this->data_ba_pelantikan_folder, $file, $filename);
+                Storage::putFileAs($this->file_data_usulan_folder, $file, $filename);
                 $files[] = $filename;
             }
-            $pengangkatans->file_ba_pelantikan = $files;
+            $pengangkatans->file_data_usulan = $files;
         }
 
-        if($request->has('file_sumpah_jabatan')){
+        if($request->has('file_keppres_yang_dibatalkan')){
             $files = [];
-            foreach ($request->file('file_sumpah_jabatan') as $file) {
+            foreach ($request->file('file_keppres_yang_dibatalkan') as $file) {
                 $filename = $file->getClientOriginalName(). ' - ' .$id_pengirim->nip;
-                Storage::putFileAs($this->data_sumpah_jabatan_folder, $file, $filename);
+                Storage::putFileAs($this->file_keppres_yang_dibatalkan_folder, $file, $filename);
                 $files[] = $filename;
             }
-            $pengangkatans->file_sumpah_jabatan = $files;
+            $pengangkatans->file_keppres_yang_dibatalkan = $files;
         }
 
         $pengangkatans->save();

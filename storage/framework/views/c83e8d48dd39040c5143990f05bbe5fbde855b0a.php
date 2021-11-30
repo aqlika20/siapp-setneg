@@ -41,7 +41,7 @@
                                                 <label class="col-form-label col-lg-3 col-sm-12">Tanggal Surat Pengantar</label>
                                                 <div class="col-lg-5 col-md-9 col-sm-12">
                                                     <div class="input-group date">
-                                                        <input type="text" class="form-control datetimepicker-input my-datepicker" id="req_tanggal_surat_pengantar" name="req_tanggal_surat_pengantar" data-toggle="datetimepicker" data-target="#req_tanggal_surat_pengantar" placeholder="Pilih Tanggal" value="<?php echo e(old('req_tanggal_surat_pengantar')); ?>" require/>
+                                                        <input type="text" class="form-control datetimepicker-input my-datepicker" id="tanggal_surat_pengantar" name="tanggal_surat_pengantar" data-toggle="datetimepicker" data-target="#tanggal_surat_pengantar" placeholder="Pilih Tanggal" value="<?php echo e(old('tanggal_surat_pengantar')); ?>" require/>
                                                         <div class="input-group-append">
                                                             <span class="input-group-text">
                                                                 <i class="la la-calendar"></i>
@@ -54,14 +54,14 @@
                                                 <label class="col-form-label col-lg-3 col-sm-12">No. Surat Pengantar</label>
                                                 <div class="col-lg-9 col-md-9 col-sm-12">
                                                     <div class="input-group">
-                                                        <input type="text" class="form-control" id="req_no_surat_pengantar" name="req_no_surat_pengantar" value="<?php echo e(old('req_no_surat_pengantar')); ?>" autocomplete="off" require/>
+                                                        <input type="text" class="form-control" id="no_surat_pengantar" name="no_surat_pengantar" value="<?php echo e(old('no_surat_pengantar')); ?>" autocomplete="off" require/>
                                                     </div>
                                                 </div>
                                             </div>
                                             <div class="form-group row">
                                                 <label class="col-lg-3 col-form-label">Upload Surat Pengantar</label>
                                                 <div class="col-lg-9">
-                                                    <input id="req_file_surat_pengantar" name="req_file_surat_pengantar[]" type="file" class="file" data-show-preview="false" multiple/>
+                                                    <input id="file_surat_pengantar" name="file_surat_pengantar[]" type="file" class="file" data-show-preview="false" multiple/>
                                                     
                                                     <!-- <div class="dropzone dropzone-multi" id="kt_dropzone_4">
                                                         <div class="dropzone-panel mb-lg-0 mb-2">
@@ -111,7 +111,7 @@
                                                 <label class="col-form-label col-lg-3 col-sm-12">Jabatan lainnya yang akan diisi</label>
                                                 <div class="col-lg-9 col-md-9 col-sm-12">
                                                     <div class="input-group date">
-                                                        <input type="text" class="form-control" id="req_jabatan_lainnya" name="req_jabatan_lainnya" value="<?php echo e(old('req_jabatan_lainnya')); ?>" autocomplete="off" require/>
+                                                        <input type="text" class="form-control" id="jabatan_lainnya" name="jabatan_lainnya" value="<?php echo e(old('jabatan_lainnya')); ?>" autocomplete="off" require/>
                                                     </div>
                                                 </div>
                                             </div>
@@ -120,10 +120,10 @@
                                             <div class="form-group row">
                                                 <label class="col-form-label col-lg-3 col-sm-12">Unsur</label>
                                                 <div class="col-lg-9 col-md-9 col-sm-12">
-                                                    <select class="form-control select2" style="width: 230px;" id="req_unsur" name="req_unsur">
+                                                    <select class="form-control select2" style="width: 230px;" id="unsur" name="unsur">
                                                         <option value="">Choose</option>
                                                         <?php $__currentLoopData = $unsurs; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $unsur): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                                                        <option value="<?php echo e($unsur->id); ?>" <?php echo e(old('req_unsur') == $unsur->id ? 'selected' : ''); ?>><?php echo e($unsur->nama); ?></option>
+                                                        <option value="<?php echo e($unsur->id); ?>" <?php echo e(old('unsur') == $unsur->id ? 'selected' : ''); ?>><?php echo e($unsur->nama); ?></option>
                                                         <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                                                     </select>
                                                     <!-- <div class="input-group date">
@@ -142,7 +142,7 @@
                                                 <label class="col-form-label col-lg-3 col-sm-12">NIP</label>
                                                 <div class="col-lg-9 col-md-9 col-sm-12">
                                                     <div class="input-group date">
-                                                        <input type="number" pattern="[0-9]+([\.,][0-9]+)?" class="form-control" id="req_nip" name="req_nip" value="<?php echo e(old('req_nip')); ?>" autocomplete="off" require/>
+                                                        <input type="number" pattern="[0-9]+([\.,][0-9]+)?" class="form-control" id="nip" name="nip" value="<?php echo e(old('nip')); ?>" autocomplete="off" require/>
                                                     </div>
                                                 </div>
                                             </div>
@@ -152,7 +152,7 @@
                                                 <label class="col-form-label col-lg-3 col-sm-12">Nama</label>
                                                 <div class="col-lg-9 col-md-9 col-sm-12">
                                                     <div class="input-group date">
-                                                        <input type="text" onkeydown="return /[a-zA-Z0-9\s]+/i.test(event.key)" class="form-control" id="req_nama" name="req_nama" value="<?php echo e(old('req_nama')); ?>" autocomplete="off" require />
+                                                        <input type="text" onkeydown="return /[a-zA-Z0-9\s]+/i.test(event.key)" class="form-control" id="nama" name="nama" value="<?php echo e(old('nama')); ?>" autocomplete="off" require />
                                                     </div>
                                                 </div>
                                             </div>
@@ -162,7 +162,7 @@
                                                 <label class="col-form-label col-lg-3 col-sm-12">Instansi</label>
                                                 <div class="col-lg-9 col-md-9 col-sm-12">
                                                     <div class="input-group date">
-                                                        <input type="text" onkeydown="return /[a-zA-Z0-9\s]+/i.test(event.key)" class="form-control" id="req_instansi" name="req_instansi" value="<?php echo e(old('req_instansi')); ?>" autocomplete="off" require />
+                                                        <input type="text" onkeydown="return /[a-zA-Z0-9\s]+/i.test(event.key)" class="form-control" id="instansi" name="instansi" value="<?php echo e(old('instansi')); ?>" autocomplete="off" require />
                                                     </div>
                                                 </div>
                                             </div>
@@ -171,10 +171,10 @@
                                             <div class="form-group row">
                                                 <label class="col-form-label col-lg-3 col-sm-12">Jabatan Yang Akan di Angkat</label>
                                                 <div class="col-lg-9 col-md-9 col-sm-12">
-                                                    <select class="form-control select2" style="width: 230px;" id="req_jabatan" name="req_jabatan">
+                                                    <select class="form-control select2" style="width: 230px;" id="jabatan" name="jabatan">
                                                         <option value="">Choose</option>
                                                         <?php $__currentLoopData = $jabatans; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $jabatan): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                                                            <option value="<?php echo e($jabatan->id); ?>" <?php echo e(old('req_jabatan') == $jabatan->id ? 'selected' : ''); ?>><?php echo e($jabatan->nama); ?></option>
+                                                            <option value="<?php echo e($jabatan->id); ?>" <?php echo e(old('jabatan') == $jabatan->id ? 'selected' : ''); ?>><?php echo e($jabatan->nama); ?></option>
                                                         <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                                                     </select>
                                                     <!-- <div class="input-group date">
@@ -192,7 +192,7 @@
                                             <div class="form-group row">
                                                 <label class="col-lg-3 col-form-label">Upload DRH</label>
                                                 <div class="col-lg-9">
-                                                    <input id="req_file_dhr" name="req_file_dhr[]" type="file" class="file" data-show-preview="false" multiple/>
+                                                    <input id="file_dhr" name="file_dhr[]" type="file" class="file" data-show-preview="false" multiple/>
                                                     
                                                     <!-- <div class="dropzone dropzone-multi" id="kt_dropzone_4">
                                                         <div class="dropzone-panel mb-lg-0 mb-2">
@@ -235,7 +235,7 @@
                                             <div class="form-group row">
                                                 <label class="col-lg-3 col-form-label">Upload Dokumen Lainnya</label>
                                                 <div class="col-lg-9">
-                                                    <input id="req_file_dukumen_lain_pengangkatan_jabatan_lain" name="req_file_dukumen_lain_pengangkatan_jabatan_lain[]" type="file" class="file" data-show-preview="false" multiple/>
+                                                    <input id="file_dukumen_lain_pengangkatan_jabatan_lain" name="file_dukumen_lain_pengangkatan_jabatan_lain[]" type="file" class="file" data-show-preview="false" multiple/>
                                                     
                                                     <!-- <div class="dropzone dropzone-multi" id="kt_dropzone_4">
                                                         <div class="dropzone-panel mb-lg-0 mb-2">
@@ -339,21 +339,21 @@
                 errorClass:"error-msg",
                 errorElement:"p",
                 rules:{
-                    req_tanggal_surat_pengantar: 'required',
-                    req_no_surat_pengantar: 'required',
-                    req_file_surat_pengantar: {
+                    tanggal_surat_pengantar: 'required',
+                    no_surat_pengantar: 'required',
+                    file_surat_pengantar: {
                         extenstion: "jpg,png,jpeg,pdf"
                     },
-                    req_jabatan_lainnya: 'required',
-                    req_unsur: 'required',
-                    req_nip: 'required',
-                    req_nama: 'required',
-                    req_instansi: 'required',
-                    req_jabatan: 'required',
-                    req_file_dhr: {
+                    jabatan_lainnya: 'required',
+                    unsur: 'required',
+                    nip: 'required',
+                    nama: 'required',
+                    instansi: 'required',
+                    jabatan: 'required',
+                    file_dhr: {
                         extenstion: "jpg,png,jpeg,pdf"
                     }
-                    req_file_dukumen_lain_pengangkatan_jabatan_lain: {
+                    file_dukumen_lain_pengangkatan_jabatan_lain: {
                         extenstion: "jpg,png,jpeg,pdf"
                     }
 

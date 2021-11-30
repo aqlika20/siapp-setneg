@@ -59,14 +59,14 @@ class PengesahanKenaikanPangkatController extends Controller
         $input = $request->all();
 
         $validator = Validator::make($input, [
-            'req_tanggal_surat_permohonan' => 'required',
-            'req_no_surat_permohonan' => 'required',
+            'tanggal_surat_permohonan' => 'required',
+            'no_surat_permohonan' => 'required',
             'jabatan_menandatangani' => 'required',
-            'req_opsi' => 'required',
+            'opsi' => 'required',
 
-            'req_file_surat_permohonan.*' => 'max:5000|mimes:jpg,png,jpeg,pdf',
-            'req_file_surat_kehilangan.*' => 'max:5000|mimes:jpg,png,jpeg,pdf',
-            'req_file_fotokopi_sk_hilang.*' => 'max:5000|mimes:jpg,png,jpeg,pdf',
+            'file_surat_permohonan.*' => 'max:5000|mimes:jpg,png,jpeg,pdf',
+            'file_surat_kehilangan.*' => 'max:5000|mimes:jpg,png,jpeg,pdf',
+            'file_fotokopi_sk_hilang.*' => 'max:5000|mimes:jpg,png,jpeg,pdf',
 
 
         ]);
@@ -86,10 +86,10 @@ class PengesahanKenaikanPangkatController extends Controller
         }
 
         $pengangkatans = KenaikanPangkat::create([
-            'tanggal_surat_permohonan' => $input['req_tanggal_surat_permohonan'],
-            'no_surat_permohonan' => $input['req_no_surat_permohonan'],
+            'tanggal_surat_permohonan' => $input['tanggal_surat_permohonan'],
+            'no_surat_permohonan' => $input['no_surat_permohonan'],
             'pejabat_menandatangani' => $input['jabatan_menandatangani'],
-            'opsi' => $input['req_opsi'],
+            'opsi' => $input['opsi'],
             
             
             'id_pengirim' => $id_pengirim->nip,
@@ -98,9 +98,9 @@ class PengesahanKenaikanPangkatController extends Controller
             
         ]);
 
-        if($request->has('req_file_surat_permohonan')){
+        if($request->has('file_surat_permohonan')){
             $files = [];
-            foreach ($request->file('req_file_surat_permohonan') as $file) {
+            foreach ($request->file('file_surat_permohonan') as $file) {
                 $filename = $file->getClientOriginalName();
                 Storage::putFileAs($this->data_surat_permohonan_folder, $file, $filename);
                 $files[] = $filename;
@@ -108,9 +108,9 @@ class PengesahanKenaikanPangkatController extends Controller
             $pengangkatans->file_surat_permohonan = $files;
         }
 
-        if($request->has('req_file_surat_kehilangan')){
+        if($request->has('file_surat_kehilangan')){
             $files = [];
-            foreach ($request->file('req_file_surat_kehilangan') as $file) {
+            foreach ($request->file('file_surat_kehilangan') as $file) {
                 $filename = $file->getClientOriginalName();
                 Storage::putFileAs($this->data_surat_kehilangan_folder, $file, $filename);
                 $files[] = $filename;
@@ -118,9 +118,9 @@ class PengesahanKenaikanPangkatController extends Controller
             $pengangkatans->file_surat_kehilangan = $files;
         }
 
-        if($request->has('req_file_fotokopi_sk_hilang')){
+        if($request->has('file_fotokopi_sk_hilang')){
             $files = [];
-            foreach ($request->file('req_file_fotokopi_sk_hilang') as $file) {
+            foreach ($request->file('file_fotokopi_sk_hilang') as $file) {
                 $filename = $file->getClientOriginalName();
                 Storage::putFileAs($this->data_fotokopi_sk_hilang_folder, $file, $filename);
                 $files[] = $filename;

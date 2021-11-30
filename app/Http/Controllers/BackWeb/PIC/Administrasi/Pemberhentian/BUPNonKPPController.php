@@ -8,6 +8,7 @@ use App\Catatan;
 use App\Pangkat;
 use App\Periode;
 use Carbon\Carbon;
+use App\Pendidikan;
 use App\Pemberhentian;
 use App\UserManagement;
 use Illuminate\Http\Request;
@@ -29,17 +30,38 @@ class BUPNonKPPController extends Controller
      */
     private $attachments_root_folder = "pemberhentian_attachments/";
     private $data_usulan_folder;
+
+    private $file_ijasah_folder;
+    private $file_sk_pangkat_terakhir_folder;
+
     private $data_pak_folder;
     private $klarifikasi_pak_folder;
+
+    private $file_sk_jabatan_terakhir_folder;
+    private $file_berita_acara_pelantikan_folder;
+    
+    private $file_pas_foto_folder;
+    private $file_sk_tidak_pernah_dijatuhi_hukuman_folder;
+    private $file_sk_tidak_sedang_dalam_hukum_dpcp_folder;
 
     public function __construct()
     {
         $this->curr_int_time = strtotime(Carbon::now());
         $this->middleware('auth');
-        $this->data_usulan_folder = $this->attachments_root_folder . "data_usulan/";
-        $this->data_pak_folder = $this->attachments_root_folder . "data_pak/";
-        $this->klarifikasi_pak_folder = $this->attachments_root_folder . "klarifikasi_pak/";
+        $this->data_usulan_folder = $this->attachments_root_folder . "file_data_usulan/";
+
+        $this->file_ijasah_folder = $this->attachments_root_folder . "file_ijasah/";
+        $this->file_sk_pangkat_terakhir_folder = $this->attachments_root_folder . "file_sk_pangkat_terakhir/";
         
+        $this->data_pak_folder = $this->attachments_root_folder . "file_data_pak/";
+        $this->klarifikasi_pak_folder = $this->attachments_root_folder . "file_klarifikasi_pak/";
+        
+        $this->file_sk_jabatan_terakhir_folder = $this->attachments_root_folder . "file_sk_jabatan_terakhir/";
+        $this->file_berita_acara_pelantikan_folder = $this->attachments_root_folder . "file_berita_acara_pelantikan/";
+        
+        $this->file_pas_foto_folder = $this->attachments_root_folder . "file_pas_foto/";
+        $this->file_sk_tidak_pernah_dijatuhi_hukuman_folder = $this->attachments_root_folder . "file_sk_tidak_pernah_dijatuhi_hukuman/";
+        $this->file_sk_tidak_sedang_dalam_hukum_dpcp_folder = $this->attachments_root_folder . "file_sk_tidak_sedang_dalam_hukum_dpcp/";
     }
 
     public function index() 
@@ -49,7 +71,8 @@ class BUPNonKPPController extends Controller
         $page_description = 'BUP Non KPP';
         $pangkats = Pangkat::All();
         $periodes = Periode::All();
-        return view('pages.pic.administrasi.pemberhentian.form.bup_non_kpp', compact('page_title', 'page_description', 'currentUser', 'pangkats', 'periodes'));
+        $pendidikans = Pendidikan::all();
+        return view('pages.pic.administrasi.pemberhentian.form.bup_non_kpp', compact('page_title', 'page_description', 'currentUser', 'pendidikans', 'pangkats', 'periodes'));
     }
 
     // ========= function create basic information =============
@@ -58,43 +81,47 @@ class BUPNonKPPController extends Controller
         $id_pengirim = UserManagement::find(Auth::id());
         $input = $request->all();
 
+        // dd($input);
         $validator = Validator::make($input, [
             'tanggal_surat_usulan' => 'required',
             'no_surat_usulan' => 'required',
             'jabatan_menandatangani' => 'required',
+            'file_data_usulan.*' => 'required|max:5000|mimes:pdf',
 
             'nip' => 'required',
             'nama' => 'required',
             'tanggal_lahir' => 'required',
             'pendidikan_terakhir' => 'required',
-            'instansi' => 'required',
-            'pangkat_gol' => 'required',
-            'tmt_gol_baru' => 'required',
-
-            'pangkat_lama' => 'required',
-            'gol_ruang_lama' => 'required',
-            'tmt_lama' => 'required',
+            'file_ijasah.*' => 'required|max:5000|mimes:pdf',
+            'instansi_induk' => 'required',
+            'pangkat_baru' => 'required',
+            'tmt_pensiun' => 'required',
+            'alamat_setelah_pensiun' => 'required',
+            'taspen' => 'required',
+            'file_sk_pangkat_terakhir.*' => 'required|max:5000|mimes:pdf',
 
             'nomor_pak' => 'nullable',
             'tanggal_pak' => 'nullable',
             'jumlah_angka_kredit' => 'nullable',
             'periode_penilaian' => 'nullable',
+            'file_data_pak' => 'nullable',
             
             'no_klarifikasi' => 'nullable',
             'tanggal_klarifikasi' => 'nullable',
-
+            'file_klarifikasi_pak' => 'nullable',
+            
             'jabatan_terakhir' => 'required',
             'unit_kerja_terakhir' => 'required',
-            'tmt_berhenti' => 'required',
-            'tmt_pensiun' => 'required',
+            'file_sk_jabatan_terakhir.*' => 'required|max:5000|mimes:pdf',
+            'file_berita_acara_pelantikan.*' => 'required|max:5000|mimes:pdf',
+
+            'file_pas_foto.*' => 'required|max:5000|mimes:pdf',
+            'file_sk_tidak_pernah_dijatuhi_hukuman.*' => 'required|max:5000|mimes:pdf',
+            'file_sk_tidak_sedang_dalam_hukum_dpcp.*' => 'required|max:5000|mimes:pdf',
 
             'tanggal_catatan' => 'required',
             'catatan' => 'required',
             'ket' => 'required',
-            
-            'file_data_usulan.*' => 'required|max:5000|mimes:pdf',
-            'file_data_pak.*' => 'required|max:5000|mimes:pdf',
-            'file_klarifikasi_pak.*' => 'required|max:5000|mimes:pdf'
         ]);
 
         if ($validator->fails()) {
@@ -111,40 +138,43 @@ class BUPNonKPPController extends Controller
             }
         }
 
-        DB::beginTransaction();
+        // DB::beginTransaction();
 
-        try {
+        // try {
 
-            $pangkatGolonganBaruArray = explode('/',  $input['pangkat_gol']);
-            $pangkatGolonganBaru = Pangkat::where('golongan', $pangkatGolonganBaruArray[0])->where('ruang', $pangkatGolonganBaruArray[1])->first();
+        //     $pangkatGolonganBaruArray = explode('/',  $input['pangkat_baru']);
+        //     $pangkatGolonganBaru = Pangkat::where('golongan', $pangkatGolonganBaruArray[0])->where('ruang', $pangkatGolonganBaruArray[1])->first();
             
-            if (is_null($pangkatGolonganBaru))
-                throw new \Exception('Tidak ditemukan data pangkat untuk pangkat ' . $input['pangkat_gol']);
+        //     if (is_null($pangkatGolonganBaru))
+        //         throw new \Exception('Tidak ditemukan data pangkat untuk pangkat ' . $input['pangkat_baru']);
 
             $pengangkatans = Pemberhentian::create([
-                'tanggal_surat_usulan' => $input['tanggal_surat_usulan'],
+                'tanggal_surat_usulan' => Helper::convertDatetoDB($input['tanggal_surat_usulan']),
                 'no_surat_usulan' => $input['no_surat_usulan'],
-                'pejabat_menandatangani' => $input['jabatan_menandatangani'],
+                'jabatan_menandatangani' => $input['jabatan_menandatangani'],
+
                 'nip' => $input['nip'],
                 'nama' => $input['nama'],
-                'tanggal_lahir' => $input['tanggal_lahir'],
+                'tanggal_lahir' => Helper::convertDatetoDB($input['tanggal_lahir']),
                 'pendidikan_terakhir' => $input['pendidikan_terakhir'],
-                'instansi' => $input['instansi'],
-                'pangkat_gol_baru' => $pangkatGolonganBaru->id,
-                'tmt_gol_baru' => $input['tmt_gol_baru'],
+                'instansi_induk' => $input['instansi_induk'],
+                // 'pangkat_baru' => $pangkatGolonganBaru->id,
+                'pangkat_baru' => $input['pangkat_baru'],
+                'tmt_pensiun' => $input['tmt_pensiun'],
+                'alamat_setelah_pensiun' => $input['alamat_setelah_pensiun'],
+                'taspen' => $input['taspen'],
+
                 'nomor_pak' => $input['nomor_pak'],
-                'tanggal_pak' => $input['tanggal_pak'],
+                'tanggal_pak' => Helper::convertDatetoDB($input['tanggal_pak']),
                 'jumlah_angka_kredit' => $input['jumlah_angka_kredit'],
                 'periode_penilaian' => $input['periode_penilaian'],
+
                 'no_klarifikasi' => $input['no_klarifikasi'],
-                'tanggal_klarifikasi' => $input['tanggal_klarifikasi'],
-                'pangkat_lama' => $input['pangkat_lama'],
-                'gol_ruang_lama' => $input['gol_ruang_lama'],
-                'tmt_lama' => $input['tmt_lama'],
+                'tanggal_klarifikasi' => Helper::convertDatetoDB($input['tanggal_klarifikasi']),
+
                 'jabatan_terakhir' => $input['jabatan_terakhir'],
                 'unit_kerja_terakhir' => $input['unit_kerja_terakhir'],
-                'tmt_berhenti' => $input['tmt_berhenti'],
-                'tmt_pensiun' => $input['tmt_pensiun'],
+
                 'ket' => implode(',', $input['ket']),
                 'id_pengirim' => $id_pengirim->nip,
                 'jenis_layanan' => Helper::$bup_non_kpp,
@@ -159,6 +189,26 @@ class BUPNonKPPController extends Controller
                     $files[] = $filename;
                 }
                 $pengangkatans->file_data_usulan = implode(',', $files);
+            }
+
+            if($request->has('file_ijasah')){
+                $files = [];
+                foreach ($request->file('file_ijasah') as $file) {
+                    $filename = $file->getClientOriginalName(). ' - ' .$input['nip'];
+                    Storage::putFileAs($this->file_ijasah_folder, $file, $filename);
+                    $files[] = $filename;
+                }
+                $pengangkatans->file_ijasah = implode(',', $files);
+            }
+
+            if($request->has('file_sk_pangkat_terakhir')){
+                $files = [];
+                foreach ($request->file('file_sk_pangkat_terakhir') as $file) {
+                    $filename = $file->getClientOriginalName(). ' - ' .$input['nip'];
+                    Storage::putFileAs($this->file_sk_pangkat_terakhir_folder, $file, $filename);
+                    $files[] = $filename;
+                }
+                $pengangkatans->file_sk_pangkat_terakhir = implode(',', $files);
             }
     
             if($request->has('file_data_pak')){
@@ -180,6 +230,56 @@ class BUPNonKPPController extends Controller
                 }
                 $pengangkatans->file_klarifikasi_pak = implode(',', $files);
             }
+
+            if($request->has('file_sk_jabatan_terakhir')){
+                $files = [];
+                foreach ($request->file('file_sk_jabatan_terakhir') as $file) {
+                    $filename = $file->getClientOriginalName(). ' - ' .$input['nip'];
+                    Storage::putFileAs($this->file_sk_jabatan_terakhir_folder, $file, $filename);
+                    $files[] = $filename;
+                }
+                $pengangkatans->file_sk_jabatan_terakhir = implode(',', $files);
+            }
+
+            if($request->has('file_berita_acara_pelantikan')){
+                $files = [];
+                foreach ($request->file('file_berita_acara_pelantikan') as $file) {
+                    $filename = $file->getClientOriginalName(). ' - ' .$input['nip'];
+                    Storage::putFileAs($this->file_berita_acara_pelantikan_folder, $file, $filename);
+                    $files[] = $filename;
+                }
+                $pengangkatans->file_berita_acara_pelantikan = implode(',', $files);
+            }
+
+            if($request->has('file_pas_foto')){
+                $files = [];
+                foreach ($request->file('file_pas_foto') as $file) {
+                    $filename = $file->getClientOriginalName(). ' - ' .$input['nip'];
+                    Storage::putFileAs($this->file_pas_foto_folder, $file, $filename);
+                    $files[] = $filename;
+                }
+                $pengangkatans->file_pas_foto = implode(',', $files);
+            }
+
+            if($request->has('file_sk_tidak_pernah_dijatuhi_hukuman')){
+                $files = [];
+                foreach ($request->file('file_sk_tidak_pernah_dijatuhi_hukuman') as $file) {
+                    $filename = $file->getClientOriginalName(). ' - ' .$input['nip'];
+                    Storage::putFileAs($this->file_sk_tidak_pernah_dijatuhi_hukuman_folder, $file, $filename);
+                    $files[] = $filename;
+                }
+                $pengangkatans->file_sk_tidak_pernah_dijatuhi_hukuman = implode(',', $files);
+            }
+
+            if($request->has('file_sk_tidak_sedang_dalam_hukum_dpcp')){
+                $files = [];
+                foreach ($request->file('file_sk_tidak_sedang_dalam_hukum_dpcp') as $file) {
+                    $filename = $file->getClientOriginalName(). ' - ' .$input['nip'];
+                    Storage::putFileAs($this->file_sk_tidak_sedang_dalam_hukum_dpcp_folder, $file, $filename);
+                    $files[] = $filename;
+                }
+                $pengangkatans->file_sk_tidak_sedang_dalam_hukum_dpcp = implode(',', $files);
+            }
     
             $pengangkatans->save();
     
@@ -194,11 +294,11 @@ class BUPNonKPPController extends Controller
                 $notes->save();
             }
 
-            DB::commit();
+            // DB::commit();
             return redirect()->route('pic.administrasi.pemberhentian.index')->with(['success'=>'Pemberhentian Success Added!!!']);
-        } catch (\Exception $e) {
-            DB::rollback();
-            return Redirect::back()->withErrors(['message' => $e->getMessage()]);
-        }   
+        // } catch (\Exception $e) {
+        //     DB::rollback();
+        //     return Redirect::back()->withErrors(['message' => $e->getMessage()]);
+        // }   
     }
 }
