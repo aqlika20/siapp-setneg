@@ -204,8 +204,11 @@ class Helper {
      public static $tolak_bkn_karo = 25;
      public static $tolak_bkn_deputi = 26;
      public static $verifikasi_rkp_pokja = 27;
-     public static $verifikasi_rkp_deputi = 28;
+     public static $verifikasi_rkp_karo = 28;
      public static $usulan_dikembalikan = 29;
+     public static $verifikasi_rkp_deputi = 30;
+     public static $verifikasi_rkp_tu_kementerian = 31;
+     public static $keppres_Maju = 32;
 
     public static function defineStatusBy($type)
     {
@@ -320,11 +323,23 @@ class Helper {
                 break;
 
             case '28':
-                $status = 'RKP Terverifikasi Deputi';
+                $status = 'RKP Terverifikasi Karo';
                 break;
 
             case '29':
                 $status = 'Pengajuan Dikembalikan Untuk Direvisi';
+                break;
+
+            case '30':
+                $status = 'RKP Terverifikasi Deputi';
+                break;
+            
+            case '31':
+                $status = 'RKP Terverifikasi TU Kementerian';
+                break;
+
+            case '32':
+                $status = 'Keppres Maju';
                 break;
             
             case '0':

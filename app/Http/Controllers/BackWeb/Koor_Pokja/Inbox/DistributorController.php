@@ -64,6 +64,7 @@ class DistributorController extends Controller
             $group_roles[$user->group][]=$user->role;
         }
 
+        dd($group_roles);
 
         if($jenis_layanan == Helper::$pengangkatan_pejabat_FKU || $jenis_layanan == Helper::$pemberhentian_pejabat_FKU || $jenis_layanan == Helper::$perpindahan_pejabat_FKU || $jenis_layanan == Helper::$ralat_keppres_jabatan_FKU || $jenis_layanan == Helper::$pembatalan_keppres_jabatan_FKU)
         {

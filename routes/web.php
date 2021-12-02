@@ -26,7 +26,7 @@ Route::prefix('/profile')->group(function(){
 
 
 // PIC
-Route::group(['middleware' => ['auth', 'checkRole:1']], function() {
+Route::group(['middleware' => ['auth', 'checkRole:14']], function() {
     Route::prefix('/pic')->group(function(){
         Route::prefix('/home')->group(function(){
             Route::get('/', 'BackWeb\PIC\HomeController@index')->name('pic.home.index');
@@ -310,7 +310,7 @@ Route::group(['middleware' => ['auth', 'checkRole:1']], function() {
 }); 
 
 // Koordinator Pokja P4
-Route::group(['middleware' => ['auth', 'checkRole:2']], function() {
+Route::group(['middleware' => ['auth', 'checkRole:5']], function() {
 
     Route::prefix('/koor-pokja')->group(function(){
         Route::prefix('/home')->group(function(){
@@ -417,30 +417,30 @@ Route::group(['middleware' => ['auth', 'checkRole:2']], function() {
             });
 
             Route::prefix('/text-editor')->group(function(){
-                Route::get('/{id}', 'BackWeb\Koor_Pokja\Inbox\TextEditorController@index')->name('koor-pokja.text-editor.index');
-                Route::post('/create', 'BackWeb\Koor_Pokja\Inbox\TextEditorController@store')->name('koor-pokja.text-editor.store');
+                Route::get('/{id}', 'BackWeb\Koor_Pokja\TextEditorController@index')->name('koor-pokja.text-editor.index');
+                Route::post('/create', 'BackWeb\Koor_Pokja\TextEditorController@store')->name('koor-pokja.text-editor.store');
             });
             
             Route::prefix('/text-editor-jfku')->group(function(){
-                Route::get('/{id}', 'BackWeb\Koor_Pokja\Inbox\TextEditorJFKUPertekController@index')->name('koor-pokja.text-editor.jfku.pertek.index');
-                Route::post('/create', 'BackWeb\Koor_Pokja\Inbox\TextEditorJFKUPertekController@store')->name('koor-pokja.text-editor.jfku.pertek.store');
+                Route::get('/{id}', 'BackWeb\Koor_Pokja\TextEditorJFKUPertekController@index')->name('koor-pokja.text-editor.jfku.pertek.index');
+                Route::post('/create', 'BackWeb\Koor_Pokja\TextEditorJFKUPertekController@store')->name('koor-pokja.text-editor.jfku.pertek.store');
             });
 
             Route::prefix('/text-editor-lain')->group(function(){
-                Route::get('/{id}', 'BackWeb\Koor_Pokja\Inbox\TextEditorLainPertekController@index')->name('koor-pokja.text-editor.lain.pertek.index');
-                Route::post('/create', 'BackWeb\Koor_Pokja\Inbox\TextEditorLainPertekController@store')->name('koor-pokja.text-editor.lain.pertek.store');
+                Route::get('/{id}', 'BackWeb\Koor_Pokja\TextEditorLainPertekController@index')->name('koor-pokja.text-editor.lain.pertek.index');
+                Route::post('/create', 'BackWeb\Koor_Pokja\TextEditorLainPertekController@store')->name('koor-pokja.text-editor.lain.pertek.store');
             });
 
             Route::prefix('/text-editor-ns')->group(function(){
-                Route::get('/{id}', 'BackWeb\Koor_Pokja\Inbox\TextEditorNSPertekController@index')->name('koor-pokja.text-editor.ns.pertek.index');
-                Route::post('/create', 'BackWeb\Koor_Pokja\Inbox\TextEditorNSPertekController@store')->name('koor-pokja.text-editor.ns.pertek.store');
+                Route::get('/{id}', 'BackWeb\Koor_Pokja\TextEditorNSPertekController@index')->name('koor-pokja.text-editor.ns.pertek.index');
+                Route::post('/create', 'BackWeb\Koor_Pokja\TextEditorNSPertekController@store')->name('koor-pokja.text-editor.ns.pertek.store');
             });
 
         });
 
         Route::prefix('/rkp')->group(function(){
-            Route::get('/', 'BackWeb\Koor_Pokja\RKPController@home')->name('koor-pokja.rkp.home');
-            Route::get('/{id}', 'BackWeb\Koor_Pokja\RKPController@index')->name('koor-pokja.rkp.index');
+            Route::get('/', 'BackWeb\Koor_Pokja\ListRkpController@index')->name('koor-pokja.list-rkp.index');
+            Route::get('/add', 'BackWeb\Koor_Pokja\RKPController@home')->name('koor-pokja.rkp.home');
             Route::post('/create', 'BackWeb\Koor_Pokja\RKPController@store')->name('koor-pokja.rkp.store');
         });
 
@@ -617,7 +617,7 @@ Route::group(['middleware' => ['auth', 'checkRole:7']], function() {
 });
 
 // JF Ahli
-Route::group(['middleware' => ['auth', 'checkRole: 3 , 4']], function() {
+Route::group(['middleware' => ['auth', 'checkRole: 15 , 16']], function() {
     Route::prefix('/Jf-Ahli')->group(function(){
         Route::prefix('/home')->group(function(){
             Route::get('/', 'BackWeb\JF_Ahli\HomeController@index')->name('jf-ahli.home.index');
@@ -697,7 +697,7 @@ Route::group(['middleware' => ['auth', 'checkRole: 3 , 4']], function() {
 }); 
 
 // Karo
-Route::group(['middleware' => ['auth', 'checkRole:5']], function() {
+Route::group(['middleware' => ['auth', 'checkRole:4']], function() {
     Route::prefix('/karo')->group(function(){
         Route::prefix('/home')->group(function(){
             Route::get('/', 'BackWeb\Karo\HomeController@index')->name('karo.home.index');
@@ -705,9 +705,9 @@ Route::group(['middleware' => ['auth', 'checkRole:5']], function() {
 
         Route::prefix('/inbox')->group(function(){
             Route::get('/usulan', 'BackWeb\Karo\Inbox\SuratUsulanController@index')->name('karo.inbox.usulan');
-            Route::get('/pertek-bkn', 'BackWeb\Karo\Inbox\PertekBKNController@index')->name('karo.inbox.revisi');
-            Route::get('/detail-pertek/{id}', 'BackWeb\Karo\Inbox\DetailPertekBKNController@index')->name('karo.inbox.detail.pertek');
-            Route::post('/detail-pertek/verif', 'BackWeb\Karo\Inbox\DetailPertekBKNController@store')->name('karo.inbox.detail.pertek.store');
+            Route::get('/rancangan-keppres', 'BackWeb\Karo\Inbox\PertekBKNController@index')->name('karo.inbox.revisi');
+            Route::get('/detail-rancangan-keppres/{id}', 'BackWeb\Karo\Inbox\DetailPertekBKNController@index')->name('karo.inbox.detail.pertek');
+            Route::post('/detail-rancangan-keppres/verif', 'BackWeb\Karo\Inbox\DetailPertekBKNController@store')->name('karo.inbox.detail.pertek.store');
 
             Route::prefix('/text-editor')->group(function(){
                 Route::get('/{id}', 'BackWeb\Karo\Inbox\TextEditorInboxPendingController@index')->name('karo.inbox.text-editor.index');
@@ -733,6 +733,62 @@ Route::group(['middleware' => ['auth', 'checkRole:5']], function() {
                 Route::get('/{id}', 'BackWeb\Karo\Inbox\TextEditorPemberhentianPertekController@index')->name('karo.inbox.text-editor.pemberhentian.index');
                 Route::post('/create', 'BackWeb\Karo\Inbox\TextEditorPemberhentianPertekController@store')->name('karo.inbox.text-editor.pemberhentian.store');
             });
+        });
+
+    });
+}); 
+
+// Deputi
+Route::group(['middleware' => ['auth', 'checkRole:3']], function() {
+    Route::prefix('/deputi')->group(function(){
+        Route::prefix('/home')->group(function(){
+            Route::get('/', 'BackWeb\Deputi\HomeController@index')->name('deputi.home.index');
+        });
+
+        Route::prefix('/rancangan-keppres')->group(function(){
+            Route::get('/', 'BackWeb\Deputi\Inbox\PertekBKNController@index')->name('deputi.inbox.revisi');
+            Route::get('/detail-rancangan-keppres/{id}', 'BackWeb\Deputi\Inbox\DetailPertekBKNController@index')->name('deputi.inbox.detail.pertek');
+            Route::post('/detail-rancangan-keppres/verif', 'BackWeb\Deputi\Inbox\DetailPertekBKNController@store')->name('deputi.inbox.detail.pertek.store');
+        });
+
+    });
+}); 
+
+// TU Menteri
+Route::group(['middleware' => ['auth', 'checkRole:13']], function() {
+    Route::prefix('/tu-menteri')->group(function(){
+        Route::prefix('/home')->group(function(){
+            Route::get('/', 'BackWeb\Tu_Kementerian\HomeController@index')->name('tu-menteri.home.index');
+        });
+
+        Route::prefix('/rancangan-keppres')->group(function(){
+            Route::get('/', 'BackWeb\Tu_Kementerian\Inbox\PertekBKNController@index')->name('tu-menteri.inbox.revisi');
+
+            Route::get('/detail-rancangan-keppres/{id}', 'BackWeb\Tu_Kementerian\Inbox\DetailPertekBKNController@index')->name('tu-menteri.inbox.detail.pertek');
+            Route::post('/detail-rancangan-keppres/verif', 'BackWeb\Tu_Kementerian\Inbox\DetailPertekBKNController@store')->name('tu-menteri.inbox.detail.pertek.store');
+
+            Route::get('/keppres-maju/{id}', 'BackWeb\Tu_Kementerian\Inbox\DetailPertekBKNController@keppres_maju')->name('tu-menteri.inbox.keppres-maju');
+            Route::post('/keppres-maju/verif', 'BackWeb\Tu_Kementerian\Inbox\DetailPertekBKNController@keppres_store')->name('tu-menteri.inbox.keppres-store');
+        });
+
+    });
+}); 
+
+// Dukmin
+Route::group(['middleware' => ['auth', 'checkRole:12']], function() {
+    Route::prefix('/dukmin')->group(function(){
+        Route::prefix('/home')->group(function(){
+            Route::get('/', 'BackWeb\Dukmin\HomeController@index')->name('dukmin.home.index');
+        });
+
+        Route::prefix('/rancangan-keppres')->group(function(){
+            Route::get('/', 'BackWeb\Dukmin\Inbox\PertekBKNController@index')->name('dukmin.inbox.revisi');
+
+            Route::get('/detail-rancangan-keppres/{id}', 'BackWeb\Dukmin\Inbox\DetailPertekBKNController@index')->name('dukmin.inbox.detail.pertek');
+            Route::post('/detail-rancangan-keppres/verif', 'BackWeb\Dukmin\Inbox\DetailPertekBKNController@store')->name('dukmin.inbox.detail.pertek.store');
+
+            Route::get('/keppres-maju/{id}', 'BackWeb\Dukmin\Inbox\DetailPertekBKNController@keppres_maju')->name('dukmin.inbox.keppres-maju');
+            Route::post('/keppres-maju/verif', 'BackWeb\Dukmin\Inbox\DetailPertekBKNController@keppres_store')->name('dukmin.inbox.keppres-store');
         });
 
     });

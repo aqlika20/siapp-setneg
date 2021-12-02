@@ -123,6 +123,48 @@
                                         </div>	
                                     </div>
 
+                                    <!--begin::Table-->
+                                    <div class="mb-7">
+                                        <div class="row align-items-center">
+                                            <div class="col-lg-9 col-xl-8">
+                                                <div class="row align-items-center">
+                                                    <div class="col-md-4 my-2 my-md-0">
+                                                        <div class="input-icon">
+                                                            <input type="text" class="form-control" placeholder="Search By NIP" id="no_surat" />
+                                                            <span>
+                                                                <i class="flaticon2-search-1 text-muted"></i>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!--end::Search Form-->
+                                    <!--begin: Datatable-->
+                                    <table class="datatable cell-border" id="tb_baru">
+                                        <thead>
+                                            <tr class="text-start text-gray-400 fw-bolder fs-7 text-uppercase gs-0">
+                                                <th>Check</th>
+                                                <th>Nama ASN</th>
+                                                <th>NIP</th>
+                                                <th>Jenis Layanan</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            @foreach($pengangkatans as $pengangkatan)
+                                                <tr>
+                                                    <td><input type='checkbox' name='received[]' class='form-control' style="width: 30px;" value='{{$pengangkatan->id}}'></td>
+                                                    <td>{{ $pengangkatan->nama }}</td>
+                                                    <td><div style="color: #FFA800;">{{ $pengangkatan->nip }}</div></td>
+                                                    <td>{{ Helper::defineJenisLayananBy($pengangkatan->jenis_layanan)  }}</td>
+                                                </tr>
+                                            @endforeach
+                                        </tbody>
+                                    </table>
+                                    <!--end: Datatable-->
+                                    <!--end::Table-->
+
                                     <div class="d-flex justify-content-between mt-5 pt-10" style="margin-left: 50px; margin-right: 50px;">
                                         <div class="mr-2">
                                         </div>

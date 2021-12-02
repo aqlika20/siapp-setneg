@@ -21,12 +21,12 @@ class DashboardController extends Controller
         $currentUser = UserManagement::find(Auth::id());
 
         // PIC
-        if ($currentUser->roles_id == 1) {
+        if ($currentUser->roles_id == 14) {
             return redirect()->route('pic.home.index');
         }
 
         // Koordinator Pokja P4
-        if ($currentUser->roles_id == 2) {
+        if ($currentUser->roles_id == 5) {
             return redirect()->route('koor-pokja.home.index');
         }
         // Koordinator Pokja KP
@@ -39,13 +39,28 @@ class DashboardController extends Controller
         }
 
         // JF Ahli Muda & JF Ahli Madya
-        if ($currentUser->roles_id == 3 || $currentUser->roles_id == 4) {
+        if ($currentUser->roles_id == 15 || $currentUser->roles_id == 16) {
             return redirect()->route('jf-ahli.home.index');
         }
 
         // Karo
-        if ($currentUser->roles_id == 5){
+        if ($currentUser->roles_id == 4){
             return redirect()->route('karo.home.index');
+        }
+
+        // Deputi
+        if ($currentUser->roles_id == 3){
+            return redirect()->route('deputi.home.index');
+        }
+
+        // TU Menteri
+        if ($currentUser->roles_id == 13){
+            return redirect()->route('tu-menteri.home.index');
+        }
+
+        // TU Menteri
+        if ($currentUser->roles_id == 12){
+            return redirect()->route('dukmin.home.index');
         }
     }
 

@@ -41,7 +41,7 @@
                                                 <label class="col-form-label col-lg-3 col-sm-12">No. Keppres</label>
                                                 <div class="col-lg-9 col-md-9 col-sm-12">
                                                     <div class="input-group">
-                                                        <input type="text" class="form-control" id="no_keppres" name="no_keppres" value="{{old('no_keppres')}}" autocomplete="off" require/>
+                                                        <input type="text" class="form-control" id="no_keppres" name="no_keppres" value="{{old('no_keppres')}}" autocomplete="off" required/>
                                                     </div>
                                                 </div>
                                             </div>
@@ -52,7 +52,7 @@
                                                 <label class="col-form-label col-lg-3 col-sm-12">Tanggal Keppres</label>
                                                 <div class="col-lg-5 col-md-9 col-sm-12">
                                                     <div class="input-group date">
-                                                        <input type="text" class="form-control datetimepicker-input my-datepicker" id="tanggal_keppres" name="tanggal_keppres" data-toggle="datetimepicker" data-target="#tanggal_keppres" placeholder="Pilih Tanggal" value="{{old('tanggal_keppres')}}" autocomplete="off" require/>
+                                                        <input type="text" class="form-control datetimepicker-input my-datepicker" id="tanggal_keppres" name="tanggal_keppres" data-toggle="datetimepicker" data-target="#tanggal_keppres" placeholder="Pilih Tanggal" value="{{old('tanggal_keppres')}}" autocomplete="off" required/>
                                                         <div class="input-group-append">
                                                             <span class="input-g    roup-text">
                                                                 <i class="la la-calendar"></i>
@@ -68,7 +68,7 @@
                                                 <label class="col-form-label col-lg-3 col-sm-12">Masa Jabatan</label>
                                                 <div class="col-lg-4 col-md-9 col-sm-12">
                                                     <div class="input-group date">
-                                                        <input type="text" class="form-control datetimepicker-input my-datepicker" name="masa_jabatan_start" data-toggle="datetimepicker" data-target="#masa_jabatan_start" placeholder="Select Date First" id="masa_jabatan_start" value="{{ old('masa_jabatan_start') }}" autocomplete="off" require/>
+                                                        <input type="text" class="form-control datetimepicker-input my-datepicker" name="masa_jabatan_start" data-toggle="datetimepicker" data-target="#masa_jabatan_start" placeholder="Select Date First" id="masa_jabatan_start" value="{{ old('masa_jabatan_start') }}" autocomplete="off" required/>
                                                         <div class="input-group-append">
                                                             <span class="input-group-text">
                                                                 <i class="la la-calendar"></i>
@@ -82,7 +82,7 @@
                                                 </div>
                                                 <div class="col-lg-4 col-md-9 col-sm-12">
                                                     <div class="input-group date">
-                                                        <input type="text" class="form-control datetimepicker-input my-datepicker" name="masa_jabatan_end" data-toggle="datetimepicker" data-target="#masa_jabatan_end" placeholder="Select Date Last" id="masa_jabatan_end" value="{{ old('masa_jabatan_end') }}" autocomplete="off" require/>
+                                                        <input type="text" class="form-control datetimepicker-input my-datepicker" name="masa_jabatan_end" data-toggle="datetimepicker" data-target="#masa_jabatan_end" placeholder="Select Date Last" id="masa_jabatan_end" value="{{ old('masa_jabatan_end') }}" autocomplete="off" required/>
                                                         <div class="input-group-append">
                                                             <span class="input-group-text">
                                                                 <i class="la la-calendar"></i>
@@ -103,7 +103,7 @@
                                                 <label class="col-form-label col-lg-3 col-sm-12">TMT</label>
                                                 <div class="col-lg-9 col-md-9 col-sm-12">
                                                     <div class="input-group date">
-                                                        <input type="text" class="form-control" id="tmt" name="tmt" value="{{old('tmt')}}" autocomplete="off" require/>
+                                                        <input type="text" class="form-control" id="tmt" name="tmt" value="{{old('tmt')}}" autocomplete="off" required/>
                                                     </div>
                                                 </div>
                                             </div>
@@ -113,7 +113,7 @@
                                                 <label class="col-form-label col-lg-3 col-sm-12">Hak keuangan dan Fasilitas</label>
                                                 <div class="col-lg-9 col-md-9 col-sm-12">
                                                     <div class="input-group date">
-                                                        <input type="text" class="form-control" id="hak_keuangan" name="hak_keuangan" value="{{old('hak_keuangan')}}" autocomplete="off" require />
+                                                        <input type="text" class="form-control" id="hak_keuangan" name="hak_keuangan" value="{{old('hak_keuangan')}}" autocomplete="off" required/>
                                                     </div>
                                                 </div>
                                             </div>
@@ -123,7 +123,7 @@
                                                 <label class="col-form-label col-lg-3 col-sm-12">Tanggal pelantikan</label>
                                                 <div class="col-lg-5 col-md-9 col-sm-12">
                                                     <div class="input-group date">
-                                                        <input type="text" class="form-control datetimepicker-input my-datepicker" id="tanggal_pelantikan" name="tanggal_pelantikan" data-toggle="datetimepicker" data-target="#tanggal_pelantikan" placeholder="Pilih Tanggal" value="{{old('tanggal_pelantikan')}}" autocomplete="off" require/>
+                                                        <input type="text" class="form-control datetimepicker-input my-datepicker" id="tanggal_pelantikan" name="tanggal_pelantikan" data-toggle="datetimepicker" data-target="#tanggal_pelantikan" placeholder="Pilih Tanggal" value="{{old('tanggal_pelantikan')}}" autocomplete="off" required/>
                                                         <div class="input-group-append">
                                                             <span class="input-group-text">
                                                                 <i class="la la-calendar"></i>
@@ -137,7 +137,7 @@
                                                 <label class="col-form-label col-lg-3 col-sm-12">Yang Melantik</label>
                                                 <div class="col-lg-9 col-md-9 col-sm-12">
                                                     <div class="input-group date">
-                                                        <input type="text" class="form-control" id="yang_melantik" name="yang_melantik" value="{{old('yang_melantik')}}" autocomplete="off" require />
+                                                        <input type="text" class="form-control" id="yang_melantik" name="yang_melantik" value="{{old('yang_melantik')}}" autocomplete="off" required/>
                                                     </div>
                                                 </div>
                                             </div>

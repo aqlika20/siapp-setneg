@@ -9,7 +9,7 @@ class RKP extends Model
     protected $table = 'rkps';
 
     protected $fillable = [
-        'id', 'pengirim', 'penandatangan', 'penerima', 'no_memo_rkp', 'tanggal_memo', 'hal', 'id_usulan', 'id_layanan', 'id_pengirim', 'nip', 'status'
+        'id', 'pengirim', 'penandatangan', 'penerima', 'no_memo_rkp', 'tanggal_memo', 'hal', 'tanggal_keppres_maju', 'status'
     ];
 
     protected $date = [

@@ -265,7 +265,7 @@
                                                     <label class="col-form-label col-lg-3 col-sm-12">Masa Kerja Golongan</label>
                                                     <div class="col-lg-5 col-md-9 col-sm-12">
                                                         <div class="input-group date">
-                                                            <input type="text" class="form-control" value="{{$verifikasi->masa_kerja_gol_tahun}}" autocomplete="off" disabled require />
+                                                            <input type="text" class="form-control" value="{{$verifikasi->masa_kerja_gol_tahun}}" autocomplete="off" disabled required/>
                                                             <label class="col-form-label text-left col-lg-3 col-sm-12">Tahun</label>
                                                         </div>
                                                     </div>
@@ -274,7 +274,7 @@
                                                     <label class="col-form-label col-lg-3 col-sm-12"></label>
                                                     <div class="col-lg-5 col-md-9 col-sm-12">
                                                         <div class="input-group date">
-                                                            <input type="text" class="form-control" value="{{$verifikasi->masa_kerja_gol_bulan}}" autocomplete="off" disabled require />
+                                                            <input type="text" class="form-control" value="{{$verifikasi->masa_kerja_gol_bulan}}" autocomplete="off" disabled required/>
                                                             <label class="col-form-label text-left col-lg-3 col-sm-12">Bulan</label>
                                                         </div>
                                                     </div>
@@ -1581,7 +1581,7 @@
                                                                                                 <label class="col-form-label col-lg-3 col-sm-12">Tanggal Proses Penolakan</label>
                                                                                                 <div class="col-lg-5 col-md-9 col-sm-12">
                                                                                                     <div class="input-group date">
-                                                                                                        <input type="text" class="form-control datetimepicker-input my-datepicker" id="tanggal_prosess_penolakan" name="tanggal_prosess_penolakan" autocomplete="off" data-toggle="datetimepicker" data-target="#tanggal_prosess_penolakan" placeholder="Pilih Tanggal" value="{{old('tanggal_prosess_penolakan')}}" require/>
+                                                                                                        <input type="text" class="form-control datetimepicker-input my-datepicker" id="tanggal_prosess_penolakan" name="tanggal_prosess_penolakan" autocomplete="off" data-toggle="datetimepicker" data-target="#tanggal_prosess_penolakan" placeholder="Pilih Tanggal" value="{{old('tanggal_prosess_penolakan')}}" required/>
                                                                                                         <div class="input-group-append">
                                                                                                             <span class="input-group-text">
                                                                                                                 <i class="la la-calendar"></i>

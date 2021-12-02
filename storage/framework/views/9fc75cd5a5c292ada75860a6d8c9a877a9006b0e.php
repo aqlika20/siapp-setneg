@@ -41,7 +41,7 @@
                                                 <label class="col-form-label col-lg-3 col-sm-12">No. Keppres</label>
                                                 <div class="col-lg-9 col-md-9 col-sm-12">
                                                     <div class="input-group">
-                                                        <input type="text" class="form-control" id="no_keppres" name="no_keppres" value="<?php echo e(old('no_keppres')); ?>" autocomplete="off" require/>
+                                                        <input type="text" class="form-control" id="no_keppres" name="no_keppres" value="<?php echo e(old('no_keppres')); ?>" autocomplete="off" required/>
                                                     </div>
                                                 </div>
                                             </div>
@@ -52,7 +52,7 @@
                                                 <label class="col-form-label col-lg-3 col-sm-12">Tanggal Keppres</label>
                                                 <div class="col-lg-5 col-md-9 col-sm-12">
                                                     <div class="input-group date">
-                                                        <input type="text" class="form-control datetimepicker-input my-datepicker" id="tanggal_keppres" name="tanggal_keppres" data-toggle="datetimepicker" data-target="#tanggal_keppres" placeholder="Pilih Tanggal" value="<?php echo e(old('tanggal_keppres')); ?>" autocomplete="off" require/>
+                                                        <input type="text" class="form-control datetimepicker-input my-datepicker" id="tanggal_keppres" name="tanggal_keppres" data-toggle="datetimepicker" data-target="#tanggal_keppres" placeholder="Pilih Tanggal" value="<?php echo e(old('tanggal_keppres')); ?>" autocomplete="off" required/>
                                                         <div class="input-group-append">
                                                             <span class="input-group-text">
                                                                 <i class="la la-calendar"></i>
@@ -112,7 +112,7 @@
                                                 <label class="col-form-label col-lg-3 col-sm-12">TMT</label>
                                                 <div class="col-lg-9 col-md-9 col-sm-12">
                                                     <div class="input-group date">
-                                                        <input type="text" class="form-control" id="tmt" name="tmt" value="<?php echo e(old('tmt')); ?>" autocomplete="off" require/>
+                                                        <input type="text" class="form-control" id="tmt" name="tmt" value="<?php echo e(old('tmt')); ?>" autocomplete="off" required/>
                                                     </div>
                                                 </div>
                                             </div>
@@ -130,7 +130,7 @@
                                                 <label class="col-form-label col-lg-3 col-sm-12">Hak keuangan dan Fasilitas</label>
                                                 <div class="col-lg-9 col-md-9 col-sm-12">
                                                     <div class="input-group date">
-                                                        <input type="text" class="form-control" id="hak_keuangan" name="hak_keuangan" value="<?php echo e(old('hak_keuangan')); ?>" autocomplete="off" require />
+                                                        <input type="text" class="form-control" id="hak_keuangan" name="hak_keuangan" value="<?php echo e(old('hak_keuangan')); ?>" autocomplete="off" required/>
                                                     </div>
                                                 </div>
                                             </div>
@@ -140,7 +140,7 @@
                                                 <label class="col-form-label col-lg-3 col-sm-12">Tanggal pelantikan</label>
                                                 <div class="col-lg-5 col-md-9 col-sm-12">
                                                     <div class="input-group date">
-                                                        <input type="text" class="form-control datetimepicker-input my-datepicker" id="tanggal_pelantikan" name="tanggal_pelantikan" data-toggle="datetimepicker" data-target="#tanggal_pelantikan" placeholder="Pilih Tanggal" value="<?php echo e(old('tanggal_pelantikan')); ?>" autocomplete="off" require/>
+                                                        <input type="text" class="form-control datetimepicker-input my-datepicker" id="tanggal_pelantikan" name="tanggal_pelantikan" data-toggle="datetimepicker" data-target="#tanggal_pelantikan" placeholder="Pilih Tanggal" value="<?php echo e(old('tanggal_pelantikan')); ?>" autocomplete="off" required/>
                                                         <div class="input-group-append">
                                                             <span class="input-group-text">
                                                                 <i class="la la-calendar"></i>
@@ -154,7 +154,7 @@
                                                 <label class="col-form-label col-lg-3 col-sm-12">Yang Melantik</label>
                                                 <div class="col-lg-9 col-md-9 col-sm-12">
                                                     <div class="input-group date">
-                                                        <input type="text" class="form-control" id="yang_melantik" name="yang_melantik" value="<?php echo e(old('yang_melantik')); ?>" autocomplete="off" require />
+                                                        <input type="text" class="form-control" id="yang_melantik" name="yang_melantik" value="<?php echo e(old('yang_melantik')); ?>" autocomplete="off" required/>
                                                     </div>
                                                 </div>
                                             </div>

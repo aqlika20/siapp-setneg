@@ -42,7 +42,7 @@
                                                 <label class="col-form-label col-lg-3 col-sm-12">Tanggal Surat Pengantar</label>
                                                 <div class="col-lg-5 col-md-9 col-sm-12">
                                                     <div class="input-group date">
-                                                        <input type="text" class="form-control datetimepicker-input my-datepicker" id="tanggal_surat_pengantar" name="tanggal_surat_pengantar" data-toggle="datetimepicker" data-target="#tanggal_surat_pengantar" placeholder="Pilih Tanggal" value="{{old('tanggal_surat_pengantar')}}" require/>
+                                                        <input type="text" class="form-control datetimepicker-input my-datepicker" id="tanggal_surat_pengantar" name="tanggal_surat_pengantar" data-toggle="datetimepicker" data-target="#tanggal_surat_pengantar" placeholder="Pilih Tanggal" value="{{old('tanggal_surat_pengantar')}}" required/>
                                                         <div class="input-group-append">
                                                             <span class="input-group-text">
                                                                 <i class="la la-calendar"></i>
@@ -55,7 +55,7 @@
                                                 <label class="col-form-label col-lg-3 col-sm-12">No. Surat Pengantar</label>
                                                 <div class="col-lg-9 col-md-9 col-sm-12">
                                                     <div class="input-group">
-                                                        <input type="text" class="form-control" id="no_surat_pengantar" name="no_surat_pengantar" value="{{old('no_surat_pengantar')}}" autocomplete="off" require/>
+                                                        <input type="text" class="form-control" id="no_surat_pengantar" name="no_surat_pengantar" value="{{old('no_surat_pengantar')}}" autocomplete="off" required/>
                                                     </div>
                                                 </div>
                                             </div>
@@ -112,7 +112,7 @@
                                                 <label class="col-form-label col-lg-3 col-sm-12">Jabatan lainnya yang akan diisi</label>
                                                 <div class="col-lg-9 col-md-9 col-sm-12">
                                                     <div class="input-group date">
-                                                        <input type="text" class="form-control" id="jabatan_lainnya" name="jabatan_lainnya" value="{{old('jabatan_lainnya')}}" autocomplete="off" require/>
+                                                        <input type="text" class="form-control" id="jabatan_lainnya" name="jabatan_lainnya" value="{{old('jabatan_lainnya')}}" autocomplete="off" required/>
                                                     </div>
                                                 </div>
                                             </div>
@@ -122,7 +122,7 @@
                                                 <label class="col-form-label col-lg-3 col-sm-12">Formasi</label>
                                                 <div class="col-lg-9 col-md-9 col-sm-12">
                                                     <div class="input-group date">
-                                                        <input type="text" class="form-control" id="formasi" name="formasi" value="{{old('formasi')}}" autocomplete="off" require />
+                                                        <input type="text" class="form-control" id="formasi" name="formasi" value="{{old('formasi')}}" autocomplete="off" required/>
                                                     </div>
                                                 </div>
                                             </div>
@@ -132,7 +132,7 @@
                                                 <label class="col-form-label col-lg-3 col-sm-12">Formasi Terisi</label>
                                                 <div class="col-lg-4 col-md-9 col-sm-12">
                                                     <div class="input-group date">
-                                                        <input type="text" class="form-control" id="formasi_terisi_start" name="formasi_terisi_start" value="{{old('formasi_terisi_start')}}" autocomplete="off" require />
+                                                        <input type="text" class="form-control" id="formasi_terisi_start" name="formasi_terisi_start" value="{{old('formasi_terisi_start')}}" autocomplete="off" required/>
                                                     </div>
                                                     <span class="form-text text-muted">Masks 5.</span>
                                                 </div>
@@ -141,7 +141,7 @@
                                                 </div>
                                                 <div class="col-lg-4 col-md-9 col-sm-12">
                                                     <div class="input-group date">
-                                                        <input type="text" class="form-control" id="formasi_terisi_end" name="formasi_terisi_end" value="{{old('formasi_terisi_end')}}" autocomplete="off" require />
+                                                        <input type="text" class="form-control" id="formasi_terisi_end" name="formasi_terisi_end" value="{{old('formasi_terisi_end')}}" autocomplete="off" required/>
                                                     </div>
                                                 </div>
                                             </div>
@@ -151,7 +151,7 @@
                                                 <label class="col-form-label col-lg-3 col-sm-12">Instansi</label>
                                                 <div class="col-lg-9 col-md-9 col-sm-12">
                                                     <div class="input-group date">
-                                                        <input type="text" onkeydown="return /[a-zA-Z0-9\s]+/i.test(event.key)" class="form-control" id="instansi" name="instansi" value="{{old('instansi')}}" autocomplete="off" require />
+                                                        <input type="text" onkeydown="return /[a-zA-Z0-9\s]+/i.test(event.key)" class="form-control" id="instansi" name="instansi" value="{{old('instansi')}}" autocomplete="off" required/>
                                                     </div>
                                                 </div>
                                             </div>
@@ -161,7 +161,7 @@
                                                 <label class="col-form-label col-lg-3 col-sm-12">Nama</label>
                                                 <div class="col-lg-9 col-md-9 col-sm-12">
                                                     <div class="input-group date">
-                                                        <input type="text" onkeydown="return /[a-zA-Z0-9\s]+/i.test(event.key)" class="form-control" id="nama" name="nama" value="{{old('nama')}}" autocomplete="off" require />
+                                                        <input type="text" onkeydown="return /[a-zA-Z0-9\s]+/i.test(event.key)" class="form-control" id="nama" name="nama" value="{{old('nama')}}" autocomplete="off" required/>
                                                     </div>
                                                 </div>
                                             </div>
@@ -283,7 +283,7 @@
                                                 <label class="col-form-label col-lg-3 col-sm-12">No Surat Persetujuan</label>
                                                 <div class="col-lg-9 col-md-9 col-sm-12">
                                                     <div class="input-group date">
-                                                        <input type="text" class="form-control" id="no_surat_persetujuan" name="no_surat_persetujuan" value="{{old('no_surat_persetujuan')}}" autocomplete="off" require/>
+                                                        <input type="text" class="form-control" id="no_surat_persetujuan" name="no_surat_persetujuan" value="{{old('no_surat_persetujuan')}}" autocomplete="off" required/>
                                                     </div>
                                                 </div>
                                             </div>
@@ -293,7 +293,7 @@
                                                 <label class="col-form-label col-lg-3 col-sm-12">Tanggal Surat Persetujuan</label>
                                                 <div class="col-lg-5 col-md-9 col-sm-12">
                                                     <div class="input-group date">
-                                                        <input type="text" class="form-control datetimepicker-input my-datepicker" id="tanggal_surat_persetujuan" name="tanggal_surat_persetujuan" data-toggle="datetimepicker" data-target="#tanggal_surat_persetujuan" placeholder="Pilih Tanggal" value="{{old('tanggal_surat_persetujuan')}}" require/>
+                                                        <input type="text" class="form-control datetimepicker-input my-datepicker" id="tanggal_surat_persetujuan" name="tanggal_surat_persetujuan" data-toggle="datetimepicker" data-target="#tanggal_surat_persetujuan" placeholder="Pilih Tanggal" value="{{old('tanggal_surat_persetujuan')}}" required/>
                                                         <div class="input-group-append">
                                                             <span class="input-group-text">
                                                                 <i class="la la-calendar"></i>
@@ -308,7 +308,7 @@
                                                 <label class="col-form-label col-lg-3 col-sm-12">Kepada Sdr. Menteri</label>
                                                 <div class="col-lg-9 col-md-9 col-sm-12">
                                                     <div class="input-group date">
-                                                    <input type="text" onkeydown="return /[a-zA-Z0-9\s]+/i.test(event.key)" class="form-control" id="kepada_menteri" name="kepada_menteri" value="{{old('kepada_menteri')}}" autocomplete="off" require />
+                                                    <input type="text" onkeydown="return /[a-zA-Z0-9\s]+/i.test(event.key)" class="form-control" id="kepada_menteri" name="kepada_menteri" value="{{old('kepada_menteri')}}" autocomplete="off" required/>
 
                                                     </div>
                                                 </div>
@@ -319,7 +319,7 @@
                                                 <label class="col-form-label col-lg-3 col-sm-12">Nama Staff Khusus Yang Disetujui</label>
                                                 <div class="col-lg-9 col-md-9 col-sm-12">
                                                     <div class="input-group date">
-                                                        <input type="text" onkeydown="return /[a-zA-Z0-9\s]+/i.test(event.key)" class="form-control" id="nama_staff_khusus" name="nama_staff_khusus" value="{{old('nama_staff_khusus')}}" autocomplete="off" require />
+                                                        <input type="text" onkeydown="return /[a-zA-Z0-9\s]+/i.test(event.key)" class="form-control" id="nama_staff_khusus" name="nama_staff_khusus" value="{{old('nama_staff_khusus')}}" autocomplete="off" required/>
                                                     </div>
                                                 </div>
                                             </div>

@@ -42,7 +42,7 @@
                                                 <label class="col-form-label col-lg-3 col-sm-12">Tanggal Surat Pengantar</label>
                                                 <div class="col-lg-5 col-md-9 col-sm-12">
                                                     <div class="input-group date">
-                                                        <input type="text" class="form-control datetimepicker-input my-datepicker" id="tanggal_surat_pengantar" name="tanggal_surat_pengantar" data-toggle="datetimepicker" data-target="#tanggal_surat_pengantar" placeholder="Pilih Tanggal" value="{{old('tanggal_surat_pengantar')}}" require/>
+                                                        <input type="text" class="form-control datetimepicker-input my-datepicker" id="tanggal_surat_pengantar" name="tanggal_surat_pengantar" data-toggle="datetimepicker" data-target="#tanggal_surat_pengantar" placeholder="Pilih Tanggal" value="{{old('tanggal_surat_pengantar')}}" required/>
                                                         <div class="input-group-append">
                                                             <span class="input-group-text">
                                                                 <i class="la la-calendar"></i>
@@ -55,7 +55,7 @@
                                                 <label class="col-form-label col-lg-3 col-sm-12">No. Surat Pengantar</label>
                                                 <div class="col-lg-9 col-md-9 col-sm-12">
                                                     <div class="input-group">
-                                                        <input type="text" class="form-control" id="no_surat_pengantar" name="no_surat_pengantar" value="{{old('no_surat_pengantar')}}" autocomplete="off" require/>
+                                                        <input type="text" class="form-control" id="no_surat_pengantar" name="no_surat_pengantar" value="{{old('no_surat_pengantar')}}" autocomplete="off" required/>
                                                     </div>
                                                 </div>
                                             </div>
@@ -113,7 +113,7 @@
                                                 <label class="col-form-label col-lg-3 col-sm-12">No. Keppres</label>
                                                 <div class="col-lg-9 col-md-9 col-sm-12">
                                                     <div class="input-group">
-                                                        <input type="text" class="form-control" id="no_keppres" name="no_keppres" value="{{old('no_keppres')}}" autocomplete="off" require/>
+                                                        <input type="text" class="form-control" id="no_keppres" name="no_keppres" value="{{old('no_keppres')}}" autocomplete="off" required/>
                                                     </div>
                                                 </div>
                                             </div>
@@ -121,7 +121,7 @@
                                                 <label class="col-form-label col-lg-3 col-sm-12">Tanggal Keppres</label>
                                                 <div class="col-lg-5 col-md-9 col-sm-12">
                                                     <div class="input-group date">
-                                                        <input type="text" class="form-control datetimepicker-input my-datepicker" id="tanggal_keppres" name="tanggal_keppres" data-toggle="datetimepicker" data-target="#tanggal_keppres" placeholder="Pilih Tanggal" value="{{old('tanggal_surat_pengantar')}}" require/>
+                                                        <input type="text" class="form-control datetimepicker-input my-datepicker" id="tanggal_keppres" name="tanggal_keppres" data-toggle="datetimepicker" data-target="#tanggal_keppres" placeholder="Pilih Tanggal" value="{{old('tanggal_surat_pengantar')}}" required/>
                                                         <div class="input-group-append">
                                                             <span class="input-group-text">
                                                                 <i class="la la-calendar"></i>
@@ -185,7 +185,7 @@
                                                 <label class="col-form-label col-lg-3 col-sm-12">Alasan Ralat</label>
                                                 <div class="col-lg-9 col-md-9 col-sm-12">
                                                     <div class="input-group">
-                                                        <input type="text" class="form-control" id="alasan_ralat" name="alasan_ralat" value="{{old('alasan_ralat')}}" autocomplete="off" require/>
+                                                        <input type="text" class="form-control" id="alasan_ralat" name="alasan_ralat" value="{{old('alasan_ralat')}}" autocomplete="off" required/>
                                                     </div>
                                                 </div>
                                             </div>

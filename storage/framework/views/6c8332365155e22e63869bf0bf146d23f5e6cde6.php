@@ -62,7 +62,7 @@
                                                             </th>
                                                             <br>
                                                             <br>
-                                                            <?php $__currentLoopData = $group_roles[$list->name]; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $role): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                                            <?php $__currentLoopData = $group_roles->id; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $role): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                                                 <table>
                                                                     <th style="width: 200px;"><span class="label label-inline label-pill label-primary" style="height: 35px; font-size: 12px;" ><?php echo e($role); ?></span></th>
                                                                     <!-- <th style="width: 200px;"><a href="#" class="btn btn-outline-success"><i class="flaticon2-poll-symbol"></i> Distribusikan Ke Batch</a></th> -->

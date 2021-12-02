@@ -101,7 +101,7 @@
                                                             <input type="text" class="form-control" value="{{ $catatans->catatan }}"  disabled/>
                                                         </div>
                                                     </div>
-                                                    <input type="hidden" class="btn btn-warning font-weight-bolder text-uppercase px-9 py-4" name="v_id_catatan" value="{{ $catatans->id }}">
+                                                    <!-- <input type="hidden" class="btn btn-warning font-weight-bolder text-uppercase px-9 py-4" name="v_id_catatan" value="{{ $catatans->id }}"> -->
                                                 </div>
                                             @endforeach
 

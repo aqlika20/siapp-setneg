@@ -41,7 +41,7 @@
                                                 <label class="col-form-label col-lg-3 col-sm-12">Tanggal Surat Pengantar</label>
                                                 <div class="col-lg-5 col-md-9 col-sm-12">
                                                     <div class="input-group date">
-                                                        <input type="text" class="form-control datetimepicker-input my-datepicker" id="tanggal_surat_pengantar" name="tanggal_surat_pengantar" data-toggle="datetimepicker" data-target="#tanggal_surat_pengantar" placeholder="Pilih Tanggal" value="<?php echo e(old('tanggal_surat_pengantar')); ?>" require/>
+                                                        <input type="text" class="form-control datetimepicker-input my-datepicker" id="tanggal_surat_pengantar" name="tanggal_surat_pengantar" data-toggle="datetimepicker" data-target="#tanggal_surat_pengantar" placeholder="Pilih Tanggal" value="<?php echo e(old('tanggal_surat_pengantar')); ?>" required/>
                                                         <div class="input-group-append">
                                                             <span class="input-group-text">
                                                                 <i class="la la-calendar"></i>
@@ -54,7 +54,7 @@
                                                 <label class="col-form-label col-lg-3 col-sm-12">No. Surat Pengantar</label>
                                                 <div class="col-lg-9 col-md-9 col-sm-12">
                                                     <div class="input-group">
-                                                        <input type="text" class="form-control" id="no_surat_pengantar" name="no_surat_pengantar" value="<?php echo e(old('no_surat_pengantar')); ?>" autocomplete="off" require/>
+                                                        <input type="text" class="form-control" id="no_surat_pengantar" name="no_surat_pengantar" value="<?php echo e(old('no_surat_pengantar')); ?>" autocomplete="off" required/>
                                                     </div>
                                                 </div>
                                             </div>
@@ -111,7 +111,7 @@
                                                 <label class="col-form-label col-lg-3 col-sm-12">Jabatan lainnya yang akan diisi</label>
                                                 <div class="col-lg-9 col-md-9 col-sm-12">
                                                     <div class="input-group date">
-                                                        <input type="text" class="form-control" id="jabatan_lainnya" name="jabatan_lainnya" value="<?php echo e(old('jabatan_lainnya')); ?>" autocomplete="off" require/>
+                                                        <input type="text" class="form-control" id="jabatan_lainnya" name="jabatan_lainnya" value="<?php echo e(old('jabatan_lainnya')); ?>" autocomplete="off" required/>
                                                     </div>
                                                 </div>
                                             </div>
@@ -142,7 +142,7 @@
                                                 <label class="col-form-label col-lg-3 col-sm-12">NIP</label>
                                                 <div class="col-lg-9 col-md-9 col-sm-12">
                                                     <div class="input-group date">
-                                                        <input type="number" pattern="[0-9]+([\.,][0-9]+)?" class="form-control" id="nip" name="nip" value="<?php echo e(old('nip')); ?>" autocomplete="off" require/>
+                                                        <input type="number" pattern="[0-9]+([\.,][0-9]+)?" class="form-control" id="nip" name="nip" value="<?php echo e(old('nip')); ?>" autocomplete="off" required/>
                                                     </div>
                                                 </div>
                                             </div>
@@ -152,7 +152,7 @@
                                                 <label class="col-form-label col-lg-3 col-sm-12">Nama</label>
                                                 <div class="col-lg-9 col-md-9 col-sm-12">
                                                     <div class="input-group date">
-                                                        <input type="text" onkeydown="return /[a-zA-Z0-9\s]+/i.test(event.key)" class="form-control" id="nama" name="nama" value="<?php echo e(old('nama')); ?>" autocomplete="off" require />
+                                                        <input type="text" onkeydown="return /[a-zA-Z0-9\s]+/i.test(event.key)" class="form-control" id="nama" name="nama" value="<?php echo e(old('nama')); ?>" autocomplete="off" required/>
                                                     </div>
                                                 </div>
                                             </div>
@@ -162,7 +162,7 @@
                                                 <label class="col-form-label col-lg-3 col-sm-12">Instansi</label>
                                                 <div class="col-lg-9 col-md-9 col-sm-12">
                                                     <div class="input-group date">
-                                                        <input type="text" onkeydown="return /[a-zA-Z0-9\s]+/i.test(event.key)" class="form-control" id="instansi" name="instansi" value="<?php echo e(old('instansi')); ?>" autocomplete="off" require />
+                                                        <input type="text" onkeydown="return /[a-zA-Z0-9\s]+/i.test(event.key)" class="form-control" id="instansi" name="instansi" value="<?php echo e(old('instansi')); ?>" autocomplete="off" required/>
                                                     </div>
                                                 </div>
                                             </div>

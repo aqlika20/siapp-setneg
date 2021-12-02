@@ -42,7 +42,7 @@
             <ul class="menu-nav ">
 
 {{-- PIC --}}
-                @if ($currentUser->roles_id == 1) 
+                @if ($currentUser->roles_id == 14) 
                 <li class="menu-item {{ (strpos($page_title, 'PIC | Dashboard') !== false) ? 'menu-item-active' : '' }}" aria-haspopup="true">
                     <a href="{{ route('pic.home.index') }}" class="menu-link ">
                         <span class="svg-icon menu-icon"><!--begin::Svg Icon | path:media/svg/icons/Design/Layers.svg-->
@@ -132,7 +132,7 @@
                 @endif
 
 {{-- Koor_Pokja_P4 --}}
-            @if ($currentUser->roles_id == 2) 
+            @if ($currentUser->roles_id == 5) 
                 <li class="menu-item {{ (strpos($page_title, 'KemenSetneg | Dashboard') !== false) ? 'menu-item-active' : '' }}" aria-haspopup="true">
                     <a href="{{ route('koor-pokja.home.index') }}" class="menu-link ">
                         <span class="svg-icon menu-icon"><!--begin::Svg Icon | path:media/svg/icons/Design/Layers.svg-->
@@ -172,7 +172,7 @@
                                 <a href="{{ route('koor-pokja.pertek.index') }}" class="menu-link "><i class="menu-bullet menu-bullet-line"><span></span></i><span class="menu-text">Pertek</span></a>
                             </li>
                             <li class="menu-item {{ (strpos($page_title, 'KemenSetneg | Inbox | RKP') !== false) ? 'menu-item-active' : '' }}" aria-haspopup="true">
-                                <a href="{{ route('koor-pokja.rkp.home') }}" class="menu-link "><i class="menu-bullet menu-bullet-line"><span></span></i><span class="menu-text">RKP</span></a>
+                                <a href="{{ route('koor-pokja.list-rkp.index') }}" class="menu-link "><i class="menu-bullet menu-bullet-line"><span></span></i><span class="menu-text">RKP</span></a>
                             </li>
                         </ul>
                     </div>
@@ -433,7 +433,7 @@
                 
 
 {{-- JF Muda Madya & Muda --}}
-            @if ($currentUser->roles_id == 3 || $currentUser->roles_id == 4) 
+            @if ($currentUser->roles_id == 15 || $currentUser->roles_id == 16) 
                 <li class="menu-item {{ (strpos($page_title, 'JF Muda Madya | Dashboard') !== false) ? 'menu-item-active' : '' }}" aria-haspopup="true">
                     <a href="{{ route('jf-ahli.home.index') }}" class="menu-link ">
                         <span class="svg-icon menu-icon"><!--begin::Svg Icon | path:media/svg/icons/Design/Layers.svg-->
@@ -538,7 +538,7 @@
             @endif
 
 {{-- Karo --}}
-            @if ($currentUser->roles_id == 5) 
+            @if ($currentUser->roles_id == 4) 
                 <li class="menu-item {{ (strpos($page_title, 'Karo | Dashboard') !== false) ? 'menu-item-active' : '' }}" aria-haspopup="true">
                     <a href="{{ route('karo.home.index') }}" class="menu-link ">
                         <span class="svg-icon menu-icon"><!--begin::Svg Icon | path:media/svg/icons/Design/Layers.svg-->
@@ -579,8 +579,122 @@
                 </li>
             @endif
 
+{{-- Deputi --}}
+            @if ($currentUser->roles_id == 3) 
+                <li class="menu-item {{ (strpos($page_title, 'Deputi | Dashboard') !== false) ? 'menu-item-active' : '' }}" aria-haspopup="true">
+                    <a href="{{ route('deputi.home.index') }}" class="menu-link ">
+                        <span class="svg-icon menu-icon"><!--begin::Svg Icon | path:media/svg/icons/Design/Layers.svg-->
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-house" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd" d="M2 13.5V7h1v6.5a.5.5 0 0 0 .5.5h9a.5.5 0 0 0 .5-.5V7h1v6.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5zm11-11V6l-2-2V2.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5z"/>
+                                <path fill-rule="evenodd" d="M7.293 1.5a1 1 0 0 1 1.414 0l6.647 6.646a.5.5 0 0 1-.708.708L8 2.207 1.354 8.854a.5.5 0 1 1-.708-.708L7.293 1.5z"/>
+                            </svg>
+                        </span>
+                        <span class="menu-text">Dashboard</span>
+                    </a>
+                </li>
+
+                <li class="menu-item  menu-item-submenu {{ (strpos(Route::currentRouteName(), 'setting') !== false) ? 'menu-item-active' : '' }}" aria-haspopup="true" data-menu-toggle="hover">
+                    <a href="{{ route('deputi.inbox.revisi') }}" class="menu-link menu-toggle">
+                        <span class="svg-icon menu-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-journal" viewBox="0 0 16 16">
+                                <path d="M3 0h10a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2v-1h1v1a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H3a1 1 0 0 0-1 1v1H1V2a2 2 0 0 1 2-2z"/>
+                                <path d="M1 5v-.5a.5.5 0 0 1 1 0V5h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1H1zm0 3v-.5a.5.5 0 0 1 1 0V8h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1H1zm0 3v-.5a.5.5 0 0 1 1 0v.5h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1H1z"/>
+                            </svg>
+                        </span>
+                        <span class="menu-text">Rancangan Keppres</span>
+                        <!-- <i class="menu-arrow"></i> -->
+                    </a>
+                    <!-- <div class="menu-submenu ">
+                        <span class="menu-arrow"></span>
+                        <ul class="menu-subnav">
+                            <li class="menu-item  menu-item-parent" aria-haspopup="true">
+                                <span class="menu-link"><span class="menu-text">Inbox</span></span>
+                            </li>
+                            <li class="menu-item {{ (strpos($page_title, 'KemenSetneg | Inbox | Pertek BKN') !== false) ? 'menu-item-active' : '' }}" aria-haspopup="true">
+                                <a href="{{ route('deputi.inbox.revisi') }}" class="menu-link "><i class="menu-bullet menu-bullet-line"><span></span></i><span class="menu-text">Rancangan Keppres</span></a>
+                            </li>
+                        </ul>
+                    </div> -->
+                </li>
+            @endif
+
+{{-- TU Kementerian --}}
+            @if ($currentUser->roles_id == 13) 
+                <li class="menu-item {{ (strpos($page_title, 'TU Kementerian | Dashboard') !== false) ? 'menu-item-active' : '' }}" aria-haspopup="true">
+                    <a href="{{ route('tu-menteri.home.index') }}" class="menu-link ">
+                        <span class="svg-icon menu-icon"><!--begin::Svg Icon | path:media/svg/icons/Design/Layers.svg-->
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-house" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd" d="M2 13.5V7h1v6.5a.5.5 0 0 0 .5.5h9a.5.5 0 0 0 .5-.5V7h1v6.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5zm11-11V6l-2-2V2.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5z"/>
+                                <path fill-rule="evenodd" d="M7.293 1.5a1 1 0 0 1 1.414 0l6.647 6.646a.5.5 0 0 1-.708.708L8 2.207 1.354 8.854a.5.5 0 1 1-.708-.708L7.293 1.5z"/>
+                            </svg>
+                        </span>
+                        <span class="menu-text">Dashboard</span>
+                    </a>
+                </li>
+
+                <li class="menu-item  menu-item-submenu {{ (strpos(Route::currentRouteName(), 'setting') !== false) ? 'menu-item-active' : '' }}" aria-haspopup="true" data-menu-toggle="hover">
+                    <a href="{{ route('tu-menteri.inbox.revisi') }}" class="menu-link menu-toggle">
+                        <span class="svg-icon menu-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-journal" viewBox="0 0 16 16">
+                                <path d="M3 0h10a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2v-1h1v1a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H3a1 1 0 0 0-1 1v1H1V2a2 2 0 0 1 2-2z"/>
+                                <path d="M1 5v-.5a.5.5 0 0 1 1 0V5h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1H1zm0 3v-.5a.5.5 0 0 1 1 0V8h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1H1zm0 3v-.5a.5.5 0 0 1 1 0v.5h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1H1z"/>
+                            </svg>
+                        </span>
+                        <span class="menu-text">Rancangan Keppres</span>
+                        <!-- <i class="menu-arrow"></i> -->
+                    </a>
+                    <!-- <div class="menu-submenu ">
+                        <span class="menu-arrow"></span>
+                        <ul class="menu-subnav">
+                            <li class="menu-item  menu-item-parent" aria-haspopup="true">
+                                <span class="menu-link"><span class="menu-text">Inbox</span></span>
+                            </li>
+                            <li class="menu-item {{ (strpos($page_title, 'KemenSetneg | Inbox | Pertek BKN') !== false) ? 'menu-item-active' : '' }}" aria-haspopup="true">
+                                <a href="{{ route('deputi.inbox.revisi') }}" class="menu-link "><i class="menu-bullet menu-bullet-line"><span></span></i><span class="menu-text">Rancangan Keppres</span></a>
+                            </li>
+                        </ul>
+                    </div> -->
+                </li>
+            @endif
+{{-- Dukmin --}}
+            @if ($currentUser->roles_id == 12) 
+                <li class="menu-item {{ (strpos($page_title, 'Dukmin | Dashboard') !== false) ? 'menu-item-active' : '' }}" aria-haspopup="true">
+                    <a href="{{ route('dukmin.home.index') }}" class="menu-link ">
+                        <span class="svg-icon menu-icon"><!--begin::Svg Icon | path:media/svg/icons/Design/Layers.svg-->
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-house" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd" d="M2 13.5V7h1v6.5a.5.5 0 0 0 .5.5h9a.5.5 0 0 0 .5-.5V7h1v6.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5zm11-11V6l-2-2V2.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5z"/>
+                                <path fill-rule="evenodd" d="M7.293 1.5a1 1 0 0 1 1.414 0l6.647 6.646a.5.5 0 0 1-.708.708L8 2.207 1.354 8.854a.5.5 0 1 1-.708-.708L7.293 1.5z"/>
+                            </svg>
+                        </span>
+                        <span class="menu-text">Dashboard</span>
+                    </a>
+                </li>
+
+                <li class="menu-item  menu-item-submenu {{ (strpos(Route::currentRouteName(), 'setting') !== false) ? 'menu-item-active' : '' }}" aria-haspopup="true" data-menu-toggle="hover">
+                    <a href="{{ route('dukmin.inbox.revisi') }}" class="menu-link menu-toggle">
+                        <span class="svg-icon menu-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-journal" viewBox="0 0 16 16">
+                                <path d="M3 0h10a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2v-1h1v1a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H3a1 1 0 0 0-1 1v1H1V2a2 2 0 0 1 2-2z"/>
+                                <path d="M1 5v-.5a.5.5 0 0 1 1 0V5h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1H1zm0 3v-.5a.5.5 0 0 1 1 0V8h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1H1zm0 3v-.5a.5.5 0 0 1 1 0v.5h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1H1z"/>
+                            </svg>
+                        </span>
+                        <span class="menu-text">Rancangan Keppres</span>
+                        <!-- <i class="menu-arrow"></i> -->
+                    </a>
+                    <!-- <div class="menu-submenu ">
+                        <span class="menu-arrow"></span>
+                        <ul class="menu-subnav">
+                            <li class="menu-item  menu-item-parent" aria-haspopup="true">
+                                <span class="menu-link"><span class="menu-text">Inbox</span></span>
+                            </li>
+                            <li class="menu-item {{ (strpos($page_title, 'KemenSetneg | Inbox | Pertek BKN') !== false) ? 'menu-item-active' : '' }}" aria-haspopup="true">
+                                <a href="{{ route('deputi.inbox.revisi') }}" class="menu-link "><i class="menu-bullet menu-bullet-line"><span></span></i><span class="menu-text">Rancangan Keppres</span></a>
+                            </li>
+                        </ul>
+                    </div> -->
+                </li>
+            @endif
             </ul>
         </div>
     </div>
-
 </div>

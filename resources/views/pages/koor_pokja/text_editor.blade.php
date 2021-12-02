@@ -24,9 +24,6 @@
                             @csrf
                                 <div class="tinymce">
                                     <input type="hidden" class="btn btn-warning font-weight-bolder text-uppercase px-9 py-4" name="v_id" value="{{ $rkp->id }}">
-                                    <input type="hidden" class="btn btn-warning font-weight-bolder text-uppercase px-9 py-4" name="v_jenis" value="{{ $rkp->id_layanan }}">
-                                    <input type="hidden" class="btn btn-warning font-weight-bolder text-uppercase px-9 py-4" name="v_nip" value="{{ $rkp->nip }}">
-                                    <input type="hidden" class="btn btn-warning font-weight-bolder text-uppercase px-9 py-4" name="v_pengirim" value="{{ $rkp->id_pengirim }}">
                                     <textarea class="description" name="description">
                                         <p><strong>Pengirim</strong> : {{$rkp->pengirim}}</p>
                                         <p><strong>Penandatangan</strong> : {{$rkp->penandatangan}}</p>
@@ -38,6 +35,15 @@
                                         @foreach ($notes as $catatans)
                                             <p><strong>Tanggal Catatan</strong> : {{$catatans->tanggal_catatan}}</p>
                                             <p><strong>Catatan</strong> : {{$catatans->catatan}}</p>
+                                        @endforeach
+                                        <br>
+                                        <br>
+                                        <h1>Data ASN</h1>
+                                        @foreach ($data_asns as $data_asn)
+                                            <p><strong>Nama</strong> : {{$data_asn->nama}}</p>
+                                            <p><strong>NIP</strong> : {{$data_asn->nip}}</p>
+                                            <p><strong>Instansi Pengusul</strong> : {{$data_asn->instansi_pengusul}}</p>
+                                            <br>
                                         @endforeach
                                     </textarea>
                                 </div>
