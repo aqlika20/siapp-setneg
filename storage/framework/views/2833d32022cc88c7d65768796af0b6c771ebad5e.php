@@ -68,15 +68,9 @@
                                         <td><?php echo e($rkp->tanggal_memo); ?></td>
                                         <td><?php echo e($rkp->hal); ?></td>
                                         <td>
-                                            <?php if($rkp->status == Helper::$verifikasi_rkp_deputi): ?>
-                                            <a href="<?php echo e(route('dukmin.inbox.detail.pertek', ['id' => $rkp->id])); ?>" type="button" class="btn btn-success btn-xs">
-												Detail
-											</a>
-                                            <?php elseif($rkp->status == Helper::$verifikasi_rkp_tu_kementerian): ?>
-                                            <a href="<?php echo e(route('dukmin.inbox.keppres-maju', ['id' => $rkp->id])); ?>" type="button" class="btn btn-success btn-xs">
+                                            <a href="<?php echo e(route('dukmin.inbox.keppres-turun', ['id' => $rkp->id])); ?>" type="button" class="btn btn-success btn-xs">
 											    Keppres Maju
 											</a>
-                                            <?php endif; ?>
                                         </td>
                                     </tr>
                                 <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>

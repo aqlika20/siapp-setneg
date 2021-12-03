@@ -37,9 +37,7 @@ class PertekBKNController extends Controller
         $page_title = 'Dukmin  | Rancangan Keppres';
         $page_description = 'Rancangan Keppres';
         $rkps = RKP::where([
-            ['status', '=', Helper::$verifikasi_rkp_deputi]
-        ])->orwhere([
-            ['status', '=', Helper::$verifikasi_rkp_tu_kementerian],
+            ['status', '=', Helper::$keppres_Maju]
         ])->get();
         return view('pages.dukmin.inbox.pertek_bkn', compact('page_title', 'page_description', 'currentUser', 'rkps'));
     }

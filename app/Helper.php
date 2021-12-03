@@ -209,6 +209,7 @@ class Helper {
      public static $verifikasi_rkp_deputi = 30;
      public static $verifikasi_rkp_tu_kementerian = 31;
      public static $keppres_Maju = 32;
+     public static $keppres_Turun = 33;
 
     public static function defineStatusBy($type)
     {
@@ -342,6 +343,10 @@ class Helper {
                 $status = 'Keppres Maju';
                 break;
             
+            case '33':
+                $status = 'Keppres Turun';
+                break;
+            
             case '0':
                 $status = 'Terima Pertek BKN';
                 break;
@@ -386,6 +391,11 @@ class Helper {
 
     public static function convertDatetoDB($date){
         $date = date('y-m-d', strtotime($date));
+        return $date;
+    }
+    
+    public static function converttanggal($date){
+        $date = date('d-M-Y', strtotime($date));
         return $date;
     }
 

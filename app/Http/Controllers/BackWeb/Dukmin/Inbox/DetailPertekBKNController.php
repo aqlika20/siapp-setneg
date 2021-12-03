@@ -27,9 +27,13 @@ use Carbon\Carbon;
 class DetailPertekBKNController extends Controller
 {
     private $curr_int_time;
+    private $attachments_root_folder = "File_Keppres_Turun/";
+    private $file_keppres_folder;
 
+    
     public function __construct()
     {
+        $this->file_keppres_folder = $this->attachments_root_folder . "file_keppres/";
         $this->curr_int_time = strtotime(Carbon::now());
         $this->middleware('auth');
         
@@ -59,35 +63,14 @@ class DetailPertekBKNController extends Controller
             
         $notes = [];
         $notes = Catatan::where([
-            ['id_rkp', '=', $rkps->id], ['id_status', '=', Helper::$verifikasi_rkp_deputi]
+            ['id_rkp', '=', $rkps->id], ['id_status', '=', Helper::$keppres_Maju]
         ])->get();
         // dd($surats);
 
         return view('pages.dukmin.inbox.detail_pertek_bkn', compact('page_title', 'page_description', 'currentUser', 'rkps', 'notes', 'surats'));
     }
 
-    public function store(Request $request) 
-    {
-        $input = $request->all();
-        // $id_catatan = $input['v_id_catatan'];
-        $id_surat = $input['v_id_surat'];
-        $id_rkp = $input['v_id_rkp'];
-
-        $rkp = RKP::where('id', '=', $id_rkp)->update(
-            ['status' => Helper::$verifikasi_rkp_tu_kementerian]
-        );
-
-        $surat = Surat::where('id', '=', $id_surat)->update(
-            ['status' => Helper::$verifikasi_rkp_tu_kementerian]
-        );
-
-        // $catatan = Catatan::where('id', '=', $id_catatan)->update(
-        //     ['id_status' => Helper::$verifikasi_rkp_tu_kementerian]
-        // );
-        return redirect()->route('dukmin.inbox.revisi')->with(['success'=>'verifikasi Success !!!']);
-    }
-
-    public function keppres_maju($id)
+    public function keppres_turun($id)
     {
         $currentUser = UserManagement::find(Auth::id());
         $page_title = 'Dukmin | Keppres Maju';
@@ -95,7 +78,7 @@ class DetailPertekBKNController extends Controller
 
         $rkps = RKP::where('id', $id)->first();
 
-        return view('pages.dukmin.inbox.keppres_maju', compact('page_title', 'page_description', 'currentUser', 'rkps'));
+        return view('pages.dukmin.inbox.keppres_turun', compact('page_title', 'page_description', 'currentUser', 'rkps'));
     }
 
     public function keppres_store(Request $request) 
@@ -104,7 +87,10 @@ class DetailPertekBKNController extends Controller
         $id_rkp = $input['v_id_rkp'];
 
         $validator = Validator::make($input, [
-            'tanggal_keppres_maju' => 'required'
+            'no_keppres' => 'required',
+            'tanggal_keppres_turun' => 'required',
+            'file_keppres.*' => 'required|max:5000|mimes:pdf'
+
         ]);
 
         if ($validator->fails()) {
@@ -122,9 +108,24 @@ class DetailPertekBKNController extends Controller
         }
 
         $rkp = RKP::where('id', '=', $id_rkp)->update([
-            'tanggal_keppres_maju' =>  Helper::convertDatetoDB($input['tanggal_keppres_maju']),
-            'status' => Helper::$keppres_Maju
+            'no_keppres' =>  $input['no_keppres'],
+            'tanggal_keppres_turun' =>  Helper::convertDatetoDB($input['tanggal_keppres_turun']),
+            'status' => Helper::$keppres_Turun
         ]);
+
+        if($request->has('file_keppres')){
+            $files = [];
+            foreach ($request->file('file_keppres') as $file) {
+                // $filename = $file->getClientOriginalName(). ' - ' .$input['nip'];. ' - ' .Helper::$pengangkatan_pejabat_FKU;
+                $filename = $file->getClientOriginalName(). ' - ' .$input['no_keppres'];
+                Storage::putFileAs($this->file_keppres_folder, $file, $filename);
+                $files[] = $filename;
+            }
+            $rkps = RKP::where('id', '=', $id_rkp)->first();
+            $rkps->file_keppres = $files;
+        }
+        $rkps->save();
+
 
         return redirect()->route('dukmin.inbox.revisi')->with(['success'=>'verifikasi Success !!!']);
     }

@@ -30,7 +30,7 @@
                                             <!--begin::Input-->
                                             <input type="hidden" class="btn btn-warning font-weight-bolder text-uppercase px-9 py-4" name="v_id_rkp" value="{{ $rkps->id }}">
                                             <div class="form-group row">
-                                                <label class="col-form-label text-right col-lg-3 col-sm-12">No Memo RKP</label>
+                                                <label class="col-form-label col-lg-3 col-sm-12">No Memo RKP</label>
                                                 <div class="col-lg-9 col-md-9 col-sm-12">
                                                     <div class="input-group date">
                                                         <input type="text" class="form-control" value="{{ $rkps->no_memo_rkp }}" disabled/>
@@ -39,7 +39,7 @@
                                             </div>
                                             
                                             <div class="form-group row">
-                                                <label class="col-form-label text-right col-lg-3 col-sm-12">Perihal</label>
+                                                <label class="col-form-label col-lg-3 col-sm-12">Perihal</label>
                                                 <div class="col-lg-9 col-md-9 col-sm-12">
                                                     <div class="input-group date">
                                                         <input type="text" class="form-control" value="{{ $rkps->hal }}" disabled/>
@@ -48,7 +48,7 @@
                                             </div>
 
                                             <div class="form-group row">
-                                                <label class="col-form-label text-right col-lg-3 col-sm-12">Tanggal Keppres Maju</label>
+                                                <label class="col-form-label col-lg-3 col-sm-12">Tanggal Keppres Maju</label>
                                                 <div class="col-lg-5 col-md-9 col-sm-12">
                                                     <div class="input-group date">
                                                         <input type="text" class="form-control datetimepicker-input my-datepicker" id="tanggal_keppres_maju" name="tanggal_keppres_maju" data-toggle="datetimepicker" data-target="#tanggal_keppres_maju" placeholder="Pilih Tanggal" value="{{old('tanggal_keppres_maju')}}" autocomplete="off" required/>

@@ -787,8 +787,8 @@ Route::group(['middleware' => ['auth', 'checkRole:12']], function() {
             Route::get('/detail-rancangan-keppres/{id}', 'BackWeb\Dukmin\Inbox\DetailPertekBKNController@index')->name('dukmin.inbox.detail.pertek');
             Route::post('/detail-rancangan-keppres/verif', 'BackWeb\Dukmin\Inbox\DetailPertekBKNController@store')->name('dukmin.inbox.detail.pertek.store');
 
-            Route::get('/keppres-maju/{id}', 'BackWeb\Dukmin\Inbox\DetailPertekBKNController@keppres_maju')->name('dukmin.inbox.keppres-maju');
-            Route::post('/keppres-maju/verif', 'BackWeb\Dukmin\Inbox\DetailPertekBKNController@keppres_store')->name('dukmin.inbox.keppres-store');
+            Route::get('/keppres-turun/{id}', 'BackWeb\Dukmin\Inbox\DetailPertekBKNController@keppres_turun')->name('dukmin.inbox.keppres-turun');
+            Route::patch('/keppres-turun/verif', 'BackWeb\Dukmin\Inbox\DetailPertekBKNController@keppres_store')->name('dukmin.inbox.keppres-store');
         });
 
     });

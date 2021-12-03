@@ -68,15 +68,9 @@
                                         <td>{{ $rkp->tanggal_memo }}</td>
                                         <td>{{ $rkp->hal }}</td>
                                         <td>
-                                            @if($rkp->status == Helper::$verifikasi_rkp_deputi)
-                                            <a href="{{route('dukmin.inbox.detail.pertek', ['id' => $rkp->id])}}" type="button" class="btn btn-success btn-xs">
-												Detail
-											</a>
-                                            @elseif($rkp->status == Helper::$verifikasi_rkp_tu_kementerian)
-                                            <a href="{{route('dukmin.inbox.keppres-maju', ['id' => $rkp->id])}}" type="button" class="btn btn-success btn-xs">
+                                            <a href="{{route('dukmin.inbox.keppres-turun', ['id' => $rkp->id])}}" type="button" class="btn btn-success btn-xs">
 											    Keppres Maju
 											</a>
-                                            @endif
                                         </td>
                                     </tr>
                                 @endforeach
