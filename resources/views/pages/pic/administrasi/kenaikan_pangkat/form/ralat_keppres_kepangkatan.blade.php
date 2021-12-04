@@ -94,6 +94,30 @@
                                                     <span class="form-text text-muted">Max file size is 1MB and max number of files is 5.</span>
                                                 </div>
                                             </div>
+
+                                            <div class="form-group row">
+                                                <label class="col-form-label col-lg-3 col-sm-12"></label>
+                                                <div class="col-lg-9 col-md-9 col-sm-12">
+                                                    <div style="margin-bottom:10px;">
+                                                        <label class="checkbox checkbox-outline checkbox-outline-2x checkbox-primary">
+                                                            <input type="checkbox" id="checked_file_surat_permohonan" disabled/>
+                                                            <span></span><div style="margin-left: 10px;">File Surat Permohonan</div>
+                                                        </label>
+                                                    </div>
+                                                    <div style="margin-bottom:10px;">
+                                                        <label class="checkbox checkbox-outline checkbox-outline-2x checkbox-primary">
+                                                            <input type="checkbox" id="checked_file_dokumen_klarifikasi" disabled/>
+                                                            <span></span><div style="margin-left: 10px;">File Dokumen Klarifikasi</div>
+                                                        </label>
+                                                    </div>
+                                                    <div style="margin-bottom:10px;">
+                                                        <label class="checkbox checkbox-outline checkbox-outline-2x checkbox-primary">
+                                                            <input type="checkbox" id="checked_file_fotokopi_sk_diperbaiki" disabled/>
+                                                            <span></span><div style="margin-left: 10px;">File Fotokopi SK Yang Diperbaiki</div>
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </div>
                                             <!--end::Input-->
                                             
                                         </div>
@@ -179,6 +203,34 @@
             return new_date;
         }
 
+        $(document).ready(function () {
+        $("#file_surat_permohonan").on("change", function () {
+
+        if ($('#file_surat_permohonan')[0].files.length != 0) {
+            $("#checked_file_surat_permohonan").attr('checked', true);
+        } else {
+            $("#checked_file_surat_permohonan").attr('checked',false);
+        }
+        });
+
+        $("#file_dokumen_klarifikasi").on("change", function () {
+
+        if ($('#file_dokumen_klarifikasi')[0].files.length != 0) {
+            $("#checked_file_dokumen_klarifikasi").attr('checked', true);
+        } else {
+            $("#checked_file_dokumen_klarifikasi").attr('checked',false);
+        }
+        });
+
+        $("#file_fotokopi_sk_diperbaiki").on("change", function () {
+
+        if ($('#file_fotokopi_sk_diperbaiki')[0].files.length != 0) {
+            $("#checked_file_fotokopi_sk_diperbaiki").attr('checked', true);
+        } else {
+            $("#checked_file_fotokopi_sk_diperbaiki").attr('checked',false);
+        }
+        });
+    });
 
 
         $('#masa_jabatan_start').on('change.datetimepicker', function(e) {

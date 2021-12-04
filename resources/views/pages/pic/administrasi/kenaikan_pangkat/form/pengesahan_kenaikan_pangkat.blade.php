@@ -113,6 +113,30 @@
                                                     <span class="form-text text-muted">Max file size is 1MB and max number of files is 5.</span>
                                                 </div>
                                             </div>
+
+                                            <div class="form-group row">
+                                                <label class="col-form-label col-lg-3 col-sm-12"></label>
+                                                <div class="col-lg-9 col-md-9 col-sm-12">
+                                                    <div style="margin-bottom:10px;">
+                                                        <label class="checkbox checkbox-outline checkbox-outline-2x checkbox-primary">
+                                                            <input type="checkbox" id="checked_file_surat_kehilangan" disabled/>
+                                                            <span></span><div style="margin-left: 10px;">File Surat Keterangan Kehilangan Dari Polisi</div>
+                                                        </label>
+                                                    </div>
+                                                    <div style="margin-bottom:10px;">
+                                                        <label class="checkbox checkbox-outline checkbox-outline-2x checkbox-primary">
+                                                            <input type="checkbox" id="checked_file_fotokopi_sk_hilang" disabled/>
+                                                            <span></span><div style="margin-left: 10px;">File Fotokopi SK Yang Hilang/Rusak</div>
+                                                        </label>
+                                                    </div>
+                                                    <div style="margin-bottom:10px;">
+                                                        <label class="checkbox checkbox-outline checkbox-outline-2x checkbox-primary">
+                                                            <input type="checkbox" id="checked_file_surat_permohonan" disabled/>
+                                                            <span></span><div style="margin-left: 10px;">File Surat Permohonan</div>
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </div>
                                 
                                         </div>
 
@@ -265,6 +289,36 @@
                 return false;
             }   
         }
+
+        $(document).ready(function () {
+        $("#file_surat_kehilangan").on("change", function () {
+
+        if ($('#file_surat_kehilangan')[0].files.length != 0) {
+            $("#checked_file_surat_kehilangan").attr('checked', true);
+        } else {
+            $("#checked_file_surat_kehilangan").attr('checked',false);
+        }
+        });
+
+        $("#file_fotokopi_sk_hilang").on("change", function () {
+
+        if ($('#file_fotokopi_sk_hilang')[0].files.length != 0) {
+            $("#checked_file_fotokopi_sk_hilang").attr('checked', true);
+        } else {
+            $("#checked_file_fotokopi_sk_hilang").attr('checked',false);
+        }
+        });
+
+        $("#file_surat_permohonan").on("change", function () {
+
+        if ($('#file_surat_permohonan')[0].files.length != 0) {
+            $("#checked_file_surat_permohonan").attr('checked', true);
+        } else {
+            $("#checked_file_surat_permohonan").attr('checked',false);
+        }
+        });
+        
+    });
 
     </script>
     <script>

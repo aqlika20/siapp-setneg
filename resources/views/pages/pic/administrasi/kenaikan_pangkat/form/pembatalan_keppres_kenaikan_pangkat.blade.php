@@ -111,6 +111,31 @@
                                                 </div>
                                             </div>
 
+                                            <div class="form-group row">
+                                                <label class="col-form-label col-lg-3 col-sm-12"></label>
+                                                <div class="col-lg-9 col-md-9 col-sm-12">
+                                                    <div style="margin-bottom:10px;">
+                                                        <label class="checkbox checkbox-outline checkbox-outline-2x checkbox-primary">
+                                                            <input type="checkbox" id="checked_file_surat_permohonan" disabled/>
+                                                            <span></span><div style="margin-left: 10px;">File Surat Permohonan</div>
+                                                        </label>
+                                                    </div>
+                                                    <div style="margin-bottom:10px;">
+                                                        <label class="checkbox checkbox-outline checkbox-outline-2x checkbox-primary">
+                                                            <input type="checkbox" id="checked_file_keppres_dibatalkan" disabled/>
+                                                            <span></span><div style="margin-left: 10px;">File Keppres Yang Dibatalkan</div>
+                                                        </label>
+                                                    </div>
+                                                    <div style="margin-bottom:10px;">
+                                                        <label class="checkbox checkbox-outline checkbox-outline-2x checkbox-primary">
+                                                            <input type="checkbox" id="checked_file_alasan" disabled/>
+                                                            <span></span><div style="margin-left: 10px;">File Upload Akta Meninggal Dunia / Alasan Terkait Dengan Jabatan / Lainnya</div>
+                                                        </label>
+                                                    </div>
+                                                   
+                                                </div>
+                                            </div>
+
                                             <!--end::Input-->                                            
                                         </div>
                                         <!--end: Wizard Step 1-->                                      
@@ -205,6 +230,36 @@
             }
         });
         $("#otherAlasanPembatalan").trigger("change");
+
+        $(document).ready(function () {
+        $("#file_surat_permohonan").on("change", function () {
+
+        if ($('#file_surat_permohonan')[0].files.length != 0) {
+            $("#checked_file_surat_permohonan").attr('checked', true);
+        } else {
+            $("#checked_file_surat_permohonan").attr('checked',false);
+        }
+        });
+
+        $("#file_keppres_dibatalkan").on("change", function () {
+
+        if ($('#file_keppres_dibatalkan')[0].files.length != 0) {
+            $("#checked_file_keppres_dibatalkan").attr('checked', true);
+        } else {
+            $("#checked_file_keppres_dibatalkan").attr('checked',false);
+        }
+        });
+
+        $("#file_alasan").on("change", function () {
+
+        if ($('#file_alasan')[0].files.length != 0) {
+            $("#checked_file_alasan").attr('checked', true);
+        } else {
+            $("#checked_file_alasan").attr('checked',false);
+        }
+        });
+        
+    });
 
 
 
