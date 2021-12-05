@@ -64,7 +64,9 @@ class PembatalanKeppresKenaikanPangkatController extends Controller
         ]);
 
         if ($validator->fails()) {
-            return redirect()->back()->with(['error' => $validator->errors()])->withInput($input);
+            // return redirect()->back()->with(['error' => $validator->errors()])->withInput($input);
+            return redirect()->back()->withErrors($validator)->withInput();
+
         }
 
         $pengangkatans = KenaikanPangkat::create([
