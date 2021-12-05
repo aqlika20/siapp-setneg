@@ -39,7 +39,7 @@
                                             <h4 class="mb-10 font-weight-bold text-dark">Data Surat</h4>
                                             <!--begin::Input-->
                                             <div class="form-group row">
-                                                <label class="col-form-label col-lg-3 col-sm-12">Tanggal Surat Pengantar</label>
+                                                <label class="col-form-label col-lg-3 col-sm-12">Tanggal Surat Pengantar <a style="color: #FF0000;">*</a></label>
                                                 <div class="col-lg-5 col-md-9 col-sm-12">
                                                     <div class="input-group date">
                                                         <input type="text" class="form-control datetimepicker-input my-datepicker" id="tanggal_surat_pengantar" name="tanggal_surat_pengantar" data-toggle="datetimepicker" data-target="#tanggal_surat_pengantar" placeholder="Pilih Tanggal" value="{{old('tanggal_surat_pengantar')}}" required/>
@@ -52,7 +52,7 @@
                                                 </div>
                                             </div>
                                             <div class="form-group row">
-                                                <label class="col-form-label col-lg-3 col-sm-12">No. Surat Pengantar</label>
+                                                <label class="col-form-label col-lg-3 col-sm-12">No. Surat Pengantar <a style="color: #FF0000;">*</a></label>
                                                 <div class="col-lg-9 col-md-9 col-sm-12">
                                                     <div class="input-group">
                                                         <input type="text" class="form-control" id="no_surat_pengantar" name="no_surat_pengantar" value="{{old('no_surat_pengantar')}}" autocomplete="off" required/>
@@ -60,7 +60,7 @@
                                                 </div>
                                             </div>
                                             <div class="form-group row">
-                                                <label class="col-lg-3 col-form-label">Upload Surat Pengantar</label>
+                                                <label class="col-lg-3 col-form-label">Upload Surat Pengantar <a style="color: #FF0000;">*</a></label>
                                                 <div class="col-lg-9">
                                                     <input id="file_surat_pengantar" name="file_surat_pengantar[]" type="file" class="file" data-show-preview="false" multiple/>
                                                     
@@ -109,7 +109,7 @@
                                         <div class="pb-6" style="margin-left: 50px; margin-right: 50px;" data-wizard-type="step-content">
                                             <!--begin::Input-->
                                             <div class="form-group row">
-                                                <label class="col-form-label col-lg-3 col-sm-12">Jabatan lainnya yang akan diisi</label>
+                                                <label class="col-form-label col-lg-3 col-sm-12">Jabatan lainnya yang akan diisi <a style="color: #FF0000;">*</a></label>
                                                 <div class="col-lg-9 col-md-9 col-sm-12">
                                                     <div class="input-group date">
                                                         <input type="text" class="form-control" id="jabatan_lainnya" name="jabatan_lainnya" value="{{old('jabatan_lainnya')}}" autocomplete="off" required/>
@@ -119,7 +119,7 @@
                                             <!--end::Input-->
                                             <!--begin::Input-->
                                             <div class="form-group row">
-                                                <label class="col-form-label col-lg-3 col-sm-12">Formasi</label>
+                                                <label class="col-form-label col-lg-3 col-sm-12">Formasi <a style="color: #FF0000;">*</a></label>
                                                 <div class="col-lg-9 col-md-9 col-sm-12">
                                                     <div class="input-group date">
                                                         <input type="text" class="form-control" id="formasi" name="formasi" value="{{old('formasi')}}" autocomplete="off" required/>
@@ -129,7 +129,7 @@
                                             <!--end::Input-->
                                             <!--begin::Input-->
                                             <div class="form-group row">
-                                                <label class="col-form-label col-lg-3 col-sm-12">Formasi Terisi</label>
+                                                <label class="col-form-label col-lg-3 col-sm-12">Formasi Terisi <a style="color: #FF0000;">*</a></label>
                                                 <div class="col-lg-4 col-md-9 col-sm-12">
                                                     <div class="input-group date">
                                                         <input type="text" class="form-control" id="formasi_terisi_start" name="formasi_terisi_start" value="{{old('formasi_terisi_start')}}" autocomplete="off" required/>
@@ -137,7 +137,7 @@
                                                     <span class="form-text text-muted">Masks 5.</span>
                                                 </div>
                                                 <div>
-                                                    <label class="col-form-label">Sisa Formasi</label>
+                                                    <label class="col-form-label">Sisa Formasi <a style="color: #FF0000;">*</a></label>
                                                 </div>
                                                 <div class="col-lg-4 col-md-9 col-sm-12">
                                                     <div class="input-group date">
@@ -148,7 +148,7 @@
                                             <!--end::Input-->
                                             <!--begin::Input-->
                                             <div class="form-group row">
-                                                <label class="col-form-label col-lg-3 col-sm-12">Instansi</label>
+                                                <label class="col-form-label col-lg-3 col-sm-12">Instansi <a style="color: #FF0000;">*</a></label>
                                                 <div class="col-lg-9 col-md-9 col-sm-12">
                                                     <div class="input-group date">
                                                         <input type="text" onkeydown="return /[a-zA-Z0-9\s]+/i.test(event.key)" class="form-control" id="instansi" name="instansi" value="{{old('instansi')}}" autocomplete="off" required/>
@@ -158,7 +158,7 @@
                                             <!--end::Input-->
                                             <!--begin::Input-->
                                             <div class="form-group row">
-                                                <label class="col-form-label col-lg-3 col-sm-12">Nama</label>
+                                                <label class="col-form-label col-lg-3 col-sm-12">Nama <a style="color: #FF0000;">*</a></label>
                                                 <div class="col-lg-9 col-md-9 col-sm-12">
                                                     <div class="input-group date">
                                                         <input type="text" onkeydown="return /[a-zA-Z0-9\s]+/i.test(event.key)" class="form-control" id="nama" name="nama" value="{{old('nama')}}" autocomplete="off" required/>
@@ -168,7 +168,7 @@
                                             <!--end::Input-->
                                             <!--begin::Input-->
                                             <div class="form-group row">
-                                                <label class="col-form-label col-lg-3 col-sm-12">Jabatan Yang Akan di Angkat</label>
+                                                <label class="col-form-label col-lg-3 col-sm-12">Jabatan Yang Akan di Angkat <a style="color: #FF0000;">*</a></label>
                                                 <div class="col-lg-9 col-md-9 col-sm-12">
                                                     <select class="form-control select2" style="width: 230px;" id="jabatan" name="jabatan">
                                                         <option value="">Choose</option>
@@ -188,7 +188,7 @@
                                             </div>
                                             <!--end::Input--><!--begin::Input-->
                                             <div class="form-group row">
-                                                <label class="col-lg-3 col-form-label">Upload DRH</label>
+                                                <label class="col-lg-3 col-form-label">Upload DRH <a style="color: #FF0000;">*</a></label>
                                                 <div class="col-lg-9">
                                                     <input id="file_dhr" name="file_dhr[]" type="file" class="file" data-show-preview="false" multiple/>
                                                     
@@ -231,7 +231,7 @@
                                             <!--end::Input-->
                                             <!--begin::Input-->
                                             <div class="form-group row">
-                                                <label class="col-lg-3 col-form-label">Upload Dokumen Lainnya</label>
+                                                <label class="col-lg-3 col-form-label">Upload Dokumen Lainnya <a style="color: #FF0000;">*</a></label>
                                                 <div class="col-lg-9">
                                                     <input id="file_dukumen_lain_pengangkatan_jabatan_lain" name="file_dukumen_lain_pengangkatan_jabatan_lain[]" type="file" class="file" data-show-preview="false" multiple/>
                                                     
@@ -275,12 +275,12 @@
                                         </div>
                                         <!--end: Wizard Step 2-->
 
-                                         <!--begin: Wizard Step 3-->
-                                         <div class="pb-6" style="margin-left: 50px; margin-right: 50px;" data-wizard-type="step-content">
+                                        <!--begin: Wizard Step 3-->
+                                        <div class="pb-6" style="margin-left: 50px; margin-right: 50px;" data-wizard-type="step-content">
                                             <h4 class="mb-10 font-weight-bold text-dark">Surat persetujuan Presiden</h4>
                                             <!--begin::Input-->
                                             <div class="form-group row">
-                                                <label class="col-form-label col-lg-3 col-sm-12">No Surat Persetujuan</label>
+                                                <label class="col-form-label col-lg-3 col-sm-12">No Surat Persetujuan <a style="color: #FF0000;">*</a></label>
                                                 <div class="col-lg-9 col-md-9 col-sm-12">
                                                     <div class="input-group date">
                                                         <input type="text" class="form-control" id="no_surat_persetujuan" name="no_surat_persetujuan" value="{{old('no_surat_persetujuan')}}" autocomplete="off" required/>
@@ -290,7 +290,7 @@
                                             <!--end::Input-->
                                             <!--begin::Input-->
                                             <div class="form-group row">
-                                                <label class="col-form-label col-lg-3 col-sm-12">Tanggal Surat Persetujuan</label>
+                                                <label class="col-form-label col-lg-3 col-sm-12">Tanggal Surat Persetujuan <a style="color: #FF0000;">*</a></label>
                                                 <div class="col-lg-5 col-md-9 col-sm-12">
                                                     <div class="input-group date">
                                                         <input type="text" class="form-control datetimepicker-input my-datepicker" id="tanggal_surat_persetujuan" name="tanggal_surat_persetujuan" data-toggle="datetimepicker" data-target="#tanggal_surat_persetujuan" placeholder="Pilih Tanggal" value="{{old('tanggal_surat_persetujuan')}}" required/>
@@ -305,7 +305,7 @@
                                             <!--end::Input-->
                                             <!--begin::Input-->
                                             <div class="form-group row">
-                                                <label class="col-form-label col-lg-3 col-sm-12">Kepada Sdr. Menteri</label>
+                                                <label class="col-form-label col-lg-3 col-sm-12">Kepada Sdr. Menteri <a style="color: #FF0000;">*</a></label>
                                                 <div class="col-lg-9 col-md-9 col-sm-12">
                                                     <div class="input-group date">
                                                     <input type="text" onkeydown="return /[a-zA-Z0-9\s]+/i.test(event.key)" class="form-control" id="kepada_menteri" name="kepada_menteri" value="{{old('kepada_menteri')}}" autocomplete="off" required/>
@@ -316,7 +316,7 @@
                                             <!--end::Input-->
                                             <!--begin::Input-->
                                             <div class="form-group row">
-                                                <label class="col-form-label col-lg-3 col-sm-12">Nama Staff Khusus Yang Disetujui</label>
+                                                <label class="col-form-label col-lg-3 col-sm-12">Nama Staff Khusus Yang Disetujui <a style="color: #FF0000;">*</a></label>
                                                 <div class="col-lg-9 col-md-9 col-sm-12">
                                                     <div class="input-group date">
                                                         <input type="text" onkeydown="return /[a-zA-Z0-9\s]+/i.test(event.key)" class="form-control" id="nama_staff_khusus" name="nama_staff_khusus" value="{{old('nama_staff_khusus')}}" autocomplete="off" required/>
@@ -324,6 +324,29 @@
                                                 </div>
                                             </div>
                                             <!--end::Input-->
+                                            <div class="form-group row">
+                                                <label class="col-form-label col-lg-3 col-sm-12"></label>
+                                                <div class="col-lg-9 col-md-9 col-sm-12">
+                                                    <div style="margin-bottom:10px;">
+                                                        <label class="checkbox checkbox-outline checkbox-outline-2x checkbox-primary">
+                                                            <input type="checkbox" id="checked_file_surat_pengantar" disabled/>
+                                                            <span></span><div style="margin-left: 10px;">File Surat Pengantar</div>
+                                                        </label>
+                                                    </div>
+                                                    <div style="margin-bottom:10px;">
+                                                        <label class="checkbox checkbox-outline checkbox-outline-2x checkbox-primary">
+                                                            <input type="checkbox" id="checked_file_dhr" disabled/>
+                                                            <span></span><div style="margin-left: 10px;">File DRH</div>
+                                                        </label>
+                                                    </div>
+                                                    <div style="margin-bottom:10px;">
+                                                        <label class="checkbox checkbox-outline checkbox-outline-2x checkbox-primary">
+                                                            <input type="checkbox" id="checked_file_dukumen_lain_pengangkatan_jabatan_lain" disabled/>
+                                                            <span></span><div style="margin-left: 10px;">File Dokumen Lainnya</div>
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
                                         <!--end: Wizard Step 3-->
 
@@ -369,6 +392,34 @@
 {{-- Scripts Section --}}
 @section('scripts')
     <script>
+        $(document).ready(function () {
+            $("#file_surat_pengantar").on("change", function () {
+                if ($('#file_surat_pengantar')[0].files.length != 0) {
+                    $("#checked_file_surat_pengantar").attr('checked', true);
+                } else {
+                    $("#checked_file_surat_pengantar").attr('checked',false);
+                }
+            });
+
+            $("#file_dhr").on("change", function () {
+                if ($('#file_dhr')[0].files.length != 0) {
+                    $("#checked_file_dhr").attr('checked', true);
+                } else {
+                    $("#checked_file_dhr").attr('checked',false);
+                }
+            });
+
+            $("#file_dukumen_lain_pengangkatan_jabatan_lain").on("change", function () {
+                if ($('#file_dukumen_lain_pengangkatan_jabatan_lain')[0].files.length != 0) {
+                    $("#checked_file_dukumen_lain_pengangkatan_jabatan_lain").attr('checked', true);
+                } else {
+                    $("#checked_file_dukumen_lain_pengangkatan_jabatan_lain").attr('checked',false);
+                }
+            });
+
+        });
+
+
         $('.my-datepicker').datetimepicker({
             useCurrent:false,
             format: 'DD-MMM-YYYY'

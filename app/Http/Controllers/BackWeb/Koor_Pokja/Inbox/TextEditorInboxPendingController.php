@@ -52,17 +52,7 @@ class TextEditorInboxPendingController extends Controller
         ]);
 
         if ($validator->fails()) {
-                // dd($validator->messages()->getMessages());
-            foreach($validator->messages()->getMessages() as $messages) {
-                
-                $e_name = [];
-                // Go through each message for this field.
-                foreach($messages as $message) {
-                    $e_name = $message;
-                }
-                // dd($e_name);
-                return redirect()->back()->with(['error' => $e_name]);
-            }
+            return redirect()->back()->withErrors($validator)->withInput();
         }
 
         $pengangkatans = Surat::create([
@@ -89,17 +79,7 @@ class TextEditorInboxPendingController extends Controller
         ]);
 
         if ($validator->fails()) {
-                // dd($validator->messages()->getMessages());
-            foreach($validator->messages()->getMessages() as $messages) {
-                
-                $e_name = [];
-                // Go through each message for this field.
-                foreach($messages as $message) {
-                    $e_name = $message;
-                }
-                // dd($e_name);
-                return redirect()->back()->with(['error' => $e_name]);
-            }
+            return redirect()->back()->withErrors($validator)->withInput();
         }
 
         $pengangkatans = Surat::create([

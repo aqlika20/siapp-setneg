@@ -77,10 +77,10 @@
                                                 <label class="col-form-label col-lg-3 col-sm-12">Periode Kenaikan Pangkat</label>
                                                 <div class="col-lg-4 col-md-9 col-sm-12">
                                                     <div class="input-group date">
-                                                        <select class="form-control" style="width: 230px;" id="masa_periode_start" name="masa_periode_start">
+                                                        <select class="form-control" style="width: 230px;" id="req_masa_periode_start" name="req_masa_periode_start" onchange="myFunction(event)">
                                                             <option value="" disabled selected>Choose</option>
-                                                                <option value="1">April</option>
-                                                                <option value="1">Oktober</option>
+                                                                <option value="April">April</option>
+                                                                <option value="Oktober">Oktober</option>
                                                         </select>
                                                         <div class="input-group-append">
                                                         </span>
@@ -93,11 +93,7 @@
                                                 </div>
                                                 <div class="col-lg-4 col-md-9 col-sm-12">
                                                     <div class="input-group date">
-                                                        <select class="form-control" style="width: 230px;" id="masa_periode_end" name="masa_periode_end">
-                                                            <option value="" disabled selected>Choose</option>
-                                                                <option value="1">29 Februari</option>
-                                                                <option value="2">31 Agustus</option>
-                                                        </select>
+                                                        <input class="form-control" style="width: 230px;" type="text" id="req_masa_periode_end" name="req_masa_periode_end" value="" readonly />
                                                         <div class="input-group-append">
                                                         </span>
                                                         </div>
@@ -195,7 +191,7 @@
                                                     <select class="form-control select2" style="width: 230px;" id="pangkat_gol" name="pangkat_gol">
                                                         <option value="">Choose</option>
                                                         <?php $__currentLoopData = $pangkats; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $pangkat): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                                                            <option value="<?php echo e($pangkat->id); ?>" <?php echo e(old('pangkat_gol') == $pangkat->id ? 'selected' : ''); ?>><?php echo e($pangkat->golongan); ?> | <?php echo e($pangkat->ruang); ?></option>
+                                                        <option value="<?php echo e($pangkat->id); ?>" <?php echo e(old('pangkat_gol_baru') == $pangkat->id ? 'selected' : ''); ?>><?php echo e($pangkat->name); ?> (<?php echo e($pangkat->golongan); ?>/<?php echo e($pangkat->ruang); ?>)</option>
                                                         <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                                                     </select>
                                                     <!-- <div class="input-group date">
@@ -238,58 +234,18 @@
                                                 <label class="col-form-label col-lg-3 col-sm-12">Masa Kerja Golongan</label>
                                                 <div class="col-lg-5 col-md-9 col-sm-12">
                                                     <div class="input-group date">
-                                                        <input type="text" class="form-control" id="masa_kerja_gol_tahun" name="masa_kerja_gol_tahun" value="<?php echo e(old('masa_kerja_gol_tahun')); ?>" autocomplete="off" required/>
+                                                        <input type="text" class="form-control" id="masa_kerja_gol_tahun" name="masa_kerja_gol_tahun" value="<?php echo e(old('masa_kerja_gol_tahun')); ?>" autocomplete="off" required readonly/>
                                                         <label class="col-form-label text-left col-lg-3 col-sm-12">Tahun</label>
 
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="form-group row">
-                                                <label class="col-form-label col-lg-3 col-sm-12"></label>
-                                                <div class="col-lg-5 col-md-9 col-sm-12">
-                                                    <div class="input-group date">
-                                                        <input type="text" class="form-control" id="masa_kerja_gol_bulan" name="masa_kerja_gol_bulan" value="<?php echo e(old('masa_kerja_gol_bulan')); ?>" autocomplete="off" required/>
-                                                        <label class="col-form-label text-left col-lg-3 col-sm-12">Bulan</label>
-                                                    </div>
-                                                </div>
-                                            </div>
+                                            
                                             <div class="form-group row">
                                                 <label class="col-lg-3 col-form-label">Upload Nota Usul</label>
                                                 <div class="col-lg-9">
                                                     <input id="file_nota_usulan" name="file_nota_usulan[]" type="file" class="file" data-show-preview="false" multiple/>
-                                                    <!-- <div class="dropzone dropzone-multi" id="kt_dropzone_6">
-                                                        <div class="dropzone-panel mb-lg-0 mb-2">
-                                                            <a class="dropzone-select btn btn-light-primary font-weight-bold btn-sm">Attach files</a>
-                                                            <a class="dropzone-upload btn btn-light-primary font-weight-bold btn-sm">Upload All</a>
-                                                            <a class="dropzone-remove-all btn btn-light-primary font-weight-bold btn-sm">Remove All</a>
-                                                        </div>
-                                                        <div class="dropzone-items">
-                                                            <div class="dropzone-item" style="display:none">
-                                                                <div class="dropzone-file">
-                                                                    <div class="dropzone-filename" title="some_image_file_name.jpg">
-                                                                        <span data-dz-name="">some_image_file_name.jpg</span>
-                                                                        <strong>(<span data-dz-size="">340kb</span>)</strong>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="dropzone-progress">
-                                                                    <div class="progress">
-                                                                        <div class="progress-bar bg-primary" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" data-dz-uploadprogress=""></div>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="dropzone-toolbar">
-                                                                    <span class="dropzone-start">
-                                                                        <i class="flaticon2-arrow"></i>
-                                                                    </span>
-                                                                    <span class="dropzone-cancel" data-dz-remove="" style="display: none;">
-                                                                        <i class="flaticon2-cross"></i>
-                                                                    </span>
-                                                                    <span class="dropzone-delete" data-dz-remove="">
-                                                                        <i class="flaticon2-cross"></i>
-                                                                    </span>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div> -->
+                                                    
                                                     <span class="form-text text-muted">Max file size is 1MB and max number of files is 5.</span>
                                                 </div>
                                             </div>
@@ -523,7 +479,7 @@
                                                     <select class="form-control select2" style="width: 230px;" id="pangkat_gol_baru" name="pangkat_gol_baru">
                                                         <option value="">Choose</option>
                                                         <?php $__currentLoopData = $pangkats; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $pangkat): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                                                            <option value="<?php echo e($pangkat->id); ?>" <?php echo e(old('pangkat_gol_baru') == $pangkat->id ? 'selected' : ''); ?>><?php echo e($pangkat->name); ?></option>
+                                                            <option value="<?php echo e($pangkat->id); ?>" <?php echo e(old('pangkat_gol_baru') == $pangkat->id ? 'selected' : ''); ?>><?php echo e($pangkat->name); ?> (<?php echo e($pangkat->golongan); ?>/<?php echo e($pangkat->ruang); ?>)</option>
                                                         <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                                                     </select>
                                                     <!-- <div class="input-group date">
@@ -541,7 +497,7 @@
                                                 <label class="col-form-label col-lg-3 col-sm-12">TMT (Gol/Ruang)</label>
                                                 <div class="col-lg-5 col-md-9 col-sm-12">
                                                     <div class="input-group date">
-                                                        <input type="text" class="form-control datetimepicker-input my-datepicker" id="tmt_gol_baru" name="tmt_gol_baru" data-toggle="datetimepicker" data-target="#tmt_gol_baru" placeholder="Pilih Tanggal" value="<?php echo e(old('tmt_gol_baru')); ?>" autocomplete="off" required/>
+                                                        <input type="text" class="form-control datetimepicker-input my-datepicker" id="tmt_gol_baru" name="tmt_gol_baru" data-toggle="datetimepicker" data-target="#tmt_gol_baru" placeholder="Pilih Tanggal" value="<?php echo e(old('tmt_gol_baru')); ?>" autocomplete="off" required/> <p id="masa"></p>
                                                         <div class="input-group-append">
                                                             <span class="input-group-text">
                                                                 <i class="la la-calendar"></i>
@@ -556,22 +512,14 @@
                                                 <label class="col-form-label col-lg-3 col-sm-12">Masa Kerja Golongan</label>
                                                 <div class="col-lg-5 col-md-9 col-sm-12">
                                                     <div class="input-group date">
-                                                        <input type="text" class="form-control" id="masa_kerja_gol_tahun_baru" name="masa_kerja_gol_tahun_baru" value="<?php echo e(old('masa_kerja_gol_tahun_baru')); ?>" autocomplete="off" required/>
+                                                        <input type="text" class="form-control" id="masa_kerja_gol_tahun_baru" name="masa_kerja_gol_tahun_baru" value="<?php echo e(old('masa_kerja_gol_tahun_baru')); ?>" autocomplete="off" required readonly/>
                                                         <label class="col-form-label text-left col-lg-3 col-sm-12">Tahun</label>
 
                                                     </div>
                                                 </div>
                                             </div>
 
-                                            <div class="form-group row">
-                                                <label class="col-form-label col-lg-3 col-sm-12"></label>
-                                                <div class="col-lg-5 col-md-9 col-sm-12">
-                                                    <div class="input-group date">
-                                                        <input type="text" class="form-control" id="masa_kerja_gol_bulan_baru" name="masa_kerja_gol_bulan_baru" value="<?php echo e(old('masa_kerja_gol_bulan_baru')); ?>" autocomplete="off" required/>
-                                                        <label class="col-form-label text-left col-lg-3 col-sm-12">Bulan</label>
-                                                    </div>
-                                                </div>
-                                            </div>
+                                            
 
                                             <div class="form-group row">
                                                 <label class="col-form-label col-lg-3 col-sm-12">Periode Masa Jabatan</label>
@@ -744,50 +692,80 @@
                                                 <div class="col-lg-9 col-md-9 col-sm-12">
                                                     <div style="margin-bottom:10px;">
                                                         <label class="checkbox checkbox-outline checkbox-outline-2x checkbox-primary">
-                                                            <input type="checkbox" id="ket" name="ket[]" value="1"/>
-                                                            <span></span><div style="margin-left: 10px;">Surat Usulan Asli Ditandatangani PPK</div>
+                                                            <input type="checkbox" id="checked_file_data_usulan" disabled/>
+                                                            <span></span><div style="margin-left: 10px;">Surat Usulan</div>
                                                         </label>
                                                     </div>
                                                     <div style="margin-bottom:10px;">
                                                         <label class="checkbox checkbox-outline checkbox-outline-2x checkbox-primary">
-                                                            <input type="checkbox" id="ket" name="ket[]" value="2"/>
-                                                            <span></span><div style="margin-left: 10px;">Nota Usulan asli yang dilengkapi dengan data formasi dan ditandatangani oleh PPK</div>
+                                                            <input type="checkbox" id="checked_file_nota_usulan" disabled/>
+                                                            <span></span><div style="margin-left: 10px;">Nota Usul</div>
                                                         </label>
                                                     </div>
                                                     <div style="margin-bottom:10px;">
                                                         <label class="checkbox checkbox-outline checkbox-outline-2x checkbox-primary">
-                                                            <input type="checkbox" id="ket" name="ket[]" value="3"/>
-                                                            <span></span><div style="margin-left: 10px;">Sertifikat/tanda lulus/surat keterangan lulus uji kompetensi</div>
+                                                            <input type="checkbox" id="checked_file_data_pak" disabled/>
+                                                            <span></span><div style="margin-left: 10px;">File Data PAK</div>
                                                         </label>
                                                     </div>
                                                     <div style="margin-bottom:10px;">
                                                         <label class="checkbox checkbox-outline checkbox-outline-2x checkbox-primary">
-                                                            <input type="checkbox" id="ket" name="ket[]" value="4"/>
-                                                            <span></span><div style="margin-left: 10px;">PAK asli 1 tahun terakhir</div>
+                                                            <input type="checkbox" id="checked_file_klarifikasi_pak" disabled/>
+                                                            <span></span><div style="margin-left: 10px;">Klarifikasi PAK</div>
                                                         </label>
                                                     </div>
                                                     <div style="margin-bottom:10px;">
                                                         <label class="checkbox checkbox-outline checkbox-outline-2x checkbox-primary">
-                                                            <input type="checkbox" id="ket" name="ket[]" value="5"/>
-                                                            <span></span><div style="margin-left: 10px;">Salinan sah SK jabatan terakhir</div>
+                                                            <input type="checkbox" id="checked_file_sk_pangkat_terakhir" disabled/>
+                                                            <span></span><div style="margin-left: 10px;">File SK Pangkat Terakhir</div>
                                                         </label>
                                                     </div>
                                                     <div style="margin-bottom:10px;">
                                                         <label class="checkbox checkbox-outline checkbox-outline-2x checkbox-primary">
-                                                            <input type="checkbox" id="ket" name="ket[]" value="6"/>
-                                                            <span></span><div style="margin-left: 10px;">Salinan sah SK Pangkat terakhir</div>
-                                                        </label>
-                                                    </div>
-                                                    <div style="margin-bottom:30px;">
-                                                        <label class="checkbox checkbox-outline checkbox-outline-2x checkbox-primary">
-                                                            <input type="checkbox" id="ket" name="ket[]" value="7"/>
-                                                            <span></span><div style="margin-left: 10px;">Salinan sah SKP dan Penilaian Prestasi Kerja 2 tahun terakhir</div>
+                                                            <input type="checkbox" id="checked_file_sk_jabatan" disabled/>
+                                                            <span></span><div style="margin-left: 10px;">File SK Jabatan</div>
                                                         </label>
                                                     </div>
                                                     <div style="margin-bottom:10px;">
                                                         <label class="checkbox checkbox-outline checkbox-outline-2x checkbox-primary">
-                                                            <input type="checkbox" id="ket" name="ket[]" value="8"/>
-                                                            <span></span><div style="margin-left: 10px;">Semua persyaratan dan dokumen benar</div>
+                                                            <input type="checkbox" id="checked_file_bap" disabled/>
+                                                            <span></span><div style="margin-left: 10px;">File BAP</div>
+                                                        </label>
+                                                    </div>
+                                                    <div style="margin-bottom:10px;">
+                                                        <label class="checkbox checkbox-outline checkbox-outline-2x checkbox-primary">
+                                                            <input type="checkbox" id="checked_file_spp" disabled/>
+                                                            <span></span><div style="margin-left: 10px;">File SPP</div>
+                                                        </label>
+                                                    </div>
+                                                    <div style="margin-bottom:10px;">
+                                                        <label class="checkbox checkbox-outline checkbox-outline-2x checkbox-primary">
+                                                            <input type="checkbox" id="checked_file_jabatan_pak_klarifikasi" disabled/>
+                                                            <span></span><div style="margin-left: 10px;">File Jabatan PAK Klarifikasi</div>
+                                                        </label>
+                                                    </div>
+                                                    <div style="margin-bottom:10px;">
+                                                        <label class="checkbox checkbox-outline checkbox-outline-2x checkbox-primary">
+                                                            <input type="checkbox" id="checked_file_hukuman" disabled/>
+                                                            <span></span><div style="margin-left: 10px;">File Hukuman</div>
+                                                        </label>
+                                                    </div>
+                                                    <div style="margin-bottom:10px;">
+                                                        <label class="checkbox checkbox-outline checkbox-outline-2x checkbox-primary">
+                                                            <input type="checkbox" id="checked_file_surat_keputusan_ppk" disabled/>
+                                                            <span></span><div style="margin-left: 10px;">File Surat Keputusan PPK</div>
+                                                        </label>
+                                                    </div>
+                                                    <div style="margin-bottom:10px;">
+                                                        <label class="checkbox checkbox-outline checkbox-outline-2x checkbox-primary">
+                                                            <input type="checkbox" id="checked_file_skp_1_tahun_terakhir" disabled/>
+                                                            <span></span><div style="margin-left: 10px;">File SKP 1 Tahun Terakhir</div>
+                                                        </label>
+                                                    </div>
+                                                    <div style="margin-bottom:10px;">
+                                                        <label class="checkbox checkbox-outline checkbox-outline-2x checkbox-primary">
+                                                            <input type="checkbox" id="checked_file_skp_2_tahun_terakhir" disabled/>
+                                                            <span></span><div style="margin-left: 10px;">File SKP 2 Tahun Terakhir</div>
                                                         </label>
                                                     </div>
                                                 </div>
@@ -854,6 +832,63 @@
 
             })
         }
+
+        $('#tmt_gol_baru').on('change.datetimepicker', function(e) {
+
+            var date_start = new Date(document.getElementById("tmt_gol_baru").value);
+            var date_start_day = date_start.getDate();
+            var date_start_month = date_start.getMonth();
+            var date_start_year = date_start.getFullYear();
+
+            var date_end = new Date();
+            var date_end_day = date_end.getDate();
+            var date_end_month = date_end.getMonth();
+            var date_end_year = date_end.getFullYear();
+            console.log(date_end);
+            var calculated_date = 0;
+            if(date_end_month > date_start_month) 
+            {
+                calculated_date = date_end_year - date_start_year;
+            }
+            else
+            { 
+                calculated_date = date_end_year - date_start_year;
+            }
+
+
+            var out_value = calculated_date;
+            document.getElementById("masa_kerja_gol_tahun_baru").value = out_value;
+            // getdatadate(date_end);
+        });
+
+        $('#tmt_gol').on('change.datetimepicker', function(e) {
+
+            var date_start = new Date(document.getElementById("tmt_gol").value);
+            var date_start_day = date_start.getDate();
+            var date_start_month = date_start.getMonth();
+            var date_start_year = date_start.getFullYear();
+
+            var date_end = new Date();
+            var date_end_day = date_end.getDate();
+            var date_end_month = date_end.getMonth();
+            var date_end_year = date_end.getFullYear();
+            console.log(date_end);
+            var calculated_date = 0;
+            if(date_end_month > date_start_month) 
+            {
+                calculated_date = date_end_year - date_start_year;
+            }
+            else
+            { 
+                calculated_date = date_end_year - date_start_year;
+            }
+
+
+            var out_value = calculated_date;
+            document.getElementById("masa_kerja_gol_tahun").value = out_value;
+            // getdatadate(date_end);
+        });
+        
         $('#otherFieldDiv').hide();
         $('#otherJabatanPAK').hide();
         $('#otherJabatanPAKLainnya').hide();
@@ -895,6 +930,134 @@
             } else {
                 $("#pangkatLuarBiasa").hide();
             }
+        });
+    });
+
+    function myFunction(event) {
+
+    if (event.target.value === "April") {
+        document.getElementById("req_masa_periode_end").value ="29 Februari";
+    } else if (event.target.value === "Oktober") {
+        document.getElementById("req_masa_periode_end").value = "31 Agustus";
+    }
+    };
+
+    $(document).ready(function () {
+        $("#file_data_usulan").on("change", function () {
+
+        if ($('#file_data_usulan')[0].files.length != 0) {
+            $("#checked_file_data_usulan").attr('checked', true);
+        } else {
+            $("#checked_file_data_usulan").attr('checked',false);
+        }
+        });
+
+        $("#file_nota_usulan").on("change", function () {
+
+        if ($('#file_nota_usulan')[0].files.length != 0) {
+            $("#checked_file_nota_usulan").attr('checked', true);
+        } else {
+            $("#checked_file_nota_usulan").attr('checked',false);
+        }
+        });
+
+        $("#file_data_pak").on("change", function () {
+
+        if ($('#file_data_pak')[0].files.length != 0) {
+            $("#checked_file_data_pak").attr('checked', true);
+        } else {
+            $("#checked_file_data_pak").attr('checked',false);
+        }
+        });
+
+        $("#file_klarifikasi_pak").on("change", function () {
+
+        if ($('#file_klarifikasi_pak')[0].files.length != 0) {
+            $("#checked_file_klarifikasi_pak").attr('checked', true);
+        } else {
+            $("#checked_file_klarifikasi_pak").attr('checked',false);
+        }
+        });
+        
+        $("#file_sk_pangkat_terakhir").on("change", function () {
+
+        if ($('#file_sk_pangkat_terakhir')[0].files.length != 0) {
+            $("#checked_file_sk_pangkat_terakhir").attr('checked', true);
+        } else {
+            $("#checked_file_sk_pangkat_terakhir").attr('checked',false);
+        }
+        });
+
+        $("#file_sk_jabatan").on("change", function () {
+
+        if ($('#file_sk_jabatan')[0].files.length != 0) {
+            $("#checked_file_sk_jabatan").attr('checked', true);
+        } else {
+            $("#checked_file_sk_jabatan").attr('checked',false);
+        }
+        });
+
+        $("#file_bap").on("change", function () {
+
+        if ($('#file_bap')[0].files.length != 0) {
+            $("#checked_file_bap").attr('checked', true);
+        } else {
+            $("#checked_file_bap").attr('checked',false);
+        }
+        });
+
+         $("#file_spp").on("change", function () {
+
+        if ($('#file_spp')[0].files.length != 0) {
+            $("#checked_file_spp").attr('checked', true);
+        } else {
+            $("#checked_file_spp").attr('checked',false);
+        }
+        });
+
+         $("#file_jabatan_pak_klarifikasi").on("change", function () {
+
+        if ($('#file_jabatan_pak_klarifikasi')[0].files.length != 0) {
+            $("#checked_file_jabatan_pak_klarifikasi").attr('checked', true);
+        } else {
+            $("#checked_file_jabatan_pak_klarifikasi").attr('checked',false);
+        }
+        });
+
+         $("#file_hukuman").on("change", function () {
+
+        if ($('#file_hukuman')[0].files.length != 0) {
+            $("#checked_file_hukuman").attr('checked', true);
+        } else {
+            $("#checked_file_hukuman").attr('checked',false);
+        }
+        });
+
+         $("#file_surat_keputusan_ppk").on("change", function () {
+
+        if ($('#file_surat_keputusan_ppk')[0].files.length != 0) {
+            $("#checked_file_surat_keputusan_ppk").attr('checked', true);
+        } else {
+            $("#checked_file_surat_keputusan_ppk").attr('checked',false);
+        }
+        });
+
+         $("#file_skp_1_tahun_terakhir").on("change", function () {
+
+        if ($('#file_skp_1_tahun_terakhir')[0].files.length != 0) {
+            $("#checked_file_skp_1_tahun_terakhir").attr('checked', true);
+        } else {
+            $("#checked_file_skp_1_tahun_terakhir").attr('checked',false);
+        }
+        });
+
+         $("#file_skp_2_tahun_terakhir").on("change", function () {
+
+        if ($('#file_skp_2_tahun_terakhir')[0].files.length != 0) {
+            $("#checked_file_skp_2_tahun_terakhir").attr('checked', true);
+        } else {
+            $("#checked_file_skp_2_tahun_terakhir").attr('checked',false);
+        }
         });
     });
 
@@ -1064,7 +1227,7 @@
     <script src="<?php echo e(asset('js/hide.js')); ?>"></script> 
     <script src="<?php echo e(asset('js/pages/crud/file-upload/dropzonejs.js')); ?>"></script>
     <script src="<?php echo e(asset('js/pages/crud/ktdatatable/base/html-table.js')); ?>" type="text/javascript"></script>
-    <script src="<?php echo e(asset('js/pages/bkn.js')); ?>"></script> 
+    <script src="<?php echo e(asset('js/pages/bkn.js')); ?>"></script>
 <?php $__env->stopSection(); ?>
 
 <?php echo $__env->make('layout.default', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH D:\Project\siapp\resources\views/pages/pic/administrasi/kenaikan_pangkat/form/pemberian_kenaikan_pangkat.blade.php ENDPATH**/ ?>

@@ -39,7 +39,7 @@
                                             <h4 class="mb-10 font-weight-bold text-dark">Data Usulan</h4>
                                             <!--begin::Input-->
                                             <div class="form-group row">
-                                                <label class="col-form-label col-lg-3 col-sm-12">Tanggal Surat Pengantar</label>
+                                                <label class="col-form-label col-lg-3 col-sm-12">Tanggal Surat Pengantar <a style="color: #FF0000;">*</a></label>
                                                 <div class="col-lg-5 col-md-9 col-sm-12">
                                                     <div class="input-group date">
                                                         <input type="text" class="form-control datetimepicker-input my-datepicker" id="tanggal_surat_pengantar" name="tanggal_surat_pengantar" data-toggle="datetimepicker" data-target="#tanggal_surat_pengantar" placeholder="Pilih Tanggal" value="{{old('tanggal_surat_pengantar')}}" autocomplete="off" required/>
@@ -52,7 +52,7 @@
                                                 </div>
                                             </div>
                                             <div class="form-group row">
-                                                <label class="col-form-label col-lg-3 col-sm-12">No. Surat Pengantar</label>
+                                                <label class="col-form-label col-lg-3 col-sm-12">No. Surat Pengantar <a style="color: #FF0000;">*</a></label>
                                                 <div class="col-lg-9 col-md-9 col-sm-12">
                                                     <div class="input-group">
                                                         <input type="text" class="form-control" id="no_surat_pengantar" name="no_surat_pengantar" value="{{old('no_surat_pengantar')}}" autocomplete="off" required/>
@@ -60,7 +60,7 @@
                                                 </div>
                                             </div>
                                             <div class="form-group row">
-                                                <label class="col-lg-3 col-form-label">Upload Surat Pengantar</label>
+                                                <label class="col-lg-3 col-form-label">Upload Surat Pengantar <a style="color: #FF0000;">*</a></label>
                                                 <div class="col-lg-9">
                                                     <input id="file_surat_pengantar" name="file_surat_pengantar[]" type="file" class="file" data-show-preview="false" multiple/>
                                                     
@@ -110,7 +110,7 @@
                                             <h4 class="mb-10 font-weight-bold text-dark">Data Keppres</h4>
                                             <!--begin::Input-->
                                             <div class="form-group row">
-                                                <label class="col-form-label col-lg-3 col-sm-12">No. Keppres</label>
+                                                <label class="col-form-label col-lg-3 col-sm-12">No. Keppres <a style="color: #FF0000;">*</a></label>
                                                 <div class="col-lg-9 col-md-9 col-sm-12">
                                                     <div class="input-group date">
                                                         <input type="text" class="form-control" id="no_keppres" name="no_keppres" value="{{old('no_keppres')}}" autocomplete="off" required/>
@@ -120,7 +120,7 @@
                                             <!--end::Input-->
                                             <!--begin::Input-->
                                             <div class="form-group row">
-                                                <label class="col-form-label col-lg-3 col-sm-12">Tanggal Keppres</label>
+                                                <label class="col-form-label col-lg-3 col-sm-12">Tanggal Keppres <a style="color: #FF0000;">*</a></label>
                                                 <div class="col-lg-5 col-md-9 col-sm-12">
                                                     <div class="input-group date">
                                                         <input type="text" class="form-control datetimepicker-input my-datepicker" id="tanggal_keppres" name="tanggal_keppres" data-toggle="datetimepicker" data-target="#tanggal_keppres" placeholder="Pilih Tanggal" value="{{old('tanggal_keppres')}}" autocomplete="off" required/>
@@ -135,7 +135,7 @@
                                             <!--end::Input-->
                                             <!--begin::Input-->
                                             <div class="form-group row">
-                                                <label class="col-lg-3 col-form-label">Upload Keppres</label>
+                                                <label class="col-lg-3 col-form-label">Upload Keppres <a style="color: #FF0000;">*</a></label>
                                                 <div class="col-lg-9">
                                                     <input id="file_keppres" name="file_keppres[]" type="file" class="file" data-show-preview="false" multiple/>
                                                     
@@ -184,7 +184,7 @@
                                             <h4 class="mb-10 font-weight-bold text-dark">Ralat</h4>
                                             <!--begin::Select-->
                                             <div class="form-group row">
-                                                <label class="col-form-label col-lg-3 col-sm-12">Alasan Ralat</label>
+                                                <label class="col-form-label col-lg-3 col-sm-12">Alasan Ralat <a style="color: #FF0000;">*</a></label>
                                                 <div class="col-lg-9 col-md-9 col-sm-12">
                                                     <div class="input-group date">
                                                         <input type="text" class="form-control" id="alasan_ralat" name="alasan_ralat" value="{{old('alasan_ralat')}}" autocomplete="off" required/>
@@ -195,7 +195,7 @@
 
                                             <!--begin::Input-->
                                             <div class="form-group row">
-                                                <label class="col-lg-3 col-form-label">Upload Bukti Pendukung</label>
+                                                <label class="col-lg-3 col-form-label">Upload Bukti Pendukung <a style="color: #FF0000;">*</a></label>
                                                 <div class="col-lg-9">
                                                     <input id="file_bukti_pendukung" name="file_bukti_pendukung[]" type="file" class="file" data-show-preview="false" multiple/>
                                                     
@@ -236,6 +236,30 @@
                                                 </div>
                                             </div>
                                             <!--end::Input-->
+
+                                            <div class="form-group row">
+                                                <label class="col-form-label col-lg-3 col-sm-12"></label>
+                                                <div class="col-lg-9 col-md-9 col-sm-12">
+                                                    <div style="margin-bottom:10px;">
+                                                        <label class="checkbox checkbox-outline checkbox-outline-2x checkbox-primary">
+                                                            <input type="checkbox" id="checked_file_surat_pengantar" disabled/>
+                                                            <span></span><div style="margin-left: 10px;">File Surat Pengantar</div>
+                                                        </label>
+                                                    </div>
+                                                    <div style="margin-bottom:10px;">
+                                                        <label class="checkbox checkbox-outline checkbox-outline-2x checkbox-primary">
+                                                            <input type="checkbox" id="checked_file_keppres" disabled/>
+                                                            <span></span><div style="margin-left: 10px;">File Keppres</div>
+                                                        </label>
+                                                    </div>
+                                                    <div style="margin-bottom:10px;">
+                                                        <label class="checkbox checkbox-outline checkbox-outline-2x checkbox-primary">
+                                                            <input type="checkbox" id="checked_file_bukti_pendukung" disabled/>
+                                                            <span></span><div style="margin-left: 10px;">File Bukti Pendukung</div>
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
                                         <!--end: Wizard Step 3-->
 
@@ -281,12 +305,38 @@
 {{-- Scripts Section --}}
 @section('scripts')
     <script>
+        
+        $(document).ready(function () {
+            $("#file_surat_pengantar").on("change", function () {
+                if ($('#file_surat_pengantar')[0].files.length != 0) {
+                    $("#checked_file_surat_pengantar").attr('checked', true);
+                } else {
+                    $("#checked_file_surat_pengantar").attr('checked',false);
+                }
+            });
+
+            $("#file_keppres").on("change", function () {
+                if ($('#file_keppres')[0].files.length != 0) {
+                    $("#checked_file_keppres").attr('checked', true);
+                } else {
+                    $("#checked_file_keppres").attr('checked',false);
+                }
+            });
+
+            $("#file_bukti_pendukung").on("change", function () {
+                if ($('#file_bukti_pendukung')[0].files.length != 0) {
+                    $("#checked_file_bukti_pendukung").attr('checked', true);
+                } else {
+                    $("#checked_file_bukti_pendukung").attr('checked',false);
+                }
+            });
+
+        });
+
         $('.my-datepicker').datetimepicker({
             useCurrent:false,
             format: 'DD-MMM-YYYY'
         })
-
-        $('#otherFieldDiv').hide();
 
         $('.my-datepicker').keydown(function(e){
             e.preventDefault();

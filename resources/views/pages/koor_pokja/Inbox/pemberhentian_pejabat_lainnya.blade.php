@@ -13,7 +13,7 @@
                 <div class="card card-custom">
                     <div class="card-header flex-wrap border-0 pt-6 pb-0" style="background-color: #FFA800;">
                         <div class="card-title">
-                            <h3 class="card-label">Pengangkatan Jabatan Lainnya
+                            <h3 class="card-label">Pemberhentian Jabatan Lainnya
                             <span class="d-block text-muted pt-2 font-size-sm"></span></h3>
                         </div>
                     </div>
@@ -23,14 +23,14 @@
                             <!--begin: Wizard Nav-->
                             <div>
                                 <div data-wizard-type="step" data-wizard-state="current"></div>
-                                <div data-wizard-type="step"></div>																				
+                                <div data-wizard-type="step"></div>																			
                             </div>
                             <!--end: Wizard Nav-->
                             <!--begin: Wizard Body-->
                             <div class="row justify-content-center py-10 px-8 py-lg-12 px-lg-10">
                                 <div class="col-xl-20 col-xxl-12">
                                     <!--begin: Wizard Form-->
-                                    <form class="form" id="kt_form" action="{{ route('pic.administrasi.surat-usulan.pengangkatan-pejabat-lainnya.store') }}" enctype="multipart/form-data" method="POST">
+                                    <form class="form" id="kt_form" action="{{ route('pic.administrasi.surat-usulan.pemberhentian-pejabat-lainnya.store') }}" enctype="multipart/form-data" method="POST">
                                         @csrf
                                         @method('PATCH')
                                         <!--begin: Wizard Step 1-->
@@ -38,7 +38,7 @@
                                             <h4 class="mb-10 font-weight-bold text-dark">Data Surat</h4>
                                             <!--begin::Input-->
                                             <div class="form-group row">
-                                                <label class="col-form-label col-lg-3 col-sm-12">Tanggal Surat Pengantar</label>
+                                                <label class="col-form-label col-lg-3 col-sm-12">Tanggal Surat Pengantar <a style="color: #FF0000;">*</a></label>
                                                 <div class="col-lg-5 col-md-9 col-sm-12">
                                                     <div class="input-group date">
                                                         <input type="text" class="form-control datetimepicker-input my-datepicker" id="tanggal_surat_pengantar" name="tanggal_surat_pengantar" data-toggle="datetimepicker" data-target="#tanggal_surat_pengantar" placeholder="Pilih Tanggal" value="{{old('tanggal_surat_pengantar')}}" required/>
@@ -51,7 +51,7 @@
                                                 </div>
                                             </div>
                                             <div class="form-group row">
-                                                <label class="col-form-label col-lg-3 col-sm-12">No. Surat Pengantar</label>
+                                                <label class="col-form-label col-lg-3 col-sm-12">No. Surat Pengantar <a style="color: #FF0000;">*</a></label>
                                                 <div class="col-lg-9 col-md-9 col-sm-12">
                                                     <div class="input-group">
                                                         <input type="text" class="form-control" id="no_surat_pengantar" name="no_surat_pengantar" value="{{old('no_surat_pengantar')}}" autocomplete="off" required/>
@@ -59,7 +59,7 @@
                                                 </div>
                                             </div>
                                             <div class="form-group row">
-                                                <label class="col-lg-3 col-form-label">Upload Surat Pengantar</label>
+                                                <label class="col-lg-3 col-form-label">Upload Surat Pengantar <a style="color: #FF0000;">*</a></label>
                                                 <div class="col-lg-9">
                                                     <input id="file_surat_pengantar" name="file_surat_pengantar[]" type="file" class="file" data-show-preview="false" multiple/>
                                                     
@@ -108,7 +108,7 @@
                                         <div class="pb-6" style="margin-left: 50px; margin-right: 50px;" data-wizard-type="step-content">
                                             <!--begin::Input-->
                                             <div class="form-group row">
-                                                <label class="col-form-label col-lg-3 col-sm-12">Jabatan lainnya yang akan diisi</label>
+                                                <label class="col-form-label col-lg-3 col-sm-12">Jabatan lainnya yang akan diisi <a style="color: #FF0000;">*</a></label>
                                                 <div class="col-lg-9 col-md-9 col-sm-12">
                                                     <div class="input-group date">
                                                         <input type="text" class="form-control" id="jabatan_lainnya" name="jabatan_lainnya" value="{{old('jabatan_lainnya')}}" autocomplete="off" required/>
@@ -118,7 +118,7 @@
                                             <!--end::Input-->
                                             <!--begin::Input-->
                                             <div class="form-group row">
-                                                <label class="col-form-label col-lg-3 col-sm-12">Unsur</label>
+                                                <label class="col-form-label col-lg-3 col-sm-12">Unsur <a style="color: #FF0000;">*</a></label>
                                                 <div class="col-lg-3 col-md-9 col-sm-12">
                                                     <select class="form-control select2" style="width: 230px;" id="unsur" name="unsur">
                                                         <option value="">Choose</option>
@@ -126,6 +126,7 @@
                                                         <option value="{{$unsur->id}}" {{ old('unsur') == $unsur->id ? 'selected' : '' }}>{{$unsur->nama}}</option>
                                                         @endforeach
                                                     </select>
+                                                    
                                                     <!-- <div class="input-group date">
                                                         <select class="custom-select form-control" id="seeAnotherField">
                                                             <option selected>pilih golongan</option>
@@ -149,7 +150,7 @@
                                             <!--end::Input-->
                                             <!--begin::Input-->
                                             <div class="form-group row" style="margin-left: 25%;" id="tambah_unsur">
-                                                <label class="col-form-label col-lg-3 col-sm-12">Tambah Unsur Non Pemerintah</label>
+                                                <label class="col-form-label col-lg-3 col-sm-12">Tambah Unsur Non Pemerintah <a style="color: #FF0000;">*</a></label>
                                                 <div class="col-lg-3 col-md-9 col-sm-12">
                                                     <div class="input-group date">
                                                         <input type="text" class="form-control" id="tambah_unsur_non_pemerintah" name="tambah_unsur_non_pemerintah" value="{{old('tambah_unsur_non_pemerintah')}}" autocomplete="off" required/>
@@ -159,7 +160,7 @@
                                             <!--end::Input-->
                                             <!--begin::Input-->
                                             <div class="form-group row">
-                                                <label class="col-form-label col-lg-3 col-sm-12">NIP</label>
+                                                <label class="col-form-label col-lg-3 col-sm-12">NIP <a style="color: #FF0000;">*</a></label>
                                                 <div class="col-lg-9 col-md-9 col-sm-12">
                                                     <div class="input-group date">
                                                         <input type="number" pattern="[0-9]+([\.,][0-9]+)?" class="form-control" id="nip" name="nip" value="{{old('nip')}}" autocomplete="off" required/>
@@ -169,7 +170,7 @@
                                             <!--end::Input-->
                                             <!--begin::Input-->
                                             <div class="form-group row">
-                                                <label class="col-form-label col-lg-3 col-sm-12">Nama</label>
+                                                <label class="col-form-label col-lg-3 col-sm-12">Nama <a style="color: #FF0000;">*</a></label>
                                                 <div class="col-lg-9 col-md-9 col-sm-12">
                                                     <div class="input-group date">
                                                         <input type="text" onkeydown="return /[a-zA-Z0-9\s]+/i.test(event.key)" class="form-control" id="nama" name="nama" value="{{old('nama')}}" autocomplete="off" required/>
@@ -179,7 +180,7 @@
                                             <!--end::Input-->
                                             <!--begin::Input-->
                                             <div class="form-group row">
-                                                <label class="col-form-label col-lg-3 col-sm-12">Instansi</label>
+                                                <label class="col-form-label col-lg-3 col-sm-12">Instansi <a style="color: #FF0000;">*</a></label>
                                                 <div class="col-lg-9 col-md-9 col-sm-12">
                                                     <div class="input-group date">
                                                         <input type="text" onkeydown="return /[a-zA-Z0-9\s]+/i.test(event.key)" class="form-control" id="instansi" name="instansi" value="{{old('instansi')}}" autocomplete="off" required/>
@@ -189,7 +190,7 @@
                                             <!--end::Input-->
                                             <!--begin::Input-->
                                             <div class="form-group row">
-                                                <label class="col-form-label col-lg-3 col-sm-12">Jabatan Yang Akan di Angkat</label>
+                                                <label class="col-form-label col-lg-3 col-sm-12">Jabatan Yang Akan di Angkat <a style="color: #FF0000;">*</a></label>
                                                 <div class="col-lg-9 col-md-9 col-sm-12">
                                                     <select class="form-control select2" style="width: 230px;" id="jabatan" name="jabatan">
                                                         <option value="">Choose</option>
@@ -210,7 +211,7 @@
                                             <!--end::Input-->
                                             <!--begin::Input-->
                                             <div class="form-group row">
-                                                <label class="col-lg-3 col-form-label">Upload DRH</label>
+                                                <label class="col-lg-3 col-form-label">Upload DRH <a style="color: #FF0000;">*</a></label>
                                                 <div class="col-lg-9">
                                                     <input id="file_dhr" name="file_dhr[]" type="file" class="file" data-show-preview="false" multiple/>
                                                     
@@ -253,7 +254,7 @@
                                             <!--end::Input-->
                                             <!--begin::Input-->
                                             <div class="form-group row">
-                                                <label class="col-lg-3 col-form-label">Upload Dokumen Lainnya</label>
+                                                <label class="col-lg-3 col-form-label">Upload Dokumen Lainnya <a style="color: #FF0000;">*</a></label>
                                                 <div class="col-lg-9">
                                                     <input id="file_dukumen_lain_pengangkatan_jabatan_lain" name="file_dukumen_lain_pengangkatan_jabatan_lain[]" type="file" class="file" data-show-preview="false" multiple/>
                                                     
@@ -294,12 +295,35 @@
                                                 </div>
                                             </div>
                                             <!--end::Input-->
+
+                                            <div class="form-group row">
+                                                <label class="col-form-label col-lg-3 col-sm-12"></label>
+                                                <div class="col-lg-9 col-md-9 col-sm-12">
+                                                    <div style="margin-bottom:10px;">
+                                                        <label class="checkbox checkbox-outline checkbox-outline-2x checkbox-primary">
+                                                            <input type="checkbox" id="checked_file_surat_pengantar" disabled/>
+                                                            <span></span><div style="margin-left: 10px;">File Surat Pengantar</div>
+                                                        </label>
+                                                    </div>
+                                                    <div style="margin-bottom:10px;">
+                                                        <label class="checkbox checkbox-outline checkbox-outline-2x checkbox-primary">
+                                                            <input type="checkbox" id="checked_file_dhr" disabled/>
+                                                            <span></span><div style="margin-left: 10px;">File DRH</div>
+                                                        </label>
+                                                    </div>
+                                                    <div style="margin-bottom:10px;">
+                                                        <label class="checkbox checkbox-outline checkbox-outline-2x checkbox-primary">
+                                                            <input type="checkbox" id="checked_file_dukumen_lain_pengangkatan_jabatan_lain" disabled/>
+                                                            <span></span><div style="margin-left: 10px;">File Dokumen Lainnya</div>
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </div>
+
                                         </div>
                                         <!--end: Wizard Step 2-->
 
-                                       
-
-                                        <div class="d-flex justify-content-between mt-5 pt-10" style="margin-left: 50px; margin-right: 50px;" >
+                                        <div class="d-flex justify-content-between mt-5 pt-10" style="margin-left: 50px; margin-right: 50px;">
                                             <div class="mr-2">
                                                 <button type="button" class="btn btn-light-primary font-weight-bolder text-uppercase px-9 py-4" data-wizard-type="action-prev">Sebelumnya</button>
                                             </div>
@@ -341,6 +365,34 @@
 {{-- Scripts Section --}}
 @section('scripts')
     <script>
+
+        $(document).ready(function () {
+            $("#file_surat_pengantar").on("change", function () {
+                if ($('#file_surat_pengantar')[0].files.length != 0) {
+                    $("#checked_file_surat_pengantar").attr('checked', true);
+                } else {
+                    $("#checked_file_surat_pengantar").attr('checked',false);
+                }
+            });
+
+            $("#file_dhr").on("change", function () {
+                if ($('#file_dhr')[0].files.length != 0) {
+                    $("#checked_file_dhr").attr('checked', true);
+                } else {
+                    $("#checked_file_dhr").attr('checked',false);
+                }
+            });
+
+            $("#file_dukumen_lain_pengangkatan_jabatan_lain").on("change", function () {
+                if ($('#file_dukumen_lain_pengangkatan_jabatan_lain')[0].files.length != 0) {
+                    $("#checked_file_dukumen_lain_pengangkatan_jabatan_lain").attr('checked', true);
+                } else {
+                    $("#checked_file_dukumen_lain_pengangkatan_jabatan_lain").attr('checked',false);
+                }
+            });
+            
+        });
+
         $('.my-datepicker').datetimepicker({
             useCurrent:false,
             format: 'DD-MMM-YYYY'
@@ -353,7 +405,6 @@
         $('.select2').select2({
             placeholder: "Choose..."
         })
-
         $('#unsur_non').hide();
 
         $("#unsur").change(function() {
@@ -375,6 +426,7 @@
             }
         });
         $("#tambah_unsur").trigger("change");
+
 
         function confirmation(){
             if(confirm('are you sure?')){
@@ -408,6 +460,7 @@
                     file_dukumen_lain_pengangkatan_jabatan_lain: {
                         extenstion: "pdf"
                     }
+
                 },
                 submitHandler:function(form){
                     form.submit();
