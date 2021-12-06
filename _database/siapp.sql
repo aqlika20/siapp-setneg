@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 30, 2021 at 03:56 PM
+-- Generation Time: Dec 06, 2021 at 02:27 AM
 -- Server version: 10.4.11-MariaDB
 -- PHP Version: 7.4.3
 
@@ -60,8 +60,20 @@ CREATE TABLE `groups` (
 --
 
 INSERT INTO `groups` (`id`, `name`, `created_at`) VALUES
-(1, 'Group 1', '2021-09-29 14:41:10'),
-(2, 'Group 2', '2021-09-29 14:41:10');
+(1, 'Administrator', '2021-09-29 14:41:10'),
+(2, 'Menteri', '2021-09-29 14:41:10'),
+(3, 'Deputi', '2021-12-02 06:20:45'),
+(4, 'Kepala Biro', '2021-12-02 06:20:45'),
+(5, 'Koordinator Pokja P4', '2021-12-02 06:20:45'),
+(6, 'Koordinator Pokja KP', '2021-12-02 06:20:45'),
+(7, 'Koordinator Pokja Pensiun', '2021-12-02 06:20:45'),
+(8, 'Kepala Bagian Dukungan Administrasi ', '2021-12-02 06:20:45'),
+(9, 'Tim Pokja P4', '2021-12-02 06:20:45'),
+(10, 'Tim Pokja KP', '2021-12-02 06:20:45'),
+(11, 'Tim Pokja Pensiun', '2021-12-02 06:20:45'),
+(12, 'Bagian Dukungan Administrasi', '2021-12-02 06:20:45'),
+(13, 'TU Menteri', '2021-12-02 06:20:45'),
+(14, 'PIC Pengusul (Subadmin)', '2021-12-02 06:20:45');
 
 -- --------------------------------------------------------
 
@@ -312,6 +324,25 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `notes`
+--
+
+CREATE TABLE `notes` (
+  `id` int(11) NOT NULL,
+  `id_usulan` bigint(20) DEFAULT NULL,
+  `id_layanan` bigint(20) DEFAULT NULL,
+  `id_pengirim` bigint(20) DEFAULT NULL,
+  `id_status` bigint(20) DEFAULT NULL,
+  `id_rkp` varchar(255) DEFAULT NULL,
+  `tanggal_catatan` varchar(255) DEFAULT NULL,
+  `catatan` text DEFAULT NULL,
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
+  `updated_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `oauth_access_tokens`
 --
 
@@ -407,9 +438,9 @@ CREATE TABLE `pangkat_gols` (
 --
 
 INSERT INTO `pangkat_gols` (`id`, `name`, `golongan`, `ruang`, `created_at`, `updated_at`) VALUES
-(1, 'Penata Tk.1', 'III', 'd', '2021-09-14 04:06:15', '2021-11-10 07:05:55'),
+(1, 'Penata Tingkat 1', 'III', 'd', '2021-09-14 04:06:15', '2021-12-06 01:18:10'),
 (2, 'Pembina', 'IV', 'a', '2021-09-14 04:09:53', '2021-09-14 04:09:53'),
-(3, 'Pembina Tk.1', 'IV', 'b', '2021-09-14 04:09:53', '2021-11-10 07:07:51'),
+(3, 'Pembina Tingkat 1', 'IV', 'b', '2021-09-14 04:09:53', '2021-12-06 01:18:17'),
 (4, 'Pembina Utama Muda', 'IV', 'c', '2021-09-14 04:09:53', '2021-09-14 04:09:53'),
 (5, 'Pembina Utama Madya', 'IV', 'd', '2021-09-14 04:09:53', '2021-09-14 04:09:53'),
 (6, 'Pembina Utama', 'IV', 'e', '2021-09-14 04:09:53', '2021-09-14 04:09:53');
@@ -836,11 +867,28 @@ CREATE TABLE `rkps` (
   `no_memo_rkp` varchar(255) NOT NULL,
   `tanggal_memo` date NOT NULL,
   `hal` varchar(255) NOT NULL,
+  `tanggal_keppres_maju` date DEFAULT NULL,
+  `tanggal_keppres_turun` date DEFAULT NULL,
+  `no_keppres` varchar(255) DEFAULT NULL,
+  `file_keppres` varchar(255) DEFAULT NULL,
+  `status` bigint(20) NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
+  `updated_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `rkp_asns`
+--
+
+CREATE TABLE `rkp_asns` (
+  `id` int(11) NOT NULL,
   `id_usulan` bigint(20) NOT NULL,
   `id_layanan` bigint(20) NOT NULL,
   `id_pengirim` bigint(20) NOT NULL,
-  `nip` varchar(255) NOT NULL,
-  `status` bigint(20) NOT NULL,
+  `nip` bigint(20) NOT NULL,
+  `id_rkp` bigint(20) NOT NULL,
   `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
   `updated_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -862,22 +910,20 @@ CREATE TABLE `roles` (
 --
 
 INSERT INTO `roles` (`id`, `name`, `created_at`) VALUES
-(1, 'PIC', '2021-09-29 14:40:35'),
-(2, 'Koordinator Pokja P4', '2021-09-29 14:40:35'),
-(3, 'JF SDMA Ahli Muda', '2021-09-29 14:40:35'),
-(4, 'JF SDMA Ahli Madya', '2021-09-29 14:40:35'),
-(5, 'Kepala Biro', '2021-09-29 14:40:35'),
-(6, 'Koordinator Pokja KP', '2021-11-22 06:53:45'),
-(7, 'Koordinator Pokja Pensiun', '2021-11-22 06:53:45'),
-(8, 'Kepala Bagian Dukungan Administrasi', '2021-11-22 06:53:45'),
-(9, 'JF SDMA  Ahli Terampil', '2021-11-22 06:53:45'),
-(10, 'Pelaksana', '2021-11-22 06:53:45'),
-(11, 'Tim Bagian Dukungan Administrasi ', '2021-11-22 06:53:45'),
-(12, 'TU', '2021-11-22 06:53:45'),
-(13, 'Menteri', '2021-11-22 10:44:08'),
-(14, 'Deputi', '2021-11-22 10:44:08'),
-(15, 'Administrasi', '2021-11-22 10:44:08'),
-(16, 'JF SDMA Ahli Pertama', '2021-11-22 10:45:29');
+(1, 'Administrator', '2021-12-02 06:29:35'),
+(2, 'Menteri', '2021-12-02 06:34:07'),
+(3, 'Deputi', '2021-12-02 06:34:07'),
+(4, 'Kepala Biro', '2021-12-02 06:34:07'),
+(5, 'Koordinator Pokja P4', '2021-12-02 06:34:07'),
+(6, 'Koordinator Pokja KP', '2021-12-02 06:34:07'),
+(7, 'Koordinator Pokja Pensiun', '2021-12-02 06:34:07'),
+(8, 'Kepala Bagian Dukungan Administrasi ', '2021-12-02 06:34:07'),
+(9, 'Tim Pokja P4', '2021-12-02 06:34:07'),
+(10, 'Tim Pokja KP', '2021-12-02 06:34:07'),
+(11, 'Tim Pokja Pensiun', '2021-12-02 06:34:07'),
+(12, 'Bagian Dukungan Administrasi', '2021-12-02 06:34:07'),
+(13, 'TU Menteri', '2021-12-02 06:34:07'),
+(14, 'PIC Pengusul (Subadmin)', '2021-12-02 06:34:07');
 
 -- --------------------------------------------------------
 
@@ -924,10 +970,7 @@ CREATE TABLE `surats` (
   `id` int(11) NOT NULL,
   `description` text NOT NULL,
   `status` varchar(255) NOT NULL,
-  `id_usulan` bigint(20) NOT NULL,
-  `id_layanan` bigint(20) NOT NULL,
-  `nip` varchar(255) NOT NULL,
-  `id_pengirim` bigint(20) NOT NULL,
+  `id_rkp` bigint(20) NOT NULL,
   `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
   `updated_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -999,13 +1042,25 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `nip`, `nip_verified_at`, `password`, `roles_id`, `groups_id`, `remember_token`, `created_at`, `updated_at`) VALUES
-(1, 'PIC - Nama', '111111', NULL, '$2y$10$gGqnqq58u00YXuJTOnNJBu2zpu5X8bQxhi86Tx.wk.oTQcZHfte3y', 1, NULL, 'a3Led2SgRqtCDejX0LZhwLg6QXz5ngkM2DcksAxFkP6IOd4s7moEKN3jZQm2', '2021-09-29 14:41:21', '2021-11-30 09:13:57'),
-(2, 'Koordinator Pokja P4 - Nama', '123456', NULL, '$2y$10$gGqnqq58u00YXuJTOnNJBu2zpu5X8bQxhi86Tx.wk.oTQcZHfte3y', 2, 1, NULL, '2021-09-29 14:41:21', '2021-11-30 06:23:51'),
-(3, 'JF Ahli Muda - Nama', '654321', NULL, '$2y$10$gGqnqq58u00YXuJTOnNJBu2zpu5X8bQxhi86Tx.wk.oTQcZHfte3y', 3, 1, NULL, '2021-09-29 14:41:21', '2021-09-29 14:41:21'),
-(4, 'JF Ahli Madya- Nama', '222222', NULL, '$2y$10$gGqnqq58u00YXuJTOnNJBu2zpu5X8bQxhi86Tx.wk.oTQcZHfte3y', 4, 2, NULL, '2021-09-29 14:41:21', '2021-09-29 14:41:21'),
-(5, 'Kepala Biro - Nama', '333333', NULL, '$2y$10$gGqnqq58u00YXuJTOnNJBu2zpu5X8bQxhi86Tx.wk.oTQcZHfte3y', 5, 2, NULL, '2021-09-29 14:41:21', '2021-09-29 14:41:21'),
-(8, 'Koordinator Pokja KP - Nama', '444444', NULL, '$2y$10$gGqnqq58u00YXuJTOnNJBu2zpu5X8bQxhi86Tx.wk.oTQcZHfte3y', 6, 1, NULL, '2021-11-30 06:27:28', '2021-11-30 06:27:28'),
-(9, 'Koordinator Pokja Pensiun - Nama', '555555', NULL, '$2y$10$gGqnqq58u00YXuJTOnNJBu2zpu5X8bQxhi86Tx.wk.oTQcZHfte3y', 7, 2, NULL, '2021-11-30 06:27:28', '2021-11-30 06:27:28');
+(1, 'PIC', '111111', NULL, '$2y$10$gGqnqq58u00YXuJTOnNJBu2zpu5X8bQxhi86Tx.wk.oTQcZHfte3y', 14, 14, 'Bmb1SdzrUDxox1hKQxu0xgLKKN72KdU4KVzxvSEIkXoi2zR3TcwuwTpT8OfN', '2021-12-02 06:39:33', '2021-12-04 09:38:33'),
+(2, 'Koordinator Pokja P4 / JF SDMA Ahli Madya', '123456', NULL, '$2y$10$gGqnqq58u00YXuJTOnNJBu2zpu5X8bQxhi86Tx.wk.oTQcZHfte3y', 5, 5, NULL, '2021-12-02 06:39:33', '2021-12-02 06:39:33'),
+(3, 'Koordinator Pokja KP / JF SDMA Ahli Madya', '67890', NULL, '$2y$10$gGqnqq58u00YXuJTOnNJBu2zpu5X8bQxhi86Tx.wk.oTQcZHfte3y', 6, 6, NULL, '2021-12-02 06:41:32', '2021-12-02 06:41:32'),
+(4, 'Koordinator Pokja Pensiun / JF SDMA Ahli Madya', '222222', NULL, '$2y$10$gGqnqq58u00YXuJTOnNJBu2zpu5X8bQxhi86Tx.wk.oTQcZHfte3y', 7, 7, NULL, '2021-12-02 06:41:32', '2021-12-02 06:41:32'),
+(25, 'JF SDMA  Ahli Muda P4', '333333', NULL, '$2y$10$gGqnqq58u00YXuJTOnNJBu2zpu5X8bQxhi86Tx.wk.oTQcZHfte3y', 9, 9, NULL, '2021-12-02 07:21:21', '2021-12-02 07:21:21'),
+(26, 'JF SDMA  Ahli Muda KP', '444444', NULL, '$2y$10$gGqnqq58u00YXuJTOnNJBu2zpu5X8bQxhi86Tx.wk.oTQcZHfte3y', 10, 10, NULL, '2021-12-02 07:21:21', '2021-12-02 07:21:21'),
+(27, 'JF SDMA  Ahli Muda Pensiun', '555555', NULL, '$2y$10$gGqnqq58u00YXuJTOnNJBu2zpu5X8bQxhi86Tx.wk.oTQcZHfte3y', 11, 11, NULL, '2021-12-02 07:21:21', '2021-12-02 07:21:21'),
+(28, 'JF SDMA  Ahli Pertama P4', '666666', NULL, '$2y$10$gGqnqq58u00YXuJTOnNJBu2zpu5X8bQxhi86Tx.wk.oTQcZHfte3y', 9, 9, NULL, '2021-12-02 07:21:21', '2021-12-02 07:21:21'),
+(29, 'JF SDMA  Ahli Pertama KP', '777777', NULL, '$2y$10$gGqnqq58u00YXuJTOnNJBu2zpu5X8bQxhi86Tx.wk.oTQcZHfte3y', 10, 10, NULL, '2021-12-02 07:21:21', '2021-12-02 07:21:21'),
+(30, 'JF SDMA  Ahli Pertama Pensiun', '888888', NULL, '$2y$10$gGqnqq58u00YXuJTOnNJBu2zpu5X8bQxhi86Tx.wk.oTQcZHfte3y', 11, 11, NULL, '2021-12-02 07:21:21', '2021-12-02 07:21:21'),
+(31, 'JF SDMA  Ahli Terampil P4', '999999', NULL, '$2y$10$gGqnqq58u00YXuJTOnNJBu2zpu5X8bQxhi86Tx.wk.oTQcZHfte3y', 9, 9, NULL, '2021-12-02 07:21:21', '2021-12-02 07:21:21'),
+(32, 'JF SDMA  Ahli Terampil KP', '000000', NULL, '$2y$10$gGqnqq58u00YXuJTOnNJBu2zpu5X8bQxhi86Tx.wk.oTQcZHfte3y', 10, 10, NULL, '2021-12-02 07:21:21', '2021-12-02 07:21:21'),
+(33, 'JF SDMA  Ahli Terampil Pensiun', '654321', NULL, '$2y$10$gGqnqq58u00YXuJTOnNJBu2zpu5X8bQxhi86Tx.wk.oTQcZHfte3y', 11, 11, NULL, '2021-12-02 07:21:21', '2021-12-02 07:21:21'),
+(34, 'Pelaksana P4', '098765', NULL, '$2y$10$gGqnqq58u00YXuJTOnNJBu2zpu5X8bQxhi86Tx.wk.oTQcZHfte3y', 9, 9, NULL, '2021-12-02 07:21:21', '2021-12-02 07:21:21'),
+(35, 'Menteri', '123123', NULL, '$2y$10$gGqnqq58u00YXuJTOnNJBu2zpu5X8bQxhi86Tx.wk.oTQcZHfte3y', 2, 2, NULL, '2021-12-02 07:24:29', '2021-12-02 07:24:29'),
+(36, 'Deputi', '345345', NULL, '$2y$10$gGqnqq58u00YXuJTOnNJBu2zpu5X8bQxhi86Tx.wk.oTQcZHfte3y', 3, 3, NULL, '2021-12-02 07:24:29', '2021-12-02 07:24:29'),
+(37, 'Kepala Biro', '567567', NULL, '$2y$10$gGqnqq58u00YXuJTOnNJBu2zpu5X8bQxhi86Tx.wk.oTQcZHfte3y', 4, 4, NULL, '2021-12-02 07:24:29', '2021-12-02 07:24:29'),
+(38, 'TU Menteri', '890890', NULL, '$2y$10$gGqnqq58u00YXuJTOnNJBu2zpu5X8bQxhi86Tx.wk.oTQcZHfte3y', 13, 13, NULL, '2021-12-02 07:39:13', '2021-12-02 07:39:13'),
+(39, 'Bagian Dukungan Administrasi', '321767', NULL, '$2y$10$gGqnqq58u00YXuJTOnNJBu2zpu5X8bQxhi86Tx.wk.oTQcZHfte3y', 12, 12, NULL, '2021-12-02 15:04:43', '2021-12-02 15:04:43');
 
 --
 -- Indexes for dumped tables
@@ -1052,6 +1107,12 @@ ALTER TABLE `kenaikan_pangkats`
 -- Indexes for table `migrations`
 --
 ALTER TABLE `migrations`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `notes`
+--
+ALTER TABLE `notes`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -1159,11 +1220,17 @@ ALTER TABLE `rkps`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `rkp_asns`
+--
+ALTER TABLE `rkp_asns`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `roles`
 --
 ALTER TABLE `roles`
   ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `roles_name_unique` (`name`);
+  ADD UNIQUE KEY `name` (`name`);
 
 --
 -- Indexes for table `statuses`
@@ -1195,8 +1262,8 @@ ALTER TABLE `unsur_nons`
 ALTER TABLE `users`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `users_nip_unique` (`nip`),
-  ADD KEY `users_roles_id_foreign` (`roles_id`),
-  ADD KEY `users_groups_id_foreign` (`groups_id`);
+  ADD KEY `users_groups_id_foreign` (`groups_id`),
+  ADD KEY `users_roles_id_foreign` (`roles_id`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -1212,7 +1279,7 @@ ALTER TABLE `bkns`
 -- AUTO_INCREMENT for table `groups`
 --
 ALTER TABLE `groups`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT for table `jabatans`
@@ -1243,6 +1310,12 @@ ALTER TABLE `kenaikan_pangkats`
 --
 ALTER TABLE `migrations`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=41;
+
+--
+-- AUTO_INCREMENT for table `notes`
+--
+ALTER TABLE `notes`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `oauth_clients`
@@ -1317,10 +1390,16 @@ ALTER TABLE `rkps`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
+-- AUTO_INCREMENT for table `rkp_asns`
+--
+ALTER TABLE `rkp_asns`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT for table `roles`
 --
 ALTER TABLE `roles`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT for table `statuses`
@@ -1350,7 +1429,7 @@ ALTER TABLE `unsur_nons`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=40;
 
 --
 -- Constraints for dumped tables
