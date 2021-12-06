@@ -60,7 +60,7 @@
                                             <div class="form-group row">
                                                 <label class="col-lg-3 col-form-label">Upload Surat Permohonan <a style="color: #FF0000;">*</a></label>
                                                 <div class="col-lg-9">
-                                                    <input id="file_surat_permohonan" name="file_surat_permohonan[]" type="file" class="file" data-show-preview="false" multiple/>
+                                                    <input id="file_surat_permohonan" name="file_surat_permohonan[]" accept=".jpg,.jpeg,.png,.pdf" type="file" class="file" data-show-preview="false" multiple/>
                                                     
                                                     <!-- <div class="dropzone dropzone-multi" id="kt_dropzone_4">
                                                         <div class="dropzone-panel mb-lg-0 mb-2">
@@ -102,7 +102,7 @@
                                             <div class="form-group row">
                                                 <label class="col-lg-3 col-form-label">Surat Keterangan Kehilangan Dari Kepolisian <a style="color: #FF0000;">*</a></label>
                                                 <div class="col-lg-9">
-                                                    <input id="file_surat_keterangan_kehilangan_polisi" name="file_surat_keterangan_kehilangan_polisi[]" type="file" class="file" data-show-preview="false" multiple/>
+                                                    <input id="file_surat_keterangan_kehilangan_polisi" name="file_surat_keterangan_kehilangan_polisi[]" accept=".jpg,.jpeg,.png,.pdf" type="file" class="file" data-show-preview="false" multiple/>
                                                     
                                                     <!-- <div class="dropzone dropzone-multi" id="kt_dropzone_4">
                                                         <div class="dropzone-panel mb-lg-0 mb-2">
@@ -167,7 +167,7 @@
                                             <div class="form-group row">
                                                 <label class="col-lg-3 col-form-label">Surat Keterangan Kehilangan <a style="color: #FF0000;">*</a></label>
                                                 <div class="col-lg-9">
-                                                    <input id="file_surat_keterangan_kehilangan" name="file_surat_keterangan_kehilangan[]" type="file" class="file" data-show-preview="false" multiple/>
+                                                    <input id="file_surat_keterangan_kehilangan" name="file_surat_keterangan_kehilangan[]" accept=".jpg,.jpeg,.png,.pdf" type="file" class="file" data-show-preview="false" multiple/>
                                                     
                                                     <!-- <div class="dropzone dropzone-multi" id="kt_dropzone_4">
                                                         <div class="dropzone-panel mb-lg-0 mb-2">
@@ -219,7 +219,7 @@
                                                 <div class="form-group row">
                                                     <label class="col-lg-3 col-form-label">Fotokopi SK yang Hilang <a style="color: #FF0000;">*</a></label>
                                                     <div class="col-lg-9">
-                                                        <input id="file_fotokopi_sk_hilang" name="file_fotokopi_sk_hilang[]" type="file" class="file" data-show-preview="false" multiple/>
+                                                        <input id="file_fotokopi_sk_hilang" name="file_fotokopi_sk_hilang[]" accept=".jpg,.jpeg,.png,.pdf" type="file" class="file" data-show-preview="false" multiple/>
                                                         
                                                         <!-- <div class="dropzone dropzone-multi" id="kt_dropzone_4">
                                                             <div class="dropzone-panel mb-lg-0 mb-2">
@@ -267,7 +267,7 @@
                                                 <label class="col-form-label col-lg-3 col-sm-12">NIP <a style="color: #FF0000;">*</a></label>
                                                 <div class="col-lg-9 col-md-9 col-sm-12">
                                                     <div class="input-group">
-                                                        <input type="number" class="form-control" id="nip" name="nip" value="{{old('nip')}}" autocomplete="off" required/>
+                                                        <input type="number" maxlength="18"  class="form-control" id="nip" name="nip" value="{{old('nip')}}" autocomplete="off" required/>
                                                     </div>
                                                 </div>
                                             </div>
@@ -312,7 +312,7 @@
                                                 <label class="col-form-label col-lg-3 col-sm-12">Nomor Urut <a style="color: #FF0000;">*</a></label>
                                                 <div class="col-lg-9 col-md-9 col-sm-12">
                                                     <div class="input-group">
-                                                        <input type="number" class="form-control" id="no_urut" name="no_urut" value="{{old('no_urut')}}" autocomplete="off" required/>
+                                                        <input type="text" class="form-control" id="no_urut" name="no_urut" value="{{old('no_urut')}}" autocomplete="off" required/>
                                                     </div>
                                                 </div>
                                             </div>
@@ -444,14 +444,14 @@
                                             <div class="form-group row">
                                                 <label class="col-lg-3 col-form-label">Upload BA Pelantikan <a style="color: #FF0000;">*</a></label>
                                                 <div class="col-lg-9">
-                                                    <input id="file_ba_pelantikan" name="file_ba_pelantikan[]" type="file" class="file" data-show-preview="false" multiple/>
+                                                    <input id="file_ba_pelantikan" name="file_ba_pelantikan[]" accept=".jpg,.jpeg,.png,.pdf" type="file" class="file" data-show-preview="false" multiple/>
                                                     <span class="form-text text-muted">Format file harus berbentuk jpg, png, jpeg, pdf, batas size file 1 MB dan file tidak boleh lebih dari 5 file</span>
                                                 </div>
                                             </div>
                                             <div class="form-group row">
                                                 <label class="col-lg-3 col-form-label">Upload Sumpah Jabatan <a style="color: #FF0000;">*</a></label>
                                                 <div class="col-lg-9">
-                                                    <input id="file_sumpah_jabatan" name="file_sumpah_jabatan[]" type="file" class="file" data-show-preview="false" multiple/>
+                                                    <input id="file_sumpah_jabatan" name="file_sumpah_jabatan[]" accept=".jpg,.jpeg,.png,.pdf" type="file" class="file" data-show-preview="false" multiple/>
                                                     <span class="form-text text-muted">Format file harus berbentuk jpg, png, jpeg, pdf, batas size file 1 MB dan file tidak boleh lebih dari 5 file</span>
                                                 </div>
                                             </div>
@@ -463,7 +463,7 @@
                                                 <button type="button" class="btn btn-light-primary font-weight-bolder text-uppercase px-9 py-4" data-wizard-type="action-prev">Sebelumnya</button>
                                             </div>
                                             <div>
-                                                <button type="submit" class="btn btn-warning font-weight-bolder text-uppercase px-9 py-4" data-wizard-type="action-submit" onclick="return confirmation();">Kirim Usulan</button>
+                                                <button type="submit" class="btn btn-warning font-weight-bolder text-uppercase px-9 py-4" data-wizard-type="action-submit">Kirim Usulan</button>
                                                 <button type="button" class="btn btn-primary font-weight-bolder text-uppercase px-9 py-4" data-wizard-type="action-next">Berikutnya</button>
                                             </div>
                                         </div>
@@ -501,6 +501,38 @@
 @section('scripts')
 
     <script>
+        $('#masa_jabatan_start, #masa_jabatan_end').on('change.datetimepicker', function(e) {
+            if(e.date){
+                var min_date = renewDate('min', e.date);
+                applyTimePicker('min', '#masa_jabatan_end', min_date);
+            }
+            var date_start = new Date(document.getElementById("masa_jabatan_start").value);
+            var date_start_day = date_start.getDate();
+            var date_start_month = date_start.getMonth();
+            var date_start_year = date_start.getFullYear();
+
+            var date_end = new Date(document.getElementById("masa_jabatan_end").value);
+            var date_end_day = date_end.getDate();
+            var date_end_month = date_end.getMonth();
+            var date_end_year = date_end.getFullYear();
+            
+            var calculated_date = 0;
+            if(date_end_month > date_start_month) 
+            {
+                calculated_date = date_end_year - date_start_year;
+            }
+            else
+            { 
+                calculated_date = date_end_year - date_start_year;
+            }
+
+
+            var out_value = calculated_date;
+            document.getElementById("masa").innerHTML = out_value + ' Tahun';
+            getdatadate(date_end);
+
+        });
+        
         $(document).ready(function () {
             $("#file_surat_permohonan").on("change", function () {
                 if ($('#file_surat_permohonan')[0].files.length != 0) {

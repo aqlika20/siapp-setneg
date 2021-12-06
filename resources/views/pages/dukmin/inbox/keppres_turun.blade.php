@@ -92,7 +92,7 @@
                                             <div class="form-group row">
                                                 <label class="col-lg-3 col-form-label">Upload File Keppres</label>
                                                 <div class="col-lg-9">
-                                                    <input id="file_keppres" name="file_keppres[]" type="file" class="file" data-show-preview="false" multiple/>
+                                                    <input id="file_keppres" name="file_keppres[]" accept=".jpg,.jpeg,.png,.pdf" type="file" class="file" data-show-preview="false" multiple/>
                                                     
                                                     <!-- <div class="dropzone dropzone-multi" id="kt_dropzone_4">
                                                         <div class="dropzone-panel mb-lg-0 mb-2">

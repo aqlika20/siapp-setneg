@@ -50,7 +50,7 @@ class InboxController extends Controller
     public function usulan() 
     {
         $currentUser = UserManagement::find(Auth::id());
-        $page_title = 'JF Muda Madya | inbox | Usulan';
+        $page_title = Helper::defineRole($currentUser->roles_id).' | inbox | Usulan';
         $page_description = 'Inbox';
 
         //jfku
@@ -131,64 +131,12 @@ class InboxController extends Controller
             ])->get();
         //
 
-        //kenaikan Pangkat
-            $kenaikans = KenaikanPangkat::where([
-                ['status', '=', Helper::$pengajuan_usulan],
-                ['group_id', '=', $currentUser->groups_id]
-            ])->orwhere([
-                ['status', '=', Helper::$pengajuan_usulan],
-                ['distributor_id', '=', $currentUser->nip]
-            ])->get();
-
-            $kenaikan_pendings = KenaikanPangkat::where([
-                ['status', '=', Helper::$pending_jf_ahli],
-                ['group_id', '=', $currentUser->groups_id]
-            ])->orwhere([
-                ['status', '=', Helper::$pengajuan_usulan],
-                ['distributor_id', '=', $currentUser->nip]
-            ])->get();
-
-            $kenaikan_tolaks = KenaikanPangkat::where([
-                ['status', '=', Helper::$tolak_jf_ahli],
-                ['group_id', '=', $currentUser->groups_id]
-            ])->orwhere([
-                ['status', '=', Helper::$pengajuan_usulan],
-                ['distributor_id', '=', $currentUser->nip]
-            ])->get();
-        //
-
-        //Pemberhentian
-            $pemberhentians = Pemberhentian::where([
-                ['status', '=', Helper::$pengajuan_usulan],
-                ['group_id', '=', $currentUser->groups_id]
-            ])->orwhere([
-                ['status', '=', Helper::$pengajuan_usulan],
-                ['distributor_id', '=', $currentUser->nip]
-            ])->get();
-
-            $pemberhentian_pendings = Pemberhentian::where([
-                ['status', '=', Helper::$pending_jf_ahli],
-                ['group_id', '=', $currentUser->groups_id]
-            ])->orwhere([
-                ['status', '=', Helper::$pengajuan_usulan],
-                ['distributor_id', '=', $currentUser->nip]
-            ])->get();
-
-            $pemberhentian_tolaks = Pemberhentian::where([
-                ['status', '=', Helper::$tolak_jf_ahli],
-                ['group_id', '=', $currentUser->groups_id]
-            ])->orwhere([
-                ['status', '=', Helper::$pengajuan_usulan],
-                ['distributor_id', '=', $currentUser->nip]
-            ])->get();
-        //
-
-        return view('pages.jf_ahli.inbox.usulan', compact('page_title', 'page_description', 'currentUser', 'pengangkatans', 'jfku_pendings', 'jfku_tolaks', 'pengangkatans_ns', 'ns_pendings', 'ns_tolaks', 'lainnyas', 'lainnya_pendings', 'lainnya_tolaks', 'kenaikans', 'kenaikan_pendings', 'kenaikan_tolaks', 'pemberhentians', 'pemberhentian_pendings', 'pemberhentian_tolaks' ));
+        return view('pages.jf_ahli.inbox.usulan', compact('page_title', 'page_description', 'currentUser', 'pengangkatans', 'jfku_pendings', 'jfku_tolaks', 'pengangkatans_ns', 'ns_pendings', 'ns_tolaks', 'lainnyas', 'lainnya_pendings', 'lainnya_tolaks'));
     }
 
     public function verification($id){
         $currentUser = UserManagement::find(Auth::id());
-        $page_title = 'JF Muda Madya  | Verification';
+        $page_title = Helper::defineRole($currentUser->roles_id).' | Verification';
         $page_description = 'Verification';
         $verifikasi = PengangkatanPemberhentianJFKU::where('id', $id)->first();
         $jabatans = Jabatan::all();
@@ -249,7 +197,7 @@ class InboxController extends Controller
 
     public function verification_ns($id){
         $currentUser = UserManagement::find(Auth::id());
-        $page_title = 'KemenSetneg | Verification';
+        $page_title = Helper::defineRole($currentUser->roles_id).' | Verification';
         $page_description = 'Verification';
         $verifikasi_ns = PengangkatanPemberhentianNS::where('id', $id)->first();
         $jabatans = Jabatan::all();
@@ -272,7 +220,7 @@ class InboxController extends Controller
 
     public function verification_lainnya($id){
         $currentUser = UserManagement::find(Auth::id());
-        $page_title = 'KemenSetneg | Verification';
+        $page_title = Helper::defineRole($currentUser->roles_id).' | Verification';
         $page_description = 'Verification';
         $verifikasi_lainnya = PengangkatanPemberhentianLainnya::where('id', $id)->first();
         $jabatans = Jabatan::all();
@@ -293,118 +241,6 @@ class InboxController extends Controller
         return view('pages.jf_ahli.inbox.verif_lainnya', compact('page_title', 'page_description', 'file_sumpah_jabatans', 'file_ba_pelantikans', 'file_bukti_pendukungs', 'file_keppress', 'file_dukumen_lain_pengangkatan_lainnyas', 'file_dhrs', 'file_surat_pengantars', 'currentUser', 'verifikasi_lainnya', 'jabatans', 'unsurs'));
     }
 
-    public function verification_kenaikan($id){
-        $currentUser = UserManagement::find(Auth::id());
-        $page_title = 'KemenSetneg | Verification';
-        $page_description = 'Verification';
-        $verifikasi = KenaikanPangkat::where('id', $id)->first();
-        $jabatans = Jabatan::all();
-        $unsurs = Unsur::all();
-        $periodes = Periode::all();
-        $pangkats = Pangkat::All();
-
-        $notes = [];
-
-        // $file_data_usulans = Helper::fileBreak($verifikasi->file_data_usulan);
-        // $file_nota_usulan_asns = Helper::fileBreak($verifikasi->file_nota_usulan_asn);
-        // $file_nota_usulans = Helper::fileBreak($verifikasi->file_nota_usulan);
-        // $file_data_paks = Helper::fileBreak($verifikasi->file_data_pak);
-        // $file_klarifikasi_paks = Helper::fileBreak($verifikasi->file_klarifikasi_pak);
-        // $file_jabatans = Helper::fileBreak($verifikasi->file_jabatan);
-        // $file_pengambilan_sumpahs = Helper::fileBreak($verifikasi->file_pengambilan_sumpah);
-        // $file_pendukungs  = Helper::fileBreak($verifikasi->file_pendukung);
-        // $file_ba_pelantikans  = Helper::fileBreak($verifikasi->file_ba_pelantikan);
-        // $file_sumpah_jabatans  = Helper::fileBreak($verifikasi->file_sumpah_jabatan);
-        // $file_surat_pengantars  = Helper::fileBreak($verifikasi->file_surat_pengantar);
-        // $file_keppress  = Helper::fileBreak($verifikasi->file_keppres);
-        // $file_bukti_pendukungs  = Helper::fileBreak($verifikasi->file_bukti_pendukung);
-
-        $file_data_usulans = Helper::fileBreak($verifikasi->file_data_usulan);
-        $file_nota_usulans = Helper::fileBreak($verifikasi->file_nota_usulan);
-        $file_sk_pangkat_terakhirs = Helper::fileBreak($verifikasi->file_sk_pangkat_terakhir);
-        $file_sk_jabatans = Helper::fileBreak($verifikasi->file_sk_jabatan);
-        $file_data_paks = Helper::fileBreak($verifikasi->file_data_pak);
-        $file_klarifikasi_paks = Helper::fileBreak($verifikasi->file_klarifikasi_pak);
-        $file_baps = Helper::fileBreak($verifikasi->file_bap);
-        $file_spps = Helper::fileBreak($verifikasi->file_spp);
-        $file_hukumans = Helper::fileBreak($verifikasi->file_hukuman);
-        $file_skp_1_tahun_terakhirs = Helper::fileBreak($verifikasi->file_skp_1_tahun_terakhir);
-        $file_skp_2_tahun_terakhirs = Helper::fileBreak($verifikasi->file_skp_2_tahun_terakhir);
-        $file_surat_keputusan_ppks = Helper::fileBreak($verifikasi->file_surat_keputusan_ppk);
-        $file_surat_permohonans = Helper::fileBreak($verifikasi->file_surat_permohonan);
-        $file_keppres_dibatalkans = Helper::fileBreak($verifikasi->file_keppres_dibatalkan);
-        $file_alasans = Helper::fileBreak($verifikasi->file_alasan);
-        $file_fotokopi_sk_hilangs = Helper::fileBreak($verifikasi->file_fotokopi_sk_hilang);
-        $file_surat_kehilangans = Helper::fileBreak($verifikasi->file_surat_kehilangan);
-        $file_dokumen_klarifikasis = Helper::fileBreak($verifikasi->file_dokumen_klarifikasi);
-        $file_fotokopi_sk_diperbaikis = Helper::fileBreak($verifikasi->file_fotokopi_sk_diperbaiki);
-
-        if($verifikasi->jenis_layanan == Helper::$pemberian_kenaikan_pangkat || $verifikasi->jenis_layanan == Helper::$pengesahan_kenaikan_pangkat)
-        {
-            $notes = Catatan::where([
-                ['id_usulan', '=', $id], ['id_layanan', '=', $verifikasi->jenis_layanan]
-            ])->get();
-
-        }
-
-        $pendidikan_terakhirs = Pendidikan::where([
-            ['id', '=' , $verifikasi->pendidikan_terakhir]
-        ])->get();
-
-        $pangkat_gol_barus = Pangkat::where([
-            ['id', '=' , $verifikasi->pangkat_gol_baru]
-        ])->get();
-
-        $jabatan_paks = JabatanPAK::where([
-            ['id', '=' , $verifikasi->jabatan_pak]
-        ])->get();
-
-        if (!$verifikasi) {
-            return redirect()->route('pages.jf_ahli.inbox.usulan')->with(['error'=>'Invalid parameter id.']);
-        }
-    
-        return view('pages.jf_ahli.inbox.verif_kenaikan_pangkat', compact('page_title', 'page_description', 'file_nota_usulans', 'file_data_usulans', 'file_sk_pangkat_terakhirs', 'file_sk_jabatans', 'file_data_paks', 'file_klarifikasi_paks', 'file_baps', 'file_spps', 'file_hukumans', 'file_skp_1_tahun_terakhirs', 'file_skp_2_tahun_terakhirs', 'file_surat_keputusan_ppks', 'currentUser', 'verifikasi', 'jabatans', 'unsurs', 'periodes', 'notes', 'pangkats', 'pendidikan_terakhirs', 'pangkat_gol_barus','jabatan_paks', 'file_surat_permohonans', 'file_keppres_dibatalkans','file_alasans', 'file_fotokopi_sk_hilangs', 'file_dokumen_klarifikasis', 'file_fotokopi_sk_diperbaikis', 'file_surat_kehilangans'));
-    }
-
-    public function verification_pemberhentian($id){
-        $currentUser = UserManagement::find(Auth::id());
-        $page_title = 'KemenSetneg | Verification';
-        $page_description = 'Verification';
-        $verifikasi = Pemberhentian::where('id', $id)->first();
-        $jabatans = Jabatan::all();
-        $unsurs = Unsur::all();
-        $periodes = Periode::all();
-        $pangkats = Pangkat::All();
-
-        
-        $notes = [];
-        // dd($notes);
-
-        $file_data_usulans = Helper::fileBreak($verifikasi->file_data_usulan);
-        $file_data_paks = Helper::fileBreak($verifikasi->file_data_pak);
-        $file_klarifikasi_paks = Helper::fileBreak($verifikasi->file_klarifikasi_pak);
-        $file_surat_pengantars  = Helper::fileBreak($verifikasi->file_surat_pengantar);
-        $file_keppress  = Helper::fileBreak($verifikasi->file_keppres);
-        $file_bukti_pendukungs  = Helper::fileBreak($verifikasi->file_bukti_pendukung);
-        $file_ba_pelantikans  = Helper::fileBreak($verifikasi->file_ba_pelantikan);
-        $file_sumpah_jabatans  = Helper::fileBreak($verifikasi->file_sumpah_jabatan);
-        
-
-        if($verifikasi->jenis_layanan == Helper::$bup_non_kpp || $verifikasi->jenis_layanan == Helper::$bup_kpp || $verifikasi->jenis_layanan == Helper::$berhenti_atas_permintaan_sendiri || $verifikasi->jenis_layanan == Helper::$non_bup_JDA_non_kpp || $verifikasi->jenis_layanan == Helper::$non_bup_JDA_kpp || $verifikasi->jenis_layanan == Helper::$berhenti_tidak_hormat || $verifikasi->jenis_layanan == Helper::$anumerta || $verifikasi->jenis_layanan == Helper::$pemberhentian_sementara || $verifikasi->jenis_layanan == Helper::$ralat_keppres_pemberhentian || $verifikasi->jenis_layanan == Helper::$pembatalan_keppress_pemberhentian || $verifikasi->jenis_layanan == Helper::$petikan_keppres_hilang)
-        {
-            $notes = Catatan::where([
-                ['id_usulan', '=', $id], ['id_layanan', '=', $verifikasi->jenis_layanan]
-            ])->get();
-
-        }
-
-        if (!$verifikasi) {
-            return redirect()->route('pages.jf_ahli.inbox.usulan')->with(['error'=>'Invalid parameter id.']);
-        }
-    
-        return view('pages.koor_pokja.inbox.verif_pemberhentian', compact('page_title', 'page_description', 'file_sumpah_jabatans', 'file_ba_pelantikans', 'file_bukti_pendukungs', 'file_keppress', 'file_surat_pengantars', 'file_klarifikasi_paks', 'file_data_paks', 'file_data_usulans', 'currentUser', 'verifikasi', 'jabatans', 'unsurs', 'periodes', 'notes', 'pangkats'));
-    }
-
     public function store_proses(Request $request) 
     {
         $input = $request->all();
@@ -419,21 +255,6 @@ class InboxController extends Controller
             );
             return redirect()->route('jf-ahli.inbox.usulan')->with(['success'=>'verifikasi Success !!!']);
         }
-        elseif($jenis_layanan == Helper::$pemberian_kenaikan_pangkat || $jenis_layanan == Helper::$pembatalan_keppres_kenaikan_pangkat || $jenis_layanan == Helper::$pengesahan_kenaikan_pangkat || $jenis_layanan == Helper::$ralat_keppres_kepangkatan )
-        {
-            $pengangkatans = KenaikanPangkat::where('id', '=', $id)->update(
-                ['status' => Helper::$verifikasi_jf_ahli]
-            );
-            return redirect()->route('jf-ahli.inbox.usulan')->with(['success'=>'verifikasi Success !!!']);
-        }
-        elseif($jenis_layanan == Helper::$bup_non_kpp || $jenis_layanan == Helper::$bup_kpp || $jenis_layanan == Helper::$berhenti_atas_permintaan_sendiri || $jenis_layanan == Helper::$non_bup_JDA_non_kpp || $jenis_layanan == Helper::$non_bup_JDA_kpp || $jenis_layanan == Helper::$berhenti_tidak_hormat || $jenis_layanan == Helper::$anumerta || $jenis_layanan == Helper::$pemberhentian_sementara || $jenis_layanan == Helper::$ralat_keppres_pemberhentian || $jenis_layanan == Helper::$pembatalan_keppress_pemberhentian || $jenis_layanan == Helper::$petikan_keppres_hilang)
-        {
-            $pengangkatans = Pemberhentian::where('id', '=', $id)->update(
-                ['status' => Helper::$verifikasi_jf_ahli]
-            );
-            return redirect()->route('jf-ahli.inbox.usulan')->with(['success'=>'verifikasi Success !!!']);
-        }
-        
     }
 
     public function store_pending(Request $request) 
@@ -463,20 +284,6 @@ class InboxController extends Controller
                 ['status' => Helper::$pending_jf_ahli]
             );
             return redirect()->route("jf-ahli.inbox.text-editor.lain.index", [$id])->with(['success'=>'verifikasi Success !!!']);
-        }
-        elseif($jenis_layanan == Helper::$pemberian_kenaikan_pangkat || $jenis_layanan == Helper::$pembatalan_keppres_kenaikan_pangkat || $jenis_layanan == Helper::$pengesahan_kenaikan_pangkat || $jenis_layanan == Helper::$ralat_keppres_kepangkatan )
-        {
-            $pengangkatans = KenaikanPangkat::where('id', '=', $id)->update(
-                ['status' => Helper::$pending_jf_ahli]
-            );
-            return redirect()->route("jf-ahli.inbox.text-editor.kenaikan.index", [$id])->with(['success'=>'verifikasi Success !!!']);
-        }
-        elseif($jenis_layanan == Helper::$bup_non_kpp || $jenis_layanan == Helper::$bup_kpp || $jenis_layanan == Helper::$berhenti_atas_permintaan_sendiri || $jenis_layanan == Helper::$non_bup_JDA_non_kpp || $jenis_layanan == Helper::$non_bup_JDA_kpp || $jenis_layanan == Helper::$berhenti_tidak_hormat || $jenis_layanan == Helper::$anumerta || $jenis_layanan == Helper::$pemberhentian_sementara || $jenis_layanan == Helper::$ralat_keppres_pemberhentian || $jenis_layanan == Helper::$pembatalan_keppress_pemberhentian || $jenis_layanan == Helper::$petikan_keppres_hilang)
-        {
-            $pengangkatans = Pemberhentian::where('id', '=', $id)->update(
-                ['status' => Helper::$pending_jf_ahli]
-            );
-            return redirect()->route("jf-ahli.inbox.text-editor.pemberhentian.index", [$id])->with(['success'=>'verifikasi Success !!!']);          
         }
         
     }
@@ -539,44 +346,12 @@ class InboxController extends Controller
             ]);
             return redirect()->route('jf-ahli.inbox.usulan')->with(['success'=>'verifikasi Success !!!']);
         }
-        elseif($jenis_layanan == Helper::$pemberian_kenaikan_pangkat || $jenis_layanan == Helper::$pembatalan_keppres_kenaikan_pangkat || $jenis_layanan == Helper::$pengesahan_kenaikan_pangkat || $jenis_layanan == Helper::$ralat_keppres_kepangkatan )
-        {
-            $pengangkatans = KenaikanPangkat::where('id', '=', $id)->update(
-                ['status' => Helper::$tolak_jf_ahli]
-            );
-            $tolaks = Penolakan::create([
-                'id_usulan' => $id,
-                'id_layanan' => $jenis_layanan,
-                'id_pengirim' => $id_pengirim,
-                'id_verifikator' => $id_verifikator,
-                'nama_verifikator' => $nama_verifikator,
-                'tanggal_prosess_penolakan' => Helper::convertDatetoDB($input['tanggal_prosess_penolakan']),
-                'alasan_penolakan' => $input['alasan_penolakan']
-            ]);
-            return redirect()->route('jf-ahli.inbox.usulan')->with(['success'=>'verifikasi Success !!!']);
-        }
-        elseif($jenis_layanan == Helper::$bup_non_kpp || $jenis_layanan == Helper::$bup_kpp || $jenis_layanan == Helper::$berhenti_atas_permintaan_sendiri || $jenis_layanan == Helper::$non_bup_JDA_non_kpp || $jenis_layanan == Helper::$non_bup_JDA_kpp || $jenis_layanan == Helper::$berhenti_tidak_hormat || $jenis_layanan == Helper::$anumerta || $jenis_layanan == Helper::$pemberhentian_sementara || $jenis_layanan == Helper::$ralat_keppres_pemberhentian || $jenis_layanan == Helper::$pembatalan_keppress_pemberhentian || $jenis_layanan == Helper::$petikan_keppres_hilang)
-        {
-            $pengangkatans = Pemberhentian::where('id', '=', $id)->update(
-                ['status' => Helper::$tolak_jf_ahli]
-            );
-            $tolaks = Penolakan::create([
-                'id_usulan' => $id,
-                'id_layanan' => $jenis_layanan,
-                'id_pengirim' => $id_pengirim,
-                'id_verifikator' => $id_verifikator,
-                'nama_verifikator' => $nama_verifikator,
-                'tanggal_prosess_penolakan' => Helper::convertDatetoDB($input['tanggal_prosess_penolakan']),
-                'alasan_penolakan' => $input['alasan_penolakan']
-            ]);
-            return redirect()->route('jf-ahli.inbox.usulan')->with(['success'=>'verifikasi Success !!!']);
-        }
     }
 
     public function revisi() {
 
         $currentUser = UserManagement::find(Auth::id());
-        $page_title = 'KemenSetneg | Revisi';
+        $page_title = Helper::defineRole($currentUser->roles_id).' | Revisi';
         $page_description = 'Revisi';
         // $verifikasi_lainnya = PengangkatanPemberhentianLainnya::where('id', $id)->first();
         // $jabatans = Jabatan::all();

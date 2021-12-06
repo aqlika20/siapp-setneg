@@ -124,34 +124,6 @@
                                                             </td>
                                                         </tr>
                                                     @endforeach
-
-                                                    @foreach($kenaikans as $kenaikan)
-                                                        <tr>
-                                                            <td>{{ $kenaikan->tanggal_surat_usulan }}</td>
-                                                            <td>{{ $kenaikan->no_surat_usulan }}</td>
-                                                            <td>{{ $kenaikan->instansi_pengusul }}</td>
-                                                            <td><div style="color: #FFA800;">{{ Helper::defineJenisLayananBy($kenaikan->jenis_layanan) }}</div></td>
-                                                            <td><div style="color: #3699FF;">{{ $kenaikan->nip }}</div></td>
-                                                            <td>{{ $kenaikan->nama }}</td>
-                                                            <td>
-                                                                <a href="{{route('jf-ahli.inbox.kenaikan_pangkat.verif', ['id' => $kenaikan->id])}}" type="button" class="btn btn-success font-weight-bold align-items-md-end">Verifikasi</a>
-                                                            </td>
-                                                        </tr>
-                                                    @endforeach
-
-                                                    @foreach($pemberhentians as $pemberhentian)
-                                                        <tr>
-                                                            <td>{{ $pemberhentian->tanggal_surat_usulan }}</td>
-                                                            <td>{{ $pemberhentian->no_surat_usulan }}</td>
-                                                            <td>{{ $pemberhentian->instansi_pengusul }}</td>
-                                                            <td><div style="color: #FFA800;">{{ Helper::defineJenisLayananBy($pemberhentian->jenis_layanan) }}</div></td>
-                                                            <td><div style="color: #3699FF;">{{ $pemberhentian->nip }}</div></td>
-                                                            <td>{{ $pemberhentian->nama }}</td>
-                                                            <td>
-                                                                <a href="{{route('jf-ahli.inbox.pemberhentian.verif', ['id' => $pemberhentian->id])}}" type="button" class="btn btn-success font-weight-bold align-items-md-end">Verifikasi</a>
-                                                            </td>
-                                                        </tr>
-                                                    @endforeach
                                                     
                                                 </tbody>
                                             </table>

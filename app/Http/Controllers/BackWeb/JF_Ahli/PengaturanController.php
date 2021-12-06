@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use App\UserManagement;
+use App\Helper;
 
 class PengaturanController extends Controller
 {
@@ -20,7 +21,7 @@ class PengaturanController extends Controller
     public function faq()
     {
         $currentUser = UserManagement::find(Auth::id());
-        $page_title = 'JF Muda Madya | faq';
+        $page_title = Helper::defineRole($currentUser->roles_id).' | faq';
         $page_description = 'faq';
         
         return view('pages.jf_ahli.faq', compact('page_title', 'page_description', 'currentUser'));

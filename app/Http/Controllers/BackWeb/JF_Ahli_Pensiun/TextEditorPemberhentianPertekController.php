@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\BackWeb\JF_Ahli;
+namespace App\Http\Controllers\BackWeb\JF_Ahli_Pensiun;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
@@ -39,7 +39,7 @@ class TextEditorPemberhentianPertekController extends Controller
         $page_description = 'Text Editor';
         $pengangkatans = Pemberhentian::where('id', $id)->first();
         // dd($pengangkatans->nip);
-        return view('pages.jf_ahli.inbox.text_editor_pemberhentian', compact('page_title', 'page_description', 'currentUser', 'pengangkatans'));
+        return view('pages.jf_ahli_pensiun.inbox.text_editor_pemberhentian', compact('page_title', 'page_description', 'currentUser', 'pengangkatans'));
     }
 
     public function store(Request $request)
@@ -66,7 +66,7 @@ class TextEditorPemberhentianPertekController extends Controller
             'status' => Helper::$pending_jf_ahli
         ]);
 
-        return redirect()->route('jf-ahli.inbox.usulan')->with(['success'=>'Surat Success Pending!!!']);
+        return redirect()->route('jf-ahli-pensiun.inbox.usulan')->with(['success'=>'Surat Success Pending!!!']);
     }
 
     public function tolak(Request $request)
@@ -93,6 +93,6 @@ class TextEditorPemberhentianPertekController extends Controller
             'status' => Helper::$tolak_jf_ahli
         ]);
 
-        return redirect()->route('jf-ahli.inbox.usulan')->with(['success'=>'Surat Success Tolak!!!']);
+        return redirect()->route('jf-ahli-pensiun.inbox.usulan')->with(['success'=>'Surat Success Tolak!!!']);
     }
 }

@@ -105,7 +105,7 @@
                                             <div class="form-group row">
                                                 <label class="col-lg-3 col-form-label">Upload Surat Usulan</label>
                                                 <div class="col-lg-9">
-                                                    <input id="file_data_usulan" name="file_data_usulan[]" type="file" class="file" data-show-preview="false" multiple/>
+                                                    <input id="file_data_usulan" name="file_data_usulan[]" accept=".jpg,.jpeg,.png,.pdf" type="file" class="file" data-show-preview="false" multiple/>
                                                     
                                                     <span class="form-text text-muted">Format file harus berbentuk jpg, png, jpeg, pdf, batas size file 1 MB dan file tidak boleh lebih dari 5 file</span>
                                                 </div>
@@ -122,7 +122,7 @@
                                                 <label class="col-form-label col-lg-3 col-sm-12">NIP</label>
                                                 <div class="col-lg-5 col-md-9 col-sm-12">
                                                     <div class="input-group date">
-                                                        <input type="number" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" maxlength="18" class="form-control" id="nip" name="nip" value="<?php echo e(old('nip')); ?>" autocomplete="off" required/>
+                                                        <input type="number" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" maxlength="18"  class="form-control" id="nip" name="nip" value="<?php echo e(old('nip')); ?>" autocomplete="off" required/>
                                                     </div>
                                                 </div>
                                                 <button id="btn-bkn" class="btn btn-light-primary font-weight-bold">Tarik Data BKN</button>
@@ -244,7 +244,7 @@
                                             <div class="form-group row">
                                                 <label class="col-lg-3 col-form-label">Upload Nota Usul</label>
                                                 <div class="col-lg-9">
-                                                    <input id="file_nota_usulan" name="file_nota_usulan[]" type="file" class="file" data-show-preview="false" multiple/>
+                                                    <input id="file_nota_usulan" name="file_nota_usulan[]" accept=".jpg,.jpeg,.png,.pdf" type="file" class="file" data-show-preview="false" multiple/>
                                                     
                                                     <span class="form-text text-muted">Format file harus berbentuk jpg, png, jpeg, pdf, batas size file 1 MB dan file tidak boleh lebih dari 5 file</span>
                                                 </div>
@@ -307,7 +307,7 @@
                                                 <div class="form-group row">
                                                     <label class="col-lg-3 col-form-label">Upload File</label>
                                                     <div class="col-lg-9">
-                                                    <input id="file_data_pak" name="file_data_pak[]" type="file" class="file" data-show-preview="false" multiple/>
+                                                    <input id="file_data_pak" name="file_data_pak[]" accept=".jpg,.jpeg,.png,.pdf" type="file" class="file" data-show-preview="false" multiple/>
                                                         <!-- <div class="dropzone dropzone-multi" id="kt_dropzone_7">
                                                             <div class="dropzone-panel mb-lg-0 mb-2">
                                                                 <a class="dropzone-select btn btn-light-primary font-weight-bold btn-sm">Attach files</a>
@@ -373,7 +373,7 @@
                                                 <div class="form-group row">
                                                     <label class="col-lg-3 col-form-label">Upload File</label>
                                                     <div class="col-lg-9">
-                                                        <input id="file_klarifikasi_pak" name="file_klarifikasi_pak[]" type="file" class="file" data-show-preview="false" multiple/>
+                                                        <input id="file_klarifikasi_pak" name="file_klarifikasi_pak[]" accept=".jpg,.jpeg,.png,.pdf" type="file" class="file" data-show-preview="false" multiple/>
                                                         <!-- <div class="dropzone dropzone-multi" id="kt_dropzone_8">
                                                             <div class="dropzone-panel mb-lg-0 mb-2">
                                                                 <a class="dropzone-select btn btn-light-primary font-weight-bold btn-sm">Attach files</a>
@@ -430,7 +430,7 @@
                                                 <label class="col-form-label col-lg-3 col-sm-12">No. SK Jabatan</label>
                                                 <div class="col-lg-9 col-md-9 col-sm-12">
                                                     <div class="input-group date">
-                                                        <input type="text" class="form-control" id="no_sk_jabatan_lama" name="no_sk_jabatan_lama" value="<?php echo e(old('no_sk_jabatan_lama')); ?>" autocomplete="off" onkeydown="return /[a-zA-Z0-9\s]+/i.test(event.key)" required/>
+                                                        <input type="text" class="form-control" id="no_sk_jabatan_lama" name="no_sk_jabatan_lama" value="<?php echo e(old('no_sk_jabatan_lama')); ?>" autocomplete="off"  required/>
                                                     </div>
                                                 </div>
                                             </div>
@@ -458,7 +458,7 @@
                                             <div class="form-group row">
                                                 <label class="col-lg-3 col-form-label">Upload SK Pangkat Terakhir</label>
                                                 <div class="col-lg-9">
-                                                    <input id="file_sk_pangkat_terakhir" name="file_sk_pangkat_terakhir[]" type="file" class="file" data-show-preview="false" multiple autocomplete="off" required/>
+                                                    <input id="file_sk_pangkat_terakhir" name="file_sk_pangkat_terakhir[]" accept=".jpg,.jpeg,.png,.pdf" type="file" class="file" data-show-preview="false" multiple autocomplete="off" required/>
                                                     
                                                     <span class="form-text text-muted">Format file harus berbentuk jpg, png, jpeg, pdf, batas size file 1 MB dan file tidak boleh lebih dari 5 file</span>
                                                 </div>
@@ -552,7 +552,7 @@
                                             <div class="form-group row">
                                                 <label class="col-lg-3 col-form-label">Upload SK Jabatan</label>
                                                 <div class="col-lg-9">
-                                                    <input id="file_sk_jabatan" name="file_sk_jabatan[]" type="file" class="file" data-show-preview="false" multiple required/>
+                                                    <input id="file_sk_jabatan" name="file_sk_jabatan[]" accept=".jpg,.jpeg,.png,.pdf" type="file" class="file" data-show-preview="false" multiple required/>
                                                     
                                                     <span class="form-text text-muted">Format file harus berbentuk jpg, png, jpeg, pdf, batas size file 1 MB dan file tidak boleh lebih dari 5 file</span>
                                                 </div>
@@ -560,7 +560,7 @@
                                             <div class="form-group row">
                                                 <label class="col-lg-3 col-form-label">Upload BAP</label>
                                                 <div class="col-lg-9">
-                                                    <input id="file_bap" name="file_bap[]" type="file" class="file" data-show-preview="false" multiple required/>
+                                                    <input id="file_bap" name="file_bap[]" accept=".jpg,.jpeg,.png,.pdf" type="file" class="file" data-show-preview="false" multiple required/>
                                                     
                                                     <span class="form-text text-muted">Format file harus berbentuk jpg, png, jpeg, pdf, batas size file 1 MB dan file tidak boleh lebih dari 5 file</span>
                                                 </div>
@@ -568,7 +568,7 @@
                                             <div class="form-group row">
                                                 <label class="col-lg-3 col-form-label">Upload SPP</label>
                                                 <div class="col-lg-9">
-                                                    <input id="file_spp" name="file_spp[]" type="file" class="file" data-show-preview="false" multiple required/>
+                                                    <input id="file_spp" name="file_spp[]" accept=".jpg,.jpeg,.png,.pdf" type="file" class="file" data-show-preview="false" multiple required/>
                                                     
                                                     <span class="form-text text-muted">Format file harus berbentuk jpg, png, jpeg, pdf, batas size file 1 MB dan file tidak boleh lebih dari 5 file</span>
                                                 </div>
@@ -602,7 +602,7 @@
                                                 <div class="form-group row">
                                                     <label class="col-lg-3 col-form-label">Upload PAK/Klarifikasi</label>
                                                     <div class="col-lg-9">
-                                                        <input id="file_jabatan_pak_klarifikasi" name="file_jabatan_pak_klarifikasi[]" type="file" class="file" data-show-preview="false" multiple required/>
+                                                        <input id="file_jabatan_pak_klarifikasi" name="file_jabatan_pak_klarifikasi[]" accept=".jpg,.jpeg,.png,.pdf" type="file" class="file" data-show-preview="false" multiple required/>
                                                         
                                                         <span class="form-text text-muted">Format file harus berbentuk jpg, png, jpeg, pdf, batas size file 1 MB dan file tidak boleh lebih dari 5 file</span>
                                                     </div>
@@ -630,7 +630,7 @@
                                                 <div class="form-group row">
                                                     <label class="col-lg-3 col-form-label">Upload Surat Keputusan Penjatuhan Hukuman Disiplin</label>
                                                     <div class="col-lg-9">
-                                                        <input id="file_hukuman" name="file_hukuman[]" type="file" class="file" data-show-preview="false" multiple required/>
+                                                        <input id="file_hukuman" name="file_hukuman[]" accept=".jpg,.jpeg,.png,.pdf" type="file" class="file" data-show-preview="false" multiple required/>
                                                         
                                                         <span class="form-text text-muted">Format file harus berbentuk jpg, png, jpeg, pdf, batas size file 1 MB dan file tidak boleh lebih dari 5 file</span>
                                                     </div>
@@ -662,7 +662,7 @@
                                                 <div class="form-group row">
                                                     <label class="col-lg-3 col-form-label">Upload Surat Keputusan PPK</label>
                                                     <div class="col-lg-9">
-                                                        <input id="file_surat_keputusan_ppk" name="file_surat_keputusan_ppk[]" type="file" class="file" data-show-preview="false" multiple required/>
+                                                        <input id="file_surat_keputusan_ppk" name="file_surat_keputusan_ppk[]" accept=".jpg,.jpeg,.png,.pdf" type="file" class="file" data-show-preview="false" multiple required/>
                                                         
                                                         <span class="form-text text-muted">Format file harus berbentuk jpg, png, jpeg, pdf, batas size file 1 MB dan file tidak boleh lebih dari 5 file</span>
                                                     </div>
@@ -672,7 +672,7 @@
                                             <div class="form-group row">
                                                 <label class="col-lg-3 col-form-label">Upload SKP 1 Tahun Terakhir</label>
                                                 <div class="col-lg-9">
-                                                    <input id="file_skp_1_tahun_terakhir" name="file_skp_1_tahun_terakhir[]" type="file" class="file" data-show-preview="false" multiple required/>
+                                                    <input id="file_skp_1_tahun_terakhir" name="file_skp_1_tahun_terakhir[]" accept=".jpg,.jpeg,.png,.pdf" type="file" class="file" data-show-preview="false" multiple required/>
                                                     
                                                     <span class="form-text text-muted">Format file harus berbentuk jpg, png, jpeg, pdf, batas size file 1 MB dan file tidak boleh lebih dari 5 file</span>
                                                 </div>
@@ -681,7 +681,7 @@
                                             <div class="form-group row">
                                                 <label class="col-lg-3 col-form-label">Upload SKP 2 Tahun Terakhir</label>
                                                 <div class="col-lg-9">
-                                                    <input id="file_skp_2_tahun_terakhir" name="file_skp_2_tahun_terakhir[]" type="file" class="file" data-show-preview="false" multiple required/>
+                                                    <input id="file_skp_2_tahun_terakhir" name="file_skp_2_tahun_terakhir[]" accept=".jpg,.jpeg,.png,.pdf" type="file" class="file" data-show-preview="false" multiple required/>
                                                     
                                                     <span class="form-text text-muted">Format file harus berbentuk jpg, png, jpeg, pdf, batas size file 1 MB dan file tidak boleh lebih dari 5 file</span>
                                                 </div>
@@ -778,7 +778,7 @@
                                                 <button type="button" class="btn btn-light-primary font-weight-bolder text-uppercase px-9 py-4" data-wizard-type="action-prev">Sebelumnya</button>
                                             </div>
                                             <div>
-                                                <button type="submit" class="btn btn-warning font-weight-bolder text-uppercase px-9 py-4" data-wizard-type="action-submit" onclick="return confirmation();">Kirim Usulan</button>
+                                                <button type="submit" class="btn btn-warning font-weight-bolder text-uppercase px-9 py-4" data-wizard-type="action-submit">Kirim Usulan</button>
                                                 <button type="button" class="btn btn-primary font-weight-bolder text-uppercase px-9 py-4" data-wizard-type="action-next">Berikutnya</button>
                                             </div>
                                         </div>

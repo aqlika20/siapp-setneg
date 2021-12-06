@@ -127,7 +127,7 @@
                                         <div class="mr-2">
                                         </div>
                                         <div>
-                                            <button type="submit" class="btn btn-primary font-weight-bolder text-uppercase px-9 py-4" data-wizard-type="action-submit" onclick="return confirmation();">RKP</button>
+                                            <button type="submit" class="btn btn-primary font-weight-bolder text-uppercase px-9 py-4" data-wizard-type="action-submit">RKP</button>
                                         </div>
                                     </div>
                                     <!--end: Wizard Actions-->

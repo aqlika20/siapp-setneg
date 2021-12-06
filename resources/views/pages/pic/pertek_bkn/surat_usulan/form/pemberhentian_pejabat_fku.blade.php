@@ -66,7 +66,7 @@
                                                 <label class="col-form-label col-lg-3 col-sm-12">Jabatan Yang Menandatangani</label>
                                                 <div class="col-lg-9 col-md-9 col-sm-12">
                                                     <div class="input-group">
-                                                        <input type="text" onkeydown="return /[a-zA-Z0-9\s]+/i.test(event.key)" class="form-control" id="jabatan_menandatangani" name="jabatan_menandatangani" value="{{old('jabatan_menandatangani')}}" autocomplete="off" required/>
+                                                        <input type="text"  class="form-control" id="jabatan_menandatangani" name="jabatan_menandatangani" value="{{old('jabatan_menandatangani')}}" autocomplete="off" required/>
                                                     </div>
                                                 </div>
                                             </div>
@@ -75,7 +75,7 @@
                                             <div class="form-group row">
                                                 <label class="col-lg-3 col-form-label">Upload/Download File</label>
                                                 <div class="col-lg-9">
-                                                    <input id="file_data_usulan" name="file_data_usulan[]" type="file" class="file" data-show-preview="false" multiple/>
+                                                    <input id="file_data_usulan" name="file_data_usulan[]" accept=".jpg,.jpeg,.png,.pdf" type="file" class="file" data-show-preview="false" multiple/>
                                                     
                                                     <!-- <div class="dropzone dropzone-multi" id="kt_dropzone_4">
                                                         <div class="dropzone-panel mb-lg-0 mb-2">
@@ -125,7 +125,7 @@
                                                 <label class="col-form-label col-lg-3 col-sm-12">NIP</label>
                                                 <div class="col-lg-9 col-md-9 col-sm-12">
                                                     <div class="input-group date">
-                                                        <input type="number" pattern="[0-9]+([\.,][0-9]+)?" class="form-control" id="nip" name="nip" value="{{old('nip')}}" autocomplete="off" required/>
+                                                        <input type="number" pattern="[0-9]+([\.,][0-9]+)?" maxlength="18"  class="form-control" id="nip" name="nip" value="{{old('nip')}}" autocomplete="off" required/>
                                                     </div>
                                                 </div>
                                             </div>
@@ -135,7 +135,7 @@
                                                 <label class="col-form-label col-lg-3 col-sm-12">Nama</label>
                                                 <div class="col-lg-9 col-md-9 col-sm-12">
                                                     <div class="input-group date">
-                                                        <input type="text" onkeydown="return /[a-zA-Z0-9\s]+/i.test(event.key)" class="form-control" id="nama" name="nama" value="{{old('nama')}}" autocomplete="off" required/>
+                                                        <input type="text"  class="form-control" id="nama" name="nama" value="{{old('nama')}}" autocomplete="off" required/>
                                                     </div>
                                                 </div>
                                             </div>
@@ -145,7 +145,7 @@
                                                 <label class="col-form-label col-lg-3 col-sm-12">Tempat Lahir</label>
                                                 <div class="col-lg-9 col-md-9 col-sm-12">
                                                     <div class="input-group date">
-                                                        <input type="text" onkeydown="return /[a-zA-Z0-9\s]+/i.test(event.key)" class="form-control" id="tempat_lahir" name="tempat_lahir" value="{{old('tempat_lahir')}}" autocomplete="off" required/>
+                                                        <input type="text"  class="form-control" id="tempat_lahir" name="tempat_lahir" value="{{old('tempat_lahir')}}" autocomplete="off" required/>
                                                     </div>
                                                 </div>
                                             </div>
@@ -169,7 +169,7 @@
                                                 <label class="col-form-label col-lg-3 col-sm-12">Pendidikan Terakhir</label>
                                                 <div class="col-lg-9 col-md-9 col-sm-12">
                                                     <div class="input-group date">
-                                                        <input type="text" onkeydown="return /[a-zA-Z0-9\s]+/i.test(event.key)" class="form-control" id="pendidikan_terakhir" name="pendidikan_terakhir" value="{{old('pendidikan_terakhir')}}" autocomplete="off" required/>
+                                                        <input type="text"  class="form-control" id="pendidikan_terakhir" name="pendidikan_terakhir" value="{{old('pendidikan_terakhir')}}" autocomplete="off" required/>
                                                     </div>
                                                 </div>
                                             </div>
@@ -177,7 +177,7 @@
                                                 <label class="col-form-label col-lg-3 col-sm-12">Instansi Induk</label>
                                                 <div class="col-lg-9 col-md-9 col-sm-12">
                                                     <div class="input-group date">
-                                                        <input type="text" onkeydown="return /[a-zA-Z0-9\s]+/i.test(event.key)" class="form-control" id="instansi_induk" name="instansi_induk" value="{{old('instansi_induk')}}" autocomplete="off" required/>
+                                                        <input type="text"  class="form-control" id="instansi_induk" name="instansi_induk" value="{{old('instansi_induk')}}" autocomplete="off" required/>
                                                     </div>
                                                 </div>
                                             </div>
@@ -185,7 +185,7 @@
                                                 <label class="col-form-label col-lg-3 col-sm-12">Instansi Pengusul</label>
                                                 <div class="col-lg-9 col-md-9 col-sm-12">
                                                     <div class="input-group date">
-                                                        <input type="text" onkeydown="return /[a-zA-Z0-9\s]+/i.test(event.key)" class="form-control" id="instansi_pengusul" name="instansi_pengusul" value="{{old('instansi_pengusul')}}" autocomplete="off" required/>
+                                                        <input type="text"  class="form-control" id="instansi_pengusul" name="instansi_pengusul" value="{{old('instansi_pengusul')}}" autocomplete="off" required/>
                                                     </div>
                                                 </div>
                                             </div>
@@ -195,7 +195,7 @@
                                                     <select class="form-control select2" style="width: 230px;" id="pangkat_gol" name="pangkat_gol">
                                                         <option value="">Choose</option>
                                                         @foreach ($pangkats as $pangkat)
-                                                            <option value="{{$pangkat->id}}" {{ old('pangkat_gol') == $pangkat->id ? 'selected' : '' }}>{{$pangkat->golongan}} | {{$pangkat->ruang}}</option>
+                                                            <option value="{{$pangkat->id}}" {{ old('pangkat_gol') == $pangkat->id ? 'selected' : '' }}>{{$pangkat->name}} ({{$pangkat->golongan}}/{{$pangkat->ruang}}</option>
                                                         @endforeach
                                                     </select>
                                                     <!-- <div class="input-group date">
@@ -224,7 +224,7 @@
                                             <div class="form-group row">
                                                 <label class="col-lg-3 col-form-label">Upload</label>
                                                 <div class="col-lg-9">
-                                                    <input id="file_data_asn" name="file_data_asn[]" type="file" class="file" data-show-preview="false" multiple/>
+                                                    <input id="file_data_asn" name="file_data_asn[]" accept=".jpg,.jpeg,.png,.pdf" type="file" class="file" data-show-preview="false" multiple/>
                                                     <!-- <div class="dropzone dropzone-multi" id="kt_dropzone_6">
                                                         <div class="dropzone-panel mb-lg-0 mb-2">
                                                             <a class="dropzone-select btn btn-light-primary font-weight-bold btn-sm">Attach files</a>
@@ -291,7 +291,7 @@
                                                     <label class="col-form-label col-lg-3 col-sm-12">Jumlah Angka Kredit</label>
                                                     <div class="col-lg-9 col-md-9 col-sm-12">
                                                         <div class="input-group date">
-                                                            <input type="text" onkeydown="return /[a-zA-Z0-9\s]+/i.test(event.key)" class="form-control" id="jumlah_angka_kredit_terakhir" name="jumlah_angka_kredit_terakhir" value="{{old('jumlah_angka_kredit_terakhir')}}" autocomplete="off" />
+                                                            <input type="text"  class="form-control" id="jumlah_angka_kredit_terakhir" name="jumlah_angka_kredit_terakhir" value="{{old('jumlah_angka_kredit_terakhir')}}" autocomplete="off" />
                                                         </div>
                                                     </div>
                                                 </div>
@@ -317,7 +317,7 @@
                                                 <div class="form-group row">
                                                     <label class="col-lg-3 col-form-label">Upload File</label>
                                                     <div class="col-lg-9">
-                                                    <input id="file_data_pak_terakhir" name="file_data_pak_terakhir[]" type="file" class="file" data-show-preview="false" multiple/>
+                                                    <input id="file_data_pak_terakhir" name="file_data_pak_terakhir[]" accept=".jpg,.jpeg,.png,.pdf" type="file" class="file" data-show-preview="false" multiple/>
                                                         <!-- <div class="dropzone dropzone-multi" id="kt_dropzone_7">
                                                             <div class="dropzone-panel mb-lg-0 mb-2">
                                                                 <a class="dropzone-select btn btn-light-primary font-weight-bold btn-sm">Attach files</a>
@@ -366,7 +366,7 @@
                                                 <label class="col-form-label col-lg-3 col-sm-12">Jabatan</label>
                                                 <div class="col-lg-9 col-md-9 col-sm-12">
                                                     <div class="input-group date">
-                                                        <input type="text" onkeydown="return /[a-zA-Z0-9\s]+/i.test(event.key)" class="form-control" id="jabatan_fungsional" name="jabatan_fungsional" value="{{old('jabatan_fungsional')}}" autocomplete="off" required/>
+                                                        <input type="text"  class="form-control" id="jabatan_fungsional" name="jabatan_fungsional" value="{{old('jabatan_fungsional')}}" autocomplete="off" required/>
                                                     </div>
                                                 </div>
                                             </div>
@@ -381,7 +381,7 @@
                                             <div class="form-group row">
                                                 <label class="col-lg-3 col-form-label">Upload File</label>
                                                 <div class="col-lg-9">
-                                                    <input id="file_data_jabatan_fungsional" name="file_data_jabatan_fungsional[]" type="file" class="file" data-show-preview="false" multiple/>
+                                                    <input id="file_data_jabatan_fungsional" name="file_data_jabatan_fungsional[]" accept=".jpg,.jpeg,.png,.pdf" type="file" class="file" data-show-preview="false" multiple/>
                                                     <!-- <div class="dropzone dropzone-multi" id="kt_dropzone_9">
                                                         <div class="dropzone-panel mb-lg-0 mb-2">
                                                             <a class="dropzone-select btn btn-light-primary font-weight-bold btn-sm">Attach files</a>
@@ -421,7 +421,7 @@
                                             <div class="form-group row">
                                                 <label class="col-lg-3 col-form-label">BA Pengambilan Sumpah Pelantikan</label>
                                                 <div class="col-lg-9">
-                                                    <input id="file_ba_pengambilan_sumpah_fungsional" name="file_ba_pengambilan_sumpah_fungsional[]" type="file" class="file" data-show-preview="false" multiple/>
+                                                    <input id="file_ba_pengambilan_sumpah_fungsional" name="file_ba_pengambilan_sumpah_fungsional[]" accept=".jpg,.jpeg,.png,.pdf" type="file" class="file" data-show-preview="false" multiple/>
                                                     <!-- <div class="dropzone dropzone-multi" id="kt_dropzone_10">
                                                         <div class="dropzone-panel mb-lg-0 mb-2">
                                                             <a class="dropzone-select btn btn-light-primary font-weight-bold btn-sm">Attach files</a>
@@ -475,7 +475,7 @@
                                                 <label class="col-form-label col-lg-3 col-sm-12">Unit Kerja</label>
                                                 <div class="col-lg-9 col-md-9 col-sm-12">
                                                     <div class="input-group date">
-                                                        <input type="text" onkeydown="return /[a-zA-Z0-9\s]+/i.test(event.key)" class="form-control" id="unit_kerja_fungsional" name="unit_kerja_fungsional" value="{{old('unit_kerja_fungsional')}}" autocomplete="off" required/>
+                                                        <input type="text"  class="form-control" id="unit_kerja_fungsional" name="unit_kerja_fungsional" value="{{old('unit_kerja_fungsional')}}" autocomplete="off" required/>
                                                     </div>
                                                 </div>
                                             </div>
@@ -559,7 +559,7 @@
                                             <div class="form-group row">
                                                 <label class="col-lg-3 col-form-label">Upload/Download File Data Pendukung Lainnya</label>
                                                 <div class="col-lg-9">
-                                                    <input id="file_data_pemberhentian" name="file_data_pemberhentian[]" type="file" class="file" data-show-preview="false" multiple required/>
+                                                    <input id="file_data_pemberhentian" name="file_data_pemberhentian[]" accept=".jpg,.jpeg,.png,.pdf" type="file" class="file" data-show-preview="false" multiple required/>
                                                     <!-- <div class="dropzone dropzone-multi" id="kt_dropzone_11">
                                                         <div class="dropzone-panel mb-lg-0 mb-2">
                                                             <a class="dropzone-select btn btn-light-primary font-weight-bold btn-sm">Attach files</a>
@@ -697,7 +697,7 @@
                                                 <button type="button" class="btn btn-light-primary font-weight-bolder text-uppercase px-9 py-4" data-wizard-type="action-prev">Sebelumnya</button>
                                             </div>
                                             <div>
-                                                <button type="submit" class="btn btn-warning font-weight-bolder text-uppercase px-9 py-4" data-wizard-type="action-submit" onclick="return confirmation();">Kirim Usulan</button>
+                                                <button type="submit" class="btn btn-warning font-weight-bolder text-uppercase px-9 py-4" data-wizard-type="action-submit">Kirim Usulan</button>
                                                 <button type="button" class="btn btn-primary font-weight-bolder text-uppercase px-9 py-4" data-wizard-type="action-next">Berikutnya</button>
                                             </div>
                                         </div>

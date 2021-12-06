@@ -87,7 +87,7 @@
                                             <div class="form-group row">
                                                 <label class="col-lg-3 col-form-label">Upload Surat Permohonan</label>
                                                 <div class="col-lg-9">
-                                                    <input id="file_surat_permohonan" name="file_surat_permohonan[]" type="file" class="file" data-show-preview="false" multiple/>
+                                                    <input id="file_surat_permohonan" name="file_surat_permohonan[]" accept=".jpg,.jpeg,.png,.pdf" type="file" class="file" data-show-preview="false" multiple/>
                                                     
                                                     <span class="form-text text-muted">Format file harus berbentuk jpg, png, jpeg, pdf, batas size file 1 MB dan file tidak boleh lebih dari 5 file</span>
                                                 </div>
@@ -96,7 +96,7 @@
                                             <div class="form-group row">
                                                 <label class="col-lg-3 col-form-label">Upload Keppres Yang Dibatalkan</label>
                                                 <div class="col-lg-9">
-                                                    <input id="file_keppres_dibatalkan" name="file_keppres_dibatalkan[]" type="file" class="file" data-show-preview="false" multiple/>
+                                                    <input id="file_keppres_dibatalkan" name="file_keppres_dibatalkan[]" accept=".jpg,.jpeg,.png,.pdf" type="file" class="file" data-show-preview="false" multiple/>
                                                     
                                                     <span class="form-text text-muted">Format file harus berbentuk jpg, png, jpeg, pdf, batas size file 1 MB dan file tidak boleh lebih dari 5 file</span>
                                                 </div>
@@ -105,7 +105,7 @@
                                             <div class="form-group row">
                                                 <label class="col-lg-3 col-form-label">Upload Akta Meninggal Dunia / Alasan Terkait Dengan Jabatan / Lainnya</label>
                                                 <div class="col-lg-9">
-                                                    <input id="file_alasan" name="file_alasan[]" type="file" class="file" data-show-preview="false" multiple/>
+                                                    <input id="file_alasan" name="file_alasan[]" accept=".jpg,.jpeg,.png,.pdf" type="file" class="file" data-show-preview="false" multiple/>
                                                     
                                                     <span class="form-text text-muted">Format file harus berbentuk jpg, png, jpeg, pdf, batas size file 1 MB dan file tidak boleh lebih dari 5 file</span>
                                                 </div>
@@ -120,7 +120,7 @@
                                                 
                                             </div>
                                             <div>
-                                                <button type="submit" class="btn btn-warning font-weight-bolder text-uppercase px-9 py-4" data-wizard-type="action-submit" onclick="return confirmation();">Kirim Usulan</button>
+                                                <button type="submit" class="btn btn-warning font-weight-bolder text-uppercase px-9 py-4" data-wizard-type="action-submit">Kirim Usulan</button>
                                                 <button type="button" class="btn btn-primary font-weight-bolder text-uppercase px-9 py-4" data-wizard-type="action-next">Berikutnya</button>
                                             </div>
                                         </div>

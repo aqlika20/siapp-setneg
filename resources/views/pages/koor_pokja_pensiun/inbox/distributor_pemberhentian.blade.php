@@ -52,7 +52,7 @@
                                                     <div class="card-body pl-12">
                                                         <div class="table-responsive">
                                                             <th style="width: 200px;">
-                                                                <form method="POST" action="{{ route('koor-pokja.inbox.distributor.store_group', ['id' => $pemberhentian->id, 'jenis_layanan' => $pemberhentian->jenis_layanan]) }}">
+                                                                <form method="POST" action="{{ route('koor-pokja-pensiun.inbox.distributor.store_group', ['id' => $pemberhentian->id, 'jenis_layanan' => $pemberhentian->jenis_layanan]) }}">
                                                                     @csrf 
                                                                     <input type="hidden" class="btn btn-outline-success" name="group" value="{{$list->id}}">
                                                                     <button type="submit" class="btn btn-outline-success" >
@@ -84,7 +84,7 @@
                                                                                     <td>{{$user->name}}</td>
                                                                                     <td>{{$user->nip}}</td>
                                                                                     <td> 
-                                                                                        <form method="POST" action="{{ route('koor-pokja.inbox.distributor.store_distributor', ['id' => $pemberhentian->id,  'jenis_layanan' => $pemberhentian->jenis_layanan]) }}">
+                                                                                        <form method="POST" action="{{ route('koor-pokja-pensiun.inbox.distributor.store_distributor', ['id' => $pemberhentian->id,  'jenis_layanan' => $pemberhentian->jenis_layanan]) }}">
                                                                                             @csrf 
                                                                                             <input type="hidden" class="btn btn-outline-success" name="distributor" value="{{$user->nip}}">
                                                                                             <button type="submit" class="btn btn-outline-success" >

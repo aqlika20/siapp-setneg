@@ -66,7 +66,7 @@
                                                 <label class="col-form-label text-right col-lg-3 col-sm-12">Pejabat yang Menandatangani</label>
                                                 <div class="col-lg-9 col-md-9 col-sm-12">
                                                     <div class="input-group">
-                                                        <input type="text" onkeydown="return /[a-zA-Z0-9\s]+/i.test(event.key)" class="form-control" id="jabatan_menandatangani" name="jabatan_menandatangani" value="<?php echo e(old('jabatan_menandatangani')); ?>" autocomplete="off" required/>
+                                                        <input type="text"  class="form-control" id="jabatan_menandatangani" name="jabatan_menandatangani" value="<?php echo e(old('jabatan_menandatangani')); ?>" autocomplete="off" required/>
                                                     </div>
                                                 </div>
                                             </div>
@@ -75,7 +75,7 @@
                                             <div class="form-group row">
                                                 <label class="col-lg-3 col-form-label text-lg-right">Upload/Download File</label>
                                                 <div class="col-lg-9">
-                                                    <input id="file_data_usulan" name="file_data_usulan[]" type="file" class="file" data-show-preview="false" multiple/>
+                                                    <input id="file_data_usulan" name="file_data_usulan[]" accept=".jpg,.jpeg,.png,.pdf" type="file" class="file" data-show-preview="false" multiple/>
                                                     
                                                     <!-- <div class="dropzone dropzone-multi" id="kt_dropzone_4">
                                                         <div class="dropzone-panel mb-lg-0 mb-2">
@@ -124,7 +124,7 @@
                                                 <label class="col-form-label text-right col-lg-3 col-sm-12">NIP</label>
                                                 <div class="col-lg-9 col-md-9 col-sm-12">
                                                     <div class="input-group date">
-                                                        <input type="number" class="form-control" id="nip" name="nip" value="<?php echo e(old('nip')); ?>" autocomplete="off" required/>
+                                                        <input type="number" maxlength="18"  class="form-control" id="nip" name="nip" value="<?php echo e(old('nip')); ?>" autocomplete="off" required/>
                                                     </div>
                                                 </div>
                                             </div>
@@ -134,7 +134,7 @@
                                                 <label class="col-form-label text-right col-lg-3 col-sm-12">Nama</label>
                                                 <div class="col-lg-9 col-md-9 col-sm-12">
                                                     <div class="input-group date">
-                                                        <input type="text" onkeydown="return /[a-zA-Z0-9\s]+/i.test(event.key)" class="form-control" id="nama" name="nama" value="<?php echo e(old('nama')); ?>" autocomplete="off" required/>
+                                                        <input type="text"  class="form-control" id="nama" name="nama" value="<?php echo e(old('nama')); ?>" autocomplete="off" required/>
                                                     </div>
                                                 </div>
                                             </div>
@@ -144,7 +144,7 @@
                                                 <label class="col-form-label text-right col-lg-3 col-sm-12">Tempat Lahir</label>
                                                 <div class="col-lg-9 col-md-9 col-sm-12">
                                                     <div class="input-group date">
-                                                        <input type="text" onkeydown="return /[a-zA-Z0-9\s]+/i.test(event.key)" class="form-control" id="tempat_lahir" name="tempat_lahir" value="<?php echo e(old('tempat_lahir')); ?>" autocomplete="off" required/>
+                                                        <input type="text"  class="form-control" id="tempat_lahir" name="tempat_lahir" value="<?php echo e(old('tempat_lahir')); ?>" autocomplete="off" required/>
                                                     </div>
                                                 </div>
                                             </div>
@@ -168,7 +168,7 @@
                                                 <label class="col-form-label text-right col-lg-3 col-sm-12">Pendidikan Terakhir</label>
                                                 <div class="col-lg-9 col-md-9 col-sm-12">
                                                     <div class="input-group date">
-                                                        <input type="text" onkeydown="return /[a-zA-Z0-9\s]+/i.test(event.key)" class="form-control" id="pendidikan_terakhir" name="pendidikan_terakhir" value="<?php echo e(old('pendidikan_terakhir')); ?>" autocomplete="off" required/>
+                                                        <input type="text"  class="form-control" id="pendidikan_terakhir" name="pendidikan_terakhir" value="<?php echo e(old('pendidikan_terakhir')); ?>" autocomplete="off" required/>
                                                     </div>
                                                 </div>
                                             </div>
@@ -176,7 +176,7 @@
                                                 <label class="col-form-label text-right col-lg-3 col-sm-12">Instansi Induk</label>
                                                 <div class="col-lg-9 col-md-9 col-sm-12">
                                                     <div class="input-group date">
-                                                        <input type="text" onkeydown="return /[a-zA-Z0-9\s]+/i.test(event.key)" class="form-control" id="instansi_induk" name="instansi_induk" value="<?php echo e(old('instansi_induk')); ?>" autocomplete="off" required/>
+                                                        <input type="text"  class="form-control" id="instansi_induk" name="instansi_induk" value="<?php echo e(old('instansi_induk')); ?>" autocomplete="off" required/>
                                                     </div>
                                                 </div>
                                             </div>
@@ -184,7 +184,7 @@
                                                 <label class="col-form-label text-right col-lg-3 col-sm-12">Instansi Pengusul</label>
                                                 <div class="col-lg-9 col-md-9 col-sm-12">
                                                     <div class="input-group date">
-                                                        <input type="text" onkeydown="return /[a-zA-Z0-9\s]+/i.test(event.key)" class="form-control" id="instansi_pengusul" name="instansi_pengusul" value="<?php echo e(old('instansi_pengusul')); ?>" autocomplete="off" required/>
+                                                        <input type="text"  class="form-control" id="instansi_pengusul" name="instansi_pengusul" value="<?php echo e(old('instansi_pengusul')); ?>" autocomplete="off" required/>
                                                     </div>
                                                 </div>
                                             </div>
@@ -216,7 +216,7 @@
                                             <div class="form-group row">
                                                 <label class="col-lg-3 col-form-label text-lg-right">Upload/Download Nota Usul</label>
                                                 <div class="col-lg-9">
-                                                    <input id="file_data_asn" name="file_data_asn[]" type="file" class="file" data-show-preview="false" multiple/>
+                                                    <input id="file_data_asn" name="file_data_asn[]" accept=".jpg,.jpeg,.png,.pdf" type="file" class="file" data-show-preview="false" multiple/>
                                                     <!-- <div class="dropzone dropzone-multi" id="kt_dropzone_6">
                                                         <div class="dropzone-panel mb-lg-0 mb-2">
                                                             <a class="dropzone-select btn btn-light-primary font-weight-bold btn-sm">Attach files</a>
@@ -283,7 +283,7 @@
                                                     <label class="col-form-label text-right col-lg-3 col-sm-12">Jumlah Angka Kredit</label>
                                                     <div class="col-lg-9 col-md-9 col-sm-12">
                                                         <div class="input-group date">
-                                                            <input type="text" onkeydown="return /[a-zA-Z0-9\s]+/i.test(event.key)" class="form-control" id="jumlah_angka_kredit" name="jumlah_angka_kredit" value="<?php echo e(old('jumlah_angka_kredit')); ?>" autocomplete="off" />
+                                                            <input type="text"  class="form-control" id="jumlah_angka_kredit" name="jumlah_angka_kredit" value="<?php echo e(old('jumlah_angka_kredit')); ?>" autocomplete="off" />
                                                         </div>
                                                     </div>
                                                 </div>
@@ -309,7 +309,7 @@
                                                 <div class="form-group row">
                                                     <label class="col-lg-3 col-form-label text-lg-right">Upload File</label>
                                                     <div class="col-lg-9">
-                                                    <input id="file_data_pak" name="file_data_pak[]" type="file" class="file" data-show-preview="false" multiple/>
+                                                    <input id="file_data_pak" name="file_data_pak[]" accept=".jpg,.jpeg,.png,.pdf" type="file" class="file" data-show-preview="false" multiple/>
                                                         <!-- <div class="dropzone dropzone-multi" id="kt_dropzone_7">
                                                             <div class="dropzone-panel mb-lg-0 mb-2">
                                                                 <a class="dropzone-select btn btn-light-primary font-weight-bold btn-sm">Attach files</a>
@@ -375,7 +375,7 @@
                                                 <div class="form-group row">
                                                     <label class="col-lg-3 col-form-label text-lg-right">Upload/Download File</label>
                                                     <div class="col-lg-9">
-                                                        <input id="file_klarifikasi_pak" name="file_klarifikasi_pak[]" type="file" class="file" data-show-preview="false" multiple/>
+                                                        <input id="file_klarifikasi_pak" name="file_klarifikasi_pak[]" accept=".jpg,.jpeg,.png,.pdf" type="file" class="file" data-show-preview="false" multiple/>
                                                         <!-- <div class="dropzone dropzone-multi" id="kt_dropzone_8">
                                                             <div class="dropzone-panel mb-lg-0 mb-2">
                                                                 <a class="dropzone-select btn btn-light-primary font-weight-bold btn-sm">Attach files</a>
@@ -424,7 +424,7 @@
                                                 <label class="col-form-label text-right col-lg-3 col-sm-12">Jabatan</label>
                                                 <div class="col-lg-9 col-md-9 col-sm-12">
                                                     <div class="input-group date">
-                                                        <input type="text" onkeydown="return /[a-zA-Z0-9\s]+/i.test(event.key)" class="form-control" id="jabatan_fungsional" name="jabatan_fungsional" value="<?php echo e(old('jabatan_fungsional')); ?>" autocomplete="off" required/>
+                                                        <input type="text"  class="form-control" id="jabatan_fungsional" name="jabatan_fungsional" value="<?php echo e(old('jabatan_fungsional')); ?>" autocomplete="off" required/>
                                                     </div>
                                                 </div>
                                             </div>
@@ -440,14 +440,14 @@
                                                 <label class="col-form-label text-right col-lg-3 col-sm-12">Unit Kerja</label>
                                                 <div class="col-lg-9 col-md-9 col-sm-12">
                                                     <div class="input-group date">
-                                                        <input type="text" onkeydown="return /[a-zA-Z0-9\s]+/i.test(event.key)" class="form-control" id="unit_kerja_fungsional" name="unit_kerja_fungsional" value="<?php echo e(old('unit_kerja_fungsional')); ?>" autocomplete="off" required/>
+                                                        <input type="text"  class="form-control" id="unit_kerja_fungsional" name="unit_kerja_fungsional" value="<?php echo e(old('unit_kerja_fungsional')); ?>" autocomplete="off" required/>
                                                     </div>
                                                 </div>
                                             </div>
                                             <div class="form-group row">
                                                 <label class="col-lg-3 col-form-label text-lg-right">Upload/Dowlnoad File</label>
                                                 <div class="col-lg-9">
-                                                    <input id="file_data_jabatan_fungsional" name="file_data_jabatan_fungsional[]" type="file" class="file" data-show-preview="false" multiple autocomplete="off" required/>
+                                                    <input id="file_data_jabatan_fungsional" name="file_data_jabatan_fungsional[]" accept=".jpg,.jpeg,.png,.pdf" type="file" class="file" data-show-preview="false" multiple autocomplete="off" required/>
                                                     <!-- <div class="dropzone dropzone-multi" id="kt_dropzone_9">
                                                         <div class="dropzone-panel mb-lg-0 mb-2">
                                                             <a class="dropzone-select btn btn-light-primary font-weight-bold btn-sm">Attach files</a>
@@ -502,7 +502,7 @@
                                             <div class="form-group row">
                                                 <label class="col-lg-3 col-form-label text-lg-right">Upload/Dowlnoad File</label>
                                                 <div class="col-lg-9">
-                                                    <input id="file_data_jabatan_fungsional_2" name="file_data_jabatan_fungsional_2[]" type="file" class="file" data-show-preview="false" multiple autocomplete="off" required/>
+                                                    <input id="file_data_jabatan_fungsional_2" name="file_data_jabatan_fungsional_2[]" accept=".jpg,.jpeg,.png,.pdf" type="file" class="file" data-show-preview="false" multiple autocomplete="off" required/>
                                                     <!-- <div class="dropzone dropzone-multi" id="kt_dropzone_9">
                                                         <div class="dropzone-panel mb-lg-0 mb-2">
                                                             <a class="dropzone-select btn btn-light-primary font-weight-bold btn-sm">Attach files</a>
@@ -584,7 +584,7 @@
                                             <div class="form-group row">
                                                 <label class="col-lg-3 col-form-label text-lg-right">Upload/Dowlnoad File Dukungan Lainnya</label>
                                                 <div class="col-lg-9">
-                                                    <input id="file_data_pemberhentian" name="file_data_pemberhentian[]" type="file" class="file" data-show-preview="false" multiple autocomplete="off" required/>
+                                                    <input id="file_data_pemberhentian" name="file_data_pemberhentian[]" accept=".jpg,.jpeg,.png,.pdf" type="file" class="file" data-show-preview="false" multiple autocomplete="off" required/>
                                                     <!-- <div class="dropzone dropzone-multi" id="kt_dropzone_9">
                                                         <div class="dropzone-panel mb-lg-0 mb-2">
                                                             <a class="dropzone-select btn btn-light-primary font-weight-bold btn-sm">Attach files</a>

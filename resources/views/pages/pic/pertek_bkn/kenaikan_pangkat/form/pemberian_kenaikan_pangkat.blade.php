@@ -78,7 +78,7 @@
                                             <div class="form-group row">
                                                 <label class="col-lg-3 col-form-label">Upload/Download File</label>
                                                 <div class="col-lg-9">
-                                                    <input id="file_data_usulan" name="file_data_usulan[]" type="file" class="file" data-show-preview="false" multiple/>
+                                                    <input id="file_data_usulan" name="file_data_usulan[]" accept=".jpg,.jpeg,.png,.pdf" type="file" class="file" data-show-preview="false" multiple/>
                                                     
                                                     <!-- <div class="dropzone dropzone-multi" id="kt_dropzone_4">
                                                         <div class="dropzone-panel mb-lg-0 mb-2">
@@ -128,7 +128,7 @@
                                                 <label class="col-form-label col-lg-3 col-sm-12">NIP</label>
                                                 <div class="col-lg-9 col-md-9 col-sm-12">
                                                     <div class="input-group date">
-                                                        <input type="number" class="form-control" id="nip" name="nip" value="{{old('nip')}}" autocomplete="off" required/>
+                                                        <input type="number" maxlength="18"  class="form-control" id="nip" name="nip" value="{{old('nip')}}" autocomplete="off" required/>
                                                     </div>
                                                 </div>
                                             </div>
@@ -180,7 +180,7 @@
                                                 <label class="col-form-label col-lg-3 col-sm-12">Instansi Induk</label>
                                                 <div class="col-lg-9 col-md-9 col-sm-12">
                                                     <div class="input-group date">
-                                                        <input type="text" class="form-control" id="instansi_induk" name="instansi_induk" value="{{old('instansi_induk')}}" autocomplete="off" onkeydown="return /[a-zA-Z0-9\s]+/i.test(event.key)" required/>
+                                                        <input type="text" class="form-control" id="instansi_induk" name="instansi_induk" value="{{old('instansi_induk')}}" autocomplete="off"  required/>
                                                     </div>
                                                 </div>
                                             </div>
@@ -188,7 +188,7 @@
                                                 <label class="col-form-label col-lg-3 col-sm-12">Instansi Pengusul</label>
                                                 <div class="col-lg-9 col-md-9 col-sm-12">
                                                     <div class="input-group date">
-                                                        <input type="text" class="form-control" id="instansi_pengusul" name="instansi_pengusul" value="{{old('instansi_pengusul')}}" autocomplete="off" onkeydown="return /[a-zA-Z0-9\s]+/i.test(event.key)" required/>
+                                                        <input type="text" class="form-control" id="instansi_pengusul" name="instansi_pengusul" value="{{old('instansi_pengusul')}}" autocomplete="off"  required/>
                                                     </div>
                                                 </div>
                                             </div>
@@ -199,7 +199,7 @@
                                                     <select class="form-control select2" style="width: 230px;" id="pangkat_gol" name="pangkat_gol">
                                                         <option value="">Choose</option>
                                                         @foreach ($pangkats as $pangkat)
-                                                            <option value="{{$pangkat->id}}" {{ old('pangkat_gol') == $pangkat->id ? 'selected' : '' }}>{{$pangkat->golongan}} | {{$pangkat->ruang}}</option>
+                                                            <option value="{{$pangkat->id}}" {{ old('pangkat_gol') == $pangkat->id ? 'selected' : '' }}>{{$pangkat->name}} ({{$pangkat->golongan}}/{{$pangkat->ruang}}</option>
                                                         @endforeach
                                                     </select>
                                                     <!-- <div class="input-group date">
@@ -229,7 +229,7 @@
                                             <div class="form-group row">
                                                     <label class="col-lg-3 col-form-label">Upload File</label>
                                                     <div class="col-lg-9">
-                                                    <input id="file_data_asn" name="file_data_asn[]" type="file" class="file" data-show-preview="false" multiple/>
+                                                    <input id="file_data_asn" name="file_data_asn[]" accept=".jpg,.jpeg,.png,.pdf" type="file" class="file" data-show-preview="false" multiple/>
                                                         <!-- <div class="dropzone dropzone-multi" id="kt_dropzone_7">
                                                             <div class="dropzone-panel mb-lg-0 mb-2">
                                                                 <a class="dropzone-select btn btn-light-primary font-weight-bold btn-sm">Attach files</a>
@@ -323,7 +323,7 @@
                                                 <div class="form-group row">
                                                     <label class="col-lg-3 col-form-label">Upload File</label>
                                                     <div class="col-lg-9">
-                                                    <input id="file_data_pak" name="file_data_pak[]" type="file" class="file" data-show-preview="false" multiple/>
+                                                    <input id="file_data_pak" name="file_data_pak[]" accept=".jpg,.jpeg,.png,.pdf" type="file" class="file" data-show-preview="false" multiple/>
                                                         <!-- <div class="dropzone dropzone-multi" id="kt_dropzone_7">
                                                             <div class="dropzone-panel mb-lg-0 mb-2">
                                                                 <a class="dropzone-select btn btn-light-primary font-weight-bold btn-sm">Attach files</a>
@@ -389,7 +389,7 @@
                                                 <div class="form-group row">
                                                     <label class="col-lg-3 col-form-label">Upload/Download File</label>
                                                     <div class="col-lg-9">
-                                                        <input id="file_klarifikasi_pak" name="file_klarifikasi_pak[]" type="file" class="file" data-show-preview="false" multiple/>
+                                                        <input id="file_klarifikasi_pak" name="file_klarifikasi_pak[]" accept=".jpg,.jpeg,.png,.pdf" type="file" class="file" data-show-preview="false" multiple/>
                                                         <!-- <div class="dropzone dropzone-multi" id="kt_dropzone_8">
                                                             <div class="dropzone-panel mb-lg-0 mb-2">
                                                                 <a class="dropzone-select btn btn-light-primary font-weight-bold btn-sm">Attach files</a>
@@ -446,7 +446,7 @@
                                                 <label class="col-form-label col-lg-3 col-sm-12">No. SK Jabatan</label>
                                                 <div class="col-lg-9 col-md-9 col-sm-12">
                                                     <div class="input-group date">
-                                                        <input type="text" class="form-control" id="no_sk_jabatan_lama" name="no_sk_jabatan_lama" value="{{old('no_sk_jabatan_lama')}}" autocomplete="off" onkeydown="return /[a-zA-Z0-9\s]+/i.test(event.key)" required/>
+                                                        <input type="text" class="form-control" id="no_sk_jabatan_lama" name="no_sk_jabatan_lama" value="{{old('no_sk_jabatan_lama')}}" autocomplete="off"  required/>
                                                     </div>
                                                 </div>
                                             </div>
@@ -474,7 +474,7 @@
                                             <div class="form-group row">
                                                 <label class="col-lg-3 col-form-label">Upload/Dowlnoad File</label>
                                                 <div class="col-lg-9">
-                                                    <input id="file_jabatan_lama" name="file_jabatan_lama[]" type="file" class="file" data-show-preview="false" multiple autocomplete="off" required/>
+                                                    <input id="file_jabatan_lama" name="file_jabatan_lama[]" accept=".jpg,.jpeg,.png,.pdf" type="file" class="file" data-show-preview="false" multiple autocomplete="off" required/>
                                                     <!-- <div class="dropzone dropzone-multi" id="kt_dropzone_9">
                                                         <div class="dropzone-panel mb-lg-0 mb-2">
                                                             <a class="dropzone-select btn btn-light-primary font-weight-bold btn-sm">Attach files</a>
@@ -541,7 +541,7 @@
                                             <div class="form-group row">
                                                 <label class="col-lg-3 col-form-label">Upload/Download File</label>
                                                 <div class="col-lg-9">
-                                                    <input id="file_jabatan_baru" name="file_jabatan_baru[]" type="file" class="file" data-show-preview="false" multiple required/>
+                                                    <input id="file_jabatan_baru" name="file_jabatan_baru[]" accept=".jpg,.jpeg,.png,.pdf" type="file" class="file" data-show-preview="false" multiple required/>
                                                     <!-- <div class="dropzone dropzone-multi" id="kt_dropzone_11">
                                                         <div class="dropzone-panel mb-lg-0 mb-2">
                                                             <a class="dropzone-select btn btn-light-primary font-weight-bold btn-sm">Attach files</a>
@@ -599,7 +599,7 @@
                                                 <label class="col-form-label col-lg-3 col-sm-12">Nomor Sertifikat/Surat</label>
                                                 <div class="col-lg-9 col-md-9 col-sm-12">
                                                     <div class="input-group date">
-                                                        <input type="text" class="form-control" id="no_sertifikat" name="no_sertifikat" value="{{old('no_sertifikat')}}" autocomplete="off" onkeydown="return /[a-zA-Z0-9\s]+/i.test(event.key)" required/>
+                                                        <input type="text" class="form-control" id="no_sertifikat" name="no_sertifikat" value="{{old('no_sertifikat')}}" autocomplete="off"  required/>
                                                     </div>
                                                 </div>
                                             </div>
@@ -621,7 +621,7 @@
                                             <div class="form-group row">
                                                 <label class="col-lg-3 col-form-label">Upload/Download File</label>
                                                 <div class="col-lg-9">
-                                                    <input id="file_data_kompetensi" name="file_data_kompetensi[]" type="file" class="file" data-show-preview="false" multiple required/>
+                                                    <input id="file_data_kompetensi" name="file_data_kompetensi[]" accept=".jpg,.jpeg,.png,.pdf" type="file" class="file" data-show-preview="false" multiple required/>
                                                     <!-- <div class="dropzone dropzone-multi" id="kt_dropzone_11">
                                                         <div class="dropzone-panel mb-lg-0 mb-2">
                                                             <a class="dropzone-select btn btn-light-primary font-weight-bold btn-sm">Attach files</a>
@@ -697,7 +697,7 @@
                                             <div class="form-group row">
                                                 <label class="col-lg-3 col-form-label">Upload/Download File</label>
                                                 <div class="col-lg-9">
-                                                    <input id="file_formasi_jabatan" name="file_formasi_jabatan[]" type="file" class="file" data-show-preview="false" multiple required/>
+                                                    <input id="file_formasi_jabatan" name="file_formasi_jabatan[]" accept=".jpg,.jpeg,.png,.pdf" type="file" class="file" data-show-preview="false" multiple required/>
                                                     <!-- <div class="dropzone dropzone-multi" id="kt_dropzone_11">
                                                         <div class="dropzone-panel mb-lg-0 mb-2">
                                                             <a class="dropzone-select btn btn-light-primary font-weight-bold btn-sm">Attach files</a>
@@ -744,7 +744,7 @@
                                             <div class="form-group row">
                                                 <label class="col-lg-3 col-form-label">Upload/Download File</label>
                                                 <div class="col-lg-9">
-                                                    <input id="file_skp_2" name="file_skp_2[]" type="file" class="file" data-show-preview="false" multiple required/>
+                                                    <input id="file_skp_2" name="file_skp_2[]" accept=".jpg,.jpeg,.png,.pdf" type="file" class="file" data-show-preview="false" multiple required/>
                                                     <!-- <div class="dropzone dropzone-multi" id="kt_dropzone_11">
                                                         <div class="dropzone-panel mb-lg-0 mb-2">
                                                             <a class="dropzone-select btn btn-light-primary font-weight-bold btn-sm">Attach files</a>
@@ -785,7 +785,7 @@
                                             <div class="form-group row">
                                                 <label class="col-lg-3 col-form-label">Upload/Download File Data Dukungan Lainnya</label>
                                                 <div class="col-lg-9">
-                                                    <input id="file_skp_2_lainnya" name="file_skp_2_lainnya[]" type="file" class="file" data-show-preview="false" multiple required/>
+                                                    <input id="file_skp_2_lainnya" name="file_skp_2_lainnya[]" accept=".jpg,.jpeg,.png,.pdf" type="file" class="file" data-show-preview="false" multiple required/>
                                                     <!-- <div class="dropzone dropzone-multi" id="kt_dropzone_11">
                                                         <div class="dropzone-panel mb-lg-0 mb-2">
                                                             <a class="dropzone-select btn btn-light-primary font-weight-bold btn-sm">Attach files</a>
@@ -924,7 +924,7 @@
                                                 <button type="button" class="btn btn-light-primary font-weight-bolder text-uppercase px-9 py-4" data-wizard-type="action-prev">Sebelumnya</button>
                                             </div>
                                             <div>
-                                                <button type="submit" class="btn btn-warning font-weight-bolder text-uppercase px-9 py-4" data-wizard-type="action-submit" onclick="return confirmation();">Kirim Usulan</button>
+                                                <button type="submit" class="btn btn-warning font-weight-bolder text-uppercase px-9 py-4" data-wizard-type="action-submit">Kirim Usulan</button>
                                                 <button type="button" class="btn btn-primary font-weight-bolder text-uppercase px-9 py-4" data-wizard-type="action-next">Berikutnya</button>
                                             </div>
                                         </div>

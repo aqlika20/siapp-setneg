@@ -74,7 +74,7 @@
                                             <div class="form-group row">
                                                 <label class="col-lg-3 col-form-label">Upload Surat Usulan</label>
                                                 <div class="col-lg-9">
-                                                    <input id="file_data_usulan" name="file_data_usulan[]" type="file" class="file" data-show-preview="false" multiple/>
+                                                    <input id="file_data_usulan" name="file_data_usulan[]" accept=".jpg,.jpeg,.png,.pdf" type="file" class="file" data-show-preview="false" multiple/>
                                                     
                                                     <!-- <div class="dropzone dropzone-multi" id="kt_dropzone_4">
                                                         <div class="dropzone-panel mb-lg-0 mb-2">
@@ -116,7 +116,7 @@
                                             <div class="form-group row">
                                                 <label class="col-lg-3 col-form-label">Upload Akte kematian</label>
                                                 <div class="col-lg-9">
-                                                    <input id="file_akte_kematian" name="file_akte_kematian[]" type="file" class="file" data-show-preview="false" multiple/>
+                                                    <input id="file_akte_kematian" name="file_akte_kematian[]" accept=".jpg,.jpeg,.png,.pdf" type="file" class="file" data-show-preview="false" multiple/>
                                                     
                                                     <!-- <div class="dropzone dropzone-multi" id="kt_dropzone_4">
                                                         <div class="dropzone-panel mb-lg-0 mb-2">
@@ -158,7 +158,7 @@
                                             <div class="form-group row">
                                                 <label class="col-lg-3 col-form-label">Upload Data Pendukung terkait Anumerta</label>
                                                 <div class="col-lg-9">
-                                                    <input id="file_data_pendukung_terkait" name="file_data_pendukung_terkait[]" type="file" class="file" data-show-preview="false" multiple/>
+                                                    <input id="file_data_pendukung_terkait" name="file_data_pendukung_terkait[]" accept=".jpg,.jpeg,.png,.pdf" type="file" class="file" data-show-preview="false" multiple/>
                                                     
                                                     <!-- <div class="dropzone dropzone-multi" id="kt_dropzone_4">
                                                         <div class="dropzone-panel mb-lg-0 mb-2">
@@ -208,7 +208,7 @@
                                                 <label class="col-form-label col-lg-3 col-sm-12">NIP</label>
                                                 <div class="col-lg-9 col-md-9 col-sm-12">
                                                     <div class="input-group date">
-                                                        <input type="number" class="form-control" id="nip" name="nip" value="<?php echo e(old('nip')); ?>" autocomplete="off" required/>
+                                                        <input type="number" maxlength="18"  class="form-control" id="nip" name="nip" value="<?php echo e(old('nip')); ?>" autocomplete="off" required/>
                                                     </div>
                                                 </div>
                                             </div>
@@ -262,7 +262,7 @@
                                             <div class="form-group row">
                                                 <label class="col-lg-3 col-form-label">Upload Ijasah Terakhir</label>
                                                 <div class="col-lg-9">
-                                                    <input id="file_ijasah" name="file_ijasah[]" type="file" class="file" data-show-preview="false" multiple/>
+                                                    <input id="file_ijasah" name="file_ijasah[]" accept=".jpg,.jpeg,.png,.pdf" type="file" class="file" data-show-preview="false" multiple/>
                                                     <!-- <div class="dropzone dropzone-multi" id="kt_dropzone_7">
                                                         <div class="dropzone-panel mb-lg-0 mb-2">
                                                             <a class="dropzone-select btn btn-light-primary font-weight-bold btn-sm">Attach files</a>
@@ -390,7 +390,7 @@
                                             <div class="form-group row">
                                                 <label class="col-lg-3 col-form-label">Upload SK Jabatan Terakhir</label>
                                                 <div class="col-lg-9">
-                                                    <input id="file_sk_jabatan_terakhir" name="file_sk_jabatan_terakhir[]" type="file" class="file" data-show-preview="false" multiple/>
+                                                    <input id="file_sk_jabatan_terakhir" name="file_sk_jabatan_terakhir[]" accept=".jpg,.jpeg,.png,.pdf" type="file" class="file" data-show-preview="false" multiple/>
                                                     <!-- <div class="dropzone dropzone-multi" id="kt_dropzone_7">
                                                         <div class="dropzone-panel mb-lg-0 mb-2">
                                                             <a class="dropzone-select btn btn-light-primary font-weight-bold btn-sm">Attach files</a>
@@ -430,7 +430,7 @@
                                             <div class="form-group row">
                                                 <label class="col-lg-3 col-form-label">Upload Berita Acara Pelantikan</label>
                                                 <div class="col-lg-9">
-                                                    <input id="file_berita_acara_pelantikan" name="file_berita_acara_pelantikan[]" type="file" class="file" data-show-preview="false" multiple/>
+                                                    <input id="file_berita_acara_pelantikan" name="file_berita_acara_pelantikan[]" accept=".jpg,.jpeg,.png,.pdf" type="file" class="file" data-show-preview="false" multiple/>
                                                     <!-- <div class="dropzone dropzone-multi" id="kt_dropzone_8">
                                                         <div class="dropzone-panel mb-lg-0 mb-2">
                                                             <a class="dropzone-select btn btn-light-primary font-weight-bold btn-sm">Attach files</a>
@@ -524,7 +524,7 @@
                                                 <div class="form-group row">
                                                     <label class="col-lg-3 col-form-label">Upload File</label>
                                                     <div class="col-lg-9">
-                                                    <input id="file_data_pak" name="file_data_pak[]" type="file" class="file" data-show-preview="false" multiple/>
+                                                    <input id="file_data_pak" name="file_data_pak[]" accept=".jpg,.jpeg,.png,.pdf" type="file" class="file" data-show-preview="false" multiple/>
                                                         <!-- <div class="dropzone dropzone-multi" id="kt_dropzone_7">
                                                             <div class="dropzone-panel mb-lg-0 mb-2">
                                                                 <a class="dropzone-select btn btn-light-primary font-weight-bold btn-sm">Attach files</a>
@@ -590,7 +590,7 @@
                                                 <div class="form-group row">
                                                     <label class="col-lg-3 col-form-label">Upload/Download File</label>
                                                     <div class="col-lg-9">
-                                                        <input id="file_klarifikasi_pak" name="file_klarifikasi_pak[]" type="file" class="file" data-show-preview="false" multiple/>
+                                                        <input id="file_klarifikasi_pak" name="file_klarifikasi_pak[]" accept=".jpg,.jpeg,.png,.pdf" type="file" class="file" data-show-preview="false" multiple/>
                                                         <!-- <div class="dropzone dropzone-multi" id="kt_dropzone_8">
                                                             <div class="dropzone-panel mb-lg-0 mb-2">
                                                                 <a class="dropzone-select btn btn-light-primary font-weight-bold btn-sm">Attach files</a>
@@ -638,7 +638,7 @@
                                                 <div class="form-group row">
                                                     <label class="col-lg-3 col-form-label">Upload Pas Foto Berwarna Janda / Duda / Anak</label>
                                                     <div class="col-lg-9">
-                                                        <input id="file_pas_foto" name="file_pas_foto[]" type="file" class="file" data-show-preview="false" multiple/>
+                                                        <input id="file_pas_foto" name="file_pas_foto[]" accept=".jpg,.jpeg,.png,.pdf" type="file" class="file" data-show-preview="false" multiple/>
                                                         <!-- <div class="dropzone dropzone-multi" id="kt_dropzone_8">
                                                             <div class="dropzone-panel mb-lg-0 mb-2">
                                                                 <a class="dropzone-select btn btn-light-primary font-weight-bold btn-sm">Attach files</a>
@@ -678,7 +678,7 @@
                                                 <div class="form-group row">
                                                     <label class="col-lg-3 col-form-label">Upload Surat Keterangan Tidak Pernah Dijatuhi Hukuman Disiplin</label>
                                                     <div class="col-lg-9">
-                                                        <input id="file_sk_tidak_pernah_dijatuhi_hukuman" name="file_sk_tidak_pernah_dijatuhi_hukuman[]" type="file" class="file" data-show-preview="false" multiple/>
+                                                        <input id="file_sk_tidak_pernah_dijatuhi_hukuman" name="file_sk_tidak_pernah_dijatuhi_hukuman[]" accept=".jpg,.jpeg,.png,.pdf" type="file" class="file" data-show-preview="false" multiple/>
                                                         <!-- <div class="dropzone dropzone-multi" id="kt_dropzone_8">
                                                             <div class="dropzone-panel mb-lg-0 mb-2">
                                                                 <a class="dropzone-select btn btn-light-primary font-weight-bold btn-sm">Attach files</a>
@@ -718,7 +718,7 @@
                                                 <div class="form-group row">
                                                     <label class="col-lg-3 col-form-label">Upload Surat Keterangan Tidak Sedang Dalam Proses Hukum DPCP</label>
                                                     <div class="col-lg-9">
-                                                        <input id="file_sk_tidak_sedang_dalam_hukum_dpcp" name="file_sk_tidak_sedang_dalam_hukum_dpcp[]" type="file" class="file" data-show-preview="false" multiple/>
+                                                        <input id="file_sk_tidak_sedang_dalam_hukum_dpcp" name="file_sk_tidak_sedang_dalam_hukum_dpcp[]" accept=".jpg,.jpeg,.png,.pdf" type="file" class="file" data-show-preview="false" multiple/>
                                                         <!-- <div class="dropzone dropzone-multi" id="kt_dropzone_8">
                                                             <div class="dropzone-panel mb-lg-0 mb-2">
                                                                 <a class="dropzone-select btn btn-light-primary font-weight-bold btn-sm">Attach files</a>
@@ -856,7 +856,7 @@
                                                 <button type="button" class="btn btn-light-primary font-weight-bolder text-uppercase px-9 py-4" data-wizard-type="action-prev">Sebelumnya</button>
                                             </div>
                                             <div>
-                                                <button type="submit" class="btn btn-warning font-weight-bolder text-uppercase px-9 py-4" data-wizard-type="action-submit" onclick="return confirmation();">Kirim Usulan</button>
+                                                <button type="submit" class="btn btn-warning font-weight-bolder text-uppercase px-9 py-4" data-wizard-type="action-submit">Kirim Usulan</button>
                                                 <button type="button" class="btn btn-primary font-weight-bolder text-uppercase px-9 py-4" data-wizard-type="action-next">Berikutnya</button>
                                             </div>
                                         </div>
