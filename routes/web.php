@@ -617,7 +617,7 @@ Route::group(['middleware' => ['auth', 'checkRole:7']], function() {
 });
 
 // JF Ahli
-Route::group(['middleware' => ['auth', 'checkRole: 15 , 16']], function() {
+Route::group(['middleware' => ['auth', 'checkRole: 9 , 10, 11']], function() {
     Route::prefix('/Jf-Ahli')->group(function(){
         Route::prefix('/home')->group(function(){
             Route::get('/', 'BackWeb\JF_Ahli\HomeController@index')->name('jf-ahli.home.index');

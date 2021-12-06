@@ -434,7 +434,7 @@
                 
 
 
-            <?php if($currentUser->roles_id == 15 || $currentUser->roles_id == 16): ?> 
+            <?php if($currentUser->roles_id == 9 || $currentUser->roles_id == 10 || $currentUser->roles_id == 11): ?> 
                 <li class="menu-item <?php echo e((strpos($page_title, 'JF Muda Madya | Dashboard') !== false) ? 'menu-item-active' : ''); ?>" aria-haspopup="true">
                     <a href="<?php echo e(route('jf-ahli.home.index')); ?>" class="menu-link ">
                         <span class="svg-icon menu-icon"><!--begin::Svg Icon | path:media/svg/icons/Design/Layers.svg-->

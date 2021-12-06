@@ -236,7 +236,7 @@ class PengangkatanPejabatFungsionalKeahlianUtamaController extends Controller
             'tanggal_pak' => Helper::convertDatetoDB($input['tanggal_pak']),
             'jumlah_angka_kredit' => $input['jumlah_angka_kredit'],                      
             
-            'ket' => implode(',', $input['ket']),
+                        
             'id_pengirim' => $id_pengirim->nip,
             'jenis_layanan' => Helper::$pengangkatan_pejabat_FKU,
             'status' => Helper::$pengajuan_usulan

@@ -170,9 +170,8 @@ class PemberianKenaikanPangkatController extends Controller
             'jumlah' => $input['jumlah'],
             'terisi' => $input['terisi'],
             'sisa' => $input['sisa'],
-            'ket' => implode(',', $input['ket']),
-
-            'id_pengirim' => $id_pengirim->nip,
+            
+                        'id_pengirim' => $id_pengirim->nip,
             'jenis_layanan' => Helper::$pemberian_kenaikan_pangkat,
             'status' => Helper::$pengajuan_usulan
             

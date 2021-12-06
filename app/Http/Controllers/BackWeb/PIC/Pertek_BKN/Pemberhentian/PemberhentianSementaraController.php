@@ -131,7 +131,7 @@ class PemberhentianSementaraController extends Controller
             'tmt_berhenti' => $input['tmt_berhenti'],
             'tmt_pensiun' => $input['tmt_pensiun'],
             
-            'ket' => implode(',', $input['ket']),
+                        
             'id_pengirim' => $id_pengirim->nip,
             'jenis_layanan' => Helper::$pemberhentian_sementara,
             'status' => Helper::$pengajuan_usulan

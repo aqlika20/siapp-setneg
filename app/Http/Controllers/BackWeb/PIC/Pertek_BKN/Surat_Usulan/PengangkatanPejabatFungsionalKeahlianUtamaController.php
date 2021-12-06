@@ -175,7 +175,7 @@ class PengangkatanPejabatFungsionalKeahlianUtamaController extends Controller
             'jabatan_data_kompetensi' => $input['jabatan_kompetensi'],
 
             
-            'ket' => implode(',', $input['ket']),
+                        
             'no_sk_jabatan_lama' => $input['no_sk_jabatan_lama'],
             'tmt_jabatan_lama' => $input['tmt_jabatan_lama'],
             'nomor_sertifikat' => $input['no_sertifikat'],

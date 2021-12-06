@@ -146,7 +146,7 @@ class PembatalanKeppresJabatanFungsionalKeahlianUtamaController extends Controll
             'ket_alasan_pemberhentian' => $input['ket_alasan_pemberhentian'],
             
             'id_pengirim' => $id_pengirim->nip,
-            'ket' => implode(',', $input['ket']),
+                        
             'jenis_layanan' => Helper::$pembatalan_keppres_jabatan_FKU,
             'status' => Helper::$pengajuan_usulan
             

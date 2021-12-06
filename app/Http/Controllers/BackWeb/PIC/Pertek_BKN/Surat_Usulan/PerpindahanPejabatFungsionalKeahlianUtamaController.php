@@ -166,7 +166,7 @@ class PerpindahanPejabatFungsionalKeahlianUtamaController extends Controller
             'sisa' => $input['sisa'],
 
             'id_pengirim' => $id_pengirim->nip,
-            'ket' => implode(',', $input['ket']),
+                        
             'jenis_layanan' => Helper::$perpindahan_pejabat_FKU,
             'status' => Helper::$pengajuan_usulan
             

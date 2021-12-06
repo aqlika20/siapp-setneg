@@ -178,7 +178,7 @@ class NonBUPJDAKPPController extends Controller
                     'jabatan_terakhir' => $input['jabatan_terakhir'],
                     'unit_kerja_terakhir' => $input['unit_kerja_terakhir'],
                     
-                    'ket' => implode(',', $input['ket']),
+                                
                     'id_pengirim' => $id_pengirim->nip,
                     'jenis_layanan' => Helper::$non_bup_JDA_kpp,
                     'status' => Helper::$pengajuan_usulan

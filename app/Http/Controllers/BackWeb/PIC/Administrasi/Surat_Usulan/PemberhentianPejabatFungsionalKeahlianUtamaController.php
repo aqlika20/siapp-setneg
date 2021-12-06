@@ -166,7 +166,7 @@ class PemberhentianPejabatFungsionalKeahlianUtamaController extends Controller
             'ket_alasan_pemberhentian' => $input['ket_alasan_pemberhentian'],
             'tmt_pemberhentian' => $input['tmt_pemberhentian'],
             
-            'ket' => implode(',', $input['ket']),
+                        
             'id_pengirim' => $id_pengirim->nip,
             'jenis_layanan' => Helper::$pemberhentian_pejabat_FKU,
             'status' => Helper::$pengajuan_usulan

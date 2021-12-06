@@ -192,7 +192,7 @@ class PemberianKenaikanPangkatController extends Controller
             // 'pangkat_luar_biasa' => $input['pangkat_luarbiasa'],
             'status_hukuman' => $input['status_hukuman'],
 
-            'ket' => implode(',', $input['ket']),
+                        
            
             'id_pengirim' => $id_pengirim->nip,
             'jenis_layanan' => Helper::$pemberian_kenaikan_pangkat,

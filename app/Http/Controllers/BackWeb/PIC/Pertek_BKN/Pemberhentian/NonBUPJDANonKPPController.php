@@ -131,7 +131,7 @@ class NonBUPJDANonKPPController extends Controller
             'tmt_berhenti' => $input['tmt_berhenti'],
             'tmt_pensiun' => $input['tmt_pensiun'],
             
-            'ket' => implode(',', $input['ket']),
+                        
             'id_pengirim' => $id_pengirim->nip,
             'jenis_layanan' => Helper::$non_bup_JDA_non_kpp,
             'status' => Helper::$pengajuan_usulan

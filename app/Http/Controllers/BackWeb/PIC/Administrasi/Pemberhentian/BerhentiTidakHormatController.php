@@ -139,7 +139,7 @@ class BerhentiTidakHormatController extends Controller
                 'no_klarifikasi' => $input['no_klarifikasi'],
                 'tanggal_klarifikasi' => Helper::convertDatetoDB($input['tanggal_klarifikasi']),
                 
-                'ket' => implode(',', $input['ket']),
+                            
                 'id_pengirim' => $id_pengirim->nip,
                 'jenis_layanan' => Helper::$berhenti_tidak_hormat,
                 'status' => Helper::$pengajuan_usulan

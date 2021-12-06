@@ -131,7 +131,7 @@ class BerhentiAtasPermintaanSendiriController extends Controller
             'tmt_berhenti' => $input['tmt_berhenti'],
             'tmt_pensiun' => $input['tmt_pensiun'],
             
-            'ket' => implode(',', $input['ket']),
+                        
             'id_pengirim' => $id_pengirim->nip,
             'jenis_layanan' => Helper::$berhenti_atas_permintaan_sendiri,
             'status' => Helper::$pengajuan_usulan
