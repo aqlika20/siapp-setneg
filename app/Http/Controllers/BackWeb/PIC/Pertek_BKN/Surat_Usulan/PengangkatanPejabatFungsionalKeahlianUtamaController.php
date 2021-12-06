@@ -122,7 +122,7 @@ class PengangkatanPejabatFungsionalKeahlianUtamaController extends Controller
             'tanggal_sertifikat' => 'required',
             'terisi' => 'required',
             'sisa' => 'required',
-            'ket' => 'required',
+            
             
             // 'jenis_usulan' => Helper::$pengangkatan_pejabat_FKU,
             // 'status' => Helper::$pengajuan_usulan,

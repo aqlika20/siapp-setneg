@@ -121,7 +121,7 @@ class BUPNonKPPController extends Controller
 
             'tanggal_catatan' => 'required',
             'catatan' => 'required',
-            'ket' => 'required',
+            
         ]);
 
         if ($validator->fails()) {

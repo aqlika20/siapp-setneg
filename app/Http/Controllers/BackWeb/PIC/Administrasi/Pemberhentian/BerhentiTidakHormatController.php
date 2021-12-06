@@ -100,7 +100,7 @@ class BerhentiTidakHormatController extends Controller
             'tanggal_klarifikasi' => 'nullable',
             'file_klarifikasi_pak.*' => 'nullable|max:5000|mimes:pdf',
 
-            'ket' => 'required'
+            
         ]);
 
         if ($validator->fails()) {

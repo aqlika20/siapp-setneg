@@ -102,7 +102,7 @@ class PemberhentianSementaraController extends Controller
 
             // 'tanggal_catatan' => 'required',
             // 'catatan' => 'required',
-            // 'ket' => 'required',
+            // ,
             
         ]);
 

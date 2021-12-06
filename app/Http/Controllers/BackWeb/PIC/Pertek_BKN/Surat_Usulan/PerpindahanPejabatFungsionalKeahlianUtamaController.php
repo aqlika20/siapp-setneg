@@ -110,7 +110,7 @@ class PerpindahanPejabatFungsionalKeahlianUtamaController extends Controller
 
             'tanggal_catatan' => 'required',
             'catatan' => 'required',
-            'ket' => 'required',
+            
 
             
             'file_data_usulan.*' => 'required|max:5000|mimes:pdf',

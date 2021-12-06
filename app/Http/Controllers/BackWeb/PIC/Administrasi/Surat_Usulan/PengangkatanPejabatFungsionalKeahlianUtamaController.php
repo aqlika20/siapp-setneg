@@ -119,7 +119,7 @@ class PengangkatanPejabatFungsionalKeahlianUtamaController extends Controller
         //             'tanggal_sertifikat' => 'required',
         //             'terisi' => 'required',
         //             'sisa' => 'required',
-        //             'ket' => 'required',
+        //             ,
 
         //             'file_surat_usulan.*' => 'max:5000|mimes:pdf',
         //             'file_nota_usulan.*' => 'max:5000|mimes:pdf',
@@ -192,8 +192,6 @@ class PengangkatanPejabatFungsionalKeahlianUtamaController extends Controller
                     'file_penilaian_skp.*' => 'required|max:5000|mimes:pdf',
                     'file_penilaian_prestasi.*' => 'required|max:5000|mimes:pdf',
                     'file_skp_2_lainnya.*' => 'required|max:5000|mimes:pdf',
-
-                    'ket' => 'required'
 
                 ]);
 

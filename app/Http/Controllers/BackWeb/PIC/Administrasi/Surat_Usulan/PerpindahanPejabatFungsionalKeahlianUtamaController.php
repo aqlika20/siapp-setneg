@@ -140,7 +140,7 @@ class PerpindahanPejabatFungsionalKeahlianUtamaController extends Controller
             'file_penilaian_prestasi.*' => 'required|max:5000|mimes:pdf',
             'file_skp_2_lainnya.*' => 'required|max:5000|mimes:pdf',
 
-            'ket' => 'required'
+            
 
         ]);
 
