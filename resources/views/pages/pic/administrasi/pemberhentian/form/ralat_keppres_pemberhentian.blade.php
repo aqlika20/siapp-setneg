@@ -267,6 +267,32 @@
                                                     </div>
                                                 </div>
                                             </div>
+
+                                            <div class="form-group row">
+                                                <label class="col-form-label col-lg-3 col-sm-12"></label>
+                                                <div class="col-lg-9 col-md-9 col-sm-12">
+                                                    <div style="margin-bottom:10px;">
+                                                        <label class="checkbox checkbox-outline checkbox-outline-2x checkbox-primary">
+                                                            <input type="checkbox" id="checked_file_surat_permohonan" disabled/>
+                                                            <span></span><div style="margin-left: 10px;">File Surat Permohonan</div>
+                                                        </label>
+                                                    </div>
+                                                    <div style="margin-bottom:10px;">
+                                                        <label class="checkbox checkbox-outline checkbox-outline-2x checkbox-primary">
+                                                            <input type="checkbox" id="checked_file_data_dokumen_klarifikasi" disabled/>
+                                                            <span></span><div style="margin-left: 10px;">File Data Dokumen Klarifikasi</div>
+                                                        </label>
+                                                    </div>
+                                                    <div style="margin-bottom:10px;">
+                                                        <label class="checkbox checkbox-outline checkbox-outline-2x checkbox-primary">
+                                                            <input type="checkbox" id="checked_file_petikan_asli_sk_pensiun" disabled/>
+                                                            <span></span><div style="margin-left: 10px;">File Petikan Asli SK Pensiun yang salah</div>
+                                                        </label>
+                                                    </div>
+                                                    
+                                                </div>
+                                            </div>
+
                                         </div>
 
                                         <!--begin: Wizard Step 2-->
@@ -366,6 +392,31 @@
 {{-- Scripts Section --}}
 @section('scripts')
     <script>
+        $(document).ready(function () {
+            $("#file_surat_permohonan").on("change", function () {
+                if ($('#file_surat_permohonan')[0].files.length != 0) {
+                    $("#checked_file_surat_permohonan").attr('checked', true);
+                } else {
+                    $("#checked_file_surat_permohonan").attr('checked',false);
+                }
+            });
+
+            $("#file_data_dokumen_klarifikasi").on("change", function () {
+                if ($('#file_data_dokumen_klarifikasi')[0].files.length != 0) {
+                    $("#checked_file_data_dokumen_klarifikasi").attr('checked', true);
+                } else {
+                    $("#checked_file_data_dokumen_klarifikasi").attr('checked',false);
+                }
+            });
+
+            $("#file_petikan_asli_sk_pensiun").on("change", function () {
+                if ($('#file_petikan_asli_sk_pensiun')[0].files.length != 0) {
+                    $("#checked_file_petikan_asli_sk_pensiun").attr('checked', true);
+                } else {
+                    $("#checked_file_petikan_asli_sk_pensiun").attr('checked',false);
+                }
+            });
+        });
         refreshDateTimePicker();
         function refreshDateTimePicker(){
             

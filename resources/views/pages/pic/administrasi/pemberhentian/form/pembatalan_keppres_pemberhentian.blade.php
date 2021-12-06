@@ -235,7 +235,24 @@
                                             </div>
                                         </div>
 
-
+                                        <div class="form-group row">
+                                            <label class="col-form-label col-lg-3 col-sm-12"></label>
+                                            <div class="col-lg-9 col-md-9 col-sm-12">
+                                                <div style="margin-bottom:10px;">
+                                                    <label class="checkbox checkbox-outline checkbox-outline-2x checkbox-primary">
+                                                        <input type="checkbox" id="checked_file_data_usulan" disabled/>
+                                                        <span></span><div style="margin-left: 10px;">File Surat Usulan</div>
+                                                    </label>
+                                                </div>
+                                                <div style="margin-bottom:10px;">
+                                                    <label class="checkbox checkbox-outline checkbox-outline-2x checkbox-primary">
+                                                        <input type="checkbox" id="checked_file_keppres_yang_dibatalkan" disabled/>
+                                                        <span></span><div style="margin-left: 10px;">File Keppres Yang Akan Dibatalkan</div>
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
                                         <!--begin: Wizard Step 1-->
                                         <!-- <div class="pb-6" style="margin-left: 50px; margin-right: 50px;" data-wizard-type="step-content">
                                             <h4 class="mb-10 font-weight-bold text-dark">Keppres</h4>
@@ -388,6 +405,26 @@
 {{-- Scripts Section --}}
 @section('scripts')
     <script>
+
+        $(document).ready(function () {
+            $("#file_data_usulan").on("change", function () {
+                if ($('#file_data_usulan')[0].files.length != 0) {
+                    $("#checked_file_data_usulan").attr('checked', true);
+                } else {
+                    $("#checked_file_data_usulan").attr('checked',false);
+                }
+            });
+
+            $("#file_keppres_yang_dibatalkan").on("change", function () {
+                if ($('#file_keppres_yang_dibatalkan')[0].files.length != 0) {
+                    $("#checked_file_keppres_yang_dibatalkan").attr('checked', true);
+                } else {
+                    $("#checked_file_keppres_yang_dibatalkan").attr('checked',false);
+                }
+            });
+
+        });
+
         $('.my-datepicker').datetimepicker({
             useCurrent:false,
             format: 'DD-MMM-YYYY'

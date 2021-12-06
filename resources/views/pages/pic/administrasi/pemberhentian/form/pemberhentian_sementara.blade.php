@@ -526,6 +526,56 @@
                                                         <span class="form-text text-muted">Max file size is 1MB and max number of files is 5.</span>
                                                     </div>
                                                 </div>
+
+                                                <div class="form-group row">
+                                                    <label class="col-form-label col-lg-3 col-sm-12"></label>
+                                                    <div class="col-lg-9 col-md-9 col-sm-12">
+                                                        <div style="margin-bottom:10px;">
+                                                            <label class="checkbox checkbox-outline checkbox-outline-2x checkbox-primary">
+                                                                <input type="checkbox" id="checked_file_data_usulan" disabled/>
+                                                                <span></span><div style="margin-left: 10px;">File Surat Usulan</div>
+                                                            </label>
+                                                        </div>
+                                                        <div style="margin-bottom:10px;">
+                                                            <label class="checkbox checkbox-outline checkbox-outline-2x checkbox-primary">
+                                                                <input type="checkbox" id="checked_file_surat_keputusan_pengangkatan_sebagai_pejabat" disabled/>
+                                                                <span></span><div style="margin-left: 10px;">File Surat Keputusan Pengangkatan Sebagai Pejabat Negara / Komisioner atau Lembaga non Struktural / Surat Penahanan</div>
+                                                            </label>
+                                                        </div>
+                                                        <div style="margin-bottom:10px;">
+                                                            <label class="checkbox checkbox-outline checkbox-outline-2x checkbox-primary">
+                                                                <input type="checkbox" id="checked_file_ijasah" disabled/>
+                                                                <span></span><div style="margin-left: 10px;">File Ijasah Terakhir</div>
+                                                            </label>
+                                                        </div>
+                                                        <div style="margin-bottom:10px;">
+                                                            <label class="checkbox checkbox-outline checkbox-outline-2x checkbox-primary">
+                                                                <input type="checkbox" id="checked_file_sk_jabatan_terakhir" disabled/>
+                                                                <span></span><div style="margin-left: 10px;">File SK Jabatan Terakhir</div>
+                                                            </label>
+                                                        </div>
+                                                        <div style="margin-bottom:10px;">
+                                                            <label class="checkbox checkbox-outline checkbox-outline-2x checkbox-primary">
+                                                                <input type="checkbox" id="checked_file_berita_acara_pelantikan" disabled/>
+                                                                <span></span><div style="margin-left: 10px;">File Berita Acara Pelantikan</div>
+                                                            </label>
+                                                        </div>
+                                                        <div style="margin-bottom:10px;">
+                                                            <label class="checkbox checkbox-outline checkbox-outline-2x checkbox-primary">
+                                                                <input type="checkbox" id="checked_file_data_pak" disabled/>
+                                                                <span></span><div style="margin-left: 10px;">File Data PAK</div>
+                                                            </label>
+                                                        </div>
+                                                        <div style="margin-bottom:10px;">
+                                                            <label class="checkbox checkbox-outline checkbox-outline-2x checkbox-primary">
+                                                                <input type="checkbox" id="checked_file_klarifikasi_pak" disabled/>
+                                                                <span></span><div style="margin-left: 10px;">File Klarifikasi PAK</div>
+                                                            </label>
+                                                        </div>
+                                                        
+                                                    </div>
+                                                </div>
+
                                             </div>
                                         </div>
                                         <!--end: Wizard Step 2-->
@@ -606,6 +656,65 @@
         </div>
     </script>
     <script>
+        $(document).ready(function () {
+            $("#file_data_usulan").on("change", function () {
+                if ($('#file_data_usulan')[0].files.length != 0) {
+                    $("#checked_file_data_usulan").attr('checked', true);
+                } else {
+                    $("#checked_file_data_usulan").attr('checked',false);
+                }
+            });
+
+            $("#file_surat_keputusan_pengangkatan_sebagai_pejabat").on("change", function () {
+                if ($('#file_surat_keputusan_pengangkatan_sebagai_pejabat')[0].files.length != 0) {
+                    $("#checked_file_surat_keputusan_pengangkatan_sebagai_pejabat").attr('checked', true);
+                } else {
+                    $("#checked_file_surat_keputusan_pengangkatan_sebagai_pejabat").attr('checked',false);
+                }
+            });
+
+            $("#file_ijasah").on("change", function () {
+                if ($('#file_ijasah')[0].files.length != 0) {
+                    $("#checked_file_ijasah").attr('checked', true);
+                } else {
+                    $("#checked_file_ijasah").attr('checked',false);
+                }
+            });
+
+            $("#file_sk_jabatan_terakhir").on("change", function () {
+                if ($('#file_sk_jabatan_terakhir')[0].files.length != 0) {
+                    $("#checked_file_sk_jabatan_terakhir").attr('checked', true);
+                } else {
+                    $("#checked_file_sk_jabatan_terakhir").attr('checked',false);
+                }
+            });
+
+            $("#file_berita_acara_pelantikan").on("change", function () {
+                if ($('#file_berita_acara_pelantikan')[0].files.length != 0) {
+                    $("#checked_file_berita_acara_pelantikan").attr('checked', true);
+                } else {
+                    $("#checked_file_berita_acara_pelantikan").attr('checked',false);
+                }
+            });
+
+            $("#file_data_pak").on("change", function () {
+                if ($('#file_data_pak')[0].files.length != 0) {
+                    $("#checked_file_data_pak").attr('checked', true);
+                } else {
+                    $("#checked_file_data_pak").attr('checked',false);
+                }
+            });
+
+            $("#file_klarifikasi_pak").on("change", function () {
+                if ($('#file_klarifikasi_pak')[0].files.length != 0) {
+                    $("#checked_file_klarifikasi_pak").attr('checked', true);
+                } else {
+                    $("#checked_file_klarifikasi_pak").attr('checked',false);
+                }
+            });
+
+        });
+        
         refreshDateTimePicker();
         function refreshDateTimePicker(){
             

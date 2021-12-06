@@ -118,7 +118,7 @@
                                                 </div>
                                             </div>
                                             <div class="form-group row">
-                                                <label class="col-lg-3 col-form-label">Data pendukung lainnya (boleh kosong) <a style="color: #FF0000;">*</a></label>
+                                                <label class="col-lg-3 col-form-label">Data pendukung lainnya</label>
                                                 <div class="col-lg-9">
                                                     <input id="file_data_pendukung_lainnya" name="file_data_pendukung_lainnya[]" type="file" class="file" data-show-preview="false" multiple/>
                                                     
@@ -234,6 +234,23 @@
                                             </div>
                                         </div>
 
+                                        <div class="form-group row">
+                                            <label class="col-form-label col-lg-3 col-sm-12"></label>
+                                            <div class="col-lg-9 col-md-9 col-sm-12">
+                                                <div style="margin-bottom:10px;">
+                                                    <label class="checkbox checkbox-outline checkbox-outline-2x checkbox-primary">
+                                                        <input type="checkbox" id="checked_file_data_usulan" disabled/>
+                                                        <span></span><div style="margin-left: 10px;">File Surat Usulan</div>
+                                                    </label>
+                                                </div>
+                                                <div style="margin-bottom:10px;">
+                                                    <label class="checkbox checkbox-outline checkbox-outline-2x checkbox-primary">
+                                                        <input type="checkbox" id="checked_file_data_pendukung_lainnya" disabled/>
+                                                        <span></span><div style="margin-left: 10px;">File Data pendukung lainnya</div>
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
 
                                         <!--begin: Wizard Step 1-->
                                         <!-- <div class="pb-6" style="margin-left: 50px; margin-right: 50px;" data-wizard-type="step-content">
@@ -387,6 +404,25 @@
 {{-- Scripts Section --}}
 @section('scripts')
     <script>
+        $(document).ready(function () {
+            $("#file_data_usulan").on("change", function () {
+                if ($('#file_data_usulan')[0].files.length != 0) {
+                    $("#checked_file_data_usulan").attr('checked', true);
+                } else {
+                    $("#checked_file_data_usulan").attr('checked',false);
+                }
+            });
+
+            $("#file_data_pendukung_lainnya").on("change", function () {
+                if ($('#file_data_pendukung_lainnya')[0].files.length != 0) {
+                    $("#checked_file_data_pendukung_lainnya").attr('checked', true);
+                } else {
+                    $("#checked_file_data_pendukung_lainnya").attr('checked',false);
+                }
+            });
+
+        });
+
         $('.my-datepicker').datetimepicker({
             useCurrent:false,
             format: 'DD-MMM-YYYY'

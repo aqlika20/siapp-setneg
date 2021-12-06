@@ -735,50 +735,68 @@
                                                     <div class="col-lg-9 col-md-9 col-sm-12">
                                                         <div style="margin-bottom:10px;">
                                                             <label class="checkbox checkbox-outline checkbox-outline-2x checkbox-primary">
-                                                                <input type="checkbox" id="ket" name="ket[]" value="1"/>
-                                                                <span></span><div style="margin-left: 10px;">Surat Usulan Asli Ditandatangani PPK</div>
+                                                                <input type="checkbox" id="checked_file_data_usulan" disabled/>
+                                                                <span></span><div style="margin-left: 10px;">File Surat Usulan</div>
                                                             </label>
                                                         </div>
                                                         <div style="margin-bottom:10px;">
                                                             <label class="checkbox checkbox-outline checkbox-outline-2x checkbox-primary">
-                                                                <input type="checkbox" id="ket" name="ket[]" value="2"/>
-                                                                <span></span><div style="margin-left: 10px;">Nota Usulan asli yang dilengkapi dengan data formasi dan ditandatangani oleh PPK</div>
+                                                                <input type="checkbox" id="checked_file_putusan_pengadilan_inkrach" disabled/>
+                                                                <span></span><div style="margin-left: 10px;">File Putusan Pengadilan yang Sudah Inkrach</div>
                                                             </label>
                                                         </div>
                                                         <div style="margin-bottom:10px;">
                                                             <label class="checkbox checkbox-outline checkbox-outline-2x checkbox-primary">
-                                                                <input type="checkbox" id="ket" name="ket[]" value="3"/>
-                                                                <span></span><div style="margin-left: 10px;">Sertifikat/tanda lulus/surat keterangan lulus uji kompetensi</div>
+                                                                <input type="checkbox" id="checked_file_ijasah" disabled/>
+                                                                <span></span><div style="margin-left: 10px;">File Ijasah Terakhir</div>
                                                             </label>
                                                         </div>
                                                         <div style="margin-bottom:10px;">
                                                             <label class="checkbox checkbox-outline checkbox-outline-2x checkbox-primary">
-                                                                <input type="checkbox" id="ket" name="ket[]" value="4"/>
-                                                                <span></span><div style="margin-left: 10px;">PAK asli 1 tahun terakhir</div>
+                                                                <input type="checkbox" id="checked_file_sk_pangkat_terakhir" disabled/>
+                                                                <span></span><div style="margin-left: 10px;">File SK Pangkat Terakhir</div>
                                                             </label>
                                                         </div>
                                                         <div style="margin-bottom:10px;">
                                                             <label class="checkbox checkbox-outline checkbox-outline-2x checkbox-primary">
-                                                                <input type="checkbox" id="ket" name="ket[]" value="5"/>
-                                                                <span></span><div style="margin-left: 10px;">Salinan sah SK jabatan terakhir</div>
+                                                                <input type="checkbox" id="checked_file_data_pak" disabled/>
+                                                                <span></span><div style="margin-left: 10px;">File Data PAK</div>
                                                             </label>
                                                         </div>
                                                         <div style="margin-bottom:10px;">
                                                             <label class="checkbox checkbox-outline checkbox-outline-2x checkbox-primary">
-                                                                <input type="checkbox" id="ket" name="ket[]" value="6"/>
-                                                                <span></span><div style="margin-left: 10px;">Salinan sah SK Pangkat terakhir</div>
-                                                            </label>
-                                                        </div>
-                                                        <div style="margin-bottom:30px;">
-                                                            <label class="checkbox checkbox-outline checkbox-outline-2x checkbox-primary">
-                                                                <input type="checkbox" id="ket" name="ket[]" value="7"/>
-                                                                <span></span><div style="margin-left: 10px;">Salinan sah SKP dan Penilaian Prestasi Kerja 2 tahun terakhir</div>
+                                                                <input type="checkbox" id="checked_file_klarifikasi_pak" disabled/>
+                                                                <span></span><div style="margin-left: 10px;">File Klarifikasi PAK</div>
                                                             </label>
                                                         </div>
                                                         <div style="margin-bottom:10px;">
                                                             <label class="checkbox checkbox-outline checkbox-outline-2x checkbox-primary">
-                                                                <input type="checkbox" id="ket" name="ket[]" value="8"/>
-                                                                <span></span><div style="margin-left: 10px;">Semua persyaratan dan dokumen benar</div>
+                                                                <input type="checkbox" id="checked_file_sk_jabatan_terakhir" disabled/>
+                                                                <span></span><div style="margin-left: 10px;">File SK Jabatan Terakhir</div>
+                                                            </label>
+                                                        </div>
+                                                        <div style="margin-bottom:10px;">
+                                                            <label class="checkbox checkbox-outline checkbox-outline-2x checkbox-primary">
+                                                                <input type="checkbox" id="checked_file_berita_acara_pelantikan" disabled/>
+                                                                <span></span><div style="margin-left: 10px;">File Berita Acara Pelantikan</div>
+                                                            </label>
+                                                        </div>
+                                                        <div style="margin-bottom:10px;">
+                                                            <label class="checkbox checkbox-outline checkbox-outline-2x checkbox-primary">
+                                                                <input type="checkbox" id="checked_file_pas_foto" disabled/>
+                                                                <span></span><div style="margin-left: 10px;">File Pas Foto Berwarna YBS</div>
+                                                            </label>
+                                                        </div>
+                                                        <div style="margin-bottom:10px;">
+                                                            <label class="checkbox checkbox-outline checkbox-outline-2x checkbox-primary">
+                                                                <input type="checkbox" id="checked_file_sk_tidak_pernah_dijatuhi_hukuman" disabled/>
+                                                                <span></span><div style="margin-left: 10px;">File Surat Keterangan Tidak Pernah Dijatuhi Hukuman Disiplin</div>
+                                                            </label>
+                                                        </div>
+                                                        <div style="margin-bottom:10px;">
+                                                            <label class="checkbox checkbox-outline checkbox-outline-2x checkbox-primary">
+                                                                <input type="checkbox" id="checked_file_sk_tidak_sedang_dalam_hukum_dpcp" disabled/>
+                                                                <span></span><div style="margin-left: 10px;">File Surat Keterangan Tidak Sedang Dalam Proses Hukum DPCP</div>
                                                             </label>
                                                         </div>
                                                     </div>
@@ -864,6 +882,97 @@
         </div>
     </script>
     <script>
+        $(document).ready(function () {
+            $("#file_data_usulan").on("change", function () {
+                if ($('#file_data_usulan')[0].files.length != 0) {
+                    $("#checked_file_data_usulan").attr('checked', true);
+                } else {
+                    $("#checked_file_data_usulan").attr('checked',false);
+                }
+            });
+
+            $("#file_putusan_pengadilan_inkrach").on("change", function () {
+                if ($('#file_putusan_pengadilan_inkrach')[0].files.length != 0) {
+                    $("#checked_file_putusan_pengadilan_inkrach").attr('checked', true);
+                } else {
+                    $("#checked_file_putusan_pengadilan_inkrach").attr('checked',false);
+                }
+            });
+
+            $("#file_ijasah").on("change", function () {
+                if ($('#file_ijasah')[0].files.length != 0) {
+                    $("#checked_file_ijasah").attr('checked', true);
+                } else {
+                    $("#checked_file_ijasah").attr('checked',false);
+                }
+            });
+
+            $("#file_sk_pangkat_terakhir").on("change", function () {
+                if ($('#file_sk_pangkat_terakhir')[0].files.length != 0) {
+                    $("#checked_file_sk_pangkat_terakhir").attr('checked', true);
+                } else {
+                    $("#checked_file_sk_pangkat_terakhir").attr('checked',false);
+                }
+            });
+
+            $("#file_data_pak").on("change", function () {
+                if ($('#file_data_pak')[0].files.length != 0) {
+                    $("#checked_file_data_pak").attr('checked', true);
+                } else {
+                    $("#checked_file_data_pak").attr('checked',false);
+                }
+            });
+
+            $("#file_klarifikasi_pak").on("change", function () {
+                if ($('#file_klarifikasi_pak')[0].files.length != 0) {
+                    $("#checked_file_klarifikasi_pak").attr('checked', true);
+                } else {
+                    $("#checked_file_klarifikasi_pak").attr('checked',false);
+                }
+            });
+
+            $("#file_sk_jabatan_terakhir").on("change", function () {
+                if ($('#file_sk_jabatan_terakhir')[0].files.length != 0) {
+                    $("#checked_file_sk_jabatan_terakhir").attr('checked', true);
+                } else {
+                    $("#checked_file_sk_jabatan_terakhir").attr('checked',false);
+                }
+            });
+
+            $("#file_berita_acara_pelantikan").on("change", function () {
+                if ($('#file_berita_acara_pelantikan')[0].files.length != 0) {
+                    $("#checked_file_berita_acara_pelantikan").attr('checked', true);
+                } else {
+                    $("#checked_file_berita_acara_pelantikan").attr('checked',false);
+                }
+            });
+
+            $("#file_pas_foto").on("change", function () {
+                if ($('#file_pas_foto')[0].files.length != 0) {
+                    $("#checked_file_pas_foto").attr('checked', true);
+                } else {
+                    $("#checked_file_pas_foto").attr('checked',false);
+                }
+            });
+
+            $("#file_sk_tidak_pernah_dijatuhi_hukuman").on("change", function () {
+                if ($('#file_sk_tidak_pernah_dijatuhi_hukuman')[0].files.length != 0) {
+                    $("#checked_file_sk_tidak_pernah_dijatuhi_hukuman").attr('checked', true);
+                } else {
+                    $("#checked_file_sk_tidak_pernah_dijatuhi_hukuman").attr('checked',false);
+                }
+            });
+
+            $("#file_sk_tidak_sedang_dalam_hukum_dpcp").on("change", function () {
+                if ($('#file_sk_tidak_sedang_dalam_hukum_dpcp')[0].files.length != 0) {
+                    $("#checked_file_sk_tidak_sedang_dalam_hukum_dpcp").attr('checked', true);
+                } else {
+                    $("#checked_file_sk_tidak_sedang_dalam_hukum_dpcp").attr('checked',false);
+                }
+            });
+
+        });
+        
         refreshDateTimePicker();
         function refreshDateTimePicker(){
             

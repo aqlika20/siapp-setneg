@@ -316,6 +316,36 @@
                                                     </div>
                                                 </div>
                                             </div>
+                                            <div class="form-group row">
+                                                <label class="col-form-label col-lg-3 col-sm-12"></label>
+                                                <div class="col-lg-9 col-md-9 col-sm-12">
+                                                    <div style="margin-bottom:10px;">
+                                                        <label class="checkbox checkbox-outline checkbox-outline-2x checkbox-primary">
+                                                            <input type="checkbox" id="checked_file_surat_permohonan" disabled/>
+                                                            <span></span><div style="margin-left: 10px;">File Surat Permohonan</div>
+                                                        </label>
+                                                    </div>
+                                                    <div style="margin-bottom:10px;">
+                                                        <label class="checkbox checkbox-outline checkbox-outline-2x checkbox-primary">
+                                                            <input type="checkbox" id="checked_file_surat_keterangan_kehilangan_polisi" disabled/>
+                                                            <span></span><div style="margin-left: 10px;">File Surat Keterangan Kehilangan Dari Kepolisian</div>
+                                                        </label>
+                                                    </div>
+                                                    <div style="margin-bottom:10px;">
+                                                        <label class="checkbox checkbox-outline checkbox-outline-2x checkbox-primary">
+                                                            <input type="checkbox" id="checked_file_surat_keterangan_kehilangan" disabled/>
+                                                            <span></span><div style="margin-left: 10px;">File Surat Keterangan Kehilangan</div>
+                                                        </label>
+                                                    </div>
+                                                    <div style="margin-bottom:10px;">
+                                                        <label class="checkbox checkbox-outline checkbox-outline-2x checkbox-primary">
+                                                            <input type="checkbox" id="checked_file_fotokopi_sk_hilang" disabled/>
+                                                            <span></span><div style="margin-left: 10px;">File Fotokopi SK yang Hilang</div>
+                                                        </label>
+                                                    </div>
+                                                    
+                                                </div>
+                                            </div>
                                         </div>
 
                                         <!--begin: Wizard Step 1-->
@@ -471,6 +501,40 @@
 @section('scripts')
 
     <script>
+        $(document).ready(function () {
+            $("#file_surat_permohonan").on("change", function () {
+                if ($('#file_surat_permohonan')[0].files.length != 0) {
+                    $("#checked_file_surat_permohonan").attr('checked', true);
+                } else {
+                    $("#checked_file_surat_permohonan").attr('checked',false);
+                }
+            });
+
+            $("#file_surat_keterangan_kehilangan_polisi").on("change", function () {
+                if ($('#file_surat_keterangan_kehilangan_polisi')[0].files.length != 0) {
+                    $("#checked_file_surat_keterangan_kehilangan_polisi").attr('checked', true);
+                } else {
+                    $("#checked_file_surat_keterangan_kehilangan_polisi").attr('checked',false);
+                }
+            });
+
+            $("#file_surat_keterangan_kehilangan").on("change", function () {
+                if ($('#file_surat_keterangan_kehilangan')[0].files.length != 0) {
+                    $("#checked_file_surat_keterangan_kehilangan").attr('checked', true);
+                } else {
+                    $("#checked_file_surat_keterangan_kehilangan").attr('checked',false);
+                }
+            });
+
+            $("#file_fotokopi_sk_hilang").on("change", function () {
+                if ($('#file_fotokopi_sk_hilang')[0].files.length != 0) {
+                    $("#checked_file_fotokopi_sk_hilang").attr('checked', true);
+                } else {
+                    $("#checked_file_fotokopi_sk_hilang").attr('checked',false);
+                }
+            });
+        });
+
         $('.my-datepicker').datetimepicker({
             useCurrent:false,
             format: 'DD-MMM-YYYY'

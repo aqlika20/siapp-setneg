@@ -62,7 +62,7 @@ class PermasalahanKepegawaianLainnyaController extends Controller
             'jabatan_menandatangani' => 'required',
             'perihal' => 'required',
             'file_data_usulan.*' => 'required|max:5000|mimes:pdf',
-            'file_data_pendukung_lainnya.*' => 'required|max:5000|mimes:pdf',
+            'file_data_pendukung_lainnya.*' => 'max:5000|mimes:pdf',
 
             'nama' => 'required',
             'tanggal_lahir' => 'required',
