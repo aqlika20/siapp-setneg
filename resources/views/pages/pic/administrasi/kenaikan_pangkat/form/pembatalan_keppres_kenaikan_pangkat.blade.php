@@ -89,7 +89,7 @@
                                                 <div class="col-lg-9">
                                                     <input id="file_surat_permohonan" name="file_surat_permohonan[]" type="file" class="file" data-show-preview="false" multiple/>
                                                     
-                                                    <span class="form-text text-muted">Max file size is 1MB and max number of files is 5.</span>
+                                                    <span class="form-text text-muted">Format file harus berbentuk jpg, png, jpeg, pdf, batas size file 1 MB dan file tidak boleh lebih dari 5 file</span>
                                                 </div>
                                             </div>
 
@@ -98,7 +98,7 @@
                                                 <div class="col-lg-9">
                                                     <input id="file_keppres_dibatalkan" name="file_keppres_dibatalkan[]" type="file" class="file" data-show-preview="false" multiple/>
                                                     
-                                                    <span class="form-text text-muted">Max file size is 1MB and max number of files is 5.</span>
+                                                    <span class="form-text text-muted">Format file harus berbentuk jpg, png, jpeg, pdf, batas size file 1 MB dan file tidak boleh lebih dari 5 file</span>
                                                 </div>
                                             </div>
 
@@ -107,7 +107,7 @@
                                                 <div class="col-lg-9">
                                                     <input id="file_alasan" name="file_alasan[]" type="file" class="file" data-show-preview="false" multiple/>
                                                     
-                                                    <span class="form-text text-muted">Max file size is 1MB and max number of files is 5.</span>
+                                                    <span class="form-text text-muted">Format file harus berbentuk jpg, png, jpeg, pdf, batas size file 1 MB dan file tidak boleh lebih dari 5 file</span>
                                                 </div>
                                             </div>
 

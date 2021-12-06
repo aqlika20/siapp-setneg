@@ -63,13 +63,13 @@ class PetikanKeppresHilangController extends Controller
         $validator = Validator::make($input, [
             'no_surat_permohonan' => 'required',
             'tanggal_surat_permohonan' => 'required',
-            'file_surat_permohonan.*' => 'required|max:5000|mimes:pdf',
-            'file_surat_keterangan_kehilangan_polisi.*' => 'required|max:5000|mimes:pdf',
+            'file_surat_permohonan.*' => 'required|max:5000|mimes:jpg,png,jpeg,pdf',
+            'file_surat_keterangan_kehilangan_polisi.*' => 'required|max:5000|mimes:jpg,png,jpeg,pdf',
             'nama_kantor_polisi' => 'required',
             'no_surat_kehilangan' => 'required',
             'tanggal_surat_kehilangan' => 'required',
-            'file_surat_keterangan_kehilangan.*' => 'required|max:5000|mimes:pdf',
-            'file_fotokopi_sk_hilang.*' => 'required|max:5000|mimes:pdf',
+            'file_surat_keterangan_kehilangan.*' => 'required|max:5000|mimes:jpg,png,jpeg,pdf',
+            'file_fotokopi_sk_hilang.*' => 'required|max:5000|mimes:jpg,png,jpeg,pdf',
 
             'nip' => 'required',
             'nama' => 'required',

@@ -68,9 +68,9 @@ class PemberhentianPejabatLainnyaController extends Controller
             'instansi' => 'required',
             'jabatan' => 'required',
            
-            'file_surat_pengantar.*' => 'required|max:5000|mimes:pdf',
-            'file_dhr.*' => 'required|max:5000|mimes:pdf',
-            'file_dukumen_lain_pengangkatan_jabatan_lain.*' => 'required|max:5000|mimes:pdf'
+            'file_surat_pengantar.*' => 'required|max:5000|mimes:jpg,png,jpeg,pdf',
+            'file_dhr.*' => 'required|max:5000|mimes:jpg,png,jpeg,pdf',
+            'file_dukumen_lain_pengangkatan_jabatan_lain.*' => 'required|max:5000|mimes:jpg,png,jpeg,pdf'
         ]);
 
         if ($validator->fails()) {

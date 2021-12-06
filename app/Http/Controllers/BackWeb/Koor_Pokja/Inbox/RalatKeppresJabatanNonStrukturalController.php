@@ -58,15 +58,15 @@ class RalatKeppresJabatanNonStrukturalController extends Controller
         $validator = Validator::make($input, [
             'tanggal_surat_pengantar' => 'required',
             'no_surat_pengantar' => 'required',
-            'file_surat_pengantar.*' => 'required|max:5000|mimes:pdf',
+            'file_surat_pengantar.*' => 'required|max:5000|mimes:jpg,png,jpeg,pdf',
 
             'no_keppres' => 'required',
             'tanggal_keppres' => 'required',
 
             'alasan_ralat' => 'required',
 
-            'file_keppres.*' => 'required|max:5000|mimes:pdf',
-            'file_bukti_pendukung.*' => 'max:5000|mimes:pdf'
+            'file_keppres.*' => 'required|max:5000|mimes:jpg,png,jpeg,pdf',
+            'file_bukti_pendukung.*' => 'max:5000|mimes:jpg,png,jpeg,pdf'
         
         ]);
 

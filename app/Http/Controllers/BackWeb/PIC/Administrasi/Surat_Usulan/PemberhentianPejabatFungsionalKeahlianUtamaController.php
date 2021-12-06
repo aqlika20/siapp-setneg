@@ -74,7 +74,7 @@ class PemberhentianPejabatFungsionalKeahlianUtamaController extends Controller
             'no_surat_usulan' => 'required',
             'ppk_pejabat_yang_diusulkan' => 'required',
             'pejabat_menandatangani' => 'required',
-            'file_surat_usulan.*' => 'required|max:5000|mimes:pdf',
+            'file_surat_usulan.*' => 'required|max:5000|mimes:jpg,png,jpeg,pdf',
 
             'nip' => 'required',
             'nama' => 'required',
@@ -86,32 +86,32 @@ class PemberhentianPejabatFungsionalKeahlianUtamaController extends Controller
             'jumlah' => 'required',
             'terisi' => 'required',
             'sisa' => 'required',
-            'file_nota_usulan.*' => 'required|max:5000|mimes:pdf',
-            'file_penetapan_kebutuhan_formasi.*' => 'required|max:5000|mimes:pdf',
-            'file_ijazah.*' => 'required|max:5000|mimes:pdf',
-            'file_pencantuman_gelar.*' => 'required|max:5000|mimes:pdf',
+            'file_nota_usulan.*' => 'required|max:5000|mimes:jpg,png,jpeg,pdf',
+            'file_penetapan_kebutuhan_formasi.*' => 'required|max:5000|mimes:jpg,png,jpeg,pdf',
+            'file_ijazah.*' => 'required|max:5000|mimes:jpg,png,jpeg,pdf',
+            'file_pencantuman_gelar.*' => 'required|max:5000|mimes:jpg,png,jpeg,pdf',
 
             'no_sk_pangkat' => 'required',
             'pangkat_gol' => 'required',
             'tmt_gol' => 'required',
-            'file_sk_pangkat_terakhir.*' => 'required|max:5000|mimes:pdf',
+            'file_sk_pangkat_terakhir.*' => 'required|max:5000|mimes:jpg,png,jpeg,pdf',
 
             'nomor_pak' => 'nullable',
             'tanggal_pak' => 'nullable',
             'jumlah_angka_kredit' => 'nullable',
-            'file_data_pak.*' => 'required|max:5000|mimes:pdf',
+            'file_data_pak.*' => 'required|max:5000|mimes:jpg,png,jpeg,pdf',
             
             'jabatan_fungsional' => 'required',
             'no_keppress_jabatan_fungsional' => 'required',
             'tmt_jabatan_fungsional' => 'required',
             'satuan_organisasi_fungsional' => 'required',
-            'file_keppres_pengangkatan.*' => 'required|max:5000|mimes:pdf',
-            'file_ba_pengambilan_sumpah_fungsional.*' => 'required|max:5000|mimes:pdf',
+            'file_keppres_pengangkatan.*' => 'required|max:5000|mimes:jpg,png,jpeg,pdf',
+            'file_ba_pengambilan_sumpah_fungsional.*' => 'required|max:5000|mimes:jpg,png,jpeg,pdf',
             
             'alasan_pemberhentian' => 'required',
             'ket_alasan_pemberhentian' => 'required',
             'tmt_pemberhentian' => 'required',
-            'file_pendukung_pemberhentian.*' => 'required|max:5000|mimes:pdf',
+            'file_pendukung_pemberhentian.*' => 'required|max:5000|mimes:jpg,png,jpeg,pdf',
 
             'ket.*' => 'required'
         ]);

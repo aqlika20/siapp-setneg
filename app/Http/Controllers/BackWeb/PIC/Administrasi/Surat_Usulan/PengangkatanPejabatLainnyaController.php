@@ -63,7 +63,7 @@ class PengangkatanPejabatLainnyaController extends Controller
             $validator = Validator::make($input, [
                 'no_surat_pengantar' => 'required',
                 'tanggal_surat_pengantar' => 'required',
-                'file_surat_pengantar.*' => 'required|max:5000|mimes:pdf',
+                'file_surat_pengantar.*' => 'required|max:5000|mimes:jpg,png,jpeg,pdf',
 
                 'jabatan_lainnya' => 'required',
                 'unsur' => 'required',
@@ -72,8 +72,8 @@ class PengangkatanPejabatLainnyaController extends Controller
                 'nama' => 'required',
                 'instansi' => 'required',
                 'jabatan' => 'required',
-                'file_dhr.*' => 'required|max:5000|mimes:pdf',
-                'file_dukumen_lain_pengangkatan_jabatan_lain.*' => 'max:5000|mimes:pdf'
+                'file_dhr.*' => 'required|max:5000|mimes:jpg,png,jpeg,pdf',
+                'file_dukumen_lain_pengangkatan_jabatan_lain.*' => 'max:5000|mimes:jpg,png,jpeg,pdf'
             
             ]);
     
@@ -136,7 +136,7 @@ class PengangkatanPejabatLainnyaController extends Controller
             $validator = Validator::make($input, [
                 'no_surat_pengantar' => 'required',
                 'tanggal_surat_pengantar' => 'required',
-                'file_surat_pengantar.*' => 'required|max:5000|mimes:pdf',
+                'file_surat_pengantar.*' => 'required|max:5000|mimes:jpg,png,jpeg,pdf',
 
                 'jabatan_lainnya' => 'required',
                 'unsur' => 'required',
@@ -145,8 +145,8 @@ class PengangkatanPejabatLainnyaController extends Controller
                 'nama' => 'required',
                 'instansi' => 'required',
                 'jabatan' => 'required',
-                'file_dhr.*' => 'required|max:5000|mimes:pdf',
-                'file_dukumen_lain_pengangkatan_jabatan_lain.*' => 'max:5000|mimes:pdf'
+                'file_dhr.*' => 'required|max:5000|mimes:jpg,png,jpeg,pdf',
+                'file_dukumen_lain_pengangkatan_jabatan_lain.*' => 'max:5000|mimes:jpg,png,jpeg,pdf'
             
             ]);
 

@@ -91,7 +91,7 @@ class PerpindahanPejabatFungsionalKeahlianUtamaController extends Controller
             'no_surat_usulan' => 'required',
             'ppk_pejabat_yang_diusulkan' => 'required',
             'pejabat_menandatangani' => 'required',
-            'file_surat_usulan.*' => 'required|max:5000|mimes:pdf',
+            'file_surat_usulan.*' => 'required|max:5000|mimes:jpg,png,jpeg,pdf',
 
             'nip' => 'required',
             'nama' => 'required',
@@ -103,16 +103,16 @@ class PerpindahanPejabatFungsionalKeahlianUtamaController extends Controller
             'jumlah' => 'required',
             'terisi' => 'required',
             'sisa' => 'required',
-            'file_nota_usulan.*' => 'required|max:5000|mimes:pdf',
-            'file_penetapan_kebutuhan_formasi.*' => 'required|max:5000|mimes:pdf',
-            'file_ijazah.*' => 'required|max:5000|mimes:pdf',
-            'file_pencantuman_gelar.*' => 'required|max:5000|mimes:pdf',
+            'file_nota_usulan.*' => 'required|max:5000|mimes:jpg,png,jpeg,pdf',
+            'file_penetapan_kebutuhan_formasi.*' => 'required|max:5000|mimes:jpg,png,jpeg,pdf',
+            'file_ijazah.*' => 'required|max:5000|mimes:jpg,png,jpeg,pdf',
+            'file_pencantuman_gelar.*' => 'required|max:5000|mimes:jpg,png,jpeg,pdf',
 
             'jabatan_lama' => 'required',
             'no_sk_jabatan_lama' => 'required',
             'tmt_jabatan_lama' => 'required',
             'satuan_organisasi_lama' => 'required',
-            'file_jabatan_lama.*' => 'required|max:5000|mimes:pdf',
+            'file_jabatan_lama.*' => 'required|max:5000|mimes:jpg,png,jpeg,pdf',
 
             'jabatan_baru' => 'required',
             'satuan_organisasi_baru' => 'required',
@@ -120,7 +120,7 @@ class PerpindahanPejabatFungsionalKeahlianUtamaController extends Controller
             'jabatan_kompetensi' => 'required',
             'no_sertifikat' => 'required',
             'tanggal_sertifikat' => 'required',
-            'file_data_kompetensi.*' => 'required|max:5000|mimes:pdf',
+            'file_data_kompetensi.*' => 'required|max:5000|mimes:jpg,png,jpeg,pdf',
 
             'no_surat_rekomendasi' => 'required',
             'tanggal_surat_rekomendasi' => 'required',
@@ -128,17 +128,17 @@ class PerpindahanPejabatFungsionalKeahlianUtamaController extends Controller
             'no_sk_pangkat' => 'required',
             'pangkat_gol' => 'required',
             'tmt_gol' => 'required',
-            'file_sk_pangkat_terakhir.*' => 'required|max:5000|mimes:pdf',
+            'file_sk_pangkat_terakhir.*' => 'required|max:5000|mimes:jpg,png,jpeg,pdf',
             
             'nomor_pak' => 'nullable',
             'jumlah_angka_kredit' => 'nullable',
             'tanggal_pak' => 'nullable',
-            'file_data_pak.*' => 'max:5000|mimes:pdf',
-            'file_klarifikasi_pak.*' => 'max:5000|mimes:pdf',
+            'file_data_pak.*' => 'max:5000|mimes:jpg,png,jpeg,pdf',
+            'file_klarifikasi_pak.*' => 'max:5000|mimes:jpg,png,jpeg,pdf',
             
-            'file_penilaian_skp.*' => 'required|max:5000|mimes:pdf',
-            'file_penilaian_prestasi.*' => 'required|max:5000|mimes:pdf',
-            'file_skp_2_lainnya.*' => 'required|max:5000|mimes:pdf',
+            'file_penilaian_skp.*' => 'required|max:5000|mimes:jpg,png,jpeg,pdf',
+            'file_penilaian_prestasi.*' => 'required|max:5000|mimes:jpg,png,jpeg,pdf',
+            'file_skp_2_lainnya.*' => 'required|max:5000|mimes:jpg,png,jpeg,pdf',
 
             
 

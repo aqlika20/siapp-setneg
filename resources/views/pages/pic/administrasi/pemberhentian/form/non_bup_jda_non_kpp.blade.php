@@ -110,7 +110,7 @@
                                                             </div>
                                                         </div>
                                                     </div> -->
-                                                    <span class="form-text text-muted">Max file size is 1MB and max number of files is 5.</span>
+                                                    <span class="form-text text-muted">Format file harus berbentuk jpg, png, jpeg, pdf, batas size file 1 MB dan file tidak boleh lebih dari 5 file</span>
                                                 </div>
                                             </div>
 
@@ -152,7 +152,7 @@
                                                             </div>
                                                         </div>
                                                     </div> -->
-                                                    <span class="form-text text-muted">Max file size is 1MB and max number of files is 5.</span>
+                                                    <span class="form-text text-muted">Format file harus berbentuk jpg, png, jpeg, pdf, batas size file 1 MB dan file tidak boleh lebih dari 5 file</span>
                                                 </div>
                                             </div>
                                             
@@ -256,7 +256,7 @@
                                                             </div>
                                                         </div>
                                                     </div> -->
-                                                    <span class="form-text text-muted">Max file size is 1MB and max number of files is 5.</span>
+                                                    <span class="form-text text-muted">Format file harus berbentuk jpg, png, jpeg, pdf, batas size file 1 MB dan file tidak boleh lebih dari 5 file</span>
                                                 </div>
                                             </div>
                                             <div class="form-group row">
@@ -352,7 +352,7 @@
                                                             </div>
                                                         </div>
                                                     </div> -->
-                                                    <span class="form-text text-muted">Max file size is 1MB and max number of files is 5.</span>
+                                                    <span class="form-text text-muted">Format file harus berbentuk jpg, png, jpeg, pdf, batas size file 1 MB dan file tidak boleh lebih dari 5 file</span>
                                                 </div>
                                             </div>
 
@@ -446,7 +446,7 @@
                                                                 </div>
                                                             </div>
                                                         </div> -->
-                                                        <span class="form-text text-muted">Max file size is 1MB and max number of files is 5.</span>
+                                                        <span class="form-text text-muted">Format file harus berbentuk jpg, png, jpeg, pdf, batas size file 1 MB dan file tidak boleh lebih dari 5 file</span>
                                                     </div>
                                                 </div>
                                                 <h4 class="mb-10 font-weight-bold text-dark">Klarifikasi PAK
@@ -512,7 +512,7 @@
                                                                 </div>
                                                             </div>
                                                         </div> -->
-                                                        <span class="form-text text-muted">Max file size is 1MB and max number of files is 5.</span>
+                                                        <span class="form-text text-muted">Format file harus berbentuk jpg, png, jpeg, pdf, batas size file 1 MB dan file tidak boleh lebih dari 5 file</span>
                                                     </div>
                                                 </div>
                                             </div>
@@ -575,7 +575,7 @@
                                                             </div>
                                                         </div>
                                                     </div> -->
-                                                    <span class="form-text text-muted">Max file size is 1MB and max number of files is 5.</span>
+                                                    <span class="form-text text-muted">Format file harus berbentuk jpg, png, jpeg, pdf, batas size file 1 MB dan file tidak boleh lebih dari 5 file</span>
                                                 </div>
                                             </div>
                                             <div class="form-group row">
@@ -615,7 +615,7 @@
                                                             </div>
                                                         </div>
                                                     </div> -->
-                                                    <span class="form-text text-muted">Max file size is 1MB and max number of files is 5.</span>
+                                                    <span class="form-text text-muted">Format file harus berbentuk jpg, png, jpeg, pdf, batas size file 1 MB dan file tidak boleh lebih dari 5 file</span>
                                                 </div>
                                             </div>
                                         </div>
@@ -662,7 +662,7 @@
                                                                 </div>
                                                             </div>
                                                         </div> -->
-                                                        <span class="form-text text-muted">Max file size is 1MB and max number of files is 5.</span>
+                                                        <span class="form-text text-muted">Format file harus berbentuk jpg, png, jpeg, pdf, batas size file 1 MB dan file tidak boleh lebih dari 5 file</span>
                                                     </div>
                                                 </div>
                                                 <div class="form-group row">
@@ -702,7 +702,7 @@
                                                                 </div>
                                                             </div>
                                                         </div> -->
-                                                        <span class="form-text text-muted">Max file size is 1MB and max number of files is 5.</span>
+                                                        <span class="form-text text-muted">Format file harus berbentuk jpg, png, jpeg, pdf, batas size file 1 MB dan file tidak boleh lebih dari 5 file</span>
                                                     </div>
                                                 </div>
                                                 <div class="form-group row">
@@ -742,7 +742,7 @@
                                                                 </div>
                                                             </div>
                                                         </div> -->
-                                                        <span class="form-text text-muted">Max file size is 1MB and max number of files is 5.</span>
+                                                        <span class="form-text text-muted">Format file harus berbentuk jpg, png, jpeg, pdf, batas size file 1 MB dan file tidak boleh lebih dari 5 file</span>
                                                     </div>
                                                 </div>
                                                 

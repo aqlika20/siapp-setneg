@@ -96,7 +96,7 @@
                                                             </div>
                                                         </div>
                                                     </div> -->
-                                                    <span class="form-text text-muted">Max file size is 1MB and max number of files is 5.</span>
+                                                    <span class="form-text text-muted">Format file harus berbentuk jpg, png, jpeg, pdf, batas size file 1 MB dan file tidak boleh lebih dari 5 file</span>
                                                 </div>
                                             </div>
                                             <!--end::Input-->
@@ -138,7 +138,7 @@
                                                             </div>
                                                         </div>
                                                     </div> -->
-                                                    <span class="form-text text-muted">Max file size is 1MB and max number of files is 5.</span>
+                                                    <span class="form-text text-muted">Format file harus berbentuk jpg, png, jpeg, pdf, batas size file 1 MB dan file tidak boleh lebih dari 5 file</span>
                                                 </div>
                                             </div>
                                             <!--end::Input-->
@@ -180,7 +180,7 @@
                                                             </div>
                                                         </div>
                                                     </div> -->
-                                                    <span class="form-text text-muted">Max file size is 1MB and max number of files is 5.</span>
+                                                    <span class="form-text text-muted">Format file harus berbentuk jpg, png, jpeg, pdf, batas size file 1 MB dan file tidak boleh lebih dari 5 file</span>
                                                 </div>
                                             </div>
                                             <!--end::Input-->
@@ -323,7 +323,7 @@
                                                 <label class="col-lg-3 col-form-label">Upload Keppres <a style="color: #FF0000;">*</a></label>
                                                 <div class="col-lg-9">
                                                     <input id="file_keppres" name="file_keppres[]" type="file" class="file" data-show-preview="false" multiple/>
-                                                    <span class="form-text text-muted">Max file size is 1MB and max number of files is 5.</span>
+                                                    <span class="form-text text-muted">Format file harus berbentuk jpg, png, jpeg, pdf, batas size file 1 MB dan file tidak boleh lebih dari 5 file</span>
                                                 </div>
                                             </div>
                                         </div> -->
@@ -344,7 +344,7 @@
                                                 <label class="col-lg-3 col-form-label">Upload Bukti Pendukung <a style="color: #FF0000;">*</a></label>
                                                 <div class="col-lg-9">
                                                     <input id="file_bukti_pendukung" name="file_bukti_pendukung[]" type="file" class="file" data-show-preview="false" multiple/>
-                                                    <span class="form-text text-muted">Max file size is 1MB and max number of files is 5.</span>
+                                                    <span class="form-text text-muted">Format file harus berbentuk jpg, png, jpeg, pdf, batas size file 1 MB dan file tidak boleh lebih dari 5 file</span>
                                                 </div>
                                             </div>
                                         </div> -->

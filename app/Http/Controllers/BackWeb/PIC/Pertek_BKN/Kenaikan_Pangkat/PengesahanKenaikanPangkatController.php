@@ -102,14 +102,14 @@ class PengesahanKenaikanPangkatController extends Controller
             'masa_kerja_gol_bulan_baru' => 'required',
             'periode_kenaikan' => 'required',
 
-            'file_data_usulan.*' => 'required|max:5000|mimes:pdf',
-            'file_data_asn.*' => 'required|max:5000|mimes:pdf',
-            'file_nota_usulan.*' => 'required|max:5000|mimes:pdf',
-            'file_data_pak.*' => 'required|max:5000|mimes:pdf',
-            'file_klarifikasi_pak.*' => 'required|max:5000|mimes:pdf',
-            'file_jabatan.*' => 'required|max:5000|mimes:pdf',
-            'file_pengambilan_sumpah.*' => 'required|max:5000|mimes:pdf',
-            'file_pendukung.*' => 'required|max:5000|mimes:pdf',
+            'file_data_usulan.*' => 'required|max:5000|mimes:jpg,png,jpeg,pdf',
+            'file_data_asn.*' => 'required|max:5000|mimes:jpg,png,jpeg,pdf',
+            'file_nota_usulan.*' => 'required|max:5000|mimes:jpg,png,jpeg,pdf',
+            'file_data_pak.*' => 'required|max:5000|mimes:jpg,png,jpeg,pdf',
+            'file_klarifikasi_pak.*' => 'required|max:5000|mimes:jpg,png,jpeg,pdf',
+            'file_jabatan.*' => 'required|max:5000|mimes:jpg,png,jpeg,pdf',
+            'file_pengambilan_sumpah.*' => 'required|max:5000|mimes:jpg,png,jpeg,pdf',
+            'file_pendukung.*' => 'required|max:5000|mimes:jpg,png,jpeg,pdf',
 
         ]);
 

@@ -89,7 +89,7 @@ class DetailPertekBKNController extends Controller
         $validator = Validator::make($input, [
             'no_keppres' => 'required',
             'tanggal_keppres_turun' => 'required',
-            'file_keppres.*' => 'required|max:5000|mimes:pdf'
+            'file_keppres.*' => 'required|max:5000|mimes:jpg,png,jpeg,pdf'
 
         ]);
 

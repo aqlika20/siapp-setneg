@@ -95,12 +95,12 @@ class PemberhentianPejabatFungsionalKeahlianUtamaController extends Controller
             'tmt_pemberhentian' => 'required',
             'ket.*' => 'required',
             
-            'file_data_usulan.*' => 'required|max:5000|mimes:pdf',
-            'file_data_asn.*' => 'required|max:5000|mimes:pdf',
-            'file_data_pak.*' => 'required|max:5000|mimes:pdf',
-            'file_data_jabatan_fungsional.*' => 'required|max:5000|mimes:pdf',
-            'file_ba_pengambilan_sumpah_fungsional.*' => 'required|max:5000|mimes:pdf',
-            'file_data_pemberhentian.*' => 'required|max:5000|mimes:pdf'
+            'file_data_usulan.*' => 'required|max:5000|mimes:jpg,png,jpeg,pdf',
+            'file_data_asn.*' => 'required|max:5000|mimes:jpg,png,jpeg,pdf',
+            'file_data_pak.*' => 'required|max:5000|mimes:jpg,png,jpeg,pdf',
+            'file_data_jabatan_fungsional.*' => 'required|max:5000|mimes:jpg,png,jpeg,pdf',
+            'file_ba_pengambilan_sumpah_fungsional.*' => 'required|max:5000|mimes:jpg,png,jpeg,pdf',
+            'file_data_pemberhentian.*' => 'required|max:5000|mimes:jpg,png,jpeg,pdf'
         ]);
         
         if ($validator->fails()) {

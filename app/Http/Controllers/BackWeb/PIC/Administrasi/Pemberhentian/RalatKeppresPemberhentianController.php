@@ -60,9 +60,9 @@ class RalatKeppresPemberhentianController extends Controller
         $validator = Validator::make($input, [
             'tanggal_surat_permohonan' => 'required',
             'no_surat_permohonan' => 'required',
-            'file_surat_permohonan.*' => 'required|max:5000|mimes:pdf',
-            'file_data_dokumen_klarifikasi.*' => 'required|max:5000|mimes:pdf',
-            'file_petikan_asli_sk_pensiun.*' => 'required|max:5000|mimes:pdf',
+            'file_surat_permohonan.*' => 'required|max:5000|mimes:jpg,png,jpeg,pdf',
+            'file_data_dokumen_klarifikasi.*' => 'required|max:5000|mimes:jpg,png,jpeg,pdf',
+            'file_petikan_asli_sk_pensiun.*' => 'required|max:5000|mimes:jpg,png,jpeg,pdf',
             'catatan' => 'required',
 
             'nip' => 'required',

@@ -38,7 +38,7 @@
                                             <h4 class="mb-10 font-weight-bold text-dark">Data Surat</h4>
                                             <!--begin::Input-->
                                             <div class="form-group row">
-                                                <label class="col-form-label col-lg-3 col-sm-12">No. Surat Pengantar</label>
+                                                <label class="col-form-label col-lg-3 col-sm-12">No. Surat Pengantar <a style="color: #FF0000;">*</a></label>
                                                 <div class="col-lg-9 col-md-9 col-sm-12">
                                                     <div class="input-group">
                                                         <input type="text" class="form-control" id="no_surat_pengantar" name="no_surat_pengantar" value="<?php echo e(old('no_surat_pengantar')); ?>" autocomplete="off" required/>
@@ -46,7 +46,7 @@
                                                 </div>
                                             </div>
                                             <div class="form-group row">
-                                                <label class="col-form-label col-lg-3 col-sm-12">Tanggal Surat Pengantar</label>
+                                                <label class="col-form-label col-lg-3 col-sm-12">Tanggal Surat Pengantar <a style="color: #FF0000;">*</a></label>
                                                 <div class="col-lg-5 col-md-9 col-sm-12">
                                                     <div class="input-group date">
                                                         <input type="text" class="form-control datetimepicker-input my-datepicker" id="tanggal_surat_pengantar" name="tanggal_surat_pengantar" data-toggle="datetimepicker" data-target="#tanggal_surat_pengantar" placeholder="Pilih Tanggal" value="<?php echo e(old('tanggal_surat_pengantar')); ?>" required/>
@@ -59,7 +59,7 @@
                                                 </div>
                                             </div>
                                             <div class="form-group row">
-                                                <label class="col-lg-3 col-form-label">Upload Surat Pengantar</label>
+                                                <label class="col-lg-3 col-form-label">Upload Surat Pengantar <a style="color: #FF0000;">*</a></label>
                                                 <div class="col-lg-9">
                                                     <input id="file_surat_pengantar" name="file_surat_pengantar[]" type="file" class="file" data-show-preview="false" multiple/>
                                                     
@@ -96,7 +96,7 @@
                                                             </div>
                                                         </div>
                                                     </div> -->
-                                                    <span class="form-text text-muted">Max file size is 1MB and max number of files is 5.</span>
+                                                    <span class="form-text text-muted">Format file harus berbentuk jpg, png, jpeg, pdf, batas size file 1 MB dan file tidak boleh lebih dari 5 file</span>
                                                 </div>
                                             </div>
                                             <!--end::Input-->
@@ -108,7 +108,7 @@
                                         <div class="pb-6" style="margin-left: 50px; margin-right: 50px;" data-wizard-type="step-content">
                                             <!--begin::Input-->
                                             <div class="form-group row">
-                                                <label class="col-form-label col-lg-3 col-sm-12">LNS yang akan diisi</label>
+                                                <label class="col-form-label col-lg-3 col-sm-12">LNS yang akan diisi <a style="color: #FF0000;">*</a></label>
                                                 <div class="col-lg-9 col-md-9 col-sm-12">
                                                     <div class="input-group date">
                                                         <input type="text" class="form-control" id="lns" name="lns" value="<?php echo e(old('lns')); ?>" autocomplete="off" required/>
@@ -119,7 +119,7 @@
                                             
                                             <!--begin::Input-->
                                             <div class="form-group row">
-                                                <label class="col-form-label col-lg-3 col-sm-12">Unsur</label>
+                                                <label class="col-form-label col-lg-3 col-sm-12">Unsur <a style="color: #FF0000;">*</a></label>
                                                 <div class="col-lg-3 col-md-9 col-sm-12">
                                                     <select class="form-control select2" style="width: 230px;" id="unsur" name="unsur">
                                                         <option value="">Choose</option>
@@ -150,7 +150,7 @@
                                             <!--end::Input-->
                                             <!--begin::Input-->
                                             <div class="form-group row" style="margin-left: 25%;" id="tambah_unsur">
-                                                <label class="col-form-label col-lg-3 col-sm-12">Tambah Unsur Non Pemerintah</label>
+                                                <label class="col-form-label col-lg-3 col-sm-12">Tambah Unsur Non Pemerintah <a style="color: #FF0000;">*</a></label>
                                                 <div class="col-lg-3 col-md-9 col-sm-12">
                                                     <div class="input-group date">
                                                         <input type="text" class="form-control" id="tambah_unsur_non_pemerintah" name="tambah_unsur_non_pemerintah" value="<?php echo e(old('tambah_unsur_non_pemerintah')); ?>" autocomplete="off" required/>
@@ -159,7 +159,7 @@
                                             </div>
 
                                             <div class="form-group row">
-                                                <label class="col-form-label col-lg-3 col-sm-12">NIP</label>
+                                                <label class="col-form-label col-lg-3 col-sm-12">NIP <a style="color: #FF0000;">*</a></label>
                                                 <div class="col-lg-9 col-md-9 col-sm-12">
                                                     <div class="input-group date">
                                                         <input type="number" pattern="[0-9]+([\.,][0-9]+)?" class="form-control" id="nip" name="nip" value="<?php echo e(old('nip')); ?>" autocomplete="off" required/>
@@ -169,7 +169,7 @@
                                             <!--end::Input-->
                                             <!--begin::Input-->
                                             <div class="form-group row">
-                                                <label class="col-form-label col-lg-3 col-sm-12">Nama</label>
+                                                <label class="col-form-label col-lg-3 col-sm-12">Nama <a style="color: #FF0000;">*</a></label>
                                                 <div class="col-lg-9 col-md-9 col-sm-12">
                                                     <div class="input-group date">
                                                         <input type="text" onkeydown="return /[a-zA-Z0-9\s]+/i.test(event.key)" class="form-control" id="nama" name="nama" value="<?php echo e(old('nama')); ?>" autocomplete="off" required/>
@@ -179,7 +179,7 @@
                                             <!--end::Input-->
                                             <!--begin::Input-->
                                             <div class="form-group row">
-                                                <label class="col-form-label col-lg-3 col-sm-12">Instansi</label>
+                                                <label class="col-form-label col-lg-3 col-sm-12">Instansi <a style="color: #FF0000;">*</a></label>
                                                 <div class="col-lg-9 col-md-9 col-sm-12">
                                                     <div class="input-group date">
                                                         <input type="text" onkeydown="return /[a-zA-Z0-9\s]+/i.test(event.key)" class="form-control" id="instansi" name="instansi" value="<?php echo e(old('instansi')); ?>" autocomplete="off" required/>
@@ -189,7 +189,7 @@
                                             <!--end::Input-->
                                             <!--begin::Input-->
                                             <div class="form-group row">
-                                                <label class="col-form-label col-lg-3 col-sm-12">Jabatan Yang Akan Diangkat / Diberhentikan</label>
+                                                <label class="col-form-label col-lg-3 col-sm-12">Jabatan Yang Akan Diangkat / Diberhentikan <a style="color: #FF0000;">*</a></label>
                                                 <div class="col-lg-9 col-md-9 col-sm-12">
                                                     <select class="form-control select2" style="width: 230px;" id="jabatan" name="jabatan">
                                                         <option value="">Choose</option>
@@ -210,7 +210,7 @@
                                             <!--end::Input-->
                                             <!--begin::Input-->
                                             <div class="form-group row">
-                                                <label class="col-lg-3 col-form-label">Upload DRH</label>
+                                                <label class="col-lg-3 col-form-label">Upload DRH <a style="color: #FF0000;">*</a></label>
                                                 <div class="col-lg-9">
                                                     <input id="file_dhr" name="file_dhr[]" type="file" class="file" data-show-preview="false" multiple/>
                                                     
@@ -247,13 +247,13 @@
                                                             </div>
                                                         </div>
                                                     </div> -->
-                                                    <span class="form-text text-muted">Max file size is 1MB and max number of files is 5.</span>
+                                                    <span class="form-text text-muted">Format file harus berbentuk jpg, png, jpeg, pdf, batas size file 1 MB dan file tidak boleh lebih dari 5 file</span>
                                                 </div>
                                             </div>
                                             <!--end::Input-->
                                             <!--begin::Input-->
                                             <div class="form-group row">
-                                                <label class="col-lg-3 col-form-label">Upload Dokumen Lainnya</label>
+                                                <label class="col-lg-3 col-form-label">Upload Dokumen Lainnya <a style="color: #FF0000;">*</a></label>
                                                 <div class="col-lg-9">
                                                     <input id="file_dukumen_lain_pengangkatan_ns" name="file_dukumen_lain_pengangkatan_ns[]" type="file" class="file" data-show-preview="false" multiple/>
                                                     
@@ -290,10 +290,35 @@
                                                             </div>
                                                         </div>
                                                     </div> -->
-                                                    <span class="form-text text-muted">Max file size is 1MB and max number of files is 5.</span>
+                                                    <span class="form-text text-muted">Format file harus berbentuk jpg, png, jpeg, pdf, batas size file 1 MB dan file tidak boleh lebih dari 5 file</span>
                                                 </div>
                                             </div>
                                             <!--end::Input-->
+                                            
+                                            <div class="form-group row">
+                                                <label class="col-form-label col-lg-3 col-sm-12"></label>
+                                                <div class="col-lg-9 col-md-9 col-sm-12">
+                                                    <div style="margin-bottom:10px;">
+                                                        <label class="checkbox checkbox-outline checkbox-outline-2x checkbox-primary">
+                                                            <input type="checkbox" id="checked_file_surat_pengantar" disabled/>
+                                                            <span></span><div style="margin-left: 10px;">File Surat Pengantar</div>
+                                                        </label>
+                                                    </div>
+                                                    <div style="margin-bottom:10px;">
+                                                        <label class="checkbox checkbox-outline checkbox-outline-2x checkbox-primary">
+                                                            <input type="checkbox" id="checked_file_dhr" disabled/>
+                                                            <span></span><div style="margin-left: 10px;">File DRH</div>
+                                                        </label>
+                                                    </div>
+                                                    <div style="margin-bottom:10px;">
+                                                        <label class="checkbox checkbox-outline checkbox-outline-2x checkbox-primary">
+                                                            <input type="checkbox" id="checked_file_dukumen_lain_pengangkatan_ns" disabled/>
+                                                            <span></span><div style="margin-left: 10px;">File Dokumen Lainnya</div>
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </div>
+
                                         </div>
                                         <!--end: Wizard Step 2-->
 
@@ -339,6 +364,34 @@
 
 <?php $__env->startSection('scripts'); ?>
     <script>
+        $(document).ready(function () {
+            $("#file_surat_pengantar").on("change", function () {
+                if ($('#file_surat_pengantar')[0].files.length != 0) {
+                    $("#checked_file_surat_pengantar").attr('checked', true);
+                } else {
+                    $("#checked_file_surat_pengantar").attr('checked',false);
+                }
+            });
+
+            $("#file_dhr").on("change", function () {
+                if ($('#file_dhr')[0].files.length != 0) {
+                    $("#checked_file_dhr").attr('checked', true);
+                } else {
+                    $("#checked_file_dhr").attr('checked',false);
+                }
+            });
+
+            $("#file_dukumen_lain_pengangkatan_ns").on("change", function () {
+                if ($('#file_dukumen_lain_pengangkatan_ns')[0].files.length != 0) {
+                    $("#checked_file_dukumen_lain_pengangkatan_ns").attr('checked', true);
+                } else {
+                    $("#checked_file_dukumen_lain_pengangkatan_ns").attr('checked',false);
+                }
+            });
+
+        });
+
+
         $('.my-datepicker').datetimepicker({
             useCurrent:false,
             format: 'DD/MMM/YYYY'

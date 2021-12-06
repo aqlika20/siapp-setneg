@@ -107,7 +107,7 @@
                                                 <div class="col-lg-9">
                                                     <input id="file_data_usulan" name="file_data_usulan[]" type="file" class="file" data-show-preview="false" multiple/>
                                                     
-                                                    <span class="form-text text-muted">Max file size is 1MB and max number of files is 5.</span>
+                                                    <span class="form-text text-muted">Format file harus berbentuk jpg, png, jpeg, pdf, batas size file 1 MB dan file tidak boleh lebih dari 5 file</span>
                                                 </div>
                                             </div>
                                             
@@ -221,7 +221,7 @@
                                                             </div>
                                                         </div>
                                                     </div> -->
-                                                    <span class="form-text text-muted">Max file size is 1MB and max number of files is 5.</span>
+                                                    <span class="form-text text-muted">Format file harus berbentuk jpg, png, jpeg, pdf, batas size file 1 MB dan file tidak boleh lebih dari 5 file</span>
                                                 </div>
                                             </div> --}}
                                             <div class="form-group row">
@@ -293,7 +293,7 @@
                                                 <div class="col-lg-9">
                                                     <input id="file_nota_usulan" name="file_nota_usulan[]" type="file" class="file" data-show-preview="false" multiple/>
                                                     
-                                                    <span class="form-text text-muted">Max file size is 1MB and max number of files is 5.</span>
+                                                    <span class="form-text text-muted">Format file harus berbentuk jpg, png, jpeg, pdf, batas size file 1 MB dan file tidak boleh lebih dari 5 file</span>
                                                 </div>
                                             </div>
 
@@ -388,7 +388,7 @@
                                                                 </div>
                                                             </div>
                                                         </div> -->
-                                                        <span class="form-text text-muted">Max file size is 1MB and max number of files is 5.</span>
+                                                        <span class="form-text text-muted">Format file harus berbentuk jpg, png, jpeg, pdf, batas size file 1 MB dan file tidak boleh lebih dari 5 file</span>
                                                     </div>
                                                 </div>
                                                 <h4 class="mb-10 font-weight-bold text-dark">Klarifikasi PAK
@@ -454,7 +454,7 @@
                                                                 </div>
                                                             </div>
                                                         </div> -->
-                                                        <span class="form-text text-muted">Max file size is 1MB and max number of files is 5.</span>
+                                                        <span class="form-text text-muted">Format file harus berbentuk jpg, png, jpeg, pdf, batas size file 1 MB dan file tidak boleh lebih dari 5 file</span>
                                                     </div>
                                                 </div>
                                             </div>
@@ -507,7 +507,7 @@
                                                 <div class="col-lg-9">
                                                     <input id="file_sk_pangkat_terakhir" name="file_sk_pangkat_terakhir[]" type="file" class="file" data-show-preview="false" multiple autocomplete="off" required/>
                                                     
-                                                    <span class="form-text text-muted">Max file size is 1MB and max number of files is 5.</span>
+                                                    <span class="form-text text-muted">Format file harus berbentuk jpg, png, jpeg, pdf, batas size file 1 MB dan file tidak boleh lebih dari 5 file</span>
                                                 </div>
                                             </div>
                                             
@@ -609,7 +609,7 @@
                                                 <div class="col-lg-9">
                                                     <input id="file_sk_jabatan" name="file_sk_jabatan[]" type="file" class="file" data-show-preview="false" multiple required/>
                                                     
-                                                    <span class="form-text text-muted">Max file size is 1MB and max number of files is 5.</span>
+                                                    <span class="form-text text-muted">Format file harus berbentuk jpg, png, jpeg, pdf, batas size file 1 MB dan file tidak boleh lebih dari 5 file</span>
                                                 </div>
                                             </div>
                                             <div class="form-group row">
@@ -617,7 +617,7 @@
                                                 <div class="col-lg-9">
                                                     <input id="file_bap" name="file_bap[]" type="file" class="file" data-show-preview="false" multiple required/>
                                                     
-                                                    <span class="form-text text-muted">Max file size is 1MB and max number of files is 5.</span>
+                                                    <span class="form-text text-muted">Format file harus berbentuk jpg, png, jpeg, pdf, batas size file 1 MB dan file tidak boleh lebih dari 5 file</span>
                                                 </div>
                                             </div>
                                             <div class="form-group row">
@@ -625,7 +625,7 @@
                                                 <div class="col-lg-9">
                                                     <input id="file_spp" name="file_spp[]" type="file" class="file" data-show-preview="false" multiple required/>
                                                     
-                                                    <span class="form-text text-muted">Max file size is 1MB and max number of files is 5.</span>
+                                                    <span class="form-text text-muted">Format file harus berbentuk jpg, png, jpeg, pdf, batas size file 1 MB dan file tidak boleh lebih dari 5 file</span>
                                                 </div>
                                             </div>
 
@@ -659,7 +659,7 @@
                                                     <div class="col-lg-9">
                                                         <input id="file_jabatan_pak_klarifikasi" name="file_jabatan_pak_klarifikasi[]" type="file" class="file" data-show-preview="false" multiple required/>
                                                         
-                                                        <span class="form-text text-muted">Max file size is 1MB and max number of files is 5.</span>
+                                                        <span class="form-text text-muted">Format file harus berbentuk jpg, png, jpeg, pdf, batas size file 1 MB dan file tidak boleh lebih dari 5 file</span>
                                                     </div>
                                                 </div>
                                             </div>
@@ -687,7 +687,7 @@
                                                     <div class="col-lg-9">
                                                         <input id="file_hukuman" name="file_hukuman[]" type="file" class="file" data-show-preview="false" multiple required/>
                                                         
-                                                        <span class="form-text text-muted">Max file size is 1MB and max number of files is 5.</span>
+                                                        <span class="form-text text-muted">Format file harus berbentuk jpg, png, jpeg, pdf, batas size file 1 MB dan file tidak boleh lebih dari 5 file</span>
                                                     </div>
                                                 </div>
 
@@ -719,7 +719,7 @@
                                                     <div class="col-lg-9">
                                                         <input id="file_surat_keputusan_ppk" name="file_surat_keputusan_ppk[]" type="file" class="file" data-show-preview="false" multiple required/>
                                                         
-                                                        <span class="form-text text-muted">Max file size is 1MB and max number of files is 5.</span>
+                                                        <span class="form-text text-muted">Format file harus berbentuk jpg, png, jpeg, pdf, batas size file 1 MB dan file tidak boleh lebih dari 5 file</span>
                                                     </div>
                                                 </div>
                                             </div>
@@ -729,7 +729,7 @@
                                                 <div class="col-lg-9">
                                                     <input id="file_skp_1_tahun_terakhir" name="file_skp_1_tahun_terakhir[]" type="file" class="file" data-show-preview="false" multiple required/>
                                                     
-                                                    <span class="form-text text-muted">Max file size is 1MB and max number of files is 5.</span>
+                                                    <span class="form-text text-muted">Format file harus berbentuk jpg, png, jpeg, pdf, batas size file 1 MB dan file tidak boleh lebih dari 5 file</span>
                                                 </div>
                                             </div>
 
@@ -738,7 +738,7 @@
                                                 <div class="col-lg-9">
                                                     <input id="file_skp_2_tahun_terakhir" name="file_skp_2_tahun_terakhir[]" type="file" class="file" data-show-preview="false" multiple required/>
                                                     
-                                                    <span class="form-text text-muted">Max file size is 1MB and max number of files is 5.</span>
+                                                    <span class="form-text text-muted">Format file harus berbentuk jpg, png, jpeg, pdf, batas size file 1 MB dan file tidak boleh lebih dari 5 file</span>
                                                 </div>
                                             </div>
 

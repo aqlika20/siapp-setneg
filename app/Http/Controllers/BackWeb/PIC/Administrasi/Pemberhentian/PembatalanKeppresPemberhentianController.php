@@ -60,8 +60,8 @@ class PembatalanKeppresPemberhentianController extends Controller
             'tanggal_surat_usulan' => 'required',
             'no_surat_usulan' => 'required',
             'jabatan_menandatangani' => 'required',
-            'file_data_usulan.*' => 'required|max:5000|mimes:pdf',
-            'file_keppres_yang_dibatalkan.*' => 'required|max:5000|mimes:pdf',
+            'file_data_usulan.*' => 'required|max:5000|mimes:jpg,png,jpeg,pdf',
+            'file_keppres_yang_dibatalkan.*' => 'required|max:5000|mimes:jpg,png,jpeg,pdf',
             'catatan' => 'required',
 
             'nip' => 'required',

@@ -63,8 +63,8 @@ class MasaPersiapanPensiunController extends Controller
             'jangka_waktu' => 'required',
             'masa_jabatan_start' => 'required',
             'masa_jabatan_end' => 'required',
-            'file_data_usulan.*' => 'required|max:5000|mimes:pdf',
-            'file_keppres_yang_dibatalkan.*' => 'required|max:5000|mimes:pdf',
+            'file_data_usulan.*' => 'required|max:5000|mimes:jpg,png,jpeg,pdf',
+            'file_keppres_yang_dibatalkan.*' => 'required|max:5000|mimes:jpg,png,jpeg,pdf',
             'catatan' => 'required',
             
             'nip' => 'required',

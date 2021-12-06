@@ -115,16 +115,16 @@ class PemberianKenaikanPangkatController extends Controller
             'catatan' => 'required',
             
 
-            'file_data_usulan.*' => 'required|max:5000|mimes:pdf',
-            'file_data_asn.*' => 'required|max:5000|mimes:pdf',
-            'file_data_pak.*' => 'required|max:5000|mimes:pdf',
-            'file_klarifikasi_pak.*' => 'required|max:5000|mimes:pdf',
-            'file_jabatan_lama.*' => 'required|max:5000|mimes:pdf',
-            'file_jabatan_baru.*' => 'required|max:5000|mimes:pdf',
-            'file_data_kompetensi.*' => 'required|max:5000|mimes:pdf',
-            'file_formasi_jabatan.*' => 'required|max:5000|mimes:pdf',
-            'file_skp_2.*' => 'required|max:5000|mimes:pdf',
-            'file_skp_2_lainnya.*' => 'required|max:5000|mimes:pdf',
+            'file_data_usulan.*' => 'required|max:5000|mimes:jpg,png,jpeg,pdf',
+            'file_data_asn.*' => 'required|max:5000|mimes:jpg,png,jpeg,pdf',
+            'file_data_pak.*' => 'required|max:5000|mimes:jpg,png,jpeg,pdf',
+            'file_klarifikasi_pak.*' => 'required|max:5000|mimes:jpg,png,jpeg,pdf',
+            'file_jabatan_lama.*' => 'required|max:5000|mimes:jpg,png,jpeg,pdf',
+            'file_jabatan_baru.*' => 'required|max:5000|mimes:jpg,png,jpeg,pdf',
+            'file_data_kompetensi.*' => 'required|max:5000|mimes:jpg,png,jpeg,pdf',
+            'file_formasi_jabatan.*' => 'required|max:5000|mimes:jpg,png,jpeg,pdf',
+            'file_skp_2.*' => 'required|max:5000|mimes:jpg,png,jpeg,pdf',
+            'file_skp_2_lainnya.*' => 'required|max:5000|mimes:jpg,png,jpeg,pdf',
 
         ]);
 

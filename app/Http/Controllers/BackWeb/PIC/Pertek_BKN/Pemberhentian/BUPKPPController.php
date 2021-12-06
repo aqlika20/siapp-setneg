@@ -90,9 +90,9 @@ class BUPKPPController extends Controller
             'catatan' => 'required',
             
             
-            'file_data_usulan.*' => 'required|max:5000|mimes:pdf',
-            'file_data_pak.*' => 'required|max:5000|mimes:pdf',
-            'file_klarifikasi_pak.*' => 'required|max:5000|mimes:pdf'
+            'file_data_usulan.*' => 'required|max:5000|mimes:jpg,png,jpeg,pdf',
+            'file_data_pak.*' => 'required|max:5000|mimes:jpg,png,jpeg,pdf',
+            'file_klarifikasi_pak.*' => 'required|max:5000|mimes:jpg,png,jpeg,pdf'
         ]);
 
         if ($validator->fails()) {

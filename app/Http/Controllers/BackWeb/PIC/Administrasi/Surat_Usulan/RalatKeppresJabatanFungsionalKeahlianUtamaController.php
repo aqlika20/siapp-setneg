@@ -57,14 +57,14 @@ class RalatKeppresJabatanFungsionalKeahlianUtamaController extends Controller
         $validator = Validator::make($input, [
             'tanggal_surat_pengantar' => 'required',
             'no_surat_pengantar' => 'required',
-            'file_surat_pengantar.*' => 'required|max:5000|mimes:pdf',
+            'file_surat_pengantar.*' => 'required|max:5000|mimes:jpg,png,jpeg,pdf',
 
             'no_keppres' => 'required',
             'tanggal_keppres' => 'required',
-            'file_keppres.*' => 'required|max:5000|mimes:pdf',
+            'file_keppres.*' => 'required|max:5000|mimes:jpg,png,jpeg,pdf',
 
             'alasan_ralat' => 'required',
-            'bukti_pendukung.*' => 'required|max:5000|mimes:pdf'
+            'bukti_pendukung.*' => 'required|max:5000|mimes:jpg,png,jpeg,pdf'
             
         ]);
 

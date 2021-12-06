@@ -75,30 +75,30 @@ class BerhentiTidakHormatController extends Controller
             'tanggal_surat_usulan' => 'required',
             'no_surat_usulan' => 'required',
             'jabatan_menandatangani' => 'required',
-            'file_data_usulan.*' => 'required|max:5000|mimes:pdf',
-            'file_putusan_pengadilan_inkrach.*' => 'required|max:5000|mimes:pdf',
+            'file_data_usulan.*' => 'required|max:5000|mimes:jpg,png,jpeg,pdf',
+            'file_putusan_pengadilan_inkrach.*' => 'required|max:5000|mimes:jpg,png,jpeg,pdf',
             
             'nip' => 'required',
             'nama' => 'required',
             'tanggal_lahir' => 'required',
             'pendidikan_terakhir' => 'required',
-            'file_ijasah.*' => 'required|max:5000|mimes:pdf',
+            'file_ijasah.*' => 'required|max:5000|mimes:jpg,png,jpeg,pdf',
             'instansi_induk' => 'required',
             'pangkat_baru' => 'required',
             'tmt_pemberhentian' => 'required',
             'taspen' => 'required',
-            'file_sk_pangkat_terakhir.*' => 'required|max:5000|mimes:pdf',
-            'file_sk_jabatan_terakhir.*' => 'required|max:5000|mimes:pdf',
+            'file_sk_pangkat_terakhir.*' => 'required|max:5000|mimes:jpg,png,jpeg,pdf',
+            'file_sk_jabatan_terakhir.*' => 'required|max:5000|mimes:jpg,png,jpeg,pdf',
             
             'nomor_pak' => 'nullable',
             'tanggal_pak' => 'nullable',
             'jumlah_angka_kredit' => 'nullable',
             'periode_penilaian' => 'nullable',
-            'file_data_pak.*' => 'nullable|max:5000|mimes:pdf',
+            'file_data_pak.*' => 'nullable|max:5000|mimes:jpg,png,jpeg,pdf',
             
             'no_klarifikasi' => 'nullable',
             'tanggal_klarifikasi' => 'nullable',
-            'file_klarifikasi_pak.*' => 'nullable|max:5000|mimes:pdf',
+            'file_klarifikasi_pak.*' => 'nullable|max:5000|mimes:jpg,png,jpeg,pdf',
 
             
         ]);
