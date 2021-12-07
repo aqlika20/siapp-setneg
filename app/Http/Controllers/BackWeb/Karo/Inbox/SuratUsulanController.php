@@ -219,35 +219,35 @@ class SuratUsulanController extends Controller
             $pengangkatans = PengangkatanPemberhentianJFKU::where('id', '=', $id)->update(
                 ['status' => Helper::$pengajuan_usulan]
             );
-            return redirect()->route('jf-ahli.inbox.usulan')->with(['success'=>'verifikasi Success !!!']);
+            return redirect()->route('jf-ahli.inbox.usulan')->with(['success'=>'Verifikasi Berhasil!']);
         } 
         elseif($jenis_layanan == Helper::$pengangkatan_pejabat_NS || $jenis_layanan == Helper::$pemberhentian_pejabat_NS || $jenis_layanan == Helper::$ralat_keppres_jabatan_NS || $jenis_layanan == Helper::$pembatalan_keppres_jabatan_NS )
         {
             $pengangkatans = PengangkatanPemberhentianNS::where('id', '=', $id)->update(
                 ['status' => Helper::$pengajuan_usulan]
             );
-            return redirect()->route('jf-ahli.inbox.usulan')->with(['success'=>'verifikasi Success !!!']);
+            return redirect()->route('jf-ahli.inbox.usulan')->with(['success'=>'Verifikasi Berhasil!']);
         }
         elseif($jenis_layanan == Helper::$pengangkatan_pejabat_lainnya || $jenis_layanan == Helper::$pemberhentian_pejabat_lainnya || $jenis_layanan == Helper::$ralat_keppres_jabatan_lainnya || $jenis_layanan == Helper::$pembatalan_keppres_jabatan_lainnya || $jenis_layanan == Helper::$persetujuan_pengangkatan_staf_khusus )
         {
             $pengangkatans = PengangkatanPemberhentianLainnya::where('id', '=', $id)->update(
                 ['status' => Helper::$pengajuan_usulan]
             );
-            return redirect()->route('jf-ahli.inbox.usulan')->with(['success'=>'verifikasi Success !!!']);
+            return redirect()->route('jf-ahli.inbox.usulan')->with(['success'=>'Verifikasi Berhasil!']);
         }
         elseif($jenis_layanan == Helper::$pemberian_kenaikan_pangkat || $jenis_layanan == Helper::$pembatalan_keppres_kenaikan_pangkat || $jenis_layanan == Helper::$pengesahan_kenaikan_pangkat || $jenis_layanan == Helper::$ralat_keppres_kepangkatan )
         {
             $pengangkatans = KenaikanPangkat::where('id', '=', $id)->update(
                 ['status' => Helper::$pengajuan_usulan]
             );
-            return redirect()->route('jf-ahli.inbox.usulan')->with(['success'=>'verifikasi Success !!!']);
+            return redirect()->route('jf-ahli.inbox.usulan')->with(['success'=>'Verifikasi Berhasil!']);
         }
         elseif($jenis_layanan == Helper::$bup_non_kpp || $jenis_layanan == Helper::$bup_kpp || $jenis_layanan == Helper::$berhenti_atas_permintaan_sendiri || $jenis_layanan == Helper::$non_bup_JDA_non_kpp || $jenis_layanan == Helper::$non_bup_JDA_kpp || $jenis_layanan == Helper::$berhenti_tidak_hormat || $jenis_layanan == Helper::$anumerta || $jenis_layanan == Helper::$pemberhentian_sementara || $jenis_layanan == Helper::$ralat_keppres_pemberhentian || $jenis_layanan == Helper::$pembatalan_keppress_pemberhentian || $jenis_layanan == Helper::$petikan_keppres_hilang)
         {
             $pengangkatans = Pemberhentian::where('id', '=', $id)->update(
                 ['status' => Helper::$pengajuan_usulan]
             );
-            return redirect()->route('jf-ahli.inbox.usulan')->with(['success'=>'verifikasi Success !!!']);
+            return redirect()->route('jf-ahli.inbox.usulan')->with(['success'=>'Verifikasi Berhasil!']);
         }
         
     }
@@ -264,35 +264,35 @@ class SuratUsulanController extends Controller
             $pengangkatans = PengangkatanPemberhentianJFKU::where('id', '=', $id)->update(
                 ['status' => Helper::$pending_deputi]
             );
-            return redirect()->route('jf-ahli.inbox.usulan')->with(['success'=>'verifikasi Success !!!']);
+            return redirect()->route('jf-ahli.inbox.usulan')->with(['success'=>'Verifikasi Berhasil!']);
         } 
         elseif($jenis_layanan == Helper::$pengangkatan_pejabat_NS || $jenis_layanan == Helper::$pemberhentian_pejabat_NS || $jenis_layanan == Helper::$ralat_keppres_jabatan_NS || $jenis_layanan == Helper::$pembatalan_keppres_jabatan_NS )
         {
             $pengangkatans = PengangkatanPemberhentianNS::where('id', '=', $id)->update(
                 ['status' => Helper::$pending_deputi]
             );
-            return redirect()->route('jf-ahli.inbox.usulan')->with(['success'=>'verifikasi Success !!!']);
+            return redirect()->route('jf-ahli.inbox.usulan')->with(['success'=>'Verifikasi Berhasil!']);
         }
         elseif($jenis_layanan == Helper::$pengangkatan_pejabat_lainnya || $jenis_layanan == Helper::$pemberhentian_pejabat_lainnya || $jenis_layanan == Helper::$ralat_keppres_jabatan_lainnya || $jenis_layanan == Helper::$pembatalan_keppres_jabatan_lainnya || $jenis_layanan == Helper::$persetujuan_pengangkatan_staf_khusus )
         {
             $pengangkatans = PengangkatanPemberhentianLainnya::where('id', '=', $id)->update(
                 ['status' => Helper::$pending_deputi]
             );
-            return redirect()->route('jf-ahli.inbox.usulan')->with(['success'=>'verifikasi Success !!!']);
+            return redirect()->route('jf-ahli.inbox.usulan')->with(['success'=>'Verifikasi Berhasil!']);
         }
         elseif($jenis_layanan == Helper::$pemberian_kenaikan_pangkat || $jenis_layanan == Helper::$pembatalan_keppres_kenaikan_pangkat || $jenis_layanan == Helper::$pengesahan_kenaikan_pangkat || $jenis_layanan == Helper::$ralat_keppres_kepangkatan )
         {
             $pengangkatans = KenaikanPangkat::where('id', '=', $id)->update(
                 ['status' => Helper::$pending_deputi]
             );
-            return redirect()->route('jf-ahli.inbox.usulan')->with(['success'=>'verifikasi Success !!!']);
+            return redirect()->route('jf-ahli.inbox.usulan')->with(['success'=>'Verifikasi Berhasil!']);
         }
         elseif($jenis_layanan == Helper::$bup_non_kpp || $jenis_layanan == Helper::$bup_kpp || $jenis_layanan == Helper::$berhenti_atas_permintaan_sendiri || $jenis_layanan == Helper::$non_bup_JDA_non_kpp || $jenis_layanan == Helper::$non_bup_JDA_kpp || $jenis_layanan == Helper::$berhenti_tidak_hormat || $jenis_layanan == Helper::$anumerta || $jenis_layanan == Helper::$pemberhentian_sementara || $jenis_layanan == Helper::$ralat_keppres_pemberhentian || $jenis_layanan == Helper::$pembatalan_keppress_pemberhentian || $jenis_layanan == Helper::$petikan_keppres_hilang)
         {
             $pengangkatans = Pemberhentian::where('id', '=', $id)->update(
                 ['status' => Helper::$pending_deputi]
             );
-            return redirect()->route('jf-ahli.inbox.usulan')->with(['success'=>'verifikasi Success !!!']);          
+            return redirect()->route('jf-ahli.inbox.usulan')->with(['success'=>'Verifikasi Berhasil!']);          
         }
         
     }
@@ -309,35 +309,35 @@ class SuratUsulanController extends Controller
             $pengangkatans = PengangkatanPemberhentianJFKU::where('id', '=', $id)->update(
                 ['status' => Helper::$tolak_pokja]
             );
-            return redirect()->route('jf-ahli.inbox.usulan')->with(['success'=>'verifikasi Success !!!']);
+            return redirect()->route('jf-ahli.inbox.usulan')->with(['success'=>'Verifikasi Berhasil!']);
         } 
         elseif($jenis_layanan == Helper::$pengangkatan_pejabat_NS || $jenis_layanan == Helper::$pemberhentian_pejabat_NS || $jenis_layanan == Helper::$ralat_keppres_jabatan_NS || $jenis_layanan == Helper::$pembatalan_keppres_jabatan_NS )
         {
             $pengangkatans = PengangkatanPemberhentianNS::where('id', '=', $id)->update(
                 ['status' => Helper::$tolak_pokja]
             );
-            return redirect()->route('jf-ahli.inbox.usulan')->with(['success'=>'verifikasi Success !!!']);
+            return redirect()->route('jf-ahli.inbox.usulan')->with(['success'=>'Verifikasi Berhasil!']);
         }
         elseif($jenis_layanan == Helper::$pengangkatan_pejabat_lainnya || $jenis_layanan == Helper::$pemberhentian_pejabat_lainnya || $jenis_layanan == Helper::$ralat_keppres_jabatan_lainnya || $jenis_layanan == Helper::$pembatalan_keppres_jabatan_lainnya || $jenis_layanan == Helper::$persetujuan_pengangkatan_staf_khusus )
         {
             $pengangkatans = PengangkatanPemberhentianLainnya::where('id', '=', $id)->update(
                 ['status' => Helper::$tolak_pokja]
             );
-            return redirect()->route('jf-ahli.inbox.usulan')->with(['success'=>'verifikasi Success !!!']);
+            return redirect()->route('jf-ahli.inbox.usulan')->with(['success'=>'Verifikasi Berhasil!']);
         }
         elseif($jenis_layanan == Helper::$pemberian_kenaikan_pangkat || $jenis_layanan == Helper::$pembatalan_keppres_kenaikan_pangkat || $jenis_layanan == Helper::$pengesahan_kenaikan_pangkat || $jenis_layanan == Helper::$ralat_keppres_kepangkatan )
         {
             $pengangkatans = KenaikanPangkat::where('id', '=', $id)->update(
                 ['status' => Helper::$tolak_pokja]
             );
-            return redirect()->route('jf-ahli.inbox.usulan')->with(['success'=>'verifikasi Success !!!']);
+            return redirect()->route('jf-ahli.inbox.usulan')->with(['success'=>'Verifikasi Berhasil!']);
         }
         elseif($jenis_layanan == Helper::$bup_non_kpp || $jenis_layanan == Helper::$bup_kpp || $jenis_layanan == Helper::$berhenti_atas_permintaan_sendiri || $jenis_layanan == Helper::$non_bup_JDA_non_kpp || $jenis_layanan == Helper::$non_bup_JDA_kpp || $jenis_layanan == Helper::$berhenti_tidak_hormat || $jenis_layanan == Helper::$anumerta || $jenis_layanan == Helper::$pemberhentian_sementara || $jenis_layanan == Helper::$ralat_keppres_pemberhentian || $jenis_layanan == Helper::$pembatalan_keppress_pemberhentian || $jenis_layanan == Helper::$petikan_keppres_hilang)
         {
             $pengangkatans = Pemberhentian::where('id', '=', $id)->update(
                 ['status' => Helper::$tolak_pokja]
             );
-            return redirect()->route('jf-ahli.inbox.usulan')->with(['success'=>'verifikasi Success !!!']);
+            return redirect()->route('jf-ahli.inbox.usulan')->with(['success'=>'Verifikasi Berhasil!']);
         }
     }
 

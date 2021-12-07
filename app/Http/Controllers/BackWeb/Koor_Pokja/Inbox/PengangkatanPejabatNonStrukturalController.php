@@ -130,7 +130,7 @@ class PengangkatanPejabatNonStrukturalController extends Controller
     
             $pengangkatans->save();
     
-            return redirect()->route('koor-pokja.inbox.lns.index')->with(['success'=>'Jabatan Non Struktural Success Added!!!']);
+            return redirect()->route('koor-pokja.inbox.lns.index')->with(['success'=>'Berhasil Ditambahkan!']);
 
         } else {
             $validator = Validator::make($input, [
@@ -224,7 +224,7 @@ class PengangkatanPejabatNonStrukturalController extends Controller
     
             $pengangkatans->save();
     
-            return redirect()->route('koor-pokja.inbox.lns.index')->with(['success'=>'Jabatan Non Struktural Success Added!!!']);
+            return redirect()->route('koor-pokja.inbox.lns.index')->with(['success'=>'Berhasil Ditambahkan!']);
         }
 
         

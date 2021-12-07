@@ -291,7 +291,7 @@ class PemberianKenaikanPangkatController extends Controller
         }
 
 
-        return redirect()->route('pic.pertek-bkn.kenaikan-pangkat.index')->with(['success'=>'Kenaikan Pangkat Success Added!!!']);
+        return redirect()->route('pic.pertek-bkn.kenaikan-pangkat.index')->with(['success'=>'Berhasil Ditambahkan!']);
     }
    
 

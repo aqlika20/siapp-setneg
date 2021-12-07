@@ -250,21 +250,21 @@ class JFKUController extends Controller
             $pengangkatans = PengangkatanPemberhentianJFKU::where('id', '=', $id)->update(
                 ['status' => Helper::$verifikasi_pokja]
             );
-            return redirect()->route('koor-pokja.inbox.jfku.index')->with(['success'=>'verifikasi Success !!!']);
+            return redirect()->route('koor-pokja.inbox.jfku.index')->with(['success'=>'Verifikasi Berhasil!']);
         } 
         elseif($jenis_layanan == Helper::$pengangkatan_pejabat_NS || $jenis_layanan == Helper::$pemberhentian_pejabat_NS || $jenis_layanan == Helper::$ralat_keppres_jabatan_NS || $jenis_layanan == Helper::$pembatalan_keppres_jabatan_NS )
         {
             $pengangkatans = PengangkatanPemberhentianNS::where('id', '=', $id)->update(
                 ['status' => Helper::$verifikasi_pokja]
             );
-            return redirect()->route('koor-pokja.inbox.jfku.index')->with(['success'=>'verifikasi Success !!!']);
+            return redirect()->route('koor-pokja.inbox.jfku.index')->with(['success'=>'Verifikasi Berhasil!']);
         }
         elseif($jenis_layanan == Helper::$pengangkatan_pejabat_lainnya || $jenis_layanan == Helper::$pemberhentian_pejabat_lainnya || $jenis_layanan == Helper::$ralat_keppres_jabatan_lainnya || $jenis_layanan == Helper::$pembatalan_keppres_jabatan_lainnya || $jenis_layanan == Helper::$persetujuan_pengangkatan_staf_khusus )
         {
             $pengangkatans = PengangkatanPemberhentianLainnya::where('id', '=', $id)->update(
                 ['status' => Helper::$verifikasi_pokja]
             );
-            return redirect()->route('koor-pokja.inbox.jfku.index')->with(['success'=>'verifikasi Success !!!']);
+            return redirect()->route('koor-pokja.inbox.jfku.index')->with(['success'=>'Verifikasi Berhasil!']);
         }
         
     }
@@ -325,7 +325,7 @@ class JFKUController extends Controller
                 'tanggal_prosess_penolakan' => Helper::convertDatetoDB($input['tanggal_prosess_penolakan']),
                 'alasan_penolakan' => $input['alasan_penolakan']
             ]);
-            return redirect()->route("koor-pokja.inbox.jfku.index")->with(['success'=>'ditolak Success !!!']);
+            return redirect()->route("koor-pokja.inbox.jfku.index")->with(['success'=>'diTolak Berhasil!']);
         } 
         elseif($jenis_layanan == Helper::$pengangkatan_pejabat_NS || $jenis_layanan == Helper::$pemberhentian_pejabat_NS || $jenis_layanan == Helper::$ralat_keppres_jabatan_NS || $jenis_layanan == Helper::$pembatalan_keppres_jabatan_NS )
         {
@@ -341,7 +341,7 @@ class JFKUController extends Controller
                 'tanggal_prosess_penolakan' => Helper::convertDatetoDB($input['tanggal_prosess_penolakan']),
                 'alasan_penolakan' => $input['alasan_penolakan']
             ]);
-            return redirect()->route("koor-pokja.inbox.jfku.index")->with(['success'=>'ditolak Success !!!']);
+            return redirect()->route("koor-pokja.inbox.jfku.index")->with(['success'=>'diTolak Berhasil!']);
         }
         elseif($jenis_layanan == Helper::$pengangkatan_pejabat_lainnya || $jenis_layanan == Helper::$pemberhentian_pejabat_lainnya || $jenis_layanan == Helper::$ralat_keppres_jabatan_lainnya || $jenis_layanan == Helper::$pembatalan_keppres_jabatan_lainnya || $jenis_layanan == Helper::$persetujuan_pengangkatan_staf_khusus )
         {
@@ -357,7 +357,7 @@ class JFKUController extends Controller
                 'tanggal_prosess_penolakan' => Helper::convertDatetoDB($input['tanggal_prosess_penolakan']),
                 'alasan_penolakan' => $input['alasan_penolakan']
             ]);
-            return redirect()->route("koor-pokja.inbox.jfku.index")->with(['success'=>'ditolak Success !!!']);
+            return redirect()->route("koor-pokja.inbox.jfku.index")->with(['success'=>'diTolak Berhasil!']);
         }
     }
 

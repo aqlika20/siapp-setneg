@@ -81,7 +81,7 @@ class DistributorController extends Controller
             $pengangkatans = Pemberhentian::where('id', '=', $id)->update(
                 ['group_id' => $input['group']]
             );
-            return redirect()->route('koor-pokja-pensiun.inbox.pemberhentian.index')->with(['success'=>'Distribusi Group Success !!!']);
+            return redirect()->route('koor-pokja-pensiun.inbox.pemberhentian.index')->with(['success'=>'Distribusi Group Berhasil!']);
         }
     }
 

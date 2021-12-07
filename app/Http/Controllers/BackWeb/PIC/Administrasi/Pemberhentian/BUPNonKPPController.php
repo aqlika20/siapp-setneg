@@ -295,7 +295,7 @@ class BUPNonKPPController extends Controller
             }
 
             // DB::commit();
-            return redirect()->route('pic.administrasi.pemberhentian.index')->with(['success'=>'Pemberhentian Success Added!!!']);
+            return redirect()->route('pic.administrasi.pemberhentian.index')->with(['success'=>'Berhasil Ditambahkan!']);
         // } catch (\Exception $e) {
         //     DB::rollback();
         //     return Redirect::back()->withErrors(['message' => $e->getMessage()]);

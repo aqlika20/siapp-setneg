@@ -133,7 +133,7 @@ class InboxController extends Controller
             $pengangkatans = Pemberhentian::where('id', '=', $id)->update(
                 ['status' => Helper::$verifikasi_jf_ahli]
             );
-            return redirect()->route('jf-ahli-pensiun.inbox.usulan')->with(['success'=>'verifikasi Success !!!']);
+            return redirect()->route('jf-ahli-pensiun.inbox.usulan')->with(['success'=>'Verifikasi Berhasil!']);
         }
         
     }
@@ -150,7 +150,7 @@ class InboxController extends Controller
             $pengangkatans = Pemberhentian::where('id', '=', $id)->update(
                 ['status' => Helper::$pending_jf_ahli]
             );
-            return redirect()->route("jf-ahli-pensiun.inbox.text-editor.pemberhentian.index", [$id])->with(['success'=>'verifikasi Success !!!']);          
+            return redirect()->route("jf-ahli-pensiun.inbox.text-editor.pemberhentian.index", [$id])->with(['success'=>'Verifikasi Berhasil!']);          
         }
         
     }
@@ -178,7 +178,7 @@ class InboxController extends Controller
                 'tanggal_prosess_penolakan' => Helper::convertDatetoDB($input['tanggal_prosess_penolakan']),
                 'alasan_penolakan' => $input['alasan_penolakan']
             ]);
-            return redirect()->route('jf-ahli-pensiun.inbox.usulan')->with(['success'=>'verifikasi Success !!!']);
+            return redirect()->route('jf-ahli-pensiun.inbox.usulan')->with(['success'=>'Verifikasi Berhasil!']);
         }
     }
 

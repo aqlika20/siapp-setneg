@@ -42,7 +42,7 @@
             <ul class="menu-nav ">
 
 {{-- PIC --}}
-                @if ($currentUser->roles_id == 14) 
+            @if ($currentUser->roles_id == 14) 
                 <li class="menu-item {{ (strpos($page_title, 'PIC | Dashboard') !== false) ? 'menu-item-active' : '' }}" aria-haspopup="true">
                     <a href="{{ route('pic.home.index') }}" class="menu-link ">
                         <span class="svg-icon menu-icon"><!--begin::Svg Icon | path:media/svg/icons/Design/Layers.svg-->
@@ -129,7 +129,7 @@
                         </ul>
                     </div>
                 </li>
-                @endif
+            @endif
 
 {{-- Koor_Pokja_P4 --}}
             @if ($currentUser->roles_id == 5) 

@@ -84,7 +84,7 @@ class DetailPertekBKNController extends Controller
         // $catatan = Catatan::where('id', '=', $id_catatan)->update(
         //     ['id_status' => Helper::$verifikasi_rkp_tu_kementerian]
         // );
-        return redirect()->route('tu-menteri.inbox.revisi')->with(['success'=>'verifikasi Success !!!']);
+        return redirect()->route('tu-menteri.inbox.revisi')->with(['success'=>'Verifikasi Berhasil!']);
     }
 
     public function keppres_maju($id)
@@ -116,6 +116,6 @@ class DetailPertekBKNController extends Controller
             'status' => Helper::$keppres_Maju
         ]);
 
-        return redirect()->route('tu-menteri.inbox.revisi')->with(['success'=>'verifikasi Success !!!']);
+        return redirect()->route('tu-menteri.inbox.revisi')->with(['success'=>'Verifikasi Berhasil!']);
     }
 }

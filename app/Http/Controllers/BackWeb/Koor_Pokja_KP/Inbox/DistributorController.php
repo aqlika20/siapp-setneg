@@ -76,7 +76,7 @@ class DistributorController extends Controller
             $pengangkatans = KenaikanPangkat::where('id', '=', $id)->update(
                 ['group_id' => $input['group']]
             );
-            return redirect()->route('koor-pokja-kp.inbox.jfku.index')->with(['success'=>'Distribusi Group Success !!!']);
+            return redirect()->route('koor-pokja-kp.inbox.jfku.index')->with(['success'=>'Distribusi Group Berhasil!']);
         }
     }
 

@@ -181,7 +181,7 @@ class AnumertaController extends Controller
             $notes->save();
         }
 
-        return redirect()->route('pic.pertek-bkn.pemberhentian.index')->with(['success'=>'Pemberhentian Success Added!!!']);
+        return redirect()->route('pic.pertek-bkn.pemberhentian.index')->with(['success'=>'Berhasil Ditambahkan!']);
     }
    
 

@@ -114,7 +114,7 @@ class RalatKeppresJabatanLainnyaController extends Controller
 
         $pengangkatans->save();
 
-        return redirect()->route('pic.pertek-bkn.surat-usulan.index')->with(['success'=>'Jabatan Staff Lainnya Success Added!!!']);
+        return redirect()->route('pic.pertek-bkn.surat-usulan.index')->with(['success'=>'Berhasil Ditambahkan!']);
     }
    
 

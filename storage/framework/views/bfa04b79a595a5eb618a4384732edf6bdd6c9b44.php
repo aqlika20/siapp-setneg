@@ -43,7 +43,7 @@
             <ul class="menu-nav ">
 
 
-                <?php if($currentUser->roles_id == 14): ?> 
+            <?php if($currentUser->roles_id == 14): ?> 
                 <li class="menu-item <?php echo e((strpos($page_title, 'PIC | Dashboard') !== false) ? 'menu-item-active' : ''); ?>" aria-haspopup="true">
                     <a href="<?php echo e(route('pic.home.index')); ?>" class="menu-link ">
                         <span class="svg-icon menu-icon"><!--begin::Svg Icon | path:media/svg/icons/Design/Layers.svg-->
@@ -130,7 +130,7 @@
                         </ul>
                     </div>
                 </li>
-                <?php endif; ?>
+            <?php endif; ?>
 
 
             <?php if($currentUser->roles_id == 5): ?> 

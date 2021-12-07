@@ -253,7 +253,7 @@ class InboxController extends Controller
             $pengangkatans = PengangkatanPemberhentianJFKU::where('id', '=', $id)->update(
                 ['status' => Helper::$verifikasi_jf_ahli]
             );
-            return redirect()->route('jf-ahli.inbox.usulan')->with(['success'=>'verifikasi Success !!!']);
+            return redirect()->route('jf-ahli.inbox.usulan')->with(['success'=>'Verifikasi Berhasil!']);
         }
     }
 
@@ -269,21 +269,21 @@ class InboxController extends Controller
             $pengangkatans = PengangkatanPemberhentianJFKU::where('id', '=', $id)->update(
                 ['status' => Helper::$pending_jf_ahli]
             );
-            return redirect()->route("jf-ahli.inbox.text-editor.index", [$id])->with(['success'=>'verifikasi Success !!!']);
+            return redirect()->route("jf-ahli.inbox.text-editor.index", [$id])->with(['success'=>'Verifikasi Berhasil!']);
         } 
         elseif($jenis_layanan == Helper::$pengangkatan_pejabat_NS || $jenis_layanan == Helper::$pemberhentian_pejabat_NS || $jenis_layanan == Helper::$ralat_keppres_jabatan_NS || $jenis_layanan == Helper::$pembatalan_keppres_jabatan_NS )
         {
             $pengangkatans = PengangkatanPemberhentianNS::where('id', '=', $id)->update(
                 ['status' => Helper::$pending_jf_ahli]
             );
-            return redirect()->route("jf-ahli.inbox.text-editor.ns.index", [$id])->with(['success'=>'verifikasi Success !!!']);
+            return redirect()->route("jf-ahli.inbox.text-editor.ns.index", [$id])->with(['success'=>'Verifikasi Berhasil!']);
         }
         elseif($jenis_layanan == Helper::$pengangkatan_pejabat_lainnya || $jenis_layanan == Helper::$pemberhentian_pejabat_lainnya || $jenis_layanan == Helper::$ralat_keppres_jabatan_lainnya || $jenis_layanan == Helper::$pembatalan_keppres_jabatan_lainnya || $jenis_layanan == Helper::$persetujuan_pengangkatan_staf_khusus )
         {
             $pengangkatans = PengangkatanPemberhentianLainnya::where('id', '=', $id)->update(
                 ['status' => Helper::$pending_jf_ahli]
             );
-            return redirect()->route("jf-ahli.inbox.text-editor.lain.index", [$id])->with(['success'=>'verifikasi Success !!!']);
+            return redirect()->route("jf-ahli.inbox.text-editor.lain.index", [$id])->with(['success'=>'Verifikasi Berhasil!']);
         }
         
     }
@@ -312,7 +312,7 @@ class InboxController extends Controller
                 'tanggal_prosess_penolakan' => Helper::convertDatetoDB($input['tanggal_prosess_penolakan']),
                 'alasan_penolakan' => $input['alasan_penolakan']
             ]);
-            return redirect()->route('jf-ahli.inbox.usulan')->with(['success'=>'verifikasi Success !!!']);
+            return redirect()->route('jf-ahli.inbox.usulan')->with(['success'=>'Verifikasi Berhasil!']);
         } 
         elseif($jenis_layanan == Helper::$pengangkatan_pejabat_NS || $jenis_layanan == Helper::$pemberhentian_pejabat_NS || $jenis_layanan == Helper::$ralat_keppres_jabatan_NS || $jenis_layanan == Helper::$pembatalan_keppres_jabatan_NS )
         {
@@ -328,7 +328,7 @@ class InboxController extends Controller
                 'tanggal_prosess_penolakan' => Helper::convertDatetoDB($input['tanggal_prosess_penolakan']),
                 'alasan_penolakan' => $input['alasan_penolakan']
             ]);
-            return redirect()->route('jf-ahli.inbox.usulan')->with(['success'=>'verifikasi Success !!!']);
+            return redirect()->route('jf-ahli.inbox.usulan')->with(['success'=>'Verifikasi Berhasil!']);
         }
         elseif($jenis_layanan == Helper::$pengangkatan_pejabat_lainnya || $jenis_layanan == Helper::$pemberhentian_pejabat_lainnya || $jenis_layanan == Helper::$ralat_keppres_jabatan_lainnya || $jenis_layanan == Helper::$pembatalan_keppres_jabatan_lainnya || $jenis_layanan == Helper::$persetujuan_pengangkatan_staf_khusus )
         {
@@ -344,7 +344,7 @@ class InboxController extends Controller
                 'tanggal_prosess_penolakan' => Helper::convertDatetoDB($input['tanggal_prosess_penolakan']),
                 'alasan_penolakan' => $input['alasan_penolakan']
             ]);
-            return redirect()->route('jf-ahli.inbox.usulan')->with(['success'=>'verifikasi Success !!!']);
+            return redirect()->route('jf-ahli.inbox.usulan')->with(['success'=>'Verifikasi Berhasil!']);
         }
     }
 

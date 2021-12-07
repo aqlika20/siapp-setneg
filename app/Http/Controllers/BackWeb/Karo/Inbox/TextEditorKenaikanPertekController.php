@@ -82,6 +82,6 @@ class TextEditorKenaikanPertekController extends Controller
         ]);
 
 
-        return redirect()->route('karo.inbox.usulan')->with(['success'=>'Surat Success Pending!!!']);
+        return redirect()->route('karo.inbox.usulan')->with(['success'=>'Surat Berhasil Dipending!!!!']);
     }
 }

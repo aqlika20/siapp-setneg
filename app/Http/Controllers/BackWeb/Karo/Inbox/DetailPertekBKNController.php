@@ -84,6 +84,6 @@ class DetailPertekBKNController extends Controller
         // $catatan = Catatan::where('id', '=', $id_catatan)->update(
         //     ['id_status' => Helper::$verifikasi_rkp_karo]
         // );
-        return redirect()->route('koor-pokja.inbox.jfku.index')->with(['success'=>'verifikasi Success !!!']);
+        return redirect()->route('koor-pokja.inbox.jfku.index')->with(['success'=>'Verifikasi Berhasil!']);
     }
 }

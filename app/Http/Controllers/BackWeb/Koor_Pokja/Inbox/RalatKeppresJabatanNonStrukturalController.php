@@ -121,7 +121,7 @@ class RalatKeppresJabatanNonStrukturalController extends Controller
 
         $pengangkatans->save();
 
-        return redirect()->route('koor-pokja.inbox.lns.index')->with(['success'=>'Jabatan Non Struktural Success Added!!!']);
+        return redirect()->route('koor-pokja.inbox.lns.index')->with(['success'=>'Berhasil Ditambahkan!']);
     }
    
 
