@@ -66,7 +66,7 @@ class TextEditorInboxPendingController extends Controller
             'status' => Helper::$pending_jf_ahli
         ]);
 
-        return redirect()->route('jf-ahli.inbox.usulan')->with(['success'=>'Surat Success Pending!!!']);
+        return redirect()->route('jf-ahli.inbox.usulan')->with(['success'=>'Surat Berhasil Dipending!!!!']);
     }
 
     public function tolak(Request $request)
@@ -93,6 +93,6 @@ class TextEditorInboxPendingController extends Controller
             'status' => Helper::$tolak_jf_ahli
         ]);
 
-        return redirect()->route('jf-ahli.inbox.usulan')->with(['success'=>'Surat Success Tolak!!!']);
+        return redirect()->route('jf-ahli.inbox.usulan')->with(['success'=>'Surat Berhasil Ditolak!']);
     }
 }

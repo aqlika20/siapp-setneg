@@ -157,7 +157,7 @@ class KenaikanPangkatController extends Controller
             $pengangkatans = KenaikanPangkat::where('id', '=', $id)->update(
                 ['status' => Helper::$verifikasi_pokja]
             );
-            return redirect()->route('koor-pokja-kp.inbox.kenaikan-pangkat.index')->with(['success'=>'verifikasi Success !!!']);
+            return redirect()->route('koor-pokja-kp.inbox.kenaikan-pangkat.index')->with(['success'=>'Verifikasi Berhasil!']);
         }
     }
 
@@ -172,7 +172,7 @@ class KenaikanPangkatController extends Controller
             $pengangkatans = KenaikanPangkat::where('id', '=', $id)->update(
                 ['status' => Helper::$pending_pokja]
             );
-            return redirect()->route("koor-pokja-kp.inbox.text-editor.kenaikan.index", [$id])->with(['success'=>'verifikasi Success !!!']);
+            return redirect()->route("koor-pokja-kp.inbox.text-editor.kenaikan.index", [$id])->with(['success'=>'Verifikasi Berhasil!']);
         }
     }
 
@@ -199,7 +199,7 @@ class KenaikanPangkatController extends Controller
                 'tanggal_prosess_penolakan' => Helper::convertDatetoDB($input['tanggal_prosess_penolakan']),
                 'alasan_penolakan' => $input['alasan_penolakan']
             ]);
-            return redirect()->route("koor-pokja-kp.pertek.index")->with(['success'=>'verifikasi Success !!!']);
+            return redirect()->route("koor-pokja-kp.pertek.index")->with(['success'=>'Verifikasi Berhasil!']);
         }
     }
 

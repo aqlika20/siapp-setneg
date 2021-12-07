@@ -1,8 +1,8 @@
-{{-- Extends layout --}}
-@extends('layout.default')
 
-{{-- Content --}}
-@section('content')
+
+
+
+<?php $__env->startSection('content'); ?>
 
         <!--begin::Content-->
         <div class="content d-flex flex-column flex-column-fluid" id="kt_content">
@@ -20,16 +20,16 @@
                     </div>
                     <div class="card card-custom">
                         <div class="card-body">
-                            <form method="POST" action="{{ route('koor-pokja.text-editor.pemberhentian.pertek.store') }}">
-                            @csrf
+                            <form method="POST" action="<?php echo e(route('jf-ahli-pensiun.inbox.text-editor.pemberhentian.store')); ?>">
+                            <?php echo csrf_field(); ?>
                                 <div class="tinymce">
-                                <input type="hidden" class="btn btn-warning font-weight-bolder text-uppercase px-9 py-4" name="v_id" value="{{ $pengangkatans->id }}">
-                                    <input type="hidden" class="btn btn-warning font-weight-bolder text-uppercase px-9 py-4" name="v_jenis" value="{{ $pengangkatans->jenis_layanan }}">
-                                    <input type="hidden" class="btn btn-warning font-weight-bolder text-uppercase px-9 py-4" name="v_nip" value="{{ $pengangkatans->nip }}">
-                                    <input type="hidden" class="btn btn-warning font-weight-bolder text-uppercase px-9 py-4" name="v_pengirim" value="{{ $pengangkatans->id_pengirim }}">
+                                <input type="hidden" class="btn btn-warning font-weight-bolder text-uppercase px-9 py-4" name="v_id" value="<?php echo e($pengangkatans->id); ?>">
+                                    <input type="hidden" class="btn btn-warning font-weight-bolder text-uppercase px-9 py-4" name="v_jenis" value="<?php echo e($pengangkatans->jenis_layanan); ?>">
+                                    <input type="hidden" class="btn btn-warning font-weight-bolder text-uppercase px-9 py-4" name="v_nip" value="<?php echo e($pengangkatans->nip); ?>">
+                                    <input type="hidden" class="btn btn-warning font-weight-bolder text-uppercase px-9 py-4" name="v_pengirim" value="<?php echo e($pengangkatans->id_pengirim); ?>">
                                     <textarea class="description" name="description">
-                                        <p>NIP : {{$pengangkatans->nip}}</p>
-                                        <p>Nama : {{$pengangkatans->nama}}</p>
+                                        <p>NIP : <?php echo e($pengangkatans->nip); ?></p>
+                                        <p>Nama : <?php echo e($pengangkatans->nama); ?></p>
                                     </textarea>
                                 </div>
                                 <div class="d-flex">
@@ -51,24 +51,24 @@
         </div>
 <!--end::Content-->
 
-@endsection
+<?php $__env->stopSection(); ?>
 
-{{-- Styles Section --}}
-@section('styles')
+
+<?php $__env->startSection('styles'); ?>
 <style>
     td {  
         background-color: #86dcec;    
         
     }
 </style>
-@endsection
+<?php $__env->stopSection(); ?>
 
-{{-- Scripts Section --}}
-@section('scripts')
-<script src="{{ asset('js/pages/custom/wizard/wizard-2.js') }}"></script>
-<script src="{{ asset('js/pages/crud/ktdatatable/base/html-table.js') }}" type="text/javascript"></script>
 
-<script src="{{ asset('node_modules/tinymce/tinymce.js') }}"></script>
+<?php $__env->startSection('scripts'); ?>
+<script src="<?php echo e(asset('js/pages/custom/wizard/wizard-2.js')); ?>"></script>
+<script src="<?php echo e(asset('js/pages/crud/ktdatatable/base/html-table.js')); ?>" type="text/javascript"></script>
+
+<script src="<?php echo e(asset('node_modules/tinymce/tinymce.js')); ?>"></script>
 <script>
     tinymce.init({
         selector:'textarea.description',
@@ -95,7 +95,7 @@
             input.setAttribute('accept', 'image/*');
 
             /*
-            Note: In modern browsers input[type="file"] is functional without
+            Note: In modern browsers input[accept=".jpg,.jpeg,.png,.pdf" type="file"] is functional without
             even adding it to the DOM, but that might not be the case in some older
             or quirky browsers like IE, so you might want to add it to the DOM
             just in case, and visually hide it. And do not forget do remove it
@@ -128,8 +128,8 @@
         },
     });
 </script>
-<!-- <script src="{{ asset('plugins/custom/tinymce/tinymce.bundle.js') }}"></script>
-<script src="{{ asset('js/pages/crud/forms/editors/tinymce.js') }}"></script> -->
+<!-- <script src="<?php echo e(asset('plugins/custom/tinymce/tinymce.bundle.js')); ?>"></script>
+<script src="<?php echo e(asset('js/pages/crud/forms/editors/tinymce.js')); ?>"></script> -->
 <!-- <script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
 <script type="text/javascript">
     
@@ -162,4 +162,5 @@
      
     </script> -->
     
-@endsection
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('layout.default', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH D:\Project\siapp\resources\views/pages/jf_ahli_pensiun/inbox/text_editor_pemberhentian.blade.php ENDPATH**/ ?>

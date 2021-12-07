@@ -20,10 +20,10 @@
                     </div>
                     <div class="card card-custom">
                         <div class="card-body">
-                            <form method="POST" action="{{ route('koor-pokja.text-editor.kenaikan.pertek.store') }}">
+                            <form method="POST" action="{{ route('jf-ahli-pensiun.inbox.text-editor.pemberhentian.store') }}">
                             @csrf
                                 <div class="tinymce">
-                                    <input type="hidden" class="btn btn-warning font-weight-bolder text-uppercase px-9 py-4" name="v_id" value="{{ $pengangkatans->id }}">
+                                <input type="hidden" class="btn btn-warning font-weight-bolder text-uppercase px-9 py-4" name="v_id" value="{{ $pengangkatans->id }}">
                                     <input type="hidden" class="btn btn-warning font-weight-bolder text-uppercase px-9 py-4" name="v_jenis" value="{{ $pengangkatans->jenis_layanan }}">
                                     <input type="hidden" class="btn btn-warning font-weight-bolder text-uppercase px-9 py-4" name="v_nip" value="{{ $pengangkatans->nip }}">
                                     <input type="hidden" class="btn btn-warning font-weight-bolder text-uppercase px-9 py-4" name="v_pengirim" value="{{ $pengangkatans->id_pengirim }}">
@@ -95,7 +95,7 @@
             input.setAttribute('accept', 'image/*');
 
             /*
-            Note: In modern browsers input[type="file"] is functional without
+            Note: In modern browsers input[accept=".jpg,.jpeg,.png,.pdf" type="file"] is functional without
             even adding it to the DOM, but that might not be the case in some older
             or quirky browsers like IE, so you might want to add it to the DOM
             just in case, and visually hide it. And do not forget do remove it

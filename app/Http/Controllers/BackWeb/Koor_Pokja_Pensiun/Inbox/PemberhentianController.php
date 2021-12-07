@@ -148,7 +148,7 @@ class PemberhentianController extends Controller
             $pengangkatans = Pemberhentian::where('id', '=', $id)->update(
                 ['status' => Helper::$verifikasi_pokja]
             );
-            return redirect()->route('koor-pokja-pensiun.inbox.pemberhentian.index')->with(['success'=>'Verifikasi Success !!!']);
+            return redirect()->route('koor-pokja-pensiun.inbox.pemberhentian.index')->with(['success'=>'Verifikasi Berhasil!']);
         }
     }
 
@@ -163,7 +163,7 @@ class PemberhentianController extends Controller
             $pengangkatans = Pemberhentian::where('id', '=', $id)->update(
                 ['status' => Helper::$pending_pokja]
             );
-            return redirect()->route("koor-pokja-pensiun.inbox.text-editor.pemberhentian.index", [$id])->with(['warning'=>'Pendung Success !!!']);          
+            return redirect()->route("koor-pokja-pensiun.inbox.text-editor.pemberhentian.index", [$id])->with(['warning'=>'Pending Berhasil!']);          
         }
     }
 
@@ -191,7 +191,7 @@ class PemberhentianController extends Controller
                 'tanggal_prosess_penolakan' => Helper::convertDatetoDB($input['tanggal_prosess_penolakan']),
                 'alasan_penolakan' => $input['alasan_penolakan']
             ]);
-            return redirect()->route("koor-pokja-pensiun.inbox.pemberhentian.index")->with(['danger'=>'Tolak Success !!!']);
+            return redirect()->route("koor-pokja-pensiun.inbox.pemberhentian.index")->with(['danger'=>'Tolak Berhasil!']);
         }
     }
 

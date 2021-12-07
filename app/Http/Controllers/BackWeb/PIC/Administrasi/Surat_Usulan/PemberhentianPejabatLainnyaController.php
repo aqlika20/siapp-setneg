@@ -130,7 +130,7 @@ class PemberhentianPejabatLainnyaController extends Controller
     
             $pengangkatans->save();
     
-            return redirect()->route('pic.administrasi.surat-usulan.index')->with(['success'=>'Jabatan Staff Lainnya Success Added!!!']);
+            return redirect()->route('pic.administrasi.surat-usulan.index')->with(['success'=>'Berhasil Ditambahkan!']);
 
         } else {
             $validator = Validator::make($input, [
@@ -224,7 +224,7 @@ class PemberhentianPejabatLainnyaController extends Controller
 
             $pengangkatans->save();
 
-            return redirect()->route('pic.administrasi.surat-usulan.index')->with(['success'=>'Jabatan Staff Lainnya Success Added!!!']);
+            return redirect()->route('pic.administrasi.surat-usulan.index')->with(['success'=>'Berhasil Ditambahkan!']);
 
         }
     }

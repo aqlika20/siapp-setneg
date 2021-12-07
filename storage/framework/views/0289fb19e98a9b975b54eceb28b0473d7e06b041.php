@@ -31,8 +31,32 @@
                             <label class="text-info"><strong>Koordinator Pokja Pensiun</strong></label>
                             <div class="text-info"> User  : <strong>222222</strong> and password <strong>testestes</strong></div>
                             <br>
-                            <label class="text-info"><strong>JF SDMA  Ahli Muda P4</strong></label>
+                            <label class="text-info"><strong>JF SDMA Ahli Muda P4</strong></label>
                             <div class="text-info"> User  : <strong>333333</strong> and password <strong>testestes</strong></div>
+                            <br>
+                            <label class="text-info"><strong>JF SDMA Ahli Muda KP</strong></label>
+                            <div class="text-info"> User  : <strong>444444</strong> and password <strong>testestes</strong></div>
+                            <br>
+                            <label class="text-info"><strong>JF SDMA Ahli Muda Pensiun</strong></label>
+                            <div class="text-info"> User  : <strong>555555</strong> and password <strong>testestes</strong></div>
+                            <br>
+                            <label class="text-info"><strong>JF SDMA  Ahli Pertama P4</strong></label>
+                            <div class="text-info"> User  : <strong>666666</strong> and password <strong>testestes</strong></div>
+                            <br>
+                            <label class="text-info"><strong>JF SDMA  Ahli Pertama KP</strong></label>
+                            <div class="text-info"> User  : <strong>777777</strong> and password <strong>testestes</strong></div>
+                            <br>
+                            <label class="text-info"><strong>JF SDMA Ahli Pertama Pensiun</strong></label>
+                            <div class="text-info"> User  : <strong>888888</strong> and password <strong>testestes</strong></div>
+                            <br>
+                            <label class="text-info"><strong>JF SDMA Ahli Terampil P4</strong></label>
+                            <div class="text-info"> User  : <strong>999999</strong> and password <strong>testestes</strong></div>
+                            <br>
+                            <label class="text-info"><strong>JF SDMA Ahli Terampil KP</strong></label>
+                            <div class="text-info"> User  : <strong>000000</strong> and password <strong>testestes</strong></div>
+                            <br>
+                            <label class="text-info"><strong>JF SDMA Ahli Terampil Pensiun</strong></label>
+                            <div class="text-info"> User  : <strong>654321</strong> and password <strong>testestes</strong></div>
                             <br>
                             <label class="text-info"><strong>Karo</strong></label>
                             <div class="text-info"> User  : <strong>567567</strong> and password <strong>testestes</strong></div>

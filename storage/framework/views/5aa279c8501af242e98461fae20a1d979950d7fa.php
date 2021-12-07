@@ -1,8 +1,8 @@
-{{-- Extends layout --}}
-@extends('layout.default')
 
-{{-- Content --}}
-@section('content')
+
+
+
+<?php $__env->startSection('content'); ?>
 
         <!--begin::Content-->
         <div class="content d-flex flex-column flex-column-fluid" id="kt_content">
@@ -13,7 +13,8 @@
                     <div class="card card-custom">
                     <div class="card-header flex-wrap border-0 pt-6 pb-0" style="background-color: #FFA800;">
                         <div class="card-title">
-                            <h3 class="card-label">Verifikasi Pemberhentian {{Helper::defineJenisLayananBy($verifikasi->jenis_layanan)}}
+                            <h3 class="card-label">Verifikasi Pemberhentian <?php echo e(Helper::defineJenisLayananBy($verifikasi->jenis_layanan)); ?>
+
                             <span class="d-block text-muted pt-2 font-size-sm"></span></h3>
                         </div>
                     </div>
@@ -27,7 +28,7 @@
                                     <div class="col-xl-20 col-xxl-12">
                                         <!--begin: Wizard Form-->
                                             <!--begin: Wizard Step 1-->
-                                            @if ($verifikasi->jenis_layanan == '19' || $verifikasi->jenis_layanan == '20' || $verifikasi->jenis_layanan == '21' || $verifikasi->jenis_layanan == '22' || $verifikasi->jenis_layanan == '23' || $verifikasi->jenis_layanan == '24' || $verifikasi->jenis_layanan == '25' || $verifikasi->jenis_layanan == '26')
+                                            <?php if($verifikasi->jenis_layanan == '19' || $verifikasi->jenis_layanan == '20' || $verifikasi->jenis_layanan == '21' || $verifikasi->jenis_layanan == '22' || $verifikasi->jenis_layanan == '23' || $verifikasi->jenis_layanan == '24' || $verifikasi->jenis_layanan == '25' || $verifikasi->jenis_layanan == '26'): ?>
                                             <div class="pb-6" style="margin-left: 50px; margin-right: 50px;" >
                                                 <h4 class="mb-10 font-weight-bold text-dark">Data Usulan</h4>
                                                 <!--begin::Input-->
@@ -35,7 +36,7 @@
                                                     <label class="col-form-label col-lg-3 col-sm-12">Tanggal Surat usulan</label>
                                                     <div class="col-lg-5 col-md-9 col-sm-12">
                                                         <div class="input-group date">
-                                                            <input type="text" class="form-control" id="kt_datepicker_3_modal"  value="{{ $verifikasi->tanggal_surat_usulan }}" disabled/>
+                                                            <input type="text" class="form-control" id="kt_datepicker_3_modal"  value="<?php echo e($verifikasi->tanggal_surat_usulan); ?>" disabled/>
                                                             <div class="input-group-append">
                                                                 <span class="input-group-text">
                                                                      <i class="la la-calendar"></i> 
@@ -48,7 +49,7 @@
                                                     <label class="col-form-label col-lg-3 col-sm-12">No. Surat Usulan</label>
                                                     <div class="col-lg-9 col-md-9 col-sm-12">
                                                         <div class="input-group date">
-                                                            <input type="text" class="form-control" value="{{ $verifikasi->no_surat_usulan }}" disabled />
+                                                            <input type="text" class="form-control" value="<?php echo e($verifikasi->no_surat_usulan); ?>" disabled />
                                                         </div>
                                                     </div>
                                                 </div>
@@ -58,7 +59,7 @@
                                                     <label class="col-form-label col-lg-3 col-sm-12">Jabatan Yang Menandatangani</label>
                                                     <div class="col-lg-9 col-md-9 col-sm-12">
                                                         <div class="input-group date">
-                                                            <input type="text" class="form-control" value="{{ $verifikasi->pejabat_menandatangani }}" disabled  />
+                                                            <input type="text" class="form-control" value="<?php echo e($verifikasi->pejabat_menandatangani); ?>" disabled  />
                                                         </div>
                                                     </div>
                                                 </div>
@@ -66,9 +67,9 @@
                                                 <div class="form-group row">
                                                     <label class="col-form-label col-lg-3 col-sm-12">Upload/Download file</label>
                                                     <div class="col-lg-9 col-md-9 col-sm-12">
-                                                        @if($verifikasi->file_data_usulan == null)
+                                                        <?php if($verifikasi->file_data_usulan == null): ?>
                                                         <h1> - </h1>
-                                                        @else
+                                                        <?php else: ?>
                                                         <table>
                                                             <thead>
                                                                 <tr class="text-start text-gray-400 fw-bolder fs-7 text-uppercase gs-0">
@@ -77,15 +78,15 @@
                                                                 </tr>
                                                             </thead>
                                                             <tbody>
-                                                                @foreach($file_data_usulans as $file)
+                                                                <?php $__currentLoopData = $file_data_usulans; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $file): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                                                 <tr>
-                                                                    <td><a style="color: blue;" > {{ $file }}</a></td>
-                                                                    <td><a id="d_file_data_usulan" type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#file_data_usulan_modal" data-file="{{ $file }}">Lihat</a></td>
+                                                                    <td><a style="color: blue;" > <?php echo e($file); ?></a></td>
+                                                                    <td><a id="d_file_data_usulan" type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#file_data_usulan_modal" data-file="<?php echo e($file); ?>">Lihat</a></td>
                                                                 </tr>
-                                                                @endforeach
+                                                                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                                                             </tbody>
                                                         </table>
-                                                        @endif
+                                                        <?php endif; ?>
                                                     </div>
                                                 </div>
 
@@ -100,10 +101,10 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            @endif
+                                            <?php endif; ?>
                                             <!--end: Wizard Step 1-->
                                             <!--begin: Wizard Step 2-->
-                                            @if ($verifikasi->jenis_layanan == '19' || $verifikasi->jenis_layanan == '20' || $verifikasi->jenis_layanan == '21' || $verifikasi->jenis_layanan == '22' || $verifikasi->jenis_layanan == '23' || $verifikasi->jenis_layanan == '24' || $verifikasi->jenis_layanan == '25' || $verifikasi->jenis_layanan == '26')
+                                            <?php if($verifikasi->jenis_layanan == '19' || $verifikasi->jenis_layanan == '20' || $verifikasi->jenis_layanan == '21' || $verifikasi->jenis_layanan == '22' || $verifikasi->jenis_layanan == '23' || $verifikasi->jenis_layanan == '24' || $verifikasi->jenis_layanan == '25' || $verifikasi->jenis_layanan == '26'): ?>
                                             <div class="pb-6" style="margin-left: 50px; margin-right: 50px;">
                                                 <h4 class="mb-10 font-weight-bold text-dark">Data ASN</h4>
                                                 <!--begin::Input-->
@@ -111,7 +112,7 @@
                                                     <label class="col-form-label col-lg-3 col-sm-12">NIP</label>
                                                     <div class="col-lg-9 col-md-9 col-sm-12">
                                                         <div class="input-group date">
-                                                            <input type="text" class="form-control" value="{{ $verifikasi->nip }}" disabled />
+                                                            <input type="text" class="form-control" value="<?php echo e($verifikasi->nip); ?>" disabled />
                                                         </div>
                                                     </div>
                                                 </div>
@@ -121,7 +122,7 @@
                                                     <label class="col-form-label col-lg-3 col-sm-12">Nama</label>
                                                     <div class="col-lg-9 col-md-9 col-sm-12">
                                                         <div class="input-group date">
-                                                            <input type="text" class="form-control" value="{{ $verifikasi->nama }}" disabled  />
+                                                            <input type="text" class="form-control" value="<?php echo e($verifikasi->nama); ?>" disabled  />
                                                         </div>
                                                     </div>
                                                 </div>
@@ -131,7 +132,7 @@
                                                     <label class="col-form-label col-lg-3 col-sm-12">Tanggal lahir</label>
                                                     <div class="col-lg-5 col-md-9 col-sm-12">
                                                         <div class="input-group date">
-                                                            <input type="text" class="form-control" value="{{ $verifikasi->tanggal_lahir }}" id="kt_datepicker_4_modal" disabled/>
+                                                            <input type="text" class="form-control" value="<?php echo e($verifikasi->tanggal_lahir); ?>" id="kt_datepicker_4_modal" disabled/>
                                                             <div class="input-group-append">
                                                                 <span class="input-group-text">
                                                                     <i class="la la-calendar"></i>
@@ -145,7 +146,7 @@
                                                     <label class="col-form-label col-lg-3 col-sm-12">Pendidikan Terakhir</label>
                                                     <div class="col-lg-9 col-md-9 col-sm-12">
                                                         <div class="input-group date">
-                                                            <input type="text" class="form-control" value="{{ $verifikasi->pendidikan_terakhir }}" disabled />
+                                                            <input type="text" class="form-control" value="<?php echo e($verifikasi->pendidikan_terakhir); ?>" disabled />
                                                         </div>
                                                     </div>
                                                 </div>
@@ -153,7 +154,7 @@
                                                     <label class="col-form-label col-lg-3 col-sm-12">Instansi</label>
                                                     <div class="col-lg-9 col-md-9 col-sm-12">
                                                         <div class="input-group date">
-                                                            <input type="text" class="form-control" value="{{ $verifikasi->instansi }}" disabled />
+                                                            <input type="text" class="form-control" value="<?php echo e($verifikasi->instansi); ?>" disabled />
                                                         </div>
                                                     </div>
                                                 </div>
@@ -161,11 +162,11 @@
                                                     <label class="col-form-label col-lg-3 col-sm-12">Pangkat (Gol/Ruang) Baru</label>
                                                     <div class="col-lg-9 col-md-9 col-sm-12">
                                                         <div class="input-group date">
-                                                            @foreach ($pangkats as $pangkat)
-                                                                @if($verifikasi->pangkat_gol_baru == $pangkat->id)
-                                                                <input type="text" class="form-control" value="{{$pangkat->name}}" disabled />
-                                                                @endif
-                                                            @endforeach
+                                                            <?php $__currentLoopData = $pangkats; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $pangkat): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                                                <?php if($verifikasi->pangkat_gol_baru == $pangkat->id): ?>
+                                                                <input type="text" class="form-control" value="<?php echo e($pangkat->name); ?>" disabled />
+                                                                <?php endif; ?>
+                                                            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -173,7 +174,7 @@
                                                     <label class="col-form-label col-lg-3 col-sm-12">TMT Gol/Ruang</label>
                                                     <div class="col-lg-5 col-md-9 col-sm-12">
                                                         <div class="input-group date">
-                                                            <input type="text" class="form-control" value="{{ $verifikasi->tmt_gol_baru }}" disabled />
+                                                            <input type="text" class="form-control" value="<?php echo e($verifikasi->tmt_gol_baru); ?>" disabled />
                                                             <div class="input-group-append">
                                                                 <span class="input-group-text">
                                                                     <i class="la la-calendar"></i>
@@ -189,12 +190,12 @@
                                                     </div>
                                                 </div> -->
                                             </div>
-                                            @endif
+                                            <?php endif; ?>
                                             <!--end: Wizard Step 2-->
 
-                                            @if ($verifikasi->jenis_layanan == '19' || $verifikasi->jenis_layanan == '20' || $verifikasi->jenis_layanan == '21' || $verifikasi->jenis_layanan == '22' || $verifikasi->jenis_layanan == '23' || $verifikasi->jenis_layanan == '24' || $verifikasi->jenis_layanan == '25' || $verifikasi->jenis_layanan == '26')
-                                                @if ($verifikasi->pangkat_gol_baru == '1')
-                                                    @if ($verifikasi->nomor_pak != '')
+                                            <?php if($verifikasi->jenis_layanan == '19' || $verifikasi->jenis_layanan == '20' || $verifikasi->jenis_layanan == '21' || $verifikasi->jenis_layanan == '22' || $verifikasi->jenis_layanan == '23' || $verifikasi->jenis_layanan == '24' || $verifikasi->jenis_layanan == '25' || $verifikasi->jenis_layanan == '26'): ?>
+                                                <?php if($verifikasi->pangkat_gol_baru == '1'): ?>
+                                                    <?php if($verifikasi->nomor_pak != ''): ?>
                                                     <div class="pb-6" style="margin-left: 50px; margin-right: 50px;">
                                                         <h4 class="mb-10 font-weight-bold text-dark">Data PAK</h4>
                                                         <!--begin::Input-->
@@ -202,7 +203,7 @@
                                                             <label class="col-form-label col-lg-3 col-sm-12">Nomor PAK</label>
                                                             <div class="col-lg-9 col-md-9 col-sm-12">
                                                                 <div class="input-group date">
-                                                                    <input type="text" class="form-control" value="{{ $verifikasi->nomor_pak }}"  disabled/>
+                                                                    <input type="text" class="form-control" value="<?php echo e($verifikasi->nomor_pak); ?>"  disabled/>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -212,7 +213,7 @@
                                                             <label class="col-form-label col-lg-3 col-sm-12">Tanggal PAK</label>
                                                             <div class="col-lg-5 col-md-9 col-sm-12">
                                                                 <div class="input-group date">
-                                                                    <input type="text" class="form-control" value="{{ $verifikasi->tanggal_pak }}" id="kt_datepicker_8_modal" disabled/>
+                                                                    <input type="text" class="form-control" value="<?php echo e($verifikasi->tanggal_pak); ?>" id="kt_datepicker_8_modal" disabled/>
                                                                     <div class="input-group-append">
                                                                         <span class="input-group-text">
                                                                             <i class="la la-calendar"></i>
@@ -225,7 +226,7 @@
                                                             <label class="col-form-label col-lg-3 col-sm-12">Jumlah Angka Kredit</label>
                                                             <div class="col-lg-9 col-md-9 col-sm-12">
                                                                 <div class="input-group date">
-                                                                    <input type="text" class="form-control" value="{{ $verifikasi->jumlah_angka_kredit }}" disabled />
+                                                                    <input type="text" class="form-control" value="<?php echo e($verifikasi->jumlah_angka_kredit); ?>" disabled />
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -233,20 +234,20 @@
                                                             <label class="col-form-label col-lg-3 col-sm-12">Periode Penilaian</label>
                                                             <div class="col-lg-9 col-md-9 col-sm-12">
                                                                 <div class="input-group date">
-                                                                    @foreach ($periodes as $periode)
-                                                                        @if($verifikasi->periode_penilaian == $periode->id)
-                                                                        <input type="text" class="form-control" value="{{$periode->name}}" disabled />
-                                                                        @endif
-                                                                    @endforeach
+                                                                    <?php $__currentLoopData = $periodes; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $periode): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                                                        <?php if($verifikasi->periode_penilaian == $periode->id): ?>
+                                                                        <input type="text" class="form-control" value="<?php echo e($periode->name); ?>" disabled />
+                                                                        <?php endif; ?>
+                                                                    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                                                                 </div>
                                                             </div>
                                                         </div>
                                                         <div class="form-group row">
                                                             <label class="col-form-label col-lg-3 col-sm-12">Upload File</label>
                                                             <div class="col-lg-9 col-md-9 col-sm-12">
-                                                                @if($verifikasi->file_data_pak == null)
+                                                                <?php if($verifikasi->file_data_pak == null): ?>
                                                                 <h1> - </h1>
-                                                                @else
+                                                                <?php else: ?>
                                                                 <table>
                                                                     <thead>
                                                                         <tr class="text-start text-gray-400 fw-bolder fs-7 text-uppercase gs-0">
@@ -255,15 +256,15 @@
                                                                         </tr>
                                                                     </thead>
                                                                     <tbody>
-                                                                        @foreach($file_data_paks as $file)
+                                                                        <?php $__currentLoopData = $file_data_paks; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $file): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                                                         <tr>
-                                                                            <td><a style="color: blue;" > {{ $file }}</a></td>
-                                                                            <td><a id="d_file_data_pak" type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#file_data_pak_modal" data-file="{{ $file }}">Lihat</a></td>
+                                                                            <td><a style="color: blue;" > <?php echo e($file); ?></a></td>
+                                                                            <td><a id="d_file_data_pak" type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#file_data_pak_modal" data-file="<?php echo e($file); ?>">Lihat</a></td>
                                                                         </tr>
-                                                                        @endforeach
+                                                                        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                                                                     </tbody>
                                                                 </table>
-                                                                @endif
+                                                                <?php endif; ?>
                                                             </div>
                                                         </div>
 
@@ -278,8 +279,8 @@
                                                             </div>
                                                         </div>
                                                     </div>
-                                                    @endif
-                                                    @if ($verifikasi->no_klarifikasi != '')
+                                                    <?php endif; ?>
+                                                    <?php if($verifikasi->no_klarifikasi != ''): ?>
                                                     <!--begin: Wizard Step 2-->
                                                     <div class="pb-6" style="margin-left: 50px; margin-right: 50px;">
                                                         <h4 class="mb-10 font-weight-bold text-dark">Klarifikasi PAK
@@ -291,7 +292,7 @@
                                                             <label class="col-form-label col-lg-3 col-sm-12">Nomor Klarifikasi</label>
                                                             <div class="col-lg-9 col-md-9 col-sm-12">
                                                                 <div class="input-group date">
-                                                                    <input type="text" class="form-control" value="{{ $verifikasi->no_klarifikasi }}" disabled />
+                                                                    <input type="text" class="form-control" value="<?php echo e($verifikasi->no_klarifikasi); ?>" disabled />
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -299,7 +300,7 @@
                                                             <label class="col-form-label col-lg-3 col-sm-12">Tanggal Klarifikasi</label>
                                                             <div class="col-lg-5 col-md-9 col-sm-12">
                                                                 <div class="input-group date">
-                                                                    <input type="text" class="form-control" value="{{ $verifikasi->tanggal_klarifikasi }}" disabled/>
+                                                                    <input type="text" class="form-control" value="<?php echo e($verifikasi->tanggal_klarifikasi); ?>" disabled/>
                                                                     <div class="input-group-append">
                                                                         <span class="input-group-text">
                                                                             <i class="la la-calendar"></i>
@@ -311,9 +312,9 @@
                                                         <div class="form-group row">
                                                             <label class="col-form-label col-lg-3 col-sm-12">Upload/Download File</label>
                                                             <div class="col-lg-9 col-md-9 col-sm-12">
-                                                                @if($verifikasi->file_klarifikasi_pak == null)
+                                                                <?php if($verifikasi->file_klarifikasi_pak == null): ?>
                                                                 <h1> - </h1>
-                                                                @else
+                                                                <?php else: ?>
                                                                 <table>
                                                                     <thead>
                                                                         <tr class="text-start text-gray-400 fw-bolder fs-7 text-uppercase gs-0">
@@ -322,15 +323,15 @@
                                                                         </tr>
                                                                     </thead>
                                                                     <tbody>
-                                                                        @foreach($file_klarifikasi_paks as $file)
+                                                                        <?php $__currentLoopData = $file_klarifikasi_paks; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $file): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                                                         <tr>
-                                                                            <td><a style="color: blue;" > {{ $file }}</a></td>
-                                                                            <td><a id="d_file_klarifikasi_pak" type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#file_klarifikasi_pak_modal" data-file="{{ $file }}">Lihat</a></td>
+                                                                            <td><a style="color: blue;" > <?php echo e($file); ?></a></td>
+                                                                            <td><a id="d_file_klarifikasi_pak" type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#file_klarifikasi_pak_modal" data-file="<?php echo e($file); ?>">Lihat</a></td>
                                                                         </tr>
-                                                                        @endforeach
+                                                                        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                                                                     </tbody>
                                                                 </table>
-                                                                @endif
+                                                                <?php endif; ?>
                                                             </div>
                                                         </div>
 
@@ -345,12 +346,12 @@
                                                             </div>
                                                         </div>
                                                     </div>
-                                                    @endif
-                                                @endif
-                                            @endif
+                                                    <?php endif; ?>
+                                                <?php endif; ?>
+                                            <?php endif; ?>
 
                                             <!--begin: Wizard Step 3-->
-                                            @if ($verifikasi->jenis_layanan == '19' || $verifikasi->jenis_layanan == '20' || $verifikasi->jenis_layanan == '21' || $verifikasi->jenis_layanan == '22' || $verifikasi->jenis_layanan == '23' || $verifikasi->jenis_layanan == '24' || $verifikasi->jenis_layanan == '25' || $verifikasi->jenis_layanan == '26')
+                                            <?php if($verifikasi->jenis_layanan == '19' || $verifikasi->jenis_layanan == '20' || $verifikasi->jenis_layanan == '21' || $verifikasi->jenis_layanan == '22' || $verifikasi->jenis_layanan == '23' || $verifikasi->jenis_layanan == '24' || $verifikasi->jenis_layanan == '25' || $verifikasi->jenis_layanan == '26'): ?>
                                             <div class="pb-6" style="margin-left: 50px; margin-right: 50px;">
                                                 <h4 class="mb-10 font-weight-bold text-dark">Data Pangkat Lama</h4>
                                                 <!--begin::Select-->
@@ -358,7 +359,7 @@
                                                     <label class="col-form-label col-lg-3 col-sm-12">Pangkat Lama</label>
                                                     <div class="col-lg-9 col-md-9 col-sm-12">
                                                         <div class="input-group date">
-                                                            <input type="text" class="form-control" value="{{ $verifikasi->pangkat_lama }}"  disabled/>
+                                                            <input type="text" class="form-control" value="<?php echo e($verifikasi->pangkat_lama); ?>"  disabled/>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -366,7 +367,7 @@
                                                     <label class="col-form-label col-lg-3 col-sm-12">Gol. Ruang Lama</label>
                                                     <div class="col-lg-9 col-md-9 col-sm-12">
                                                         <div class="input-group date">
-                                                            <input type="text" class="form-control" value="{{ $verifikasi->gol_ruang_lama }}" disabled />
+                                                            <input type="text" class="form-control" value="<?php echo e($verifikasi->gol_ruang_lama); ?>" disabled />
                                                         </div>
                                                     </div>
                                                 </div>
@@ -374,7 +375,7 @@
                                                     <label class="col-form-label col-lg-3 col-sm-12">TMT Lama</label>
                                                     <div class="col-lg-5 col-md-9 col-sm-12">
                                                         <div class="input-group date">
-                                                            <input type="text" class="form-control" value="{{ $verifikasi->tmt_lama }}" disabled/>
+                                                            <input type="text" class="form-control" value="<?php echo e($verifikasi->tmt_lama); ?>" disabled/>
                                                             <div class="input-group-append">
                                                                 <span class="input-group-text">
                                                                     <i class="la la-calendar"></i>
@@ -392,9 +393,9 @@
                                                     </div>
                                                 </div> -->
                                             </div>
-                                            @endif
+                                            <?php endif; ?>
 
-                                            @if($verifikasi->jenis_layanan == '27')
+                                            <?php if($verifikasi->jenis_layanan == '27'): ?>
                                                 <div class="pb-6" style="margin-left: 50px; margin-right: 50px;">
                                                     <h4 class="mb-10 font-weight-bold text-dark">Data Surat</h4>
 
@@ -402,7 +403,7 @@
                                                         <label class="col-form-label col-lg-3 col-sm-12">Tanggal Surat Pengantar</label>
                                                         <div class="col-lg-9 col-md-9 col-sm-12">
                                                             <div class="input-group date">
-                                                                <input type="text" class="form-control" value="{{ $verifikasi->tanggal_surat_pengantar }}"  disabled/>
+                                                                <input type="text" class="form-control" value="<?php echo e($verifikasi->tanggal_surat_pengantar); ?>"  disabled/>
                                                                 <div class="input-group-append">
                                                                     <span class="input-group-text">
                                                                         <i class="la la-calendar"></i>
@@ -416,7 +417,7 @@
                                                         <label class="col-form-label col-lg-3 col-sm-12">No. Surat Pengantar</label>
                                                         <div class="col-lg-9 col-md-9 col-sm-12">
                                                             <div class="input-group date">
-                                                                <input type="text" class="form-control" value="{{ $verifikasi->no_surat_pengantar }}"  disabled/>
+                                                                <input type="text" class="form-control" value="<?php echo e($verifikasi->no_surat_pengantar); ?>"  disabled/>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -424,9 +425,9 @@
                                                     <div class="form-group row">
                                                         <label class="col-form-label col-lg-3 col-sm-12">Upload Surat Pengantar</label>
                                                         <div class="col-lg-9 col-md-9 col-sm-12">
-                                                            @if($verifikasi->file_surat_pengantar == null)
+                                                            <?php if($verifikasi->file_surat_pengantar == null): ?>
                                                             <h1> - </h1>
-                                                            @else
+                                                            <?php else: ?>
                                                             <table>
                                                                 <thead>
                                                                     <tr class="text-start text-gray-400 fw-bolder fs-7 text-uppercase gs-0">
@@ -435,15 +436,15 @@
                                                                     </tr>
                                                                 </thead>
                                                                 <tbody>
-                                                                    @foreach($file_surat_pengantars as $file)
+                                                                    <?php $__currentLoopData = $file_surat_pengantars; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $file): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                                                     <tr>
-                                                                        <td><a style="color: blue;" > {{ $file }}</a></td>
-                                                                        <td><a id="d_file_surat_pengantar" type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#file_surat_pengantar_modal" data-file="{{ $file }}">Lihat</a></td>
+                                                                        <td><a style="color: blue;" > <?php echo e($file); ?></a></td>
+                                                                        <td><a id="d_file_surat_pengantar" type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#file_surat_pengantar_modal" data-file="<?php echo e($file); ?>">Lihat</a></td>
                                                                     </tr>
-                                                                    @endforeach
+                                                                    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                                                                 </tbody>
                                                             </table>
-                                                            @endif
+                                                            <?php endif; ?>
                                                         </div>
                                                     </div>
                                                     <div class="modal fade" id="file_surat_pengantar_modal">
@@ -457,9 +458,9 @@
                                                         </div>
                                                     </div>
                                                 </div>
-                                            @endif
+                                            <?php endif; ?>
 
-                                            @if($verifikasi->jenis_layanan == '27')
+                                            <?php if($verifikasi->jenis_layanan == '27'): ?>
                                                 <div class="pb-6" style="margin-left: 50px; margin-right: 50px;">
                                                     <h4 class="mb-10 font-weight-bold text-dark">Data Keppres</h4>
                                                     
@@ -467,7 +468,7 @@
                                                         <label class="col-form-label col-lg-3 col-sm-12">No. Keppres</label>
                                                         <div class="col-lg-9 col-md-9 col-sm-12">
                                                             <div class="input-group date">
-                                                                <input type="text" class="form-control" value="{{ $verifikasi->no_keppres }}"  disabled/>
+                                                                <input type="text" class="form-control" value="<?php echo e($verifikasi->no_keppres); ?>"  disabled/>
                                                                 <div class="input-group-append">
                                                                     <span class="input-group-text">
                                                                         <i class="la la-calendar"></i>
@@ -481,7 +482,7 @@
                                                         <label class="col-form-label col-lg-3 col-sm-12">Tanggal Keppres</label>
                                                         <div class="col-lg-5 col-md-9 col-sm-12">
                                                             <div class="input-group date">
-                                                                <input type="text" class="form-control datetimepicker-input my-datepicker" value="{{ $verifikasi->tanggal_keppres }}" disabled/>
+                                                                <input type="text" class="form-control datetimepicker-input my-datepicker" value="<?php echo e($verifikasi->tanggal_keppres); ?>" disabled/>
                                                                 <div class="input-group-append">
                                                                     <span class="input-group-text">
                                                                         <i class="la la-calendar"></i>
@@ -494,9 +495,9 @@
                                                     <div class="form-group row">
                                                         <label class="col-form-label col-lg-3 col-sm-12">Upload Keppres</label>
                                                         <div class="col-lg-9 col-md-9 col-sm-12">
-                                                            @if($verifikasi->file_keppres == null)
+                                                            <?php if($verifikasi->file_keppres == null): ?>
                                                             <h1> - </h1>
-                                                            @else
+                                                            <?php else: ?>
                                                             <table>
                                                                 <thead>
                                                                     <tr class="text-start text-gray-400 fw-bolder fs-7 text-uppercase gs-0">
@@ -505,15 +506,15 @@
                                                                     </tr>
                                                                 </thead>
                                                                 <tbody>
-                                                                    @foreach($file_keppress as $file)
+                                                                    <?php $__currentLoopData = $file_keppress; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $file): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                                                     <tr>
-                                                                        <td><a style="color: blue;" > {{ $file }}</a></td>
-                                                                        <td><a id="d_file_keppres" type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#file_keppres_modal" data-file="{{ $file }}">Lihat</a></td>
+                                                                        <td><a style="color: blue;" > <?php echo e($file); ?></a></td>
+                                                                        <td><a id="d_file_keppres" type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#file_keppres_modal" data-file="<?php echo e($file); ?>">Lihat</a></td>
                                                                     </tr>
-                                                                    @endforeach
+                                                                    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                                                                 </tbody>
                                                             </table>
-                                                            @endif
+                                                            <?php endif; ?>
                                                         </div>
                                                     </div>
                                                     <div class="modal fade" id="file_keppres_modal">
@@ -527,9 +528,9 @@
                                                         </div>
                                                     </div>
                                                 </div>
-                                            @endif
+                                            <?php endif; ?>
 
-                                            @if($verifikasi->jenis_layanan == '27')
+                                            <?php if($verifikasi->jenis_layanan == '27'): ?>
                                                 <div class="pb-6" style="margin-left: 50px; margin-right: 50px;">
                                                     <h4 class="mb-10 font-weight-bold text-dark">Ralat</h4>
                                                     
@@ -537,7 +538,7 @@
                                                         <label class="col-form-label col-lg-3 col-sm-12">Alasan Ralat</label>
                                                         <div class="col-lg-9 col-md-9 col-sm-12">
                                                             <div class="input-group date">
-                                                                <input type="text" class="form-control" value="{{ $verifikasi->alasan_ralat }}"  disabled/>
+                                                                <input type="text" class="form-control" value="<?php echo e($verifikasi->alasan_ralat); ?>"  disabled/>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -545,9 +546,9 @@
                                                     <div class="form-group row">
                                                         <label class="col-form-label col-lg-3 col-sm-12">Upload Bukti Pendukung</label>
                                                         <div class="col-lg-9 col-md-9 col-sm-12">
-                                                            @if($verifikasi->file_bukti_pendukung == null)
+                                                            <?php if($verifikasi->file_bukti_pendukung == null): ?>
                                                             <h1> - </h1>
-                                                            @else
+                                                            <?php else: ?>
                                                             <table>
                                                                 <thead>
                                                                     <tr class="text-start text-gray-400 fw-bolder fs-7 text-uppercase gs-0">
@@ -556,15 +557,15 @@
                                                                     </tr>
                                                                 </thead>
                                                                 <tbody>
-                                                                    @foreach($file_bukti_pendukungs as $file)
+                                                                    <?php $__currentLoopData = $file_bukti_pendukungs; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $file): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                                                     <tr>
-                                                                        <td><a style="color: blue;" > {{ $file }}</a></td>
-                                                                        <td><a id="d_file_bukti_pendukung" type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#file_bukti_pendukung_modal" data-file="{{ $file }}">Lihat</a></td>
+                                                                        <td><a style="color: blue;" > <?php echo e($file); ?></a></td>
+                                                                        <td><a id="d_file_bukti_pendukung" type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#file_bukti_pendukung_modal" data-file="<?php echo e($file); ?>">Lihat</a></td>
                                                                     </tr>
-                                                                    @endforeach
+                                                                    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                                                                 </tbody>
                                                             </table>
-                                                            @endif
+                                                            <?php endif; ?>
                                                         </div>
                                                     </div>
 
@@ -579,10 +580,10 @@
                                                         </div>
                                                     </div>
                                                 </div>
-                                            @endif
+                                            <?php endif; ?>
 
                                             <!--begin: Wizard Step 3-->
-                                            @if ($verifikasi->jenis_layanan == '19' || $verifikasi->jenis_layanan == '20' || $verifikasi->jenis_layanan == '21' || $verifikasi->jenis_layanan == '22' || $verifikasi->jenis_layanan == '23' || $verifikasi->jenis_layanan == '24' || $verifikasi->jenis_layanan == '25' || $verifikasi->jenis_layanan == '26')
+                                            <?php if($verifikasi->jenis_layanan == '19' || $verifikasi->jenis_layanan == '20' || $verifikasi->jenis_layanan == '21' || $verifikasi->jenis_layanan == '22' || $verifikasi->jenis_layanan == '23' || $verifikasi->jenis_layanan == '24' || $verifikasi->jenis_layanan == '25' || $verifikasi->jenis_layanan == '26'): ?>
                                             <div class="pb-6" style="margin-left: 50px; margin-right: 50px;">
                                                 <h4 class="mb-10 font-weight-bold text-dark">Data Jabatan Terakhir</h4>
                                                 <!--begin::Select-->
@@ -590,7 +591,7 @@
                                                     <label class="col-form-label col-lg-3 col-sm-12">Jabatan Terakhir</label>
                                                     <div class="col-lg-9 col-md-9 col-sm-12">
                                                         <div class="input-group date">
-                                                            <input type="text" class="form-control" value="{{ $verifikasi->jabatan_terakhir }}"  disabled/>
+                                                            <input type="text" class="form-control" value="<?php echo e($verifikasi->jabatan_terakhir); ?>"  disabled/>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -598,7 +599,7 @@
                                                     <label class="col-form-label col-lg-3 col-sm-12">Unit Kerja Terakhir</label>
                                                     <div class="col-lg-9 col-md-9 col-sm-12">
                                                         <div class="input-group date">
-                                                            <input type="text" class="form-control" value="{{ $verifikasi->unit_kerja_terakhir }}" disabled />
+                                                            <input type="text" class="form-control" value="<?php echo e($verifikasi->unit_kerja_terakhir); ?>" disabled />
                                                         </div>
                                                     </div>
                                                 </div>
@@ -606,7 +607,7 @@
                                                     <label class="col-form-label col-lg-3 col-sm-12">TMT Berhenti</label>
                                                     <div class="col-lg-9 col-md-9 col-sm-12">
                                                         <div class="input-group date">
-                                                            <input type="text" class="form-control" value="{{ $verifikasi->tmt_berhenti }}" disabled />
+                                                            <input type="text" class="form-control" value="<?php echo e($verifikasi->tmt_berhenti); ?>" disabled />
                                                         </div>
                                                     </div>
                                                 </div>
@@ -614,7 +615,7 @@
                                                     <label class="col-form-label col-lg-3 col-sm-12">TMT Pensiun</label>
                                                     <div class="col-lg-9 col-md-9 col-sm-12">
                                                         <div class="input-group date">
-                                                            <input type="text" class="form-control" value="{{ $verifikasi->tmt_pensiun }}" disabled />
+                                                            <input type="text" class="form-control" value="<?php echo e($verifikasi->tmt_pensiun); ?>" disabled />
                                                         </div>
                                                     </div>
                                                 </div>
@@ -627,16 +628,16 @@
                                                     </div>
                                                 </div> -->
                                             </div>
-                                            @endif
+                                            <?php endif; ?>
                                             
-                                            @if ($verifikasi->jenis_layanan == '19' || $verifikasi->jenis_layanan == '20' || $verifikasi->jenis_layanan == '21' || $verifikasi->jenis_layanan == '22' || $verifikasi->jenis_layanan == '23' || $verifikasi->jenis_layanan == '24' || $verifikasi->jenis_layanan == '25' || $verifikasi->jenis_layanan == '26')
-                                                @foreach ($notes as $catatans)
+                                            <?php if($verifikasi->jenis_layanan == '19' || $verifikasi->jenis_layanan == '20' || $verifikasi->jenis_layanan == '21' || $verifikasi->jenis_layanan == '22' || $verifikasi->jenis_layanan == '23' || $verifikasi->jenis_layanan == '24' || $verifikasi->jenis_layanan == '25' || $verifikasi->jenis_layanan == '26'): ?>
+                                                <?php $__currentLoopData = $notes; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $catatans): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                                     <div class="pb-6" style="margin-left: 50px; margin-right: 50px;">
                                                         <div class="form-group row">
                                                             <label class="col-form-label col-lg-3 col-sm-12">Tanggal Catatan</label>
                                                             <div class="col-lg-9 col-md-9 col-sm-12">
                                                                 <div class="input-group date">
-                                                                    <input type="text" class="form-control" value="{{ $catatans->tanggal_catatan }}"  disabled/>
+                                                                    <input type="text" class="form-control" value="<?php echo e($catatans->tanggal_catatan); ?>"  disabled/>
                                                                     <div class="input-group-append">
                                                                         <span class="input-group-text">
                                                                             <i class="la la-calendar"></i>
@@ -648,15 +649,15 @@
                                                             <label class="col-form-label col-lg-3 col-sm-12">Catatan</label>
                                                             <div class="col-lg-9 col-md-9 col-sm-12">
                                                                 <div class="input-group date">
-                                                                    <input type="text" class="form-control" value="{{ $catatans->catatan }}"  disabled/>
+                                                                    <input type="text" class="form-control" value="<?php echo e($catatans->catatan); ?>"  disabled/>
                                                                 </div>
                                                             </div>
                                                         </div>
                                                     </div>
-                                                @endforeach
-                                            @endif
+                                                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                                            <?php endif; ?>
 
-                                            @if ($verifikasi->jenis_layanan == '28' || $verifikasi->jenis_layanan == '29')
+                                            <?php if($verifikasi->jenis_layanan == '28' || $verifikasi->jenis_layanan == '29'): ?>
                                             <div class="pb-6" style="margin-left: 50px; margin-right: 50px;">
                                                 <h4 class="mb-10 font-weight-bold text-dark">Keppres</h4>
                                                 <!--begin::Input-->
@@ -664,7 +665,7 @@
                                                     <label class="col-form-label col-lg-3 col-sm-12">No. Keppres</label>
                                                     <div class="col-lg-9 col-md-9 col-sm-12">
                                                         <div class="input-group">
-                                                            <input type="text" class="form-control" value="{{ $verifikasi->no_keppres }}"  disabled/>
+                                                            <input type="text" class="form-control" value="<?php echo e($verifikasi->no_keppres); ?>"  disabled/>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -675,7 +676,7 @@
                                                     <label class="col-form-label col-lg-3 col-sm-12">Tanggal Keppres</label>
                                                     <div class="col-lg-5 col-md-9 col-sm-12">
                                                         <div class="input-group date">
-                                                            <input type="text" class="form-control" value="{{ $verifikasi->tanggal_keppres }}"  disabled/>
+                                                            <input type="text" class="form-control" value="<?php echo e($verifikasi->tanggal_keppres); ?>"  disabled/>
                                                             <div class="input-group-append">
                                                                 <span class="input-group-text">
                                                                     <i class="la la-calendar"></i>
@@ -691,7 +692,7 @@
                                                     <label class="col-form-label col-lg-3 col-sm-12">Masa Jabatan</label>
                                                     <div class="col-lg-4 col-md-9 col-sm-12">
                                                         <div class="input-group date">
-                                                            <input type="text" class="form-control" value="{{ $verifikasi->masa_jabatan_start }}"  disabled/>
+                                                            <input type="text" class="form-control" value="<?php echo e($verifikasi->masa_jabatan_start); ?>"  disabled/>
                                                             <div class="input-group-append">
                                                                 <span class="input-group-text">
                                                                     <i class="la la-calendar"></i>
@@ -705,7 +706,7 @@
                                                     </div>
                                                     <div class="col-lg-4 col-md-9 col-sm-12">
                                                         <div class="input-group date">
-                                                            <input type="text" class="form-control" value="{{ $verifikasi->masa_jabatan_end }}"  disabled/>
+                                                            <input type="text" class="form-control" value="<?php echo e($verifikasi->masa_jabatan_end); ?>"  disabled/>
                                                             <div class="input-group-append">
                                                                 <span class="input-group-text">
                                                                     <i class="la la-calendar"></i>
@@ -719,7 +720,7 @@
                                                     <label class="col-form-label col-lg-3 col-sm-12">TMT</label>
                                                     <div class="col-lg-9 col-md-9 col-sm-12">
                                                         <div class="input-group date">
-                                                            <input type="text" class="form-control" value="{{ $verifikasi->tmt }}" disabled/>
+                                                            <input type="text" class="form-control" value="<?php echo e($verifikasi->tmt); ?>" disabled/>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -729,7 +730,7 @@
                                                     <label class="col-form-label col-lg-3 col-sm-12">Hak keuangan dan Fasilitas</label>
                                                     <div class="col-lg-9 col-md-9 col-sm-12">
                                                         <div class="input-group date">
-                                                            <input type="text" class="form-control" value="{{ $verifikasi->hak_keuangan }}" disabled/>
+                                                            <input type="text" class="form-control" value="<?php echo e($verifikasi->hak_keuangan); ?>" disabled/>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -739,7 +740,7 @@
                                                     <label class="col-form-label col-lg-3 col-sm-12">Tanggal pelantikan</label>
                                                     <div class="col-lg-5 col-md-9 col-sm-12">
                                                         <div class="input-group date">
-                                                            <input type="text" class="form-control" value="{{ $verifikasi->tanggal_pelantikan }}" disabled/>
+                                                            <input type="text" class="form-control" value="<?php echo e($verifikasi->tanggal_pelantikan); ?>" disabled/>
                                                             <div class="input-group-append">
                                                                 <span class="input-group-text">
                                                                     <i class="la la-calendar"></i>
@@ -753,16 +754,16 @@
                                                     <label class="col-form-label col-lg-3 col-sm-12">Yang Melantik</label>
                                                     <div class="col-lg-9 col-md-9 col-sm-12">
                                                         <div class="input-group date">
-                                                            <input type="text" class="form-control" value="{{ $verifikasi->yang_melantik }}" disabled/>
+                                                            <input type="text" class="form-control" value="<?php echo e($verifikasi->yang_melantik); ?>" disabled/>
                                                         </div>
                                                     </div>
                                                 </div>
                                                 <div class="form-group row">
                                                     <label class="col-lg-3 col-form-label">Upload BA Pelantikan</label>
                                                     <div class="col-lg-9 col-md-9 col-sm-12">
-                                                        @if($verifikasi->file_ba_pelantikan == null)
+                                                        <?php if($verifikasi->file_ba_pelantikan == null): ?>
                                                         <h1> - </h1>
-                                                        @else
+                                                        <?php else: ?>
                                                         <table>
                                                             <thead>
                                                                 <tr class="text-start text-gray-400 fw-bolder fs-7 text-uppercase gs-0">
@@ -771,15 +772,15 @@
                                                                 </tr>
                                                             </thead>
                                                             <tbody>
-                                                                @foreach($file_ba_pelantikans as $file)
+                                                                <?php $__currentLoopData = $file_ba_pelantikans; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $file): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                                                 <tr>
-                                                                    <td><a style="color: blue;" > {{ $file }}</a></td>
-                                                                    <td><a id="d_file_ba_pelantikan" type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#file_ba_pelantikan_modal" data-file="{{ $file }}">Lihat</a></td>
+                                                                    <td><a style="color: blue;" > <?php echo e($file); ?></a></td>
+                                                                    <td><a id="d_file_ba_pelantikan" type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#file_ba_pelantikan_modal" data-file="<?php echo e($file); ?>">Lihat</a></td>
                                                                 </tr>
-                                                                @endforeach
+                                                                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                                                             </tbody>
                                                         </table>
-                                                        @endif
+                                                        <?php endif; ?>
                                                     </div>
                                                 </div>
 
@@ -796,9 +797,9 @@
                                                 <div class="form-group row">
                                                     <label class="col-lg-3 col-form-label">Upload Sumpah Jabatan</label>
                                                     <div class="col-lg-9 col-md-9 col-sm-12">
-                                                        @if($verifikasi->file_sumpah_jabatan == null)
+                                                        <?php if($verifikasi->file_sumpah_jabatan == null): ?>
                                                         <h1> - </h1>
-                                                        @else
+                                                        <?php else: ?>
                                                         <table>
                                                             <thead>
                                                                 <tr class="text-start text-gray-400 fw-bolder fs-7 text-uppercase gs-0">
@@ -807,15 +808,15 @@
                                                                 </tr>
                                                             </thead>
                                                             <tbody>
-                                                                @foreach($file_sumpah_jabatans as $file)
+                                                                <?php $__currentLoopData = $file_sumpah_jabatans; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $file): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                                                 <tr>
-                                                                    <td><a style="color: blue;" > {{ $file }}</a></td>
-                                                                    <td><a id="d_file_sumpah_jabatan" type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#file_sumpah_jabatan_modal" data-file="{{ $file }}">Lihat</a></td>
+                                                                    <td><a style="color: blue;" > <?php echo e($file); ?></a></td>
+                                                                    <td><a id="d_file_sumpah_jabatan" type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#file_sumpah_jabatan_modal" data-file="<?php echo e($file); ?>">Lihat</a></td>
                                                                 </tr>
-                                                                @endforeach
+                                                                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                                                             </tbody>
                                                         </table>
-                                                        @endif
+                                                        <?php endif; ?>
                                                     </div>
                                                 </div>
 
@@ -830,22 +831,22 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            @endif
+                                            <?php endif; ?>
 
                                             <div class="d-flex justify-content-between mt-5 pt-10" style="margin-left: 50px; margin-right: 50px;">
                                                 <div class="mr-2">
-                                                    <a href="{{ route('jf-ahli.inbox.usulan')}}" type="button" class="btn btn-light-primary font-weight-bolder text-uppercase px-9 py-4">Kembali</a>
+                                                    <a href="<?php echo e(route('jf-ahli-pensiun.inbox.usulan')); ?>" type="button" class="btn btn-light-primary font-weight-bolder text-uppercase px-9 py-4">Kembali</a>
                                                 </div>
                                                 <div>
                                                     <table>
                                                         <th style="margin-right: 10px;">
-                                                            <form method="POST" action="{{ route('jf-ahli.inbox.pemberhentian.store_tolak') }}">
-                                                                @csrf 
-                                                                <input type="hidden" class="btn btn-warning font-weight-bolder text-uppercase px-9 py-4" name="v_id" value="{{ $verifikasi->id }}">
-                                                                <input type="hidden" class="btn btn-warning font-weight-bolder text-uppercase px-9 py-4" name="v_jenis" value="{{ $verifikasi->jenis_layanan }}">
-                                                                <input type="hidden" class="btn btn-warning font-weight-bolder text-uppercase px-9 py-4" name="v_pengirim" value="{{ $verifikasi->id_pengirim }}">
-                                                                <input type="hidden" class="btn btn-warning font-weight-bolder text-uppercase px-9 py-4" name="v_verifikator" value="{{ $currentUser->nip }}">
-                                                                <input type="hidden" class="btn btn-warning font-weight-bolder text-uppercase px-9 py-4" name="v_nama_verifikator" value="{{ $currentUser->name }}">
+                                                            <form method="POST" action="<?php echo e(route('jf-ahli-pensiun.inbox.pemberhentian.store_tolak')); ?>">
+                                                                <?php echo csrf_field(); ?> 
+                                                                <input type="hidden" class="btn btn-warning font-weight-bolder text-uppercase px-9 py-4" name="v_id" value="<?php echo e($verifikasi->id); ?>">
+                                                                <input type="hidden" class="btn btn-warning font-weight-bolder text-uppercase px-9 py-4" name="v_jenis" value="<?php echo e($verifikasi->jenis_layanan); ?>">
+                                                                <input type="hidden" class="btn btn-warning font-weight-bolder text-uppercase px-9 py-4" name="v_pengirim" value="<?php echo e($verifikasi->id_pengirim); ?>">
+                                                                <input type="hidden" class="btn btn-warning font-weight-bolder text-uppercase px-9 py-4" name="v_verifikator" value="<?php echo e($currentUser->nip); ?>">
+                                                                <input type="hidden" class="btn btn-warning font-weight-bolder text-uppercase px-9 py-4" name="v_nama_verifikator" value="<?php echo e($currentUser->name); ?>">
                                                                 <a class="btn btn-danger font-weight-bolder text-uppercase px-9 py-4" data-toggle="modal" data-target="#tolak">
                                                                     Tolak
                                                                 </a>
@@ -867,7 +868,7 @@
                                                                                                 <label class="col-form-label text-right col-lg-3 col-sm-12">Jenis Usulan</label>
                                                                                                 <div class="col-lg-9 col-md-9 col-sm-12">
                                                                                                     <div class="input-group date">
-                                                                                                        <input type="text" class="form-control" disabled value="{{ Helper::defineJenisLayananBy($verifikasi->jenis_layanan) }}"  />
+                                                                                                        <input type="text" class="form-control" disabled value="<?php echo e(Helper::defineJenisLayananBy($verifikasi->jenis_layanan)); ?>"  />
                                                                                                     </div>
                                                                                                 </div>
                                                                                             </div>
@@ -875,12 +876,12 @@
                                                                                                 <label class="col-form-label text-right col-lg-3 col-sm-12">Nama ASN / Nomor Surat</label>
                                                                                                 <div class="col-lg-5 col-md-9 col-sm-12">
                                                                                                     <div class="input-group date">
-                                                                                                        <input type="text" class="form-control" disabled value="{{ $verifikasi->nama }}"  />
+                                                                                                        <input type="text" class="form-control" disabled value="<?php echo e($verifikasi->nama); ?>"  />
                                                                                                     </div>
                                                                                                 </div>
                                                                                                 <div class="col-lg-4 col-md-9 col-sm-12">
                                                                                                     <div class="input-group date">
-                                                                                                        <input type="text" class="form-control" disabled value="{{ $verifikasi->no_surat_usulan }}"  />
+                                                                                                        <input type="text" class="form-control" disabled value="<?php echo e($verifikasi->no_surat_usulan); ?>"  />
                                                                                                     </div>
                                                                                                 </div>
                                                                                             </div>
@@ -890,7 +891,7 @@
                                                                                                 <label class="col-form-label col-lg-3 col-sm-12">Tanggal Proses Penolakan</label>
                                                                                                 <div class="col-lg-5 col-md-9 col-sm-12">
                                                                                                     <div class="input-group date">
-                                                                                                        <input type="text" class="form-control datetimepicker-input my-datepicker" id="tanggal_prosess_penolakan" name="tanggal_prosess_penolakan" autocomplete="off" data-toggle="datetimepicker" data-target="#tanggal_prosess_penolakan" placeholder="Pilih Tanggal" value="{{old('tanggal_prosess_penolakan')}}" required/>
+                                                                                                        <input type="text" class="form-control datetimepicker-input my-datepicker" id="tanggal_prosess_penolakan" name="tanggal_prosess_penolakan" autocomplete="off" data-toggle="datetimepicker" data-target="#tanggal_prosess_penolakan" placeholder="Pilih Tanggal" value="<?php echo e(old('tanggal_prosess_penolakan')); ?>" required/>
                                                                                                         <div class="input-group-append">
                                                                                                             <span class="input-group-text">
                                                                                                                 <i class="la la-calendar"></i>
@@ -903,7 +904,7 @@
                                                                                                 <label class="col-form-label text-right col-lg-3 col-sm-12">Alasan Penolakan</label>
                                                                                                 <div class="col-lg-9 col-md-9 col-sm-12">
                                                                                                     <div class="input-group ">
-                                                                                                        <textarea class="form-control" rows="3" id="alasan_penolakan" name="alasan_penolakan" autocomplete="off" value="{{old('alasan_penolakan')}}"></textarea>
+                                                                                                        <textarea class="form-control" rows="3" id="alasan_penolakan" name="alasan_penolakan" autocomplete="off" value="<?php echo e(old('alasan_penolakan')); ?>"></textarea>
                                                                                                     </div>
                                                                                                 </div>
                                                                                             </div>
@@ -928,20 +929,20 @@
                                                             </form>
                                                         </th>
                                                         <th style="margin-right: 10px;">
-                                                            <form method="POST" action="{{ route('jf-ahli.inbox.pemberhentian.store_proses') }}">
-                                                                @csrf 
-                                                                <input type="hidden" class="btn btn-warning font-weight-bolder text-uppercase px-9 py-4" name="v_id" value="{{ $verifikasi->id }}">
-                                                                <input type="hidden" class="btn btn-warning font-weight-bolder text-uppercase px-9 py-4" name="v_jenis" value="{{ $verifikasi->jenis_layanan }}">
+                                                            <form method="POST" action="<?php echo e(route('jf-ahli-pensiun.inbox.pemberhentian.store_proses')); ?>">
+                                                                <?php echo csrf_field(); ?> 
+                                                                <input type="hidden" class="btn btn-warning font-weight-bolder text-uppercase px-9 py-4" name="v_id" value="<?php echo e($verifikasi->id); ?>">
+                                                                <input type="hidden" class="btn btn-warning font-weight-bolder text-uppercase px-9 py-4" name="v_jenis" value="<?php echo e($verifikasi->jenis_layanan); ?>">
                                                                 <button type="submit" class="btn btn-primary font-weight-bolder text-uppercase px-9 py-4" >
                                                                     Proses
                                                                 </button>
                                                             </form>
                                                         </th>
                                                         <th style="margin-right: 10px;">
-                                                            <form method="POST" action="{{ route('jf-ahli.inbox.pemberhentian.store_pending') }}">
-                                                                @csrf 
-                                                                <input type="hidden" class="btn btn-warning font-weight-bolder text-uppercase px-9 py-4" name="v_id" value="{{ $verifikasi->id }}">
-                                                                <input type="hidden" class="btn btn-warning font-weight-bolder text-uppercase px-9 py-4" name="v_jenis" value="{{ $verifikasi->jenis_layanan }}">
+                                                            <form method="POST" action="<?php echo e(route('jf-ahli-pensiun.inbox.pemberhentian.store_pending')); ?>">
+                                                                <?php echo csrf_field(); ?> 
+                                                                <input type="hidden" class="btn btn-warning font-weight-bolder text-uppercase px-9 py-4" name="v_id" value="<?php echo e($verifikasi->id); ?>">
+                                                                <input type="hidden" class="btn btn-warning font-weight-bolder text-uppercase px-9 py-4" name="v_jenis" value="<?php echo e($verifikasi->jenis_layanan); ?>">
                                                                 <button type="submit" class="btn btn-warning font-weight-bolder text-uppercase px-9 py-4" >
                                                                     Pending
                                                                 </button>
@@ -969,20 +970,20 @@
         </div>
         <!--end::Content-->
 
-@endsection
+<?php $__env->stopSection(); ?>
 
-{{-- Styles Section --}}
-@section('styles')
+
+<?php $__env->startSection('styles'); ?>
 <style>
     td {  
         background-color: #86dcec;    
         
     }
 </style>
-@endsection
+<?php $__env->stopSection(); ?>
 
-{{-- Scripts Section --}}
-@section('scripts')
+
+<?php $__env->startSection('scripts'); ?>
 <script>
     $(document).ready(function() {
         $(document).on('click', '#d_file_data_usulan', function() {
@@ -1051,6 +1052,7 @@
         })
     })
 </script>
-<script src="{{ asset('js/pages/custom/wizard/wizard-2.js') }}"></script>
-<script src="{{ asset('js/pages/crud/ktdatatable/base/html-table.js') }}" type="text/javascript"></script>
-@endsection
+<script src="<?php echo e(asset('js/pages/custom/wizard/wizard-2.js')); ?>"></script>
+<script src="<?php echo e(asset('js/pages/crud/ktdatatable/base/html-table.js')); ?>" type="text/javascript"></script>
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('layout.default', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH D:\Project\siapp\resources\views/pages/jf_ahli_pensiun/inbox/verif_pemberhentian.blade.php ENDPATH**/ ?>

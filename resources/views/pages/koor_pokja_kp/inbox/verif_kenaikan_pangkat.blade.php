@@ -231,7 +231,7 @@
                                                         <div class="input-group date">
                                                             @foreach ($pangkats as $pangkat)
                                                                 @if($verifikasi->pangkat_gol == $pangkat->id)
-                                                                <input type="text" class="form-control" value="{{$pangkat->golongan}} | {{$pangkat->ruang}}" disabled />
+                                                                <input type="text" class="form-control" value="{{$pangkat->name}} ({{$pangkat->golongan}}/{{$pangkat->ruang}}" disabled />
                                                                 @endif
                                                             @endforeach
                                                         </div>

@@ -29,7 +29,7 @@ class HomeController extends Controller
     public function index() 
     {
         $currentUser = UserManagement::find(Auth::id());
-        $page_title = 'JF Muda Madya | Home';
+        $page_title = Helper::defineRole($currentUser->roles_id).' | Home';
         $page_description = 'Home';
         
     //pengangkatan

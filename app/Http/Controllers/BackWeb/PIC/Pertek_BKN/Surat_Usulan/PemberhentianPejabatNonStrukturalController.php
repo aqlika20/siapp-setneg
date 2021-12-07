@@ -131,7 +131,7 @@ class PemberhentianPejabatNonStrukturalController extends Controller
 
         $pengangkatans->save();
 
-        return redirect()->route('pic.pertek-bkn.surat-usulan.index')->with(['success'=>'Jabatan Non Struktural Success Added!!!']);
+        return redirect()->route('pic.pertek-bkn.surat-usulan.index')->with(['success'=>'Berhasil Ditambahkan!']);
     }
    
 

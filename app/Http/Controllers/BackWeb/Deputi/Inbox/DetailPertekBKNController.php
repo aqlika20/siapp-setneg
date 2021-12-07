@@ -84,6 +84,6 @@ class DetailPertekBKNController extends Controller
         // $catatan = Catatan::where('id', '=', $id_catatan)->update(
         //     ['id_status' => Helper::$verifikasi_rkp_deputi]
         // );
-        return redirect()->route('deputi.inbox.revisi')->with(['success'=>'verifikasi Success !!!']);
+        return redirect()->route('deputi.inbox.revisi')->with(['success'=>'Verifikasi Berhasil!']);
     }
 }

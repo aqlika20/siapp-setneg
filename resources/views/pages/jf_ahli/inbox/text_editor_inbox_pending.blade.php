@@ -36,7 +36,7 @@
                                     <div class="mr-2">
                                     </div>
                                     <div>
-                                        <button type="submit" class="btn btn-primary font-weight-bolder text-uppercase px-9 py-4" onclick="return confirmation();">Kirim</button>
+                                        <button type="submit" class="btn btn-primary font-weight-bolder text-uppercase px-9 py-4">Kirim</button>
                                     </div>
                                 </div>
                             </form>
@@ -90,7 +90,7 @@
             input.setAttribute('accept', 'image/*');
 
             /*
-            Note: In modern browsers input[type="file"] is functional without
+            Note: In modern browsers input[accept=".jpg,.jpeg,.png,.pdf" type="file"] is functional without
             even adding it to the DOM, but that might not be the case in some older
             or quirky browsers like IE, so you might want to add it to the DOM
             just in case, and visually hide it. And do not forget do remove it

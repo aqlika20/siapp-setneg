@@ -76,6 +76,6 @@ class TextEditorController extends Controller
             'status' => Helper::$verifikasi_bkn_pokja
         ]);
 
-        return redirect()->route('koor-pokja.list-rkp.index')->with(['success'=>'Surat Success Added!!!']);
+        return redirect()->route('koor-pokja.list-rkp.index')->with(['success'=>'Surat  Berhasil Ditambahkan!']);
     }
 }

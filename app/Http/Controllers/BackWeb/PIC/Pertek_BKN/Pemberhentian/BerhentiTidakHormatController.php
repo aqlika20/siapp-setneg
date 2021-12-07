@@ -182,7 +182,7 @@ class BerhentiTidakHormatController extends Controller
         }
 
 
-        return redirect()->route('pic.pertek-bkn.pemberhentian.index')->with(['success'=>'Jabatan Fungsional Success Added!!!']);
+        return redirect()->route('pic.pertek-bkn.pemberhentian.index')->with(['success'=>'Berhasil Ditambahkan!']);
     }
    
 

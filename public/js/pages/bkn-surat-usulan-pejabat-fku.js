@@ -23,7 +23,13 @@ $(document).ready(function (e) {
                 } else {
                     console.log(response.data);
                     var data = response.data;
-                    $('#nama').val(data.nama);
+                    if (data.gelarDepan != null){
+                        $('#nama').val(data.gelarDepan + ' ' + data.nama + ', ' + data.gelarBelakang);
+                    }else if(data.gelarDepan != null && data.nama != null){
+                        $('#nama').val(data.nama);
+                    }else {
+                        $('#nama').val(data.nama + ', ' + data.gelarBelakang);
+                    }
                     $('#tempat_lahir').val(data.tempatLahir);
                     $('#tanggal_lahir').val(data.tglLahir);
                     $('#pendidikan_terakhir').val(data.pendidikanTerakhirNama);

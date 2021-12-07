@@ -2,6 +2,7 @@
 
 namespace App;
 use App\Bkn;
+use App\Role;
 use DateTime;
 
 class Helper {
@@ -443,6 +444,13 @@ class Helper {
             $countDate = date("d M Y", strtotime("+1 month", strtotime($time_created)));
         }
         return $countDate;
+    }
+
+    public static function defineRole($role){
+        $roles = Role::where('id', $role)->first();
+        
+        $role_name = $roles->name;
+        return $role_name;
     }
     
     // public static function countDateMasa($date_start, $date_end){

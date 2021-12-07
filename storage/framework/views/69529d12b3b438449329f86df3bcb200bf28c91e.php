@@ -258,7 +258,7 @@
                                                     <label class="col-lg-3 col-form-label">Upload File</label>
                                                     <div class="col-lg-9">
                                                         <a style="color: blue;">file.pdf</a>
-                                                    <!-- <input id="file_data_pak_terakhir" name="file_data_pak_terakhir[]" type="file" class="file" data-show-preview="false" multiple/>
+                                                    <!-- <input id="file_data_pak_terakhir" name="file_data_pak_terakhir[]" accept=".jpg,.jpeg,.png,.pdf" type="file" class="file" data-show-preview="false" multiple/>
                                                         <span class="form-text text-muted">Format file harus berbentuk jpg, png, jpeg, pdf, batas size file 1 MB dan file tidak boleh lebih dari 5 file</span> -->
                                                     </div>
                                                 </div>

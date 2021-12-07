@@ -113,7 +113,7 @@ class PembatalanKeppresJabatanNonStrukturalController extends Controller
 
         $pengangkatans->save();
 
-        return redirect()->route('koor-pokja.inbox.lns.index')->with(['success'=>'Jabatan Fungsional Success Added!!!']);
+        return redirect()->route('koor-pokja.inbox.lns.index')->with(['success'=>'Berhasil Ditambahkan!']);
     }
    
 

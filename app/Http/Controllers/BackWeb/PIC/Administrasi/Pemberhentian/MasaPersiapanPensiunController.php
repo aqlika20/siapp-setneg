@@ -128,6 +128,6 @@ class MasaPersiapanPensiunController extends Controller
     
             $pengangkatans->save();
 
-            return redirect()->route('pic.administrasi.pemberhentian.index')->with(['success'=>'Jabatan Fungsional Success Added!!!']);
+            return redirect()->route('pic.administrasi.pemberhentian.index')->with(['success'=>'Berhasil Ditambahkan!']);
     }
 }

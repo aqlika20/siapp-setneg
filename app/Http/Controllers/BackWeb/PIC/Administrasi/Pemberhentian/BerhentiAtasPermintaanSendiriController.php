@@ -297,7 +297,7 @@ class BerhentiAtasPermintaanSendiriController extends Controller
             }
             
             // DB::commit();
-            return redirect()->route('pic.administrasi.pemberhentian.index')->with(['success'=>'Jabatan Fungsional Success Added!!!']);
+            return redirect()->route('pic.administrasi.pemberhentian.index')->with(['success'=>'Berhasil Ditambahkan!']);
         // } catch (\Exception $e) {
         //     DB::rollback();
         //     return Redirect::back()->withErrors(['message' => $e->getMessage()]);

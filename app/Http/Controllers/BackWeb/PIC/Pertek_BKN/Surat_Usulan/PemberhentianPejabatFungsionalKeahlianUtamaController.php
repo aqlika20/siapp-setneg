@@ -219,7 +219,7 @@ class PemberhentianPejabatFungsionalKeahlianUtamaController extends Controller
             $notes->save();
         }
 
-        return redirect()->route('pic.pertek-bkn.surat-usulan.index')->with(['success'=>'Pemberhentian JFKU Success Added!!!']);
+        return redirect()->route('pic.pertek-bkn.surat-usulan.index')->with(['success'=>'Berhasil Ditambahkan!']);
     }
    
 

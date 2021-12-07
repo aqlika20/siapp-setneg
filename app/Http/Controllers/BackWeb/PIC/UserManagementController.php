@@ -115,7 +115,7 @@ class UserManagementController extends Controller
             return redirect()->route('pic.user-management.index')->with(['error'=>'Invalid parameter id.']);
         }
         UserManagement::where('id', $id)->delete();
-        return redirect()->route('pic.user-management.index')->with(['success'=>'Data deleted.']);
+        return redirect()->route('pic.user-management.index')->with(['success'=>'Data Berhasil Dihapus.']);
     }
 
 }

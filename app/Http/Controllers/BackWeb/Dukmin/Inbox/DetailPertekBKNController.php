@@ -117,6 +117,6 @@ class DetailPertekBKNController extends Controller
         $rkps->save();
 
 
-        return redirect()->route('dukmin.inbox.revisi')->with(['success'=>'verifikasi Success !!!']);
+        return redirect()->route('dukmin.inbox.revisi')->with(['success'=>'Verifikasi Berhasil!']);
     }
 }

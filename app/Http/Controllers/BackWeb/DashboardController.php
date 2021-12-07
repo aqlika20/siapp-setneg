@@ -45,6 +45,11 @@ class DashboardController extends Controller
         if ($currentUser->roles_id == 10) {
             return redirect()->route('jf-ahli-kp.home.index');
         }
+        
+        // JF Ahli Pensiun
+        if ($currentUser->roles_id == 11) {
+            return redirect()->route('jf-ahli-pensiun.home.index');
+        }
 
         // Karo
         if ($currentUser->roles_id == 4){

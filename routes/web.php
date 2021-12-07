@@ -548,11 +548,10 @@ Route::group(['middleware' => ['auth', 'checkRole:7']], function() {
         });
 
         Route::prefix('/inbox')->group(function(){
-            Route::get('/jfku', 'BackWeb\Koor_Pokja_Pensiun\Inbox\JFKUController@index')->name('koor-pokja-pensiun.inbox.jfku.index');
+            // Route::get('/jfku', 'BackWeb\Koor_Pokja_Pensiun\Inbox\JFKUController@index')->name('koor-pokja-pensiun.inbox.jfku.index');
             Route::get('/distributor/{id}/{jenis_layanan}', 'BackWeb\Koor_Pokja_Pensiun\Inbox\DistributorController@index')->name('koor-pokja-pensiun.inbox.distributor.index');
             Route::post('/distributor/add/{id}/{jenis_layanan}', 'BackWeb\Koor_Pokja_Pensiun\Inbox\DistributorController@store_group')->name('koor-pokja-pensiun.inbox.distributor.store_group');
             Route::post('/distributor/add/distributor/{id}/{jenis_layanan}', 'BackWeb\Koor_Pokja_Pensiun\Inbox\DistributorController@store_distributor')->name('koor-pokja-pensiun.inbox.distributor.store_distributor');
-            Route::get('/kenaikan-pangkat', 'BackWeb\Koor_Pokja_Pensiun\Inbox\KenaikanPangkatController@index')->name('koor-pokja-pensiun.inbox.kenaikan-pangkat.index');
             Route::get('/pemberhentian', 'BackWeb\Koor_Pokja_Pensiun\Inbox\PemberhentianController@index')->name('koor-pokja-pensiun.inbox.pemberhentian.index');
   
             Route::prefix('/pemberhentian')->group(function(){
@@ -726,6 +725,38 @@ Route::group(['middleware' => ['auth', 'checkRole: 10']], function() {
 // }); 
 
 
+
+// JF Ahli Pensiun
+Route::group(['middleware' => ['auth', 'checkRole: 11']], function() {
+    Route::prefix('/Jf-Ahli-Pensiun')->group(function(){
+        Route::prefix('/home')->group(function(){
+            Route::get('/', 'BackWeb\JF_Ahli_Pensiun\HomeController@index')->name('jf-ahli-pensiun.home.index');
+        });
+
+        Route::prefix('/inbox')->group(function(){
+            Route::get('/usulan', 'BackWeb\JF_Ahli_Pensiun\InboxController@usulan')->name('jf-ahli-pensiun.inbox.usulan');
+            Route::get('/revisi', 'BackWeb\JF_Ahli_Pensiun\InboxController@revisi')->name('jf-ahli-pensiun.inbox.revisi');
+
+            Route::prefix('/pemberhentian')->group(function(){
+                Route::get('/verification/{id}', 'BackWeb\JF_Ahli_Pensiun\InboxController@verification_pemberhentian')->name('jf-ahli-pensiun.inbox.pemberhentian.verif');
+                Route::post('/verification/proses', 'BackWeb\JF_Ahli_Pensiun\InboxController@store_proses')->name('jf-ahli-pensiun.inbox.pemberhentian.store_proses');
+                Route::post('/verification/pending', 'BackWeb\JF_Ahli_Pensiun\InboxController@store_pending')->name('jf-ahli-pensiun.inbox.pemberhentian.store_pending');
+                Route::post('/verification/tolak', 'BackWeb\JF_Ahli_Pensiun\InboxController@store_tolak')->name('jf-ahli-pensiun.inbox.pemberhentian.store_tolak');
+            });
+
+            Route::prefix('/text-editor-pemberhentian')->group(function(){
+                Route::get('/{id}', 'BackWeb\JF_Ahli_Pensiun\TextEditorPemberhentianPertekController@index')->name('jf-ahli-pensiun.inbox.text-editor.pemberhentian.index');
+                Route::post('/create', 'BackWeb\JF_Ahli_Pensiun\TextEditorPemberhentianPertekController@store')->name('jf-ahli-pensiun.inbox.text-editor.pemberhentian.store');
+            });
+
+        });
+        
+        Route::get('/atur_dokument', 'BackWeb\JF_Ahli_Pensiun\AturDokumentController@index')->name('jf-ahli-pensiun.atur-dokument.index');
+        Route::get('/riwayat', 'BackWeb\JF_Ahli_Pensiun\RiwayatController@index')->name('jf-ahli-pensiun.riwayat.index');
+        Route::get('/faq', 'BackWeb\JF_Ahli_Pensiun\PengaturanController@faq')->name('jf-ahli-pensiun.pengaturan.faq');
+
+    });
+}); 
 
 // Karo
 Route::group(['middleware' => ['auth', 'checkRole:4']], function() {

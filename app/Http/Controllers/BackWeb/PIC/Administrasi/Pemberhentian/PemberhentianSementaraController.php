@@ -221,7 +221,7 @@ class PemberhentianSementaraController extends Controller
         // }
 
 
-        return redirect()->route('pic.administrasi.pemberhentian.index')->with(['success'=>'Pemberhentian Success Added!!!']);
+        return redirect()->route('pic.administrasi.pemberhentian.index')->with(['success'=>'Berhasil Ditambahkan!']);
     }
    
 

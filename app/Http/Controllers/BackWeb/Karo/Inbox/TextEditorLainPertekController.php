@@ -85,7 +85,7 @@ class TextEditorLainPertekController extends Controller
             'status' => Helper::$usulan_dikembalikan
         ]);
 
-        return redirect()->route('karo.inbox.usulan')->with(['success'=>'Surat Success Pending!!!']);
+        return redirect()->route('karo.inbox.usulan')->with(['success'=>'Surat Berhasil Dipending!!!!']);
     }
 
    

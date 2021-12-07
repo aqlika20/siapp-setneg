@@ -32,7 +32,7 @@ class VerifikasiController extends Controller
 
     public function index($id){
         $currentUser = UserManagement::find(Auth::id());
-        $page_title = 'KemenSetneg | Verification';
+        $page_title = Helper::defineRole($currentUser->roles_id).' | Verification';
         $page_description = 'Verification';
         $verifikasi = PengangkatanPemberhentianJFKU::where('id', $id)->first();
 
@@ -51,7 +51,7 @@ class VerifikasiController extends Controller
         $pengangkatans = PengangkatanPemberhentianJFKU::where('id', '=', $id)->update(
             ['status' => $input['proses']]
         );
-        return redirect()->route('jf-ahli.inbox.index')->with(['success'=>'verifikasi Success !!!']);
+        return redirect()->route('jf-ahli.inbox.index')->with(['success'=>'Verifikasi Berhasil!']);
     }
 
     public function store_pending($id, Request $request) 
@@ -60,7 +60,7 @@ class VerifikasiController extends Controller
         $pengangkatans = PengangkatanPemberhentianJFKU::where('id', '=', $id)->update(
             ['status' => $input['pending']]
         );
-        return redirect()->route('jf-ahli.inbox.index')->with(['success'=>'verifikasi Success !!!']);
+        return redirect()->route('jf-ahli.inbox.index')->with(['success'=>'Verifikasi Berhasil!']);
     }
 
     public function store_tolak($id, Request $request) 
@@ -69,7 +69,7 @@ class VerifikasiController extends Controller
         $pengangkatans = PengangkatanPemberhentianJFKU::where('id', '=', $id)->update(
             ['status' => $input['tolak']]
         );
-        return redirect()->route('jf-ahli.inbox.index')->with(['success'=>'verifikasi Success !!!']);
+        return redirect()->route('jf-ahli.inbox.index')->with(['success'=>'Verifikasi Berhasil!']);
     }
 
 }

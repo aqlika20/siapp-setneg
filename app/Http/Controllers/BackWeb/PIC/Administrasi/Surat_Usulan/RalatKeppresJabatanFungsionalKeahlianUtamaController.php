@@ -119,7 +119,7 @@ class RalatKeppresJabatanFungsionalKeahlianUtamaController extends Controller
 
         $pengangkatans->save();
 
-        return redirect()->route('pic.administrasi.surat-usulan.index')->with(['success'=>'Jabatan Fungsional Success Added!!!']);
+        return redirect()->route('pic.administrasi.surat-usulan.index')->with(['success'=>'Berhasil Ditambahkan!']);
     }
    
 

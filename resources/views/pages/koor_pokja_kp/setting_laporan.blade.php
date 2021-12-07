@@ -84,7 +84,7 @@
                                                 <input type="hidden" class="btn btn-warning font-weight-bolder text-uppercase px-9 py-4" name="v_nip" value="{{ $pemberhentian->nip }}">
                                                 <input type="hidden" class="btn btn-warning font-weight-bolder text-uppercase px-9 py-4" name="v_pengirim" value="{{ $pemberhentian->id_pengirim }}">
                                             @endif
-                                            <button type="submit" class="btn btn-primary font-weight-bolder text-uppercase px-9 py-4" data-wizard-type="action-submit" onclick="return confirmation();">pdf</button>
+                                            <button type="submit" class="btn btn-primary font-weight-bolder text-uppercase px-9 py-4" data-wizard-type="action-submit">pdf</button>
                                         </div>
                                     </div>
                                     <!--end: Wizard Actions-->

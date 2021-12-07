@@ -331,6 +331,6 @@ class PengangkatanPejabatFungsionalKeahlianUtamaController extends Controller
             $notes->save();
         }
 
-        return redirect()->route('pic.pertek-bkn.surat-usulan.index')->with(['success'=>'Jabatan Fungsional Success Added!!!']);
+        return redirect()->route('pic.pertek-bkn.surat-usulan.index')->with(['success'=>'Berhasil Ditambahkan!']);
     }
 }

@@ -106,7 +106,7 @@ class PertekController extends Controller
             $pengangkatans = Pemberhentian::where('id', '=', $id)->update(
                 ['status' => Helper::$verifikasi_bkn_pokja]
             );
-            return redirect()->route("koor-pokja-pensiun.rkp.index", [$id])->with(['success'=>'verifikasi Success !!!']);
+            return redirect()->route("koor-pokja-pensiun.rkp.index", [$id])->with(['success'=>'Verifikasi Berhasil!']);
         }
     }
 
@@ -121,7 +121,7 @@ class PertekController extends Controller
             $pengangkatans = Pemberhentian::where('id', '=', $id)->update(
                 ['status' => Helper::$pending_pokja]
             );
-            return redirect()->route("koor-pokja-pensiun.rkp.index", [$id])->with(['success'=>'verifikasi Success !!!']);          
+            return redirect()->route("koor-pokja-pensiun.rkp.index", [$id])->with(['success'=>'Verifikasi Berhasil!']);          
         }
     }
 
@@ -136,7 +136,7 @@ class PertekController extends Controller
             $pengangkatans = Pemberhentian::where('id', '=', $id)->update(
                 ['status' => Helper::$tolak_pokja]
             );
-            return redirect()->route("koor-pokja-pensiun.pertek.index")->with(['success'=>'verifikasi Success !!!']);
+            return redirect()->route("koor-pokja-pensiun.pertek.index")->with(['success'=>'Verifikasi Berhasil!']);
         }
     }
 

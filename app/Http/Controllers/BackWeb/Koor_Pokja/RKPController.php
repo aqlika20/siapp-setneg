@@ -150,7 +150,7 @@ class RKPController extends Controller
             $notes->save();
         }
 
-        return redirect()->route("koor-pokja.text-editor.index", [$rkps->id])->with(['success'=>'Verifikasi RKP Success !!!']);
+        return redirect()->route("koor-pokja.text-editor.index", [$rkps->id])->with(['success'=>'Verifikasi RKP Berhasil!']);
 
        
 

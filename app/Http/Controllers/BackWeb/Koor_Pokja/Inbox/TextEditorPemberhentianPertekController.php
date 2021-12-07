@@ -64,7 +64,7 @@ class TextEditorPemberhentianPertekController extends Controller
             'status' => Helper::$pending_pokja
         ]);
 
-        return redirect()->route('koor-pokja.inbox.pemberhentian.index')->with(['success'=>'Surat Success Pending!!!']);
+        return redirect()->route('koor-pokja.inbox.pemberhentian.index')->with(['success'=>'Surat Berhasil Dipending!!!!']);
     }
 
     public function tolak(Request $request)
@@ -91,6 +91,6 @@ class TextEditorPemberhentianPertekController extends Controller
             'status' => Helper::$tolak_pokja
         ]);
 
-        return redirect()->route('koor-pokja.inbox.pemberhentian.index')->with(['success'=>'Surat Success Tolak!!!']);
+        return redirect()->route('koor-pokja.inbox.pemberhentian.index')->with(['success'=>'Surat Berhasil Ditolak!']);
     }
 }

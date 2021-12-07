@@ -124,34 +124,6 @@
                                                             </td>
                                                         </tr>
                                                     <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-
-                                                    <?php $__currentLoopData = $kenaikans; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $kenaikan): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                                                        <tr>
-                                                            <td><?php echo e($kenaikan->tanggal_surat_usulan); ?></td>
-                                                            <td><?php echo e($kenaikan->no_surat_usulan); ?></td>
-                                                            <td><?php echo e($kenaikan->instansi_pengusul); ?></td>
-                                                            <td><div style="color: #FFA800;"><?php echo e(Helper::defineJenisLayananBy($kenaikan->jenis_layanan)); ?></div></td>
-                                                            <td><div style="color: #3699FF;"><?php echo e($kenaikan->nip); ?></div></td>
-                                                            <td><?php echo e($kenaikan->nama); ?></td>
-                                                            <td>
-                                                                <a href="<?php echo e(route('jf-ahli.inbox.kenaikan_pangkat.verif', ['id' => $kenaikan->id])); ?>" type="button" class="btn btn-success font-weight-bold align-items-md-end">Verifikasi</a>
-                                                            </td>
-                                                        </tr>
-                                                    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-
-                                                    <?php $__currentLoopData = $pemberhentians; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $pemberhentian): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                                                        <tr>
-                                                            <td><?php echo e($pemberhentian->tanggal_surat_usulan); ?></td>
-                                                            <td><?php echo e($pemberhentian->no_surat_usulan); ?></td>
-                                                            <td><?php echo e($pemberhentian->instansi_pengusul); ?></td>
-                                                            <td><div style="color: #FFA800;"><?php echo e(Helper::defineJenisLayananBy($pemberhentian->jenis_layanan)); ?></div></td>
-                                                            <td><div style="color: #3699FF;"><?php echo e($pemberhentian->nip); ?></div></td>
-                                                            <td><?php echo e($pemberhentian->nama); ?></td>
-                                                            <td>
-                                                                <a href="<?php echo e(route('jf-ahli.inbox.pemberhentian.verif', ['id' => $pemberhentian->id])); ?>" type="button" class="btn btn-success font-weight-bold align-items-md-end">Verifikasi</a>
-                                                            </td>
-                                                        </tr>
-                                                    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                                                     
                                                 </tbody>
                                             </table>

@@ -137,7 +137,7 @@ class PersetujuanPengangkatanStafKhususController extends Controller
 
         $pengangkatans->save();
 
-        return redirect()->route('koor-pokja.inbox.lns.index')->with(['success'=>'Jabatan Staff Lainnya Success Added!!!']);
+        return redirect()->route('koor-pokja.inbox.lns.index')->with(['success'=>'Berhasil Ditambahkan!']);
     }
    
 

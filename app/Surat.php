@@ -9,7 +9,7 @@ class Surat extends Model
     protected $table = 'surats';
 
     protected $fillable = [
-        'id', 'description', 'id_rkp', 'status'
+        'id', 'description', 'id_rkp', 'id_usulan', 'id_layanan', 'nip', 'id_pengirim', 'status'
     ];
 
     protected $date = [

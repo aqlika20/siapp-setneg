@@ -131,7 +131,7 @@ class RalatKeppresPemberhentianController extends Controller
 
         $pengangkatans->save();
 
-        return redirect()->route('pic.administrasi.pemberhentian.index')->with(['success'=>'Pemberhentian Success Added!!!']);
+        return redirect()->route('pic.administrasi.pemberhentian.index')->with(['success'=>'Berhasil Ditambahkan!']);
     }
    
 
