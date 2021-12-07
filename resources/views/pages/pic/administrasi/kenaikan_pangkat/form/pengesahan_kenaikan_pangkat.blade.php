@@ -217,6 +217,28 @@
         </div>
     </script>
     <script>
+
+        $("#file_surat_kehilangan").on("change", function() {
+    if ($("#file_surat_kehilangan")[0].files.length > 5) {
+        alert('Hanya boleh upload 5 file!.');
+        $('#file_surat_kehilangan').val('');
+    }
+    });
+
+    $("#file_fotokopi_sk_hilang").on("change", function() {
+    if ($("#file_fotokopi_sk_hilang")[0].files.length > 5) {
+        alert('Hanya boleh upload 5 file!.');
+        $('#file_fotokopi_sk_hilang').val('');
+    }
+    });
+
+    $("#file_surat_permohonan").on("change", function() {
+    if ($("#file_surat_permohonan")[0].files.length > 5) {
+        alert('Hanya boleh upload 5 file!.');
+        $('#file_surat_permohonan').val('');
+    }
+    });
+
        refreshDateTimePicker();
         function refreshDateTimePicker(){
             
@@ -234,13 +256,13 @@
         }
         $('#otherFieldDiv').hide();
 
-    function yesnoCheck() {
-        if (document.getElementById('opsi').checked) {
-            document.getElementById('hilang').style.display = 'block';
-    }
-        else document.getElementById('hilang').style.display = 'none';
-             document.getElementById('rusak').style.display = 'block';
-    }
+        function yesnoCheck() {
+            if (document.getElementById('opsi').checked) {
+                document.getElementById('hilang').style.display = 'block';
+        }
+            else document.getElementById('hilang').style.display = 'none';
+                document.getElementById('rusak').style.display = 'block';
+        }
 
 
         $('.my-datepicker').keydown(function(e){
@@ -387,6 +409,8 @@
                 }
             })
         })
+
+       
 
     </script>
     <script src="{{ asset('js/pages/custom/wizard/wizard-3.js') }}"></script>

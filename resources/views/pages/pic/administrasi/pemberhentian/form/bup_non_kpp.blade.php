@@ -1035,6 +1035,62 @@
             }   
         }
 
+        $("#file_data_usulan").on("change", function() {
+    if ($("#file_data_usulan")[0].files.length > 5) {
+        alert('Hanya boleh upload 5 file!.');
+        $('#file_data_usulan').val('');
+    }
+    });
+
+    $("#file_ijasah").on("change", function() {
+    if ($("#file_ijasah")[0].files.length > 5) {
+        alert('Hanya boleh upload 5 file!.');
+        $('#file_ijasah').val('');
+    }
+    });
+
+    $("#file_sk_pangkat_terakhir").on("change", function() {
+    if ($("#file_sk_pangkat_terakhir")[0].files.length > 5) {
+        alert('Hanya boleh upload 5 file!.');
+        $('#file_sk_pangkat_terakhir').val('');
+    }
+    });
+
+    $("#file_sk_jabatan_terakhir").on("change", function() {
+    if ($("#file_sk_jabatan_terakhir")[0].files.length > 5) {
+        alert('Hanya boleh upload 5 file!.');
+        $('#file_sk_jabatan_terakhir').val('');
+    }
+    });
+
+    $("#file_berita_acara_pelantikan").on("change", function() {
+    if ($("#file_berita_acara_pelantikan")[0].files.length > 5) {
+        alert('Hanya boleh upload 5 file!.');
+        $('#file_berita_acara_pelantikan').val('');
+    }
+    });
+
+    $("#file_pas_foto").on("change", function() {
+    if ($("#file_pas_foto")[0].files.length > 5) {
+        alert('Hanya boleh upload 5 file!.');
+        $('#file_pas_foto').val('');
+    }
+    });
+
+    $("#file_sk_tidak_pernah_dijatuhi_hukuman").on("change", function() {
+    if ($("#file_sk_tidak_pernah_dijatuhi_hukuman")[0].files.length > 5) {
+        alert('Hanya boleh upload 5 file!.');
+        $('#file_sk_tidak_pernah_dijatuhi_hukuman').val('');
+    }
+    });
+
+    $("#file_sk_tidak_sedang_dalam_hukum_dpcp").on("change", function() {
+    if ($("#file_sk_tidak_sedang_dalam_hukum_dpcp")[0].files.length > 5) {
+        alert('Hanya boleh upload 5 file!.');
+        $('#file_sk_tidak_sedang_dalam_hukum_dpcp').val('');
+    }
+    });
+
     </script>
     <script>
         $(function(){

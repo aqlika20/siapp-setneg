@@ -476,6 +476,20 @@
             }   
         }
 
+        $("#file_data_usulan").on("change", function() {
+    if ($("#file_data_usulan")[0].files.length > 5) {
+        alert('Hanya boleh upload 5 file!.');
+        $('#file_data_usulan').val('');
+    }
+    });
+
+        $("#file_data_pendukung_lainnya").on("change", function() {
+    if ($("#file_data_pendukung_lainnya")[0].files.length > 5) {
+        alert('Hanya boleh upload 5 file!.');
+        $('#file_data_pendukung_lainnya').val('');
+    }
+    });
+
     </script>
     <script>
         $(function(){

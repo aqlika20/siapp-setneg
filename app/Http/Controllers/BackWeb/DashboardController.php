@@ -39,8 +39,11 @@ class DashboardController extends Controller
         }
 
         // JF Ahli Muda & JF Ahli Madya
-        if ($currentUser->roles_id == 9 || $currentUser->roles_id == 10 || $currentUser->roles_id == 11) {
-            return redirect()->route('jf-ahli.home.index');
+        // if ($currentUser->roles_id == 9 || $currentUser->roles_id == 10 || $currentUser->roles_id == 11) {
+        //     return redirect()->route('jf-ahli.home.index');
+        // }
+        if ($currentUser->roles_id == 10) {
+            return redirect()->route('jf-ahli-kp.home.index');
         }
 
         // Karo

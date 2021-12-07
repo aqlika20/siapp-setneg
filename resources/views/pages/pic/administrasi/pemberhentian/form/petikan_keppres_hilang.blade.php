@@ -549,7 +549,7 @@
         })
 
         $("#status").change(function() {
-            if ($(this).val() == "hilang") {
+            if ($(this).val() == "Hilang") {
             $('#div_hilang').show();
             } else {
             $('#div_hilang').hide();
@@ -598,6 +598,34 @@
                 return false;
             }   
         }
+
+        $("#file_surat_permohonan").on("change", function() {
+    if ($("#file_surat_permohonan")[0].files.length > 5) {
+        alert('Hanya boleh upload 5 file!.');
+        $('#file_surat_permohonan').val('');
+    }
+    });
+
+        $("#file_surat_keterangan_kehilangan_polisi").on("change", function() {
+    if ($("#file_surat_keterangan_kehilangan_polisi")[0].files.length > 5) {
+        alert('Hanya boleh upload 5 file!.');
+        $('#file_surat_keterangan_kehilangan_polisi').val('');
+    }
+    });
+
+    $("#file_surat_keterangan_kehilangan").on("change", function() {
+    if ($("#file_surat_keterangan_kehilangan")[0].files.length > 5) {
+        alert('Hanya boleh upload 5 file!.');
+        $('#file_surat_keterangan_kehilangan').val('');
+    }
+    });
+
+        $("#file_fotokopi_sk_hilang").on("change", function() {
+    if ($("#file_fotokopi_sk_hilang")[0].files.length > 5) {
+        alert('Hanya boleh upload 5 file!.');
+        $('#file_fotokopi_sk_hilang').val('');
+    }
+    });
 
     </script>
     <script>

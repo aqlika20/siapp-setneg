@@ -784,6 +784,41 @@
             }   
         }
 
+        $("#file_data_usulan").on("change", function() {
+    if ($("#file_data_usulan")[0].files.length > 5) {
+        alert('Hanya boleh upload 5 file!.');
+        $('#file_data_usulan').val('');
+    }
+    });
+
+    $("#file_putusan_pengadilan_inkrach").on("change", function() {
+    if ($("#file_putusan_pengadilan_inkrach")[0].files.length > 5) {
+        alert('Hanya boleh upload 5 file!.');
+        $('#file_putusan_pengadilan_inkrach').val('');
+    }
+    });
+
+    $("#file_ijasah").on("change", function() {
+    if ($("#file_ijasah")[0].files.length > 5) {
+        alert('Hanya boleh upload 5 file!.');
+        $('#file_ijasah').val('');
+    }
+    });
+
+    $("#file_sk_pangkat_terakhir").on("change", function() {
+    if ($("#file_sk_pangkat_terakhir")[0].files.length > 5) {
+        alert('Hanya boleh upload 5 file!.');
+        $('#file_sk_pangkat_terakhir').val('');
+    }
+    });
+
+    $("#file_sk_jabatan_terakhir").on("change", function() {
+    if ($("#file_sk_jabatan_terakhir")[0].files.length > 5) {
+        alert('Hanya boleh upload 5 file!.');
+        $('#file_sk_jabatan_terakhir').val('');
+    }
+    });
+
     </script>
     <script>
         $(function(){

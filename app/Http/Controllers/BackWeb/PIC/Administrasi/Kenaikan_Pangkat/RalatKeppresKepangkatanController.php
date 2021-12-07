@@ -59,11 +59,16 @@ class RalatKeppresKepangkatanController extends Controller
             'tanggal_surat_permohonan' => 'required',
             'no_surat_permohonan' => 'required',
             'jabatan_menandatangani' => 'required',
-            
+            'file_surat_permohonan' => 'required',
+            'file_dokumen_klarifikasi' => 'required',
+            'file_fotokopi_sk_diperbaiki' => 'required',
+
             'file_surat_permohonan.*' => 'max:5000|mimes:jpg,png,jpeg,pdf',
             'file_dokumen_klarifikasi.*' => 'max:5000|mimes:jpg,png,jpeg,pdf',
             'file_fotokopi_sk_diperbaiki.*' => 'max:5000|mimes:jpg,png,jpeg,pdf'
         
+        ],[
+            'file_surat_permohonan.*.required' => 'Please upload an image',
         ]);
 
         if ($validator->fails()) {

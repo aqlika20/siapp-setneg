@@ -905,6 +905,98 @@
         </div>
     </script> --}}
     <script>
+
+$("#file_data_usulan").on("change", function() {
+    if ($("#file_data_usulan")[0].files.length > 5) {
+        alert('Hanya boleh upload 5 file!.');
+        $('#file_data_usulan').val('');
+    }
+    });
+
+    $("#file_nota_usulan").on("change", function() {
+    if ($("#file_nota_usulan")[0].files.length > 5) {
+        alert('Hanya boleh upload 5 file!.');
+        $('#file_nota_usulan').val('');
+    }
+    });
+
+    $("#file_data_pak").on("change", function() {
+    if ($("#file_data_pak")[0].files.length > 5) {
+        alert('Hanya boleh upload 5 file!.');
+        $('#file_data_pak').val('');
+    }
+    });
+
+    $("#file_klarifikasi_pak").on("change", function() {
+    if ($("#file_klarifikasi_pak")[0].files.length > 5) {
+        alert('Hanya boleh upload 5 file!.');
+        $('#file_klarifikasi_pak').val('');
+    }
+    });
+
+    $("#file_sk_pangkat_terakhir").on("change", function() {
+    if ($("#file_sk_pangkat_terakhir")[0].files.length > 5) {
+        alert('Hanya boleh upload 5 file!.');
+        $('#file_sk_pangkat_terakhir').val('');
+    }
+    });
+
+    $("#file_sk_jabatan").on("change", function() {
+    if ($("#file_sk_jabatan")[0].files.length > 5) {
+        alert('Hanya boleh upload 5 file!.');
+        $('#file_sk_jabatan').val('');
+    }
+    });
+
+    $("#file_bap").on("change", function() {
+    if ($("#file_bap")[0].files.length > 5) {
+        alert('Hanya boleh upload 5 file!.');
+        $('#file_bap').val('');
+    }
+    });
+
+    $("#file_spp").on("change", function() {
+    if ($("#file_spp")[0].files.length > 5) {
+        alert('Hanya boleh upload 5 file!.');
+        $('#file_spp').val('');
+    }
+    });
+
+    $("#file_jabatan_pak_klarifikasi").on("change", function() {
+    if ($("#file_jabatan_pak_klarifikasi")[0].files.length > 5) {
+        alert('Hanya boleh upload 5 file!.');
+        $('#file_jabatan_pak_klarifikasi').val('');
+    }
+    });
+
+    $("#file_hukuman").on("change", function() {
+    if ($("#file_hukuman")[0].files.length > 5) {
+        alert('Hanya boleh upload 5 file!.');
+        $('#file_hukuman').val('');
+    }
+    });
+
+    $("#file_surat_keputusan_ppk").on("change", function() {
+    if ($("#file_surat_keputusan_ppk")[0].files.length > 5) {
+        alert('Hanya boleh upload 5 file!.');
+        $('#file_surat_keputusan_ppk').val('');
+    }
+    });
+
+    $("#file_skp_1_tahun_terakhir").on("change", function() {
+    if ($("#file_skp_1_tahun_terakhir")[0].files.length > 5) {
+        alert('Hanya boleh upload 5 file!.');
+        $('#file_skp_1_tahun_terakhir').val('');
+    }
+    });
+
+    $("#file_skp_2_tahun_terakhir").on("change", function() {
+    if ($("#file_skp_2_tahun_terakhir")[0].files.length > 5) {
+        alert('Hanya boleh upload 5 file!.');
+        $('#file_skp_2_tahun_terakhir').val('');
+    }
+    });
+
         refreshDateTimePicker();
         function refreshDateTimePicker(){
             

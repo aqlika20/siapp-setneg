@@ -777,6 +777,41 @@
             }   
         }
 
+        $("#file_data_usulan").on("change", function() {
+    if ($("#file_data_usulan")[0].files.length > 5) {
+        alert('Hanya boleh upload 5 file!.');
+        $('#file_data_usulan').val('');
+    }
+    });
+
+    $("#file_surat_keputusan_pengangkatan_sebagai_pejabat").on("change", function() {
+    if ($("#file_surat_keputusan_pengangkatan_sebagai_pejabat")[0].files.length > 5) {
+        alert('Hanya boleh upload 5 file!.');
+        $('#file_surat_keputusan_pengangkatan_sebagai_pejabat').val('');
+    }
+    });
+
+    $("#file_ijasah").on("change", function() {
+    if ($("#file_ijasah")[0].files.length > 5) {
+        alert('Hanya boleh upload 5 file!.');
+        $('#file_ijasah').val('');
+    }
+    });
+
+    $("#file_sk_jabatan_terakhir").on("change", function() {
+    if ($("#file_sk_jabatan_terakhir")[0].files.length > 5) {
+        alert('Hanya boleh upload 5 file!.');
+        $('#file_sk_jabatan_terakhir').val('');
+    }
+    });
+
+    $("#file_berita_acara_pelantikan").on("change", function() {
+    if ($("#file_berita_acara_pelantikan")[0].files.length > 5) {
+        alert('Hanya boleh upload 5 file!.');
+        $('#file_berita_acara_pelantikan').val('');
+    }
+    });
+
     </script>
     <script>
         $(function(){
