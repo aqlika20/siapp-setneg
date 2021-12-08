@@ -348,7 +348,8 @@ Route::group(['middleware' => ['auth', 'checkRole:5']], function() {
 
             Route::prefix('/text-editor')->group(function(){
                 Route::get('/{id}', 'BackWeb\Koor_Pokja\Inbox\TextEditorInboxPendingController@index')->name('koor-pokja.inbox.text-editor.index');
-                Route::post('/create', 'BackWeb\Koor_Pokja\Inbox\TextEditorInboxPendingController@store')->name('koor-pokja.inbox.text-editor.store');
+                Route::post('/create', 'BackWeb\Koor_Pokja\Inbox\TextEditorInboxPendingController@store')->name('koor-pokja.inbox.text-editor.store');					
+				Route::get('/callback-docx', 'BackWeb\Koor_Pokja\Inbox\TextEditorInboxPendingController@callbackDocx')->name('koor-pokja.inbox.text-editor.callbackDocx');
             });
             
             Route::prefix('/text-editor-lain')->group(function(){
@@ -419,6 +420,7 @@ Route::group(['middleware' => ['auth', 'checkRole:5']], function() {
             Route::prefix('/text-editor')->group(function(){
                 Route::get('/{id}', 'BackWeb\Koor_Pokja\TextEditorController@index')->name('koor-pokja.text-editor.index');
                 Route::post('/create', 'BackWeb\Koor_Pokja\TextEditorController@store')->name('koor-pokja.text-editor.store');
+				Route::post('/callback-docx', 'BackWeb\Koor_Pokja\TextEditorController@callbackDocx')->name('koor-pokja.text-editor.callbackDocx');				
             });
             
             Route::prefix('/text-editor-jfku')->group(function(){
@@ -486,7 +488,7 @@ Route::group(['middleware' => ['auth', 'checkRole:6']], function() {
 
             Route::prefix('/text-editor-kenaikan')->group(function(){
                 Route::get('/{id}', 'BackWeb\Koor_Pokja_KP\Inbox\TextEditorKenaikanPertekController@index')->name('koor-pokja-kp.inbox.text-editor.kenaikan.index');
-                Route::post('/create', 'BackWeb\Koor_Pokja_KP\Inbox\TextEditorKenaikanPertekController@store')->name('koor-pokja-kp.inbox.text-editor.kenaikan.store');
+                Route::post('/create', 'BackWeb\Koor_Pokja_KP\Inbox\TextEditorKenaikanPertekController@store')->name('koor-pokja-kp.inbox.text-editor.kenaikan.store');	
             });
 
             Route::prefix('/detail-surat-pengembalian')->group(function(){
@@ -507,7 +509,7 @@ Route::group(['middleware' => ['auth', 'checkRole:6']], function() {
 
             Route::prefix('/text-editor')->group(function(){
                 Route::get('/{id}', 'BackWeb\Koor_Pokja_KP\Inbox\TextEditorController@index')->name('koor-pokja-kp.text-editor.index');
-                Route::post('/create', 'BackWeb\Koor_Pokja_KP\Inbox\TextEditorController@store')->name('koor-pokja-kp.text-editor.store');
+                Route::post('/create', 'BackWeb\Koor_Pokja_KP\Inbox\TextEditorController@store')->name('koor-pokja-kp.text-editor.store');	
             });
            
             Route::prefix('/text-editor-kenaikan')->group(function(){

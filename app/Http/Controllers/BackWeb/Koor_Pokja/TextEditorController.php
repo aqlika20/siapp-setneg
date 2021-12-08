@@ -35,31 +35,13 @@ class TextEditorController extends Controller
 
     public function index($id) 
     {
-        $currentUser = UserManagement::find(Auth::id());
-        $page_title = 'Koordinator Pokja | Text Editor';
-        $page_description = 'Text Editor';
-        $rkp = RKP::where('id', $id)->first();
-
-        $rkps = RKPList::where('id_rkp', $id)->get();
         
-        foreach($rkps as $rkp_list){
-            $pengangkatans[] = $rkp_list->id_usulan;
-        };
-
-        foreach($pengangkatans as $data_asn){
-            $data_asns[] = PengangkatanPemberhentianJFKU::where('id', $data_asn)->first();
-        }
-        $notes = [];
-
-        $notes = Catatan::where([
-            ['id_rkp', '=', $rkp->id], ['id_status', '=', Helper::$verifikasi_rkp_pokja]
-        ])->get();
-        
-        return view('pages.koor_pokja.text_editor', compact('page_title', 'page_description', 'currentUser', 'data_asns', 'rkp', 'notes'));
+        return;
     }
 
     public function store(Request $request)
     {
+
         $input = $request->all();
         $id = $input['v_id'];
         $validator = Validator::make($input, [
@@ -77,5 +59,36 @@ class TextEditorController extends Controller
         ]);
 
         return redirect()->route('koor-pokja.list-rkp.index')->with(['success'=>'Surat  Berhasil Ditambahkan!']);
+    }
+	
+	public function callbackDocx()
+    {
+		
+        $phpWord = new \PhpOffice\PhpWord\PhpWord();
+
+
+        $section = $phpWord->addSection();
+
+        $description = "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+proident, sunt in culpa qui officia deserunt mollit anim id est laborum.";
+
+		var_dump($description);
+
+        $section->addImage("https://www.itsolutionstuff.com/frontTheme/images/logo.png");
+        $section->addText($description);
+
+
+        $objWriter = \PhpOffice\PhpWord\IOFactory::createWriter($phpWord, 'Word2007');
+        try {
+            $objWriter->save(storage_path('helloWorld.docx'));
+        } catch (Exception $e) {
+        }
+
+
+        return response()->download(storage_path('helloWorld.docx'));
     }
 }

@@ -185,6 +185,8 @@ return [
 
         //Laravel Chart
         ConsoleTVs\Charts\ChartsServiceProvider::class,
+		
+		Barryvdh\Debugbar\ServiceProvider::class,
 
        
 
@@ -259,6 +261,7 @@ return [
         'DNS2D' => Milon\Barcode\Facades\DNS2DFacade::class,
 
         'Charts' => ConsoleTVs\Charts\Charts::class,
+		'Debugbar' => Barryvdh\Debugbar\Facade::class,
     ],
 
 ];
