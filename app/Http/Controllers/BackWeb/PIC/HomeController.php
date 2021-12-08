@@ -36,7 +36,9 @@ class HomeController extends Controller
     //pengangkatan
         $count_pengangkatan_jfku = PengangkatanPemberhentianJFKU::where([
             ['jenis_layanan', Helper::$pengangkatan_pejabat_FKU],
-            ['status', Helper::$pengajuan_usulan]
+            ['status', Helper::$pengajuan_usulan],
+            ['id_pengirim', '=', $currentUser->nip]
+
         ])->count();
 
         if($count_pengangkatan_jfku == 0){
@@ -48,7 +50,9 @@ class HomeController extends Controller
     //pemberhentian
         $count_pemberhentian_jfku = PengangkatanPemberhentianJFKU::where([
             ['jenis_layanan', Helper::$pemberhentian_pejabat_FKU],
-            ['status', Helper::$pengajuan_usulan]
+            ['status', Helper::$pengajuan_usulan],
+            ['id_pengirim', '=', $currentUser->nip]
+
         ])->count();
 
         if($count_pemberhentian_jfku == 0){
@@ -60,7 +64,9 @@ class HomeController extends Controller
     //perpindahan        
         $count_perpindahan_jfku = PengangkatanPemberhentianJFKU::where([
             ['jenis_layanan', Helper::$perpindahan_pejabat_FKU],
-            ['status', Helper::$pengajuan_usulan]
+            ['status', Helper::$pengajuan_usulan],
+            ['id_pengirim', '=', $currentUser->nip]
+
         ])->count();
 
         if($count_perpindahan_jfku == 0){
@@ -72,7 +78,9 @@ class HomeController extends Controller
     //ralat keppres        
         $count_ralat_keppres_jfku = PengangkatanPemberhentianJFKU::where([
             ['jenis_layanan', Helper::$ralat_keppres_jabatan_FKU],
-            ['status', Helper::$pengajuan_usulan]
+            ['status', Helper::$pengajuan_usulan],
+            ['id_pengirim', '=', $currentUser->nip]
+
         ])->count();
 
         if($count_ralat_keppres_jfku == 0){
@@ -81,130 +89,12 @@ class HomeController extends Controller
             $ralat_keppres_jfku = $count_ralat_keppres_jfku;
         }
 
-    //pembatalan keppres        
-        $count_pembatalan_keppres_jfku = PengangkatanPemberhentianJFKU::where([
-            ['jenis_layanan', Helper::$pembatalan_keppres_jabatan_FKU],
-            ['status', Helper::$pengajuan_usulan]
-        ])->count();
-
-        if($count_pembatalan_keppres_jfku == 0){
-            $pembatalan_keppres_jfku = '0';
-        } else{
-            $pembatalan_keppres_jfku = $count_pembatalan_keppres_jfku;
-        }
-
-    //pengangkatan non struktural
-        $count_pengangkatan_ns = PengangkatanPemberhentianNS::where([
-            ['jenis_layanan', Helper::$pengangkatan_pejabat_NS],
-            ['status', Helper::$pengajuan_usulan]
-        ])->count();
-
-        if($count_pengangkatan_ns == 0){
-            $pengangkatan_ns = '0';
-        } else{
-            $pengangkatan_ns = $count_pengangkatan_ns;
-        }
-
-    //pemberhentian non struktural
-        $count_pemberhentian_ns = PengangkatanPemberhentianNS::where([
-            ['jenis_layanan', Helper::$pemberhentian_pejabat_NS],
-            ['status', Helper::$pengajuan_usulan]
-        ])->count();
-
-        if($count_pemberhentian_ns == 0){
-            $pemberhentian_ns = '0';
-        } else{
-            $pemberhentian_ns = $count_pemberhentian_ns;
-        }
-
-    //ralat keppres non struktural
-        $count_ralat_keppres_ns = PengangkatanPemberhentianNS::where([
-            ['jenis_layanan', Helper::$ralat_keppres_jabatan_NS],
-            ['status', Helper::$pengajuan_usulan]
-        ])->count();
-
-        if($count_ralat_keppres_ns == 0){
-            $ralat_keppres_ns = '0';
-        } else{
-            $ralat_keppres_ns = $count_ralat_keppres_ns;
-        }
-
-    //pembatalan keppres non struktural
-        $count_pembatalan_keppres_ns = PengangkatanPemberhentianNS::where([
-            ['jenis_layanan', Helper::$pembatalan_keppres_jabatan_NS],
-            ['status', Helper::$pengajuan_usulan]
-        ])->count();
-
-        if($count_pembatalan_keppres_ns == 0){
-            $pembatalan_keppres_ns = '0';
-        } else{
-            $pembatalan_keppres_ns = $count_pembatalan_keppres_ns;
-        }
-
-    //pengangkatan pejabat lainnya
-        $count_pengangkatan_pejabat_lainnya = PengangkatanPemberhentianLainnya::where([
-            ['jenis_layanan', Helper::$pengangkatan_pejabat_lainnya],
-            ['status', Helper::$pengajuan_usulan]
-        ])->count();
-
-        if($count_pengangkatan_pejabat_lainnya == 0){
-            $pengangkatan_pejabat_lainnya = '0';
-        } else{
-            $pengangkatan_pejabat_lainnya = $count_pengangkatan_pejabat_lainnya;
-        }
-
-    //pemberhentian pejabat lainnya
-        $count_pemberhentian_pejabat_lainnya = PengangkatanPemberhentianLainnya::where([
-            ['jenis_layanan', Helper::$pemberhentian_pejabat_lainnya],
-            ['status', Helper::$pengajuan_usulan]
-        ])->count();
-
-        if($count_pemberhentian_pejabat_lainnya == 0){
-            $pemberhentian_pejabat_lainnya = '0';
-        } else{
-            $pemberhentian_pejabat_lainnya = $count_pemberhentian_pejabat_lainnya;
-        }
-
-    //ralat keppres jabatan lainnya
-        $count_ralat_keppres_jabatan_lainnya = PengangkatanPemberhentianLainnya::where([
-            ['jenis_layanan', Helper::$ralat_keppres_jabatan_lainnya],
-            ['status', Helper::$pengajuan_usulan]
-        ])->count();
-
-        if($count_ralat_keppres_jabatan_lainnya == 0){
-            $ralat_keppres_jabatan_lainnya = '0';
-        } else{
-            $ralat_keppres_jabatan_lainnya = $count_ralat_keppres_jabatan_lainnya;
-        }
-
-    //pembatalan keppres jabatan lainnya
-        $count_pembatalan_keppres_jabatan_lainnya = PengangkatanPemberhentianLainnya::where([
-            ['jenis_layanan', Helper::$pembatalan_keppres_jabatan_lainnya],
-            ['status', Helper::$pengajuan_usulan]
-        ])->count();
-
-        if($count_pembatalan_keppres_jabatan_lainnya == 0){
-            $pembatalan_keppres_jabatan_lainnya = '0';
-        } else{
-            $pembatalan_keppres_jabatan_lainnya = $count_pembatalan_keppres_jabatan_lainnya;
-        }
-
-    //persetujuan pengangkatan staf khusus
-        $count_persetujuan_pengangkatan_staf_khusus = PengangkatanPemberhentianLainnya::where([
-            ['jenis_layanan', Helper::$persetujuan_pengangkatan_staf_khusus],
-            ['status', Helper::$pengajuan_usulan]
-        ])->count();
-
-        if($count_persetujuan_pengangkatan_staf_khusus == 0){
-            $persetujuan_pengangkatan_staf_khusus = '0';
-        } else{
-            $persetujuan_pengangkatan_staf_khusus = $count_persetujuan_pengangkatan_staf_khusus;
-        }
-
     //pemberian kenaikan pangkat
         $count_pemberian_kenaikan_pangkat = KenaikanPangkat::where([
             ['jenis_layanan', Helper::$pemberian_kenaikan_pangkat],
-            ['status', Helper::$pengajuan_usulan]
+            ['status', Helper::$pengajuan_usulan],
+            ['id_pengirim', '=', $currentUser->nip]
+
         ])->count();
 
         if($count_pemberian_kenaikan_pangkat == 0){
@@ -216,7 +106,9 @@ class HomeController extends Controller
     //pembatalan keppres kenaikan pangkat
         $count_pembatalan_keppres_kenaikan_pangkat = KenaikanPangkat::where([
             ['jenis_layanan', Helper::$pembatalan_keppres_kenaikan_pangkat],
-            ['status', Helper::$pengajuan_usulan]
+            ['status', Helper::$pengajuan_usulan],
+            ['id_pengirim', '=', $currentUser->nip]
+
         ])->count();
 
         if($count_pembatalan_keppres_kenaikan_pangkat == 0){
@@ -228,7 +120,9 @@ class HomeController extends Controller
     //pengesahan kenaikan pangkat
         $count_pengesahan_kenaikan_pangkat = KenaikanPangkat::where([
             ['jenis_layanan', Helper::$pengesahan_kenaikan_pangkat],
-            ['status', Helper::$pengajuan_usulan]
+            ['status', Helper::$pengajuan_usulan],
+            ['id_pengirim', '=', $currentUser->nip]
+
         ])->count();
 
         if($count_pengesahan_kenaikan_pangkat == 0){
@@ -240,7 +134,9 @@ class HomeController extends Controller
     //ralat keppres kepangkatan kenaikan pangkat
         $count_ralat_keppres_kepangkatan = KenaikanPangkat::where([
             ['jenis_layanan', Helper::$ralat_keppres_kepangkatan],
-            ['status', Helper::$pengajuan_usulan]
+            ['status', Helper::$pengajuan_usulan],
+            ['id_pengirim', '=', $currentUser->nip]
+
         ])->count();
 
         if($count_ralat_keppres_kepangkatan == 0){
@@ -249,10 +145,15 @@ class HomeController extends Controller
             $ralat_keppres_kepangkatan = $count_ralat_keppres_kepangkatan;
         }
 
+
+
+
     //bup non kpp pemberhentian
         $count_bup_non_kpp = Pemberhentian::where([
             ['jenis_layanan', Helper::$bup_non_kpp],
-            ['status', Helper::$pengajuan_usulan]
+            ['status', Helper::$pengajuan_usulan],
+            ['id_pengirim', '=', $currentUser->nip]
+
         ])->count();
 
         if($count_bup_non_kpp == 0){
@@ -264,7 +165,9 @@ class HomeController extends Controller
     //bup kpp pemberhentian
         $count_bup_kpp = Pemberhentian::where([
             ['jenis_layanan', Helper::$bup_kpp],
-            ['status', Helper::$pengajuan_usulan]
+            ['status', Helper::$pengajuan_usulan],
+            ['id_pengirim', '=', $currentUser->nip]
+
         ])->count();
 
         if($count_bup_kpp == 0){
@@ -276,7 +179,9 @@ class HomeController extends Controller
     //berhenti atas permintaan sendiri pemberhentian
         $count_berhenti_atas_permintaan_sendiri = Pemberhentian::where([
             ['jenis_layanan', Helper::$berhenti_atas_permintaan_sendiri],
-            ['status', Helper::$pengajuan_usulan]
+            ['status', Helper::$pengajuan_usulan],
+            ['id_pengirim', '=', $currentUser->nip]
+
         ])->count();
 
         if($count_berhenti_atas_permintaan_sendiri == 0){
@@ -288,7 +193,9 @@ class HomeController extends Controller
     //non bup JDA non kpp pemberhentian
         $count_non_bup_JDA_non_kpp = Pemberhentian::where([
             ['jenis_layanan', Helper::$non_bup_JDA_non_kpp],
-            ['status', Helper::$pengajuan_usulan]
+            ['status', Helper::$pengajuan_usulan],
+            ['id_pengirim', '=', $currentUser->nip]
+
         ])->count();
 
         if($count_non_bup_JDA_non_kpp == 0){
@@ -300,7 +207,9 @@ class HomeController extends Controller
     //non bup JDA kpp pemberhentian
         $count_non_bup_JDA_kpp = Pemberhentian::where([
             ['jenis_layanan', Helper::$non_bup_JDA_kpp],
-            ['status', Helper::$pengajuan_usulan]
+            ['status', Helper::$pengajuan_usulan],
+            ['id_pengirim', '=', $currentUser->nip]
+
         ])->count();
 
         if($count_non_bup_JDA_kpp == 0){
@@ -312,7 +221,9 @@ class HomeController extends Controller
     //berhenti tidak hormat pemberhentian
         $count_berhenti_tidak_hormat = Pemberhentian::where([
             ['jenis_layanan', Helper::$berhenti_tidak_hormat],
-            ['status', Helper::$pengajuan_usulan]
+            ['status', Helper::$pengajuan_usulan],
+            ['id_pengirim', '=', $currentUser->nip]
+
         ])->count();
 
         if($count_berhenti_tidak_hormat == 0){
@@ -324,7 +235,9 @@ class HomeController extends Controller
     //anumerta pemberhentian
         $count_anumerta = Pemberhentian::where([
             ['jenis_layanan', Helper::$anumerta],
-            ['status', Helper::$pengajuan_usulan]
+            ['status', Helper::$pengajuan_usulan],
+            ['id_pengirim', '=', $currentUser->nip]
+
         ])->count();
 
         if($count_anumerta == 0){
@@ -336,7 +249,9 @@ class HomeController extends Controller
     //pemberhentian sementara pemberhentian
         $count_pemberhentian_sementara = Pemberhentian::where([
             ['jenis_layanan', Helper::$pemberhentian_sementara],
-            ['status', Helper::$pengajuan_usulan]
+            ['status', Helper::$pengajuan_usulan],
+            ['id_pengirim', '=', $currentUser->nip]
+
         ])->count();
 
         if($count_pemberhentian_sementara == 0){
@@ -348,7 +263,9 @@ class HomeController extends Controller
     //ralat keppres pemberhentian
         $count_ralat_keppres_pemberhentian = Pemberhentian::where([
             ['jenis_layanan', Helper::$ralat_keppres_pemberhentian],
-            ['status', Helper::$pengajuan_usulan]
+            ['status', Helper::$pengajuan_usulan],
+            ['id_pengirim', '=', $currentUser->nip]
+
         ])->count();
 
         if($count_ralat_keppres_pemberhentian == 0){
@@ -360,7 +277,9 @@ class HomeController extends Controller
     //pembatalan keppress pemberhentian
         $count_pembatalan_keppress_pemberhentian = Pemberhentian::where([
             ['jenis_layanan', Helper::$pembatalan_keppress_pemberhentian],
-            ['status', Helper::$pengajuan_usulan]
+            ['status', Helper::$pengajuan_usulan],
+            ['id_pengirim', '=', $currentUser->nip]
+
         ])->count();
 
         if($count_pembatalan_keppress_pemberhentian == 0){
@@ -372,13 +291,43 @@ class HomeController extends Controller
     //petikan keppres hilang
         $count_petikan_keppres_hilang = Pemberhentian::where([
             ['jenis_layanan', Helper::$petikan_keppres_hilang],
-            ['status', Helper::$pengajuan_usulan]
+            ['status', Helper::$pengajuan_usulan],
+            ['id_pengirim', '=', $currentUser->nip]
+
         ])->count();
 
         if($count_petikan_keppres_hilang == 0){
             $petikan_keppres_hilang = '0';
         } else{
             $petikan_keppres_hilang = $count_petikan_keppres_hilang;
+        }
+
+    //masa persiapan pensiun
+        $count_masa_persiapan_pensiun = Pemberhentian::where([
+            ['jenis_layanan', Helper::$masa_persiapan_pensiun],
+            ['status', Helper::$pengajuan_usulan],
+            ['id_pengirim', '=', $currentUser->nip]
+
+        ])->count();
+
+        if($count_masa_persiapan_pensiun == 0){
+            $masa_persiapan_pensiun = '0';
+        } else{
+            $masa_persiapan_pensiun = $count_masa_persiapan_pensiun;
+        }
+    
+    //Permasalahan Kepegawaian Lainnya
+        $count_permasalahan_kepegawaian_lainnya = Pemberhentian::where([
+            ['jenis_layanan', Helper::$permasalahan_kepegawaian_lainnya],
+            ['status', Helper::$pengajuan_usulan],
+            ['id_pengirim', '=', $currentUser->nip]
+
+        ])->count();
+
+        if($count_permasalahan_kepegawaian_lainnya == 0){
+            $permasalahan_kepegawaian_lainnya = '0';
+        } else{
+            $permasalahan_kepegawaian_lainnya = $count_permasalahan_kepegawaian_lainnya;
         }
 
 
@@ -412,7 +361,7 @@ class HomeController extends Controller
         // $json_chart = json_encode($chart);
         // var_dump($json_chart);
 
-        return view('pages.pic.home', compact('page_title', 'page_description', 'currentUser', 'pengangkatan_jfku', 'pemberhentian_jfku', 'perpindahan_jfku', 'ralat_keppres_jfku', 'pembatalan_keppres_jfku', 'pengangkatan_ns', 'pemberhentian_ns', 'ralat_keppres_ns', 'pembatalan_keppres_ns', 'pengangkatan_pejabat_lainnya', 'pemberhentian_pejabat_lainnya', 'ralat_keppres_jabatan_lainnya', 'pembatalan_keppres_jabatan_lainnya', 'persetujuan_pengangkatan_staf_khusus', 'pemberian_kenaikan_pangkat', 'pembatalan_keppres_kenaikan_pangkat', 'pengesahan_kenaikan_pangkat', 'ralat_keppres_kepangkatan', 'bup_non_kpp', 'bup_kpp', 'berhenti_atas_permintaan_sendiri', 'non_bup_JDA_non_kpp', 'non_bup_JDA_kpp', 'berhenti_tidak_hormat', 'anumerta', 'pemberhentian_sementara', 'ralat_keppres_pemberhentian', 'pembatalan_keppress_pemberhentian', 'petikan_keppres_hilang'));
+        return view('pages.pic.home', compact('page_title', 'page_description', 'currentUser', 'pengangkatan_jfku', 'masa_persiapan_pensiun', 'pemberhentian_jfku', 'perpindahan_jfku', 'ralat_keppres_jfku', 'pemberian_kenaikan_pangkat', 'pembatalan_keppres_kenaikan_pangkat', 'pengesahan_kenaikan_pangkat', 'ralat_keppres_kepangkatan', 'bup_non_kpp', 'bup_kpp', 'berhenti_atas_permintaan_sendiri', 'non_bup_JDA_non_kpp', 'non_bup_JDA_kpp', 'berhenti_tidak_hormat', 'anumerta', 'pemberhentian_sementara', 'ralat_keppres_pemberhentian', 'pembatalan_keppress_pemberhentian', 'petikan_keppres_hilang'));
         // return view('pages.pic.home', ['chart' => $chart], compact('page_title', 'page_description', 'currentUser', 'pengangkatan'));
     }
 }

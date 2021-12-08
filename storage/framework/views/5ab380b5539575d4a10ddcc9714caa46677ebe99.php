@@ -7,13 +7,10 @@
 										<div class="card-body pt-4">
                                             <div style="margin-bottom: 0px;">
                                                 <ul class="nav nav-tabs nav-bold nav-tabs-line">
-                                                    <li class="nav-item dropdown">
-                                                        <a class="nav-link dropdown-toggle active" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
-                                                            <span class="nav-text font-size-xs">Pengangkatan</span>
+                                                    <li class="nav-item">
+                                                        <a class="nav-link active" data-toggle="tab" href="#kt_tab_pane_3_3">
+                                                            <span class="nav-text font-size-xs">Pengangkatan JFKU</span>
                                                         </a>
-                                                        <div class="dropdown-menu">
-                                                            <a class="dropdown-item" data-toggle="tab" href="#kt_tab_pane_3_3">Pengangkatan dan Pemberhentian Pejabat Fungsional Keahlian Utama</a>
-                                                        </div>
                                                     </li>
                                                     <li class="nav-item">
                                                         <a class="nav-link" data-toggle="tab" href="#kt_tab_pane_2_3">
@@ -46,25 +43,8 @@
 															</div>
 															<!--end::Badge-->
 															<!--begin::Text-->
-															<div class="font-weight-mormal font-size-lg timeline-content text-muted pl-3">Pengangkatan Pejabat Fungsional Keahlian Utama</div>
+															<div class="font-weight-mormal font-size-lg timeline-content text-muted pl-3">Pengangkatan Pejabat Fungsional Ahli Utama melalui Promosi</div>
 															<!--end::Text-->
-														</div>
-														<!--end::Item-->
-														<!--begin::Item-->
-														<div class="timeline-item align-items-start">
-															<!--begin::Label-->
-															<div class="timeline-label font-weight-bolder text-dark-75 font-size-lg"><?php echo e($pemberhentian_jfku); ?></div>
-															<!--end::Label-->
-															<!--begin::Badge-->
-															<div class="timeline-badge">
-																<i class="fa fa-genderless text-success icon-lg"></i>
-															</div>
-															<!--end::Badge-->
-															<!--begin::Content-->
-															<div class="timeline-content d-flex">
-																<span class="font-weight-mormal font-size-lg timeline-content text-muted pl-3">Pemberhentian Pejabat Fungsional Keahlian Utama</span>
-															</div>
-															<!--end::Content-->
 														</div>
 														<!--end::Item-->
 														<!--begin::Item-->
@@ -74,11 +54,28 @@
 															<!--end::Label-->
 															<!--begin::Badge-->
 															<div class="timeline-badge">
+																<i class="fa fa-genderless text-success icon-lg"></i>
+															</div>
+															<!--end::Badge-->
+															<!--begin::Content-->
+															<div class="timeline-content d-flex">
+																<span class="font-weight-mormal font-size-lg timeline-content text-muted pl-3">Pengangkatan Pejabat Fungsional Ahli Utama melalui perpindahan dari jabatan lain</span>
+															</div>
+															<!--end::Content-->
+														</div>
+														<!--end::Item-->
+														<!--begin::Item-->
+														<div class="timeline-item align-items-start">
+															<!--begin::Label-->
+															<div class="timeline-label font-weight-bolder text-dark-75 font-size-lg"><?php echo e($pemberhentian_jfku); ?></div>
+															<!--end::Label-->
+															<!--begin::Badge-->
+															<div class="timeline-badge">
 																<i class="fa fa-genderless text-primary icon-lg"></i>
 															</div>
 															<!--end::Badge-->
 															<!--begin::Desc-->
-															<div class="font-weight-mormal font-size-lg timeline-content text-muted pl-3">Perpindahan Pejabat Fungsional Keahlian Utama</div>
+															<div class="font-weight-mormal font-size-lg timeline-content text-muted pl-3">Pemberhentian Pejabat Fungsional Keahlian Utama</div>
 															<!--end::Desc-->
 														</div>
 														<!--end::Item-->
@@ -96,27 +93,10 @@
 															</div>
 															<!--end::Badge-->
 															<!--begin::Text-->
-															<div class="font-weight-mormal font-size-lg timeline-content text-muted pl-3">Ralat Keppres Jabatan Fungsional Keahlian Utama</div>
+															<div class="font-weight-mormal font-size-lg timeline-content text-muted pl-3">Usulan Lainnya</div>
 															<!--end::Text-->
 														</div>
 														<!--end::Item-->
-														<!--begin::Item-->
-														
-														<!--end::Item-->
-														<!--begin::Item-->
-														<div class="timeline-item align-items-start">
-															<!--begin::Label-->
-															<div class="timeline-label font-weight-bolder text-dark-75 font-size-xs"><?php echo e($pembatalan_keppres_jfku); ?></div>
-															<!--end::Label-->
-															<!--begin::Badge-->
-															<div class="timeline-badge">
-																<i class="fa fa-genderless text-danger icon-lg"></i>
-															</div>
-															<!--end::Badge-->
-															<!--begin::Desc-->
-															<div class="font-weight-mormal font-size-lg timeline-content text-muted pl-3">Pembatalan Keppres Jabatan Fungsional Keahlian Utama</div>
-															<!--end::Desc-->
-														</div>
 															
 													</div>
 												</div>
@@ -167,7 +147,7 @@
 															</div>
 															<!--end::Badge-->
 															<!--begin::Desc-->
-															<div class="font-weight-mormal font-size-lg timeline-content text-muted pl-3">Pengesahan Kenaikan Pangkat</div>
+															<div class="font-weight-mormal font-size-lg timeline-content text-muted pl-3">Petikan Yang Hilang/Rusak</div>
 															<!--end::Desc-->
 														</div>
 														<!--end::Item-->
@@ -186,9 +166,6 @@
 															<!--end::Text-->
 														</div>
 														<!--end::Item-->
-														<!--begin::Item-->
-														<!--end::Item-->
-														<!--begin::Item-->
 													</div>
 												</div>
 												<div class="tab-pane fade" id="kt_tab_pane_1_3" role="tabpanel" aria-labelledby="kt_tab_pane_1_3">
@@ -354,6 +331,38 @@
 															<!--end::Badge-->
 															<!--begin::Desc-->
 															<div class="font-weight-mormal font-size-lg timeline-content text-muted pl-3">Petikan Keppres yang Hilang/Rusak</div>
+
+															<!--end::Desc-->
+														</div>
+														<!--end::Item-->
+														<!--begin::Item-->
+														<div class="timeline-item align-items-start">
+															<!--begin::Label-->
+															<div class="timeline-label font-weight-bolder text-dark-75 font-size-lg"><?php echo e($petikan_keppres_hilang); ?></div>
+															<!--end::Label-->
+															<!--begin::Badge-->
+															<div class="timeline-badge">
+																<i class="fa fa-genderless text-danger icon-lg"></i>
+															</div>
+															<!--end::Badge-->
+															<!--begin::Desc-->
+															<div class="font-weight-mormal font-size-lg timeline-content text-muted pl-3">Masa Persiapan Pensiun</div>
+
+															<!--end::Desc-->
+														</div>
+														<!--end::Item-->
+														<!--begin::Item-->
+														<div class="timeline-item align-items-start">
+															<!--begin::Label-->
+															<div class="timeline-label font-weight-bolder text-dark-75 font-size-lg"><?php echo e($petikan_keppres_hilang); ?></div>
+															<!--end::Label-->
+															<!--begin::Badge-->
+															<div class="timeline-badge">
+																<i class="fa fa-genderless text-danger icon-lg"></i>
+															</div>
+															<!--end::Badge-->
+															<!--begin::Desc-->
+															<div class="font-weight-mormal font-size-lg timeline-content text-muted pl-3">Permasalahan Kepegawaian Lainnya</div>
 
 															<!--end::Desc-->
 														</div>

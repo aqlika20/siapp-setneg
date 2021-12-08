@@ -191,7 +191,7 @@ class PemberhentianController extends Controller
                 'tanggal_prosess_penolakan' => Helper::convertDatetoDB($input['tanggal_prosess_penolakan']),
                 'alasan_penolakan' => $input['alasan_penolakan']
             ]);
-            return redirect()->route("koor-pokja.inbox.pemberhentian.index")->with(['danger'=>'Tolak Berhasil!']);
+            return redirect()->route("koor-pokja.inbox.pemberhentian.index")->with(['danger'=>'Tolak Success !!!']);
         }
     }
 
