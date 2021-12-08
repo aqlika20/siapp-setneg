@@ -63,6 +63,7 @@ class PengesahanKenaikanPangkatController extends Controller
             'no_surat_permohonan' => 'required',
             'jabatan_menandatangani' => 'required',
             'opsi' => 'required',
+            'file_surat_permohonan' => 'required',
 
             'file_surat_permohonan.*' => 'max:5000|mimes:jpg,png,jpeg,pdf',
             'file_surat_kehilangan.*' => 'max:5000|mimes:jpg,png,jpeg,pdf',

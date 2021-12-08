@@ -1484,6 +1484,118 @@
             }   
         }
 
+        $("#file_surat_usulan").on("change", function() {
+    if ($("#file_surat_usulan")[0].files.length > 5) {
+        alert('Hanya boleh upload 5 file!.');
+        $('#file_surat_usulan').val('');
+    }
+    });
+
+    $("#file_nota_usulan").on("change", function() {
+    if ($("#file_nota_usulan")[0].files.length > 5) {
+        alert('Hanya boleh upload 5 file!.');
+        $('#file_nota_usulan').val('');
+    }
+    });
+
+    $("#file_penetapan_kebutuhan_formasi").on("change", function() {
+    if ($("#file_penetapan_kebutuhan_formasi")[0].files.length > 5) {
+        alert('Hanya boleh upload 5 file!.');
+        $('#file_penetapan_kebutuhan_formasi').val('');
+    }
+    });
+
+    $("#file_ijazah").on("change", function() {
+    if ($("#file_ijazah")[0].files.length > 5) {
+        alert('Hanya boleh upload 5 file!.');
+        $('#file_ijazah').val('');
+    }
+    });
+
+    $("#file_pencantuman_gelar").on("change", function() {
+    if ($("#file_pencantuman_gelar")[0].files.length > 5) {
+        alert('Hanya boleh upload 5 file!.');
+        $('#file_pencantuman_gelar').val('');
+    }
+    });
+
+    $("#file_data_pak").on("change", function() {
+    if ($("#file_data_pak")[0].files.length > 5) {
+        alert('Hanya boleh upload 5 file!.');
+        $('#file_data_pak').val('');
+    }
+    });
+
+    $("#file_klarifikasi_pak").on("change", function() {
+    if ($("#file_klarifikasi_pak")[0].files.length > 5) {
+        alert('Hanya boleh upload 5 file!.');
+        $('#file_klarifikasi_pak').val('');
+    }
+    });
+
+    $("#file_data_jabatan_lama").on("change", function() {
+    if ($("#file_data_jabatan_lama")[0].files.length > 5) {
+        alert('Hanya boleh upload 5 file!.');
+        $('#file_data_jabatan_lama').val('');
+    }
+    });
+
+    $("#file_data_kompetensi").on("change", function() {
+    if ($("#file_data_kompetensi")[0].files.length > 5) {
+        alert('Hanya boleh upload 5 file!.');
+        $('#file_data_kompetensi').val('');
+    }
+    });
+
+    $("#file_data_rekomendasi").on("change", function() {
+    if ($("#file_data_rekomendasi")[0].files.length > 5) {
+        alert('Hanya boleh upload 5 file!.');
+        $('#file_data_rekomendasi').val('');
+    }
+    });
+
+    $("#file_surat_keterangan_menduduki_jabatan").on("change", function() {
+    if ($("#file_surat_keterangan_menduduki_jabatan")[0].files.length > 5) {
+        alert('Hanya boleh upload 5 file!.');
+        $('#file_surat_keterangan_menduduki_jabatan').val('');
+    }
+    });
+
+    $("#file_surat_keterangan_pengalaman").on("change", function() {
+    if ($("#file_surat_keterangan_pengalaman")[0].files.length > 5) {
+        alert('Hanya boleh upload 5 file!.');
+        $('#file_surat_keterangan_pengalaman').val('');
+    }
+    });
+
+    $("#file_sk_pangkat_terakhir").on("change", function() {
+    if ($("#file_sk_pangkat_terakhir")[0].files.length > 5) {
+        alert('Hanya boleh upload 5 file!.');
+        $('#file_sk_pangkat_terakhir').val('');
+    }
+    });
+
+    $("#file_penilaian_skp").on("change", function() {
+    if ($("#file_penilaian_skp")[0].files.length > 5) {
+        alert('Hanya boleh upload 5 file!.');
+        $('#file_penilaian_skp').val('');
+    }
+    });
+
+    $("#file_penilaian_prestasi").on("change", function() {
+    if ($("#file_penilaian_prestasi")[0].files.length > 5) {
+        alert('Hanya boleh upload 5 file!.');
+        $('#file_penilaian_prestasi').val('');
+    }
+    });
+
+    $("#file_skp_2_lainnya").on("change", function() {
+    if ($("#file_skp_2_lainnya")[0].files.length > 5) {
+        alert('Hanya boleh upload 5 file!.');
+        $('#file_skp_2_lainnya').val('');
+    }
+    });
+
     </script>
     <script>
         $(function(){

@@ -76,7 +76,7 @@ class DistributorController extends Controller
             $pengangkatans = KenaikanPangkat::where('id', '=', $id)->update(
                 ['group_id' => $input['group']]
             );
-            return redirect()->route('koor-pokja-kp.inbox.jfku.index')->with(['success'=>'Distribusi Group Berhasil!']);
+            return redirect()->route('koor-pokja-kp.inbox.kenaikan-pangkat.index')->with(['success'=>'Distribusi Group Success !!!']);
         }
     }
 
@@ -88,7 +88,7 @@ class DistributorController extends Controller
             $pengangkatans = KenaikanPangkat::where('id', '=', $id)->update(
                 ['distributor_id' => $input['distributor']]
             );
-            return redirect()->route('koor-pokja-kp.inbox.jfku.index')->with(['success'=>'Distribusi Perorangan Success !!!']);
+            return redirect()->route('koor-pokja-kp.inbox.kenaikan-pangkat.index')->with(['success'=>'Distribusi Perorangan Success !!!']);
         }
     }
 

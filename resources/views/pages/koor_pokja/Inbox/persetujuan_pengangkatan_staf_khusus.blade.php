@@ -441,6 +441,27 @@
             }   
         }
 
+        $("#file_surat_pengantar").on("change", function() {
+    if ($("#file_surat_pengantar")[0].files.length > 5) {
+        alert('Hanya boleh upload 5 file!.');
+        $('#file_surat_pengantar').val('');
+    }
+    });
+
+    $("#file_dhr").on("change", function() {
+    if ($("#file_dhr")[0].files.length > 5) {
+        alert('Hanya boleh upload 5 file!.');
+        $('#file_dhr').val('');
+    }
+    });
+
+    $("#file_dukumen_lain_pengangkatan_jabatan_lain").on("change", function() {
+    if ($("#file_dukumen_lain_pengangkatan_jabatan_lain")[0].files.length > 5) {
+        alert('Hanya boleh upload 5 file!.');
+        $('#file_dukumen_lain_pengangkatan_jabatan_lain').val('');
+    }
+    });
+
     </script>
     <script>
         $(function(){

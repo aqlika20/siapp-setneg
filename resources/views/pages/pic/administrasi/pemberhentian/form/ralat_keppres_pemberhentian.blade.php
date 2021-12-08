@@ -479,6 +479,27 @@
             }   
         }
 
+        $("#file_surat_permohonan").on("change", function() {
+    if ($("#file_surat_permohonan")[0].files.length > 5) {
+        alert('Hanya boleh upload 5 file!.');
+        $('#file_surat_permohonan').val('');
+    }
+    });
+
+    $("#file_data_dokumen_klarifikasi").on("change", function() {
+    if ($("#file_data_dokumen_klarifikasi")[0].files.length > 5) {
+        alert('Hanya boleh upload 5 file!.');
+        $('#file_data_dokumen_klarifikasi').val('');
+    }
+    });
+
+    $("#file_petikan_asli_sk_pensiun").on("change", function() {
+    if ($("#file_petikan_asli_sk_pensiun")[0].files.length > 5) {
+        alert('Hanya boleh upload 5 file!.');
+        $('#file_petikan_asli_sk_pensiun').val('');
+    }
+    });
+
     </script>
     <script>
         $(function(){

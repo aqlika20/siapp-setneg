@@ -503,6 +503,20 @@
             }   
         }
 
+        $("#file_data_usulan").on("change", function() {
+    if ($("#file_data_usulan")[0].files.length > 5) {
+        alert('Hanya boleh upload 5 file!.');
+        $('#file_data_usulan').val('');
+    }
+    });
+
+        $("#file_keppres_yang_dibatalkan").on("change", function() {
+    if ($("#file_keppres_yang_dibatalkan")[0].files.length > 5) {
+        alert('Hanya boleh upload 5 file!.');
+        $('#file_keppres_yang_dibatalkan').val('');
+    }
+    });
+
     </script>
     <script>
         $(function(){

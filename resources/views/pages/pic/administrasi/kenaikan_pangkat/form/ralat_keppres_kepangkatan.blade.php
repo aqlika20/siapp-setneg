@@ -294,6 +294,27 @@
             })
         })
 
+        $("#file_surat_permohonan").on("change", function() {
+    if ($("#file_surat_permohonan")[0].files.length > 5) {
+        alert('Hanya boleh upload 5 file!.');
+        $('#file_surat_permohonan').val('');
+    }
+    });
+
+    $("#file_dokumen_klarifikasi").on("change", function() {
+    if ($("#file_dokumen_klarifikasi")[0].files.length > 5) {
+        alert('Hanya boleh upload 5 file!.');
+        $('#file_dokumen_klarifikasi').val('');
+    }
+    });
+
+    $("#file_fotokopi_sk_diperbaiki").on("change", function() {
+    if ($("#file_fotokopi_sk_diperbaiki")[0].files.length > 5) {
+        alert('Hanya boleh upload 5 file!.');
+        $('#file_fotokopi_sk_diperbaiki').val('');
+    }
+    });
+
     </script>
     <script src="{{ asset('js/pages/custom/wizard/wizard-3.js') }}"></script>
     <script src="{{ asset('js/pages/crud/file-upload/dropzonejs.js') }}"></script>

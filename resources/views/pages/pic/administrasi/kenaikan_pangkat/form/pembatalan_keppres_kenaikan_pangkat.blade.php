@@ -304,6 +304,27 @@
             }   
         }
 
+        $("#file_keppres_dibatalkan").on("change", function() {
+    if ($("#file_keppres_dibatalkan")[0].files.length > 5) {
+        alert('Hanya boleh upload 5 file!.');
+        $('#file_keppres_dibatalkan').val('');
+    }
+    });
+
+    $("#file_alasan").on("change", function() {
+    if ($("#file_alasan")[0].files.length > 5) {
+        alert('Hanya boleh upload 5 file!.');
+        $('#file_alasan').val('');
+    }
+    });
+
+    $("#file_surat_permohonan").on("change", function() {
+    if ($("#file_surat_permohonan")[0].files.length > 5) {
+        alert('Hanya boleh upload 5 file!.');
+        $('#file_surat_permohonan').val('');
+    }
+    });
+
     </script>
     <script>
         $(function(){

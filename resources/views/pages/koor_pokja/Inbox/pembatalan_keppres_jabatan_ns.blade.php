@@ -431,6 +431,20 @@
             }   
         }
 
+        $("#file_ba_pelantikan").on("change", function() {
+    if ($("#file_ba_pelantikan")[0].files.length > 5) {
+        alert('Hanya boleh upload 5 file!.');
+        $('#file_ba_pelantikan').val('');
+    }
+    });
+
+    $("#file_sumpah_jabatan").on("change", function() {
+    if ($("#file_sumpah_jabatan")[0].files.length > 5) {
+        alert('Hanya boleh upload 5 file!.');
+        $('#file_sumpah_jabatan').val('');
+    }
+    });
+
     </script>
     <script>
         $(function(){

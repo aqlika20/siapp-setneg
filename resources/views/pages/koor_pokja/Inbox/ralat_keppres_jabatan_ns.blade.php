@@ -436,6 +436,27 @@
             }   
         }
 
+        $("#file_surat_pengantar").on("change", function() {
+    if ($("#file_surat_pengantar")[0].files.length > 5) {
+        alert('Hanya boleh upload 5 file!.');
+        $('#file_surat_pengantar').val('');
+    }
+    });
+
+    $("#file_keppres").on("change", function() {
+    if ($("#file_keppres")[0].files.length > 5) {
+        alert('Hanya boleh upload 5 file!.');
+        $('#file_keppres').val('');
+    }
+    });
+
+    $("#file_bukti_pendukung").on("change", function() {
+    if ($("#file_bukti_pendukung")[0].files.length > 5) {
+        alert('Hanya boleh upload 5 file!.');
+        $('#file_bukti_pendukung').val('');
+    }
+    });
+
     </script>
     <script>
         $(function(){
