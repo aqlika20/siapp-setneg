@@ -137,7 +137,7 @@ class VerifikasiController extends Controller
                 'tanggal_prosess_penolakan' => Helper::convertDatetoDB($input['tanggal_prosess_penolakan']),
                 'alasan_penolakan' => $input['alasan_penolakan']
             ]);
-            return redirect()->route("jf-ahli-pensiun.inbox.index")->with(['danger'=>'Tolak Berhasil!']);
+            return redirect()->route("jf-ahli-pensiun.inbox.index")->with(['danger'=>'Tolak Success !!!']);
         }
     }
 
