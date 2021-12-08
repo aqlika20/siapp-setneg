@@ -1,8 +1,8 @@
-{{-- Extends layout --}}
-@extends('layout.default')
 
-{{-- Content --}}
-@section('content')
+
+
+
+<?php $__env->startSection('content'); ?>
 
     <!--begin::Content-->
     <div class="content d-flex flex-column flex-column-fluid" id="kt_content">	
@@ -13,7 +13,7 @@
                 <div class="card card-custom">
                     <div class="card-header flex-wrap border-0 pt-6 pb-0" style="background-color: #FFA800;">
                         <div class="card-title">
-                            <h3 class="card-label">Ralat Keppres Jabatan Non Struktural
+                            <h3 class="card-label">Pengangkatan Pejabat Non Struktural 
                             <span class="d-block text-muted pt-2 font-size-sm"></span></h3>
                         </div>
                     </div>
@@ -23,39 +23,38 @@
                             <!--begin: Wizard Nav-->
                             <div>
                                 <div data-wizard-type="step" data-wizard-state="current"></div>
-                                <div data-wizard-type="step"></div>
-                                <div data-wizard-type="step"></div>
+                                <div data-wizard-type="step"></div>																				
                             </div>
                             <!--end: Wizard Nav-->
                             <!--begin: Wizard Body-->
                             <div class="row justify-content-center py-10 px-8 py-lg-12 px-lg-10">
                                 <div class="col-xl-20 col-xxl-12">
                                     <!--begin: Wizard Form-->
-                                    <form class="form" id="kt_form" action="{{ route('koor-pokja.inbox.ralat-keppres-jabatan-ns.store') }}" enctype="multipart/form-data" method="POST">
-                                        @csrf
-                                        @method('PATCH')
+                                    <form class="form" id="kt_form" action="<?php echo e(route('koor-pokja.inbox.pengangkatan-pejabat-ns.store')); ?>" enctype="multipart/form-data" method="POST">
+                                        <?php echo csrf_field(); ?>
+                                        <?php echo method_field('PATCH'); ?>
                                         <!--begin: Wizard Step 1-->
                                         <div class="pb-6" style="margin-left: 50px; margin-right: 50px;" data-wizard-type="step-content" data-wizard-state="current">
                                             <h4 class="mb-10 font-weight-bold text-dark">Data Surat</h4>
                                             <!--begin::Input-->
                                             <div class="form-group row">
+                                                <label class="col-form-label col-lg-3 col-sm-12">No. Surat Pengantar <a style="color: #FF0000;">*</a></label>
+                                                <div class="col-lg-9 col-md-9 col-sm-12">
+                                                    <div class="input-group">
+                                                        <input type="text" class="form-control" id="no_surat_pengantar" name="no_surat_pengantar" value="<?php echo e(old('no_surat_pengantar')); ?>" autocomplete="off" required/>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="form-group row">
                                                 <label class="col-form-label col-lg-3 col-sm-12">Tanggal Surat Pengantar <a style="color: #FF0000;">*</a></label>
                                                 <div class="col-lg-5 col-md-9 col-sm-12">
                                                     <div class="input-group date">
-                                                        <input type="text" class="form-control datetimepicker-input my-datepicker" id="tanggal_surat_pengantar" name="tanggal_surat_pengantar" data-toggle="datetimepicker" data-target="#tanggal_surat_pengantar" placeholder="Pilih Tanggal" value="{{old('tanggal_surat_pengantar')}}" required/>
+                                                        <input type="text" class="form-control datetimepicker-input my-datepicker" id="tanggal_surat_pengantar" name="tanggal_surat_pengantar" data-toggle="datetimepicker" data-target="#tanggal_surat_pengantar" placeholder="Pilih Tanggal" value="<?php echo e(old('tanggal_surat_pengantar')); ?>" required/>
                                                         <div class="input-group-append">
                                                             <span class="input-group-text">
                                                                 <i class="la la-calendar"></i>
                                                             </span>
                                                         </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="form-group row">
-                                                <label class="col-form-label col-lg-3 col-sm-12">No. Surat Pengantar <a style="color: #FF0000;">*</a></label>
-                                                <div class="col-lg-9 col-md-9 col-sm-12">
-                                                    <div class="input-group">
-                                                        <input type="text" class="form-control" id="no_surat_pengantar" name="no_surat_pengantar" value="{{old('no_surat_pengantar')}}" autocomplete="off" required/>
                                                     </div>
                                                 </div>
                                             </div>
@@ -106,93 +105,114 @@
                                         <!--end: Wizard Step 1-->
 
                                         <!--begin: Wizard Step 2-->
-                                        <div class="pb-6" style="margin-left: 50px; margin-right: 50px;" data-wizard-type="step-content" data-wizard-state="current">
-                                            <h4 class="mb-10 font-weight-bold text-dark">Data Keppres</h4>
+                                        <div class="pb-6" style="margin-left: 50px; margin-right: 50px;" data-wizard-type="step-content">
                                             <!--begin::Input-->
                                             <div class="form-group row">
-                                                <label class="col-form-label col-lg-3 col-sm-12">No. Keppres <a style="color: #FF0000;">*</a></label>
+                                                <label class="col-form-label col-lg-3 col-sm-12">LNS yang akan diisi <a style="color: #FF0000;">*</a></label>
                                                 <div class="col-lg-9 col-md-9 col-sm-12">
-                                                    <div class="input-group">
-                                                        <input type="text" class="form-control" id="no_keppres" name="no_keppres" value="{{old('no_keppres')}}" autocomplete="off" required/>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="form-group row">
-                                                <label class="col-form-label col-lg-3 col-sm-12">Tanggal Keppres <a style="color: #FF0000;">*</a></label>
-                                                <div class="col-lg-5 col-md-9 col-sm-12">
                                                     <div class="input-group date">
-                                                        <input type="text" class="form-control datetimepicker-input my-datepicker" id="tanggal_keppres" name="tanggal_keppres" data-toggle="datetimepicker" data-target="#tanggal_keppres" placeholder="Pilih Tanggal" value="{{old('tanggal_surat_pengantar')}}" required/>
-                                                        <div class="input-group-append">
-                                                            <span class="input-group-text">
-                                                                <i class="la la-calendar"></i>
-                                                            </span>
-                                                        </div>
+                                                        <input type="text" class="form-control" id="lns" name="lns" value="<?php echo e(old('lns')); ?>" autocomplete="off" required/>
                                                     </div>
-                                                </div>
-                                            </div>
-                                            
-                                            <div class="form-group row">
-                                                <label class="col-lg-3 col-form-label">Upload Keppres <a style="color: #FF0000;">*</a></label>
-                                                <div class="col-lg-9">
-                                                    <input id="file_keppres" name="file_keppres[]" accept=".jpg,.jpeg,.png,.pdf" type="file" class="file" data-show-preview="false" multiple/>
-                                                    
-                                                    <!-- <div class="dropzone dropzone-multi" id="kt_dropzone_4">
-                                                        <div class="dropzone-panel mb-lg-0 mb-2">
-                                                            <a class="dropzone-select btn btn-light-primary font-weight-bold btn-sm">Attach files</a>
-                                                            <a class="dropzone-upload btn btn-light-primary font-weight-bold btn-sm">Upload All</a>
-                                                            <a class="dropzone-remove-all btn btn-light-primary font-weight-bold btn-sm">Remove All</a>
-                                                        </div>
-                                                        <div class="dropzone-items">
-                                                            <div class="dropzone-item" style="display:none">
-                                                                <div class="dropzone-file">
-                                                                    <div class="dropzone-filename" title="some_image_file_name.jpg">
-                                                                        <span data-dz-name="">some_image_file_name.jpg</span>
-                                                                        <strong>(<span data-dz-size="">340kb</span>)</strong>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="dropzone-progress">
-                                                                    <div class="progress">
-                                                                        <div class="progress-bar bg-primary" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" data-dz-uploadprogress=""></div>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="dropzone-toolbar">
-                                                                    <span class="dropzone-start">
-                                                                        <i class="flaticon2-arrow"></i>
-                                                                    </span>
-                                                                    <span class="dropzone-cancel" data-dz-remove="" style="display: none;">
-                                                                        <i class="flaticon2-cross"></i>
-                                                                    </span>
-                                                                    <span class="dropzone-delete" data-dz-remove="">
-                                                                        <i class="flaticon2-cross"></i>
-                                                                    </span>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div> -->
-                                                    <span class="form-text text-muted">Format file harus berbentuk jpg, png, jpeg, pdf, batas size file 1 MB dan file tidak boleh lebih dari 5 file</span>
                                                 </div>
                                             </div>
                                             <!--end::Input-->
                                             
-                                        </div>
-                                        <!--end: Wizard Step 2-->
-
-                                        <!--begin: Wizard Step 3-->
-                                        <div class="pb-6" style="margin-left: 50px; margin-right: 50px;" data-wizard-type="step-content" data-wizard-state="current">
-                                            <h4 class="mb-10 font-weight-bold text-dark">Ralat</h4>
                                             <!--begin::Input-->
                                             <div class="form-group row">
-                                                <label class="col-form-label col-lg-3 col-sm-12">Alasan Ralat <a style="color: #FF0000;">*</a></label>
-                                                <div class="col-lg-9 col-md-9 col-sm-12">
-                                                    <div class="input-group">
-                                                        <input type="text" class="form-control" id="alasan_ralat" name="alasan_ralat" value="{{old('alasan_ralat')}}" autocomplete="off" required/>
+                                                <label class="col-form-label col-lg-3 col-sm-12">Unsur <a style="color: #FF0000;">*</a></label>
+                                                <div class="col-lg-3 col-md-9 col-sm-12">
+                                                    <select class="form-control select2" style="width: 230px;" id="unsur" name="unsur">
+                                                        <option value="">Choose</option>
+                                                        <?php $__currentLoopData = $unsurs; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $unsur): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                                        <option value="<?php echo e($unsur->id); ?>" <?php echo e(old('unsur') == $unsur->id ? 'selected' : ''); ?>><?php echo e($unsur->nama); ?></option>
+                                                        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                                                    </select>
+                                                    <!-- <div class="input-group date">
+                                                        <select class="custom-select form-control" id="seeAnotherField">
+                                                            <option selected>pilih golongan</option>
+                                                            <option value="1">Golongan 1</option>
+                                                            <option value="2">Golongan 2</option>
+                                                            <option value="3">Golongan 3</option>
+                                                        </select>
+                                                    </div> -->
+                                                </div>
+                                                <div class="col-lg-3 col-md-9 col-sm-12" id="unsur_non">
+                                                    <select class="form-control select2" style="width: 230px;" id="unsur_non_pemerintah" name="unsur_non_pemerintah">
+                                                        <option value="">Choose</option>
+                                                        <?php $__currentLoopData = $unsur_nons; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $unsur_non): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                                            <option value="<?php echo e($unsur_non->id); ?>" <?php echo e(old('unsur_non') == $unsur_non->id ? 'selected' : ''); ?>><?php echo e($unsur_non->nama); ?></option>
+                                                        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                                                        <option value="0" <?php echo e(old('unsur_non') ? 'selected' : ''); ?>>Lainnya</option>
+                                                    </select>
+                                                </div>
+                                                
+                                            </div>
+                                            <!--end::Input-->
+                                            <!--begin::Input-->
+                                            <div class="form-group row" style="margin-left: 25%;" id="tambah_unsur">
+                                                <label class="col-form-label col-lg-3 col-sm-12">Tambah Unsur Non Pemerintah <a style="color: #FF0000;">*</a></label>
+                                                <div class="col-lg-3 col-md-9 col-sm-12">
+                                                    <div class="input-group date">
+                                                        <input type="text" class="form-control" id="tambah_unsur_non_pemerintah" name="tambah_unsur_non_pemerintah" value="<?php echo e(old('tambah_unsur_non_pemerintah')); ?>" autocomplete="off" required/>
                                                     </div>
                                                 </div>
                                             </div>
+
                                             <div class="form-group row">
-                                                <label class="col-lg-3 col-form-label">Upload Bukti Pendukung <a style="color: #FF0000;">*</a></label>
+                                                <label class="col-form-label col-lg-3 col-sm-12">NIP <a style="color: #FF0000;">*</a></label>
+                                                <div class="col-lg-9 col-md-9 col-sm-12">
+                                                    <div class="input-group date">
+                                                        <input type="number" pattern="[0-9]+([\.,][0-9]+)?" maxlength="18"  class="form-control" id="nip" name="nip" value="<?php echo e(old('nip')); ?>" autocomplete="off" required/>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!--end::Input-->
+                                            <!--begin::Input-->
+                                            <div class="form-group row">
+                                                <label class="col-form-label col-lg-3 col-sm-12">Nama <a style="color: #FF0000;">*</a></label>
+                                                <div class="col-lg-9 col-md-9 col-sm-12">
+                                                    <div class="input-group date">
+                                                        <input type="text"  class="form-control" id="nama" name="nama" value="<?php echo e(old('nama')); ?>" autocomplete="off" required/>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!--end::Input-->
+                                            <!--begin::Input-->
+                                            <div class="form-group row">
+                                                <label class="col-form-label col-lg-3 col-sm-12">Instansi <a style="color: #FF0000;">*</a></label>
+                                                <div class="col-lg-9 col-md-9 col-sm-12">
+                                                    <div class="input-group date">
+                                                        <input type="text"  class="form-control" id="instansi" name="instansi" value="<?php echo e(old('instansi')); ?>" autocomplete="off" required/>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!--end::Input-->
+                                            <!--begin::Input-->
+                                            <div class="form-group row">
+                                                <label class="col-form-label col-lg-3 col-sm-12">Jabatan Yang Akan Diangkat / Diberhentikan <a style="color: #FF0000;">*</a></label>
+                                                <div class="col-lg-9 col-md-9 col-sm-12">
+                                                    <select class="form-control select2" style="width: 230px;" id="jabatan" name="jabatan">
+                                                        <option value="">Choose</option>
+                                                        <?php $__currentLoopData = $jabatans; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $jabatan): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                                            <option value="<?php echo e($jabatan->id); ?>" <?php echo e(old('jabatan') == $jabatan->id ? 'selected' : ''); ?>><?php echo e($jabatan->nama); ?></option>
+                                                        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                                                    </select>
+                                                    <!-- <div class="input-group date">
+                                                        <select class="custom-select form-control" id="seeAnotherField">
+                                                            <option selected>pilih golongan</option>
+                                                            <option value="1">Golongan 1</option>
+                                                            <option value="2">Golongan 2</option>
+                                                            <option value="3">Golongan 3</option>
+                                                        </select>
+                                                    </div> -->
+                                                </div>
+                                            </div>
+                                            <!--end::Input-->
+                                            <!--begin::Input-->
+                                            <div class="form-group row">
+                                                <label class="col-lg-3 col-form-label">Upload DRH <a style="color: #FF0000;">*</a></label>
                                                 <div class="col-lg-9">
-                                                    <input id="file_bukti_pendukung" name="file_bukti_pendukung[]" accept=".jpg,.jpeg,.png,.pdf" type="file" class="file" data-show-preview="false" multiple/>
+                                                    <input id="file_dhr" name="file_dhr[]" accept=".jpg,.jpeg,.png,.pdf" type="file" class="file" data-show-preview="false" multiple/>
                                                     
                                                     <!-- <div class="dropzone dropzone-multi" id="kt_dropzone_4">
                                                         <div class="dropzone-panel mb-lg-0 mb-2">
@@ -231,6 +251,50 @@
                                                 </div>
                                             </div>
                                             <!--end::Input-->
+                                            <!--begin::Input-->
+                                            <div class="form-group row">
+                                                <label class="col-lg-3 col-form-label">Upload Dokumen Lainnya <a style="color: #FF0000;">*</a></label>
+                                                <div class="col-lg-9">
+                                                    <input id="file_dukumen_lain_pengangkatan_ns" name="file_dukumen_lain_pengangkatan_ns[]" accept=".jpg,.jpeg,.png,.pdf" type="file" class="file" data-show-preview="false" multiple/>
+                                                    
+                                                    <!-- <div class="dropzone dropzone-multi" id="kt_dropzone_4">
+                                                        <div class="dropzone-panel mb-lg-0 mb-2">
+                                                            <a class="dropzone-select btn btn-light-primary font-weight-bold btn-sm">Attach files</a>
+                                                            <a class="dropzone-upload btn btn-light-primary font-weight-bold btn-sm">Upload All</a>
+                                                            <a class="dropzone-remove-all btn btn-light-primary font-weight-bold btn-sm">Remove All</a>
+                                                        </div>
+                                                        <div class="dropzone-items">
+                                                            <div class="dropzone-item" style="display:none">
+                                                                <div class="dropzone-file">
+                                                                    <div class="dropzone-filename" title="some_image_file_name.jpg">
+                                                                        <span data-dz-name="">some_image_file_name.jpg</span>
+                                                                        <strong>(<span data-dz-size="">340kb</span>)</strong>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="dropzone-progress">
+                                                                    <div class="progress">
+                                                                        <div class="progress-bar bg-primary" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" data-dz-uploadprogress=""></div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="dropzone-toolbar">
+                                                                    <span class="dropzone-start">
+                                                                        <i class="flaticon2-arrow"></i>
+                                                                    </span>
+                                                                    <span class="dropzone-cancel" data-dz-remove="" style="display: none;">
+                                                                        <i class="flaticon2-cross"></i>
+                                                                    </span>
+                                                                    <span class="dropzone-delete" data-dz-remove="">
+                                                                        <i class="flaticon2-cross"></i>
+                                                                    </span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div> -->
+                                                    <span class="form-text text-muted">Format file harus berbentuk jpg, png, jpeg, pdf, batas size file 1 MB dan file tidak boleh lebih dari 5 file</span>
+                                                </div>
+                                            </div>
+                                            <!--end::Input-->
+                                            
                                             <div class="form-group row">
                                                 <label class="col-form-label col-lg-3 col-sm-12"></label>
                                                 <div class="col-lg-9 col-md-9 col-sm-12">
@@ -242,20 +306,21 @@
                                                     </div>
                                                     <div style="margin-bottom:10px;">
                                                         <label class="checkbox checkbox-outline checkbox-outline-2x checkbox-primary">
-                                                            <input type="checkbox" id="checked_file_keppres" disabled/>
-                                                            <span></span><div style="margin-left: 10px;">File Keppres</div>
+                                                            <input type="checkbox" id="checked_file_dhr" disabled/>
+                                                            <span></span><div style="margin-left: 10px;">File DRH</div>
                                                         </label>
                                                     </div>
                                                     <div style="margin-bottom:10px;">
                                                         <label class="checkbox checkbox-outline checkbox-outline-2x checkbox-primary">
-                                                            <input type="checkbox" id="checked_file_bukti_pendukung" disabled/>
-                                                            <span></span><div style="margin-left: 10px;">File Bukti Pendukung</div>
+                                                            <input type="checkbox" id="checked_file_dukumen_lain_pengangkatan_ns" disabled/>
+                                                            <span></span><div style="margin-left: 10px;">File Dokumen Lainnya</div>
                                                         </label>
                                                     </div>
                                                 </div>
                                             </div>
+
                                         </div>
-                                        <!--end: Wizard Step 3-->
+                                        <!--end: Wizard Step 2-->
 
                                         <div class="d-flex justify-content-between mt-5 pt-10" style="margin-left: 50px; margin-right: 50px;">
                                             <div class="mr-2">
@@ -276,7 +341,7 @@
                         <!--end: Wizard-->                      
                     </div>
                     <div class="modal-footer">
-                        <a href="{{ route('koor-pokja.inbox.lns.index') }}"type="button" class="btn btn-light-danger font-weight-bold">Batalkan</a>
+                        <a href="<?php echo e(route('koor-pokja.inbox.lns.index')); ?>"type="button" class="btn btn-light-danger font-weight-bold">Batalkan</a>
                     </div>
                 </div>
             </div>
@@ -284,20 +349,20 @@
         </div>
     </div>
 				
-@endsection
+<?php $__env->stopSection(); ?>
 
-{{-- Styles Section --}}
-@section('styles')
+
+<?php $__env->startSection('styles'); ?>
 <style>
     td {  
         background-color: #86dcec;    
         
     }
 </style>
-@endsection
+<?php $__env->stopSection(); ?>
 
-{{-- Scripts Section --}}
-@section('scripts')
+
+<?php $__env->startSection('scripts'); ?>
     <script>
         $(document).ready(function () {
             $("#file_surat_pengantar").on("change", function () {
@@ -308,23 +373,24 @@
                 }
             });
 
-            $("#file_keppres").on("change", function () {
-                if ($('#file_keppres')[0].files.length != 0) {
-                    $("#checked_file_keppres").attr('checked', true);
+            $("#file_dhr").on("change", function () {
+                if ($('#file_dhr')[0].files.length != 0) {
+                    $("#checked_file_dhr").attr('checked', true);
                 } else {
-                    $("#checked_file_keppres").attr('checked',false);
+                    $("#checked_file_dhr").attr('checked',false);
                 }
             });
 
-            $("#file_bukti_pendukung").on("change", function () {
-                if ($('#file_bukti_pendukung')[0].files.length != 0) {
-                    $("#checked_file_bukti_pendukung").attr('checked', true);
+            $("#file_dukumen_lain_pengangkatan_ns").on("change", function () {
+                if ($('#file_dukumen_lain_pengangkatan_ns')[0].files.length != 0) {
+                    $("#checked_file_dukumen_lain_pengangkatan_ns").attr('checked', true);
                 } else {
-                    $("#checked_file_bukti_pendukung").attr('checked',false);
+                    $("#checked_file_dukumen_lain_pengangkatan_ns").attr('checked',false);
                 }
             });
 
         });
+
 
         $('.my-datepicker').datetimepicker({
             useCurrent:false,
@@ -339,94 +405,29 @@
             placeholder: "Choose..."
         })
 
-        function applyTimePicker(type, id, date){
-            switch(type){
-                case 'min':
-                    $(id).datetimepicker('minDate', date);
-                    break;
-                case 'max':
-                    $(id).datetimepicker('maxDate', date);
-                    break;
-            }
-        }
-
-        function renewDate(type, date){
-            var new_date = null;
-            switch(type){
-                case 'min':
-                    new_date = moment(date).add(1, "days");
-                    break;
-                case 'max':
-                    new_date = moment(date).subtract(1, "days");
-                    break;
-            }
-
-            return new_date;
-        }
-
-        $('#hahaha').hide();
-        $("#masa_jabatan_end").on('change.datetimepicker', function(e) {
-            if (e.date == null) {
-            $('#hahaha').hide();
-            } else {
-            $('#hahaha').show();
-            }
-        });
         
-        $('#kurang_enam').hide();
-        $("#masa_jabatan_end").on('change.datetimepicker', function(e) {
-            if (e.date == null) {
-            $('#kurang_enam').hide();
+
+        $('#unsur_non').hide();
+
+        $("#unsur").change(function() {
+            if ($(this).val() == "2") {
+            $('#unsur_non').show();
             } else {
-            $('#kurang_enam').show();
+            $('#unsur_non').hide();
             }
         });
+        $("#unsur").trigger("change");
 
-        $("#tanggal_keppres").on('change.datetimepicker', function(e) {
-            var data = e.date.format('DD/MMM/YYYY');
-            document.getElementById("tmt").value = data;
+        $('#tambah_unsur').hide();
+
+        $("#unsur_non_pemerintah").change(function() {
+            if ($(this).val() == "0") {
+            $('#tambah_unsur').show();
+            } else {
+            $('#tambah_unsur').hide();
+            }
         });
-
-
-        $('#masa_jabatan_start, #masa_jabatan_end').on('change.datetimepicker', function(e) {
-            if(e.date){
-                var min_date = renewDate('min', e.date);
-                applyTimePicker('min', '#masa_jabatan_end', min_date);
-            }
-            var date_start = new Date(document.getElementById("masa_jabatan_start").value);
-            var date_start_day = date_start.getDate();
-            var date_start_month = date_start.getMonth();
-            var date_start_year = date_start.getFullYear();
-
-            var date_end = new Date(document.getElementById("masa_jabatan_end").value);
-            var date_end_day = date_end.getDate();
-            var date_end_month = date_end.getMonth();
-            var date_end_year = date_end.getFullYear();
-            
-            var calculated_date = 0;
-            if(date_end_month > date_start_month) 
-            {
-                calculated_date = date_end_year - date_start_year;
-            }
-            else
-            { 
-                calculated_date = date_end_year - date_start_year;
-            }
-
-
-            var out_value = calculated_date;
-            document.getElementById("masa").innerHTML = out_value + ' Tahun';
-            getdatadate(date_end);
-            
-
-
-        });
-
-        function getdatadate(date){
-            date.setMonth(date.getMonth() - 6);
-            console.log('hahaha', date);
-            document.getElementById("enam_bulan").innerHTML =  moment(date).format("DD/MMM/YYYY") ;
-        }
+        $("#tambah_unsur").trigger("change");
 
         function confirmation(){
             if(confirm('are you sure?')){
@@ -435,27 +436,6 @@
                 return false;
             }   
         }
-
-        $("#file_surat_pengantar").on("change", function() {
-    if ($("#file_surat_pengantar")[0].files.length > 5) {
-        alert('Hanya boleh upload 5 file!.');
-        $('#file_surat_pengantar').val('');
-    }
-    });
-
-    $("#file_keppres").on("change", function() {
-    if ($("#file_keppres")[0].files.length > 5) {
-        alert('Hanya boleh upload 5 file!.');
-        $('#file_keppres').val('');
-    }
-    });
-
-    $("#file_bukti_pendukung").on("change", function() {
-    if ($("#file_bukti_pendukung")[0].files.length > 5) {
-        alert('Hanya boleh upload 5 file!.');
-        $('#file_bukti_pendukung').val('');
-    }
-    });
 
     </script>
     <script>
@@ -469,18 +449,18 @@
                     file_surat_pengantar: {
                         extenstion: "pdf"
                     },
-
-                    no_keppres: 'required',
-                    tanggal_keppres: 'required',
-                    file_keppres: {
-                        extenstion: "pdf"
-                    },
-
-                    alasan_ralat: 'required',
-                    file_bukti_pendukung: {
+                    lns: 'required',
+                    unsur: 'required',
+                    nip: 'required',
+                    nama: 'required',
+                    instansi: 'required',
+                    jabatan: 'required',
+                    file_dhr: {
                         extenstion: "pdf"
                     }
-
+                    file_dukumen_lain_pengangkatan_ns: {
+                        extenstion: "pdf"
+                    }
                 },
                 submitHandler:function(form){
                     form.submit();
@@ -489,7 +469,8 @@
         })
 
     </script>
-    <script src="{{ asset('js/pages/custom/wizard/wizard-3.js') }}"></script>
-    <script src="{{ asset('js/pages/crud/file-upload/dropzonejs.js') }}"></script>
-    <script src="{{ asset('js/pages/crud/ktdatatable/base/html-table.js') }}" type="text/javascript"></script>
-@endsection
+    <script src="<?php echo e(asset('js/pages/custom/wizard/wizard-3.js')); ?>"></script>
+    <script src="<?php echo e(asset('js/pages/crud/file-upload/dropzonejs.js')); ?>"></script>
+    <script src="<?php echo e(asset('js/pages/crud/ktdatatable/base/html-table.js')); ?>" type="text/javascript"></script>
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('layout.default', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\Users\ardim\Desktop\siapp2\siapp\resources\views/pages/koor_pokja/inbox/pengangkatan_pejabat_ns.blade.php ENDPATH**/ ?>

@@ -210,7 +210,7 @@
                                             <!--end::Input-->
                                             <!--begin::Input-->
                                             <div class="form-group row">
-                                                <label class="col-lg-3 col-form-label">Upload DRH <a style="color: #FF0000;">*</a></label>
+                                                <label class="col-lg-3 col-form-label">Upload DHR <a style="color: #FF0000;">*</a></label>
                                                 <div class="col-lg-9">
                                                     <input id="file_dhr" name="file_dhr[]" accept=".jpg,.jpeg,.png,.pdf" type="file" class="file" data-show-preview="false" multiple/>
                                                     
@@ -436,6 +436,27 @@
                 return false;
             }   
         }
+
+        $("#file_surat_pengantar").on("change", function() {
+    if ($("#file_surat_pengantar")[0].files.length > 5) {
+        alert('Hanya boleh upload 5 file!.');
+        $('#file_surat_pengantar').val('');
+    }
+    });
+
+    $("#file_dhr").on("change", function() {
+    if ($("#file_dhr")[0].files.length > 5) {
+        alert('Hanya boleh upload 5 file!.');
+        $('#file_dhr').val('');
+    }
+    });
+
+    $("#file_dukumen_lain_pengangkatan_ns").on("change", function() {
+    if ($("#file_dukumen_lain_pengangkatan_ns")[0].files.length > 5) {
+        alert('Hanya boleh upload 5 file!.');
+        $('#file_dukumen_lain_pengangkatan_ns').val('');
+    }
+    });
 
     </script>
     <script>

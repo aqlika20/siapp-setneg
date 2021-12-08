@@ -1008,6 +1008,62 @@
             }   
         }
 
+        $("#Upload Surat Usulan").on("change", function() {
+    if ($("#Upload Surat Usulan")[0].files.length > 5) {
+        alert('Hanya boleh upload 5 file!.');
+        $('#Upload Surat Usulan').val('');
+    }
+    });
+
+    $("#file_nota_usulan").on("change", function() {
+    if ($("#file_nota_usulan")[0].files.length > 5) {
+        alert('Hanya boleh upload 5 file!.');
+        $('#file_nota_usulan').val('');
+    }
+    });
+
+    $("#file_data_pak").on("change", function() {
+    if ($("#file_data_pak")[0].files.length > 5) {
+        alert('Hanya boleh upload 5 file!.');
+        $('#file_data_pak').val('');
+    }
+    });
+
+    $("#file_klarifikasi_pak").on("change", function() {
+    if ($("#file_klarifikasi_pak")[0].files.length > 5) {
+        alert('Hanya boleh upload 5 file!.');
+        $('#file_klarifikasi_pak').val('');
+    }
+    });
+
+    $("#file_keppres_pengangkatan").on("change", function() {
+    if ($("#file_keppres_pengangkatan")[0].files.length > 5) {
+        alert('Hanya boleh upload 5 file!.');
+        $('#file_keppres_pengangkatan').val('');
+    }
+    });
+
+    $("#file_ba_pengambilan_sumpah_fungsional").on("change", function() {
+    if ($("#file_ba_pengambilan_sumpah_fungsional")[0].files.length > 5) {
+        alert('Hanya boleh upload 5 file!.');
+        $('#file_ba_pengambilan_sumpah_fungsional').val('');
+    }
+    });
+
+    $("#file_sk_pangkat_terakhir").on("change", function() {
+    if ($("#file_sk_pangkat_terakhir")[0].files.length > 5) {
+        alert('Hanya boleh upload 5 file!.');
+        $('#file_sk_pangkat_terakhir').val('');
+    }
+    });
+
+    $("#file_pendukung_pemberhentian").on("change", function() {
+    if ($("#file_pendukung_pemberhentian")[0].files.length > 5) {
+        alert('Hanya boleh upload 5 file!.');
+        $('#file_pendukung_pemberhentian').val('');
+    }
+    });
+
     </script>
     <script>
         $(function(){
