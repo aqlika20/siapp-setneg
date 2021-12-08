@@ -42,8 +42,7 @@ class UserManagementController extends Controller
             'name' => 'required',
             'nip' => 'required|max:18',
             'password' => 'required|confirmed',
-            'role' => 'required',
-            'group' => 'required'
+            'role' => 'required'
         ]);
         
         // dd($validator->fails());
@@ -66,7 +65,7 @@ class UserManagementController extends Controller
             'name' =>$input['name'],
             'nip' => $input['nip'],
             'password' => $input['password'],
-            'role' => $input['role'],
+            'roles_id' => $input['role'],
             'groups_id' => $input['group'],
             'remember_token'=>$input['remember_token']
             
@@ -80,10 +79,13 @@ class UserManagementController extends Controller
         $page_title = 'Administrator | User Management';
         $page_description = 'Edit User';
         $user = UserManagement::find($id);
+        $roles = Role::All();
+        $groups = Group::All();
+
         if (!$user) {
             return redirect()->route('administrator.user-management.index')->with(['error'=>'Parameter id tidak valid.']);
         }
-        return view('pages.administrator.user_management_edit', compact('page_title', 'page_description', 'currentUser', 'user'));
+        return view('pages.administrator.user_management_edit', compact('page_title', 'page_description', 'currentUser', 'user', 'roles', 'groups'));
     }
 
     public function edit($id, Request $request)
@@ -92,9 +94,10 @@ class UserManagementController extends Controller
 
         $validator = Validator::make($data, [
             'name' => 'required',
+            'nip' => 'required',
             'password' => 'nullable',
             'role' => 'required',
-            'group' => 'required'
+            'group' => 'nullable'
         ]);
 
         if ($validator->fails())
@@ -116,6 +119,7 @@ class UserManagementController extends Controller
         }
 
         $user->name = $data['name'];
+        $user->nip = $data['nip'];
         $user->roles_id = $data['role'];
         $user->groups_id = $data['group'];
         if (!empty(trim($data['password']))) {

@@ -431,7 +431,7 @@
                 </li>
             @endif
  
-            {{-- JF AHLI KP --}}
+{{-- JF AHLI KP --}}
             @if ($currentUser->roles_id == 10)
                 <li class="menu-item {{ (strpos($page_title, 'JF Muda Madya | Dashboard') !== false) ? 'menu-item-active' : '' }}" aria-haspopup="true">
                     <a href="{{ route('jf-ahli-kp.home.index') }}" class="menu-link ">
@@ -663,8 +663,8 @@
                             <li class="menu-item {{ (strpos($page_title, 'KemenSetneg | Inbox | Surat Usulan') !== false) ? 'menu-item-active' : '' }}" aria-haspopup="true">
                                 <a href="{{ route('karo.inbox.usulan') }}" class="menu-link "><i class="menu-bullet menu-bullet-line"><span></span></i><span class="menu-text">Surat Usulan</span></a>
                             </li>
-                            <li class="menu-item {{ (strpos($page_title, 'KemenSetneg | Inbox | Pertek BKN') !== false) ? 'menu-item-active' : '' }}" aria-haspopup="true">
-                                <a href="{{ route('karo.inbox.revisi') }}" class="menu-link "><i class="menu-bullet menu-bullet-line"><span></span></i><span class="menu-text">Pertek BKN</span></a>
+                            <li class="menu-item {{ (strpos($page_title, 'KemenSetneg | Inbox | Rancangan Keppres') !== false) ? 'menu-item-active' : '' }}" aria-haspopup="true">
+                                <a href="{{ route('karo.inbox.revisi') }}" class="menu-link "><i class="menu-bullet menu-bullet-line"><span></span></i><span class="menu-text">Rancangan Keppres</span></a>
                             </li>
                         </ul>
                     </div>

@@ -15,12 +15,12 @@
                     <div class="card card-custom">
                         <div class="card-header flex-wrap border-0 pt-6 pb-0">
                             <div class="card-title">
-                                <h3 class="card-label">Management Pengguna </h3>
+                                <h3 class="card-label">Management Pengguna</h3>
                             </div>
                         </div>
 
                         <div class="card-body">
-                            <form method="POST" action="{{ route('super-admin.user-management.edit',[$user->id]) }}">
+                            <form method="POST" action="{{ route('administrator.user-management.edit',[$user->id]) }}">
                                 @csrf
                                 @method('PATCH')
                                 
@@ -33,28 +33,35 @@
                                 </div>
 
                                 <div class="form-group row">
-                                    <label for="email" class="col-md-6 col-form-label text-md-left">{{ __('E-Mail Address') }}</label>
+                                    <label for="nip" class="col-md-6 col-form-label text-md-left">NIP</label>
 
                                     <div class="col-md-12">
-                                        <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ $user->email }}" required autocomplete="email" readonly>
+                                        <input id="nip" type="text" class="form-control @error('nip') is-invalid @enderror" name="nip" value="{{ $user->nip }}" required autocomplete="nip" readonly>
                                     </div>
                                 </div>
 
                                 <div class="form-group row">
-                                    <label for="roles_id" class="col-md-6 col-form-label text-md-left">{{ __('Role') }}</label>
+                                    <label for="role" class="col-md-6 col-form-label text-md-left">{{ __('Role') }}</label>
 
                                     <div class="col-md-12">
-                                        <select id="roles_id" class="form-control" name="roles_id" required autofocus>
-                                            <option value="">Choose</option>
-                                                <option value="">All</option>
-                                                <option value="1" @if ($user->roles_id == 1) {{ 'selected' }} @endif>Super Admin</option>
-                                                <option value="2" @if ($user->roles_id == 2) {{ 'selected' }} @endif>PPIC</option>
-                                                <option value="3" @if ($user->roles_id == 3) {{ 'selected' }} @endif>Warehouse</option>
-                                                <option value="4" @if ($user->roles_id == 4) {{ 'selected' }} @endif>Production - Icing</option>
-                                                <option value="5" @if ($user->roles_id == 5) {{ 'selected' }} @endif>Production - Batching 1</option>
-                                                <option value="6" @if ($user->roles_id == 6) {{ 'selected' }} @endif>Production - Batching 2</option>
-                                                <option value="7" @if ($user->roles_id == 7) {{ 'selected' }} @endif>Filling</option>
-                                            </select>
+                                        <select id="role" class="form-control" name="role" required autofocus>
+                                            @foreach ($roles as $role)
+                                                <option value="{{$role->id}}" @if ($user->roles_id == $role->id) {{ 'selected' }} @endif>{{$role->name}}</option>
+                                            @endforeach
+                                            
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="group" class="col-md-6 col-form-label text-md-left">Group</label>
+
+                                    <div class="col-md-12">
+                                        <select id="group" class="form-control" name="group" required autofocus>
+                                            @foreach ($groups as $group)
+                                                <option value="{{$group->id}}" @if ($user->groups_id == $group->id) {{ 'selected' }} @endif>{{$group->name}}</option>
+                                            @endforeach
+                                            
+                                        </select>
                                     </div>
                                 </div>
 
@@ -66,7 +73,7 @@
                                     </div>
                                 </div>
                                 
-                                <a href="/super-admin/user-management" class="btn btn-secondary">Back</a>
+                                <a href="{{ route('administrator.user-management.index') }}" class="btn btn-secondary">Back</a>
                                 <button type="submit" class="btn btn-primary">{{ __('Submit') }}</button>
                             </form>
                         </div>
