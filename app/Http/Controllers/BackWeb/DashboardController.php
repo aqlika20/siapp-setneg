@@ -38,12 +38,13 @@ class DashboardController extends Controller
             return redirect()->route('koor-pokja-pensiun.home.index');
         }
 
-        // JF Ahli Muda & JF Ahli Madya
-        // if ($currentUser->roles_id == 9 || $currentUser->roles_id == 10 || $currentUser->roles_id == 11) {
-        //     return redirect()->route('jf-ahli.home.index');
-        // }
         if ($currentUser->roles_id == 10) {
             return redirect()->route('jf-ahli-kp.home.index');
+        }
+        
+        // JF Ahli P4
+        if ($currentUser->roles_id == 9) {
+            return redirect()->route('jf-ahli.home.index');
         }
         
         // JF Ahli Pensiun

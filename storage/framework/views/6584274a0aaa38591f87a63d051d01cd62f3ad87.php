@@ -556,7 +556,7 @@
                                                 <label class="col-form-label col-lg-3 col-sm-12">TMT Jabatan <a style="color: #FF0000;">*</a></label>
                                                 <div class="col-lg-5 col-md-9 col-sm-12">
                                                     <div class="input-group date">
-                                                        <input type="text" class="form-control datetimepicker-input my-datepicker" id="tmt_jabatan_lama" name="tmt_jabatan_lama" data-toggle="datetimepicker" data-target="#tmt_jabatan_lama" placeholder="Pilih Tanggal" value="<?php echo e(old('tmt_jabatan_lama')); ?>" autocomplete="off"/>
+                                                        <input type="text" class="form-control datetimepicker-input" id="tmt_jabatan_lama" name="tmt_jabatan_lama" data-toggle="datetimepicker" data-target="#tmt_jabatan_lama" placeholder="Pilih Tanggal" value="<?php echo e(old('tmt_jabatan_lama')); ?>" autocomplete="off"/>
                                                         <div class="input-group-append">
                                                             <span class="input-group-text">
                                                                 <i class="la la-calendar"></i>
@@ -1185,6 +1185,11 @@
             });  
 
         });
+        $('#tmt_jabatan_lama').datetimepicker({
+            useCurrent:false,
+            format: 'DD-MMM-YYYY',
+            maxDate: new Date().setHours(0,0,0,0)
+        })
     </script>
 
     <script>
