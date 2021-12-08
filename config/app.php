@@ -185,6 +185,9 @@ return [
 
         //Laravel Chart
         ConsoleTVs\Charts\ChartsServiceProvider::class,
+        
+        //Barryvdh
+        Barryvdh\Debugbar\ServiceProvider::class,
 
        
 
@@ -251,6 +254,9 @@ return [
 
         // Barryvdh DOM PDF
         'PDF' => Barryvdh\DomPDF\Facade::class,
+
+        // Barryvdh
+        'Debugbar' => Barryvdh\Debugbar\Facades\Debugbar::class,
 
         // Barcode 1D
         'DNS1D' => Milon\Barcode\Facades\DNS1DFacade::class,
