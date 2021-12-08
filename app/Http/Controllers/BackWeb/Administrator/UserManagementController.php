@@ -66,11 +66,77 @@ class UserManagementController extends Controller
             'name' =>$input['name'],
             'nip' => $input['nip'],
             'password' => $input['password'],
-            'roles_id' => $input['role'],
+            'role' => $input['role'],
             'groups_id' => $input['group'],
             'remember_token'=>$input['remember_token']
             
         ]);
         return redirect()->route('administrator.user-management.index')->with(['success'=>'User Berhasil Ditambahkan!']);
     }
+
+    public function view($id) 
+    {
+        $currentUser = UserManagement::find(Auth::id());
+        $page_title = 'Administrator | User Management';
+        $page_description = 'Edit User';
+        $user = UserManagement::find($id);
+        if (!$user) {
+            return redirect()->route('administrator.user-management.index')->with(['error'=>'Parameter id tidak valid.']);
+        }
+        return view('pages.administrator.user_management_edit', compact('page_title', 'page_description', 'currentUser', 'user'));
+    }
+
+    public function edit($id, Request $request)
+    {
+        $data = $request->all();
+
+        $validator = Validator::make($data, [
+            'name' => 'required',
+            'password' => 'nullable',
+            'role' => 'required',
+            'group' => 'required'
+        ]);
+
+        if ($validator->fails())
+        {
+            return redirect()->route('administrator.user-management.index')->with(['error'=>'Data tidak valid.']);
+        }
+        else if (empty(trim(Role::find($data['role']))))
+        {
+            return redirect()->route('administrator.user-management.index')->with(['error'=>'Data tidak valid.']);
+        }
+
+        
+
+        $user = UserManagement::where([
+            ['id', '=', $id]
+        ])->first();
+        if (!$user) {
+            return redirect()->route('administrator.user-management.index')->with(['error'=>'Parameter id tidak valid.']);
+        }
+
+        $user->name = $data['name'];
+        $user->roles_id = $data['role'];
+        $user->groups_id = $data['group'];
+        if (!empty(trim($data['password']))) {
+            $user->password = Hash::make($data['password']);
+        }
+
+        $user->save();
+
+        return redirect()->route('administrator.user-management.index')->with(['success'=>'Data diedit.']);
+    }
+
+    public function delete($id) 
+    {
+        $user = UserManagement::where([
+            ['id', '=', $id]
+        ])->first();
+        if (!$user) {
+            return redirect()->route('administrator.user-management.index')->with(['error'=>'Parameter id tidak valid.']);
+        }
+        UserManagement::where('id', $id)->delete();
+        return redirect()->route('administrator.user-management.index')->with(['success'=>'Data dihapus.']);
+    }
+
 }

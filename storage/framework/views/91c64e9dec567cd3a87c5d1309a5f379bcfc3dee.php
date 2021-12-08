@@ -144,7 +144,20 @@
                                         <td><?php echo e($user->nip); ?></td>
                                         <td><?php echo e(Helper::defineRole($user->roles_id)); ?></td>
                                         <td><?php echo e(Helper::defineGroup($user->groups_id)); ?></td>
-                                        <td>coming soon..</td>
+                                        <td>
+                                            <form method="POST" action="<?php echo e(route('administrator.user-management.delete',[$user->id])); ?>">
+                                                <?php echo csrf_field(); ?> 
+                                                <?php echo method_field('DELETE'); ?>
+                                                <a href="<?php echo e(route('administrator.user-management.view',[$user->id])); ?>" title="Edit" class="btn btn-icon btn-light btn-sm mx-1">
+                                                    <?php echo e(Metronic::getSVG("media/svg/icons/Communication/Write.svg", "svg-icon-md svg-icon-primary")); ?>
+
+                                                </a>
+                                                <button type="submit" title="Delete" class="btn btn-icon btn-light btn-sm mx-1" onclick='return confirm("Are you sure?")'>
+                                                    <?php echo e(Metronic::getSVG("media/svg/icons/General/Trash.svg", "svg-icon-md svg-icon-primary")); ?>
+
+                                                </button>
+                                            </form>
+                                        </td>
                                     </tr>
                                 <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                                 </tbody>

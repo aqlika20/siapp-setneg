@@ -144,7 +144,18 @@
                                         <td>{{ $user->nip }}</td>
                                         <td>{{ Helper::defineRole($user->roles_id) }}</td>
                                         <td>{{ Helper::defineGroup($user->groups_id) }}</td>
-                                        <td>coming soon..</td>
+                                        <td>
+                                            <form method="POST" action="{{ route('administrator.user-management.delete',[$user->id]) }}">
+                                                @csrf 
+                                                @method('DELETE')
+                                                <a href="{{ route('administrator.user-management.view',[$user->id]) }}" title="Edit" class="btn btn-icon btn-light btn-sm mx-1">
+                                                    {{ Metronic::getSVG("media/svg/icons/Communication/Write.svg", "svg-icon-md svg-icon-primary") }}
+                                                </a>
+                                                <button type="submit" title="Delete" class="btn btn-icon btn-light btn-sm mx-1" onclick='return confirm("Are you sure?")'>
+                                                    {{ Metronic::getSVG("media/svg/icons/General/Trash.svg", "svg-icon-md svg-icon-primary") }}
+                                                </button>
+                                            </form>
+                                        </td>
                                     </tr>
                                 @endforeach
                                 </tbody>

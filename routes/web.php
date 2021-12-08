@@ -866,6 +866,8 @@ Route::group(['middleware' => ['auth', 'checkRole:1']], function() {
         Route::prefix('/user-management')->group(function(){
             Route::get('/', 'BackWeb\Administrator\UserManagementController@index')->name('administrator.user-management.index');
             Route::post('/create', 'BackWeb\Administrator\UserManagementController@store')->name('administrator.user-management.store');
+            Route::post('/delete', 'BackWeb\Administrator\UserManagementController@delete')->name('administrator.user-management.delete');
+            Route::post('/view', 'BackWeb\Administrator\UserManagementController@view')->name('administrator.user-management.view');
         });
 
     });
