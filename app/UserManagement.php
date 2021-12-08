@@ -10,13 +10,13 @@ class UserManagement extends Model
     protected $table = 'users';
 
     protected $fillable = [
-        'name', 'nip', 'password', 'roles_id', 'groups_id', 'api_token'
+        'name', 'nip', 'password', 'roles_id', 'groups_id'
     ];
 
     protected $hidden = [
         'password', 'remember_token',
     ];
-
+    
     protected $date = [
         'created_at', 'updated_at'
     ];

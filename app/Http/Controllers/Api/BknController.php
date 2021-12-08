@@ -48,6 +48,27 @@ class BknController extends Controller
                 'data' => $dataAsnArray
             ]);
 
+            // get data by nip
+            $dataAnak = app('bkn.helper')->getDataAnakByNip($responseArray['access_token'], $nip);
+            
+            if (false == app('string.helper')->isJson($dataAnak))
+                throw new \Exception("Response dari bkn tidak valid");
+
+            $responseArrayDataAsn = json_decode($dataAnak, true);
+            
+            if (false == array_key_exists('data', $responseArrayDataAsn))
+                throw new \Exception("Response dari bkn tidak valid");
+
+            if (false == app('string.helper')->isJson($responseArrayDataAsn['data']))
+                throw new \Exception("Response dari bkn tidak valid");
+
+            $dataAnakArray = json_decode($responseArrayDataAsn['data'], true);
+            
+            return response()->json([
+                'status' => 'success',
+                'data' => $dataAnakArray
+            ]);
+
         } catch (\Exception $e) {
             return response()->json([
                 'status' => 'error',

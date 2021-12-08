@@ -1,8 +1,11 @@
 <?php
 
 namespace App;
+use \Illuminate\Support\Str;
 use App\Bkn;
 use App\Role;
+use App\User;
+use App\Group;
 use DateTime;
 
 class Helper {
@@ -451,6 +454,33 @@ class Helper {
         
         $role_name = $roles->name;
         return $role_name;
+    }
+
+    public static function defineGroup($group){
+        $groups = Group::where('id', $group)->first();
+        
+        $group_name = $groups->name;
+        return $group_name;
+    }
+
+    public static function generateRandomString($type,$value){
+        if (!is_numeric($value)) {
+            $value = 0;
+        }
+        $result = Str::random($value);
+        switch ($type) {    
+            case 'remember_token':
+                $remember_token_exist = User::where([
+                    ['remember_token', '=', $result],
+                ])->first();
+                if ($remember_token_exist) {
+                    return self::generateRandomString($type,$value);
+                }
+
+                break;
+        }
+
+        return $result;
     }
     
     // public static function countDateMasa($date_start, $date_end){

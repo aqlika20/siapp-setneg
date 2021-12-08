@@ -34,9 +34,14 @@ $(document).ready(function (e) {
                     $('#tanggal_lahir').val(data.tglLahir);
                     $('#pendidikan_terakhir').val(data.pendidikanTerakhirNama);
                     $('#instansi').val(data.instansiIndukNama);
+                    $('#jabatan_lama').val(data.jabatanNama);
+                    $('#tmt_jabatan_lama').val(data.tmtJabatan);
+                    $('#satuan_organisasi_lama').val(data.satuanKerjaIndukNama);
+                    $('#pangkat_gol').val(data.pangkatAkhir);
+                    
                     $('#masa_kerja_gol_tahun').val(data.mkTahun);
                     $('#masa_kerja_gol_bulan').val(data.mkBulan);
-                    $('#pangkat_gol').val(data.golRuangAkhir);
+                    // $('#pangkat_gol').val(data.golRuangAkhir);
                     $('#instansi_induk').val(data.instansiIndukNama);
                 }
 

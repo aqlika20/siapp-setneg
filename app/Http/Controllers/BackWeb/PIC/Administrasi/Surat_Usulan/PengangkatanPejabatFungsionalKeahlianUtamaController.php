@@ -17,6 +17,7 @@ use App\Catatan;
 use App\Pangkat;
 use App\Periode;
 use App\Helper;
+use App\SatuanKerja;
 use App\Jenis_layanan;
 use App\Status;
 
@@ -73,7 +74,8 @@ class PengangkatanPejabatFungsionalKeahlianUtamaController extends Controller
         $page_description = 'Pengangkatan Pejabat Fungsional Ahli Utama melalui Promosi';
         $pangkats = Pangkat::All();
         $periodes = Periode::All();
-        return view('pages.pic.administrasi.surat_usulan.form.pengangkatan_pejabat_fku', compact('page_title', 'page_description', 'currentUser', 'pangkats', 'periodes'));
+        $satuan_kerjas = SatuanKerja::All();
+        return view('pages.pic.administrasi.surat_usulan.form.pengangkatan_pejabat_fku', compact('page_title', 'satuan_kerjas', 'page_description', 'currentUser', 'pangkats', 'periodes'));
     }
 
     // ========= function create basic information =============

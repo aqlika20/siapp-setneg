@@ -40,7 +40,7 @@
                                             <h4 class="mb-10 font-weight-bold text-dark">Data Usulan</h4>
                                             <!--begin::Input-->
                                             <div class="form-group row">
-                                                <label class="col-form-label col-lg-3 col-sm-12">Tanggal Surat usulan</label>
+                                                <label class="col-form-label col-lg-3 col-sm-12">Tanggal Surat usulan <a style="color: #FF0000;">*</a></label>
                                                 <div class="col-lg-5 col-md-9 col-sm-12">
                                                     <div class="input-group date">
                                                         <input type="text" class="form-control datetimepicker-input my-datepicker" id="tanggal_surat_usulan" name="tanggal_surat_usulan" data-toggle="datetimepicker" data-target="#tanggal_surat_usulan" placeholder="Pilih Tanggal" value="<?php echo e(old('tanggal_surat_usulan')); ?>" required/>
@@ -53,7 +53,7 @@
                                                 </div>
                                             </div>
                                             <div class="form-group row">
-                                                <label class="col-form-label col-lg-3 col-sm-12">No. Surat Usulan</label>
+                                                <label class="col-form-label col-lg-3 col-sm-12">No. Surat Usulan <a style="color: #FF0000;">*</a></label>
                                                 <div class="col-lg-9 col-md-9 col-sm-12">
                                                     <div class="input-group">
                                                         <input type="text" class="form-control" id="no_surat_usulan" name="no_surat_usulan" value="<?php echo e(old('no_surat_usulan')); ?>" autocomplete="off" required/>
@@ -63,7 +63,7 @@
                                             <!--end::Input-->
                                             <!--begin::Input-->
                                             <div class="form-group row">
-                                                <label class="col-form-label col-lg-3 col-sm-12">Jabatan Yang Menandatangani</label>
+                                                <label class="col-form-label col-lg-3 col-sm-12">Jabatan Yang Menandatangani <a style="color: #FF0000;">*</a></label>
                                                 <div class="col-lg-9 col-md-9 col-sm-12">
                                                     <div class="input-group">
                                                         <input type="text"class="form-control" id="jabatan_menandatangani" name="jabatan_menandatangani" value="<?php echo e(old('jabatan_menandatangani')); ?>" autocomplete="off" required/>
@@ -73,7 +73,7 @@
                                             <!--end::Input-->
                                             
                                             <div class="form-group row">
-                                                <label class="col-lg-3 col-form-label">Upload Surat Usulan</label>
+                                                <label class="col-lg-3 col-form-label">Upload Surat Usulan <a style="color: #FF0000;">*</a></label>
                                                 <div class="col-lg-9">
                                                     <input id="file_data_usulan" name="file_data_usulan[]" accept=".jpg,.jpeg,.png,.pdf" type="file" class="file" data-show-preview="false" multiple/>
                                                     
@@ -122,7 +122,7 @@
                                             <h4 class="mb-10 font-weight-bold text-dark">Data ASN</h4>
                                             <!--begin::Input-->
                                             <div class="form-group row">
-                                                <label class="col-form-label col-lg-3 col-sm-12">NIP</label>
+                                                <label class="col-form-label col-lg-3 col-sm-12">NIP <a style="color: #FF0000;">*</a></label>
                                                 <div class="col-lg-5 col-md-9 col-sm-12">
                                                     <div class="input-group date">
                                                         <input type="number" maxlength="18"  class="form-control" id="nip" name="nip" value="<?php echo e(old('nip')); ?>" autocomplete="off" required/>
@@ -133,7 +133,7 @@
                                             <!--end::Input-->
                                             <!--begin::Input-->
                                             <div class="form-group row">
-                                                <label class="col-form-label col-lg-3 col-sm-12">Nama</label>
+                                                <label class="col-form-label col-lg-3 col-sm-12">Nama <a style="color: #FF0000;">*</a></label>
                                                 <div class="col-lg-9 col-md-9 col-sm-12">
                                                     <div class="input-group date">
                                                         <input type="text" class="form-control" id="nama" name="nama" value="<?php echo e(old('nama')); ?>" autocomplete="off" required/>
@@ -143,7 +143,7 @@
                                             <!--end::Input-->
                                             <!--begin::Input-->
                                             <div class="form-group row">
-                                                <label class="col-form-label col-lg-3 col-sm-12">Tanggal Lahir</label>
+                                                <label class="col-form-label col-lg-3 col-sm-12">Tanggal Lahir <a style="color: #FF0000;">*</a></label>
                                                 <div class="col-lg-5 col-md-9 col-sm-12">
                                                     <div class="input-group date">
                                                         <input type="text" class="form-control datetimepicker-input my-datepicker" id="tanggal_lahir" name="tanggal_lahir" data-toggle="datetimepicker" data-target="#tanggal_lahir" placeholder="Pilih Tanggal" value="<?php echo e(old('tanggal_lahir')); ?>" autocomplete="off" required/>
@@ -157,7 +157,7 @@
                                             </div>
                                             <!--end::Input-->
                                             <div class="form-group row">
-                                                <label class="col-form-label col-lg-3 col-sm-12">Pendidikan Terakhir</label>
+                                                <label class="col-form-label col-lg-3 col-sm-12">Pendidikan Terakhir <a style="color: #FF0000;">*</a></label>
                                                 <div class="col-lg-9 col-md-9 col-sm-12">
                                                     <select class="form-control select2" style="width: 230px;" id="pendidikan_terakhir" name="pendidikan_terakhir">
                                                         <option value="">Choose</option>
@@ -168,7 +168,7 @@
                                                 </div>
                                             </div>
                                             <div class="form-group row">
-                                                <label class="col-lg-3 col-form-label">Upload Ijasah Terakhir</label>
+                                                <label class="col-lg-3 col-form-label">Upload Ijasah Terakhir <a style="color: #FF0000;">*</a></label>
                                                 <div class="col-lg-9">
                                                     <input id="file_ijasah" name="file_ijasah[]" accept=".jpg,.jpeg,.png,.pdf" type="file" class="file" data-show-preview="false" multiple/>
                                                     <!-- <div class="dropzone dropzone-multi" id="kt_dropzone_7">
@@ -208,7 +208,7 @@
                                                 </div>
                                             </div>
                                             <div class="form-group row">
-                                                <label class="col-form-label col-lg-3 col-sm-12">Instansi Induk</label>
+                                                <label class="col-form-label col-lg-3 col-sm-12">Instansi Induk <a style="color: #FF0000;">*</a></label>
                                                 <div class="col-lg-9 col-md-9 col-sm-12">
                                                     <div class="input-group date">
                                                         <input type="text" class="form-control" id="instansi_induk" name="instansi_induk" value="<?php echo e(old('instansi_induk')); ?>" autocomplete="off" required/>
@@ -216,12 +216,12 @@
                                                 </div>
                                             </div>
                                             <div class="form-group row">
-                                                <label class="col-form-label col-lg-3 col-sm-12">Pangkat (Gol/Ruang) Lama</label>
+                                                <label class="col-form-label col-lg-3 col-sm-12">Pangkat (Gol/Ruang) Lama <a style="color: #FF0000;">*</a></label>
                                                 <div class="col-lg-9 col-md-9 col-sm-12">
                                                     <select class="form-control select2" style="width: 230px;" id="pangkat_lama" name="pangkat_lama">
                                                         <option value="">Choose</option>
                                                         <?php $__currentLoopData = $pangkats; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $pangkat): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                                                            <option value="<?php echo e($pangkat->id); ?>" <?php echo e(old('pangkat_lama') == $pangkat->id ? 'selected' : ''); ?>><?php echo e($pangkat->golongan); ?> | <?php echo e($pangkat->ruang); ?></option>
+                                                            <option value="<?php echo e($pangkat->id); ?>" <?php echo e(old('pangkat_lama') == $pangkat->id ? 'selected' : ''); ?>><?php echo e($pangkat->name); ?> (<?php echo e($pangkat->golongan); ?>/<?php echo e($pangkat->ruang); ?></option>
                                                         <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                                                     </select>
                                                     <!-- <div class="input-group date">
@@ -235,12 +235,12 @@
                                                 </div>
                                             </div>
                                             <div class="form-group row">
-                                                <label class="col-form-label col-lg-3 col-sm-12">Pangkat (Gol/Ruang) Baru</label>
+                                                <label class="col-form-label col-lg-3 col-sm-12">Pangkat (Gol/Ruang) Baru <a style="color: #FF0000;">*</a></label>
                                                 <div class="col-lg-9 col-md-9 col-sm-12">
                                                     <select class="form-control select2" style="width: 230px;" id="pangkat_baru" name="pangkat_baru">
                                                         <option value="">Choose</option>
                                                         <?php $__currentLoopData = $pangkats; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $pangkat): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                                                            <option value="<?php echo e($pangkat->id); ?>" <?php echo e(old('pangkat_baru') == $pangkat->id ? 'selected' : ''); ?>><?php echo e($pangkat->golongan); ?> | <?php echo e($pangkat->ruang); ?></option>
+                                                            <option value="<?php echo e($pangkat->id); ?>" <?php echo e(old('pangkat_baru') == $pangkat->id ? 'selected' : ''); ?>><?php echo e($pangkat->name); ?> (<?php echo e($pangkat->golongan); ?>/<?php echo e($pangkat->ruang); ?></option>
                                                         <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                                                     </select>
                                                     <!-- <div class="input-group date">
@@ -254,10 +254,10 @@
                                                 </div>
                                             </div>
                                             <div class="form-group row">
-                                                <label class="col-form-label col-lg-3 col-sm-12">TMT Pangkat Baru</label>
+                                                <label class="col-form-label col-lg-3 col-sm-12">TMT Pangkat Baru <a style="color: #FF0000;">*</a></label>
                                                 <div class="col-lg-5 col-md-9 col-sm-12">
                                                     <div class="input-group date">
-                                                        <input type="text" class="form-control datetimepicker-input my-datepicker" id="tmt_baru" name="tmt_baru" data-toggle="datetimepicker" data-target="#tmt_baru" placeholder="Pilih Tanggal" value="<?php echo e(old('tmt_baru')); ?>" autocomplete="off" required/>
+                                                        <input type="text" class="form-control datetimepicker-input my-datepicker" id="tmt_pangkat_baru" name="tmt_pangkat_baru" data-toggle="datetimepicker" data-target="#tmt_pangkat_baru" placeholder="Pilih Tanggal" value="<?php echo e(old('tmt_pangkat_baru')); ?>" autocomplete="off" required/>
                                                         <div class="input-group-append">
                                                             <span class="input-group-text">
                                                                 <i class="la la-calendar"></i>
@@ -267,7 +267,7 @@
                                                 </div>
                                             </div>
                                             <div class="form-group row">
-                                                <label class="col-form-label col-lg-3 col-sm-12">TMT Pensiun</label>
+                                                <label class="col-form-label col-lg-3 col-sm-12">TMT Pensiun <a style="color: #FF0000;">*</a></label>
                                                 <div class="col-lg-5 col-md-9 col-sm-12">
                                                     <div class="input-group date">
                                                         <input type="text" class="form-control datetimepicker-input my-datepicker" id="tmt_pensiun" name="tmt_pensiun" data-toggle="datetimepicker" data-target="#tmt_pensiun" placeholder="Pilih Tanggal" value="<?php echo e(old('tmt_pensiun')); ?>" autocomplete="off" required/>
@@ -280,7 +280,7 @@
                                                 </div>
                                             </div>
                                             <div class="form-group row">
-                                                <label class="col-form-label col-lg-3 col-sm-12">Alamat Setelah Pensiun</label>
+                                                <label class="col-form-label col-lg-3 col-sm-12">Alamat Setelah Pensiun <a style="color: #FF0000;">*</a></label>
                                                 <div class="col-lg-9 col-md-9 col-sm-12">
                                                     <div class="input-group date">
                                                         <textarea type="text" class="form-control" id="alamat_setelah_pensiun" name="alamat_setelah_pensiun" value="<?php echo e(old('alamat_setelah_pensiun')); ?>" autocomplete="off" require></textarea>
@@ -288,7 +288,7 @@
                                                 </div>
                                             </div>
                                             <div class="form-group row">
-                                                <label class="col-form-label col-lg-3 col-sm-12">Taspen</label>
+                                                <label class="col-form-label col-lg-3 col-sm-12">Taspen <a style="color: #FF0000;">*</a></label>
                                                 <div class="col-lg-9 col-md-9 col-sm-12">
                                                     <div class="input-group date">
                                                         <textarea type="text" class="form-control" id="taspen" name="taspen" value="<?php echo e(old('taspen')); ?>" autocomplete="off" require></textarea>
@@ -296,7 +296,7 @@
                                                 </div>
                                             </div>
                                             <div class="form-group row">
-                                                <label class="col-lg-3 col-form-label">Upload SK Pangkat Terakhir</label>
+                                                <label class="col-lg-3 col-form-label">Upload SK Pangkat Terakhir <a style="color: #FF0000;">*</a></label>
                                                 <div class="col-lg-9">
                                                     <input id="file_sk_pangkat_terakhir" name="file_sk_pangkat_terakhir[]" accept=".jpg,.jpeg,.png,.pdf" type="file" class="file" data-show-preview="false" multiple/>
                                                     <!-- <div class="dropzone dropzone-multi" id="kt_dropzone_7">
@@ -504,7 +504,7 @@
                                         <div class="pb-6" style="margin-left: 50px; margin-right: 50px;" data-wizard-type="step-content">
                                             <h4 class="mb-10 font-weight-bold text-dark">Data Jabatan Terakhir</h4>
                                             <div class="form-group row">
-                                                <label class="col-form-label col-lg-3 col-sm-12">Jabatan Terakhir</label>
+                                                <label class="col-form-label col-lg-3 col-sm-12">Jabatan Terakhir <a style="color: #FF0000;">*</a></label>
                                                 <div class="col-lg-9 col-md-9 col-sm-12">
                                                     <div class="input-group date">
                                                         <input type="text" class="form-control" id="jabatan_terakhir" name="jabatan_terakhir" value="<?php echo e(old('jabatan_terakhir')); ?>" autocomplete="off" required/>
@@ -512,7 +512,7 @@
                                                 </div>
                                             </div>
                                             <div class="form-group row">
-                                                <label class="col-form-label col-lg-3 col-sm-12">Unit Kerja Terakhir</label>
+                                                <label class="col-form-label col-lg-3 col-sm-12">Unit Kerja Terakhir <a style="color: #FF0000;">*</a></label>
                                                 <div class="col-lg-9 col-md-9 col-sm-12">
                                                     <div class="input-group date">
                                                         <input type="text" class="form-control" id="unit_kerja_terakhir" name="unit_kerja_terakhir" value="<?php echo e(old('unit_kerja_terakhir')); ?>" autocomplete="off" required/>
@@ -520,7 +520,7 @@
                                                 </div>
                                             </div>
                                             <div class="form-group row">
-                                                <label class="col-lg-3 col-form-label">Upload SK Jabatan Terakhir</label>
+                                                <label class="col-lg-3 col-form-label">Upload SK Jabatan Terakhir <a style="color: #FF0000;">*</a></label>
                                                 <div class="col-lg-9">
                                                     <input id="file_sk_jabatan_terakhir" name="file_sk_jabatan_terakhir[]" accept=".jpg,.jpeg,.png,.pdf" type="file" class="file" data-show-preview="false" multiple/>
                                                     <!-- <div class="dropzone dropzone-multi" id="kt_dropzone_8">
@@ -560,7 +560,7 @@
                                                 </div>
                                             </div>
                                             <div class="form-group row">
-                                                <label class="col-lg-3 col-form-label">Upload Berita Acara Pelantikan</label>
+                                                <label class="col-lg-3 col-form-label">Upload Berita Acara Pelantikan <a style="color: #FF0000;">*</a></label>
                                                 <div class="col-lg-9">
                                                     <input id="file_berita_acara_pelantikan" name="file_berita_acara_pelantikan[]" accept=".jpg,.jpeg,.png,.pdf" type="file" class="file" data-show-preview="false" multiple/>
                                                     <!-- <div class="dropzone dropzone-multi" id="kt_dropzone_8">
@@ -607,7 +607,7 @@
                                             <div id="kt_repeater_1">
 
                                                 <div class="form-group row">
-                                                    <label class="col-lg-3 col-form-label">Upload Pas Foto Berwarna YBS</label>
+                                                    <label class="col-lg-3 col-form-label">Upload Pas Foto Berwarna YBS <a style="color: #FF0000;">*</a></label>
                                                     <div class="col-lg-9">
                                                         <input id="file_pas_foto" name="file_pas_foto[]" accept=".jpg,.jpeg,.png,.pdf" type="file" class="file" data-show-preview="false" multiple/>
                                                         <!-- <div class="dropzone dropzone-multi" id="kt_dropzone_8">
@@ -647,7 +647,7 @@
                                                     </div>
                                                 </div>
                                                 <div class="form-group row">
-                                                    <label class="col-lg-3 col-form-label">Upload Surat Keterangan Tidak Pernah Dijatuhi Hukuman Disiplin</label>
+                                                    <label class="col-lg-3 col-form-label">Upload Surat Keterangan Tidak Pernah Dijatuhi Hukuman Disiplin <a style="color: #FF0000;">*</a></label>
                                                     <div class="col-lg-9">
                                                         <input id="file_sk_tidak_pernah_dijatuhi_hukuman" name="file_sk_tidak_pernah_dijatuhi_hukuman[]" accept=".jpg,.jpeg,.png,.pdf" type="file" class="file" data-show-preview="false" multiple/>
                                                         <!-- <div class="dropzone dropzone-multi" id="kt_dropzone_8">
@@ -687,7 +687,7 @@
                                                     </div>
                                                 </div>
                                                 <div class="form-group row">
-                                                    <label class="col-lg-3 col-form-label">Upload Surat Keterangan Tidak Sedang Dalam Proses Hukum DPCP</label>
+                                                    <label class="col-lg-3 col-form-label">Upload Surat Keterangan Tidak Sedang Dalam Proses Hukum DPCP <a style="color: #FF0000;">*</a></label>
                                                     <div class="col-lg-9">
                                                         <input id="file_sk_tidak_sedang_dalam_hukum_dpcp" name="file_sk_tidak_sedang_dalam_hukum_dpcp[]" accept=".jpg,.jpeg,.png,.pdf" type="file" class="file" data-show-preview="false" multiple/>
                                                         <!-- <div class="dropzone dropzone-multi" id="kt_dropzone_8">
@@ -741,7 +741,7 @@
                                                     <div class="item_catatan">
                                                         <div class="item_data">
                                                             <div class="form-group row">
-                                                                <label class="col-form-label col-lg-3 col-sm-12">Tanggal Catatan</label>
+                                                                <label class="col-form-label col-lg-3 col-sm-12">Tanggal Catatan <a style="color: #FF0000;">*</a></label>
                                                                 <div class="col-lg-5 col-md-9 col-sm-12">
                                                                     <div class="input-group date">
                                                                         <input type="text" class="form-control datetimepicker-input my-datepicker" id="tanggal_catatan" name="tanggal_catatan[]" data-toggle="datetimepicker" data-target="#tanggal_catatan" placeholder="Pilih Tanggal" autocomplete="off" required/>
@@ -754,7 +754,7 @@
                                                                 </div>
                                                             </div>
                                                             <div class="form-group row">
-                                                                <label class="col-form-label col-lg-3 col-sm-12">Catatan</label>
+                                                                <label class="col-form-label col-lg-3 col-sm-12">Catatan <a style="color: #FF0000;">*</a></label>
                                                                 <div class="col-lg-9 col-md-9 col-sm-12">
                                                                     <div class="input-group date">
                                                                         <textarea class="form-control" rows="3" id="catatan" name="catatan[]" ></textarea>
@@ -770,50 +770,68 @@
                                                     <div class="col-lg-9 col-md-9 col-sm-12">
                                                         <div style="margin-bottom:10px;">
                                                             <label class="checkbox checkbox-outline checkbox-outline-2x checkbox-primary">
-                                                                <input type="checkbox" id="ket" name="ket[]" value="1"/>
-                                                                <span></span><div style="margin-left: 10px;">Surat Usulan Asli Ditandatangani PPK</div>
+                                                                <input type="checkbox" id="checked_file_data_usulan" disabled/>
+                                                                <span></span><div style="margin-left: 10px;">File Surat Usulan</div>
                                                             </label>
                                                         </div>
                                                         <div style="margin-bottom:10px;">
                                                             <label class="checkbox checkbox-outline checkbox-outline-2x checkbox-primary">
-                                                                <input type="checkbox" id="ket" name="ket[]" value="2"/>
-                                                                <span></span><div style="margin-left: 10px;">Nota Usulan asli yang dilengkapi dengan data formasi dan ditandatangani oleh PPK</div>
+                                                                <input type="checkbox" id="checked_file_putusan_pengadilan_inkrach" disabled/>
+                                                                <span></span><div style="margin-left: 10px;">File Putusan Pengadilan yang Sudah Inkrach</div>
                                                             </label>
                                                         </div>
                                                         <div style="margin-bottom:10px;">
                                                             <label class="checkbox checkbox-outline checkbox-outline-2x checkbox-primary">
-                                                                <input type="checkbox" id="ket" name="ket[]" value="3"/>
-                                                                <span></span><div style="margin-left: 10px;">Sertifikat/tanda lulus/surat keterangan lulus uji kompetensi</div>
+                                                                <input type="checkbox" id="checked_file_ijasah" disabled/>
+                                                                <span></span><div style="margin-left: 10px;">File Ijasah Terakhir</div>
                                                             </label>
                                                         </div>
                                                         <div style="margin-bottom:10px;">
                                                             <label class="checkbox checkbox-outline checkbox-outline-2x checkbox-primary">
-                                                                <input type="checkbox" id="ket" name="ket[]" value="4"/>
-                                                                <span></span><div style="margin-left: 10px;">PAK asli 1 tahun terakhir</div>
+                                                                <input type="checkbox" id="checked_file_sk_pangkat_terakhir" disabled/>
+                                                                <span></span><div style="margin-left: 10px;">File SK Pangkat Terakhir</div>
                                                             </label>
                                                         </div>
                                                         <div style="margin-bottom:10px;">
                                                             <label class="checkbox checkbox-outline checkbox-outline-2x checkbox-primary">
-                                                                <input type="checkbox" id="ket" name="ket[]" value="5"/>
-                                                                <span></span><div style="margin-left: 10px;">Salinan sah SK jabatan terakhir</div>
+                                                                <input type="checkbox" id="checked_file_data_pak" disabled/>
+                                                                <span></span><div style="margin-left: 10px;">File Data PAK</div>
                                                             </label>
                                                         </div>
                                                         <div style="margin-bottom:10px;">
                                                             <label class="checkbox checkbox-outline checkbox-outline-2x checkbox-primary">
-                                                                <input type="checkbox" id="ket" name="ket[]" value="6"/>
-                                                                <span></span><div style="margin-left: 10px;">Salinan sah SK Pangkat terakhir</div>
-                                                            </label>
-                                                        </div>
-                                                        <div style="margin-bottom:30px;">
-                                                            <label class="checkbox checkbox-outline checkbox-outline-2x checkbox-primary">
-                                                                <input type="checkbox" id="ket" name="ket[]" value="7"/>
-                                                                <span></span><div style="margin-left: 10px;">Salinan sah SKP dan Penilaian Prestasi Kerja 2 tahun terakhir</div>
+                                                                <input type="checkbox" id="checked_file_klarifikasi_pak" disabled/>
+                                                                <span></span><div style="margin-left: 10px;">File Klarifikasi PAK</div>
                                                             </label>
                                                         </div>
                                                         <div style="margin-bottom:10px;">
                                                             <label class="checkbox checkbox-outline checkbox-outline-2x checkbox-primary">
-                                                                <input type="checkbox" id="ket" name="ket[]" value="8"/>
-                                                                <span></span><div style="margin-left: 10px;">Semua persyaratan dan dokumen benar</div>
+                                                                <input type="checkbox" id="checked_file_sk_jabatan_terakhir" disabled/>
+                                                                <span></span><div style="margin-left: 10px;">File SK Jabatan Terakhir</div>
+                                                            </label>
+                                                        </div>
+                                                        <div style="margin-bottom:10px;">
+                                                            <label class="checkbox checkbox-outline checkbox-outline-2x checkbox-primary">
+                                                                <input type="checkbox" id="checked_file_berita_acara_pelantikan" disabled/>
+                                                                <span></span><div style="margin-left: 10px;">File Berita Acara Pelantikan</div>
+                                                            </label>
+                                                        </div>
+                                                        <div style="margin-bottom:10px;">
+                                                            <label class="checkbox checkbox-outline checkbox-outline-2x checkbox-primary">
+                                                                <input type="checkbox" id="checked_file_pas_foto" disabled/>
+                                                                <span></span><div style="margin-left: 10px;">File Pas Foto Berwarna YBS</div>
+                                                            </label>
+                                                        </div>
+                                                        <div style="margin-bottom:10px;">
+                                                            <label class="checkbox checkbox-outline checkbox-outline-2x checkbox-primary">
+                                                                <input type="checkbox" id="checked_file_sk_tidak_pernah_dijatuhi_hukuman" disabled/>
+                                                                <span></span><div style="margin-left: 10px;">File Surat Keterangan Tidak Pernah Dijatuhi Hukuman Disiplin</div>
+                                                            </label>
+                                                        </div>
+                                                        <div style="margin-bottom:10px;">
+                                                            <label class="checkbox checkbox-outline checkbox-outline-2x checkbox-primary">
+                                                                <input type="checkbox" id="checked_file_sk_tidak_sedang_dalam_hukum_dpcp" disabled/>
+                                                                <span></span><div style="margin-left: 10px;">File Surat Keterangan Tidak Sedang Dalam Proses Hukum DPCP</div>
                                                             </label>
                                                         </div>
                                                     </div>
@@ -866,7 +884,7 @@
     <script id="tambah_catatan" type="text/x-handlebars-template">
         <div class="item_data">
             <div class="form-group row">
-                <label class="col-form-label col-lg-3 col-sm-12">Tanggal Catatan</label>
+                <label class="col-form-label col-lg-3 col-sm-12">Tanggal Catatan <a style="color: #FF0000;">*</a></label>
                 <div class="col-lg-5 col-md-9 col-sm-12">
                     <div class="input-group date">
                         <input type="text" class="form-control datetimepicker-input my-datepicker" id="tanggal_catatan" name="tanggal_catatan[]" data-toggle="datetimepicker" placeholder="Pilih Tanggal" autocomplete="off" required/>
@@ -879,7 +897,7 @@
                 </div>
             </div>
             <div class="form-group row">
-                <label class="col-form-label col-lg-3 col-sm-12">Catatan</label>
+                <label class="col-form-label col-lg-3 col-sm-12">Catatan <a style="color: #FF0000;">*</a></label>
                 <div class="col-lg-9 col-md-9 col-sm-12">
                     <div class="input-group date">
                         <textarea class="form-control" rows="3" id="catatan" name="catatan[]"></textarea>
@@ -898,6 +916,97 @@
         </div>
     </script>
     <script>
+        $(document).ready(function () {
+            $("#file_data_usulan").on("change", function () {
+                if ($('#file_data_usulan')[0].files.length != 0) {
+                    $("#checked_file_data_usulan").attr('checked', true);
+                } else {
+                    $("#checked_file_data_usulan").attr('checked',false);
+                }
+            });
+
+            $("#file_putusan_pengadilan_inkrach").on("change", function () {
+                if ($('#file_putusan_pengadilan_inkrach')[0].files.length != 0) {
+                    $("#checked_file_putusan_pengadilan_inkrach").attr('checked', true);
+                } else {
+                    $("#checked_file_putusan_pengadilan_inkrach").attr('checked',false);
+                }
+            });
+
+            $("#file_ijasah").on("change", function () {
+                if ($('#file_ijasah')[0].files.length != 0) {
+                    $("#checked_file_ijasah").attr('checked', true);
+                } else {
+                    $("#checked_file_ijasah").attr('checked',false);
+                }
+            });
+
+            $("#file_sk_pangkat_terakhir").on("change", function () {
+                if ($('#file_sk_pangkat_terakhir')[0].files.length != 0) {
+                    $("#checked_file_sk_pangkat_terakhir").attr('checked', true);
+                } else {
+                    $("#checked_file_sk_pangkat_terakhir").attr('checked',false);
+                }
+            });
+
+            $("#file_data_pak").on("change", function () {
+                if ($('#file_data_pak')[0].files.length != 0) {
+                    $("#checked_file_data_pak").attr('checked', true);
+                } else {
+                    $("#checked_file_data_pak").attr('checked',false);
+                }
+            });
+
+            $("#file_klarifikasi_pak").on("change", function () {
+                if ($('#file_klarifikasi_pak')[0].files.length != 0) {
+                    $("#checked_file_klarifikasi_pak").attr('checked', true);
+                } else {
+                    $("#checked_file_klarifikasi_pak").attr('checked',false);
+                }
+            });
+
+            $("#file_sk_jabatan_terakhir").on("change", function () {
+                if ($('#file_sk_jabatan_terakhir')[0].files.length != 0) {
+                    $("#checked_file_sk_jabatan_terakhir").attr('checked', true);
+                } else {
+                    $("#checked_file_sk_jabatan_terakhir").attr('checked',false);
+                }
+            });
+
+            $("#file_berita_acara_pelantikan").on("change", function () {
+                if ($('#file_berita_acara_pelantikan')[0].files.length != 0) {
+                    $("#checked_file_berita_acara_pelantikan").attr('checked', true);
+                } else {
+                    $("#checked_file_berita_acara_pelantikan").attr('checked',false);
+                }
+            });
+
+            $("#file_pas_foto").on("change", function () {
+                if ($('#file_pas_foto')[0].files.length != 0) {
+                    $("#checked_file_pas_foto").attr('checked', true);
+                } else {
+                    $("#checked_file_pas_foto").attr('checked',false);
+                }
+            });
+
+            $("#file_sk_tidak_pernah_dijatuhi_hukuman").on("change", function () {
+                if ($('#file_sk_tidak_pernah_dijatuhi_hukuman')[0].files.length != 0) {
+                    $("#checked_file_sk_tidak_pernah_dijatuhi_hukuman").attr('checked', true);
+                } else {
+                    $("#checked_file_sk_tidak_pernah_dijatuhi_hukuman").attr('checked',false);
+                }
+            });
+
+            $("#file_sk_tidak_sedang_dalam_hukum_dpcp").on("change", function () {
+                if ($('#file_sk_tidak_sedang_dalam_hukum_dpcp')[0].files.length != 0) {
+                    $("#checked_file_sk_tidak_sedang_dalam_hukum_dpcp").attr('checked', true);
+                } else {
+                    $("#checked_file_sk_tidak_sedang_dalam_hukum_dpcp").attr('checked',false);
+                }
+            });
+
+        });
+
         refreshDateTimePicker();
         function refreshDateTimePicker(){
             
@@ -942,7 +1051,7 @@
         $(document).on('click','.add_more_item',function(){
             var source = $("#tambah_catatan").html();
             // var template = Handlebars.compile(source);
-            var template = '<div class="item_data"><div class="form-group row"><label class="col-form-label col-lg-3 col-sm-12">Tanggal Catatan</label><div class="col-lg-5 col-md-9 col-sm-12"><div class="input-group date"><input type="text" class="form-control datetimepicker-input my-datepicker" id="tanggal_catatan_' + id +'" name="tanggal_catatan[]" data-toggle="datetimepicker" data-target="#tanggal_catatan_'+ id +'" placeholder="Pilih Tanggal" autocomplete="off" required/><div class="input-group-append"><span class="input-group-text"><i class="la la-calendar"></i></span></div></div></div></div><div class="form-group row"><label class="col-form-label col-lg-3 col-sm-12">Catatan</label><div class="col-lg-9 col-md-9 col-sm-12"><div class="input-group date"><textarea class="form-control" rows="3" id="catatan" name="catatan[]" ></textarea></div></div></div><div class="form-group row"><div class="col-lg-9 col-md-9 col-sm-12"><!-- <button type="button" class="remove_detail btn btn-sm font-weight-bolder btn-light-primar">Hapus</button> --><a style="margin-top: 10px;" class="remove_detail btn btn-sm font-weight-bolder btn-light-danger"><i class="la la-trash-o"></i>Hapus Catatan</a></div></div></div>'
+            var template = '<div class="item_data"><div class="form-group row"><label class="col-form-label col-lg-3 col-sm-12">Tanggal Catatan <a style="color: #FF0000;">*</a></label><div class="col-lg-5 col-md-9 col-sm-12"><div class="input-group date"><input type="text" class="form-control datetimepicker-input my-datepicker" id="tanggal_catatan_' + id +'" name="tanggal_catatan[]" data-toggle="datetimepicker" data-target="#tanggal_catatan_'+ id +'" placeholder="Pilih Tanggal" autocomplete="off" required/><div class="input-group-append"><span class="input-group-text"><i class="la la-calendar"></i></span></div></div></div></div><div class="form-group row"><label class="col-form-label col-lg-3 col-sm-12">Catatan <a style="color: #FF0000;">*</a></label><div class="col-lg-9 col-md-9 col-sm-12"><div class="input-group date"><textarea class="form-control" rows="3" id="catatan" name="catatan[]" ></textarea></div></div></div><div class="form-group row"><div class="col-lg-9 col-md-9 col-sm-12"><!-- <button type="button" class="remove_detail btn btn-sm font-weight-bolder btn-light-primar">Hapus</button> --><a style="margin-top: 10px;" class="remove_detail btn btn-sm font-weight-bolder btn-light-danger"><i class="la la-trash-o"></i>Hapus Catatan</a></div></div></div>'
             $(this).parent().parent().parent().find(".item_catatan").append(template);
             id++;
             refreshDateTimePicker();

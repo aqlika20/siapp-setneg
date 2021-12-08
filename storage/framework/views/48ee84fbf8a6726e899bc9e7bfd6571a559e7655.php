@@ -37,7 +37,7 @@
                                             <h4 class="mb-10 font-weight-bold text-dark">Data Surat Permohonan</h4>
                                             <!--begin::Input-->
                                             <div class="form-group row">
-                                                <label class="col-form-label col-lg-3 col-sm-12">No. Surat Permohonan</label>
+                                                <label class="col-form-label col-lg-3 col-sm-12">No. Surat Permohonan <a style="color: #FF0000;">*</a></label>
                                                 <div class="col-lg-9 col-md-9 col-sm-12">
                                                     <div class="input-group">
                                                         <input type="text" class="form-control" id="no_surat_permohonan" name="no_surat_permohonan" value="<?php echo e(old('no_surat_permohonan')); ?>" autocomplete="off" required/>
@@ -45,7 +45,7 @@
                                                 </div>
                                             </div>
                                             <div class="form-group row">
-                                                <label class="col-form-label col-lg-3 col-sm-12">Tanggal Surat Permohonan</label>
+                                                <label class="col-form-label col-lg-3 col-sm-12">Tanggal Surat Permohonan <a style="color: #FF0000;">*</a></label>
                                                 <div class="col-lg-5 col-md-9 col-sm-12">
                                                     <div class="input-group date">
                                                         <input type="text" class="form-control datetimepicker-input my-datepicker" id="tanggal_surat_permohonan" name="tanggal_surat_permohonan" data-toggle="datetimepicker" data-target="#tanggal_surat_permohonan" placeholder="Pilih Tanggal" value="<?php echo e(old('tanggal_surat_permohonan')); ?>" required/>
@@ -58,7 +58,7 @@
                                                 </div>
                                             </div>
                                             <div class="form-group row">
-                                                <label class="col-lg-3 col-form-label">Upload Surat Permohonan</label>
+                                                <label class="col-lg-3 col-form-label">Upload Surat Permohonan <a style="color: #FF0000;">*</a></label>
                                                 <div class="col-lg-9">
                                                     <input id="file_surat_permohonan" name="file_surat_permohonan[]" accept=".jpg,.jpeg,.png,.pdf" type="file" class="file" data-show-preview="false" multiple/>
                                                     
@@ -100,7 +100,7 @@
                                             </div>
                                             <!--end::Input-->
                                             <div class="form-group row">
-                                                <label class="col-lg-3 col-form-label">Surat Keterangan Kehilangan Dari Kepolisian</label>
+                                                <label class="col-lg-3 col-form-label">Surat Keterangan Kehilangan Dari Kepolisian <a style="color: #FF0000;">*</a></label>
                                                 <div class="col-lg-9">
                                                     <input id="file_surat_keterangan_kehilangan_polisi" name="file_surat_keterangan_kehilangan_polisi[]" accept=".jpg,.jpeg,.png,.pdf" type="file" class="file" data-show-preview="false" multiple/>
                                                     
@@ -141,7 +141,7 @@
                                                 </div>
                                             </div>
                                             <div class="form-group row">
-                                                <label class="col-form-label col-lg-3 col-sm-12">Nama Kantor Polisi yang Menerbitkan Surat Kehilangan</label>
+                                                <label class="col-form-label col-lg-3 col-sm-12">Nama Kantor Polisi yang Menerbitkan Surat Kehilangan <a style="color: #FF0000;">*</a></label>
                                                 <div class="col-lg-9 col-md-9 col-sm-12">
                                                     <div class="input-group date">
                                                         <input type="text" class="form-control" id="nama_kantor_polisi" name="nama_kantor_polisi" value="<?php echo e(old('nama_kantor_polisi')); ?>" autocomplete="off" required/>
@@ -149,7 +149,7 @@
                                                 </div>
                                             </div>
                                             <div class="form-group row">
-                                                <label class="col-form-label col-lg-3 col-sm-12">No. Surat Kehilangan</label>
+                                                <label class="col-form-label col-lg-3 col-sm-12">No. Surat Kehilangan <a style="color: #FF0000;">*</a></label>
                                                 <div class="col-lg-9 col-md-9 col-sm-12">
                                                     <div class="input-group">
                                                         <input type="text" class="form-control" id="no_surat_kehilangan" name="no_surat_kehilangan" value="<?php echo e(old('no_surat_kehilangan')); ?>" autocomplete="off" required/>
@@ -157,7 +157,7 @@
                                                 </div>
                                             </div>
                                             <div class="form-group row">
-                                                <label class="col-form-label col-lg-3 col-sm-12">Tanggal Surat Kehilangan</label>
+                                                <label class="col-form-label col-lg-3 col-sm-12">Tanggal Surat Kehilangan <a style="color: #FF0000;">*</a></label>
                                                 <div class="col-lg-9 col-md-9 col-sm-12">
                                                     <div class="input-group">
                                                         <input type="text" class="form-control" id="tanggal_surat_kehilangan" name="tanggal_surat_kehilangan" value="<?php echo e(old('tanggal_surat_kehilangan')); ?>" autocomplete="off" required/>
@@ -165,7 +165,7 @@
                                                 </div>
                                             </div>
                                             <div class="form-group row">
-                                                <label class="col-lg-3 col-form-label">Surat Keterangan Kehilangan</label>
+                                                <label class="col-lg-3 col-form-label">Surat Keterangan Kehilangan <a style="color: #FF0000;">*</a></label>
                                                 <div class="col-lg-9">
                                                     <input id="file_surat_keterangan_kehilangan" name="file_surat_keterangan_kehilangan[]" accept=".jpg,.jpeg,.png,.pdf" type="file" class="file" data-show-preview="false" multiple/>
                                                     
@@ -206,7 +206,7 @@
                                                 </div>
                                             </div>
                                             <div class="form-group row">
-                                                <label class="col-form-label col-lg-3 col-sm-12">Status</label>
+                                                <label class="col-form-label col-lg-3 col-sm-12">Status <a style="color: #FF0000;">*</a></label>
                                                 <div class="col-lg-9 col-md-9 col-sm-12">
                                                     <select class="form-control select2" style="width: 230px;" id="status" name="status">
                                                         <option value="">Choose</option>
@@ -217,7 +217,7 @@
                                             </div>
                                             <div id="div_hilang">
                                                 <div class="form-group row">
-                                                    <label class="col-lg-3 col-form-label">Fotokopi SK yang Hilang</label>
+                                                    <label class="col-lg-3 col-form-label">Fotokopi SK yang Hilang <a style="color: #FF0000;">*</a></label>
                                                     <div class="col-lg-9">
                                                         <input id="file_fotokopi_sk_hilang" name="file_fotokopi_sk_hilang[]" accept=".jpg,.jpeg,.png,.pdf" type="file" class="file" data-show-preview="false" multiple/>
                                                         
@@ -264,7 +264,7 @@
                                             <h4 class="mb-10 font-weight-bold text-dark">Data ASN</h4>
                                             
                                             <div class="form-group row">
-                                                <label class="col-form-label col-lg-3 col-sm-12">NIP</label>
+                                                <label class="col-form-label col-lg-3 col-sm-12">NIP <a style="color: #FF0000;">*</a></label>
                                                 <div class="col-lg-9 col-md-9 col-sm-12">
                                                     <div class="input-group">
                                                         <input type="number" maxlength="18"  class="form-control" id="nip" name="nip" value="<?php echo e(old('nip')); ?>" autocomplete="off" required/>
@@ -272,7 +272,7 @@
                                                 </div>
                                             </div>
                                             <div class="form-group row">
-                                                <label class="col-form-label col-lg-3 col-sm-12">Nama</label>
+                                                <label class="col-form-label col-lg-3 col-sm-12">Nama <a style="color: #FF0000;">*</a></label>
                                                 <div class="col-lg-9 col-md-9 col-sm-12">
                                                     <div class="input-group">
                                                         <input type="text" class="form-control" id="nama" name="nama" value="<?php echo e(old('nama')); ?>" autocomplete="off" required/>
@@ -280,7 +280,7 @@
                                                 </div>
                                             </div>
                                             <div class="form-group row">
-                                                <label class="col-form-label col-lg-3 col-sm-12">Alamat</label>
+                                                <label class="col-form-label col-lg-3 col-sm-12">Alamat <a style="color: #FF0000;">*</a></label>
                                                 <div class="col-lg-9 col-md-9 col-sm-12">
                                                     <div class="input-group">
                                                         <textarea type="text" class="form-control" id="alamat" name="alamat" value="<?php echo e(old('alamat')); ?>" autocomplete="off" require></textarea>
@@ -288,7 +288,7 @@
                                                 </div>
                                             </div>
                                             <div class="form-group row">
-                                                <label class="col-form-label col-lg-3 col-sm-12">Nomor Keppres</label>
+                                                <label class="col-form-label col-lg-3 col-sm-12">Nomor Keppres <a style="color: #FF0000;">*</a></label>
                                                 <div class="col-lg-9 col-md-9 col-sm-12">
                                                     <div class="input-group">
                                                         <input type="text" class="form-control" id="no_keppres" name="no_keppres" value="<?php echo e(old('no_keppres')); ?>" autocomplete="off" required/>
@@ -296,7 +296,7 @@
                                                 </div>
                                             </div>
                                             <div class="form-group row">
-                                                <label class="col-form-label col-lg-3 col-sm-12">Tanggal Keppres</label>
+                                                <label class="col-form-label col-lg-3 col-sm-12">Tanggal Keppres <a style="color: #FF0000;">*</a></label>
                                                 <div class="col-lg-5 col-md-9 col-sm-12">
                                                     <div class="input-group date">
                                                         <input type="text" class="form-control datetimepicker-input my-datepicker" id="tanggal_keppres" name="tanggal_keppres" data-toggle="datetimepicker" data-target="#tanggal_keppres" placeholder="Pilih Tanggal" value="<?php echo e(old('tanggal_keppres')); ?>" autocomplete="off" required/>
@@ -309,11 +309,41 @@
                                                 </div>
                                             </div>
                                             <div class="form-group row">
-                                                <label class="col-form-label col-lg-3 col-sm-12">Nomor Urut</label>
+                                                <label class="col-form-label col-lg-3 col-sm-12">Nomor Urut <a style="color: #FF0000;">*</a></label>
                                                 <div class="col-lg-9 col-md-9 col-sm-12">
                                                     <div class="input-group">
-                                                        <input type="number" class="form-control" id="no_urut" name="no_urut" value="<?php echo e(old('no_urut')); ?>" autocomplete="off" required/>
+                                                        <input type="text" class="form-control" id="no_urut" name="no_urut" value="<?php echo e(old('no_urut')); ?>" autocomplete="off" required/>
                                                     </div>
+                                                </div>
+                                            </div>
+                                            <div class="form-group row">
+                                                <label class="col-form-label col-lg-3 col-sm-12"></label>
+                                                <div class="col-lg-9 col-md-9 col-sm-12">
+                                                    <div style="margin-bottom:10px;">
+                                                        <label class="checkbox checkbox-outline checkbox-outline-2x checkbox-primary">
+                                                            <input type="checkbox" id="checked_file_surat_permohonan" disabled/>
+                                                            <span></span><div style="margin-left: 10px;">File Surat Permohonan</div>
+                                                        </label>
+                                                    </div>
+                                                    <div style="margin-bottom:10px;">
+                                                        <label class="checkbox checkbox-outline checkbox-outline-2x checkbox-primary">
+                                                            <input type="checkbox" id="checked_file_surat_keterangan_kehilangan_polisi" disabled/>
+                                                            <span></span><div style="margin-left: 10px;">File Surat Keterangan Kehilangan Dari Kepolisian</div>
+                                                        </label>
+                                                    </div>
+                                                    <div style="margin-bottom:10px;">
+                                                        <label class="checkbox checkbox-outline checkbox-outline-2x checkbox-primary">
+                                                            <input type="checkbox" id="checked_file_surat_keterangan_kehilangan" disabled/>
+                                                            <span></span><div style="margin-left: 10px;">File Surat Keterangan Kehilangan</div>
+                                                        </label>
+                                                    </div>
+                                                    <div style="margin-bottom:10px;">
+                                                        <label class="checkbox checkbox-outline checkbox-outline-2x checkbox-primary">
+                                                            <input type="checkbox" id="checked_file_fotokopi_sk_hilang" disabled/>
+                                                            <span></span><div style="margin-left: 10px;">File Fotokopi SK yang Hilang</div>
+                                                        </label>
+                                                    </div>
+                                                    
                                                 </div>
                                             </div>
                                         </div>
@@ -322,7 +352,7 @@
                                         <!-- <div class="pb-6" style="margin-left: 50px; margin-right: 50px;" data-wizard-type="step-content">
                                             <h4 class="mb-10 font-weight-bold text-dark">Keppres</h4>
                                             <div class="form-group row">
-                                                <label class="col-form-label col-lg-3 col-sm-12">No. Keppres</label>
+                                                <label class="col-form-label col-lg-3 col-sm-12">No. Keppres <a style="color: #FF0000;">*</a></label>
                                                 <div class="col-lg-9 col-md-9 col-sm-12">
                                                     <div class="input-group">
                                                         <input type="text" class="form-control" id="no_keppres" name="no_keppres" value="<?php echo e(old('no_keppres')); ?>" autocomplete="off" required/>
@@ -330,7 +360,7 @@
                                                 </div>
                                             </div>
                                             <div class="form-group row">
-                                                <label class="col-form-label col-lg-3 col-sm-12">Tanggal Keppres</label>
+                                                <label class="col-form-label col-lg-3 col-sm-12">Tanggal Keppres <a style="color: #FF0000;">*</a></label>
                                                 <div class="col-lg-5 col-md-9 col-sm-12">
                                                     <div class="input-group date">
                                                         <input type="text" class="form-control datetimepicker-input my-datepicker" id="tanggal_keppres" name="tanggal_keppres" data-toggle="datetimepicker" data-target="#tanggal_keppres" placeholder="Pilih Tanggal" value="<?php echo e(old('tanggal_keppres')); ?>" autocomplete="off" required/>
@@ -343,7 +373,7 @@
                                                 </div>
                                             </div>
                                             <div class="form-group row">
-                                                <label class="col-form-label col-lg-3 col-sm-12">Masa Jabatan</label>
+                                                <label class="col-form-label col-lg-3 col-sm-12">Masa Jabatan <a style="color: #FF0000;">*</a></label>
                                                 <div class="col-lg-4 col-md-9 col-sm-12">
                                                     <div class="input-group date">
                                                         <input type="text" class="form-control datetimepicker-input my-datepicker" name="masa_jabatan_start" data-toggle="datetimepicker" data-target="#masa_jabatan_start" placeholder="Select Date First" id="masa_jabatan_start" value="<?php echo e(old('masa_jabatan_start')); ?>" autocomplete="off" required/>
@@ -356,7 +386,7 @@
                                                     <span class="form-text text-muted">Please input the date from start.</span>
                                                 </div>
                                                 <div>
-                                                    <label class="col-form-label">s/d.</label>
+                                                    <label class="col-form-label">s/d. <a style="color: #FF0000;">*</a></label>
                                                 </div>
                                                 <div class="col-lg-4 col-md-9 col-sm-12">
                                                     <div class="input-group date">
@@ -375,7 +405,7 @@
                                         <!--begin: Wizard Step 2-->
                                         <!-- <div class="pb-6" style="margin-left: 50px; margin-right: 50px;" data-wizard-type="step-content">
                                             <div class="form-group row">
-                                                <label class="col-form-label col-lg-3 col-sm-12">TMT</label>
+                                                <label class="col-form-label col-lg-3 col-sm-12">TMT <a style="color: #FF0000;">*</a></label>
                                                 <div class="col-lg-9 col-md-9 col-sm-12">
                                                     <div class="input-group date">
                                                         <input type="text" class="form-control" id="tmt" name="tmt" value="<?php echo e(old('tmt')); ?>" autocomplete="off" required/>
@@ -383,7 +413,7 @@
                                                 </div>
                                             </div>
                                             <div class="form-group row">
-                                                <label class="col-form-label col-lg-3 col-sm-12">Hak keuangan dan Fasilitas</label>
+                                                <label class="col-form-label col-lg-3 col-sm-12">Hak keuangan dan Fasilitas <a style="color: #FF0000;">*</a></label>
                                                 <div class="col-lg-9 col-md-9 col-sm-12">
                                                     <div class="input-group date">
                                                         <input type="text" class="form-control" id="hak_keuangan" name="hak_keuangan" value="<?php echo e(old('hak_keuangan')); ?>" autocomplete="off" required/>
@@ -391,7 +421,7 @@
                                                 </div>
                                             </div>
                                             <div class="form-group row">
-                                                <label class="col-form-label col-lg-3 col-sm-12">Tanggal pelantikan</label>
+                                                <label class="col-form-label col-lg-3 col-sm-12">Tanggal pelantikan <a style="color: #FF0000;">*</a></label>
                                                 <div class="col-lg-5 col-md-9 col-sm-12">
                                                     <div class="input-group date">
                                                         <input type="text" class="form-control datetimepicker-input my-datepicker" id="tanggal_pelantikan" name="tanggal_pelantikan" data-toggle="datetimepicker" data-target="#tanggal_pelantikan" placeholder="Pilih Tanggal" value="<?php echo e(old('tanggal_pelantikan')); ?>" autocomplete="off" required/>
@@ -404,7 +434,7 @@
                                                 </div>
                                             </div>
                                            <div class="form-group row">
-                                                <label class="col-form-label col-lg-3 col-sm-12">Yang Melantik</label>
+                                                <label class="col-form-label col-lg-3 col-sm-12">Yang Melantik <a style="color: #FF0000;">*</a></label>
                                                 <div class="col-lg-9 col-md-9 col-sm-12">
                                                     <div class="input-group date">
                                                         <input type="text" class="form-control" id="yang_melantik" name="yang_melantik" value="<?php echo e(old('yang_melantik')); ?>" autocomplete="off" required/>
@@ -412,14 +442,14 @@
                                                 </div>
                                             </div>
                                             <div class="form-group row">
-                                                <label class="col-lg-3 col-form-label">Upload BA Pelantikan</label>
+                                                <label class="col-lg-3 col-form-label">Upload BA Pelantikan <a style="color: #FF0000;">*</a></label>
                                                 <div class="col-lg-9">
                                                     <input id="file_ba_pelantikan" name="file_ba_pelantikan[]" accept=".jpg,.jpeg,.png,.pdf" type="file" class="file" data-show-preview="false" multiple/>
                                                     <span class="form-text text-muted">Format file harus berbentuk jpg, png, jpeg, pdf, batas size file 1 MB dan file tidak boleh lebih dari 5 file</span>
                                                 </div>
                                             </div>
                                             <div class="form-group row">
-                                                <label class="col-lg-3 col-form-label">Upload Sumpah Jabatan</label>
+                                                <label class="col-lg-3 col-form-label">Upload Sumpah Jabatan <a style="color: #FF0000;">*</a></label>
                                                 <div class="col-lg-9">
                                                     <input id="file_sumpah_jabatan" name="file_sumpah_jabatan[]" accept=".jpg,.jpeg,.png,.pdf" type="file" class="file" data-show-preview="false" multiple/>
                                                     <span class="form-text text-muted">Format file harus berbentuk jpg, png, jpeg, pdf, batas size file 1 MB dan file tidak boleh lebih dari 5 file</span>
@@ -471,6 +501,72 @@
 <?php $__env->startSection('scripts'); ?>
 
     <script>
+        $('#masa_jabatan_start, #masa_jabatan_end').on('change.datetimepicker', function(e) {
+            if(e.date){
+                var min_date = renewDate('min', e.date);
+                applyTimePicker('min', '#masa_jabatan_end', min_date);
+            }
+            var date_start = new Date(document.getElementById("masa_jabatan_start").value);
+            var date_start_day = date_start.getDate();
+            var date_start_month = date_start.getMonth();
+            var date_start_year = date_start.getFullYear();
+
+            var date_end = new Date(document.getElementById("masa_jabatan_end").value);
+            var date_end_day = date_end.getDate();
+            var date_end_month = date_end.getMonth();
+            var date_end_year = date_end.getFullYear();
+            
+            var calculated_date = 0;
+            if(date_end_month > date_start_month) 
+            {
+                calculated_date = date_end_year - date_start_year;
+            }
+            else
+            { 
+                calculated_date = date_end_year - date_start_year;
+            }
+
+
+            var out_value = calculated_date;
+            document.getElementById("masa").innerHTML = out_value + ' Tahun';
+            getdatadate(date_end);
+
+        });
+        
+        $(document).ready(function () {
+            $("#file_surat_permohonan").on("change", function () {
+                if ($('#file_surat_permohonan')[0].files.length != 0) {
+                    $("#checked_file_surat_permohonan").attr('checked', true);
+                } else {
+                    $("#checked_file_surat_permohonan").attr('checked',false);
+                }
+            });
+
+            $("#file_surat_keterangan_kehilangan_polisi").on("change", function () {
+                if ($('#file_surat_keterangan_kehilangan_polisi')[0].files.length != 0) {
+                    $("#checked_file_surat_keterangan_kehilangan_polisi").attr('checked', true);
+                } else {
+                    $("#checked_file_surat_keterangan_kehilangan_polisi").attr('checked',false);
+                }
+            });
+
+            $("#file_surat_keterangan_kehilangan").on("change", function () {
+                if ($('#file_surat_keterangan_kehilangan')[0].files.length != 0) {
+                    $("#checked_file_surat_keterangan_kehilangan").attr('checked', true);
+                } else {
+                    $("#checked_file_surat_keterangan_kehilangan").attr('checked',false);
+                }
+            });
+
+            $("#file_fotokopi_sk_hilang").on("change", function () {
+                if ($('#file_fotokopi_sk_hilang')[0].files.length != 0) {
+                    $("#checked_file_fotokopi_sk_hilang").attr('checked', true);
+                } else {
+                    $("#checked_file_fotokopi_sk_hilang").attr('checked',false);
+                }
+            });
+        });
+
         $('.my-datepicker').datetimepicker({
             useCurrent:false,
             format: 'DD-MMM-YYYY'

@@ -221,7 +221,7 @@
                                                     <select class="form-control select2" style="width: 230px;" id="pangkat_baru" name="pangkat_baru">
                                                         <option value="">Choose</option>
                                                         <?php $__currentLoopData = $pangkats; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $pangkat): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                                                            <option value="<?php echo e($pangkat->id); ?>" <?php echo e(old('pangkat_baru') == $pangkat->id ? 'selected' : ''); ?>><?php echo e($pangkat->golongan); ?> | <?php echo e($pangkat->ruang); ?></option>
+                                                            <option value="<?php echo e($pangkat->id); ?>" <?php echo e(old('pangkat_baru') == $pangkat->id ? 'selected' : ''); ?>><?php echo e($pangkat->name); ?> (<?php echo e($pangkat->golongan); ?>/<?php echo e($pangkat->ruang); ?></option>
                                                         <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                                                     </select>
                                                     <!-- <div class="input-group date">

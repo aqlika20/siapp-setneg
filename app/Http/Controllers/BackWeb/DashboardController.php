@@ -63,9 +63,14 @@ class DashboardController extends Controller
             return redirect()->route('tu-menteri.home.index');
         }
 
-        // TU Menteri
+        // Dukmin
         if ($currentUser->roles_id == 12){
             return redirect()->route('dukmin.home.index');
+        }
+
+        // Administrator
+        if ($currentUser->roles_id == 1){
+            return redirect()->route('administrator.home.index');
         }
     }
 

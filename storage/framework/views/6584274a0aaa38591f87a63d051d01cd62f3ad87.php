@@ -48,7 +48,7 @@
                                                 <label class="col-form-label col-lg-3 col-sm-12">Tanggal Surat usulan <a style="color: #FF0000;">*</a></label>
                                                 <div class="col-lg-5 col-md-9 col-sm-12">
                                                     <div class="input-group date">
-                                                        <input type="text" class="form-control datetimepicker-input my-datepicker" id="tanggal_surat_usulan" name="tanggal_surat_usulan" data-toggle="datetimepicker" data-target="#tanggal_surat_usulan" placeholder="Pilih Tanggal" value="<?php echo e(old('tanggal_surat_usulan')); ?>" required/>
+                                                        <input type="text" class="form-control datetimepicker-input my-datepicker" id="tanggal_surat_usulan" name="tanggal_surat_usulan" data-toggle="datetimepicker" data-target="#tanggal_surat_usulan" placeholder="Pilih Tanggal" value="<?php echo e(old('tanggal_surat_usulan')); ?>"/>
                                                         <div class="input-group-append">
                                                             <span class="input-group-text">
                                                                 <i class="la la-calendar"></i>
@@ -64,7 +64,7 @@
                                                 <label class="col-form-label col-lg-3 col-sm-12">No. Surat Usulan <a style="color: #FF0000;">*</a></label>
                                                 <div class="col-lg-9 col-md-9 col-sm-12">
                                                     <div class="input-group">
-                                                        <input type="text" class="form-control" id="no_surat_usulan" name="no_surat_usulan" value="<?php echo e(old('no_surat_usulan')); ?>" autocomplete="off" required/>
+                                                        <input type="text" class="form-control" id="no_surat_usulan" name="no_surat_usulan" value="<?php echo e(old('no_surat_usulan')); ?>" autocomplete="off"/>
                                                     </div>
                                                 </div>
                                             </div>
@@ -74,7 +74,7 @@
                                                 <label class="col-form-label col-lg-3 col-sm-12">PPK Pejabat yang Diusulkan <a style="color: #FF0000;">*</a></label>
                                                 <div class="col-lg-9 col-md-9 col-sm-12">
                                                     <div class="input-group">
-                                                        <input type="text" class="form-control" id="ppk_pejabat_yang_diusulkan" name="ppk_pejabat_yang_diusulkan" value="<?php echo e(old('ppk_pejabat_yang_diusulkan')); ?>" autocomplete="off" required/>
+                                                        <input type="text" class="form-control" id="ppk_pejabat_yang_diusulkan" name="ppk_pejabat_yang_diusulkan" value="<?php echo e(old('ppk_pejabat_yang_diusulkan')); ?>" autocomplete="off"/>
                                                     </div>
                                                 </div>
                                             </div>
@@ -84,7 +84,7 @@
                                                 <label class="col-form-label col-lg-3 col-sm-12">Jabatan Yang Menandatangani <a style="color: #FF0000;">*</a></label>
                                                 <div class="col-lg-9 col-md-9 col-sm-12">
                                                     <div class="input-group">
-                                                        <input type="text"class="form-control" id="pejabat_menandatangani" name="pejabat_menandatangani" value="<?php echo e(old('pejabat_menandatangani')); ?>" autocomplete="off" required/>
+                                                        <input type="text"class="form-control" id="pejabat_menandatangani" name="pejabat_menandatangani" value="<?php echo e(old('pejabat_menandatangani')); ?>" autocomplete="off"/>
                                                     </div>
                                                 </div>
                                             </div>
@@ -143,7 +143,7 @@
                                                 <label class="col-form-label col-lg-3 col-sm-12">NIP <a style="color: #FF0000;">*</a></label>
                                                 <div class="col-lg-5 col-md-9 col-sm-12">
                                                     <div class="input-group date">
-                                                        <input type="number" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" maxlength="18"  class="form-control" id="nip" name="nip" value="<?php echo e(old('nip')); ?>" autocomplete="off" required/>
+                                                        <input type="number" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" maxlength="18"  class="form-control" id="nip" name="nip" value="<?php echo e(old('nip')); ?>" autocomplete="off"/>
                                                     </div>
                                                 </div>
                                                 <button id="btn-bkn" class="btn btn-light-primary font-weight-bold">Tarik Data BKN</button>
@@ -154,7 +154,7 @@
                                                 <label class="col-form-label col-lg-3 col-sm-12">Nama dan Gelar <a style="color: #FF0000;">*</a></label>
                                                 <div class="col-lg-9 col-md-9 col-sm-12">
                                                     <div class="input-group date">
-                                                        <input type="text" class="form-control" id="nama" name="nama" value="<?php echo e(old('nama')); ?>" autocomplete="off" required/>
+                                                        <input type="text" class="form-control" id="nama" name="nama" value="<?php echo e(old('nama')); ?>" autocomplete="off"/>
                                                     </div>
                                                 </div>
                                             </div>
@@ -164,7 +164,7 @@
                                                 <label class="col-form-label col-lg-3 col-sm-12">Tempat Lahir <a style="color: #FF0000;">*</a></label>
                                                 <div class="col-lg-9 col-md-9 col-sm-12">
                                                     <div class="input-group date">
-                                                        <input type="text" class="form-control" id="tempat_lahir" name="tempat_lahir" value="<?php echo e(old('tempat_lahir')); ?>" autocomplete="off" required/>
+                                                        <input type="text" class="form-control" id="tempat_lahir" name="tempat_lahir" value="<?php echo e(old('tempat_lahir')); ?>" autocomplete="off"/>
                                                     </div>
                                                 </div>
                                             </div>
@@ -174,7 +174,7 @@
                                                 <label class="col-form-label col-lg-3 col-sm-12">Tanggal Lahir <a style="color: #FF0000;">*</a></label>
                                                 <div class="col-lg-5 col-md-9 col-sm-12">
                                                     <div class="input-group date">
-                                                        <input type="text" class="form-control datetimepicker-input my-datepicker" id="tanggal_lahir" name="tanggal_lahir" data-toggle="datetimepicker" data-target="#tanggal_lahir" placeholder="Pilih Tanggal" value="<?php echo e(old('tanggal_lahir')); ?>" autocomplete="off" required/>
+                                                        <input type="text" class="form-control datetimepicker-input my-datepicker" id="tanggal_lahir" name="tanggal_lahir" data-toggle="datetimepicker" data-target="#tanggal_lahir" placeholder="Pilih Tanggal" value="<?php echo e(old('tanggal_lahir')); ?>" autocomplete="off"/>
                                                         <div class="input-group-append">
                                                             <span class="input-group-text">
                                                                 <i class="la la-calendar"></i>
@@ -188,7 +188,7 @@
                                                 <label class="col-form-label col-lg-3 col-sm-12">Pendidikan Terakhir <a style="color: #FF0000;">*</a></label>
                                                 <div class="col-lg-9 col-md-9 col-sm-12">
                                                     <div class="input-group date">
-                                                        <input type="text" class="form-control" id="pendidikan_terakhir" name="pendidikan_terakhir" value="<?php echo e(old('pendidikan_terakhir')); ?>" autocomplete="off" required/>
+                                                        <input type="text" class="form-control" id="pendidikan_terakhir" name="pendidikan_terakhir" value="<?php echo e(old('pendidikan_terakhir')); ?>" autocomplete="off"/>
                                                     </div>
                                                 </div>
                                             </div>
@@ -196,7 +196,7 @@
                                                 <label class="col-form-label col-lg-3 col-sm-12">Instansi Induk <a style="color: #FF0000;">*</a></label>
                                                 <div class="col-lg-9 col-md-9 col-sm-12">
                                                     <div class="input-group date">
-                                                        <input type="text" class="form-control" id="instansi_induk" name="instansi_induk" value="<?php echo e(old('instansi_induk')); ?>" autocomplete="off"  required/>
+                                                        <input type="text" class="form-control" id="instansi_induk" name="instansi_induk" value="<?php echo e(old('instansi_induk')); ?>" autocomplete="off" />
                                                     </div>
                                                 </div>
                                             </div>
@@ -204,7 +204,16 @@
                                                 <label class="col-form-label col-lg-3 col-sm-12">Instansi Pengusul <a style="color: #FF0000;">*</a></label>
                                                 <div class="col-lg-9 col-md-9 col-sm-12">
                                                     <div class="input-group date">
-                                                        <input type="text" class="form-control" id="instansi_pengusul" name="instansi_pengusul" value="<?php echo e(old('instansi_pengusul')); ?>" autocomplete="off"  required/>
+                                                        <input type="text" class="form-control" id="instansi_pengusul" name="instansi_pengusul" value="<?php echo e(old('instansi_pengusul')); ?>" autocomplete="off" />
+                                                    </div>
+                                                    <div id="instan"></div>
+                                                    <?php echo e(csrf_field()); ?>
+
+                                                </div>
+                                            </div>
+                                            <div class="form-group row">
+                                                <div class="col-lg-9 col-md-9 col-sm-12">
+                                                    <div class="input-group date">
                                                     </div>
                                                 </div>
                                             </div>
@@ -213,7 +222,7 @@
                                                 <label class="col-form-label col-lg-3 col-sm-12">Jumlah <a style="color: #FF0000;">*</a></label>
                                                 <div class="col-lg-9 col-md-9 col-sm-12">
                                                     <div class="input-group date">
-                                                        <input type="text" class="form-control" id="jumlah" name="jumlah" value="<?php echo e(old('jumlah')); ?>" autocomplete="off" required/>
+                                                        <input type="text" class="form-control" id="jumlah" name="jumlah" value="<?php echo e(old('jumlah')); ?>" autocomplete="off"/>
                                                     </div>
                                                 </div>
                                             </div>
@@ -222,7 +231,7 @@
                                                 <label class="col-form-label col-lg-3 col-sm-12">Terisi <a style="color: #FF0000;">*</a></label>
                                                 <div class="col-lg-9 col-md-9 col-sm-12">
                                                     <div class="input-group date">
-                                                        <input type="text" class="form-control" id="terisi" name="terisi" value="<?php echo e(old('terisi')); ?>" autocomplete="off" required/>
+                                                        <input type="text" class="form-control" id="terisi" name="terisi" value="<?php echo e(old('terisi')); ?>" autocomplete="off"/>
                                                     </div>
                                                 </div>
                                             </div>
@@ -231,7 +240,7 @@
                                                 <label class="col-form-label col-lg-3 col-sm-12">Sisa <a style="color: #FF0000;">*</a></label>
                                                 <div class="col-lg-9 col-md-9 col-sm-12">
                                                     <div class="input-group date">
-                                                        <input type="text" class="form-control" id="sisa" name="sisa" value="<?php echo e(old('sisa')); ?>" autocomplete="off" required/>
+                                                        <input type="text" class="form-control" id="sisa" name="sisa" value="<?php echo e(old('sisa')); ?>" autocomplete="off"/>
                                                     </div>
                                                 </div>
                                             </div>
@@ -431,7 +440,7 @@
                                                 <label class="col-form-label col-lg-3 col-sm-12">Tanggal ditetapkan</label>
                                                 <div class="col-lg-5 col-md-9 col-sm-12">
                                                     <div class="input-group date">
-                                                        <input type="text" class="form-control datetimepicker-input my-datepicker" id="tanggal_pak" name="tanggal_pak" data-toggle="datetimepicker" data-target="#tanggal_pak" placeholder="Pilih Tanggal" value="<?php echo e(old('tanggal_pak')); ?>" autocomplete="off" />
+                                                        <input type="text" class="form-control datetimepicker-input" id="tanggal_pak" name="tanggal_pak" data-toggle="datetimepicker" data-target="#tanggal_pak" placeholder="Pilih Tanggal" value="<?php echo e(old('tanggal_pak')); ?>" autocomplete="off" />
                                                         <div class="input-group-append">
                                                             <span class="input-group-text">
                                                                 <i class="la la-calendar"></i>
@@ -531,7 +540,7 @@
                                                 <label class="col-form-label col-lg-3 col-sm-12">Jabatan <a style="color: #FF0000;">*</a></label>
                                                 <div class="col-lg-9 col-md-9 col-sm-12">
                                                     <div class="input-group date">
-                                                        <input type="text" class="form-control" id="jabatan_lama" name="jabatan_lama" value="<?php echo e(old('jabatan_lama')); ?>" autocomplete="off" required/>
+                                                        <input type="text" class="form-control" id="jabatan_lama" name="jabatan_lama" value="<?php echo e(old('jabatan_lama')); ?>" autocomplete="off"/>
                                                     </div>
                                                 </div>
                                             </div>
@@ -539,7 +548,7 @@
                                                 <label class="col-form-label col-lg-3 col-sm-12">No. SK Jabatan <a style="color: #FF0000;">*</a></label>
                                                 <div class="col-lg-9 col-md-9 col-sm-12">
                                                     <div class="input-group date">
-                                                        <input type="text" class="form-control" id="no_sk_jabatan_lama" name="no_sk_jabatan_lama" value="<?php echo e(old('no_sk_jabatan_lama')); ?>" autocomplete="off"  required/>
+                                                        <input type="text" class="form-control" id="no_sk_jabatan_lama" name="no_sk_jabatan_lama" value="<?php echo e(old('no_sk_jabatan_lama')); ?>" autocomplete="off" />
                                                     </div>
                                                 </div>
                                             </div>
@@ -547,7 +556,7 @@
                                                 <label class="col-form-label col-lg-3 col-sm-12">TMT Jabatan <a style="color: #FF0000;">*</a></label>
                                                 <div class="col-lg-5 col-md-9 col-sm-12">
                                                     <div class="input-group date">
-                                                        <input type="text" class="form-control datetimepicker-input my-datepicker" id="tmt_jabatan_lama" name="tmt_jabatan_lama" data-toggle="datetimepicker" data-target="#tmt_jabatan_lama" placeholder="Pilih Tanggal" value="<?php echo e(old('tmt_jabatan_lama')); ?>" autocomplete="off" required/>
+                                                        <input type="text" class="form-control datetimepicker-input my-datepicker" id="tmt_jabatan_lama" name="tmt_jabatan_lama" data-toggle="datetimepicker" data-target="#tmt_jabatan_lama" placeholder="Pilih Tanggal" value="<?php echo e(old('tmt_jabatan_lama')); ?>" autocomplete="off"/>
                                                         <div class="input-group-append">
                                                             <span class="input-group-text">
                                                                 <i class="la la-calendar"></i>
@@ -560,14 +569,14 @@
                                                 <label class="col-form-label col-lg-3 col-sm-12">Satuan Organisasi Lama <a style="color: #FF0000;">*</a></label>
                                                 <div class="col-lg-9 col-md-9 col-sm-12">
                                                     <div class="input-group date">
-                                                        <input type="text" class="form-control" id="satuan_organisasi_lama" name="satuan_organisasi_lama" value="<?php echo e(old('satuan_organisasi_lama')); ?>" autocomplete="off" required/>
+                                                        <input type="text" class="form-control" id="satuan_organisasi_lama" name="satuan_organisasi_lama" value="<?php echo e(old('satuan_organisasi_lama')); ?>" autocomplete="off"/>
                                                     </div>
                                                 </div>
                                             </div>
                                             <div class="form-group row">
                                                 <label class="col-lg-3 col-form-label">Upload SK Jabatan sebelumnya <a style="color: #FF0000;">*</a></label>
                                                 <div class="col-lg-9">
-                                                    <input id="file_jabatan_lama" name="file_jabatan_lama[]" accept=".jpg,.jpeg,.png,.pdf" type="file" class="file" data-show-preview="false" multiple autocomplete="off" required/>
+                                                    <input id="file_jabatan_lama" name="file_jabatan_lama[]" accept=".jpg,.jpeg,.png,.pdf" type="file" class="file" data-show-preview="false" multiple autocomplete="off"/>
                                                     <!-- <div class="dropzone dropzone-multi" id="kt_dropzone_9">
                                                         <div class="dropzone-panel mb-lg-0 mb-2">
                                                             <a class="dropzone-select btn btn-light-primary font-weight-bold btn-sm">Attach files</a>
@@ -618,7 +627,7 @@
                                                 <label class="col-form-label col-lg-3 col-sm-12">Jabatan <a style="color: #FF0000;">*</a></label>
                                                 <div class="col-lg-9 col-md-9 col-sm-12">
                                                     <div class="input-group date">
-                                                        <input type="text" class="form-control" id="jabatan_baru" name="jabatan_baru" value="<?php echo e(old('jabatan_baru')); ?>" autocomplete="off" required/>
+                                                        <input type="text" class="form-control" id="jabatan_baru" name="jabatan_baru" value="<?php echo e(old('jabatan_baru')); ?>" autocomplete="off"/>
                                                     </div>
                                                 </div>
                                             </div>
@@ -626,7 +635,7 @@
                                                 <label class="col-form-label col-lg-3 col-sm-12">Satuan Organisasi Baru <a style="color: #FF0000;">*</a></label>
                                                 <div class="col-lg-9 col-md-9 col-sm-12">
                                                     <div class="input-group date">
-                                                        <input type="text" class="form-control" id="satuan_organisasi_baru" name="satuan_organisasi_baru" value="<?php echo e(old('satuan_organisasi_baru')); ?>" autocomplete="off" required/>
+                                                        <input type="text" class="form-control" id="satuan_organisasi_baru" name="satuan_organisasi_baru" value="<?php echo e(old('satuan_organisasi_baru')); ?>" autocomplete="off"/>
                                                     </div>
                                                 </div>
                                             </div>
@@ -642,7 +651,7 @@
                                                 <label class="col-form-label col-lg-3 col-sm-12">Jabatan <a style="color: #FF0000;">*</a></label>
                                                 <div class="col-lg-9 col-md-9 col-sm-12">
                                                     <div class="input-group date">
-                                                        <input type="text" class="form-control" id="jabatan_kompetensi" name="jabatan_kompetensi" value="<?php echo e(old('jabatan_kompetensi')); ?>" autocomplete="off" required/>
+                                                        <input type="text" class="form-control" id="jabatan_kompetensi" name="jabatan_kompetensi" value="<?php echo e(old('jabatan_kompetensi')); ?>" autocomplete="off"/>
                                                     </div>
                                                 </div>
                                             </div>
@@ -651,7 +660,7 @@
                                                 <label class="col-form-label col-lg-3 col-sm-12">Nomor Sertifikat/Surat <a style="color: #FF0000;">*</a></label>
                                                 <div class="col-lg-9 col-md-9 col-sm-12">
                                                     <div class="input-group date">
-                                                        <input type="text" class="form-control" id="no_sertifikat" name="no_sertifikat" value="<?php echo e(old('no_sertifikat')); ?>" autocomplete="off"  required/>
+                                                        <input type="text" class="form-control" id="no_sertifikat" name="no_sertifikat" value="<?php echo e(old('no_sertifikat')); ?>" autocomplete="off" />
                                                     </div>
                                                 </div>
                                             </div>
@@ -660,7 +669,7 @@
                                                 <label class="col-form-label col-lg-3 col-sm-12">Tgl.Sertifikat/Surat Kompetensi <a style="color: #FF0000;">*</a></label>
                                                 <div class="col-lg-5 col-md-9 col-sm-12">
                                                     <div class="input-group date">
-                                                        <input type="text" class="form-control datetimepicker-input my-datepicker" id="tanggal_sertifikat" name="tanggal_sertifikat" data-toggle="datetimepicker" data-target="#tanggal_sertifikat" placeholder="Pilih Tanggal" value="<?php echo e(old('tanggal_sertifikat')); ?>" autocomplete="off" required/>
+                                                        <input type="text" class="form-control datetimepicker-input my-datepicker" id="tanggal_sertifikat" name="tanggal_sertifikat" data-toggle="datetimepicker" data-target="#tanggal_sertifikat" placeholder="Pilih Tanggal" value="<?php echo e(old('tanggal_sertifikat')); ?>" autocomplete="off"/>
                                                         <div class="input-group-append">
                                                             <span class="input-group-text">
                                                                 <i class="la la-calendar"></i>
@@ -673,7 +682,7 @@
                                             <div class="form-group row">
                                                 <label class="col-lg-3 col-form-label">Upload Sertifikat Uji Kompetensi. <a style="color: #FF0000;">*</a></label>
                                                 <div class="col-lg-9">
-                                                    <input id="file_data_kompetensi" name="file_data_kompetensi[]" accept=".jpg,.jpeg,.png,.pdf" type="file" class="file" data-show-preview="false" multiple required/>
+                                                    <input id="file_data_kompetensi" name="file_data_kompetensi[]" accept=".jpg,.jpeg,.png,.pdf" type="file" class="file" data-show-preview="false" multiple/>
                                                     <!-- <div class="dropzone dropzone-multi" id="kt_dropzone_11">
                                                         <div class="dropzone-panel mb-lg-0 mb-2">
                                                             <a class="dropzone-select btn btn-light-primary font-weight-bold btn-sm">Attach files</a>
@@ -722,7 +731,7 @@
                                                 <label class="col-form-label col-lg-3 col-sm-12">Nomor SK Pangkat <a style="color: #FF0000;">*</a></label>
                                                 <div class="col-lg-9 col-md-9 col-sm-12">
                                                     <div class="input-group date">
-                                                        <input type="text" class="form-control" id="no_sk_pangkat" name="no_sk_pangkat" value="<?php echo e(old('no_sk_pangkat')); ?>" autocomplete="off" required/>
+                                                        <input type="text" class="form-control" id="no_sk_pangkat" name="no_sk_pangkat" value="<?php echo e(old('no_sk_pangkat')); ?>" autocomplete="off"/>
                                                     </div>
                                                 </div>
                                             </div>
@@ -750,7 +759,7 @@
                                                 <label class="col-form-label col-lg-3 col-sm-12">TMT <a style="color: #FF0000;">*</a></label>
                                                 <div class="col-lg-5 col-md-9 col-sm-12">
                                                     <div class="input-group date">
-                                                        <input type="text" class="form-control datetimepicker-input my-datepicker" id="tmt_gol" name="tmt_gol" data-toggle="datetimepicker" data-target="#tmt_gol" placeholder="Pilih Tanggal" value="<?php echo e(old('tmt_gol')); ?>" autocomplete="off" required/>
+                                                        <input type="text" class="form-control datetimepicker-input my-datepicker" id="tmt_gol" name="tmt_gol" data-toggle="datetimepicker" data-target="#tmt_gol" placeholder="Pilih Tanggal" value="<?php echo e(old('tmt_gol')); ?>" autocomplete="off"/>
                                                         <div class="input-group-append">
                                                             <span class="input-group-text">
                                                                 <i class="la la-calendar"></i>
@@ -762,7 +771,7 @@
                                             <div class="form-group row">
                                                 <label class="col-lg-3 col-form-label">Upload SK pangkat terakhir. <a style="color: #FF0000;">*</a></label>
                                                 <div class="col-lg-9">
-                                                    <input id="file_sk_pangkat_terakhir" name="file_sk_pangkat_terakhir[]" accept=".jpg,.jpeg,.png,.pdf" type="file" class="file" data-show-preview="false" multiple required/>
+                                                    <input id="file_sk_pangkat_terakhir" name="file_sk_pangkat_terakhir[]" accept=".jpg,.jpeg,.png,.pdf" type="file" class="file" data-show-preview="false" multiple/>
                                                     <!-- <div class="dropzone dropzone-multi" id="kt_dropzone_11">
                                                         <div class="dropzone-panel mb-lg-0 mb-2">
                                                             <a class="dropzone-select btn btn-light-primary font-weight-bold btn-sm">Attach files</a>
@@ -809,7 +818,7 @@
                                             <div class="form-group row">
                                                 <label class="col-lg-3 col-form-label">Upload Penilaian SKP <a style="color: #FF0000;">*</a></label>
                                                 <div class="col-lg-9">
-                                                    <input id="file_penilaian_skp" name="file_penilaian_skp[]" accept=".jpg,.jpeg,.png,.pdf" type="file" class="file" data-show-preview="false" multiple required/>
+                                                    <input id="file_penilaian_skp" name="file_penilaian_skp[]" accept=".jpg,.jpeg,.png,.pdf" type="file" class="file" data-show-preview="false" multiple/>
                                                     <!-- <div class="dropzone dropzone-multi" id="kt_dropzone_11">
                                                         <div class="dropzone-panel mb-lg-0 mb-2">
                                                             <a class="dropzone-select btn btn-light-primary font-weight-bold btn-sm">Attach files</a>
@@ -850,7 +859,7 @@
                                             <div class="form-group row">
                                                 <label class="col-lg-3 col-form-label">Upload Penilaian Prestasi Kerja 2 Tahun Terakhir <a style="color: #FF0000;">*</a></label>
                                                 <div class="col-lg-9">
-                                                    <input id="file_penilaian_prestasi" name="file_penilaian_prestasi[]" accept=".jpg,.jpeg,.png,.pdf" type="file" class="file" data-show-preview="false" multiple required/>
+                                                    <input id="file_penilaian_prestasi" name="file_penilaian_prestasi[]" accept=".jpg,.jpeg,.png,.pdf" type="file" class="file" data-show-preview="false" multiple/>
                                                     <!-- <div class="dropzone dropzone-multi" id="kt_dropzone_11">
                                                         <div class="dropzone-panel mb-lg-0 mb-2">
                                                             <a class="dropzone-select btn btn-light-primary font-weight-bold btn-sm">Attach files</a>
@@ -891,7 +900,7 @@
                                             <div class="form-group row">
                                                 <label class="col-lg-3 col-form-label"> Upload Dokumen Pendukung Lainnya <a style="color: #FF0000;">*</a></label>
                                                 <div class="col-lg-9">
-                                                    <input id="file_skp_2_lainnya" name="file_skp_2_lainnya[]" accept=".jpg,.jpeg,.png,.pdf" type="file" class="file" data-show-preview="false" multiple required/>
+                                                    <input id="file_skp_2_lainnya" name="file_skp_2_lainnya[]" accept=".jpg,.jpeg,.png,.pdf" type="file" class="file" data-show-preview="false" multiple/>
                                                     <!-- <div class="dropzone dropzone-multi" id="kt_dropzone_11">
                                                         <div class="dropzone-panel mb-lg-0 mb-2">
                                                             <a class="dropzone-select btn btn-light-primary font-weight-bold btn-sm">Attach files</a>
@@ -947,7 +956,7 @@
                                                                 <label class="col-form-label col-lg-3 col-sm-12">Tanggal Catatan <a style="color: #FF0000;">*</a></label>
                                                                 <div class="col-lg-5 col-md-9 col-sm-12">
                                                                     <div class="input-group date">
-                                                                        <input type="text" class="form-control datetimepicker-input my-datepicker" id="tanggal_catatan" name="tanggal_catatan[]" data-toggle="datetimepicker" data-target="#tanggal_catatan" placeholder="Pilih Tanggal" autocomplete="off" required/>
+                                                                        <input type="text" class="form-control datetimepicker-input my-datepicker" id="tanggal_catatan" name="tanggal_catatan[]" data-toggle="datetimepicker" data-target="#tanggal_catatan" placeholder="Pilih Tanggal" autocomplete="off"/>
                                                                         <div class="input-group-append">
                                                                             <span class="input-group-text">
                                                                                 <i class="la la-calendar"></i>
@@ -1102,7 +1111,7 @@
                 <label class="col-form-label col-lg-3 col-sm-12">Tanggal Catatan <a style="color: #FF0000;">*</a></label>
                 <div class="col-lg-5 col-md-9 col-sm-12">
                     <div class="input-group date">
-                        <input type="text" class="form-control datetimepicker-input my-datepicker" id="tanggal_catatan" name="tanggal_catatan[]" data-toggle="datetimepicker" placeholder="Pilih Tanggal" autocomplete="off" required/>
+                        <input type="text" class="form-control datetimepicker-input my-datepicker" id="tanggal_catatan" name="tanggal_catatan[]" data-toggle="datetimepicker" placeholder="Pilih Tanggal" autocomplete="off"/>
                         <div class="input-group-append">
                             <span class="input-group-text">
                                 <i class="la la-calendar"></i>
@@ -1130,8 +1139,56 @@
             </div>
         </div>
     </script>
-    <script>
+    <!-- <script>
+        function myFunction() {
+            var input, filter, ul, li, a, i, txtValue;
+            input = document.getElementById("myInput");
+            filter = input.value.toUpperCase();
+            ul = document.getElementById("myUL");
+            li = ul.getElementsByTagName("li");
+            for (i = 0; i < li.length; i++) {
+                a = li[i].getElementsByTagName("a")[0];
+                txtValue = a.textContent || a.innerText;
+                if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                    li[i].style.display = "";
+                } else {
+                    li[i].style.display = "none";
+                }
+            }
+        }
+    </script> -->
 
+    <script>
+        $(document).ready(function(){
+
+        $('#instansi_pengusul').keyup(function(){ 
+                var query = $(this).val();
+                if(query != '')
+                {
+                var _token = $('input[name="_token"]').val();
+                $.ajax({
+                url:"<?php echo e(route('autocomplete.fetch')); ?>",
+                method:"POST",
+                data:{query:query, _token:_token},
+                success:function(data){
+                    console.log("masuk", data);
+                    $('#instan').fadeIn();  
+                        $('#instan').html(data);
+                    }
+                });
+                }
+            });
+
+            $(document).on('click', 'li', function(){  
+                $('#instansi_pengusul').val($(this).text());  
+                $('#instan').fadeOut();  
+            });  
+
+        });
+    </script>
+
+    <script>
+       
         refreshDateTimePicker();
         function refreshDateTimePicker(){
             
@@ -1147,8 +1204,15 @@
 
             })
         }
-
-        $(document).ready(function () {
+ 
+        $(document).ready(function () 
+        {
+            var currentdate = new Date();
+            $( "#tanggal_pak" ).datetimepicker({
+                format: 'DD-MMM-YYYY',
+                maxDate: moment(),
+                minDate: currentdate.setFullYear(currentdate.getFullYear() - 1)
+            });
             $("#file_surat_usulan").on("change", function () {
                 if ($('#file_surat_usulan')[0].files.length != 0) {
                     $("#checked_file_surat_usulan").attr('checked', true);
@@ -1310,7 +1374,7 @@
         $(document).on('click','.add_more_item',function(){
             var source = $("#tambah_catatan").html();
             // var template = Handlebars.compile(source);
-            var template = '<div class="item_data"><div class="form-group row"><label class="col-form-label col-lg-3 col-sm-12">Tanggal Catatan <a style="color: #FF0000;">*</a></label><div class="col-lg-5 col-md-9 col-sm-12"><div class="input-group date"><input type="text" class="form-control datetimepicker-input my-datepicker" id="tanggal_catatan_' + id +'" name="tanggal_catatan[]" data-toggle="datetimepicker" data-target="#tanggal_catatan_'+ id +'" placeholder="Pilih Tanggal" autocomplete="off" required/><div class="input-group-append"><span class="input-group-text"><i class="la la-calendar"></i></span></div></div></div></div><div class="form-group row"><label class="col-form-label col-lg-3 col-sm-12">Catatan <a style="color: #FF0000;">*</a></label><div class="col-lg-9 col-md-9 col-sm-12"><div class="input-group date"><textarea class="form-control" rows="3" id="catatan" name="catatan[]" ></textarea></div></div></div><div class="form-group row"><div class="col-lg-9 col-md-9 col-sm-12"><!-- <button type="button" class="remove_detail btn btn-sm font-weight-bolder btn-light-primar">Hapus</button> --><a style="margin-top: 10px;" class="remove_detail btn btn-sm font-weight-bolder btn-light-danger"><i class="la la-trash-o"></i>Hapus Catatan</a></div></div></div>'
+            var template = '<div class="item_data"><div class="form-group row"><label class="col-form-label col-lg-3 col-sm-12">Tanggal Catatan <a style="color: #FF0000;">*</a></label><div class="col-lg-5 col-md-9 col-sm-12"><div class="input-group date"><input type="text" class="form-control datetimepicker-input my-datepicker" id="tanggal_catatan_' + id +'" name="tanggal_catatan[]" data-toggle="datetimepicker" data-target="#tanggal_catatan_'+ id +'" placeholder="Pilih Tanggal" autocomplete="off"/><div class="input-group-append"><span class="input-group-text"><i class="la la-calendar"></i></span></div></div></div></div><div class="form-group row"><label class="col-form-label col-lg-3 col-sm-12">Catatan <a style="color: #FF0000;">*</a></label><div class="col-lg-9 col-md-9 col-sm-12"><div class="input-group date"><textarea class="form-control" rows="3" id="catatan" name="catatan[]" ></textarea></div></div></div><div class="form-group row"><div class="col-lg-9 col-md-9 col-sm-12"><!-- <button type="button" class="remove_detail btn btn-sm font-weight-bolder btn-light-primar">Hapus</button> --><a style="margin-top: 10px;" class="remove_detail btn btn-sm font-weight-bolder btn-light-danger"><i class="la la-trash-o"></i>Hapus Catatan</a></div></div></div>'
             $(this).parent().parent().parent().find(".item_catatan").append(template);
             id++;
             refreshDateTimePicker();
@@ -1328,30 +1392,30 @@
             }   
         }
     </script>
-    <script>
+    <!-- <script>
         $(function(){
             $('#kt_form').validate({
                 errorClass:"error-msg",
                 errorElement:"p",
                 rules:{
-                    tanggal_surat_usulan: 'required',
-                    no_surat_usulan: 'required',
-                    ppk_pejabat_yang_diusulkan: 'required',
-                    jabatan_menandatangani: 'required',
+                    tanggal_surat_usulan: ',
+                    no_surat_usulan: ',
+                    ppk_pejabat_yang_diusulkan: ',
+                    jabatan_menandatangani: ',
                     file_surat_usulan: {
                         extenstion: "pdf"
                     },
                     
-                    nip: 'required',
-                    nama: 'required',
-                    tempat_lahir: 'required',
-                    tanggal_lahir: 'required',
-                    pendidikan_terakhir: 'required',
-                    instansi_induk: 'required',
-                    instansi_pengusul: 'required',
-                    jumlah: 'required',
-                    terisi: 'required',
-                    sisa: 'required',
+                    nip: ',
+                    nama: ',
+                    tempat_lahir: ',
+                    tanggal_lahir: ',
+                    pendidikan_terakhir: ',
+                    instansi_induk: ',
+                    instansi_pengusul: ',
+                    jumlah: ',
+                    terisi: ',
+                    sisa: ',
                     file_nota_usulan: {
                         extenstion: "pdf"
                     },
@@ -1365,27 +1429,27 @@
                         extenstion: "pdf"
                     },
 
-                    jabatan_lama: 'required',
-                    no_sk_jabatan_lama: 'required',
-                    tmt_jabatan_lama: 'required',
-                    satuan_organisasi_lama: 'required',
+                    jabatan_lama: ',
+                    no_sk_jabatan_lama: ',
+                    tmt_jabatan_lama: ',
+                    satuan_organisasi_lama: ',
                     file_data_jabatan_lama: {
                         extenstion: "pdf"
                     },
 
-                    jabatan_baru: 'required',
-                    satuan_organisasi_baru: 'required',
+                    jabatan_baru: ',
+                    satuan_organisasi_baru: ',
 
-                    jabatan_kompetensi: 'required',
-                    no_sertifikat: 'required',
-                    tanggal_sertifikat: 'required',
+                    jabatan_kompetensi: ',
+                    no_sertifikat: ',
+                    tanggal_sertifikat: ',
                     file_data_kompetensi: {
                         extenstion: "pdf"
                     },
 
-                    no_sk_pangkat: 'required',
-                    pangkat_gol: 'required',
-                    tmt_gol: 'required',
+                    no_sk_pangkat: ',
+                    pangkat_gol: ',
+                    tmt_gol: ',
                     file_sk_pangkat_terakhir: {
                         extenstion: "pdf"
                     },
@@ -1407,7 +1471,7 @@
                         extenstion: "pdf"
                     },
 
-                    ket: 'required'
+                    ket: '
                 },
                 submitHandler:function(form){
                     form.submit();
@@ -1415,7 +1479,7 @@
             })
         })
 
-    </script>
+    </script> -->
     <script src="<?php echo e(asset('js/pages/custom/wizard/wizard-3.js')); ?>"></script>
     <script src="<?php echo e(asset('js/hide.js')); ?>"></script> 
     <script src="<?php echo e(asset('js/pages/crud/file-upload/dropzonejs.js')); ?>"></script>

@@ -23,7 +23,8 @@ Route::prefix('/profile')->group(function(){
     Route::patch('/edit', 'BackWeb\ProfileController@edit')->name('profile.edit');
     Route::patch('/change-password', 'BackWeb\ProfileController@change_password')->name('profile.change-password');
 });
-
+Route::get('/autocomplete', 'BackWeb\PIC\Administrasi\Surat_Usulan\AutocompleteController@index');
+Route::post('/autocomplete/fetch', 'BackWeb\PIC\Administrasi\Surat_Usulan\AutocompleteController@fetch')->name('autocomplete.fetch');
 
 // PIC
 Route::group(['middleware' => ['auth', 'checkRole:14']], function() {
@@ -300,7 +301,6 @@ Route::group(['middleware' => ['auth', 'checkRole:14']], function() {
                 Route::get('/{id}', 'BackWeb\PIC\DetailSuratPenolakanController@index')->name('pic.inbox.detail-alasan-penolakan.index');
             });
         });
-        
 
         Route::prefix('/faq')->group(function(){
             Route::get('/', 'BackWeb\PIC\FaqController@index')->name('pic.faq.index');
@@ -796,6 +796,21 @@ Route::group(['middleware' => ['auth', 'checkRole:12']], function() {
 
             Route::get('/keppres-turun/{id}', 'BackWeb\Dukmin\Inbox\DetailPertekBKNController@keppres_turun')->name('dukmin.inbox.keppres-turun');
             Route::patch('/keppres-turun/verif', 'BackWeb\Dukmin\Inbox\DetailPertekBKNController@keppres_store')->name('dukmin.inbox.keppres-store');
+        });
+
+    });
+}); 
+
+// Administrasi
+Route::group(['middleware' => ['auth', 'checkRole:1']], function() {
+    Route::prefix('/administrator')->group(function(){
+        Route::prefix('/home')->group(function(){
+            Route::get('/', 'BackWeb\Administrator\HomeController@index')->name('administrator.home.index');
+        });
+        
+        Route::prefix('/user-management')->group(function(){
+            Route::get('/', 'BackWeb\Administrator\UserManagementController@index')->name('administrator.user-management.index');
+            Route::post('/create', 'BackWeb\Administrator\UserManagementController@store')->name('administrator.user-management.store');
         });
 
     });

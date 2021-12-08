@@ -38,7 +38,7 @@
                                             <h4 class="mb-10 font-weight-bold text-dark">Keppres</h4>
                                             <!--begin::Input-->
                                             <div class="form-group row">
-                                                <label class="col-form-label col-lg-3 col-sm-12">No. Keppres</label>
+                                                <label class="col-form-label col-lg-3 col-sm-12">No. Keppres <a style="color: #FF0000;">*</a></label>
                                                 <div class="col-lg-9 col-md-9 col-sm-12">
                                                     <div class="input-group">
                                                         <input type="text" class="form-control" id="no_keppres" name="no_keppres" value="<?php echo e(old('no_keppres')); ?>" autocomplete="off" required/>
@@ -49,7 +49,7 @@
                                             
                                             <!--begin::Input-->
                                             <div class="form-group row">
-                                                <label class="col-form-label col-lg-3 col-sm-12">Tanggal Keppres</label>
+                                                <label class="col-form-label col-lg-3 col-sm-12">Tanggal Keppres <a style="color: #FF0000;">*</a></label>
                                                 <div class="col-lg-5 col-md-9 col-sm-12">
                                                     <div class="input-group date">
                                                         <input type="text" class="form-control datetimepicker-input my-datepicker" id="tanggal_keppres" name="tanggal_keppres" data-toggle="datetimepicker" data-target="#tanggal_keppres" placeholder="Pilih Tanggal" value="<?php echo e(old('tanggal_keppres')); ?>" autocomplete="off" required/>
@@ -65,7 +65,7 @@
 
                                             <!--begin::Input-->
                                             <div class="form-group row">
-                                                <label class="col-form-label col-lg-3 col-sm-12">Periode</label>
+                                                <label class="col-form-label col-lg-3 col-sm-12">Periode <a style="color: #FF0000;">*</a></label>
                                                 <div class="col-lg-4 col-md-9 col-sm-12">
                                                     <div class="input-group date">
                                                         <input type="text" class="form-control datetimepicker-input my-datepicker" name="masa_jabatan_start" onkeyup="calculate_date()" data-toggle="datetimepicker" data-target="#masa_jabatan_start" placeholder="Select Date First" id="masa_jabatan_start" value="<?php echo e(old('masa_jabatan_start')); ?>"/>
@@ -109,7 +109,7 @@
                                         <div class="pb-6" style="margin-left: 50px; margin-right: 50px;" data-wizard-type="step-content">
                                             <!--begin::Input-->
                                             <div class="form-group row">
-                                                <label class="col-form-label col-lg-3 col-sm-12">TMT</label>
+                                                <label class="col-form-label col-lg-3 col-sm-12">TMT <a style="color: #FF0000;">*</a></label>
                                                 <div class="col-lg-9 col-md-9 col-sm-12">
                                                     <div class="input-group date">
                                                         <input type="text" class="form-control" id="tmt" name="tmt" value="<?php echo e(old('tmt')); ?>" autocomplete="off" required/>
@@ -127,7 +127,7 @@
                                             <!--end::Input-->
                                             <!--begin::Input-->
                                             <div class="form-group row">
-                                                <label class="col-form-label col-lg-3 col-sm-12">Hak keuangan dan Fasilitas</label>
+                                                <label class="col-form-label col-lg-3 col-sm-12">Hak keuangan dan Fasilitas <a style="color: #FF0000;">*</a></label>
                                                 <div class="col-lg-9 col-md-9 col-sm-12">
                                                     <div class="input-group date">
                                                         <input type="text" class="form-control" id="hak_keuangan" name="hak_keuangan" value="<?php echo e(old('hak_keuangan')); ?>" autocomplete="off" required/>
@@ -137,7 +137,7 @@
                                             <!--end::Input-->
                                             <!--begin::Input-->
                                             <div class="form-group row">
-                                                <label class="col-form-label col-lg-3 col-sm-12">Tanggal pelantikan</label>
+                                                <label class="col-form-label col-lg-3 col-sm-12">Tanggal pelantikan <a style="color: #FF0000;">*</a></label>
                                                 <div class="col-lg-5 col-md-9 col-sm-12">
                                                     <div class="input-group date">
                                                         <input type="text" class="form-control datetimepicker-input my-datepicker" id="tanggal_pelantikan" name="tanggal_pelantikan" data-toggle="datetimepicker" data-target="#tanggal_pelantikan" placeholder="Pilih Tanggal" value="<?php echo e(old('tanggal_pelantikan')); ?>" autocomplete="off" required/>
@@ -151,7 +151,7 @@
                                             </div>
                                             <!--end::Input-->
                                             <div class="form-group row">
-                                                <label class="col-form-label col-lg-3 col-sm-12">Yang Melantik</label>
+                                                <label class="col-form-label col-lg-3 col-sm-12">Yang Melantik <a style="color: #FF0000;">*</a></label>
                                                 <div class="col-lg-9 col-md-9 col-sm-12">
                                                     <div class="input-group date">
                                                         <input type="text" class="form-control" id="yang_melantik" name="yang_melantik" value="<?php echo e(old('yang_melantik')); ?>" autocomplete="off" required/>
@@ -159,7 +159,7 @@
                                                 </div>
                                             </div>
                                             <div class="form-group row">
-                                                <label class="col-lg-3 col-form-label">Upload BA Pelantikan</label>
+                                                <label class="col-lg-3 col-form-label">Upload BA Pelantikan <a style="color: #FF0000;">*</a></label>
                                                 <div class="col-lg-9">
                                                     <input id="file_ba_pelantikan" name="file_ba_pelantikan[]" accept=".jpg,.jpeg,.png,.pdf" type="file" class="file" data-show-preview="false" multiple/>
                                                     <!-- <div class="dropzone dropzone-multi" id="kt_dropzone_5">
@@ -199,7 +199,7 @@
                                                 </div>
                                             </div>
                                             <div class="form-group row">
-                                                <label class="col-lg-3 col-form-label">Upload Sumpah Jabatan</label>
+                                                <label class="col-lg-3 col-form-label">Upload Sumpah Jabatan <a style="color: #FF0000;">*</a></label>
                                                 <div class="col-lg-9">
                                                     <input id="file_sumpah_jabatan" name="file_sumpah_jabatan[]" accept=".jpg,.jpeg,.png,.pdf" type="file" class="file" data-show-preview="false" multiple/>
                                                     <!-- <div class="dropzone dropzone-multi" id="kt_dropzone_5">
@@ -238,6 +238,25 @@
                                                     <span class="form-text text-muted">Format file harus berbentuk jpg, png, jpeg, pdf, batas size file 1 MB dan file tidak boleh lebih dari 5 file</span>
                                                 </div>
                                             </div>
+
+                                            <div class="form-group row">
+                                                <label class="col-form-label col-lg-3 col-sm-12"></label>
+                                                <div class="col-lg-9 col-md-9 col-sm-12">
+                                                    <div style="margin-bottom:10px;">
+                                                        <label class="checkbox checkbox-outline checkbox-outline-2x checkbox-primary">
+                                                            <input type="checkbox" id="checked_file_ba_pelantikan" disabled/>
+                                                            <span></span><div style="margin-left: 10px;">File BA Pelantikan</div>
+                                                        </label>
+                                                    </div>
+                                                    <div style="margin-bottom:10px;">
+                                                        <label class="checkbox checkbox-outline checkbox-outline-2x checkbox-primary">
+                                                            <input type="checkbox" id="checked_file_sumpah_jabatan" disabled/>
+                                                            <span></span><div style="margin-left: 10px;">File Sumpah Jabatan</div>
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </div>
+
                                         </div>
                                         <!--end: Wizard Step 2-->
 
@@ -284,6 +303,25 @@
 
 <?php $__env->startSection('scripts'); ?>
     <script>
+        $(document).ready(function () {
+            $("#file_ba_pelantikan").on("change", function () {
+                if ($('#file_ba_pelantikan')[0].files.length != 0) {
+                    $("#checked_file_ba_pelantikan").attr('checked', true);
+                } else {
+                    $("#checked_file_ba_pelantikan").attr('checked',false);
+                }
+            });
+
+            $("#file_sumpah_jabatan").on("change", function () {
+                if ($('#file_sumpah_jabatan')[0].files.length != 0) {
+                    $("#checked_file_sumpah_jabatan").attr('checked', true);
+                } else {
+                    $("#checked_file_sumpah_jabatan").attr('checked',false);
+                }
+            });
+
+        });
+
         $('.my-datepicker').datetimepicker({
             useCurrent:false,
             format: 'DD/MMM/YYYY'
@@ -376,8 +414,6 @@
             var out_value = calculated_date;
             document.getElementById("masa").innerHTML = out_value + ' Tahun';
             getdatadate(date_end);
-            
-
 
         });
 

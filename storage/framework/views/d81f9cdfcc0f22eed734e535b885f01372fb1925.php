@@ -101,6 +101,15 @@
                                                     <span class="form-text text-muted">Please input the date from start.</span>
                                                 </div>
                                             </div>
+
+                                            <div class="form-group row" id="hahaha">
+                                                <label class="col-form-label col-lg-3 col-sm-12">Masa Jabatan</label>
+                                                <div class="col-lg-9 col-md-9 col-sm-12">
+                                                    <div class="col-form-label col-lg-3 col-sm-12">
+                                                        <p id="masa"></p>
+                                                    </div>
+                                                </div>
+                                            </div>
                                             
                                             <div class="form-group row">
                                                 <label class="col-lg-3 col-form-label">Upload Surat Usulan</label>
@@ -1088,11 +1097,36 @@
             return new_date;
         }
 
-        $('#masa_jabatan_start').on('change.datetimepicker', function(e) {
+        $('#masa_jabatan_start, #masa_jabatan_end').on('change.datetimepicker', function(e) {
             if(e.date){
                 var min_date = renewDate('min', e.date);
                 applyTimePicker('min', '#masa_jabatan_end', min_date);
             }
+            var date_start = new Date(document.getElementById("masa_jabatan_start").value);
+            var date_start_day = date_start.getDate();
+            var date_start_month = date_start.getMonth();
+            var date_start_year = date_start.getFullYear();
+
+            var date_end = new Date(document.getElementById("masa_jabatan_end").value);
+            var date_end_day = date_end.getDate();
+            var date_end_month = date_end.getMonth();
+            var date_end_year = date_end.getFullYear();
+            
+            var calculated_date = 0;
+            if(date_end_month > date_start_month) 
+            {
+                calculated_date = date_end_year - date_start_year;
+            }
+            else
+            { 
+                calculated_date = date_end_year - date_start_year;
+            }
+
+
+            var out_value = calculated_date;
+            document.getElementById("masa").innerHTML = out_value + ' Tahun';
+            getdatadate(date_end);
+
         });
 
         $('#masa_periode_start').on('change.datetimepicker', function(e) {

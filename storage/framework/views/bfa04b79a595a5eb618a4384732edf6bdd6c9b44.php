@@ -119,10 +119,10 @@
                                 <span class="menu-link"><span class="menu-text">Pengaturan</span></span>
                             </li>
                             <li class="menu-item <?php echo e((strpos($page_title, 'PIC | Setting | Product Definition') !== false) ? 'menu-item-active' : ''); ?>" aria-haspopup="true">
-                                <a href="" class="menu-link "><i class="menu-bullet menu-bullet-line"><span></span></i><span class="menu-text">User</span></a>
+                                <a class="menu-link "><i class="menu-bullet menu-bullet-line"><span></span></i><span class="menu-text">User</span></a>
                             </li>
                             <li class="menu-item <?php echo e((strpos($page_title, 'PIC | Setting | Item Definition') !== false) ? 'menu-item-active' : ''); ?>" aria-haspopup="true">
-                                <a href="" class="menu-link "><i class="menu-bullet menu-bullet-line"><span></span></i><span class="menu-text">Alur Proses</span></a>
+                                <a  class="menu-link "><i class="menu-bullet menu-bullet-line"><span></span></i><span class="menu-text">Alur Proses</span></a>
                             </li>
                             <li class="menu-item <?php echo e((strpos($page_title, 'PIC | Setting | Supplier Definition') !== false) ? 'menu-item-active' : ''); ?>" aria-haspopup="true">
                                 <a href="<?php echo e(route('pic.faq.index')); ?>" class="menu-link "><i class="menu-bullet menu-bullet-line"><span></span></i><span class="menu-text">FAQ</span></a>
@@ -778,6 +778,32 @@
                             </li>
                         </ul>
                     </div> -->
+                </li>
+            <?php endif; ?>
+
+            <?php if($currentUser->roles_id == 1): ?> 
+                <li class="menu-item <?php echo e((strpos($page_title, 'Administrator | Dashboard') !== false) ? 'menu-item-active' : ''); ?>" aria-haspopup="true">
+                    <a href="<?php echo e(route('administrator.home.index')); ?>" class="menu-link ">
+                        <span class="svg-icon menu-icon"><!--begin::Svg Icon | path:media/svg/icons/Design/Layers.svg-->
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-house" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd" d="M2 13.5V7h1v6.5a.5.5 0 0 0 .5.5h9a.5.5 0 0 0 .5-.5V7h1v6.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5zm11-11V6l-2-2V2.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5z"/>
+                                <path fill-rule="evenodd" d="M7.293 1.5a1 1 0 0 1 1.414 0l6.647 6.646a.5.5 0 0 1-.708.708L8 2.207 1.354 8.854a.5.5 0 1 1-.708-.708L7.293 1.5z"/>
+                            </svg>
+                        </span>
+                        <span class="menu-text">Dashboard</span>
+                    </a>
+                </li>
+
+                <li class="menu-item <?php echo e((strpos($page_title, 'Administrator | User Management') !== false) ? 'menu-item-active' : ''); ?>" aria-haspopup="true">
+                    <a href="<?php echo e(route('administrator.user-management.index')); ?>" class="menu-link">
+                        <span class="svg-icon menu-icon"><!--begin::Svg Icon | path:media/svg/icons/Layout/Layout-4-blocks.svg-->
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-journal" viewBox="0 0 16 16">
+                                <path d="M3 0h10a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2v-1h1v1a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H3a1 1 0 0 0-1 1v1H1V2a2 2 0 0 1 2-2z"/>
+                                <path d="M1 5v-.5a.5.5 0 0 1 1 0V5h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1H1zm0 3v-.5a.5.5 0 0 1 1 0V8h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1H1zm0 3v-.5a.5.5 0 0 1 1 0v.5h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1H1z"/>
+                            </svg>
+                        </span>
+                        <span class="menu-text">User Management</span>
+                    </a>
                 </li>
             <?php endif; ?>
             </ul>
