@@ -46,8 +46,8 @@ Route::group(['middleware' => ['auth', 'checkRole:14']], function() {
                     Route::get('/perpindahan-pejabat-fku', 'BackWeb\PIC\Administrasi\Surat_Usulan\PerpindahanPejabatFungsionalKeahlianUtamaController@index')->name('pic.administrasi.surat-usulan.perpindahan-pejabat-fku.index');
                     Route::patch('/perpindahan-pejabat-fku/add', 'BackWeb\PIC\Administrasi\Surat_Usulan\PerpindahanPejabatFungsionalKeahlianUtamaController@store')->name('pic.administrasi.surat-usulan.perpindahan-pejabat-fku.store');
 
-                    Route::get('/ralat-keppres-fku', 'BackWeb\PIC\Administrasi\Surat_Usulan\RalatKeppresJabatanFungsionalKeahlianUtamaController@index')->name('pic.administrasi.surat-usulan.ralat-keppres-fku.index');
-                    Route::patch('/ralat-keppres-fku/add', 'BackWeb\PIC\Administrasi\Surat_Usulan\RalatKeppresJabatanFungsionalKeahlianUtamaController@store')->name('pic.administrasi.surat-usulan.ralat-keppres-fku.store');
+                    Route::get('/usulan-lainnya', 'BackWeb\PIC\Administrasi\Surat_Usulan\RalatKeppresJabatanFungsionalKeahlianUtamaController@index')->name('pic.administrasi.surat-usulan.ralat-keppres-fku.index');
+                    Route::patch('/usulan-lainnya/add', 'BackWeb\PIC\Administrasi\Surat_Usulan\RalatKeppresJabatanFungsionalKeahlianUtamaController@store')->name('pic.administrasi.surat-usulan.ralat-keppres-fku.store');
 
                     Route::get('/pembatalan-keppres-jabatan-fku', 'BackWeb\PIC\Administrasi\Surat_Usulan\PembatalanKeppresJabatanFungsionalKeahlianUtamaController@index')->name('pic.administrasi.surat-usulan.pembatalan-keppres-jabatan-fku.index');
                     Route::patch('/pembatalan-keppres-jabatan-fku/add', 'BackWeb\PIC\Administrasi\Surat_Usulan\PembatalanKeppresJabatanFungsionalKeahlianUtamaController@store')->name('pic.administrasi.surat-usulan.pembatalan-keppres-jabatan-fku.store');

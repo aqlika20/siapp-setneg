@@ -13,7 +13,7 @@
                 <div class="card card-custom">
                     <div class="card-header flex-wrap border-0 pt-6 pb-0" style="background-color: #FFA800;">
                         <div class="card-title">
-                            <h3 class="card-label">Ralat Keppres Jabatan Fungsional Keahlian Utama
+                            <h3 class="card-label">Usulan Lainnya
                             <span class="d-block text-muted pt-2 font-size-sm"></span></h3>
                         </div>
                     </div>
