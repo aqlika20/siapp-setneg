@@ -35,31 +35,13 @@ class TextEditorController extends Controller
 
     public function index($id) 
     {
-        $currentUser = UserManagement::find(Auth::id());
-        $page_title = 'Koordinator Pokja | Text Editor';
-        $page_description = 'Text Editor';
-        $rkp = RKP::where('id', $id)->first();
-
-        $rkps = RKPList::where('id_rkp', $id)->get();
         
-        foreach($rkps as $rkp_list){
-            $pengangkatans[] = $rkp_list->id_usulan;
-        };
-
-        foreach($pengangkatans as $data_asn){
-            $data_asns[] = PengangkatanPemberhentianJFKU::where('id', $data_asn)->first();
-        }
-        $notes = [];
-
-        $notes = Catatan::where([
-            ['id_rkp', '=', $rkp->id], ['id_status', '=', Helper::$verifikasi_rkp_pokja]
-        ])->get();
-        
-        return view('pages.koor_pokja.text_editor', compact('page_title', 'page_description', 'currentUser', 'data_asns', 'rkp', 'notes'));
+        return;
     }
 
     public function store(Request $request)
     {
+
         $input = $request->all();
         $id = $input['v_id'];
         $validator = Validator::make($input, [

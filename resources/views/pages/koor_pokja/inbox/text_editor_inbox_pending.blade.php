@@ -50,9 +50,9 @@
     var config = {
         "document": {
             "fileType": "docx",
-            "key": "Khirz6zTPdfd7",
-            "title": "new.docx",
-            "url": "http://206.189.84.159/example/editor?fileName=new.docx"
+            "key": "Khirz6zTPdfd4",
+            "title": "rancangan_keppres.docx",
+            "url": "http://104.248.194.62/storage/template"
             },
             "documentType": "word"
         };

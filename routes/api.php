@@ -23,3 +23,4 @@ use App\User;
 // });
 
 Route::post('/fetch-data', 'Api\BknController@fetchData')->name('api.bkn.fetch-data');
+Route::post('/fetch-data-jda', 'Api\BknController@fetchDataJDA')->name('api.bkn.fetch-data-jda');

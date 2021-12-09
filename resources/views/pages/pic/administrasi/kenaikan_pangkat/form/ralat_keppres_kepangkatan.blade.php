@@ -40,7 +40,7 @@
                                                 <label class="col-form-label col-lg-3 col-sm-12">Tanggal Surat Permohonan</label>
                                                 <div class="col-lg-5 col-md-9 col-sm-12">
                                                     <div class="input-group date">
-                                                        <input type="text" class="form-control datetimepicker-input my-datepicker" id="tanggal_surat_permohonan" name="tanggal_surat_permohonan" data-toggle="datetimepicker" data-target="#tanggal_surat_permohonan" placeholder="Pilih Tanggal" value="{{old('tanggal_surat_permohonan')}}" required/>
+                                                        <input type="text" class="form-control datetimepicker-input my-datepicker" id="tanggal_surat_permohonan" name="tanggal_surat_permohonan" data-toggle="datetimepicker" data-target="#tanggal_surat_permohonan" placeholder="Pilih Tanggal" value="{{old('tanggal_surat_permohonan')}}" />
                                                         <div class="input-group-append">
                                                             <span class="input-group-text">
                                                                 <i class="la la-calendar"></i>
@@ -54,7 +54,7 @@
                                                 <label class="col-form-label col-lg-3 col-sm-12">No. Surat Permohonan</label>
                                                 <div class="col-lg-9 col-md-9 col-sm-12">
                                                     <div class="input-group">
-                                                        <input type="text" class="form-control" id="no_surat_permohonan" name="no_surat_permohonan" value="{{old('no_surat_permohonan')}}" autocomplete="off" required/>
+                                                        <input type="text" class="form-control" id="no_surat_permohonan" name="no_surat_permohonan" value="{{old('no_surat_permohonan')}}" autocomplete="off" />
                                                     </div>
                                                 </div>
                                             </div>
@@ -63,7 +63,7 @@
                                                 <label class="col-form-label col-lg-3 col-sm-12">Jabatan yang Menandatangani</label>
                                                 <div class="col-lg-9 col-md-9 col-sm-12">
                                                     <div class="input-group">
-                                                        <input type="text"class="form-control" id="jabatan_menandatangani" name="jabatan_menandatangani" value="{{old('jabatan_menandatangani')}}" autocomplete="off" required/>
+                                                        <input type="text"class="form-control" id="jabatan_menandatangani" name="jabatan_menandatangani" value="{{old('jabatan_menandatangani')}}" autocomplete="off" />
                                                     </div>
                                                 </div>
                                             </div>
@@ -165,18 +165,25 @@
 {{-- Scripts Section --}}
 @section('scripts')
     <script>
-        $('.my-datepicker').datetimepicker({
-            useCurrent:false,
-            format: 'DD-MMM-YYYY'
-        })
+        refreshDateTimePicker();
+        function refreshDateTimePicker(){
+            
+            $('.my-datepicker').each(function(){
+                $(this).datetimepicker({
+                    useCurrent:false,
+                    format: 'DD-MMM-YYYY'
+                })
 
-        $('.my-datepicker').keydown(function(e){
-            e.preventDefault();
-        })
+                $(this).keydown(function(e){
+                    e.preventDefault();
+                })
 
-        $('.select2').select2({
-            placeholder: "Choose..."
-        })
+            })
+
+            $('.select2').select2({
+                placeholder: "Choose..."
+            })
+        }
 
         function applyTimePicker(type, id, date){
             switch(type){
@@ -204,33 +211,33 @@
         }
 
         $(document).ready(function () {
-        $("#file_surat_permohonan").on("change", function () {
+            $("#file_surat_permohonan").on("change", function () {
 
-        if ($('#file_surat_permohonan')[0].files.length != 0) {
-            $("#checked_file_surat_permohonan").attr('checked', true);
-        } else {
-            $("#checked_file_surat_permohonan").attr('checked',false);
-        }
+                if ($('#file_surat_permohonan')[0].files.length != 0) {
+                    $("#checked_file_surat_permohonan").attr('checked', true);
+                } else {
+                    $("#checked_file_surat_permohonan").attr('checked',false);
+                }
+            });
+
+            $("#file_dokumen_klarifikasi").on("change", function () {
+
+                if ($('#file_dokumen_klarifikasi')[0].files.length != 0) {
+                    $("#checked_file_dokumen_klarifikasi").attr('checked', true);
+                } else {
+                    $("#checked_file_dokumen_klarifikasi").attr('checked',false);
+                }
+            });
+
+            $("#file_fotokopi_sk_diperbaiki").on("change", function () {
+
+                if ($('#file_fotokopi_sk_diperbaiki')[0].files.length != 0) {
+                    $("#checked_file_fotokopi_sk_diperbaiki").attr('checked', true);
+                } else {
+                    $("#checked_file_fotokopi_sk_diperbaiki").attr('checked',false);
+                }
+            });
         });
-
-        $("#file_dokumen_klarifikasi").on("change", function () {
-
-        if ($('#file_dokumen_klarifikasi')[0].files.length != 0) {
-            $("#checked_file_dokumen_klarifikasi").attr('checked', true);
-        } else {
-            $("#checked_file_dokumen_klarifikasi").attr('checked',false);
-        }
-        });
-
-        $("#file_fotokopi_sk_diperbaiki").on("change", function () {
-
-        if ($('#file_fotokopi_sk_diperbaiki')[0].files.length != 0) {
-            $("#checked_file_fotokopi_sk_diperbaiki").attr('checked', true);
-        } else {
-            $("#checked_file_fotokopi_sk_diperbaiki").attr('checked',false);
-        }
-        });
-    });
 
 
         $('#masa_jabatan_start').on('change.datetimepicker', function(e) {

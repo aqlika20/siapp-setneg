@@ -26,6 +26,17 @@ Route::prefix('/profile')->group(function(){
 Route::get('/autocomplete', 'BackWeb\PIC\Administrasi\Surat_Usulan\AutocompleteController@index');
 Route::post('/autocomplete/fetch', 'BackWeb\PIC\Administrasi\Surat_Usulan\AutocompleteController@fetch')->name('autocomplete.fetch');
 
+
+
+Route::prefix('/callbackdocument')->group(function(){
+    Route::get('/', 'CallbackDocument@index')->name('callbackdocument.index');
+	Route::patch('/store', 'CallbackDocument@store')->name('callbackdocument.store');
+});
+		
+
+
+
+
 // PIC
 Route::group(['middleware' => ['auth', 'checkRole:14']], function() {
     Route::prefix('/pic')->group(function(){
@@ -46,8 +57,8 @@ Route::group(['middleware' => ['auth', 'checkRole:14']], function() {
                     Route::get('/perpindahan-pejabat-fku', 'BackWeb\PIC\Administrasi\Surat_Usulan\PerpindahanPejabatFungsionalKeahlianUtamaController@index')->name('pic.administrasi.surat-usulan.perpindahan-pejabat-fku.index');
                     Route::patch('/perpindahan-pejabat-fku/add', 'BackWeb\PIC\Administrasi\Surat_Usulan\PerpindahanPejabatFungsionalKeahlianUtamaController@store')->name('pic.administrasi.surat-usulan.perpindahan-pejabat-fku.store');
 
-                    Route::get('/ralat-keppres-fku', 'BackWeb\PIC\Administrasi\Surat_Usulan\RalatKeppresJabatanFungsionalKeahlianUtamaController@index')->name('pic.administrasi.surat-usulan.ralat-keppres-fku.index');
-                    Route::patch('/ralat-keppres-fku/add', 'BackWeb\PIC\Administrasi\Surat_Usulan\RalatKeppresJabatanFungsionalKeahlianUtamaController@store')->name('pic.administrasi.surat-usulan.ralat-keppres-fku.store');
+                    Route::get('/usulan-lainnya', 'BackWeb\PIC\Administrasi\Surat_Usulan\RalatKeppresJabatanFungsionalKeahlianUtamaController@index')->name('pic.administrasi.surat-usulan.ralat-keppres-fku.index');
+                    Route::patch('/usulan-lainnya/add', 'BackWeb\PIC\Administrasi\Surat_Usulan\RalatKeppresJabatanFungsionalKeahlianUtamaController@store')->name('pic.administrasi.surat-usulan.ralat-keppres-fku.store');
 
                     Route::get('/pembatalan-keppres-jabatan-fku', 'BackWeb\PIC\Administrasi\Surat_Usulan\PembatalanKeppresJabatanFungsionalKeahlianUtamaController@index')->name('pic.administrasi.surat-usulan.pembatalan-keppres-jabatan-fku.index');
                     Route::patch('/pembatalan-keppres-jabatan-fku/add', 'BackWeb\PIC\Administrasi\Surat_Usulan\PembatalanKeppresJabatanFungsionalKeahlianUtamaController@store')->name('pic.administrasi.surat-usulan.pembatalan-keppres-jabatan-fku.store');
@@ -348,7 +359,7 @@ Route::group(['middleware' => ['auth', 'checkRole:5']], function() {
 
             Route::prefix('/text-editor')->group(function(){
                 Route::get('/{id}', 'BackWeb\Koor_Pokja\Inbox\TextEditorInboxPendingController@index')->name('koor-pokja.inbox.text-editor.index');
-                Route::post('/create', 'BackWeb\Koor_Pokja\Inbox\TextEditorInboxPendingController@store')->name('koor-pokja.inbox.text-editor.store');
+                Route::post('/create', 'BackWeb\Koor_Pokja\Inbox\TextEditorInboxPendingController@store')->name('koor-pokja.inbox.text-editor.store');					
             });
             
             Route::prefix('/text-editor-lain')->group(function(){
@@ -418,7 +429,7 @@ Route::group(['middleware' => ['auth', 'checkRole:5']], function() {
 
             Route::prefix('/text-editor')->group(function(){
                 Route::get('/{id}', 'BackWeb\Koor_Pokja\TextEditorController@index')->name('koor-pokja.text-editor.index');
-                Route::post('/create', 'BackWeb\Koor_Pokja\TextEditorController@store')->name('koor-pokja.text-editor.store');
+                Route::post('/create', 'BackWeb\Koor_Pokja\TextEditorController@store')->name('koor-pokja.text-editor.store');			
             });
             
             Route::prefix('/text-editor-jfku')->group(function(){
@@ -486,7 +497,7 @@ Route::group(['middleware' => ['auth', 'checkRole:6']], function() {
 
             Route::prefix('/text-editor-kenaikan')->group(function(){
                 Route::get('/{id}', 'BackWeb\Koor_Pokja_KP\Inbox\TextEditorKenaikanPertekController@index')->name('koor-pokja-kp.inbox.text-editor.kenaikan.index');
-                Route::post('/create', 'BackWeb\Koor_Pokja_KP\Inbox\TextEditorKenaikanPertekController@store')->name('koor-pokja-kp.inbox.text-editor.kenaikan.store');
+                Route::post('/create', 'BackWeb\Koor_Pokja_KP\Inbox\TextEditorKenaikanPertekController@store')->name('koor-pokja-kp.inbox.text-editor.kenaikan.store');	
             });
 
             Route::prefix('/detail-surat-pengembalian')->group(function(){
@@ -507,7 +518,7 @@ Route::group(['middleware' => ['auth', 'checkRole:6']], function() {
 
             Route::prefix('/text-editor')->group(function(){
                 Route::get('/{id}', 'BackWeb\Koor_Pokja_KP\Inbox\TextEditorController@index')->name('koor-pokja-kp.text-editor.index');
-                Route::post('/create', 'BackWeb\Koor_Pokja_KP\Inbox\TextEditorController@store')->name('koor-pokja-kp.text-editor.store');
+                Route::post('/create', 'BackWeb\Koor_Pokja_KP\Inbox\TextEditorController@store')->name('koor-pokja-kp.text-editor.store');	
             });
            
             Route::prefix('/text-editor-kenaikan')->group(function(){
@@ -642,6 +653,62 @@ Route::group(['middleware' => ['auth', 'checkRole: 10']], function() {
         
     });
 });
+
+// JF Ahli P4
+Route::group(['middleware' => ['auth', 'checkRole: 9']], function() {
+    Route::prefix('/Jf-Ahli')->group(function(){
+        Route::prefix('/home')->group(function(){
+            Route::get('/', 'BackWeb\JF_Ahli\HomeController@index')->name('jf-ahli.home.index');
+        });
+
+        Route::prefix('/inbox')->group(function(){
+            Route::get('/usulan', 'BackWeb\JF_Ahli\InboxController@usulan')->name('jf-ahli.inbox.usulan');
+            Route::get('/revisi', 'BackWeb\JF_Ahli\InboxController@revisi')->name('jf-ahli.inbox.revisi');
+
+            Route::prefix('/usulan')->group(function(){
+                Route::get('/verification/{id}', 'BackWeb\JF_Ahli\InboxController@verification')->name('jf-ahli.inbox.usulan.verif');
+                Route::post('/verification/proses', 'BackWeb\JF_Ahli\InboxController@store_proses')->name('jf-ahli.inbox.usulan.store_proses');
+                Route::post('/verification/pending', 'BackWeb\JF_Ahli\InboxController@store_pending')->name('jf-ahli.inbox.usulan.store_pending');
+                Route::post('/verification/tolak', 'BackWeb\JF_Ahli\InboxController@store_tolak')->name('jf-ahli.inbox.usulan.store_tolak');
+            });
+
+            Route::prefix('/ns')->group(function(){
+                Route::get('/verification/{id}', 'BackWeb\JF_Ahli\InboxController@verification_ns')->name('jf-ahli.inbox.usulan.verif_ns');
+                Route::post('/verification/proses', 'BackWeb\JF_Ahli\InboxController@store_proses')->name('jf-ahli.inbox.usulan.store_proses_ns');
+                Route::post('/verification/pending', 'BackWeb\JF_Ahli\InboxController@store_pending')->name('jf-ahli.inbox.usulan.store_pending_ns');
+                Route::post('/verification/tolak', 'BackWeb\JF_Ahli\InboxController@store_tolak')->name('jf-ahli.inbox.usulan.store_tolak_ns');
+            });
+
+            Route::prefix('/lainnya')->group(function(){
+                Route::get('/verification/{id}', 'BackWeb\JF_Ahli\InboxController@verification_lainnya')->name('jf-ahli.inbox.usulan.verif_lainnya');
+                Route::post('/verification/proses', 'BackWeb\JF_Ahli\InboxController@store_proses')->name('jf-ahli.inbox.usulan.store_proses_lainnya');
+                Route::post('/verification/pending', 'BackWeb\JF_Ahli\InboxController@store_pending')->name('jf-ahli.inbox.usulan.store_pending_lainnya');
+                Route::post('/verification/tolak', 'BackWeb\JF_Ahli\InboxController@store_tolak')->name('jf-ahli.inbox.usulan.store_tolak_lainnya');
+            });
+
+            Route::prefix('/text-editor')->group(function(){
+                Route::get('/{id}', 'BackWeb\JF_Ahli\TextEditorInboxPendingController@index')->name('jf-ahli.inbox.text-editor.index');
+                Route::post('/create', 'BackWeb\JF_Ahli\TextEditorInboxPendingController@store')->name('jf-ahli.inbox.text-editor.store');
+            });
+        
+            Route::prefix('/text-editor-lain')->group(function(){
+                Route::get('/{id}', 'BackWeb\JF_Ahli\TextEditorLainPertekController@index')->name('jf-ahli.inbox.text-editor.lain.index');
+                Route::post('/create', 'BackWeb\JF_Ahli\TextEditorLainPertekController@store')->name('jf-ahli.inbox.text-editor.lain.store');
+            });
+
+            Route::prefix('/text-editor-ns')->group(function(){
+                Route::get('/{id}', 'BackWeb\JF_Ahli\TextEditorNSPertekController@index')->name('jf-ahli.inbox.text-editor.ns.index');
+                Route::post('/create', 'BackWeb\JF_Ahli\TextEditorNSPertekController@store')->name('jf-ahli.inbox.text-editor.ns.store');
+            });
+
+        });
+        
+        Route::get('/atur_dokument', 'BackWeb\JF_Ahli\AturDokumentController@index')->name('jf-ahli.atur-dokument.index');
+        Route::get('/riwayat', 'BackWeb\JF_Ahli\RiwayatController@index')->name('jf-ahli.riwayat.index');
+        Route::get('/faq', 'BackWeb\JF_Ahli\PengaturanController@faq')->name('jf-ahli.pengaturan.faq');
+
+    });
+}); 
 
 // JF Ahli Pensiun
 Route::group(['middleware' => ['auth', 'checkRole: 11']], function() {
