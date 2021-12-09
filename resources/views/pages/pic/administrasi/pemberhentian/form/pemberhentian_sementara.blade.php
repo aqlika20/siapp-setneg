@@ -163,11 +163,12 @@
                                             <!--begin::Input-->
                                             <div class="form-group row">
                                                 <label class="col-form-label col-lg-3 col-sm-12">NIP <a style="color: #FF0000;">*</a></label>
-                                                <div class="col-lg-9 col-md-9 col-sm-12">
+                                                <div class="col-lg-5 col-md-9 col-sm-12">
                                                     <div class="input-group date">
                                                         <input type="number" maxlength="18"  class="form-control" id="nip" name="nip" value="{{old('nip')}}" autocomplete="off" />
                                                     </div>
                                                 </div>
+                                                <button id="btn-bkn" class="btn btn-light-primary font-weight-bold">Tarik Data BKN</button>
                                             </div>
                                             <!--end::Input-->
                                             <!--begin::Input-->
@@ -606,6 +607,7 @@
             <!--end: Wizard-->
         </div>
     </div>
+    <input type="hidden" id="url-api-fetch-data-bkn" name="url-api-fetch-data-bkn" value="{{ route('api.bkn.fetch-data') }}"/>
 				
 @endsection
 
@@ -866,4 +868,5 @@
     <script src="{{ asset('js/hide.js') }}"></script> 
     <script src="{{ asset('js/pages/crud/file-upload/dropzonejs.js') }}"></script>
     <script src="{{ asset('js/pages/crud/ktdatatable/base/html-table.js') }}" type="text/javascript"></script>
+    <script src="{{ asset('js/pages/bkn-pemberhentian.js') }}"></script> 
 @endsection

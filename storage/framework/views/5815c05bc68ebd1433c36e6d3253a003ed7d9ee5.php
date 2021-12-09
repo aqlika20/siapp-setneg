@@ -1,8 +1,8 @@
-{{-- Extends layout --}}
-@extends('layout.default')
 
-{{-- Content --}}
-@section('content')
+
+
+
+<?php $__env->startSection('content'); ?>
 
     <!--begin::Content-->
     <div class="content d-flex flex-column flex-column-fluid" id="kt_content">	
@@ -29,9 +29,9 @@
                             <div class="row justify-content-center py-10 px-8 py-lg-12 px-lg-10">
                                 <div class="col-xl-20 col-xxl-12">
                                     <!--begin: Wizard Form-->
-                                    <form class="form" id="kt_form" action="{{ route('pic.administrasi.kenaikan-pangkat.pengesahan-kenaikan-pangkat.store') }}" enctype="multipart/form-data" method="POST">
-                                        @csrf
-                                        @method('PATCH')
+                                    <form class="form" id="kt_form" action="<?php echo e(route('pic.administrasi.kenaikan-pangkat.pengesahan-kenaikan-pangkat.store')); ?>" enctype="multipart/form-data" method="POST">
+                                        <?php echo csrf_field(); ?>
+                                        <?php echo method_field('PATCH'); ?>
                                         <!--begin: Wizard Step 1-->
                                         <div class="pb-6" style="margin-left: 50px; margin-right: 50px;" data-wizard-type="step-content" data-wizard-state="current">
                                             <h4 class="mb-10 font-weight-bold text-dark">Surat Permohonan</h4>
@@ -40,7 +40,7 @@
                                                 <label class="col-form-label col-lg-3 col-sm-12">Tanggal Surat Permohonan  <a style="color: #FF0000;">*</a></label>
                                                 <div class="col-lg-5 col-md-9 col-sm-12">
                                                     <div class="input-group date">
-                                                        <input type="text" class="form-control datetimepicker-input my-datepicker" id="tanggal_surat_permohonan" name="tanggal_surat_permohonan" data-toggle="datetimepicker" data-target="#tanggal_surat_permohonan" placeholder="Pilih Tanggal" value="{{old('tanggal_surat_permohonan')}}" />
+                                                        <input type="text" class="form-control datetimepicker-input my-datepicker" id="tanggal_surat_permohonan" name="tanggal_surat_permohonan" data-toggle="datetimepicker" data-target="#tanggal_surat_permohonan" placeholder="Pilih Tanggal" value="<?php echo e(old('tanggal_surat_permohonan')); ?>" />
                                                         <div class="input-group-append">
                                                             <span class="input-group-text">
                                                                 <i class="la la-calendar"></i>
@@ -53,7 +53,7 @@
                                                 <label class="col-form-label col-lg-3 col-sm-12">No. Surat Permohonan  <a style="color: #FF0000;">*</a></label>
                                                 <div class="col-lg-9 col-md-9 col-sm-12">
                                                     <div class="input-group">
-                                                        <input type="text" class="form-control" id="no_surat_permohonan" name="no_surat_permohonan" value="{{old('no_surat_permohonan')}}" autocomplete="off" />
+                                                        <input type="text" class="form-control" id="no_surat_permohonan" name="no_surat_permohonan" value="<?php echo e(old('no_surat_permohonan')); ?>" autocomplete="off" />
                                                     </div>
                                                 </div>
                                             </div>
@@ -63,7 +63,7 @@
                                                 <label class="col-form-label col-lg-3 col-sm-12">Jabatan Yang Menandatangani  <a style="color: #FF0000;">*</a></label>
                                                 <div class="col-lg-9 col-md-9 col-sm-12">
                                                     <div class="input-group">
-                                                        <input type="text"class="form-control" id="jabatan_menandatangani" name="jabatan_menandatangani" value="{{old('jabatan_menandatangani')}}" autocomplete="off" />
+                                                        <input type="text"class="form-control" id="jabatan_menandatangani" name="jabatan_menandatangani" value="<?php echo e(old('jabatan_menandatangani')); ?>" autocomplete="off" />
                                                     </div>
                                                 </div>
                                             </div>
@@ -159,7 +159,7 @@
                         <!--end: Wizard-->                      
                     </div>
                     <div class="modal-footer">
-                        <a href="{{ route('pic.administrasi.kenaikan-pangkat.index') }}"type="button" class="btn btn-light-danger font-weight-bold">Batalkan</a>
+                        <a href="<?php echo e(route('pic.administrasi.kenaikan-pangkat.index')); ?>"type="button" class="btn btn-light-danger font-weight-bold">Batalkan</a>
                     </div>
                 </div>
             </div>
@@ -167,21 +167,21 @@
         </div>
     </div>
 
-    <input type="hidden" id="url-api-fetch-data-bkn" name="url-api-fetch-data-bkn" value="{{ route('api.bkn.fetch-data') }}"/>
-@endsection
+    <input type="hidden" id="url-api-fetch-data-bkn" name="url-api-fetch-data-bkn" value="<?php echo e(route('api.bkn.fetch-data')); ?>"/>
+<?php $__env->stopSection(); ?>
 
-{{-- Styles Section --}}
-@section('styles')
+
+<?php $__env->startSection('styles'); ?>
 <style>
     td {  
         background-color: #86dcec;    
         
     }
 </style>
-@endsection
+<?php $__env->stopSection(); ?>
 
-{{-- Scripts Section --}}
-@section('scripts')
+
+<?php $__env->startSection('scripts'); ?>
     <script id="tambah_catatan" type="text/x-handlebars-template">
         <div class="item_data">
             <div class="form-group row">
@@ -409,9 +409,11 @@
        
 
     </script>
-    <script src="{{ asset('js/pages/custom/wizard/wizard-3.js') }}"></script>
-    <script src="{{ asset('js/hide.js') }}"></script>
-    <script src="{{ asset('js/pages/crud/file-upload/dropzonejs.js') }}"></script>
-    <script src="{{ asset('js/pages/crud/ktdatatable/base/html-table.js') }}" type="text/javascript"></script>
-    <script src="{{ asset('js/pages/bkn.js') }}"></script> 
-@endsection
+    <script src="<?php echo e(asset('js/pages/custom/wizard/wizard-3.js')); ?>"></script>
+    <script src="<?php echo e(asset('js/hide.js')); ?>"></script>
+    <script src="<?php echo e(asset('js/pages/crud/file-upload/dropzonejs.js')); ?>"></script>
+    <script src="<?php echo e(asset('js/pages/crud/ktdatatable/base/html-table.js')); ?>" type="text/javascript"></script>
+    <script src="<?php echo e(asset('js/pages/bkn.js')); ?>"></script> 
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('layout.default', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH D:\Project\siapp\resources\views/pages/pic/administrasi/kenaikan_pangkat/form/pengesahan_kenaikan_pangkat.blade.php ENDPATH**/ ?>

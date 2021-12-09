@@ -37,7 +37,7 @@
                                             <h4 class="mb-10 font-weight-bold text-dark">Data Surat</h4>
                                             <!--begin::Input-->
                                             <div class="form-group row">
-                                                <label class="col-form-label col-lg-3 col-sm-12">Tanggal Surat Permohonan</label>
+                                                <label class="col-form-label col-lg-3 col-sm-12">Tanggal Surat Permohonan <a style="color: #FF0000;">*</a></label>
                                                 <div class="col-lg-5 col-md-9 col-sm-12">
                                                     <div class="input-group date">
                                                         <input type="text" class="form-control datetimepicker-input my-datepicker" id="tanggal_surat_permohonan" name="tanggal_surat_permohonan" data-toggle="datetimepicker" data-target="#tanggal_surat_permohonan" placeholder="Pilih Tanggal" value="{{old('tanggal_surat_permohonan')}}" />
@@ -51,7 +51,7 @@
                                             </div>
 
                                             <div class="form-group row">
-                                                <label class="col-form-label col-lg-3 col-sm-12">No. Surat Permohonan</label>
+                                                <label class="col-form-label col-lg-3 col-sm-12">No. Surat Permohonan <a style="color: #FF0000;">*</a></label>
                                                 <div class="col-lg-9 col-md-9 col-sm-12">
                                                     <div class="input-group">
                                                         <input type="text" class="form-control" id="no_surat_permohonan" name="no_surat_permohonan" value="{{old('no_surat_permohonan')}}" autocomplete="off" />
@@ -60,7 +60,7 @@
                                             </div>
 
                                             <div class="form-group row">
-                                                <label class="col-form-label col-lg-3 col-sm-12">Jabatan yang Menandatangani</label>
+                                                <label class="col-form-label col-lg-3 col-sm-12">Jabatan yang Menandatangani <a style="color: #FF0000;">*</a></label>
                                                 <div class="col-lg-9 col-md-9 col-sm-12">
                                                     <div class="input-group">
                                                         <input type="text"class="form-control" id="jabatan_menandatangani" name="jabatan_menandatangani" value="{{old('jabatan_menandatangani')}}" autocomplete="off" />
@@ -69,7 +69,7 @@
                                             </div>
 
                                             <div class="form-group row">
-                                                <label class="col-lg-3 col-form-label">Upload Surat Permohonan</label>
+                                                <label class="col-lg-3 col-form-label">Upload Surat Permohonan <a style="color: #FF0000;">*</a></label>
                                                 <div class="col-lg-9">
                                                     <input id="file_surat_permohonan" name="file_surat_permohonan[]" accept=".jpg,.jpeg,.png,.pdf" type="file" class="file" data-show-preview="false" multiple/>
                                                     
@@ -78,7 +78,7 @@
                                             </div>
 
                                             <div class="form-group row">
-                                                <label class="col-lg-3 col-form-label">Upload Dokumen Klarifikasi</label>
+                                                <label class="col-lg-3 col-form-label">Upload Dokumen Klarifikasi <a style="color: #FF0000;">*</a></label>
                                                 <div class="col-lg-9">
                                                     <input id="file_dokumen_klarifikasi" name="file_dokumen_klarifikasi[]" accept=".jpg,.jpeg,.png,.pdf" type="file" class="file" data-show-preview="false" multiple/>
                                                     
@@ -87,7 +87,7 @@
                                             </div>
 
                                             <div class="form-group row">
-                                                <label class="col-lg-3 col-form-label">Upload Fotokopi SK Yang Diperbaiki</label>
+                                                <label class="col-lg-3 col-form-label">Upload Fotokopi SK Yang Diperbaiki <a style="color: #FF0000;">*</a></label>
                                                 <div class="col-lg-9">
                                                     <input id="file_fotokopi_sk_diperbaiki" name="file_fotokopi_sk_diperbaiki[]" accept=".jpg,.jpeg,.png,.pdf" type="file" class="file" data-show-preview="false" multiple/>
                                                     

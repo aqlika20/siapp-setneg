@@ -1,8 +1,8 @@
-{{-- Extends layout --}}
-@extends('layout.default')
 
-{{-- Content --}}
-@section('content')
+
+
+
+<?php $__env->startSection('content'); ?>
 
     <!--begin::Content-->
     <div class="content d-flex flex-column flex-column-fluid" id="kt_content">	
@@ -31,9 +31,9 @@
                             <div class="row justify-content-center py-10 px-8 py-lg-12 px-lg-10">
                                 <div class="col-xl-20 col-xxl-12">
                                     <!--begin: Wizard Form-->
-                                    <form class="form" id="kt_form" action="{{ route('pic.administrasi.pemberhentian.anumerta.store') }}" enctype="multipart/form-data" method="POST">
-                                        @csrf
-                                        @method('PATCH')
+                                    <form class="form" id="kt_form" action="<?php echo e(route('pic.administrasi.pemberhentian.anumerta.store')); ?>" enctype="multipart/form-data" method="POST">
+                                        <?php echo csrf_field(); ?>
+                                        <?php echo method_field('PATCH'); ?>
                                         <!--begin: Wizard Step 1-->
                                         <div class="pb-6" style="margin-left: 50px; margin-right: 50px;" data-wizard-type="step-content" data-wizard-state="current">
                                             <h4 class="mb-10 font-weight-bold text-dark">Data Usulan</h4>
@@ -42,7 +42,7 @@
                                                 <label class="col-form-label col-lg-3 col-sm-12">Tanggal Surat usulan <a style="color: #FF0000;">*</a></label>
                                                 <div class="col-lg-5 col-md-9 col-sm-12">
                                                     <div class="input-group date">
-                                                        <input type="text" class="form-control datetimepicker-input my-datepicker" id="tanggal_surat_usulan" name="tanggal_surat_usulan" data-toggle="datetimepicker" data-target="#tanggal_surat_usulan" placeholder="Pilih Tanggal" value="{{old('tanggal_surat_usulan')}}" />
+                                                        <input type="text" class="form-control datetimepicker-input my-datepicker" id="tanggal_surat_usulan" name="tanggal_surat_usulan" data-toggle="datetimepicker" data-target="#tanggal_surat_usulan" placeholder="Pilih Tanggal" value="<?php echo e(old('tanggal_surat_usulan')); ?>" />
                                                         <div class="input-group-append">
                                                             <span class="input-group-text">
                                                                 <i class="la la-calendar"></i>
@@ -55,7 +55,7 @@
                                                 <label class="col-form-label col-lg-3 col-sm-12">No. Surat Usulan <a style="color: #FF0000;">*</a></label>
                                                 <div class="col-lg-9 col-md-9 col-sm-12">
                                                     <div class="input-group">
-                                                        <input type="text" class="form-control" id="no_surat_usulan" name="no_surat_usulan" value="{{old('no_surat_usulan')}}" autocomplete="off" />
+                                                        <input type="text" class="form-control" id="no_surat_usulan" name="no_surat_usulan" value="<?php echo e(old('no_surat_usulan')); ?>" autocomplete="off" />
                                                     </div>
                                                 </div>
                                             </div>
@@ -65,7 +65,7 @@
                                                 <label class="col-form-label col-lg-3 col-sm-12">Jabatan Yang Menandatangani <a style="color: #FF0000;">*</a></label>
                                                 <div class="col-lg-9 col-md-9 col-sm-12">
                                                     <div class="input-group">
-                                                        <input type="text"class="form-control" id="jabatan_menandatangani" name="jabatan_menandatangani" value="{{old('jabatan_menandatangani')}}" autocomplete="off" />
+                                                        <input type="text"class="form-control" id="jabatan_menandatangani" name="jabatan_menandatangani" value="<?php echo e(old('jabatan_menandatangani')); ?>" autocomplete="off" />
                                                     </div>
                                                 </div>
                                             </div>
@@ -208,7 +208,7 @@
                                                 <label class="col-form-label col-lg-3 col-sm-12">NIP <a style="color: #FF0000;">*</a></label>
                                                 <div class="col-lg-5 col-md-9 col-sm-12">
                                                     <div class="input-group date">
-                                                        <input type="number" maxlength="18" class="form-control" id="nip" name="nip" value="{{old('nip')}}" autocomplete="off" />
+                                                        <input type="number" maxlength="18" class="form-control" id="nip" name="nip" value="<?php echo e(old('nip')); ?>" autocomplete="off" />
                                                     </div>
                                                 </div>
                                                 <button id="btn-bkn" class="btn btn-light-primary font-weight-bold">Tarik Data BKN</button>
@@ -219,7 +219,7 @@
                                                 <label class="col-form-label col-lg-3 col-sm-12">Nama PNS <a style="color: #FF0000;">*</a></label>
                                                 <div class="col-lg-9 col-md-9 col-sm-12">
                                                     <div class="input-group date">
-                                                        <input type="text" class="form-control" id="nama" name="nama" value="{{old('nama')}}" autocomplete="off" />
+                                                        <input type="text" class="form-control" id="nama" name="nama" value="<?php echo e(old('nama')); ?>" autocomplete="off" />
                                                     </div>
                                                 </div>
                                             </div>
@@ -229,7 +229,7 @@
                                                 <label class="col-form-label col-lg-3 col-sm-12">Nama Janda / Duda / Anak <a style="color: #FF0000;">*</a></label>
                                                 <div class="col-lg-9 col-md-9 col-sm-12">
                                                     <div class="input-group date">
-                                                        <input type="text" class="form-control" id="nama_janda_duda_anak" name="nama_janda_duda_anak" value="{{old('nama_janda_duda_anak')}}" autocomplete="off" />
+                                                        <input type="text" class="form-control" id="nama_janda_duda_anak" name="nama_janda_duda_anak" value="<?php echo e(old('nama_janda_duda_anak')); ?>" autocomplete="off" />
                                                     </div>
                                                 </div>
                                             </div>
@@ -239,7 +239,7 @@
                                                 <label class="col-form-label col-lg-3 col-sm-12">Tanggal Lahir <a style="color: #FF0000;">*</a></label>
                                                 <div class="col-lg-5 col-md-9 col-sm-12">
                                                     <div class="input-group date">
-                                                        <input type="text" class="form-control datetimepicker-input my-datepicker" id="tanggal_lahir" name="tanggal_lahir" data-toggle="datetimepicker" data-target="#tanggal_lahir" placeholder="Pilih Tanggal" value="{{old('tanggal_lahir')}}" autocomplete="off" />
+                                                        <input type="text" class="form-control datetimepicker-input my-datepicker" id="tanggal_lahir" name="tanggal_lahir" data-toggle="datetimepicker" data-target="#tanggal_lahir" placeholder="Pilih Tanggal" value="<?php echo e(old('tanggal_lahir')); ?>" autocomplete="off" />
                                                         <div class="input-group-append">
                                                             <span class="input-group-text">
                                                                 <i class="la la-calendar"></i>
@@ -254,9 +254,9 @@
                                                 <div class="col-lg-9 col-md-9 col-sm-12">
                                                     <select class="form-control select2" style="width: 230px;" id="pendidikan_terakhir" name="pendidikan_terakhir">
                                                         <option value="">Choose</option>
-                                                        @foreach ($pendidikans as $pendidikan_terakhir)
-                                                            <option value="{{$pendidikan_terakhir->id}}">{{$pendidikan_terakhir->name}}</option>
-                                                        @endforeach
+                                                        <?php $__currentLoopData = $pendidikans; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $pendidikan_terakhir): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                                            <option value="<?php echo e($pendidikan_terakhir->id); ?>"><?php echo e($pendidikan_terakhir->name); ?></option>
+                                                        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                                                     </select>
                                                 </div>
                                             </div>
@@ -304,7 +304,7 @@
                                                 <label class="col-form-label col-lg-3 col-sm-12">Instansi Induk <a style="color: #FF0000;">*</a></label>
                                                 <div class="col-lg-9 col-md-9 col-sm-12">
                                                     <div class="input-group date">
-                                                        <input type="text" class="form-control" id="instansi_induk" name="instansi_induk" value="{{old('instansi_induk')}}" autocomplete="off" />
+                                                        <input type="text" class="form-control" id="instansi_induk" name="instansi_induk" value="<?php echo e(old('instansi_induk')); ?>" autocomplete="off" />
                                                     </div>
                                                 </div>
                                             </div>
@@ -313,9 +313,9 @@
                                                 <div class="col-lg-9 col-md-9 col-sm-12">
                                                     <select class="form-control select2" style="width: 230px;" id="pangkat_lama" name="pangkat_lama">
                                                         <option value="">Choose</option>
-                                                        @foreach ($pangkats as $pangkat)
-                                                            <option value="{{$pangkat->id}}" @if (old("pangkat_lama") == $pangkat->id) selected="selected" @endif>{{$pangkat->name}} ({{$pangkat->golongan}}/{{$pangkat->ruang}}</option>
-                                                        @endforeach
+                                                        <?php $__currentLoopData = $pangkats; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $pangkat): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                                            <option value="<?php echo e($pangkat->id); ?>" <?php if(old("pangkat_lama") == $pangkat->id): ?> selected="selected" <?php endif; ?>><?php echo e($pangkat->name); ?> (<?php echo e($pangkat->golongan); ?>/<?php echo e($pangkat->ruang); ?></option>
+                                                        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                                                     </select>
                                                     <!-- <div class="input-group date">
                                                         <select class="custom-select form-control" id="seeAnotherField">
@@ -332,9 +332,9 @@
                                                 <div class="col-lg-9 col-md-9 col-sm-12">
                                                     <select class="form-control select2" style="width: 230px;" id="pangkat_baru" name="pangkat_baru">
                                                         <option value="">Choose</option>
-                                                        @foreach ($pangkats as $pangkat)
-                                                            <option value="{{$pangkat->id}}" @if (old("pangkat_baru") == $pangkat->id) selected="selected" @endif>{{$pangkat->name}} ({{$pangkat->golongan}}/{{$pangkat->ruang}}</option>
-                                                        @endforeach
+                                                        <?php $__currentLoopData = $pangkats; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $pangkat): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                                            <option value="<?php echo e($pangkat->id); ?>" <?php if(old("pangkat_baru") == $pangkat->id): ?> selected="selected" <?php endif; ?>><?php echo e($pangkat->name); ?> (<?php echo e($pangkat->golongan); ?>/<?php echo e($pangkat->ruang); ?></option>
+                                                        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                                                     </select>
                                                     <!-- <div class="input-group date">
                                                         <select class="custom-select form-control" id="seeAnotherField">
@@ -350,7 +350,7 @@
                                                 <label class="col-form-label col-lg-3 col-sm-12">TMT Pangkat Baru <a style="color: #FF0000;">*</a></label>
                                                 <div class="col-lg-5 col-md-9 col-sm-12">
                                                     <div class="input-group date">
-                                                        <input type="text" class="form-control datetimepicker-input my-datepicker" id="tmt_pangkat_baru" name="tmt_pangkat_baru" data-toggle="datetimepicker" data-target="#tmt_pangkat_baru" placeholder="Pilih Tanggal" value="{{old('tmt_pangkat_baru')}}" autocomplete="off" />
+                                                        <input type="text" class="form-control datetimepicker-input my-datepicker" id="tmt_pangkat_baru" name="tmt_pangkat_baru" data-toggle="datetimepicker" data-target="#tmt_pangkat_baru" placeholder="Pilih Tanggal" value="<?php echo e(old('tmt_pangkat_baru')); ?>" autocomplete="off" />
                                                         <div class="input-group-append">
                                                             <span class="input-group-text">
                                                                 <i class="la la-calendar"></i>
@@ -363,7 +363,7 @@
                                                 <label class="col-form-label col-lg-3 col-sm-12">TMT Pensiun <a style="color: #FF0000;">*</a></label>
                                                 <div class="col-lg-5 col-md-9 col-sm-12">
                                                     <div class="input-group date">
-                                                        <input type="text" class="form-control datetimepicker-input my-datepicker" id="tmt_pensiun" name="tmt_pensiun" data-toggle="datetimepicker" data-target="#tmt_pensiun" placeholder="Pilih Tanggal" value="{{old('tmt_pensiun')}}" autocomplete="off" />
+                                                        <input type="text" class="form-control datetimepicker-input my-datepicker" id="tmt_pensiun" name="tmt_pensiun" data-toggle="datetimepicker" data-target="#tmt_pensiun" placeholder="Pilih Tanggal" value="<?php echo e(old('tmt_pensiun')); ?>" autocomplete="off" />
                                                         <div class="input-group-append">
                                                             <span class="input-group-text">
                                                                 <i class="la la-calendar"></i>
@@ -376,7 +376,7 @@
                                                 <label class="col-form-label col-lg-3 col-sm-12">Alamat Setelah Pensiun <a style="color: #FF0000;">*</a></label>
                                                 <div class="col-lg-9 col-md-9 col-sm-12">
                                                     <div class="input-group date">
-                                                        <textarea type="text" class="form-control" id="alamat_setelah_pensiun" name="alamat_setelah_pensiun" value="{{old('alamat_setelah_pensiun')}}" autocomplete="off" require></textarea>
+                                                        <textarea type="text" class="form-control" id="alamat_setelah_pensiun" name="alamat_setelah_pensiun" value="<?php echo e(old('alamat_setelah_pensiun')); ?>" autocomplete="off" require></textarea>
                                                     </div>
                                                 </div>
                                             </div>
@@ -384,7 +384,7 @@
                                                 <label class="col-form-label col-lg-3 col-sm-12">Taspen <a style="color: #FF0000;">*</a></label>
                                                 <div class="col-lg-9 col-md-9 col-sm-12">
                                                     <div class="input-group date">
-                                                        <textarea type="text" class="form-control" id="taspen" name="taspen" value="{{old('taspen')}}" autocomplete="off" require></textarea>
+                                                        <textarea type="text" class="form-control" id="taspen" name="taspen" value="<?php echo e(old('taspen')); ?>" autocomplete="off" require></textarea>
                                                     </div>
                                                 </div>
                                             </div>
@@ -476,7 +476,7 @@
                                                     <label class="col-form-label col-lg-3 col-sm-12">Nomor PAK</label>
                                                     <div class="col-lg-9 col-md-9 col-sm-12">
                                                         <div class="input-group date">
-                                                            <input type="text" class="form-control" id="nomor_pak" name="nomor_pak" value="{{old('nomor_pak')}}" autocomplete="off" />
+                                                            <input type="text" class="form-control" id="nomor_pak" name="nomor_pak" value="<?php echo e(old('nomor_pak')); ?>" autocomplete="off" />
                                                         </div>
                                                     </div>
                                                 </div>
@@ -486,7 +486,7 @@
                                                     <label class="col-form-label col-lg-3 col-sm-12">Tanggal PAK</label>
                                                     <div class="col-lg-5 col-md-9 col-sm-12">
                                                         <div class="input-group date">
-                                                            <input type="text" class="form-control datetimepicker-input my-datepicker" id="tanggal_pak" name="tanggal_pak" data-toggle="datetimepicker" data-target="#tanggal_pak" placeholder="Pilih Tanggal" value="{{old('tanggal_pak')}}" autocomplete="off" />
+                                                            <input type="text" class="form-control datetimepicker-input my-datepicker" id="tanggal_pak" name="tanggal_pak" data-toggle="datetimepicker" data-target="#tanggal_pak" placeholder="Pilih Tanggal" value="<?php echo e(old('tanggal_pak')); ?>" autocomplete="off" />
                                                             <div class="input-group-append">
                                                                 <span class="input-group-text">
                                                                     <i class="la la-calendar"></i>
@@ -499,7 +499,7 @@
                                                     <label class="col-form-label col-lg-3 col-sm-12">Jumlah Angka Kredit</label>
                                                     <div class="col-lg-9 col-md-9 col-sm-12">
                                                         <div class="input-group date">
-                                                            <input type="text" class="form-control" id="jumlah_angka_kredit" name="jumlah_angka_kredit" value="{{old('jumlah_angka_kredit')}}" autocomplete="off" />
+                                                            <input type="text" class="form-control" id="jumlah_angka_kredit" name="jumlah_angka_kredit" value="<?php echo e(old('jumlah_angka_kredit')); ?>" autocomplete="off" />
                                                         </div>
                                                     </div>
                                                 </div>
@@ -508,9 +508,9 @@
                                                     <div class="col-lg-9 col-md-9 col-sm-12">
                                                         <select class="form-control select2" id="periode_penilaian" name="periode_penilaian">
                                                             <option value="">Choose</option>
-                                                            @foreach ($periodes as $periode)
-                                                                <option value="{{$periode->id}}" {{ old('periode_penilaian') == $periode->id ? 'selected' : '' }}>{{$periode->name}}</option>
-                                                            @endforeach
+                                                            <?php $__currentLoopData = $periodes; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $periode): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                                                <option value="<?php echo e($periode->id); ?>" <?php echo e(old('periode_penilaian') == $periode->id ? 'selected' : ''); ?>><?php echo e($periode->name); ?></option>
+                                                            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                                                         </select>
                                                         <!-- <div class="input-group date">
                                                             <select class="custom-select form-control">
@@ -571,7 +571,7 @@
                                                     <label class="col-form-label col-lg-3 col-sm-12">Nomor Klarifikasi</label>
                                                     <div class="col-lg-9 col-md-9 col-sm-12">
                                                         <div class="input-group date">
-                                                            <input type="text" class="form-control" id="no_klarifikasi" name="no_klarifikasi" value="{{old('no_klarifikasi')}}" autocomplete="off"/>
+                                                            <input type="text" class="form-control" id="no_klarifikasi" name="no_klarifikasi" value="<?php echo e(old('no_klarifikasi')); ?>" autocomplete="off"/>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -579,7 +579,7 @@
                                                     <label class="col-form-label col-lg-3 col-sm-12">Tanggal Klarifikasi</label>
                                                     <div class="col-lg-5 col-md-9 col-sm-12">
                                                         <div class="input-group date">
-                                                            <input type="text" class="form-control datetimepicker-input my-datepicker" id="tanggal_klarifikasi" name="tanggal_klarifikasi" data-toggle="datetimepicker" data-target="#tanggal_klarifikasi" placeholder="Pilih Tanggal" value="{{old('tanggal_klarifikasi')}}" />
+                                                            <input type="text" class="form-control datetimepicker-input my-datepicker" id="tanggal_klarifikasi" name="tanggal_klarifikasi" data-toggle="datetimepicker" data-target="#tanggal_klarifikasi" placeholder="Pilih Tanggal" value="<?php echo e(old('tanggal_klarifikasi')); ?>" />
                                                             <div class="input-group-append">
                                                                 <span class="input-group-text">
                                                                     <i class="la la-calendar"></i>
@@ -889,29 +889,29 @@
                         <!--end: Wizard-->                      
                     </div>
                     <div class="modal-footer">
-                        <a href="{{ route('pic.administrasi.pemberhentian.index') }}"type="button" class="btn btn-light-danger font-weight-bold">Batalkan</a>
+                        <a href="<?php echo e(route('pic.administrasi.pemberhentian.index')); ?>"type="button" class="btn btn-light-danger font-weight-bold">Batalkan</a>
                     </div>
                 </div>
             </div>
             <!--end: Wizard-->
         </div>
     </div>
-    <input type="hidden" id="url-api-fetch-data-bkn" name="url-api-fetch-data-bkn" value="{{ route('api.bkn.fetch-data') }}"/>
+    <input type="hidden" id="url-api-fetch-data-bkn" name="url-api-fetch-data-bkn" value="<?php echo e(route('api.bkn.fetch-data')); ?>"/>
 				
-@endsection
+<?php $__env->stopSection(); ?>
 
-{{-- Styles Section --}}
-@section('styles')
+
+<?php $__env->startSection('styles'); ?>
 <style>
     td {  
         background-color: #86dcec;    
         
     }
 </style>
-@endsection
+<?php $__env->stopSection(); ?>
 
-{{-- Scripts Section --}}
-@section('scripts')
+
+<?php $__env->startSection('scripts'); ?>
     <script id="tambah_catatan" type="text/x-handlebars-template">
         <div class="item_data">
             <div class="form-group row">
@@ -1218,9 +1218,10 @@
         })
 
     </script>
-    <script src="{{ asset('js/pages/custom/wizard/wizard-3.js') }}"></script>
-    <script src="{{ asset('js/hide.js') }}"></script> 
-    <script src="{{ asset('js/pages/bkn-pemberhentian.js') }}"></script> 
-    <script src="{{ asset('js/pages/crud/file-upload/dropzonejs.js') }}"></script>
-    <script src="{{ asset('js/pages/crud/ktdatatable/base/html-table.js') }}" type="text/javascript"></script>
-@endsection
+    <script src="<?php echo e(asset('js/pages/custom/wizard/wizard-3.js')); ?>"></script>
+    <script src="<?php echo e(asset('js/hide.js')); ?>"></script> 
+    <script src="<?php echo e(asset('js/pages/bkn-pemberhentian.js')); ?>"></script> 
+    <script src="<?php echo e(asset('js/pages/crud/file-upload/dropzonejs.js')); ?>"></script>
+    <script src="<?php echo e(asset('js/pages/crud/ktdatatable/base/html-table.js')); ?>" type="text/javascript"></script>
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('layout.default', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH D:\Project\siapp\resources\views/pages/pic/administrasi/pemberhentian/form/anumerta.blade.php ENDPATH**/ ?>

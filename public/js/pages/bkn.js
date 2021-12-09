@@ -28,6 +28,8 @@ $(document).ready(function (e) {
                     $('#tanggal_lahir').val(data.tglLahir);
                     $('#pendidikan_terakhir').val(data.pendidikanTerakhirNama);
                     $('#instansi').val(data.instansiIndukNama);
+                    $('#tmt_gol').val(data.tmtGolAkhir);
+                    $('#tmt_cpns').val(data.tmtCpns);
                     $('#masa_kerja_gol_tahun').val(data.mkTahun);
                     $('#masa_kerja_gol_bulan').val(data.mkBulan);
                     $('#pangkat_gol').val(data.golRuangAkhir);
