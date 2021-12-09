@@ -64,6 +64,7 @@ class PermasalahanKepegawaianLainnyaController extends Controller
             'file_data_usulan.*' => 'required|max:5000|mimes:jpg,png,jpeg,pdf',
             'file_data_pendukung_lainnya.*' => 'max:5000|mimes:jpg,png,jpeg,pdf',
 
+            'nip' => 'required',
             'nama' => 'required',
             'tanggal_lahir' => 'required',
             'pangkat_terakhir' => 'required',
@@ -85,6 +86,7 @@ class PermasalahanKepegawaianLainnyaController extends Controller
                 'jabatan_menandatangani' => $input['jabatan_menandatangani'],
                 'perihal' => $input['perihal'],
     
+                'nip' => $input['nip'],
                 'nama' => $input['nama'],
                 'tanggal_lahir' => Helper::convertDatetoDB($input['tanggal_lahir']),
                 'pangkat_terakhir' => $input['pangkat_terakhir'],

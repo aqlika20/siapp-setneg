@@ -740,18 +740,15 @@
                                                 <div class="col-lg-9 col-md-9 col-sm-12">
                                                     <select class="form-control select2" style="width: 230px;" id="pangkat_gol" name="pangkat_gol">
                                                         <option value="">Choose</option>
+<<<<<<< HEAD
+                                                        @foreach ($pangkats as $pangkat)
+                                                            <option value="{{$pangkat->id}}" {{ old('pangkat_gol') == $pangkat->id ? "selected" :""}} >{{$pangkat->name}} ({{$pangkat->golongan}}/{{$pangkat->ruang}})</option>
+=======
                                                         @foreach ($pangkats as $pangkat) 
                                                             <option value="{{$pangkat->id}}" @if (old("pangkat_gol") == $pangkat->id) selected="selected" @endif> {{$pangkat->name}} ({{$pangkat->golongan}}/{{$pangkat->ruang}})</option>
+>>>>>>> 8c6e1f2bb26cb4ab009e8a2cb7a4a4f16b3faab8
                                                         @endforeach
                                                     </select>
-                                                    <!-- <div class="input-group date">
-                                                        <select class="custom-select form-control" id="seeAnotherField">
-                                                            <option selected>pilih golongan</option>
-                                                            <option value="1">Golongan 1</option>
-                                                            <option value="2">Golongan 2</option>
-                                                            <option value="3">Golongan 3</option>
-                                                            </select>
-                                                    </div> -->
                                                 </div>
                                             </div>
                                             <div class="form-group row">
