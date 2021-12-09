@@ -710,10 +710,7 @@ class ComposerStaticInitc50ab1d0bdb360a9d59654ada5d23249
         'App\\Http\\Controllers\\BackWeb\\JF_Ahli\\TextEditorInboxPendingController' => __DIR__ . '/../..' . '/app/Http/Controllers/BackWeb/JF_Ahli/TextEditorInboxPendingController.php',
         'App\\Http\\Controllers\\BackWeb\\JF_Ahli\\TextEditorLainPertekController' => __DIR__ . '/../..' . '/app/Http/Controllers/BackWeb/JF_Ahli/TextEditorLainPertekController.php',
         'App\\Http\\Controllers\\BackWeb\\JF_Ahli\\TextEditorNSPertekController' => __DIR__ . '/../..' . '/app/Http/Controllers/BackWeb/JF_Ahli/TextEditorNSPertekController.php',
-<<<<<<< HEAD
-=======
         'App\\Http\\Controllers\\BackWeb\\JF_Ahli\\TextEditorPemberhentianPertekController' => __DIR__ . '/../..' . '/app/Http/Controllers/BackWeb/JF_Ahli_KP/TextEditorPemberhentianPertekController.php',
->>>>>>> 8c6e1f2bb26cb4ab009e8a2cb7a4a4f16b3faab8
         'App\\Http\\Controllers\\BackWeb\\JF_Ahli\\VerifikasiController' => __DIR__ . '/../..' . '/app/Http/Controllers/BackWeb/JF_Ahli/VerifikasiController.php',
         'App\\Http\\Controllers\\BackWeb\\JF_Ahli_KP\\TextEditorKenaikanPertekController' => __DIR__ . '/../..' . '/app/Http/Controllers/BackWeb/JF_Ahli_KP/TextEditorKenaikanPertekController.php',
         'App\\Http\\Controllers\\BackWeb\\JF_Ahli_Pensiun\\TextEditorPemberhentianPertekController' => __DIR__ . '/../..' . '/app/Http/Controllers/BackWeb/JF_Ahli_Pensiun/TextEditorPemberhentianPertekController.php',

@@ -47,10 +47,7 @@
     43 => 'Maatwebsite\\Excel\\ExcelServiceProvider',
     44 => 'Barryvdh\\DomPDF\\ServiceProvider',
     45 => 'ConsoleTVs\\Charts\\ChartsServiceProvider',
-<<<<<<< HEAD
-=======
     46 => 'Barryvdh\\Debugbar\\ServiceProvider',
->>>>>>> 8c6e1f2bb26cb4ab009e8a2cb7a4a4f16b3faab8
   ),
   'eager' => 
   array (
@@ -87,10 +84,7 @@
     30 => 'Maatwebsite\\Excel\\ExcelServiceProvider',
     31 => 'Barryvdh\\DomPDF\\ServiceProvider',
     32 => 'ConsoleTVs\\Charts\\ChartsServiceProvider',
-<<<<<<< HEAD
-=======
     33 => 'Barryvdh\\Debugbar\\ServiceProvider',
->>>>>>> 8c6e1f2bb26cb4ab009e8a2cb7a4a4f16b3faab8
   ),
   'deferred' => 
   array (
