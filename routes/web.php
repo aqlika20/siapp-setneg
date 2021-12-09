@@ -26,6 +26,17 @@ Route::prefix('/profile')->group(function(){
 Route::get('/autocomplete', 'BackWeb\PIC\Administrasi\Surat_Usulan\AutocompleteController@index');
 Route::post('/autocomplete/fetch', 'BackWeb\PIC\Administrasi\Surat_Usulan\AutocompleteController@fetch')->name('autocomplete.fetch');
 
+
+
+Route::prefix('/callbackdocument')->group(function(){
+    Route::get('/', 'CallbackDocument@index')->name('callbackdocument.index');
+	Route::patch('/store', 'CallbackDocument@store')->name('callbackdocument.store');
+});
+		
+
+
+
+
 // PIC
 Route::group(['middleware' => ['auth', 'checkRole:14']], function() {
     Route::prefix('/pic')->group(function(){
@@ -349,7 +360,6 @@ Route::group(['middleware' => ['auth', 'checkRole:5']], function() {
             Route::prefix('/text-editor')->group(function(){
                 Route::get('/{id}', 'BackWeb\Koor_Pokja\Inbox\TextEditorInboxPendingController@index')->name('koor-pokja.inbox.text-editor.index');
                 Route::post('/create', 'BackWeb\Koor_Pokja\Inbox\TextEditorInboxPendingController@store')->name('koor-pokja.inbox.text-editor.store');					
-				Route::get('/callback-docx', 'BackWeb\Koor_Pokja\Inbox\TextEditorInboxPendingController@callbackDocx')->name('koor-pokja.inbox.text-editor.callbackDocx');
             });
             
             Route::prefix('/text-editor-lain')->group(function(){
@@ -419,8 +429,7 @@ Route::group(['middleware' => ['auth', 'checkRole:5']], function() {
 
             Route::prefix('/text-editor')->group(function(){
                 Route::get('/{id}', 'BackWeb\Koor_Pokja\TextEditorController@index')->name('koor-pokja.text-editor.index');
-                Route::post('/create', 'BackWeb\Koor_Pokja\TextEditorController@store')->name('koor-pokja.text-editor.store');
-				Route::post('/callback-docx', 'BackWeb\Koor_Pokja\TextEditorController@callbackDocx')->name('koor-pokja.text-editor.callbackDocx');				
+                Route::post('/create', 'BackWeb\Koor_Pokja\TextEditorController@store')->name('koor-pokja.text-editor.store');			
             });
             
             Route::prefix('/text-editor-jfku')->group(function(){

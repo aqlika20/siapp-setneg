@@ -34,10 +34,7 @@ return array(
     'App\\Http\\Controllers\\BackWeb\\JF_Ahli\\TextEditorInboxPendingController' => $baseDir . '/app/Http/Controllers/BackWeb/JF_Ahli/TextEditorInboxPendingController.php',
     'App\\Http\\Controllers\\BackWeb\\JF_Ahli\\TextEditorLainPertekController' => $baseDir . '/app/Http/Controllers/BackWeb/JF_Ahli/TextEditorLainPertekController.php',
     'App\\Http\\Controllers\\BackWeb\\JF_Ahli\\TextEditorNSPertekController' => $baseDir . '/app/Http/Controllers/BackWeb/JF_Ahli/TextEditorNSPertekController.php',
-<<<<<<< HEAD
     'App\\Http\\Controllers\\BackWeb\\JF_Ahli\\TextEditorPemberhentianPertekController' => $baseDir . '/app/Http/Controllers/BackWeb/JF_Ahli_KP/TextEditorPemberhentianPertekController.php',
-=======
->>>>>>> ea9d26124c58b507c98007193994eeea2e102743
     'App\\Http\\Controllers\\BackWeb\\JF_Ahli\\VerifikasiController' => $baseDir . '/app/Http/Controllers/BackWeb/JF_Ahli/VerifikasiController.php',
     'App\\Http\\Controllers\\BackWeb\\JF_Ahli_KP\\TextEditorKenaikanPertekController' => $baseDir . '/app/Http/Controllers/BackWeb/JF_Ahli_KP/TextEditorKenaikanPertekController.php',
     'App\\Http\\Controllers\\BackWeb\\JF_Ahli_Pensiun\\TextEditorPemberhentianPertekController' => $baseDir . '/app/Http/Controllers/BackWeb/JF_Ahli_Pensiun/TextEditorPemberhentianPertekController.php',

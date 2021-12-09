@@ -25,11 +25,11 @@ use Psr\Http\Message\ResponseInterface;
  * - {code}:           Status code of the response (if available)
  * - {phrase}:         Reason phrase of the response  (if available)
  * - {error}:          Any error messages (if available)
- * - {header_*}:   Replace `*` with the lowercased name of a request header to add to the message
+ * - {req_header_*}:   Replace `*` with the lowercased name of a request header to add to the message
  * - {res_header_*}:   Replace `*` with the lowercased name of a response header to add to the message
- * - {headers}:    Request headers
+ * - {req_headers}:    Request headers
  * - {res_headers}:    Response headers
- * - {body}:       Request body
+ * - {req_body}:       Request body
  * - {res_body}:       Response body
  */
 class MessageFormatter
@@ -39,7 +39,7 @@ class MessageFormatter
      * @link http://httpd.apache.org/docs/2.4/logs.html#common
      * @var string
      */
-    const CLF = "{hostname} {header_User-Agent} - [{date_common_log}] \"{method} {target} HTTP/{version}\" {code} {res_header_Content-Length}";
+    const CLF = "{hostname} {req_header_User-Agent} - [{date_common_log}] \"{method} {target} HTTP/{version}\" {code} {res_header_Content-Length}";
     const DEBUG = ">>>>>>>>\n{request}\n<<<<<<<<\n{response}\n--------\n{error}";
     const SHORT = '[{ts}] "{method} {target} HTTP/{version}" {code}';
 
@@ -85,7 +85,7 @@ class MessageFormatter
                     case 'response':
                         $result = $response ? Psr7\str($response) : '';
                         break;
-                    case 'headers':
+                    case 'req_headers':
                         $result = trim($request->getMethod()
                                 . ' ' . $request->getRequestTarget())
                             . ' HTTP/' . $request->getProtocolVersion() . "\r\n"
@@ -101,7 +101,7 @@ class MessageFormatter
                             ) . "\r\n" . $this->headers($response)
                             : 'NULL';
                         break;
-                    case 'body':
+                    case 'req_body':
                         $result = $request->getBody();
                         break;
                     case 'res_body':
@@ -127,7 +127,7 @@ class MessageFormatter
                     case 'target':
                         $result = $request->getRequestTarget();
                         break;
-                    case 'version':
+                    case 'req_version':
                         $result = $request->getProtocolVersion();
                         break;
                     case 'res_version':
@@ -152,7 +152,7 @@ class MessageFormatter
                         break;
                     default:
                         // handle prefixed dynamic headers
-                        if (strpos($matches[1], 'header_') === 0) {
+                        if (strpos($matches[1], 'req_header_') === 0) {
                             $result = $request->getHeaderLine(substr($matches[1], 11));
                         } elseif (strpos($matches[1], 'res_header_') === 0) {
                             $result = $response

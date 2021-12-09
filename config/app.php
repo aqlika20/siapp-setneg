@@ -185,14 +185,8 @@ return [
 
         //Laravel Chart
         ConsoleTVs\Charts\ChartsServiceProvider::class,
-<<<<<<< HEAD
 		
 		Barryvdh\Debugbar\ServiceProvider::class,
-=======
-        
-        //Barryvdh
-        Barryvdh\Debugbar\ServiceProvider::class,
->>>>>>> ea9d26124c58b507c98007193994eeea2e102743
 
        
 

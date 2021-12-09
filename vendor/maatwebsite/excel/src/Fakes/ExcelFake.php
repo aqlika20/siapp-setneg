@@ -127,7 +127,7 @@ class ExcelFake implements Exporter, Importer
             return $this->queueImport($import, $file, $disk, $readerType);
         }
 
-        $filePath = ($file instanceof UploadedFile) ? $file->getClientOriginalName(). ' - ' .$input['nip']; : $file;
+        $filePath = ($file instanceof UploadedFile) ? $file->getClientOriginalName() : $file;
 
         $this->imported[$disk ?? 'default'][$filePath] = $import;
 
