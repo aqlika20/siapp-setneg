@@ -66,9 +66,9 @@
                                                 <div class="col-lg-9 col-md-9 col-sm-12">
                                                     <select class="form-control select22" style="width: 230px;" id="alasan_pembatalan" name="alasan_pembatalan">
                                                         <option value="" disabled selected>Choose</option>
-                                                        <option value="1">Meninggal Dunia Sebelum Periode Kenaikan Pangkat</option>
-                                                        <option value="2">Alasan Terkait Dengan Jabatan</option>
-                                                        <option value="0">Lainnya</option>
+                                                        <option value="1" {{ old('alasan_pembatalan') == 1 ? 'selected' : '' }}>Meninggal Dunia Sebelum Periode Kenaikan Pangkat</option>
+                                                        <option value="2" {{ old('alasan_pembatalan') == 1 ? 'selected' : '' }}>Alasan Terkait Dengan Jabatan</option>
+                                                        <option value="0" {{ old('alasan_pembatalan') == 1 ? 'selected' : '' }}>Lainnya</option>
                                                     </select>
                                                 </div>
                                             </div>

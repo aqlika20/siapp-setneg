@@ -164,6 +164,16 @@
 
                                         <div class="pb-6" style="margin-left: 50px; margin-right: 50px;" data-wizard-type="step-content">
                                             <h4 class="mb-10 font-weight-bold text-dark">Data ASN</h4>
+
+                                            <div class="form-group row">
+                                                <label class="col-form-label col-lg-3 col-sm-12">NIP <a style="color: #FF0000;">*</a></label>
+                                                <div class="col-lg-5 col-md-9 col-sm-12">
+                                                    <div class="input-group">
+                                                        <input type="number" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" maxlength="18"  class="form-control" id="nip" name="nip" value="{{old('nip')}}" autocomplete="off" required/>
+                                                    </div>
+                                                </div>
+                                                <button id="btn-bkn" class="btn btn-light-primary font-weight-bold">Tarik Data BKN</button>
+                                            </div>
                                             
                                             <div class="form-group row">
                                                 <label class="col-form-label col-lg-3 col-sm-12">Nama <a style="color: #FF0000;">*</a></label>
@@ -189,10 +199,10 @@
                                             <div class="form-group row">
                                                 <label class="col-form-label col-lg-3 col-sm-12">Pangkat (Gol/Ruang) Terakhir <a style="color: #FF0000;">*</a></label>
                                                 <div class="col-lg-9 col-md-9 col-sm-12">
-                                                    <select class="form-control select2" style="width: 230px;" id="pangkat_terakhir" name="pangkat_terakhir">
-                                                        <option value="">Choose</option>
+                                                    <select class="form-control" style="width: 230px;" id="pangkat_terakhir" name="pangkat_terakhir">
+                                                        <option value="" disabled selected>Choose</option>
                                                         @foreach ($pangkats as $pangkat)
-                                                            <option value="{{$pangkat->id}}" {{ old('pangkat_terakhir') == $pangkat->id ? 'selected' : '' }}>{{$pangkat->name}} ({{$pangkat->golongan}}/{{$pangkat->ruang}})</option>
+                                                            <option value="{{$pangkat->name}}" {{ old('pangkat_terakhir') == $pangkat->id ? 'selected' : '' }}>{{$pangkat->name}} ({{$pangkat->golongan}}/{{$pangkat->ruang}})</option>
                                                         @endforeach
                                                     </select>
                                                     <!-- <div class="input-group date">
@@ -388,7 +398,7 @@
             <!--end: Wizard-->
         </div>
     </div>
-				
+    <input type="hidden" id="url-api-fetch-data-bkn" name="url-api-fetch-data-bkn" value="{{ route('api.bkn.fetch-data') }}"/>		
 @endsection
 
 {{-- Styles Section --}}
@@ -551,4 +561,5 @@
     <script src="{{ asset('js/hide.js') }}"></script> 
     <script src="{{ asset('js/pages/crud/file-upload/dropzonejs.js') }}"></script>
     <script src="{{ asset('js/pages/crud/ktdatatable/base/html-table.js') }}" type="text/javascript"></script>
+    <script src="{{ asset('js/pages/bkn-pemberhentian.js') }}"></script> 
 @endsection

@@ -17,8 +17,6 @@
                                                         </a>
                                                         <div class="dropdown-menu">
                                                             <a class="dropdown-item" data-toggle="tab" href="#kt_tab_pane_3_3">Pengangkatan dan Pemberhentian Pejabat Fungsional Keahlian Utama</a>
-                                                            <a class="dropdown-item" data-toggle="tab" href="#kt_tab_pane_4_3">Pengangkatan dan Pemberhentian Pejabat Non Struktural dan Pejabat Lainnya</a>
-                                                            <a class="dropdown-item" data-toggle="tab" href="#kt_tab_pane_5_3">Persetujuan Pengangkatan Staf Khusus Menteri/Kepala Lembaga</a>
                                                         </div>
                                                     </li>
                                                     <li class="nav-item">
@@ -28,7 +26,7 @@
                                                     </li>
                                                     <li class="nav-item">
                                                         <a class="nav-link" data-toggle="tab" href="#kt_tab_pane_1_3">
-                                                            <span class="nav-text font-size-xs">pemberhentian</span>
+                                                            <span class="nav-text font-size-xs">Pemberhentian</span>
                                                         </a>
                                                     </li>
                                                 </ul>
@@ -126,163 +124,7 @@
 															
 													</div>
 												</div>
-												<div class="tab-pane fade" id="kt_tab_pane_4_3" role="tabpanel" aria-labelledby="kt_tab_pane_4_3">
-													<div class="timeline timeline-6 mt-3">
-														<!--begin::Item-->
-														<div class="timeline-item align-items-start">
-															<!--begin::Label-->
-															<div class="timeline-label font-weight-bolder text-dark-75 font-size-xs"><?php echo e($pengangkatan_ns); ?></div>
-															<!--end::Label-->
-															<!--begin::Badge-->
-															<div class="timeline-badge">
-																<i class="fa fa-genderless text-warning icon-lg"></i>
-															</div>
-															<!--end::Badge-->
-															<!--begin::Text-->
-															<div class="font-weight-mormal font-size-lg timeline-content text-muted pl-3">Pengangkatan Pejabat Non Struktural</div>
-															<!--end::Text-->
-														</div>
-														<!--end::Item-->
-														<!--begin::Item-->
-														<div class="timeline-item align-items-start">
-															<!--begin::Label-->
-															<div class="timeline-label font-weight-bolder text-dark-75 font-size-lg"><?php echo e($pemberhentian_ns); ?></div>
-															<!--end::Label-->
-															<!--begin::Badge-->
-															<div class="timeline-badge">
-																<i class="fa fa-genderless text-success icon-lg"></i>
-															</div>
-															<!--end::Badge-->
-															<!--begin::Content-->
-															<div class="timeline-content d-flex">
-																<span class="font-weight-mormal font-size-lg timeline-content text-muted pl-3">Pemberhentian Pejabat Non Struktural</span>
-															</div>
-															<!--end::Content-->
-														</div>
-														<!--end::Item-->
-														<!--begin::Item-->
-														<div class="timeline-item align-items-start">
-															<!--begin::Label-->
-															<div class="timeline-label font-weight-bolder text-dark-75 font-size-lg"><?php echo e($ralat_keppres_ns); ?></div>
-															<!--end::Label-->
-															<!--begin::Badge-->
-															<div class="timeline-badge">
-																<i class="fa fa-genderless text-primary icon-lg"></i>
-															</div>
-															<!--end::Badge-->
-															<!--begin::Desc-->
-															<div class="font-weight-mormal font-size-lg timeline-content text-muted pl-3">Ralat Keppres Jabatan Non Struktural</div>
-															<!--end::Desc-->
-														</div>
-														<!--end::Item-->
-														<!--begin::Item-->
-														
-														<!--end::Item-->
-														<!--begin::Item-->
-														<div class="timeline-item align-items-start">
-															<!--begin::Label-->
-															<div class="timeline-label font-weight-bolder text-dark-75 font-size-lg"><?php echo e($pembatalan_keppres_ns); ?></div>
-															<!--end::Label-->
-															<!--begin::Badge-->
-															<div class="timeline-badge">
-																<i class="fa fa-genderless text-warning icon-lg"></i>
-															</div>
-															<!--end::Badge-->
-															<!--begin::Text-->
-															<div class="font-weight-mormal font-size-lg timeline-content text-muted pl-3">Pembatalan Keppres Jabatan Non Struktural</div>
-															<!--end::Text-->
-														</div>
-														<!--end::Item-->
-														<!--begin::Item-->
-														
-														<!--end::Item-->
-														<!--begin::Item-->
-														
-															
-													</div>
-												</div>
-                                                <div class="tab-pane fade" id="kt_tab_pane_5_3" role="tabpanel" aria-labelledby="kt_tab_pane_5_3">
-													<div class="timeline timeline-6 mt-3">
-														<!--begin::Item-->
-														<div class="timeline-item align-items-start">
-															<!--begin::Label-->
-															<div class="timeline-label font-weight-bolder text-dark-75 font-size-xs"><?php echo e($pengangkatan_pejabat_lainnya); ?></div>
-															<!--end::Label-->
-															<!--begin::Badge-->
-															<div class="timeline-badge">
-																<i class="fa fa-genderless text-warning icon-lg"></i>
-															</div>
-															<!--end::Badge-->
-															<!--begin::Text-->
-															<div class="font-weight-mormal font-size-lg timeline-content text-muted pl-3">Pengangkatan Pejabat Lainnya</div>
-															<!--end::Text-->
-														</div>
-														<!--end::Item-->
-														<!--begin::Item-->
-														<div class="timeline-item align-items-start">
-															<!--begin::Label-->
-															<div class="timeline-label font-weight-bolder text-dark-75 font-size-lg"><?php echo e($pemberhentian_pejabat_lainnya); ?></div>
-															<!--end::Label-->
-															<!--begin::Badge-->
-															<div class="timeline-badge">
-																<i class="fa fa-genderless text-success icon-lg"></i>
-															</div>
-															<!--end::Badge-->
-															<!--begin::Content-->
-															<div class="timeline-content d-flex">
-																<span class="font-weight-mormal font-size-lg timeline-content text-muted pl-3">Pemberhentian Pejabat Lainnya</span>
-															</div>
-															<!--end::Content-->
-														</div>
-														<!--end::Item-->
-														<!--begin::Item-->
-														<div class="timeline-item align-items-start">
-															<!--begin::Label-->
-															<div class="timeline-label font-weight-bolder text-dark-75 font-size-lg"><?php echo e($ralat_keppres_jabatan_lainnya); ?></div>
-															<!--end::Label-->
-															<!--begin::Badge-->
-															<div class="timeline-badge">
-																<i class="fa fa-genderless text-primary icon-lg"></i>
-															</div>
-															<!--end::Badge-->
-															<!--begin::Desc-->
-															<div class="font-weight-mormal font-size-lg timeline-content text-muted pl-3">Ralat Keppres Jabatan Lainnya</div>
-															<!--end::Desc-->
-														</div>
-														<!--end::Item-->
-														<!--begin::Item-->
-														
-														<!--end::Item-->
-														<!--begin::Item-->
-														<div class="timeline-item align-items-start">
-															<!--begin::Label-->
-															<div class="timeline-label font-weight-bolder text-dark-75 font-size-xs"><?php echo e($pembatalan_keppres_jabatan_lainnya); ?></div>
-															<!--end::Label-->
-															<!--begin::Badge-->
-															<div class="timeline-badge">
-																<i class="fa fa-genderless text-danger icon-lg"></i>
-															</div>
-															<!--end::Badge-->
-															<!--begin::Desc-->
-															<div class="font-weight-mormal font-size-lg timeline-content text-muted pl-3">Pembatalan Keppres Jabatan Lainnya</div>
-															<!--end::Desc-->
-														</div>
-														<div class="timeline-item align-items-start">
-															<!--begin::Label-->
-															<div class="timeline-label font-weight-bolder text-dark-75 font-size-xs"><?php echo e($persetujuan_pengangkatan_staf_khusus); ?></div>
-															<!--end::Label-->
-															<!--begin::Badge-->
-															<div class="timeline-badge">
-																<i class="fa fa-genderless text-info icon-lg"></i>
-															</div>
-															<!--end::Badge-->
-															<!--begin::Desc-->
-															<div class="font-weight-mormal font-size-lg timeline-content text-muted pl-3">Persetujuan pengangkatan Staf Khusus Menteri/Kepala Lembaga (Produk Surat Dinas)</div>
-															<!--end::Desc-->
-														</div>
-															
-													</div>
-												</div>
+												
 
 												<div class="tab-pane" id="kt_tab_pane_2_3" role="tabpanel" aria-labelledby="kt_tab_pane_2_3">
 													<div class="timeline timeline-6 mt-3">

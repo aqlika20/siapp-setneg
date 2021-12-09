@@ -17,13 +17,21 @@ $(document).ready(function (e) {
                 "nip": $('#nip').val()
             },
             success: function(response) {
+                console.log(response)
 
                 if ('error' == response.status) {
                     alert(response.message);
                 } else {
                     console.log(response.data);
                     var data = response.data;
-                    $('#nama').val(data.nama);
+                    // $('#nama').val(data.nama);
+                    if (data.gelarDepan != null){
+                        $('#nama').val(data.gelarDepan + ' ' + data.nama + ', ' + data.gelarBelakang);
+                    }else if(data.gelarDepan != null && data.nama != null){
+                        $('#nama').val(data.nama);
+                    }else {
+                        $('#nama').val(data.nama + ', ' + data.gelarBelakang);
+                    }
                     $('#tempat_lahir').val(data.tempatLahir);
                     $('#tanggal_lahir').val(data.tglLahir);
                     $('#pendidikan_terakhir').val(data.pendidikanTerakhirNama);
@@ -35,6 +43,11 @@ $(document).ready(function (e) {
                     $('#tmt_lama').val(data.tmtJabatan);
                     $('#jabatan_terakhir').val(data.jabatanNama);
                     $('#unit_kerja_terakhir').val(data.satuanKerjaKerjaNama);
+                    $('#alamat').val(data.alamat);
+                    $('#jabatan').val(data.jabatanNama);
+                    $('#instansi_induk').val(data.instansiIndukNama);
+                    $('#pangkat_terakhir').val(data.pangkatAkhir);
+                    // document.getElementById("pangkat_terakhir").value = data.pangkatAkhir;
                     $('#tmt_berhenti').val();
                     $('#tmt_pensiun').val();
                 }

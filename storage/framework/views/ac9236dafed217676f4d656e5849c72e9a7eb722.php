@@ -79,7 +79,7 @@
                                             <div class="form-group row">
                                                 <label class="col-lg-3 col-form-label">Upload Surat Usulan <a style="color: #FF0000;">*</a></label>
                                                 <div class="col-lg-9">
-                                                    <input id="file_data_usulan" name="file_data_usulan[]" type="file" class="file" data-show-preview="false" multiple/>
+                                                    <input id="file_data_usulan" name="file_data_usulan[]" accept=".jpg,.jpeg,.png,.pdf" type="file" class="file" data-show-preview="false" multiple/>
                                                     
                                                     <!-- <div class="dropzone dropzone-multi" id="kt_dropzone_4">
                                                         <div class="dropzone-panel mb-lg-0 mb-2">
@@ -120,7 +120,7 @@
                                             <div class="form-group row">
                                                 <label class="col-lg-3 col-form-label">Data pendukung lainnya</label>
                                                 <div class="col-lg-9">
-                                                    <input id="file_data_pendukung_lainnya" name="file_data_pendukung_lainnya[]" type="file" class="file" data-show-preview="false" multiple/>
+                                                    <input id="file_data_pendukung_lainnya" name="file_data_pendukung_lainnya[]" accept=".jpg,.jpeg,.png,.pdf" type="file" class="file" data-show-preview="false" multiple/>
                                                     
                                                     <!-- <div class="dropzone dropzone-multi" id="kt_dropzone_4">
                                                         <div class="dropzone-panel mb-lg-0 mb-2">
@@ -164,6 +164,16 @@
 
                                         <div class="pb-6" style="margin-left: 50px; margin-right: 50px;" data-wizard-type="step-content">
                                             <h4 class="mb-10 font-weight-bold text-dark">Data ASN</h4>
+
+                                            <div class="form-group row">
+                                                <label class="col-form-label col-lg-3 col-sm-12">NIP <a style="color: #FF0000;">*</a></label>
+                                                <div class="col-lg-5 col-md-9 col-sm-12">
+                                                    <div class="input-group">
+                                                        <input type="number" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" maxlength="18"  class="form-control" id="nip" name="nip" value="<?php echo e(old('nip')); ?>" autocomplete="off" required/>
+                                                    </div>
+                                                </div>
+                                                <button id="btn-bkn" class="btn btn-light-primary font-weight-bold">Tarik Data BKN</button>
+                                            </div>
                                             
                                             <div class="form-group row">
                                                 <label class="col-form-label col-lg-3 col-sm-12">Nama <a style="color: #FF0000;">*</a></label>
@@ -189,10 +199,10 @@
                                             <div class="form-group row">
                                                 <label class="col-form-label col-lg-3 col-sm-12">Pangkat (Gol/Ruang) Terakhir <a style="color: #FF0000;">*</a></label>
                                                 <div class="col-lg-9 col-md-9 col-sm-12">
-                                                    <select class="form-control select2" style="width: 230px;" id="pangkat_terakhir" name="pangkat_terakhir">
-                                                        <option value="">Choose</option>
+                                                    <select class="form-control" style="width: 230px;" id="pangkat_terakhir" name="pangkat_terakhir">
+                                                        <option value="" disabled selected>Choose</option>
                                                         <?php $__currentLoopData = $pangkats; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $pangkat): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                                                            <option value="<?php echo e($pangkat->id); ?>" <?php echo e(old('pangkat_terakhir') == $pangkat->id ? 'selected' : ''); ?>><?php echo e($pangkat->name); ?> (<?php echo e($pangkat->golongan); ?>/<?php echo e($pangkat->ruang); ?>)</option>
+                                                            <option value="<?php echo e($pangkat->name); ?>" <?php echo e(old('pangkat_terakhir') == $pangkat->id ? 'selected' : ''); ?>><?php echo e($pangkat->name); ?> (<?php echo e($pangkat->golongan); ?>/<?php echo e($pangkat->ruang); ?>)</option>
                                                         <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                                                     </select>
                                                     <!-- <div class="input-group date">
@@ -348,14 +358,14 @@
                                             <div class="form-group row">
                                                 <label class="col-lg-3 col-form-label">Upload BA Pelantikan <a style="color: #FF0000;">*</a></label>
                                                 <div class="col-lg-9">
-                                                    <input id="file_ba_pelantikan" name="file_ba_pelantikan[]" type="file" class="file" data-show-preview="false" multiple/>
+                                                    <input id="file_ba_pelantikan" name="file_ba_pelantikan[]" accept=".jpg,.jpeg,.png,.pdf" type="file" class="file" data-show-preview="false" multiple/>
                                                     <span class="form-text text-muted">Format file harus berbentuk jpg, png, jpeg, pdf, batas size file 1 MB dan file tidak boleh lebih dari 5 file</span>
                                                 </div>
                                             </div>
                                             <div class="form-group row">
                                                 <label class="col-lg-3 col-form-label">Upload Sumpah Jabatan <a style="color: #FF0000;">*</a></label>
                                                 <div class="col-lg-9">
-                                                    <input id="file_sumpah_jabatan" name="file_sumpah_jabatan[]" type="file" class="file" data-show-preview="false" multiple/>
+                                                    <input id="file_sumpah_jabatan" name="file_sumpah_jabatan[]" accept=".jpg,.jpeg,.png,.pdf" type="file" class="file" data-show-preview="false" multiple/>
                                                     <span class="form-text text-muted">Format file harus berbentuk jpg, png, jpeg, pdf, batas size file 1 MB dan file tidak boleh lebih dari 5 file</span>
                                                 </div>
                                             </div>
@@ -367,7 +377,7 @@
                                                 <button type="button" class="btn btn-light-primary font-weight-bolder text-uppercase px-9 py-4" data-wizard-type="action-prev">Sebelumnya</button>
                                             </div>
                                             <div>
-                                                <button type="submit" class="btn btn-warning font-weight-bolder text-uppercase px-9 py-4" data-wizard-type="action-submit" onclick="return confirmation();">Kirim Usulan</button>
+                                                <button type="submit" class="btn btn-warning font-weight-bolder text-uppercase px-9 py-4" data-wizard-type="action-submit">Kirim Usulan</button>
                                                 <button type="button" class="btn btn-primary font-weight-bolder text-uppercase px-9 py-4" data-wizard-type="action-next">Berikutnya</button>
                                             </div>
                                         </div>
@@ -388,7 +398,7 @@
             <!--end: Wizard-->
         </div>
     </div>
-				
+    <input type="hidden" id="url-api-fetch-data-bkn" name="url-api-fetch-data-bkn" value="<?php echo e(route('api.bkn.fetch-data')); ?>"/>		
 <?php $__env->stopSection(); ?>
 
 
@@ -461,11 +471,36 @@
             return new_date;
         }
 
-        $('#masa_jabatan_start').on('change.datetimepicker', function(e) {
+        $('#masa_jabatan_start, #masa_jabatan_end').on('change.datetimepicker', function(e) {
             if(e.date){
                 var min_date = renewDate('min', e.date);
                 applyTimePicker('min', '#masa_jabatan_end', min_date);
             }
+            var date_start = new Date(document.getElementById("masa_jabatan_start").value);
+            var date_start_day = date_start.getDate();
+            var date_start_month = date_start.getMonth();
+            var date_start_year = date_start.getFullYear();
+
+            var date_end = new Date(document.getElementById("masa_jabatan_end").value);
+            var date_end_day = date_end.getDate();
+            var date_end_month = date_end.getMonth();
+            var date_end_year = date_end.getFullYear();
+            
+            var calculated_date = 0;
+            if(date_end_month > date_start_month) 
+            {
+                calculated_date = date_end_year - date_start_year;
+            }
+            else
+            { 
+                calculated_date = date_end_year - date_start_year;
+            }
+
+
+            var out_value = calculated_date;
+            document.getElementById("masa").innerHTML = out_value + ' Tahun';
+            getdatadate(date_end);
+
         });
 
         function confirmation(){
@@ -526,5 +561,6 @@
     <script src="<?php echo e(asset('js/hide.js')); ?>"></script> 
     <script src="<?php echo e(asset('js/pages/crud/file-upload/dropzonejs.js')); ?>"></script>
     <script src="<?php echo e(asset('js/pages/crud/ktdatatable/base/html-table.js')); ?>" type="text/javascript"></script>
+    <script src="<?php echo e(asset('js/pages/bkn-pemberhentian.js')); ?>"></script> 
 <?php $__env->stopSection(); ?>
 <?php echo $__env->make('layout.default', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\Users\ardim\Desktop\siapp2\siapp\resources\views/pages/pic/administrasi/pemberhentian/form/permasalahan_kepegawaian_lainnya.blade.php ENDPATH**/ ?>

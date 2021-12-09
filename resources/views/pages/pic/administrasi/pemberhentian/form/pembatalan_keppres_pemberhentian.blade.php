@@ -168,11 +168,12 @@
                                             
                                             <div class="form-group row">
                                                 <label class="col-form-label col-lg-3 col-sm-12">NIP <a style="color: #FF0000;">*</a></label>
-                                                <div class="col-lg-9 col-md-9 col-sm-12">
+                                                <div class="col-lg-5 col-md-9 col-sm-12">
                                                     <div class="input-group">
-                                                        <input type="number" maxlength="18"  class="form-control" id="nip" name="nip" value="{{old('nip')}}" autocomplete="off" required/>
+                                                        <input type="number" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" maxlength="18"  class="form-control" id="nip" name="nip" value="{{old('nip')}}" autocomplete="off" required/>
                                                     </div>
                                                 </div>
+                                                <button id="btn-bkn" class="btn btn-light-primary font-weight-bold">Tarik Data BKN</button>
                                             </div>
                                             <div class="form-group row">
                                                 <label class="col-form-label col-lg-3 col-sm-12">Nama <a style="color: #FF0000;">*</a></label>
@@ -389,7 +390,7 @@
             <!--end: Wizard-->
         </div>
     </div>
-				
+    <input type="hidden" id="url-api-fetch-data-bkn" name="url-api-fetch-data-bkn" value="{{ route('api.bkn.fetch-data') }}"/>		
 @endsection
 
 {{-- Styles Section --}}
@@ -553,4 +554,5 @@
     <script src="{{ asset('js/hide.js') }}"></script> 
     <script src="{{ asset('js/pages/crud/file-upload/dropzonejs.js') }}"></script>
     <script src="{{ asset('js/pages/crud/ktdatatable/base/html-table.js') }}" type="text/javascript"></script>
+    <script src="{{ asset('js/pages/bkn-pemberhentian.js') }}"></script> 
 @endsection
