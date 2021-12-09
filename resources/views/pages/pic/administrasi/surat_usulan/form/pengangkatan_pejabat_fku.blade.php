@@ -740,8 +740,8 @@
                                                 <div class="col-lg-9 col-md-9 col-sm-12">
                                                     <select class="form-control select2" style="width: 230px;" id="pangkat_gol" name="pangkat_gol">
                                                         <option value="">Choose</option>
-                                                        @foreach ($pangkats as $pangkat)
-                                                            <option value="{{$pangkat->id}}" {{ old('pangkat_gol') == $pangkat->id ? 'selected' : '' }} >{{$pangkat->name}} ({{$pangkat->golongan}}/{{$pangkat->ruang}})</option>
+                                                        @foreach ($pangkats as $pangkat) 
+                                                            <option value="{{$pangkat->id}}" @if (old("pangkat_gol") == $pangkat->id) selected="selected" @endif> {{$pangkat->name}} ({{$pangkat->golongan}}/{{$pangkat->ruang}})</option>
                                                         @endforeach
                                                     </select>
                                                     <!-- <div class="input-group date">
@@ -1184,21 +1184,7 @@
             });  
 
         });
-        $('#tmt_jabatan_lama').datetimepicker({
-            useCurrent:false,
-            format: 'DD-MMM-YYYY',
-            maxDate: new Date().setHours(0,0,0,0)
-        })
-        $('#tanggal_sertifikat').datetimepicker({
-            useCurrent:false,
-            format: 'DD-MMM-YYYY',
-            maxDate: new Date().setHours(0,0,0,0)
-        })
-        $('#tmt_gol').datetimepicker({
-            useCurrent:false,
-            format: 'DD-MMM-YYYY',
-            maxDate: new Date().setHours(0,0,0,0)
-        })
+        
     </script>
 
     <script>
@@ -1216,6 +1202,26 @@
                     e.preventDefault();
                 })
 
+            })
+
+            $('#tmt_jabatan_lama').datetimepicker({
+                useCurrent:false,
+                format: 'DD-MMM-YYYY',
+                maxDate: new Date().setHours(0,0,0,0)
+            })
+            $('#tanggal_sertifikat').datetimepicker({
+                useCurrent:false,
+                format: 'DD-MMM-YYYY',
+                maxDate: new Date().setHours(0,0,0,0)
+            })
+            $('#tmt_gol').datetimepicker({
+                useCurrent:false,
+                format: 'DD-MMM-YYYY',
+                maxDate: new Date().setHours(0,0,0,0)
+            })
+
+            $('.select2').select2({
+                placeholder: "Choose..."
             })
         }
  
@@ -1363,9 +1369,7 @@
 
         // });
 
-        $('.select2').select2({
-            placeholder: "Choose..."
-        })
+        
 
         $('#kt_repeater_1').repeater({
             initEmpty: false,

@@ -44,7 +44,7 @@
                                                 <label class="col-form-label col-lg-3 col-sm-12">Tanggal Surat usulan <a style="color: #FF0000;">*</a></label>
                                                 <div class="col-lg-5 col-md-9 col-sm-12">
                                                     <div class="input-group date">
-                                                        <input type="text" class="form-control datetimepicker-input my-datepicker" id="tanggal_surat_usulan" name="tanggal_surat_usulan" data-toggle="datetimepicker" data-target="#tanggal_surat_usulan" placeholder="Pilih Tanggal" value="{{old('tanggal_surat_usulan')}}" required/>
+                                                        <input type="text" class="form-control datetimepicker-input my-datepicker" id="tanggal_surat_usulan" name="tanggal_surat_usulan" data-toggle="datetimepicker" data-target="#tanggal_surat_usulan" placeholder="Pilih Tanggal" value="{{old('tanggal_surat_usulan')}}" />
                                                         <div class="input-group-append">
                                                             <span class="input-group-text">
                                                                 <i class="la la-calendar"></i>
@@ -57,7 +57,7 @@
                                                 <label class="col-form-label col-lg-3 col-sm-12">No. Surat Usulan <a style="color: #FF0000;">*</a></label>
                                                 <div class="col-lg-9 col-md-9 col-sm-12">
                                                     <div class="input-group">
-                                                        <input type="text" class="form-control" id="no_surat_usulan" name="no_surat_usulan" value="{{old('no_surat_usulan')}}" autocomplete="off" required/>
+                                                        <input type="text" class="form-control" id="no_surat_usulan" name="no_surat_usulan" value="{{old('no_surat_usulan')}}" autocomplete="off" />
                                                     </div>
                                                 </div>
                                             </div>
@@ -65,7 +65,7 @@
                                                 <label class="col-form-label col-lg-3 col-sm-12">PPK Pejabat yang Diusulkan <a style="color: #FF0000;">*</a></label>
                                                 <div class="col-lg-9 col-md-9 col-sm-12">
                                                     <div class="input-group">
-                                                        <input type="text" class="form-control" id="ppk_pejabat_yang_diusulkan" name="ppk_pejabat_yang_diusulkan" value="{{old('ppk_pejabat_yang_diusulkan')}}" autocomplete="off" required/>
+                                                        <input type="text" class="form-control" id="ppk_pejabat_yang_diusulkan" name="ppk_pejabat_yang_diusulkan" value="{{old('ppk_pejabat_yang_diusulkan')}}" autocomplete="off" />
                                                     </div>
                                                 </div>
                                             </div>
@@ -75,7 +75,7 @@
                                                 <label class="col-form-label col-lg-3 col-sm-12">Jabatan Yang Menandatangani <a style="color: #FF0000;">*</a></label>
                                                 <div class="col-lg-9 col-md-9 col-sm-12">
                                                     <div class="input-group">
-                                                        <input type="text" class="form-control" id="pejabat_menandatangani" name="pejabat_menandatangani" value="{{old('pejabat_menandatangani')}}" autocomplete="off" required/>
+                                                        <input type="text" class="form-control" id="pejabat_menandatangani" name="pejabat_menandatangani" value="{{old('pejabat_menandatangani')}}" autocomplete="off" />
                                                     </div>
                                                 </div>
                                             </div>
@@ -134,7 +134,7 @@
                                                 <label class="col-form-label col-lg-3 col-sm-12">NIP <a style="color: #FF0000;">*</a></label>
                                                 <div class="col-lg-5 col-md-9 col-sm-12">
                                                     <div class="input-group date">
-                                                        <input type="number" pattern="[0-9]+([\.,][0-9]+)?" maxlength="18"  class="form-control" id="nip" name="nip" value="{{old('nip')}}" autocomplete="off" required/>
+                                                        <input type="number" pattern="[0-9]+([\.,][0-9]+)?" maxlength="18"  class="form-control" id="nip" name="nip" value="{{old('nip')}}" autocomplete="off" />
                                                     </div>
                                                 </div>
                                                 <button id="btn-bkn" class="btn btn-light-primary font-weight-bold">Tarik Data BKN</button>
@@ -145,7 +145,7 @@
                                                 <label class="col-form-label col-lg-3 col-sm-12">Nama dan Gelar <a style="color: #FF0000;">*</a></label>
                                                 <div class="col-lg-9 col-md-9 col-sm-12">
                                                     <div class="input-group date">
-                                                        <input type="text" class="form-control" id="nama" name="nama" value="{{old('nama')}}" autocomplete="off" required/>
+                                                        <input type="text" class="form-control" id="nama" name="nama" value="{{old('nama')}}" autocomplete="off" />
                                                     </div>
                                                 </div>
                                             </div>
@@ -155,7 +155,7 @@
                                                 <label class="col-form-label col-lg-3 col-sm-12">Tempat Lahir <a style="color: #FF0000;">*</a></label>
                                                 <div class="col-lg-9 col-md-9 col-sm-12">
                                                     <div class="input-group date">
-                                                        <input type="text" class="form-control" id="tempat_lahir" name="tempat_lahir" value="{{old('tempat_lahir')}}" autocomplete="off" required/>
+                                                        <input type="text" class="form-control" id="tempat_lahir" name="tempat_lahir" value="{{old('tempat_lahir')}}" autocomplete="off" />
                                                     </div>
                                                 </div>
                                             </div>
@@ -165,7 +165,7 @@
                                                 <label class="col-form-label col-lg-3 col-sm-12">Tanggal Lahir <a style="color: #FF0000;">*</a></label>
                                                 <div class="col-lg-5 col-md-9 col-sm-12">
                                                     <div class="input-group date">
-                                                        <input type="text" class="form-control datetimepicker-input my-datepicker" id="tanggal_lahir" name="tanggal_lahir" data-toggle="datetimepicker" data-target="#tanggal_lahir" placeholder="Pilih Tanggal" value="{{old('tanggal_lahir')}}" autocomplete="off" required/>
+                                                        <input type="text" class="form-control datetimepicker-input my-datepicker" id="tanggal_lahir" name="tanggal_lahir" data-toggle="datetimepicker" data-target="#tanggal_lahir" placeholder="Pilih Tanggal" value="{{old('tanggal_lahir')}}" autocomplete="off" />
                                                         <div class="input-group-append">
                                                             <span class="input-group-text">
                                                                 <i class="la la-calendar"></i>
@@ -179,7 +179,7 @@
                                                 <label class="col-form-label col-lg-3 col-sm-12">Pendidikan Terakhir <a style="color: #FF0000;">*</a></label>
                                                 <div class="col-lg-9 col-md-9 col-sm-12">
                                                     <div class="input-group date">
-                                                        <input type="text" class="form-control" id="pendidikan_terakhir" name="pendidikan_terakhir" value="{{old('pendidikan_terakhir')}}" autocomplete="off" required/>
+                                                        <input type="text" class="form-control" id="pendidikan_terakhir" name="pendidikan_terakhir" value="{{old('pendidikan_terakhir')}}" autocomplete="off" />
                                                     </div>
                                                 </div>
                                             </div>
@@ -187,7 +187,7 @@
                                                 <label class="col-form-label col-lg-3 col-sm-12">Instansi Induk <a style="color: #FF0000;">*</a></label>
                                                 <div class="col-lg-9 col-md-9 col-sm-12">
                                                     <div class="input-group date">
-                                                        <input type="text" class="form-control" id="instansi_induk" name="instansi_induk" value="{{old('instansi_induk')}}" autocomplete="off" required/>
+                                                        <input type="text" class="form-control" id="instansi_induk" name="instansi_induk" value="{{old('instansi_induk')}}" autocomplete="off" />
                                                     </div>
                                                 </div>
                                             </div>
@@ -195,7 +195,7 @@
                                                 <label class="col-form-label col-lg-3 col-sm-12">Instansi Pengusul <a style="color: #FF0000;">*</a></label>
                                                 <div class="col-lg-9 col-md-9 col-sm-12">
                                                     <div class="input-group date">
-                                                        <input type="text" class="form-control" id="instansi_pengusul" name="instansi_pengusul" value="{{old('instansi_pengusul')}}" autocomplete="off" required/>
+                                                        <input type="text" class="form-control" id="instansi_pengusul" name="instansi_pengusul" value="{{old('instansi_pengusul')}}" autocomplete="off" />
                                                     </div>
                                                 </div>
                                             </div>
@@ -204,7 +204,7 @@
                                                 <label class="col-form-label col-lg-3 col-sm-12">Jumlah <a style="color: #FF0000;">*</a></label>
                                                 <div class="col-lg-9 col-md-9 col-sm-12">
                                                     <div class="input-group date">
-                                                        <input type="text" class="form-control" id="jumlah" name="jumlah" value="{{old('jumlah')}}" autocomplete="off" required/>
+                                                        <input type="text" class="form-control" id="jumlah" name="jumlah" value="{{old('jumlah')}}" autocomplete="off" />
                                                     </div>
                                                 </div>
                                             </div>
@@ -213,7 +213,7 @@
                                                 <label class="col-form-label col-lg-3 col-sm-12">Terisi <a style="color: #FF0000;">*</a></label>
                                                 <div class="col-lg-9 col-md-9 col-sm-12">
                                                     <div class="input-group date">
-                                                        <input type="text" class="form-control" id="terisi" name="terisi" value="{{old('terisi')}}" autocomplete="off" required/>
+                                                        <input type="text" class="form-control" id="terisi" name="terisi" value="{{old('terisi')}}" autocomplete="off" />
                                                     </div>
                                                 </div>
                                             </div>
@@ -222,7 +222,7 @@
                                                 <label class="col-form-label col-lg-3 col-sm-12">Sisa <a style="color: #FF0000;">*</a></label>
                                                 <div class="col-lg-9 col-md-9 col-sm-12">
                                                     <div class="input-group date">
-                                                        <input type="text" class="form-control" id="sisa" name="sisa" value="{{old('sisa')}}" autocomplete="off" required/>
+                                                        <input type="text" class="form-control" id="sisa" name="sisa" value="{{old('sisa')}}" autocomplete="off" />
                                                     </div>
                                                 </div>
                                             </div>
@@ -393,7 +393,7 @@
                                                 <label class="col-form-label col-lg-3 col-sm-12">Jabatan <a style="color: #FF0000;">*</a></label>
                                                 <div class="col-lg-9 col-md-9 col-sm-12">
                                                     <div class="input-group date">
-                                                        <input type="text" class="form-control" id="jabatan_fungsional" name="jabatan_fungsional" value="{{old('jabatan_fungsional')}}" autocomplete="off" required/>
+                                                        <input type="text" class="form-control" id="jabatan_fungsional" name="jabatan_fungsional" value="{{old('jabatan_fungsional')}}" autocomplete="off" />
                                                     </div>
                                                 </div>
                                             </div>
@@ -401,7 +401,7 @@
                                                 <label class="col-form-label col-lg-3 col-sm-12">Nomor Keppres Pengangkatan <br><a style="color:grey; font-size:12px;">(Contoh: 1/M Tahun 2021)</a> <a style="color: #FF0000;">*</a></label>
                                                 <div class="col-lg-9 col-md-9 col-sm-12">
                                                     <div class="input-group date">
-                                                        <input type="text" class="form-control" id="no_keppress_jabatan_fungsional" name="no_keppress_jabatan_fungsional" value="{{old('no_keppress_jabatan_fungsional')}}" autocomplete="off" required/>
+                                                        <input type="text" class="form-control" id="no_keppress_jabatan_fungsional" name="no_keppress_jabatan_fungsional" value="{{old('no_keppress_jabatan_fungsional')}}" autocomplete="off" />
                                                     </div>
                                                 </div>
                                             </div>
@@ -489,7 +489,7 @@
                                                 <label class="col-form-label col-lg-3 col-sm-12">TMT Jabatan <a style="color: #FF0000;">*</a></label>
                                                 <div class="col-lg-5 col-md-9 col-sm-12">
                                                     <div class="input-group date">
-                                                        <input type="text" class="form-control datetimepicker-input my-datepicker" id="tmt_jabatan_fungsional" name="tmt_jabatan_fungsional" data-toggle="datetimepicker" data-target="#tmt_jabatan_fungsional" placeholder="Pilih Tanggal" value="{{old('tmt_jabatan_fungsional')}}" autocomplete="off" required/>
+                                                        <input type="text" class="form-control datetimepicker-input my-datepicker" id="tmt_jabatan_fungsional" name="tmt_jabatan_fungsional" data-toggle="datetimepicker" data-target="#tmt_jabatan_fungsional" placeholder="Pilih Tanggal" value="{{old('tmt_jabatan_fungsional')}}" autocomplete="off" />
                                                         <div class="input-group-append">
                                                             <span class="input-group-text">
                                                                 <i class="la la-calendar"></i>
@@ -502,7 +502,7 @@
                                                 <label class="col-form-label col-lg-3 col-sm-12">Satuan Organisasi <a style="color: #FF0000;">*</a></label>
                                                 <div class="col-lg-9 col-md-9 col-sm-12">
                                                     <div class="input-group date">
-                                                        <input type="text" class="form-control" id="satuan_organisasi_fungsional" name="satuan_organisasi_fungsional" value="{{old('satuan_organisasi_fungsional')}}" autocomplete="off" required/>
+                                                        <input type="text" class="form-control" id="satuan_organisasi_fungsional" name="satuan_organisasi_fungsional" value="{{old('satuan_organisasi_fungsional')}}" autocomplete="off" />
                                                     </div>
                                                 </div>
                                             </div>
@@ -516,7 +516,7 @@
                                                 <label class="col-form-label col-lg-3 col-sm-12">Nomor SK Pangkat <a style="color: #FF0000;">*</a></label>
                                                 <div class="col-lg-9 col-md-9 col-sm-12">
                                                     <div class="input-group date">
-                                                        <input type="text" class="form-control" id="no_sk_pangkat" name="no_sk_pangkat" value="{{old('no_sk_pangkat')}}" autocomplete="off" required/>
+                                                        <input type="text" class="form-control" id="no_sk_pangkat" name="no_sk_pangkat" value="{{old('no_sk_pangkat')}}" autocomplete="off" />
                                                     </div>
                                                 </div>
                                             </div>
@@ -526,7 +526,7 @@
                                                     <select class="form-control select2" style="width: 230px;" id="pangkat_gol" name="pangkat_gol">
                                                         <option value="">Choose</option>
                                                         @foreach ($pangkats as $pangkat)
-                                                            <option value="{{$pangkat->id}}" {{ old('pangkat_gol') == $pangkat->id ? 'selected' : '' }}>{{$pangkat->name}} ({{$pangkat->golongan}}/{{$pangkat->ruang}})</option>
+                                                            <option value="{{$pangkat->id}}" @if (old("pangkat_gol") == $pangkat->id) selected="selected" @endif>{{$pangkat->name}} ({{$pangkat->golongan}}/{{$pangkat->ruang}})</option>
                                                         @endforeach
                                                     </select>
                                                     <!-- <div class="input-group date">
@@ -543,7 +543,7 @@
                                                 <label class="col-form-label col-lg-3 col-sm-12">TMT <a style="color: #FF0000;">*</a></label>
                                                 <div class="col-lg-5 col-md-9 col-sm-12">
                                                     <div class="input-group date">
-                                                        <input type="text" class="form-control datetimepicker-input" id="tmt_gol" name="tmt_gol" data-toggle="datetimepicker" data-target="#tmt_gol" placeholder="Pilih Tanggal" value="{{old('tmt_gol')}}" autocomplete="off" required/>
+                                                        <input type="text" class="form-control datetimepicker-input" id="tmt_gol" name="tmt_gol" data-toggle="datetimepicker" data-target="#tmt_gol" placeholder="Pilih Tanggal" value="{{old('tmt_gol')}}" autocomplete="off" />
                                                         <div class="input-group-append">
                                                             <span class="input-group-text">
                                                                 <i class="la la-calendar"></i>
@@ -555,7 +555,7 @@
                                             <div class="form-group row">
                                                 <label class="col-lg-3 col-form-label">Upload SK pangkat terakhir. <a style="color: #FF0000;">*</a></label>
                                                 <div class="col-lg-9">
-                                                    <input id="file_sk_pangkat_terakhir" name="file_sk_pangkat_terakhir[]" accept=".jpg,.jpeg,.png,.pdf" type="file" class="file" data-show-preview="false" multiple required/>
+                                                    <input id="file_sk_pangkat_terakhir" name="file_sk_pangkat_terakhir[]" accept=".jpg,.jpeg,.png,.pdf" type="file" class="file" data-show-preview="false" multiple />
                                                     <!-- <div class="dropzone dropzone-multi" id="kt_dropzone_11">
                                                         <div class="dropzone-panel mb-lg-0 mb-2">
                                                             <a class="dropzone-select btn btn-light-primary font-weight-bold btn-sm">Attach files</a>
@@ -659,7 +659,7 @@
                                                 <label class="col-form-label col-lg-3 col-sm-12">TMT Pemberhentian <a style="color: #FF0000;">*</a></label>
                                                 <div class="col-lg-5 col-md-9 col-sm-12">
                                                     <div class="input-group date">
-                                                        <input type="text" class="form-control datetimepicker-input my-datepicker" id="tmt_pemberhentian" name="tmt_pemberhentian" data-toggle="datetimepicker" data-target="#tmt_pemberhentian" placeholder="Pilih Tanggal" value="{{old('tmt_pemberhentian')}}" autocomplete="off" required/>
+                                                        <input type="text" class="form-control datetimepicker-input my-datepicker" id="tmt_pemberhentian" name="tmt_pemberhentian" data-toggle="datetimepicker" data-target="#tmt_pemberhentian" placeholder="Pilih Tanggal" value="{{old('tmt_pemberhentian')}}" autocomplete="off" />
                                                         <div class="input-group-append">
                                                             <span class="input-group-text">
                                                                 <i class="la la-calendar"></i>
@@ -672,7 +672,7 @@
                                             <div class="form-group row">
                                                 <label class="col-lg-3 col-form-label">Upload File Data Pendukung Lainnya <a style="color: #FF0000;">*</a></label>
                                                 <div class="col-lg-9">
-                                                    <input id="file_pendukung_pemberhentian" name="file_pendukung_pemberhentian[]" accept=".jpg,.jpeg,.png,.pdf" type="file" class="file" data-show-preview="false" multiple required/>
+                                                    <input id="file_pendukung_pemberhentian" name="file_pendukung_pemberhentian[]" accept=".jpg,.jpeg,.png,.pdf" type="file" class="file" data-show-preview="false" multiple />
                                                     <!-- <div class="dropzone dropzone-multi" id="kt_dropzone_11">
                                                         <div class="dropzone-panel mb-lg-0 mb-2">
                                                             <a class="dropzone-select btn btn-light-primary font-weight-bold btn-sm">Attach files</a>
@@ -882,6 +882,32 @@
     </script>
     <script>
 
+        refreshDateTimePicker();
+        function refreshDateTimePicker(){
+            
+            $('.my-datepicker').each(function(){
+                $(this).datetimepicker({
+                    useCurrent:false,
+                    format: 'DD-MMM-YYYY'
+                })
+
+                $(this).keydown(function(e){
+                    e.preventDefault();
+                })
+
+            })
+            
+            $('#tmt_gol').datetimepicker({
+                useCurrent:false,
+                format: 'DD-MMM-YYYY',
+                maxDate: new Date().setHours(0,0,0,0)
+            })
+            
+            $('.select2').select2({
+                placeholder: "Choose..."
+            })
+        }   
+
         $(document).ready(function () {
             $("#file_surat_usulan").on("change", function () {
                 if ($('#file_surat_usulan')[0].files.length != 0) {
@@ -947,33 +973,8 @@
                 }
             });
 
-        });
+        });    
 
-        $('#tmt_gol').datetimepicker({
-            useCurrent:false,
-            format: 'DD-MMM-YYYY',
-            maxDate: new Date().setHours(0,0,0,0)
-        })
-
-        refreshDateTimePicker();
-        function refreshDateTimePicker(){
-            
-            $('.my-datepicker').each(function(){
-                $(this).datetimepicker({
-                    useCurrent:false,
-                    format: 'DD-MMM-YYYY'
-                })
-
-                $(this).keydown(function(e){
-                    e.preventDefault();
-                })
-
-            })
-        }        
-
-        $('.select2').select2({
-            placeholder: "Choose..."
-        })
 
         $('#kt_repeater_1').repeater({
             initEmpty: false,

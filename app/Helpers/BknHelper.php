@@ -75,6 +75,7 @@ class BknHelper
     {
         $curl = curl_init();
         $bearerToken = 'Authorization: Bearer ' . $token;
+        
         $url = 'https://wstraining.bkn.go.id/bkn-resources-server/api/pns/data-anak-taspen/' . $nip;
 
         curl_setopt_array($curl, array(

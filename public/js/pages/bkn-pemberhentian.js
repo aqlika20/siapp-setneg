@@ -24,10 +24,11 @@ $(document).ready(function (e) {
                     console.log(response.data);
                     var data = response.data;
                     $('#nama').val(data.nama);
+                    // $('#nama_janda_duda_anak').val(data.listAnak);
                     $('#tempat_lahir').val(data.tempatLahir);
                     $('#tanggal_lahir').val(data.tglLahir);
                     $('#pendidikan_terakhir').val(data.pendidikanTerakhirNama);
-                    $('#instansi').val(data.instansiIndukNama);
+                    $('#instansi_induk').val(data.instansiIndukNama);
                     $('#pangkat_gol').val(data.golRuangAkhir);
                     $('#tmt_gol_baru').val(data.tmtGolAkhir);
                     $('#pangkat_lama').val(data.pangkatAkhir);
@@ -48,5 +49,43 @@ $(document).ready(function (e) {
                 alert(err.header.message);
             }
         });
+        
+    });
+
+    $("#btn-bkn").click(function(e) {
+        e.preventDefault();
+        $("#btn-bkn").prop('disabled', true);
+
+        $.ajax({
+            url: $('#url-api-fetch-data-jda-bkn').val(),
+            type: "POST",
+            data: {
+                "nip": $('#nip').val()
+            },
+            success: function(response) {
+
+                if ('error' == response.status) {
+                    alert(response.message);
+                } else {
+                    console.log(response.data);
+                    var data = response.data;
+
+                    data.listAnak.forEach(data => {
+                        $('#nama').val(data.nipLama);
+                        // $('#nama_janda_duda_anak').val();
+                    });
+                    
+                }
+
+                $("#btn-bkn").prop('disabled', false);
+            },
+            error: function (xhr, status, error) {
+                var err = eval("(" + xhr.responseText + ")");
+
+                $("#btn-bkn").prop('disabled', false);
+                alert(err.header.message);
+            }
+        });
+        
     });
 });

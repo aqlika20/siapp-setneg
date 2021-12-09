@@ -32,12 +32,12 @@ $(document).ready(function (e) {
                     }
                     $('#tempat_lahir').val(data.tempatLahir);
                     $('#tanggal_lahir').val(data.tglLahir);
+                    $('#tmt_jabatan_lama').val(data.tmtJabatan);
                     $('#pendidikan_terakhir').val(data.pendidikanTerakhirNama);
                     $('#instansi').val(data.instansiIndukNama);
                     $('#jabatan_lama').val(data.jabatanNama);
-                    $('#tmt_jabatan_lama').val(data.tmtJabatan);
                     $('#satuan_organisasi_lama').val(data.satuanKerjaIndukNama);
-                    $('#pangkat_gol').val(data.pangkatAkhir);
+                    // $('#pangkat_gol').val(data.pangkatAkhir);
                     
                     $('#masa_kerja_gol_tahun').val(data.mkTahun);
                     $('#masa_kerja_gol_bulan').val(data.mkBulan);
