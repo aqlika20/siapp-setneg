@@ -103,7 +103,7 @@ class PemberianKenaikanPangkatController extends Controller
             'tmt_gol' => 'required',
             'tmt_cpns' => 'required',
             'masa_kerja_gol_tahun' => 'required',
-            'masa_kerja_gol_bulan' => 'required',
+            // 'masa_kerja_gol_bulan' => 'required',
 
             'nomor_pak' => 'nullable',
             'tanggal_pak' => 'nullable',
@@ -118,8 +118,8 @@ class PemberianKenaikanPangkatController extends Controller
 
             'masa_jabatan_start' => 'required',
             'masa_jabatan_end' => 'required',
-            'masa_periode_start' => 'required',
-            'masa_periode_end' => 'required',
+            // 'masa_periode_start' => 'required',
+            // 'masa_periode_end' => 'required',
             
             'status_hukuman' => 'required',
 
@@ -167,7 +167,7 @@ class PemberianKenaikanPangkatController extends Controller
             'tmt_gol' => $input['tmt_gol'],
             'tmt_cpns' => $input['tmt_cpns'],
             'masa_kerja_gol_tahun' => $input['masa_kerja_gol_tahun'],
-            'masa_kerja_gol_bulan' => $input['masa_kerja_gol_bulan'],
+            // 'masa_kerja_gol_bulan' => $input['masa_kerja_gol_bulan'],
             
             'nomor_pak' => $input['nomor_pak'],
             'tanggal_pak' => $input['tanggal_pak'],

@@ -18,6 +18,7 @@ use App\Periode;
 use App\Helper;
 
 
+define("webaddress", "http://104.248.194.62");
 class CallbackDocument extends Controller
 {
     //
@@ -26,6 +27,7 @@ class CallbackDocument extends Controller
 	private $page_title;
 	private $page_description;
 	
+	
 	public function index()
 	{
         $currentUser = UserManagement::find(Auth::id());
@@ -33,7 +35,7 @@ class CallbackDocument extends Controller
         $page_description = 'Text Editor';
 		$stringrnd = "Khirz6zTPdfd3d234sd";	
 		$newfilename = "rancangan_keppres_template.docx";
-		$urlhead = urlencode("http://104.248.194.62/storage/".$newfilename);
+		$urlhead = urlencode(webaddress."/storage/Template/".$newfilename);
         return view('pages.callbackdocx', compact('page_title', 'currentUser', 'page_description','newfilename','urlhead','stringrnd'));
 		
 	}
@@ -55,21 +57,15 @@ class CallbackDocument extends Controller
 
         //$phpWord = new \PhpOffice\PhpWord\PhpWord();
 		$filename = "rancangan_keppres_template";
-		$templateProcessor = new \PhpOffice\PhpWord\TemplateProcessor(storage_path("app/public/".$filename.".docx"));
+		$templateProcessor = new \PhpOffice\PhpWord\TemplateProcessor(storage_path("app/public/Template/".$filename.".docx"));
 
-		$stringrnd = str_shuffle($pin);		
-        $description = "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-		tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-		quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-		consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-		cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-		proident, sunt in culpa qui officia deserunt mollit anim id est laborum.";
+		$stringrnd = str_shuffle($pin);
 
 		$templateProcessor->setValue('NOMORSURAT', $input['no_surat_usulan']);            // On section/content
 		$templateProcessor->setValue('userId', $input['ppk_pejabat_yang_diusulkan']);            // On section/content
 		$newfilename = $filename.$stringrnd.".docx"; 
-		$templateProcessor->saveAs(storage_path("app/public/".$newfilename));
-		$urlhead = urlencode("http://104.248.194.62/storage/".$newfilename);
+		$templateProcessor->saveAs(storage_path("app/public/TemporaryGenerator/".$newfilename));
+		$urlhead = urlencode(webaddress."/storage/TemporaryGenerator/".$newfilename);
 
         return view('pages.callbackdocx', compact('page_title', 'currentUser', 'page_description','newfilename','urlhead','stringrnd'));
 

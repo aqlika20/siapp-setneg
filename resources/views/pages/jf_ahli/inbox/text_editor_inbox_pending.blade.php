@@ -3,48 +3,143 @@
 
 {{-- Content --}}
 @section('content')
-
+	<div class="row">
         <!--begin::Content-->
-        <div class="content d-flex flex-column flex-column-fluid" id="kt_content">
-            <div class="d-flex flex-column-fluid">
-                    <!--begin::Container-->
-                <div class="container">
-                    <div class="card card-custom">
-                        <div class="card-header flex-wrap border-0 pt-6 pb-0" style="background-color: #FFA800;">
-                            <div class="card-title">
-                                <h3 class="card-label">Text editor
-                                    <span class="d-block text-muted pt-2 font-size-sm"></span>
-                                </h3>
+        <div class="col-lg-5">
+            <div class="content d-flex flex-column flex-column-fluid" id="kt_content">
+                <div class="d-flex flex-column-fluid">
+                        <!--begin::Container-->
+                        <div class="card">
+                            <div class="card-header flex-wrap border-0 pt-6 pb-0" style="background-color: #FFA800;">
+                                <div class="card-title">
+                                    <h3 class="card-label">Surat Pengembalian Berkas Pending
+                                    <span class="d-block text-muted pt-2 font-size-sm"></span></h3>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                    <div class="card card-custom">
-                        <div class="card-body">
-                            <form method="POST" action="{{ route('koor-pokja.inbox.text-editor.store') }}">
-                            @csrf
-                                <div class="tinymce">
-                                    <input type="hidden" class="btn btn-warning font-weight-bolder text-uppercase px-9 py-4" name="v_id" value="{{ $pengangkatans->id }}">
-                                    <input type="hidden" class="btn btn-warning font-weight-bolder text-uppercase px-9 py-4" name="v_jenis" value="{{ $pengangkatans->jenis_layanan }}">
-                                    <input type="hidden" class="btn btn-warning font-weight-bolder text-uppercase px-9 py-4" name="v_nip" value="{{ $pengangkatans->nip }}">
-                                    <input type="hidden" class="btn btn-warning font-weight-bolder text-uppercase px-9 py-4" name="v_pengirim" value="{{ $pengangkatans->id_pengirim }}">
-                                    <textarea class="description" name="description">
-                                        <p>NIP : {{$pengangkatans->nip}}</p>
-                                        <p>Nama : {{$pengangkatans->nama}}</p>
-                                    </textarea>
-                                </div>
-                                <div class="d-flex justify-content-between mt-5 pt-10" style="margin-left: 50px; margin-right: 50px;">
-                                    <div class="mr-2">
+                            <div class="card-body p-0">
+                                <div class="wizard wizard-3" id="kt_wizard_v3" data-wizard-state="step-first" data-wizard-clickable="true">
+                                    <div class="row justify-content-center py-10 px-8 py-lg-12 px-lg-10">
+                                        <div class="col-xl-20 col-xxl-12">
+                                            <form class="form" id="test_callbackform" action="{{ route('jf-ahli.inbox.usulan.store_pending') }}" enctype="multipart/form-data" method="POST">
+                                                @csrf 
+												<input type="hidden" class="btn btn-warning font-weight-bolder text-uppercase px-9 py-4" name="v_id" value="{{ $pengangkatans->id }}">
+												<input type="hidden" class="btn btn-warning font-weight-bolder text-uppercase px-9 py-4" name="v_jenis" value="{{ $pengangkatans->jenis_layanan }}">
+                                                <!--begin: Wizard Step 1-->
+                                                <div class="pb-6" style="margin-left: 50px; margin-right: 50px;" data-wizard-type="step-content" data-wizard-state="current">
+                                                    <div class="form-group row">
+														<label class="col-form-label col-lg-3 col-sm-12">No. Surat Usulan</label>
+														<div class="col-lg-9 col-md-9 col-sm-12">
+															<div class="input-group">
+																<input type="text" class="form-control" value="{{ $pengangkatans->no_surat_usulan }}" disabled />
+															</div>
+														</div>
+													</div>
+													<div class="form-group row">
+														<label class="col-form-label col-lg-3 col-sm-12">NIP</label>
+														<div class="col-lg-9 col-md-9 col-sm-12">
+															<div class="input-group date">
+																<input type="text" class="form-control" value="{{ $pengangkatans->nip }}" disabled />
+															</div>
+														</div>
+													</div>
+													<div class="form-group row">
+														<label class="col-form-label col-lg-3 col-sm-12">Nama dan Gelar</label>
+														<div class="col-lg-9 col-md-9 col-sm-12">
+															<div class="input-group date">
+																<input type="text" class="form-control" value="{{ $pengangkatans->nama }}" disabled />
+															</div>
+														</div>
+													</div>
+													<div class="form-group row">
+														<label class="col-form-label col-lg-3 col-sm-12">Instansi Pengusul</label>
+														<div class="col-lg-9 col-md-9 col-sm-12">
+															<div class="input-group date">
+																<input type="text" class="form-control" value="{{ $pengangkatans->instansi_pengusul }}" disabled />
+															</div>
+														</div>
+													</div>
+													<div class="form-group row">
+                                                        <label class="col-form-label col-lg-3 col-sm-12">sifat <a style="color: #FF0000;">*</a></label>
+                                                        <div class="col-lg-9 col-md-9 col-sm-12">
+                                                            <div class="input-group">
+                                                                <input type="text" class="form-control" id="sifat" name="sifat" value="{{ $sifat }}" autocomplete="off"/>
+															</div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group row">
+                                                        <label class="col-form-label col-lg-3 col-sm-12">Hal <a style="color: #FF0000;">*</a></label>
+                                                        <div class="col-lg-9 col-md-9 col-sm-12">
+                                                            <div class="input-group">
+                                                                <input type="text" class="form-control" id="hal" name="hal" value="{{ $hal }}" autocomplete="off"/>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+													<div class="form-group row">
+                                                        <label class="col-form-label col-lg-3 col-sm-12">Yth. <a style="color: #FF0000;">*</a></label>
+                                                        <div class="col-lg-9 col-md-9 col-sm-12">
+                                                            <div class="input-group">
+                                                                <textarea type="text" class="form-control" id="yth" name="yth" autocomplete="off">{{ $yth }}</textarea>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+													<div class="form-group row">
+                                                        <label class="col-form-label col-lg-3 col-sm-12">konten. <a style="color: #FF0000;">*</a></label>
+                                                        <div class="col-lg-9 col-md-9 col-sm-12">
+                                                            <div class="input-group">
+                                                                <textarea type="text" class="form-control" id="konten" name="konten" autocomplete="off">{{ $konten }}</textarea>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+												
+												
+
+                                                <div class="d-flex justify-content-between mt-5 pt-10" style="margin-left: 50px; margin-right: 50px;">
+                                                    <div>
+                                                        <button type="submit" class="btn btn-warning font-weight-bolder text-uppercase px-9 py-4">GENERATE</button>
+                                                    </div>
+                                                </div>
+											</form>
+											<div class="d-flex justify-content-between mt-5 pt-10" style="margin-left: 50px; margin-right: 50px;">
+												<form method="POST" action="{{ route('jf-ahli.inbox.usulan.pending_text_editor') }}">
+													@csrf 
+													<input type="hidden" class="btn btn-warning font-weight-bolder text-uppercase px-9 py-4" name="v_id" value="{{ $pengangkatans->id }}">
+													<input type="hidden" class="btn btn-warning font-weight-bolder text-uppercase px-9 py-4" name="v_jenis" value="{{ $pengangkatans->jenis_layanan }}">
+													<input type="hidden" class="btn btn-warning font-weight-bolder text-uppercase px-9 py-4" name="v_file_name" value="{{ $newfilename }}">
+													<input type="hidden" class="btn btn-warning font-weight-bolder text-uppercase px-9 py-4" name="v_nip" value="{{ $pengangkatans->nip }}">
+													<input type="hidden" class="btn btn-warning font-weight-bolder text-uppercase px-9 py-4" name="v_pengirim" value="{{ $pengangkatans->id_pengirim }}">
+													<button type="submit" class="btn btn-warning font-weight-bolder text-uppercase px-9 py-4" >
+														KIRIM
+													</button>
+												</form>
+											</div>
+														
+                                            
+                                            
+                                        </div>
                                     </div>
-                                    <div>
-                                        <button type="submit" class="btn btn-primary font-weight-bolder text-uppercase px-9 py-4">Kirim</button>
-                                    </div>
+                                
                                 </div>
-                            </form>
+                            
+                            
                         </div>
                     </div>
                 </div>
+            
             </div>
+            
         </div>
+		<div class="col-lg-7">
+			<div class="row justify-content-center">
+				<div class="col-xl-20 col-xxl-12">
+					<div style="height: 100vh;">
+						<div style="height: 100%;" id="placeholder"></div>
+						<script type="text/javascript" src="http://206.189.84.159//web-apps/apps/api/documents/api.js"></script>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 <!--end::Content-->
 
 @endsection
@@ -63,65 +158,19 @@
 @section('scripts')
 <script src="{{ asset('js/pages/custom/wizard/wizard-2.js') }}"></script>
 <script src="{{ asset('js/pages/crud/ktdatatable/base/html-table.js') }}" type="text/javascript"></script>
-<script src="{{ asset('node_modules/tinymce/tinymce.js') }}"></script>
 <script>
-    tinymce.init({
-        selector:'textarea.description',
-        height: 300,
-        menubar: false,
-        plugins: 'image code',
-        toolbar: ['styleselect fontselect fontsizeselect',
-                'undo redo | cut copy paste | bold italic | link image | alignleft aligncenter alignright alignjustify',
-                'bullist numlist | outdent indent | blockquote subscript superscript | advlist | autolink | lists charmap | print preview |  code'], 
-        /* enable title field in the Image dialog*/
-        image_title: true,
-        /* enable automatic uploads of images represented by blob or data URIs*/
-        automatic_uploads: true,
-        /*
-            URL of our upload handler (for more details check: https://www.tiny.cloud/docs/configure/file-image-upload/#images_upload_url)
-            images_upload_url: 'postAcceptor.php',
-            here we add custom filepicker only to Image dialog
-        */
-        file_picker_types: 'image',
-        /* and here's our custom image picker*/
-        file_picker_callback: function (cb, value, meta) {
-            var input = document.createElement('input');
-            input.setAttribute('type', 'file');
-            input.setAttribute('accept', 'image/*');
+    var config = {
+        "document": {
+            "fileType": "docx",
+            "key": {!! json_encode($stringrnd) !!},
+            "title": {!! json_encode($newfilename) !!},
+            "url": {!! urldecode(json_encode($urlhead)) !!},
+            },
+            "documentType": "word"
+        };
+    var docEditor = new DocsAPI.DocEditor("placeholder", config);
 
-            /*
-            Note: In modern browsers input[accept=".jpg,.jpeg,.png,.pdf" type="file"] is functional without
-            even adding it to the DOM, but that might not be the case in some older
-            or quirky browsers like IE, so you might want to add it to the DOM
-            just in case, and visually hide it. And do not forget do remove it
-            once you do not need it anymore.
-            */
-
-            input.onchange = function () {
-            var file = this.files[0];
-
-            var reader = new FileReader();
-            reader.onload = function () {
-                /*
-                Note: Now we need to register the blob in TinyMCEs image blob
-                registry. In the next release this part hopefully won't be
-                necessary, as we are looking to handle it internally.
-                */
-                var id = 'blobid' + (new Date()).getTime();
-                var blobCache =  tinymce.activeEditor.editorUpload.blobCache;
-                var base64 = reader.result.split(',')[1];
-                var blobInfo = blobCache.create(id, file, base64);
-                blobCache.add(blobInfo);
-
-                /* call the callback and populate the Title field with the file name */
-                cb(blobInfo.blobUri(), { title: file.name });
-            };
-            reader.readAsDataURL(file);
-            };
-
-            input.click();
-        },
-    });
 </script>
+    
     
 @endsection

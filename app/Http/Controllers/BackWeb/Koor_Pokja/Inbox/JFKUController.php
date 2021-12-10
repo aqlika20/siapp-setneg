@@ -21,10 +21,14 @@ use App\Catatan;
 use App\Periode;
 use App\Jabatan;
 use App\Role;
+use App\Surat;
 use App\Group;
 use App\Helper;
 
 use Carbon\Carbon;
+
+define("webaddress", "http://104.248.194.62");
+
 
 class JFKUController extends Controller
 {
@@ -240,10 +244,10 @@ class JFKUController extends Controller
 
     public function store_proses(Request $request) 
     {
-        $input = $request->all();
+		$input = $request->all();
         $id = $input['v_id'];
         $jenis_layanan = $input['v_jenis'];
-
+		
         // dd($jenis_layanan);
         if($jenis_layanan == Helper::$pengangkatan_pejabat_FKU || $jenis_layanan == Helper::$pemberhentian_pejabat_FKU || $jenis_layanan == Helper::$perpindahan_pejabat_FKU || $jenis_layanan == Helper::$ralat_keppres_jabatan_FKU || $jenis_layanan == Helper::$pembatalan_keppres_jabatan_FKU)
         {
@@ -271,59 +275,231 @@ class JFKUController extends Controller
 
     public function store_pending(Request $request) 
     {
+		
+        $currentUser = UserManagement::find(Auth::id());
         $input = $request->all();
         $id = $input['v_id'];
         $jenis_layanan = $input['v_jenis'];
+        $page_title = 'Koordinator Pokja | PENDING | Text Editor';
+        $page_description = 'Text Editor';
+        $pengangkatans = PengangkatanPemberhentianJFKU::where('id', $id)->first();
+		
+		
+		$stringrnd = "Khirz6zTPdfd3d234sdSPBT3";	
+		$newfilename = "Surat_Pengembalian_Berkas_Template.docx";
+		$urlhead = urlencode(webaddress."/storage/Template/".$newfilename);
+			
+		$sifat = "";
+		$hal = "";
+		$yth =  "";
+		$konten =  "";
+				
+		if( array_key_exists('sifat', $input))
+		{				
+			if($input['sifat'] != null || $input['hal'] != null || $input['yth'] != null || $input['konten'] != null)
+			{
+				$sifat = $input['sifat'];
+				$hal = $input['hal'];
+				$yth = $input['yth'];
+				$konten = $input['konten'];
+			}
+			
+			$characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+			$pin = mt_rand(1000000, 9999999)
+				. mt_rand(1000000, 9999999)
+				. $characters[rand(0, strlen($characters) - 1)];
+		
 
-        // dd($jenis_layanan);
-        if($jenis_layanan == Helper::$pengangkatan_pejabat_FKU || $jenis_layanan == Helper::$pemberhentian_pejabat_FKU || $jenis_layanan == Helper::$perpindahan_pejabat_FKU || $jenis_layanan == Helper::$ralat_keppres_jabatan_FKU || $jenis_layanan == Helper::$pembatalan_keppres_jabatan_FKU)
-        {
-            $pengangkatans = PengangkatanPemberhentianJFKU::where('id', '=', $id)->update(
-                ['status' => Helper::$pending_pokja]
-            );
-            return redirect()->route("koor-pokja.inbox.text-editor.index", [$id])->with(['success'=>'pending Success !!!']);
-        } 
-        elseif($jenis_layanan == Helper::$pengangkatan_pejabat_NS || $jenis_layanan == Helper::$pemberhentian_pejabat_NS || $jenis_layanan == Helper::$ralat_keppres_jabatan_NS || $jenis_layanan == Helper::$pembatalan_keppres_jabatan_NS )
-        {
-            $pengangkatans = PengangkatanPemberhentianNS::where('id', '=', $id)->update(
-                ['status' => Helper::$pending_pokja]
-            );
-            return redirect()->route("koor-pokja.inbox.text-editor.ns.index", [$id])->with(['success'=>'pending Success !!!']);
-        }
-        elseif($jenis_layanan == Helper::$pengangkatan_pejabat_lainnya || $jenis_layanan == Helper::$pemberhentian_pejabat_lainnya || $jenis_layanan == Helper::$ralat_keppres_jabatan_lainnya || $jenis_layanan == Helper::$pembatalan_keppres_jabatan_lainnya || $jenis_layanan == Helper::$persetujuan_pengangkatan_staf_khusus )
-        {
-            $pengangkatans = PengangkatanPemberhentianLainnya::where('id', '=', $id)->update(
-                ['status' => Helper::$pending_pokja]
-            );
-            return redirect()->route("koor-pokja.inbox.text-editor.lain.index", [$id])->with(['success'=>'pending Success !!!']);
-        }
+			//$phpWord = new \PhpOffice\PhpWord\PhpWord();
+			$filename = "Surat_Pengembalian_Berkas_Template";
+			$templateProcessor = new \PhpOffice\PhpWord\TemplateProcessor(storage_path("app/public/Template/".$filename.".docx"));
+
+			$stringrnd = str_shuffle($pin);
+
+			$templateProcessor->setValue('no_surat_usulan', $pengangkatans['no_surat_usulan']);
+			$templateProcessor->setValue('instansi_pengusul', $pengangkatans['instansi_pengusul']);
+			$templateProcessor->setValue('tanggal_surat_usulan', $pengangkatans['tanggal_surat_usulan']);   
+			$templateProcessor->setValue('nama', $pengangkatans['nama']);   
+			$templateProcessor->setValue('sifat', $input['sifat']);    
+			$templateProcessor->setValue('hal', $input['hal']);   
+			$templateProcessor->setValue('yth', $input['yth']);  
+			$templateProcessor->setValue('konten', $input['konten']);    
+
+			
+			$newfilename = $filename."_".$stringrnd.".docx"; 
+			$templateProcessor->saveAs(storage_path("app/public/TemporaryGenerator/".$newfilename));
+			$urlhead = urlencode(webaddress."/storage/TemporaryGenerator/".$newfilename);			
+		}
+		
+		return view('pages.koor_pokja.inbox.text_editor_inbox_pending', compact('page_title', 'page_description', 'currentUser', 'pengangkatans','stringrnd','newfilename','urlhead','sifat','hal','yth','konten'));    
+		
+		
         
     }
 
     public function store_tolak(Request $request) 
-    {
+    {	
+		
+        $currentUser = UserManagement::find(Auth::id());
         $input = $request->all();
         $id = $input['v_id'];
         $jenis_layanan = $input['v_jenis'];
+        $page_title = 'Koordinator Pokja | TOLAK | Text Editor ';
+        $page_description = 'Text Editor';
+        $pengangkatans = PengangkatanPemberhentianJFKU::where('id', $id)->first();
+		
+		
+		
+		$stringrnd = "Khirz6zTPdfd3d234sdSPBT3";	
+		$newfilename = "Surat_Pengembalian_Berkas_Template.docx";
+		$urlhead = urlencode(webaddress."/storage/Template/".$newfilename);
+			
+		$sifat = "";
+		$hal = "";
+		$yth =  "";
+		$konten =  "";
+		$id_verif =  "";
+		$nama_verif =  "";
+				
+		if( array_key_exists('sifat', $input))
+		{	
+
+			$id_verif  = $input['id_verifikator'];
+			$nama_verif  = $input['nama_verifikator'];
+		
+			if($input['sifat'] != null || $input['hal'] != null || $input['yth'] != null || $input['konten'] != null || $input['id_verifikator'] != null || $input['nama_verifikator'] != null)
+			{
+				$sifat = $input['sifat'];
+				$hal = $input['hal'];
+				$yth = $input['yth'];
+				$konten = $input['konten'];
+			}
+			
+			$characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+			$pin = mt_rand(1000000, 9999999)
+				. mt_rand(1000000, 9999999)
+				. $characters[rand(0, strlen($characters) - 1)];
+		
+
+			//$phpWord = new \PhpOffice\PhpWord\PhpWord();
+			$filename = "Surat_Pengembalian_Berkas_Template";
+			$templateProcessor = new \PhpOffice\PhpWord\TemplateProcessor(storage_path("app/public/Template/".$filename.".docx"));
+
+			$stringrnd = str_shuffle($pin);
+
+			$templateProcessor->setValue('no_surat_usulan', $pengangkatans['no_surat_usulan']);
+			$templateProcessor->setValue('instansi_pengusul', $pengangkatans['instansi_pengusul']);
+			$templateProcessor->setValue('tanggal_surat_usulan', $pengangkatans['tanggal_surat_usulan']);   
+			$templateProcessor->setValue('nama', $pengangkatans['nama']);   
+			$templateProcessor->setValue('sifat', $input['sifat']);    
+			$templateProcessor->setValue('hal', $input['hal']);   
+			$templateProcessor->setValue('yth', $input['yth']);  
+			$templateProcessor->setValue('konten', $input['konten']);    
+
+			
+			$newfilename = $filename."_".$stringrnd.".docx"; 
+			$templateProcessor->saveAs(storage_path("app/public/TemporaryGenerator/".$newfilename));
+			$urlhead = urlencode(webaddress."/storage/TemporaryGenerator/".$newfilename);			
+		}
+				
+		return view('pages.koor_pokja.inbox.text_editor_inbox_tolak', compact('page_title', 'page_description', 'currentUser', 'pengangkatans','stringrnd','newfilename','urlhead','sifat','hal','yth','konten','id_verif','nama_verif')); 
+		
+    }
+	
+	
+	public function pending_text_editor(Request $request)
+    {
+				
+        $input = $request->all();
+		$id = $input['v_id'];
+        $jenis_layanan = $input['v_jenis'];
+		$newfile = $input['v_file_name'];
+		$nip = $input['v_nip'];
+		$pengirim = $input['v_pengirim'];
+		
+        if($jenis_layanan == Helper::$pengangkatan_pejabat_FKU || $jenis_layanan == Helper::$pemberhentian_pejabat_FKU || $jenis_layanan == Helper::$perpindahan_pejabat_FKU || $jenis_layanan == Helper::$ralat_keppres_jabatan_FKU || $jenis_layanan == Helper::$pembatalan_keppres_jabatan_FKU)
+        {
+            $pengangkatans = PengangkatanPemberhentianJFKU::where('id', '=', $id)->update(
+                ['status' => Helper::$pending_pokja]
+            );
+			
+			$pengangkatans = Surat::create([
+				'description' => $newfile,
+				'id_usulan' => $id,
+				'id_layanan' => $jenis_layanan,
+				'nip' => $nip,
+				'id_pengirim' => $pengirim,
+				'status' => Helper::$pending_pokja
+			]);
+			return redirect()->route('koor-pokja.inbox.jfku.index')->with(['success'=>'Surat Berhasil Dipending!!!!']);
+        } 
+        elseif($jenis_layanan == Helper::$pengangkatan_pejabat_NS || $jenis_layanan == Helper::$pemberhentian_pejabat_NS || $jenis_layanan == Helper::$ralat_keppres_jabatan_NS || $jenis_layanan == Helper::$pembatalan_keppres_jabatan_NS )
+        {
+            $pengangkatans = PengangkatanPemberhentianNS::where('id', '=', $id)->update(
+                ['status' => Helper::$pending_pokja]
+            );
+			
+			$pengangkatans = Surat::create([
+				'description' => $newfile,
+				'id_usulan' => $id,
+				'id_layanan' => $jenis_layanan,
+				'nip' => $nip,
+				'id_pengirim' => $pengirim,
+				'status' => Helper::$pending_pokja
+			]);
+			
+			return redirect()->route('koor-pokja.inbox.jfku.index')->with(['success'=>'Surat Berhasil Dipending!!!!']);
+        }
+        elseif($jenis_layanan == Helper::$pengangkatan_pejabat_lainnya || $jenis_layanan == Helper::$pemberhentian_pejabat_lainnya || $jenis_layanan == Helper::$ralat_keppres_jabatan_lainnya || $jenis_layanan == Helper::$pembatalan_keppres_jabatan_lainnya || $jenis_layanan == Helper::$persetujuan_pengangkatan_staf_khusus )
+        {
+            $pengangkatans = PengangkatanPemberhentianLainnya::where('id', '=', $id)->update(
+                ['status' => Helper::$pending_pokja]
+            );
+			$pengangkatans = Surat::create([
+				'description' => $newfile,
+				'id_usulan' => $id,
+				'id_layanan' => $jenis_layanan,
+				'nip' => $nip,
+				'id_pengirim' => $pengirim,
+				'status' => Helper::$pending_pokja
+			]);
+			
+			return redirect()->route('koor-pokja.inbox.jfku.index')->with(['success'=>'Surat Berhasil Dipending!!!!']);
+        }
+		
+    }
+
+    public function tolak_text_editor(Request $request)
+    {
+		
+		
+        $input = $request->all();
+		$id = $input['v_id'];
+        $jenis_layanan = $input['v_jenis'];
         $id_pengirim = $input['v_pengirim'];
-        $id_verifikator = $input['v_verifikator'];
+        $id_verifikator = $input['v_id_verifikator'];
         $nama_verifikator = $input['v_nama_verifikator'];
 
+		$newfile = $input['v_file_name'];
+		$nip = $input['v_nip'];
+		$pengirim = $input['v_pengirim'];
+		
+		
+		
         // dd($jenis_layanan);
         if($jenis_layanan == Helper::$pengangkatan_pejabat_FKU || $jenis_layanan == Helper::$pemberhentian_pejabat_FKU || $jenis_layanan == Helper::$perpindahan_pejabat_FKU || $jenis_layanan == Helper::$ralat_keppres_jabatan_FKU || $jenis_layanan == Helper::$pembatalan_keppres_jabatan_FKU)
         {
             $pengangkatans = PengangkatanPemberhentianJFKU::where('id', '=', $id)->update(
                 ['status' => Helper::$tolak_pokja]
             );
-
+			$date = date('d-m-y');
             $tolaks = Penolakan::create([
                 'id_usulan' => $id,
                 'id_layanan' => $jenis_layanan,
                 'id_pengirim' => $id_pengirim,
                 'id_verifikator' => $id_verifikator,
                 'nama_verifikator' => $nama_verifikator,
-                'tanggal_prosess_penolakan' => Helper::convertDatetoDB($input['tanggal_prosess_penolakan']),
-                'alasan_penolakan' => $input['alasan_penolakan']
+                'tanggal_prosess_penolakan' => Helper::convertDatetoDB($date)
             ]);
             return redirect()->route("koor-pokja.inbox.jfku.index")->with(['success'=>'ditolak Success !!!']);
         } 
@@ -332,14 +508,14 @@ class JFKUController extends Controller
             $pengangkatans = PengangkatanPemberhentianNS::where('id', '=', $id)->update(
                 ['status' => Helper::$tolak_pokja]
             );
+            $date = date('d-m-y');
             $tolaks = Penolakan::create([
                 'id_usulan' => $id,
                 'id_layanan' => $jenis_layanan,
                 'id_pengirim' => $id_pengirim,
                 'id_verifikator' => $id_verifikator,
                 'nama_verifikator' => $nama_verifikator,
-                'tanggal_prosess_penolakan' => Helper::convertDatetoDB($input['tanggal_prosess_penolakan']),
-                'alasan_penolakan' => $input['alasan_penolakan']
+                'tanggal_prosess_penolakan' => Helper::convertDatetoDB($date)
             ]);
             return redirect()->route("koor-pokja.inbox.jfku.index")->with(['success'=>'ditolak Success !!!']);
         }
@@ -348,17 +524,17 @@ class JFKUController extends Controller
             $pengangkatans = PengangkatanPemberhentianLainnya::where('id', '=', $id)->update(
                 ['status' => Helper::$tolak_pokja]
             );
+            $date = date('d-m-y');
             $tolaks = Penolakan::create([
                 'id_usulan' => $id,
                 'id_layanan' => $jenis_layanan,
                 'id_pengirim' => $id_pengirim,
                 'id_verifikator' => $id_verifikator,
                 'nama_verifikator' => $nama_verifikator,
-                'tanggal_prosess_penolakan' => Helper::convertDatetoDB($input['tanggal_prosess_penolakan']),
-                'alasan_penolakan' => $input['alasan_penolakan']
+                'tanggal_prosess_penolakan' => Helper::convertDatetoDB($date)
             ]);
             return redirect()->route("koor-pokja.inbox.jfku.index")->with(['success'=>'ditolak Success !!!']);
-        }
+        } 
     }
 
 }

@@ -341,6 +341,8 @@ Route::group(['middleware' => ['auth', 'checkRole:5']], function() {
                 Route::post('/verification/proses', 'BackWeb\Koor_Pokja\Inbox\JFKUController@store_proses')->name('koor-pokja.inbox.jfku.store_proses');
                 Route::post('/verification/pending', 'BackWeb\Koor_Pokja\Inbox\JFKUController@store_pending')->name('koor-pokja.inbox.jfku.store_pending');
                 Route::post('/verification/tolak', 'BackWeb\Koor_Pokja\Inbox\JFKUController@store_tolak')->name('koor-pokja.inbox.jfku.store_tolak');
+                Route::post('/verification/pendingtexteditor', 'BackWeb\Koor_Pokja\Inbox\JFKUController@pending_text_editor')->name('koor-pokja.inbox.jfku.pending_text_editor');
+                Route::post('/verification/tolaktexteditor', 'BackWeb\Koor_Pokja\Inbox\JFKUController@tolak_text_editor')->name('koor-pokja.inbox.jfku.tolak_text_editor');
             });
 
             Route::prefix('/ns')->group(function(){
@@ -670,6 +672,8 @@ Route::group(['middleware' => ['auth', 'checkRole: 9']], function() {
                 Route::post('/verification/proses', 'BackWeb\JF_Ahli\InboxController@store_proses')->name('jf-ahli.inbox.usulan.store_proses');
                 Route::post('/verification/pending', 'BackWeb\JF_Ahli\InboxController@store_pending')->name('jf-ahli.inbox.usulan.store_pending');
                 Route::post('/verification/tolak', 'BackWeb\JF_Ahli\InboxController@store_tolak')->name('jf-ahli.inbox.usulan.store_tolak');
+                Route::post('/verification/pendingtexteditor', 'BackWeb\JF_Ahli\InboxController@pending_text_editor')->name('jf-ahli.inbox.usulan.pending_text_editor');
+                Route::post('/verification/tolaktexteditor', 'BackWeb\JF_Ahli\InboxController@tolak_text_editor')->name('jf-ahli.inbox.usulan.tolak_text_editor');
             });
 
             Route::prefix('/ns')->group(function(){
@@ -685,12 +689,7 @@ Route::group(['middleware' => ['auth', 'checkRole: 9']], function() {
                 Route::post('/verification/pending', 'BackWeb\JF_Ahli\InboxController@store_pending')->name('jf-ahli.inbox.usulan.store_pending_lainnya');
                 Route::post('/verification/tolak', 'BackWeb\JF_Ahli\InboxController@store_tolak')->name('jf-ahli.inbox.usulan.store_tolak_lainnya');
             });
-
-            Route::prefix('/text-editor')->group(function(){
-                Route::get('/{id}', 'BackWeb\JF_Ahli\TextEditorInboxPendingController@index')->name('jf-ahli.inbox.text-editor.index');
-                Route::post('/create', 'BackWeb\JF_Ahli\TextEditorInboxPendingController@store')->name('jf-ahli.inbox.text-editor.store');
-            });
-        
+			
             Route::prefix('/text-editor-lain')->group(function(){
                 Route::get('/{id}', 'BackWeb\JF_Ahli\TextEditorLainPertekController@index')->name('jf-ahli.inbox.text-editor.lain.index');
                 Route::post('/create', 'BackWeb\JF_Ahli\TextEditorLainPertekController@store')->name('jf-ahli.inbox.text-editor.lain.store');

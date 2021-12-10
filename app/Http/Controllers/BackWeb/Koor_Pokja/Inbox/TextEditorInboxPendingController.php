@@ -19,6 +19,8 @@ use App\Helper;
 
 use Carbon\Carbon;
 
+define("webaddress", "http://104.248.194.62");
+
 class TextEditorInboxPendingController extends Controller
 {
     private $curr_int_time;
@@ -37,35 +39,35 @@ class TextEditorInboxPendingController extends Controller
         $page_description = 'Text Editor';
         $pengangkatans = PengangkatanPemberhentianJFKU::where('id', $id)->first();
         // dd($pengangkatans->nip);
-        return view('pages.koor_pokja.inbox.text_editor_inbox_pending', compact('page_title', 'page_description', 'currentUser', 'pengangkatans'));
+			
+		
+		$characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+		$pin = mt_rand(1000000, 9999999)
+			. mt_rand(1000000, 9999999)
+			. $characters[rand(0, strlen($characters) - 1)];
+	
+
+        //$phpWord = new \PhpOffice\PhpWord\PhpWord();
+		$filename = "Surat_Pengembalian_Berkas_Template";
+		$templateProcessor = new \PhpOffice\PhpWord\TemplateProcessor(storage_path("app/public/Template/".$filename.".docx"));
+
+		$stringrnd = str_shuffle($pin);
+
+		$templateProcessor->setValue('no_surat_usulan', $pengangkatans['no_surat_usulan']);
+		$templateProcessor->setValue('instansi_pengusul', $pengangkatans['instansi_pengusul']);
+		$templateProcessor->setValue('tanggal_surat_usulan', $pengangkatans['tanggal_surat_usulan']);
+		$templateProcessor->setValue('nama', $pengangkatans['nama']);     
+
+		
+		$newfilename = $filename."_".$stringrnd.".docx"; 
+		$templateProcessor->saveAs(storage_path("app/public/TemporaryGenerator/".$newfilename));
+		$urlhead = urlencode(webaddress."/storage/TemporaryGenerator/".$newfilename);		
+		
+        return view('pages.koor_pokja.inbox.text_editor_inbox_pending', compact('page_title', 'page_description', 'currentUser', 'pengangkatans','stringrnd','newfilename','urlhead'));
     }
 
     public function store(Request $request)
     {
-		$phpWord = new \PhpOffice\PhpWord\PhpWord();
-
-
-        $section = $phpWord->addSection();
-
-
-        $description = "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-			consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-			cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-			proident, sunt in culpa qui officia deserunt mollit anim id est laborum.";
-
-
-        $section->addImage("https://www.itsolutionstuff.com/frontTheme/images/logo.png");
-        $section->addText($description);
-
-
-        $objWriter = \PhpOffice\PhpWord\IOFactory::createWriter($phpWord, 'Word2007');
-        try {
-            $objWriter->save(storage_path('helloWorld.docx'));
-        } catch (Exception $e) {
-        }
-		
 		
         $input = $request->all();
         $id = $input['v_id'];

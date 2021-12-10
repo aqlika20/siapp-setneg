@@ -44,7 +44,7 @@
                                                 <label class="col-form-label col-lg-3 col-sm-12">Tanggal Surat usulan <a style="color: #FF0000;">*</a></label>
                                                 <div class="col-lg-5 col-md-9 col-sm-12">
                                                     <div class="input-group date">
-                                                        <input type="text" class="form-control datetimepicker-input my-datepicker" id="tanggal_surat_usulan" name="tanggal_surat_usulan" data-toggle="datetimepicker" data-target="#tanggal_surat_usulan" placeholder="Pilih Tanggal" value="{{old('tanggal_surat_usulan')}}" />
+                                                        <input type="text" class="form-control my-datepicker" id="tanggal_surat_usulan" name="tanggal_surat_usulan" data-toggle="datetimepicker" data-target="#tanggal_surat_usulan" placeholder="Pilih Tanggal" value="{{old('tanggal_surat_usulan')}}" />
                                                         <div class="input-group-append">
                                                             <span class="input-group-text">
                                                                 <i class="la la-calendar"></i>
@@ -165,7 +165,7 @@
                                                 <label class="col-form-label col-lg-3 col-sm-12">Tanggal Lahir <a style="color: #FF0000;">*</a></label>
                                                 <div class="col-lg-5 col-md-9 col-sm-12">
                                                     <div class="input-group date">
-                                                        <input type="text" class="form-control datetimepicker-input my-datepicker" id="tanggal_lahir" name="tanggal_lahir" data-toggle="datetimepicker" data-target="#tanggal_lahir" placeholder="Pilih Tanggal" value="{{old('tanggal_lahir')}}" autocomplete="off" />
+                                                        <input type="text" class="form-control my-datepicker" id="tanggal_lahir" name="tanggal_lahir" data-toggle="datetimepicker" data-target="#tanggal_lahir" placeholder="Pilih Tanggal" value="{{old('tanggal_lahir')}}" autocomplete="off" />
                                                         <div class="input-group-append">
                                                             <span class="input-group-text">
                                                                 <i class="la la-calendar"></i>
@@ -293,7 +293,7 @@
                                                 <label class="col-form-label col-lg-3 col-sm-12">Tanggal Ditetapkan</label>
                                                 <div class="col-lg-5 col-md-9 col-sm-12">
                                                     <div class="input-group date">
-                                                        <input type="text" class="form-control datetimepicker-input my-datepicker" id="tanggal_pak" name="tanggal_pak" data-toggle="datetimepicker" data-target="#tanggal_pak" placeholder="Pilih Tanggal" value="{{old('tanggal_pak')}}" autocomplete="off" />
+                                                        <input type="text" class="form-control my-datepicker" id="tanggal_pak" name="tanggal_pak" data-toggle="datetimepicker" data-target="#tanggal_pak" placeholder="Pilih Tanggal" value="{{old('tanggal_pak')}}" autocomplete="off" />
                                                         <div class="input-group-append">
                                                             <span class="input-group-text">
                                                                 <i class="la la-calendar"></i>
@@ -489,7 +489,7 @@
                                                 <label class="col-form-label col-lg-3 col-sm-12">TMT Jabatan <a style="color: #FF0000;">*</a></label>
                                                 <div class="col-lg-5 col-md-9 col-sm-12">
                                                     <div class="input-group date">
-                                                        <input type="text" class="form-control datetimepicker-input my-datepicker" id="tmt_jabatan_fungsional" name="tmt_jabatan_fungsional" data-toggle="datetimepicker" data-target="#tmt_jabatan_fungsional" placeholder="Pilih Tanggal" value="{{old('tmt_jabatan_fungsional')}}" autocomplete="off" />
+                                                        <input type="text" class="form-control my-datepicker" id="tmt_jabatan_fungsional" name="tmt_jabatan_fungsional" data-toggle="datetimepicker" data-target="#tmt_jabatan_fungsional" placeholder="Pilih Tanggal" value="{{old('tmt_jabatan_fungsional')}}" autocomplete="off" />
                                                         <div class="input-group-append">
                                                             <span class="input-group-text">
                                                                 <i class="la la-calendar"></i>
@@ -526,24 +526,16 @@
                                                     <select class="form-control select2" style="width: 230px;" id="pangkat_gol" name="pangkat_gol">
                                                         <option value="">Choose</option>
                                                         @foreach ($pangkats as $pangkat)
-                                                            <option value="{{$pangkat->id}}" @if (old("pangkat_gol") == $pangkat->id) selected="selected" @endif>{{$pangkat->name}} ({{$pangkat->golongan}}/{{$pangkat->ruang}})</option>
+                                                            <option value="{{$pangkat->id}}" {{ old('pangkat_gol') == $pangkat->id ? "selected" :""}} >{{$pangkat->name}} ({{$pangkat->golongan}}/{{$pangkat->ruang}})</option>
                                                         @endforeach
                                                     </select>
-                                                    <!-- <div class="input-group date">
-                                                        <select class="custom-select form-control" id="seeAnotherField">
-                                                            <option selected>pilih golongan</option>
-                                                            <option value="1">Golongan 1</option>
-                                                            <option value="2">Golongan 2</option>
-                                                            <option value="3">Golongan 3</option>
-                                                            </select>
-                                                    </div> -->
                                                 </div>
                                             </div>
                                             <div class="form-group row">
                                                 <label class="col-form-label col-lg-3 col-sm-12">TMT <a style="color: #FF0000;">*</a></label>
                                                 <div class="col-lg-5 col-md-9 col-sm-12">
                                                     <div class="input-group date">
-                                                        <input type="text" class="form-control datetimepicker-input" id="tmt_gol" name="tmt_gol" data-toggle="datetimepicker" data-target="#tmt_gol" placeholder="Pilih Tanggal" value="{{old('tmt_gol')}}" autocomplete="off" />
+                                                        <input type="text" class="form-control" id="tmt_gol" name="tmt_gol" data-toggle="datetimepicker" data-target="#tmt_gol" placeholder="Pilih Tanggal" value="{{old('tmt_gol')}}" autocomplete="off" />
                                                         <div class="input-group-append">
                                                             <span class="input-group-text">
                                                                 <i class="la la-calendar"></i>
@@ -603,42 +595,42 @@
                                                 <div class="col-lg-9 col-md-9 col-sm-12">
                                                     <div style="margin-bottom:10px;">
                                                         <label class="radio radio-success">
-                                                            <input type="radio" id="radio_1" name="alasan_pemberhentian" value="1"/>
+                                                            <input type="radio" id="radio_1" name="alasan_pemberhentian" value="1" {{ old('alasan_pemberhentian')=="1" ? 'checked='.'"'.'checked'.'"' : '' }} />
                                                             <span></span>
                                                             <div style="margin-left: 10px;">Mengundurkan diri dari jabatan</div>
                                                         </label>
                                                     </div>
                                                     <div style="margin-bottom:10px;">
                                                         <label class="radio radio-success">
-                                                            <input type="radio" id="radio_2" name="alasan_pemberhentian" value="2"/>
+                                                            <input type="radio" id="radio_2" name="alasan_pemberhentian" value="2" {{ old('alasan_pemberhentian')=="2" ? 'checked='.'"'.'checked'.'"' : '' }}/>
                                                             <span></span>
                                                             <div style="margin-left: 10px;">Diberhentikan sementara sebagai PNS</div>
                                                         </label>
                                                     </div>
                                                     <div style="margin-bottom:10px;">
                                                         <label class="radio radio-success">
-                                                            <input type="radio" id="radio_3" name="alasan_pemberhentian" value="3"/>
+                                                            <input type="radio" id="radio_3" name="alasan_pemberhentian" value="3" {{ old('alasan_pemberhentian')=="3" ? 'checked='.'"'.'checked'.'"' : '' }}/>
                                                             <span></span>
                                                             <div style="margin-left: 10px;">Menjalani cuti diluar tanggungan negara</div>
                                                         </label>
                                                     </div>
                                                     <div style="margin-bottom:10px;">
                                                         <label class="radio radio-success">
-                                                            <input type="radio" id="radio_4" name="alasan_pemberhentian" value="4"/>
+                                                            <input type="radio" id="radio_4" name="alasan_pemberhentian" value="4" {{ old('alasan_pemberhentian')=="4" ? 'checked='.'"'.'checked'.'"' : '' }}/>
                                                             <span></span>
                                                             <div style="margin-left: 10px;">Menjalani tugas di luar lebih dari 6 (enam) bulan</div>
                                                         </label>
                                                     </div>
                                                     <div style="margin-bottom:10px;">
                                                         <label class="radio radio-success">
-                                                            <input type="radio" id="radio_5" name="alasan_pemberhentian" value="5"/>
+                                                            <input type="radio" id="radio_5" name="alasan_pemberhentian" value="5" {{ old('alasan_pemberhentian')=="5" ? 'checked='.'"'.'checked'.'"' : '' }}/>
                                                             <span></span>
                                                             <div style="margin-left: 10px;">Ditugaskan secara penuh diluar jabatan fungsional</div>
                                                         </label>
                                                     </div>
                                                     <div style="margin-bottom:10px;">
                                                         <label class="radio radio-success">
-                                                            <input type="radio" id="radio_6" name="alasan_pemberhentian" value="6"/>
+                                                            <input type="radio" id="radio_6" name="alasan_pemberhentian" value="6" {{ old('alasan_pemberhentian')=="6" ? 'checked='.'"'.'checked'.'"' : '' }}/>
                                                             <span></span>
                                                             <div style="margin-left: 10px;">Tidak memenuhi syarat jabatan</div>
                                                         </label>
@@ -650,7 +642,7 @@
                                                 <label class="col-form-label col-lg-3 col-sm-12">Keterangan Alasan <a style="color: #FF0000;">*</a></label>
                                                 <div class="col-lg-9 col-md-9 col-sm-12">
                                                     <div class="input-group date">
-                                                        <textarea class="form-control" rows="3" id="ket_alasan_pemberhentian" name="ket_alasan_pemberhentian" value="{{old('ket_alasan_pemberhentian')}}"></textarea>
+                                                        <textarea class="form-control" rows="3" id="ket_alasan_pemberhentian" name="ket_alasan_pemberhentian" value="{{old('ket_alasan_pemberhentian')}}">{{ old('ket_alasan_pemberhentian') }}</textarea>
                                                     </div>
                                                 </div>
                                             </div>
@@ -659,7 +651,7 @@
                                                 <label class="col-form-label col-lg-3 col-sm-12">TMT Pemberhentian <a style="color: #FF0000;">*</a></label>
                                                 <div class="col-lg-5 col-md-9 col-sm-12">
                                                     <div class="input-group date">
-                                                        <input type="text" class="form-control datetimepicker-input my-datepicker" id="tmt_pemberhentian" name="tmt_pemberhentian" data-toggle="datetimepicker" data-target="#tmt_pemberhentian" placeholder="Pilih Tanggal" value="{{old('tmt_pemberhentian')}}" autocomplete="off" />
+                                                        <input type="text" class="form-control my-datepicker" id="tmt_pemberhentian" name="tmt_pemberhentian" data-toggle="datetimepicker" data-target="#tmt_pemberhentian" placeholder="Pilih Tanggal" value="{{old('tmt_pemberhentian')}}" autocomplete="off" />
                                                         <div class="input-group-append">
                                                             <span class="input-group-text">
                                                                 <i class="la la-calendar"></i>
@@ -724,10 +716,10 @@
                                                     <div class="item_catatan">
                                                         <div class="item_data">
                                                             <div class="form-group row">
-                                                                <label class="col-form-label col-lg-3 col-sm-12">Tanggal Catatan <a style="color: #FF0000;">*</a></label>
+                                                                <label class="col-form-label col-lg-3 col-sm-12">Tanggal Catatan</label>
                                                                 <div class="col-lg-5 col-md-9 col-sm-12">
                                                                     <div class="input-group date">
-                                                                        <input type="text" class="form-control datetimepicker-input my-datepicker" id="tanggal_catatan" name="tanggal_catatan[]" data-toggle="datetimepicker" data-target="#tanggal_catatan" placeholder="Pilih Tanggal" autocomplete="off"/>
+                                                                        <input type="text" class="form-control my-datepicker" id="tanggal_catatan" name="tanggal_catatan[]" data-toggle="datetimepicker" data-target="#tanggal_catatan" placeholder="Pilih Tanggal" autocomplete="off"/>
                                                                         <div class="input-group-append">
                                                                             <span class="input-group-text">
                                                                                 <i class="la la-calendar"></i>
@@ -737,7 +729,7 @@
                                                                 </div>
                                                             </div>
                                                             <div class="form-group row">
-                                                                <label class="col-form-label col-lg-3 col-sm-12">Catatan <a style="color: #FF0000;">*</a></label>
+                                                                <label class="col-form-label col-lg-3 col-sm-12">Catatan</label>
                                                                 <div class="col-lg-9 col-md-9 col-sm-12">
                                                                     <div class="input-group date">
                                                                         <textarea class="form-control" rows="3" id="catatan" name="catatan[]"></textarea>
@@ -769,7 +761,7 @@
                                                                 <span></span><div style="margin-left: 10px;">Dokumen PAK</div>
                                                             </label>
                                                         </div>
-                                                        <div style="margin-bottom:30px;">
+                                                        <div style="margin-bottom:10px;"> 
                                                             <label class="checkbox checkbox-outline checkbox-outline-2x checkbox-primary">
                                                                 <input type="checkbox" id="checked_file_klarifikasi_pak" disabled/>
                                                                 <span></span><div style="margin-left: 10px;">Dokumen Klarifikasi PAK</div>
@@ -849,20 +841,20 @@
     <script id="tambah_catatan" type="text/x-handlebars-template">
         <div class="item_data">
             <div class="form-group row">
-                <label class="col-form-label col-lg-3 col-sm-12">Tanggal Catatan <a style="color: #FF0000;">*</a></label>
+                <label class="col-form-label col-lg-3 col-sm-12">Tanggal Catatan</label>
                 <div class="col-lg-5 col-md-9 col-sm-12">
                     <div class="input-group date">
-                        <input type="text" class="form-control datetimepicker-input my-datepicker" id="tanggal_catatan" name="tanggal_catatan[]" data-toggle="datetimepicker" placeholder="Pilih Tanggal" autocomplete="off"/>
+                        <input type="text" class="form-control my-datepicker" id="tanggal_catatan" name="tanggal_catatan[]" data-toggle="datetimepicker" placeholder="Pilih Tanggal" autocomplete="off"/>
                         <div class="input-group-append">
                             <span class="input-group-text">
                                 <i class="la la-calendar"></i>
                             </span>
-                        </div>
+                        </div>  
                     </div>
                 </div>
             </div>
             <div class="form-group row">
-                <label class="col-form-label col-lg-3 col-sm-12">Catatan <a style="color: #FF0000;">*</a></label>
+                <label class="col-form-label col-lg-3 col-sm-12">Catatan</label>
                 <div class="col-lg-9 col-md-9 col-sm-12">
                     <div class="input-group date">
                         <textarea class="form-control" rows="3" id="catatan" name="catatan[]"></textarea>
@@ -997,7 +989,7 @@
         $(document).on('click','.add_more_item',function(){
             var source = $("#tambah_catatan").html();
             // var template = Handlebars.compile(source);
-            var template = '<div class="item_data"><div class="form-group row"><label class="col-form-label col-lg-3 col-sm-12">Tanggal Catatan <a style="color: #FF0000;">*</a></label><div class="col-lg-5 col-md-9 col-sm-12"><div class="input-group date"><input type="text" class="form-control datetimepicker-input my-datepicker" id="tanggal_catatan_' + id +'" name="tanggal_catatan[]" data-toggle="datetimepicker" data-target="#tanggal_catatan_'+ id +'" placeholder="Pilih Tanggal" autocomplete="off" /><div class="input-group-append"><span class="input-group-text"><i class="la la-calendar"></i></span></div></div></div></div><div class="form-group row"><label class="col-form-label col-lg-3 col-sm-12">Catatan <a style="color: #FF0000;">*</a></label><div class="col-lg-9 col-md-9 col-sm-12"><div class="input-group date"><textarea class="form-control" rows="3" id="catatan" name="catatan[]" ></textarea></div></div></div><div class="form-group row"><div class="col-lg-9 col-md-9 col-sm-12"><!-- <button type="button" class="remove_detail btn btn-sm font-weight-bolder btn-light-primar">Hapus</button> --><a style="margin-top: 10px;" class="remove_detail btn btn-sm font-weight-bolder btn-light-danger"><i class="la la-trash-o"></i>Hapus Catatan</a></div></div></div>'
+            var template = '<div class="item_data"><div class="form-group row"><label class="col-form-label col-lg-3 col-sm-12">Tanggal Catatan <a style="color: #FF0000;">*</a></label><div class="col-lg-5 col-md-9 col-sm-12"><div class="input-group date"><input type="text" class="form-control my-datepicker" id="tanggal_catatan_' + id +'" name="tanggal_catatan[]" data-toggle="datetimepicker" data-target="#tanggal_catatan_'+ id +'" placeholder="Pilih Tanggal" autocomplete="off" /><div class="input-group-append"><span class="input-group-text"><i class="la la-calendar"></i></span></div></div></div></div><div class="form-group row"><label class="col-form-label col-lg-3 col-sm-12">Catatan <a style="color: #FF0000;">*</a></label><div class="col-lg-9 col-md-9 col-sm-12"><div class="input-group date"><textarea class="form-control" rows="3" id="catatan" name="catatan[]" ></textarea></div></div></div><div class="form-group row"><div class="col-lg-9 col-md-9 col-sm-12"><!-- <button type="button" class="remove_detail btn btn-sm font-weight-bolder btn-light-primar">Hapus</button> --><a style="margin-top: 10px;" class="remove_detail btn btn-sm font-weight-bolder btn-light-danger"><i class="la la-trash-o"></i>Hapus Catatan</a></div></div></div>'
             $(this).parent().parent().parent().find(".item_catatan").append(template);
             id++;
             refreshDateTimePicker();

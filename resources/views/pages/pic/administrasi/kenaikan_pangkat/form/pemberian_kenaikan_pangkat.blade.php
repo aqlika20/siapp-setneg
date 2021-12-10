@@ -545,7 +545,7 @@
                                                 <label class="col-form-label col-lg-3 col-sm-12">TMT (Gol/Ruang) <a style="color: #FF0000;">*</a></label>
                                                 <div class="col-lg-5 col-md-9 col-sm-12">
                                                     <div class="input-group date">
-                                                        <input type="text" class="form-control datetimepicker-input my-datepicker" id="tmt_gol_baru" name="tmt_gol_baru" data-toggle="datetimepicker" data-target="#tmt_gol_baru" placeholder="Pilih Tanggal" value="{{old('tmt_gol_baru')}}" autocomplete="off" /> <p id="masa"></p>
+                                                        <input type="text" class="form-control datetimepicker-input my-datepicker" id="tmt_gol_baru" name="tmt_gol_baru" data-toggle="datetimepicker" data-target="#tmt_gol_baru" placeholder="Pilih Tanggal" value="{{old('tmt_gol_baru')}}" autocomplete="off" />
                                                         <div class="input-group-append">
                                                             <span class="input-group-text">
                                                                 <i class="la la-calendar"></i>
@@ -585,7 +585,7 @@
                                                         <div class="input-group-append">
                                                             <span class="input-group-text">
                                                                 <i class="la la-calendar"></i>
-                                                            </span>
+                                                            </span> 
                                                         </div>
                                                     </div>
                                                     <span class="form-text text-muted">Please input the date from start.</span>

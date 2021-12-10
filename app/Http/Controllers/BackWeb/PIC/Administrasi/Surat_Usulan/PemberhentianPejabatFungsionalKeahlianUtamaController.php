@@ -74,7 +74,8 @@ class PemberhentianPejabatFungsionalKeahlianUtamaController extends Controller
             'no_surat_usulan' => 'required',
             'ppk_pejabat_yang_diusulkan' => 'required',
             'pejabat_menandatangani' => 'required',
-            'file_surat_usulan.*' => 'required|max:5000|mimes:jpg,png,jpeg,pdf',
+            'file_surat_usulan' => 'required',
+            'file_surat_usulan.*' => 'max:5000|mimes:jpg,png,jpeg,pdf',
 
             'nip' => 'required',
             'nama' => 'required',
@@ -86,48 +87,46 @@ class PemberhentianPejabatFungsionalKeahlianUtamaController extends Controller
             'jumlah' => 'required',
             'terisi' => 'required',
             'sisa' => 'required',
-            'file_nota_usulan.*' => 'required|max:5000|mimes:jpg,png,jpeg,pdf',
-            'file_penetapan_kebutuhan_formasi.*' => 'required|max:5000|mimes:jpg,png,jpeg,pdf',
-            'file_ijazah.*' => 'required|max:5000|mimes:jpg,png,jpeg,pdf',
-            'file_pencantuman_gelar.*' => 'required|max:5000|mimes:jpg,png,jpeg,pdf',
+            'file_nota_usulan' => 'required',
+            'file_penetapan_kebutuhan_formasi' => 'required',
+            'file_ijazah' => 'required',
+            'file_pencantuman_gelar' => 'required',
+            'file_nota_usulan.*' => 'max:5000|mimes:jpg,png,jpeg,pdf',
+            'file_penetapan_kebutuhan_formasi.*' => 'max:5000|mimes:jpg,png,jpeg,pdf',
+            'file_ijazah.*' => 'max:5000|mimes:jpg,png,jpeg,pdf',
+            'file_pencantuman_gelar.*' => 'max:5000|mimes:jpg,png,jpeg,pdf',
 
             'no_sk_pangkat' => 'required',
             'pangkat_gol' => 'required',
             'tmt_gol' => 'required',
-            'file_sk_pangkat_terakhir.*' => 'required|max:5000|mimes:jpg,png,jpeg,pdf',
-
+            'file_sk_pangkat_terakhir' => 'required',
+            'file_sk_pangkat_terakhir.*' => 'max:5000|mimes:jpg,png,jpeg,pdf',
+   
             'nomor_pak' => 'nullable',
             'tanggal_pak' => 'nullable',
             'jumlah_angka_kredit' => 'nullable',
-            'file_data_pak.*' => 'required|max:5000|mimes:jpg,png,jpeg,pdf',
-            
-            'jabatan_fungsional' => 'required',
+            'file_data_pak' => 'required',
+            'file_data_pak.*' => 'max:5000|mimes:jpg,png,jpeg,pdf',
+                 
+            'jabatan_fungsional' => 'required', 
             'no_keppress_jabatan_fungsional' => 'required',
             'tmt_jabatan_fungsional' => 'required',
             'satuan_organisasi_fungsional' => 'required',
-            'file_keppres_pengangkatan.*' => 'required|max:5000|mimes:jpg,png,jpeg,pdf',
-            'file_ba_pengambilan_sumpah_fungsional.*' => 'required|max:5000|mimes:jpg,png,jpeg,pdf',
+            'file_keppres_pengangkatan' => 'required',
+            'file_ba_pengambilan_sumpah_fungsional' => 'required',
+            'file_keppres_pengangkatan.*' => 'max:5000|mimes:jpg,png,jpeg,pdf',
+            'file_ba_pengambilan_sumpah_fungsional.*' => 'max:5000|mimes:jpg,png,jpeg,pdf',
             
             'alasan_pemberhentian' => 'required',
             'ket_alasan_pemberhentian' => 'required',
             'tmt_pemberhentian' => 'required',
-            'file_pendukung_pemberhentian.*' => 'required|max:5000|mimes:jpg,png,jpeg,pdf',
-
-            'ket.*' => 'required'
+            'file_pendukung_pemberhentian' => 'required',
+            'file_pendukung_pemberhentian.*' => 'max:5000|mimes:jpg,png,jpeg,pdf',
         ]);
+
+        // dd($validator->fails());   
         
         if ($validator->fails()) {
-            // dd($validator->messages()->getMessages());
-            // foreach($validator->messages()->getMessages() as $messages) {
-                
-            //     $e_name = [];
-            //     // Go through each message for this field.
-            //     foreach($messages as $message) {
-            //         $e_name = $message;
-            //     }
-            //     // dd($e_name);
-            //     return redirect()->back()->with(['error' => $e_name]);
-            // }
             return redirect()->back()->withErrors($validator)->withInput();
 
         }
@@ -165,7 +164,6 @@ class PemberhentianPejabatFungsionalKeahlianUtamaController extends Controller
             'alasan_pemberhentian' => $input['alasan_pemberhentian'],
             'ket_alasan_pemberhentian' => $input['ket_alasan_pemberhentian'],
             'tmt_pemberhentian' => $input['tmt_pemberhentian'],
-            
                         
             'id_pengirim' => $id_pengirim->nip,
             'jenis_layanan' => Helper::$pemberhentian_pejabat_FKU,
