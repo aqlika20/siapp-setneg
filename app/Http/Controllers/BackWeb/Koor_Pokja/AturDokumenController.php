@@ -30,7 +30,7 @@ class AturDokumenController extends Controller
     public function index() 
     {
         $currentUser = UserManagement::find(Auth::id());
-        $page_title = 'KemenSetneg | Atur Dokumen';
+        $page_title = 'Sistem Kepegawaian | Atur Dokumen';
         $page_description = 'Atur Dokumen';
         $pengangkatans = Pengangkatan::where([
             ['status', '=', Helper::$pengajuan_usulan]

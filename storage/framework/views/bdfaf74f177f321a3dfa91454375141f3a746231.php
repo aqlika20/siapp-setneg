@@ -522,7 +522,7 @@
                                                     <select class="form-control select2" style="width: 230px;" id="pangkat_gol" name="pangkat_gol">
                                                         <option value="">Choose</option>
                                                         <?php $__currentLoopData = $pangkats; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $pangkat): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                                                            <option value="<?php echo e($pangkat->id); ?>" <?php echo e(old('pangkat_gol') == $pangkat->id ? "selected" :""); ?> ><?php echo e($pangkat->name); ?> (<?php echo e($pangkat->golongan); ?>/<?php echo e($pangkat->ruang); ?>)</option>
+                                                            <option value="<?php echo e($pangkat->name); ?>" <?php echo e(old('pangkat_gol') == $pangkat->name ? "selected" :""); ?> ><?php echo e($pangkat->name); ?> (<?php echo e($pangkat->golongan); ?>/<?php echo e($pangkat->ruang); ?>)</option>
                                                         <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                                                     </select>
                                                 </div>
@@ -894,7 +894,10 @@
             $('.select2').select2({
                 placeholder: "Choose..."
             })
-        }   
+        }  
+        $('.select2').select2({
+            placeholder: "Choose..."
+        }) 
 
         $(document).ready(function () {
             $("#file_surat_usulan").on("change", function () {

@@ -36,7 +36,7 @@ class ListRkpController extends Controller
     public function index() 
     {
         $currentUser = UserManagement::find(Auth::id());
-        $page_title = 'KemenSetneg | RKP';
+        $page_title = 'Sistem Kepegawaian | RKP';
         $page_description = 'RKP';
         $rkps = RKP::All();
         // $rkps = RKP::where([

@@ -220,7 +220,7 @@
                                         <th>Jenis Usulan</th>
                                         <th>Status</th> -->
 
-                                        <th>Tanggal Agenda</th>
+                                        <th>Tanggal Surat Usulan</th>
                                         <th>No Surat</th>
                                         <th>Instansi Pengusul</th>
                                         <th>Jenis Usulan</th>
@@ -236,45 +236,13 @@
                                         <td><div style="color: #FFA800;">{{ Helper::defineJenisLayananBy($pengangkatan->jenis_layanan) }}</div></td>
                                         <td>{{ Helper::defineStatusBy($pengangkatan->status) }}</td> -->
 
-                                        <td>{{ $pengangkatan->tanggal_surat_usulan }}</td>
+                                        <td>{{ Helper::converttanggal($pengangkatan->tanggal_surat_usulan) }}</td>
                                         <td>{{ $pengangkatan->no_surat_usulan }}</td>
                                         <td>{{ $pengangkatan->instansi_pengusul }}</td>
                                         <td><div style="color: #FFA800;">{{ Helper::defineJenisLayananBy($pengangkatan->jenis_layanan) }}</div></td>
                                         <td><div style="color: #3699FF;">{{ $pengangkatan->nip }}</div></td>
                                         <td>{{ $pengangkatan->nama }}</td>
                                         <td>{{ Helper::defineStatusBy($pengangkatan->status) }}</td>
-                                    </tr>
-                                @endforeach
-
-                                @foreach($strukturals as $struktural)
-                                    <tr>
-                                        <!-- <td>{{ Helper::convertDate($struktural->created_at) }}</td>
-                                        <td><div style="color: #FFA800;">{{ Helper::defineJenisLayananBy($struktural->jenis_layanan) }}</div></td>
-                                        <td>{{ Helper::defineStatusBy($struktural->status) }}</td> -->
-
-                                        <td>{{ $struktural->tanggal_surat_usulan }}</td>
-                                        <td>{{ $struktural->no_surat_usulan }}</td>
-                                        <td>{{ $struktural->instansi_pengusul }}</td>
-                                        <td><div style="color: #FFA800;">{{ Helper::defineJenisLayananBy($struktural->jenis_layanan) }}</div></td>
-                                        <td><div style="color: #3699FF;">{{ $struktural->nip }}</div></td>
-                                        <td>{{ $struktural->nama }}</td>
-                                        <td>{{ Helper::defineStatusBy($struktural->status) }}</td>
-                                    </tr>
-                                @endforeach
-                                
-                                @foreach($lainnyas as $lainnya)
-                                    <tr>
-                                        <!-- <td>{{ Helper::convertDate($lainnya->created_at) }}</td>
-                                        <td><div style="color: #FFA800;">{{ Helper::defineJenisLayananBy($lainnya->jenis_layanan) }}</div></td>
-                                        <td>{{ Helper::defineStatusBy($lainnya->status) }}</td> -->
-
-                                        <td>{{ $lainnya->tanggal_surat_usulan }}</td>
-                                        <td>{{ $lainnya->no_surat_usulan }}</td>
-                                        <td>{{ $lainnya->instansi_pengusul }}</td>
-                                        <td><div style="color: #FFA800;">{{ Helper::defineJenisLayananBy($lainnya->jenis_layanan) }}</div></td>
-                                        <td><div style="color: #3699FF;">{{ $lainnya->nip }}</div></td>
-                                        <td>{{ $lainnya->nama }}</td>
-                                        <td>{{ Helper::defineStatusBy($lainnya->status) }}</td>
                                     </tr>
                                 @endforeach
                                 </tbody>

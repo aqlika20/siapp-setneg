@@ -30,7 +30,7 @@ class RiwayatController extends Controller
     public function index() 
     {
         $currentUser = UserManagement::find(Auth::id());
-        $page_title = 'KemenSetneg | Riwayat';
+        $page_title = 'Sistem Kepegawaian | Riwayat';
         $page_description = 'Riwayat';
         $pengangkatans = Pengangkatan::where([
             ['status', '=', Helper::$pengajuan_usulan]

@@ -123,7 +123,7 @@ class SuratUsulanController extends Controller
 
     public function verification_ns($id){
         $currentUser = UserManagement::find(Auth::id());
-        $page_title = 'KemenSetneg | Verification';
+        $page_title = 'Sistem Kepegawaian | Verification';
         $page_description = 'Verification';
         $verifikasi_ns = PengangkatanPemberhentianNS::where('id', $id)->first();
         $jabatans = Jabatan::all();
@@ -138,7 +138,7 @@ class SuratUsulanController extends Controller
 
     public function verification_lainnya($id){
         $currentUser = UserManagement::find(Auth::id());
-        $page_title = 'KemenSetneg | Verification';
+        $page_title = 'Sistem Kepegawaian | Verification';
         $page_description = 'Verification';
         $verifikasi_lainnya = PengangkatanPemberhentianLainnya::where('id', $id)->first();
         $jabatans = Jabatan::all();
@@ -153,7 +153,7 @@ class SuratUsulanController extends Controller
 
     public function verification_kenaikan($id){
         $currentUser = UserManagement::find(Auth::id());
-        $page_title = 'KemenSetneg | Verification';
+        $page_title = 'Sistem Kepegawaian | Verification';
         $page_description = 'Verification';
         $verifikasi = KenaikanPangkat::where('id', $id)->first();
         $jabatans = Jabatan::all();
@@ -180,7 +180,7 @@ class SuratUsulanController extends Controller
 
     public function verification_pemberhentian($id){
         $currentUser = UserManagement::find(Auth::id());
-        $page_title = 'KemenSetneg | Verification';
+        $page_title = 'Sistem Kepegawaian | Verification';
         $page_description = 'Verification';
         $verifikasi = Pemberhentian::where('id', $id)->first();
         $jabatans = Jabatan::all();
@@ -344,7 +344,7 @@ class SuratUsulanController extends Controller
     public function revisi() {
 
         $currentUser = UserManagement::find(Auth::id());
-        $page_title = 'KemenSetneg | Revisi';
+        $page_title = 'Sistem Kepegawaian | Revisi';
         $page_description = 'Revisi';
         // $verifikasi_lainnya = PengangkatanPemberhentianLainnya::where('id', $id)->first();
         // $jabatans = Jabatan::all();

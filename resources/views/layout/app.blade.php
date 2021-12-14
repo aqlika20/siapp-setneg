@@ -4,7 +4,7 @@
         <meta charset="utf-8"/>
 
         {{-- Title Section --}}
-        <title>SIAPP | KemenSetneg</title>
+        <title>Sistem Kepegawaian</title>
 
         {{-- Meta Data --}}
         <meta name="description" content="@yield('page_description', $page_description ?? '')"/>

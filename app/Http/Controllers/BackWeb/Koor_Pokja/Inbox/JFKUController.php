@@ -42,7 +42,7 @@ class JFKUController extends Controller
     public function index() 
     {
         $currentUser = UserManagement::find(Auth::id());
-        $page_title = 'KemenSetneg | Inbox | JFKU';
+        $page_title = 'Sistem Kepegawaian | Inbox | JFKU';
         $page_description = 'JFKU';
         $pengangkatans = PengangkatanPemberhentianJFKU::where([
             ['status', '=', Helper::$pengajuan_usulan],
@@ -134,7 +134,7 @@ class JFKUController extends Controller
 
     public function verification($id){
         $currentUser = UserManagement::find(Auth::id());
-        $page_title = 'KemenSetneg | Verification';
+        $page_title = 'Sistem Kepegawaian | Verification';
         $page_description = 'Verification';
         $verifikasi = PengangkatanPemberhentianJFKU::where('id', $id)->first();
         $jabatans = Jabatan::all();
@@ -198,7 +198,7 @@ class JFKUController extends Controller
 
     public function verification_ns($id){
         $currentUser = UserManagement::find(Auth::id());
-        $page_title = 'KemenSetneg | Verification';
+        $page_title = 'Sistem Kepegawaian | Verification';
         $page_description = 'Verification';
         $verifikasi_ns = PengangkatanPemberhentianNS::where('id', $id)->first();
         $jabatans = Jabatan::all();
@@ -221,7 +221,7 @@ class JFKUController extends Controller
 
     public function verification_lainnya($id){
         $currentUser = UserManagement::find(Auth::id());
-        $page_title = 'KemenSetneg | Verification';
+        $page_title = 'Sistem Kepegawaian | Verification';
         $page_description = 'Verification';
         $verifikasi_lainnya = PengangkatanPemberhentianLainnya::where('id', $id)->first();
         $jabatans = Jabatan::all();

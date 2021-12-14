@@ -25,6 +25,8 @@ use App\Helper;
 
 use Carbon\Carbon;
 
+define("webaddress", "http://104.248.194.62");
+
 class DetailSuratPengembalianController extends Controller
 {
     private $curr_int_time;
@@ -39,7 +41,7 @@ class DetailSuratPengembalianController extends Controller
     public function index($id) 
     {
         $currentUser = UserManagement::find(Auth::id());
-        $page_title = 'KemenSetneg | Detail Surat Pengembalian dari JF Ahli';
+        $page_title = 'Sistem Kepegawaian | Detail Surat Pengembalian dari JF Ahli';
         $page_description = 'Detail Surat Pengembalian dari JF Ahli';
 
         $pengangkatans = PengangkatanPemberhentianJFKU::where([
@@ -103,10 +105,24 @@ class DetailSuratPengembalianController extends Controller
         }
 
 
+		$newfilename = "Surat_Pengembalian_Berkas_Template.docx";
+		$urlhead = urlencode(webaddress."/storage/Temporary/".$newfilename);
+		$stringrnd = "Khirz6zTPdfd3d234sdSPBT";	
+		if(!empty($surats))
+		{
+			$characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+			$pin = mt_rand(1000000, 9999999)
+				. mt_rand(1000000, 9999999)
+				. $characters[rand(0, strlen($characters) - 1)];
+			$newfilename = $surats[0]->description;
+			$urlhead = urlencode(webaddress."/storage/TemporaryGenerator/".$newfilename);
+			$stringrnd = str_shuffle($pin);
+		}
+		
         
 
         // dd($surats);
 
-        return view('pages.koor_pokja.inbox.detail_surat_pengembalian', compact('page_title', 'page_description', 'currentUser', 'surats'));
+        return view('pages.koor_pokja.inbox.detail_surat_pengembalian', compact('page_title', 'page_description', 'currentUser', 'surats','stringrnd','newfilename','urlhead'));
     }
 }

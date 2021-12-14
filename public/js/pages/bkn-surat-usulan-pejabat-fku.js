@@ -37,12 +37,15 @@ $(document).ready(function (e) {
                     $('#instansi').val(data.instansiIndukNama);
                     $('#jabatan_lama').val(data.jabatanNama);
                     $('#satuan_organisasi_lama').val(data.satuanKerjaIndukNama);
-                    // $('#pangkat_gol').val(data.pangkatAkhir);
+                    $('#pangkat_gol').val(data.pangkatAkhir);
                     
                     $('#masa_kerja_gol_tahun').val(data.mkTahun);
                     $('#masa_kerja_gol_bulan').val(data.mkBulan);
-                    // $('#pangkat_gol').val(data.golRuangAkhir);
                     $('#instansi_induk').val(data.instansiIndukNama);
+                    
+                    $('.select2').select2({
+                        placeholder: "Choose..."
+                    })
                 }
 
                 $("#btn-bkn").prop('disabled', false);

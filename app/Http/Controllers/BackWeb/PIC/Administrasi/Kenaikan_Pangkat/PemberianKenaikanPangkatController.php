@@ -183,7 +183,7 @@ class PemberianKenaikanPangkatController extends Controller
 
             'tmt_gol_baru' => $input['tmt_gol_baru'],
             'masa_kerja_gol_tahun_baru' => $input['masa_kerja_gol_tahun_baru'],
-            'masa_kerja_gol_bulan_baru' => $input['masa_kerja_gol_bulan_baru'],
+            // 'masa_kerja_gol_bulan_baru' => $input['masa_kerja_gol_bulan_baru'],
             'masa_jabatan_start' => $input['masa_jabatan_start'],
             'masa_jabatan_end' => $input['masa_jabatan_end'],
             'masa_periode_start' => $input['masa_periode_start'],

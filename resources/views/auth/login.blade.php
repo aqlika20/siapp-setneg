@@ -56,7 +56,7 @@
                         </div>
                     </div>
 
-                    <div class="form-group row" style="justify-content: center;">
+                    {{-- <div class="form-group row" style="justify-content: center;">
                         <div class="col-md-6 mb-5 bg-light-info p-8 rounded">
                             <label class="text-info"><strong>PIC</strong></label>
                             <div class="text-info"> User  : <strong>111111</strong> and password <strong>testestes</strong></div>
@@ -112,7 +112,7 @@
                             <label class="text-info"><strong>Administrator</strong></label>
                             <div class="text-info"> User  : <strong>123748</strong> and password <strong>testestes</strong></div>
                         </div>
-                    </div>
+                    </div> --}}
                 </form>
             </div>
         </div>

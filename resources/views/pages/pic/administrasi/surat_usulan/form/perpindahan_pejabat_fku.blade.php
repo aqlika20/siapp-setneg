@@ -539,7 +539,7 @@
                                             <div class="form-group row">
                                                 <label class="col-lg-3 col-form-label">Upload SK Jabatan Terakhir <a style="color: #FF0000;">*</a></label>
                                                 <div class="col-lg-9">
-                                                    <input id="file_data_jabatan_lama" name="file_data_jabatan_lama[]" accept=".jpg,.jpeg,.png,.pdf" type="file" class="file" data-show-preview="false" multiple />
+                                                    <input id="file_jabatan_lama" name="file_jabatan_lama[]" accept=".jpg,.jpeg,.png,.pdf" type="file" class="file" data-show-preview="false" multiple />
                                                     <!-- <div class="dropzone dropzone-multi" id="kt_dropzone_11">
                                                         <div class="dropzone-panel mb-lg-0 mb-2">
                                                             <a class="dropzone-select btn btn-light-primary font-weight-bold btn-sm">Attach files</a>
@@ -845,7 +845,7 @@
                                                     <select class="form-control select2" style="width: 230px;" id="pangkat_gol" name="pangkat_gol">
                                                         <option value="">Choose</option>
                                                         @foreach ($pangkats as $pangkat) 
-                                                            <option value="{{$pangkat->id}}" @if (old("pangkat_gol") == $pangkat->id) selected="selected" @endif> {{$pangkat->name}} ({{$pangkat->golongan}}/{{$pangkat->ruang}})</option>
+                                                            <option value="{{$pangkat->name}}" @if (old("pangkat_gol") == $pangkat->name) selected="selected" @endif> {{$pangkat->name}} ({{$pangkat->golongan}}/{{$pangkat->ruang}})</option>
                                                         @endforeach
                                                     </select>
                                                     <!-- <div class="input-group date">
@@ -1294,6 +1294,9 @@
                 placeholder: "Choose..."
             })
         }
+        $('.select2').select2({
+            placeholder: "Choose..."
+        })
         
         $(document).ready(function () {
             $("#file_surat_usulan").on("change", function () {

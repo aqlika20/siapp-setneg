@@ -216,7 +216,7 @@
                                         <th>Jenis Usulan</th>
                                         <th>Status</th> -->
 
-                                        <th>Tanggal Agenda</th>
+                                        <th>Tanggal Surat Usulan</th>
                                         <th>No Surat</th>
                                         <th>Instansi Pengusul</th>
                                         <th>Jenis Usulan</th>
@@ -232,45 +232,13 @@
                                         <td><div style="color: #FFA800;"><?php echo e(Helper::defineJenisLayananBy($pengangkatan->jenis_layanan)); ?></div></td>
                                         <td><?php echo e(Helper::defineStatusBy($pengangkatan->status)); ?></td> -->
 
-                                        <td><?php echo e($pengangkatan->tanggal_surat_usulan); ?></td>
+                                        <td><?php echo e(Helper::converttanggal($pengangkatan->tanggal_surat_usulan)); ?></td>
                                         <td><?php echo e($pengangkatan->no_surat_usulan); ?></td>
                                         <td><?php echo e($pengangkatan->instansi_pengusul); ?></td>
                                         <td><div style="color: #FFA800;"><?php echo e(Helper::defineJenisLayananBy($pengangkatan->jenis_layanan)); ?></div></td>
                                         <td><div style="color: #3699FF;"><?php echo e($pengangkatan->nip); ?></div></td>
                                         <td><?php echo e($pengangkatan->nama); ?></td>
                                         <td><?php echo e(Helper::defineStatusBy($pengangkatan->status)); ?></td>
-                                    </tr>
-                                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-
-                                <?php $__currentLoopData = $strukturals; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $struktural): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                                    <tr>
-                                        <!-- <td><?php echo e(Helper::convertDate($struktural->created_at)); ?></td>
-                                        <td><div style="color: #FFA800;"><?php echo e(Helper::defineJenisLayananBy($struktural->jenis_layanan)); ?></div></td>
-                                        <td><?php echo e(Helper::defineStatusBy($struktural->status)); ?></td> -->
-
-                                        <td><?php echo e($struktural->tanggal_surat_usulan); ?></td>
-                                        <td><?php echo e($struktural->no_surat_usulan); ?></td>
-                                        <td><?php echo e($struktural->instansi_pengusul); ?></td>
-                                        <td><div style="color: #FFA800;"><?php echo e(Helper::defineJenisLayananBy($struktural->jenis_layanan)); ?></div></td>
-                                        <td><div style="color: #3699FF;"><?php echo e($struktural->nip); ?></div></td>
-                                        <td><?php echo e($struktural->nama); ?></td>
-                                        <td><?php echo e(Helper::defineStatusBy($struktural->status)); ?></td>
-                                    </tr>
-                                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-                                
-                                <?php $__currentLoopData = $lainnyas; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $lainnya): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                                    <tr>
-                                        <!-- <td><?php echo e(Helper::convertDate($lainnya->created_at)); ?></td>
-                                        <td><div style="color: #FFA800;"><?php echo e(Helper::defineJenisLayananBy($lainnya->jenis_layanan)); ?></div></td>
-                                        <td><?php echo e(Helper::defineStatusBy($lainnya->status)); ?></td> -->
-
-                                        <td><?php echo e($lainnya->tanggal_surat_usulan); ?></td>
-                                        <td><?php echo e($lainnya->no_surat_usulan); ?></td>
-                                        <td><?php echo e($lainnya->instansi_pengusul); ?></td>
-                                        <td><div style="color: #FFA800;"><?php echo e(Helper::defineJenisLayananBy($lainnya->jenis_layanan)); ?></div></td>
-                                        <td><div style="color: #3699FF;"><?php echo e($lainnya->nip); ?></div></td>
-                                        <td><?php echo e($lainnya->nama); ?></td>
-                                        <td><?php echo e(Helper::defineStatusBy($lainnya->status)); ?></td>
                                     </tr>
                                 <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                                 </tbody>

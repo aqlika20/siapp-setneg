@@ -66,8 +66,8 @@ class RalatKeppresJabatanFungsionalKeahlianUtamaController extends Controller
             'file_keppres.*' => 'required|max:5000|mimes:jpg,png,jpeg,pdf',
 
             'alasan_ralat' => 'required',
-            'bukti_pendukung' => 'required',
-            'bukti_pendukung.*' => 'required|max:5000|mimes:jpg,png,jpeg,pdf'
+            'file_bukti_pendukung' => 'required',
+            'file_bukti_pendukung.*' => 'required|max:5000|mimes:jpg,png,jpeg,pdf'
             
         ]);
 

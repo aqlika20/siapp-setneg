@@ -101,7 +101,7 @@ class InboxController extends Controller
 
     public function verification($id){
         $currentUser = UserManagement::find(Auth::id());
-        $page_title = 'KemenSetneg | Update JFKU';
+        $page_title = 'Sistem Kepegawaian | Update JFKU';
         $page_description = 'Update JFKU';
         $verifikasi = PengangkatanPemberhentianJFKU::where('id', $id)->first();
         $jabatans = Jabatan::all();
@@ -129,7 +129,7 @@ class InboxController extends Controller
 
     public function verification_ns($id){
         $currentUser = UserManagement::find(Auth::id());
-        $page_title = 'KemenSetneg | Update Non Struktural';
+        $page_title = 'Sistem Kepegawaian | Update Non Struktural';
         $page_description = 'Update Non Struktural';
         $verifikasi_ns = PengangkatanPemberhentianNS::where('id', $id)->first();
         $jabatans = Jabatan::all();
@@ -144,7 +144,7 @@ class InboxController extends Controller
 
     public function verification_lainnya($id){
         $currentUser = UserManagement::find(Auth::id());
-        $page_title = 'KemenSetneg | Update Jabatan Lainnya';
+        $page_title = 'Sistem Kepegawaian | Update Jabatan Lainnya';
         $page_description = 'Update Jabatan Lainnya';
         $verifikasi_lainnya = PengangkatanPemberhentianLainnya::where('id', $id)->first();
         $jabatans = Jabatan::all();
@@ -159,7 +159,7 @@ class InboxController extends Controller
 
     public function verification_kenaikan($id){
         $currentUser = UserManagement::find(Auth::id());
-        $page_title = 'KemenSetneg | Update Kenaikan';
+        $page_title = 'Sistem Kepegawaian | Update Kenaikan';
         $page_description = 'Update Kenaikan';
         $verifikasi = KenaikanPangkat::where('id', $id)->first();
         $jabatans = Jabatan::all();
@@ -186,7 +186,7 @@ class InboxController extends Controller
 
     public function verification_pemberhentian($id){
         $currentUser = UserManagement::find(Auth::id());
-        $page_title = 'KemenSetneg | Update Pemberhentian';
+        $page_title = 'Sistem Kepegawaian | Update Pemberhentian';
         $page_description = 'Update Pemberhentian';
         $verifikasi = Pemberhentian::where('id', $id)->first();
         $jabatans = Jabatan::all();

@@ -526,7 +526,7 @@
                                                     <select class="form-control select2" style="width: 230px;" id="pangkat_gol" name="pangkat_gol">
                                                         <option value="">Choose</option>
                                                         @foreach ($pangkats as $pangkat)
-                                                            <option value="{{$pangkat->id}}" {{ old('pangkat_gol') == $pangkat->id ? "selected" :""}} >{{$pangkat->name}} ({{$pangkat->golongan}}/{{$pangkat->ruang}})</option>
+                                                            <option value="{{$pangkat->name}}" {{ old('pangkat_gol') == $pangkat->name ? "selected" :""}} >{{$pangkat->name}} ({{$pangkat->golongan}}/{{$pangkat->ruang}})</option>
                                                         @endforeach
                                                     </select>
                                                 </div>
@@ -898,7 +898,10 @@
             $('.select2').select2({
                 placeholder: "Choose..."
             })
-        }   
+        }  
+        $('.select2').select2({
+            placeholder: "Choose..."
+        }) 
 
         $(document).ready(function () {
             $("#file_surat_usulan").on("change", function () {

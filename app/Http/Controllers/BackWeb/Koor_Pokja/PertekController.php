@@ -43,7 +43,7 @@ class PertekController extends Controller
     {
         // Ardi
         $currentUser = UserManagement::find(Auth::id());
-        $page_title = 'KemenSetneg | Pertek';
+        $page_title = 'Sistem Kepegawaian | Pertek';
         $page_description = 'Pertek';
 
         $pengangkatans = PengangkatanPemberhentianJFKU::where([
@@ -89,7 +89,7 @@ class PertekController extends Controller
 
     public function verification($id){
         $currentUser = UserManagement::find(Auth::id());
-        $page_title = 'KemenSetneg | Verification';
+        $page_title = 'Sistem Kepegawaian | Verification';
         $page_description = 'Verification';
         $verifikasi = PengangkatanPemberhentianJFKU::where('id', $id)->first();
         $jabatans = Jabatan::all();
@@ -153,7 +153,7 @@ class PertekController extends Controller
 
     public function verification_ns($id){
         $currentUser = UserManagement::find(Auth::id());
-        $page_title = 'KemenSetneg | Verification';
+        $page_title = 'Sistem Kepegawaian | Verification';
         $page_description = 'Verification';
         $verifikasi_ns = PengangkatanPemberhentianNS::where('id', $id)->first();
         $jabatans = Jabatan::all();
@@ -176,7 +176,7 @@ class PertekController extends Controller
 
     public function verification_lainnya($id){
         $currentUser = UserManagement::find(Auth::id());
-        $page_title = 'KemenSetneg | Verification';
+        $page_title = 'Sistem Kepegawaian | Verification';
         $page_description = 'Verification';
         $verifikasi_lainnya = PengangkatanPemberhentianLainnya::where('id', $id)->first();
         $jabatans = Jabatan::all();
@@ -295,7 +295,7 @@ class PertekController extends Controller
 
     public function verification_kenaikan($id){
         $currentUser = UserManagement::find(Auth::id());
-        $page_title = 'KemenSetneg | Verification';
+        $page_title = 'Sistem Kepegawaian | Verification';
         $page_description = 'Verification';
         $verifikasi = KenaikanPangkat::where('id', $id)->first();
         $jabatans = Jabatan::all();
@@ -400,7 +400,7 @@ class PertekController extends Controller
 
     public function verification_pemberhentian($id){
         $currentUser = UserManagement::find(Auth::id());
-        $page_title = 'KemenSetneg | Verification';
+        $page_title = 'Sistem Kepegawaian | Verification';
         $page_description = 'Verification';
         $verifikasi = Pemberhentian::where('id', $id)->first();
         $jabatans = Jabatan::all();

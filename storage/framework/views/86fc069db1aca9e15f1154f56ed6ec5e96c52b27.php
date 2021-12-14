@@ -36,7 +36,17 @@
                             </div>
                             <!--end: Wizard Body-->                     
                         </div>
-                    </div>
+                    </div>					
+					<div class="card card-custom">
+						<div class="row justify-content-center">
+							<div class="card-body p-0">
+								<div style="height: 100vh;">
+									<div style="height: 100%;" id="placeholder"></div>
+									<script type="text/javascript" src="http://206.189.84.159//web-apps/apps/api/documents/api.js"></script>
+								</div>
+							</div>
+						</div>
+					</div>
                 </div>
                 <!--end::Container-->
             </div>
@@ -60,5 +70,31 @@
 <?php $__env->startSection('scripts'); ?>
 <script src="<?php echo e(asset('js/pages/custom/wizard/wizard-2.js')); ?>"></script>
 <script src="<?php echo e(asset('js/pages/crud/ktdatatable/base/html-table.js')); ?>" type="text/javascript"></script>
+<script>
+    var config = {
+        "document": {
+            "fileType": "docx",
+            "key": <?php echo json_encode($stringrnd); ?>,
+            "title": <?php echo json_encode($newfilename); ?>,
+            "url": <?php echo urldecode(json_encode($urlhead)); ?>,			
+			"permissions": {
+				"comment": false,
+				"copy": false,
+				"deleteCommentAuthorOnly": false,
+				"download": true,
+				"edit": false,
+				"editCommentAuthorOnly": false,
+				"fillForms": false,
+				"modifyContentControl": false,
+				"modifyFilter": false,
+				"print": true,
+				"review": false,
+			},
+            },
+            "documentType": "word"
+        };
+    var docEditor = new DocsAPI.DocEditor("placeholder", config);
+
+</script>
 <?php $__env->stopSection(); ?> 
 <?php echo $__env->make('layout.default', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH /var/www/siapp/resources/views/pages/koor_pokja/inbox/detail_surat_pengembalian.blade.php ENDPATH**/ ?>

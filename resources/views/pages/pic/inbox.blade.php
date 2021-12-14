@@ -62,7 +62,7 @@
                                         <td><div style="color: #FFA800;">{{ Helper::defineJenisLayananBy($pengangkatan->jenis_layanan) }}</div></td>
                                         <td>{{ Helper::defineStatusBy($pengangkatan->status) }}</td> -->
 
-                                        <td>{{ $pengangkatan->tanggal_surat_usulan }}</td>
+                                        <td>{{ Helper::converttanggal($pengangkatan->tanggal_surat_usulan) }}</td>
                                         <td>{{ $pengangkatan->no_surat_usulan }}</td>
                                         <td>{{ $pengangkatan->instansi_pengusul }}</td>
                                         <td><div style="color: #FFA800;">{{ Helper::defineJenisLayananBy($pengangkatan->jenis_layanan) }}</div></td>
@@ -80,61 +80,13 @@
                                         </td>
                                     </tr>
                                 @endforeach
-                                @foreach($pengangkatans_ns as $ns)
-                                    <tr>
-                                        <!-- <td>{{ Helper::convertDate($ns->created_at)  }}</td>
-                                        <td><div style="color: #FFA800;">{{ Helper::defineJenisLayananBy($ns->jenis_layanan) }}</div></td>
-                                        <td>{{ Helper::defineStatusBy($ns->status) }}</td> -->
-
-                                        <td>{{ $ns->tanggal_surat_usulan }}</td>
-                                        <td>{{ $ns->no_surat_usulan }}</td>
-                                        <td>{{ $ns->instansi_pengusul }}</td>
-                                        <td><div style="color: #FFA800;">{{ Helper::defineJenisLayananBy($ns->jenis_layanan) }}</div></td>
-                                        <td><div style="color: #3699FF;">{{ $ns->nip }}</div></td>
-                                        <td>{{ $ns->nama }}</td>
-                                        <td>{{ Helper::defineStatusBy($ns->status) }}</td>
-                                        <td>
-                                            @if($ns->status == Helper::$usulan_dikembalikan)
-                                                <a href="{{route('pic.inbox.kenaikan_pangkat.verif', ['id' => $ns->id])}}"><i class="fa fa-pencil-alt text-success mr-2"></i></a>
-                                                <a href="{{route('pic.inbox.detail-surat-pengembalian.index', ['id' => $ns->id])}}"><i class="fa flaticon2-file mr-2" style="color: #338AFF;"></i></a>
-                                            @endif
-                                            @if($ns->status == Helper::$tolak_jf_ahli || $ns->status == Helper::$tolak_pokja)
-                                                <a href="{{route('pic.inbox.detail-alasan-penolakan.index', ['id' => $ns->id])}}"><i class="fa flaticon2-file mr-2" style="color: #338AFF;"></i></a>
-                                            @endif
-                                        </td>
-                                    </tr>
-                                @endforeach
-                                @foreach($lainnyas as $lainnya)
-                                    <tr>
-                                        <!-- <td>{{ Helper::convertDate($lainnya->created_at)  }}</td>
-                                        <td><div style="color: #FFA800;">{{ Helper::defineJenisLayananBy($lainnya->jenis_layanan) }}</div></td>
-                                        <td>{{ Helper::defineStatusBy($lainnya->status) }}</td> -->
-
-                                        <td>{{ $lainnya->tanggal_surat_usulan }}</td>
-                                        <td>{{ $lainnya->no_surat_usulan }}</td>
-                                        <td>{{ $lainnya->instansi_pengusul }}</td>
-                                        <td><div style="color: #FFA800;">{{ Helper::defineJenisLayananBy($lainnya->jenis_layanan) }}</div></td>
-                                        <td><div style="color: #3699FF;">{{ $lainnya->nip }}</div></td>
-                                        <td>{{ $lainnya->nama }}</td>
-                                        <td>{{ Helper::defineStatusBy($lainnya->status) }}</td>
-                                        <td>
-                                            @if($lainnya->status == Helper::$usulan_dikembalikan)
-                                                <a href="{{route('pic.inbox.kenaikan_pangkat.verif', ['id' => $lainnya->id])}}"><i class="fa fa-pencil-alt text-success mr-2"></i></a>
-                                                <a href="{{route('pic.inbox.detail-surat-pengembalian.index', ['id' => $lainnya->id])}}"><i class="fa flaticon2-file mr-2" style="color: #338AFF;"></i></a>
-                                            @endif
-                                            @if($lainnya->status == Helper::$tolak_jf_ahli || $lainnya->status == Helper::$tolak_pokja)
-                                                <a href="{{route('pic.inbox.detail-alasan-penolakan.index', ['id' => $lainnya->id])}}"><i class="fa flaticon2-file mr-2" style="color: #338AFF;"></i></a>
-                                            @endif
-                                        </td>
-                                    </tr>
-                                @endforeach
                                 @foreach($kenaikans as $kenaikan)
                                     <tr>
                                         <!-- <td>{{ Helper::convertDate($kenaikan->created_at)  }}</td>
                                         <td><div style="color: #FFA800;">{{ Helper::defineJenisLayananBy($kenaikan->jenis_layanan) }}</div></td>
                                         <td>{{ Helper::defineStatusBy($kenaikan->status) }}</td> -->
 
-                                        <td>{{ $kenaikan->tanggal_surat_usulan }}</td>
+                                        <td>{{ Helper::converttanggal($kenaikan->tanggal_surat_usulan) }}</td>
                                         <td>{{ $kenaikan->no_surat_usulan }}</td>
                                         <td>{{ $kenaikan->instansi_pengusul }}</td>
                                         <td><div style="color: #FFA800;">{{ Helper::defineJenisLayananBy($kenaikan->jenis_layanan) }}</div></td>
@@ -158,7 +110,7 @@
                                         <td><div style="color: #FFA800;">{{ Helper::defineJenisLayananBy($pemberhentian->jenis_layanan) }}</div></td>
                                         <td>{{ Helper::defineStatusBy($pemberhentian->status) }}</td> -->
 
-                                        <td>{{ $pemberhentian->tanggal_surat_usulan }}</td>
+                                        <td>{{ Helper::converttanggal($pemberhentian->tanggal_surat_usulan) }}</td>
                                         <td>{{ $pemberhentian->no_surat_usulan }}</td>
                                         <td>{{ $pemberhentian->instansi_pengusul }}</td>
                                         <td><div style="color: #FFA800;">{{ Helper::defineJenisLayananBy($pemberhentian->jenis_layanan) }}</div></td>

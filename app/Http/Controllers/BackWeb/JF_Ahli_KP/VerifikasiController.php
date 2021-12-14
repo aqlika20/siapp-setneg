@@ -32,7 +32,7 @@ class VerifikasiController extends Controller
 
     public function index($id){
         $currentUser = UserManagement::find(Auth::id());
-        $page_title = 'KemenSetneg | Verification';
+        $page_title = 'Sistem Kepegawaian | Verification';
         $page_description = 'Verification';
         $verifikasi = PengangkatanPemberhentianJFKU::where('id', $id)->first();
 

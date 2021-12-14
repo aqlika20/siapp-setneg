@@ -5,7 +5,7 @@
         <meta charset="utf-8"/>
 
         
-        <title>SIAPP | <?php echo $__env->yieldContent('title', $page_title ?? ''); ?></title>
+        <title><?php echo $__env->yieldContent('title', $page_title ?? ''); ?></title>
 
         <!-- CSRF Token -->
         <meta name="csrf-token" content="<?php echo e(csrf_token()); ?>">

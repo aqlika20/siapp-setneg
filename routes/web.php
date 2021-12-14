@@ -31,7 +31,7 @@ Route::post('/autocomplete/fetch', 'BackWeb\PIC\Administrasi\Surat_Usulan\Autoco
 Route::prefix('/callbackdocument')->group(function(){
     Route::get('/', 'CallbackDocument@index')->name('callbackdocument.index');
 	Route::patch('/store', 'CallbackDocument@store')->name('callbackdocument.store');
-});
+}); 
 		
 
 
@@ -681,6 +681,8 @@ Route::group(['middleware' => ['auth', 'checkRole: 9']], function() {
                 Route::post('/verification/proses', 'BackWeb\JF_Ahli\InboxController@store_proses')->name('jf-ahli.inbox.usulan.store_proses_ns');
                 Route::post('/verification/pending', 'BackWeb\JF_Ahli\InboxController@store_pending')->name('jf-ahli.inbox.usulan.store_pending_ns');
                 Route::post('/verification/tolak', 'BackWeb\JF_Ahli\InboxController@store_tolak')->name('jf-ahli.inbox.usulan.store_tolak_ns');
+                Route::post('/verification/pendingtexteditor', 'BackWeb\JF_Ahli\InboxController@pending_text_editor')->name('jf-ahli.inbox.usulan.pending_text_editor_ns');
+                Route::post('/verification/tolaktexteditor', 'BackWeb\JF_Ahli\InboxController@tolak_text_editor')->name('jf-ahli.inbox.usulan.tolak_text_editor_ns');
             });
 
             Route::prefix('/lainnya')->group(function(){
@@ -688,6 +690,8 @@ Route::group(['middleware' => ['auth', 'checkRole: 9']], function() {
                 Route::post('/verification/proses', 'BackWeb\JF_Ahli\InboxController@store_proses')->name('jf-ahli.inbox.usulan.store_proses_lainnya');
                 Route::post('/verification/pending', 'BackWeb\JF_Ahli\InboxController@store_pending')->name('jf-ahli.inbox.usulan.store_pending_lainnya');
                 Route::post('/verification/tolak', 'BackWeb\JF_Ahli\InboxController@store_tolak')->name('jf-ahli.inbox.usulan.store_tolak_lainnya');
+                Route::post('/verification/pendingtexteditor', 'BackWeb\JF_Ahli\InboxController@pending_text_editor')->name('jf-ahli.inbox.usulan.pending_text_editor_lainnya');
+                Route::post('/verification/tolaktexteditor', 'BackWeb\JF_Ahli\InboxController@tolak_text_editor')->name('jf-ahli.inbox.usulan.tolak_text_editor_lainnya');
             });
 			
             Route::prefix('/text-editor-lain')->group(function(){

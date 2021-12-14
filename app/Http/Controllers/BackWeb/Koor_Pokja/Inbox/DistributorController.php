@@ -36,7 +36,7 @@ class DistributorController extends Controller
     public function index($id, $jenis_layanan) 
     {
         $currentUser = UserManagement::find(Auth::id());
-        $page_title = 'KemenSetneg | Inbox | JFKU | Distributor';
+        $page_title = 'Sistem Kepegawaian | Inbox | JFKU | Distributor';
         $page_description = 'Distributor';
         $pengangkatans = PengangkatanPemberhentianJFKU::where('id', $id)->first();
         $ns = PengangkatanPemberhentianNS::where('id', $id)->first();

@@ -39,7 +39,17 @@
                             </div>
                             <!--end: Wizard Body-->                     
                         </div>
-                    </div>
+                    </div>					
+					<div class="card card-custom">
+						<div class="row justify-content-center">
+							<div class="card-body p-0">
+								<div style="height: 100vh;">
+									<div style="height: 100%;" id="placeholder"></div>
+									<script type="text/javascript" src="http://206.189.84.159//web-apps/apps/api/documents/api.js"></script>
+								</div>
+							</div>
+						</div>
+					</div>
                 </div>
                 <!--end::Container-->
             </div>
@@ -63,4 +73,30 @@
 @section('scripts')
 <script src="{{ asset('js/pages/custom/wizard/wizard-2.js') }}"></script>
 <script src="{{ asset('js/pages/crud/ktdatatable/base/html-table.js') }}" type="text/javascript"></script>
+<script>
+    var config = {
+        "document": {
+            "fileType": "docx",
+            "key": {!! json_encode($stringrnd) !!},
+            "title": {!! json_encode($newfilename) !!},
+            "url": {!! urldecode(json_encode($urlhead)) !!},			
+			"permissions": {
+				"comment": false,
+				"copy": false,
+				"deleteCommentAuthorOnly": false,
+				"download": true,
+				"edit": false,
+				"editCommentAuthorOnly": false,
+				"fillForms": false,
+				"modifyContentControl": false,
+				"modifyFilter": false,
+				"print": true,
+				"review": false,
+			},
+            },
+            "documentType": "word"
+        };
+    var docEditor = new DocsAPI.DocEditor("placeholder", config);
+
+</script>
 @endsection 

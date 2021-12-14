@@ -741,7 +741,7 @@
                                                     <select class="form-control select2" style="width: 230px;" id="pangkat_gol" name="pangkat_gol">
                                                         <option value="">Choose</option>
                                                         @foreach ($pangkats as $pangkat) 
-                                                            <option value="{{$pangkat->id}}" @if (old("pangkat_gol") == $pangkat->id) selected="selected" @endif> {{$pangkat->name}} ({{$pangkat->golongan}}/{{$pangkat->ruang}})</option>
+                                                            <option value="{{$pangkat->name}}" @if (old("pangkat_gol") == $pangkat->name) selected="selected" @endif> {{$pangkat->name}} ({{$pangkat->golongan}}/{{$pangkat->ruang}})</option>
                                                         @endforeach
                                                     </select>
                                                 </div>
@@ -750,7 +750,8 @@
                                                 <label class="col-form-label col-lg-3 col-sm-12">TMT <a style="color: #FF0000;">*</a></label>
                                                 <div class="col-lg-5 col-md-9 col-sm-12">
                                                     <div class="input-group date">
-                                                        <input type="text" class="form-control " id="tmt_gol" name="tmt_gol" data-toggle="datetimepicker" data-target="#tmt_gol" placeholder="Pilih Tanggal" value="{{old('tmt_gol')}}" autocomplete="off"/>
+                                                        <!-- <input type="text" class="form-control" id="tanggal_sertifikat" name="tanggal_sertifikat" data-toggle="datetimepicker" data-target="#tanggal_sertifikat" placeholder="Pilih Tanggal" value="{{old('tanggal_sertifikat')}}" autocomplete="off"/> -->
+                                                        <input type="text" class="form-control" id="tmt_gol" name="tmt_gol" data-toggle="datetimepicker" data-target="#tmt_gol" placeholder="Pilih Tanggal" value="{{old('tmt_gol')}}" autocomplete="off"/>
                                                         <div class="input-group-append">
                                                             <span class="input-group-text">
                                                                 <i class="la la-calendar"></i>
@@ -1216,7 +1217,15 @@
                 placeholder: "Choose..."
             })
         }
- 
+        $('.select2').select2({
+            placeholder: "Choose..."
+        })
+
+        $('#tmt_gol').datetimepicker({
+            useCurrent:false,
+            format: 'DD-MMM-YYYY',
+            maxDate: new Date().setHours(0,0,0,0)
+        })
 
         $(document).ready(function () 
         {
