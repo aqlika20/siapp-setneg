@@ -199,12 +199,7 @@
                                             <div class="form-group row">
                                                 <label class="col-form-label col-lg-3 col-sm-12">Pendidikan Terakhir <a style="color: #FF0000;">*</a></label>
                                                 <div class="col-lg-9 col-md-9 col-sm-12">
-                                                    <select class="form-control select2" style="width: 230px;" id="pendidikan_terakhir" name="pendidikan_terakhir">
-                                                        <option value="">Choose</option>
-                                                        @foreach ($pendidikans as $pendidikan_terakhir)
-                                                            <option value="{{$pendidikan_terakhir->id}}">{{$pendidikan_terakhir->name}}</option>
-                                                        @endforeach
-                                                    </select>
+                                                    <input type="text" class="form-control" id="pendidikan_terakhir" name="pendidikan_terakhir" value="{{old('pendidikan_terakhir')}}" autocomplete="off" />
                                                 </div>
                                             </div>
                                             <div class="form-group row">
@@ -682,6 +677,10 @@
                 placeholder: "Choose..."
             })
         }
+
+        $('.select2').select2({
+            placeholder: "Choose..."
+        })
 
         $(document).ready(function () {
             $("#file_data_usulan").on("change", function () {

@@ -412,6 +412,10 @@
             })
         }
         
+        $('.select2').select2({
+            placeholder: "Choose..."
+        })
+        
         $(document).ready(function () {
             $("#file_surat_permohonan").on("change", function () {
                 if ($('#file_surat_permohonan')[0].files.length != 0) {

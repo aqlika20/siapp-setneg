@@ -197,7 +197,7 @@
                                                     <select class="form-control select2" style="width: 230px;" id="pangkat_terakhir" name="pangkat_terakhir">
                                                         <option value="">Choose</option>
                                                         @foreach ($pangkats as $pangkat)
-                                                            <option value="{{$pangkat->id}}" @if (old("pangkat_terakhir") == $pangkat->id) selected="selected" @endif>{{$pangkat->name}} ({{$pangkat->golongan}}/{{$pangkat->ruang}})</option>
+                                                            <option value="{{$pangkat->name}}" @if (old("pangkat_terakhir") == $pangkat->name) selected="selected" @endif>{{$pangkat->name}} ({{$pangkat->golongan}}/{{$pangkat->ruang}})</option>
                                                         @endforeach
                                                     </select>
                                                     <!-- <div class="input-group date">
@@ -425,6 +425,10 @@
                 placeholder: "Choose..."
             })
         }
+
+        $('.select2').select2({
+            placeholder: "Choose..."
+        })
 
         $(document).ready(function () {
             $("#file_data_usulan").on("change", function () {

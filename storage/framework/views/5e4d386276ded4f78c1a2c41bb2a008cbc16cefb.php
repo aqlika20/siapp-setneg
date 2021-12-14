@@ -199,12 +199,7 @@
                                             <div class="form-group row">
                                                 <label class="col-form-label col-lg-3 col-sm-12">Pendidikan Terakhir <a style="color: #FF0000;">*</a></label>
                                                 <div class="col-lg-9 col-md-9 col-sm-12">
-                                                    <select class="form-control select2" style="width: 230px;" id="pendidikan_terakhir" name="pendidikan_terakhir">
-                                                        <option value="">Choose</option>
-                                                        <?php $__currentLoopData = $pendidikans; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $pendidikan_terakhir): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                                                            <option value="<?php echo e($pendidikan_terakhir->id); ?>"><?php echo e($pendidikan_terakhir->name); ?></option>
-                                                        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-                                                    </select>
+                                                    <input type="text" class="form-control" id="pendidikan_terakhir" name="pendidikan_terakhir" value="<?php echo e(old('pendidikan_terakhir')); ?>" autocomplete="off" />
                                                 </div>
                                             </div>
                                             <div class="form-group row">
@@ -261,7 +256,7 @@
                                                     <select class="form-control select2" style="width: 230px;" id="pangkat_terakhir" name="pangkat_terakhir">
                                                         <option value="">Choose</option>
                                                         <?php $__currentLoopData = $pangkats; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $pangkat): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                                                            <option value="<?php echo e($pangkat->id); ?>" <?php if(old("pangkat_terakhir") == $pangkat->id): ?> selected="selected" <?php endif; ?>><?php echo e($pangkat->name); ?> (<?php echo e($pangkat->golongan); ?>/<?php echo e($pangkat->ruang); ?></option>
+                                                            <option value="<?php echo e($pangkat->name); ?>" <?php if(old("pangkat_terakhir") == $pangkat->name): ?> selected="selected" <?php endif; ?>><?php echo e($pangkat->name); ?> (<?php echo e($pangkat->golongan); ?>/<?php echo e($pangkat->ruang); ?></option>
                                                         <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                                                     </select>
                                                     <!-- <div class="input-group date">
@@ -677,7 +672,11 @@
                 placeholder: "Choose..."
             })
         }
-        
+
+        $('.select2').select2({
+            placeholder: "Choose..."
+        })
+
         $(document).ready(function () {
             $("#file_data_usulan").on("change", function () {
                 if ($('#file_data_usulan')[0].files.length != 0) {

@@ -32,7 +32,11 @@ $(document).ready(function (e) {
                     $('#tmt_cpns').val(data.tmtCpns);
                     $('#masa_kerja_gol_tahun').val(data.mkTahun);
                     $('#masa_kerja_gol_bulan').val(data.mkBulan);
-                    $('#pangkat_gol').val(data.golRuangAkhir);
+                    $('#pangkat_gol').val(data.pangkatAkhir);
+                    
+                    $('.select2').select2({
+                        placeholder: "Choose..."
+                    })
                 }
 
                 $("#btn-bkn").prop('disabled', false);

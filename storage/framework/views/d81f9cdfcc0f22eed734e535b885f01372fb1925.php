@@ -77,10 +77,10 @@
                                                 <label class="col-form-label col-lg-3 col-sm-12">Periode Kenaikan Pangkat <a style="color: #FF0000;">*</a></label>
                                                 <div class="col-lg-2 col-md-9 col-sm-12">
                                                     <div class="input-group date">
-                                                        <select class="form-control" style="width: 230px;" id="req_masa_periode_start" name="req_masa_periode_start" onchange="myFunction(event)">
+                                                        <select class="form-control" style="width: 230px;" id="masa_periode_start" name="masa_periode_start" onchange="myFunction(event)">
                                                             <option value="" disabled selected>Choose</option>
-                                                                <option value="April" <?php if(old("req_masa_periode_start") == "April"): ?> selected="selected" <?php endif; ?>>April</option>
-                                                                <option value="Oktober" <?php if(old("req_masa_periode_start") == "Oktober"): ?> selected="selected" <?php endif; ?>>Oktober</option>
+                                                                <option value="April" <?php if(old("masa_periode_start") == "April"): ?> selected="selected" <?php endif; ?>>April</option>
+                                                                <option value="Oktober" <?php if(old("masa_periode_start") == "Oktober"): ?> selected="selected" <?php endif; ?>>Oktober</option>
                                                         </select>
                                                         <div class="input-group-append">
                                                         </span>
@@ -93,7 +93,7 @@
                                                 </div>
                                                 <div class="col-lg-4 col-md-9 col-sm-12">
                                                     <div class="input-group date">
-                                                        <input class="form-control" style="width: 230px;" type="text" id="req_masa_periode_end" name="req_masa_periode_end" value="<?php echo e(old('req_masa_periode_end')); ?>" readonly />
+                                                        <input class="form-control" style="width: 230px;" type="text" id="masa_periode_end" name="masa_periode_end" value="<?php echo e(old('masa_periode_end')); ?>" readonly />
                                                         <div class="input-group-append">
                                                         </span>
                                                         </div>
@@ -166,13 +166,7 @@
                                             <div class="form-group row">
                                                 <label class="col-form-label col-lg-3 col-sm-12">Pendidikan Terakhir <a style="color: #FF0000;">*</a></label>
                                                 <div class="col-lg-9 col-md-9 col-sm-12">
-                                                    <select class="form-control" style="width: 230px;" id="pendidikan_terakhir" name="pendidikan_terakhir">
-                                                        <option value="">Choose</option>
-                                                        <?php $__currentLoopData = $pendidikans; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $pendidikan_terakhir): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                                                            <option value="<?php echo e($pendidikan_terakhir->id); ?>" <?php if(old("pendidikan_terakhir") == $pendidikan_terakhir->id): ?> selected="selected" <?php endif; ?>><?php echo e($pendidikan_terakhir->name); ?></option>
-                                                        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-                                                    </select>
-                                                   
+                                                    <input type="text" class="form-control" id="pendidikan_terakhir" name="pendidikan_terakhir" value="<?php echo e(old('pendidikan_terakhir')); ?>" autocomplete="off"/>
                                                 </div>
                                             </div>
 
@@ -188,10 +182,10 @@
                                             <div class="form-group row">
                                                 <label class="col-form-label col-lg-3 col-sm-12">Pangkat (Gol/Ruang) <a style="color: #FF0000;">*</a></label>
                                                 <div class="col-lg-9 col-md-9 col-sm-12">
-                                                    <select class="form-control" style="width: 230px;" id="pangkat_gol" name="pangkat_gol">
+                                                    <select class="form-control select2" style="width: 230px;" id="pangkat_gol" name="pangkat_gol">
                                                         <option value="">Choose</option>
                                                         <?php $__currentLoopData = $pangkats; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $pangkat): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                                                        <option value="<?php echo e($pangkat->id); ?>" <?php if(old("pangkat_gol") == $pangkat->id): ?> selected="selected" <?php endif; ?>><?php echo e($pangkat->name); ?> (<?php echo e($pangkat->golongan); ?>/<?php echo e($pangkat->ruang); ?>)</option>
+                                                        <option value="<?php echo e($pangkat->name); ?>" <?php if(old("pangkat_gol") == $pangkat->name): ?> selected="selected" <?php endif; ?>><?php echo e($pangkat->name); ?> (<?php echo e($pangkat->golongan); ?>/<?php echo e($pangkat->ruang); ?>)</option>
                                                         <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                                                     </select>
                                                     <!-- <div class="input-group date">
@@ -252,8 +246,8 @@
                                             </div>
 
                                             
-                                            <div  id="otherFieldDiv">
-                                                <h4 class="mb-10 font-weight-bold text-dark">Data PAK</h4>
+                                            <!-- <div  id="otherFieldDiv"> -->
+                                                <h4 class="mb-10 font-weight-bold text-dark">Data Data Dokumen Penetapan Angka Kredit (PAK)</h4>
                                                 <!--begin::Input-->
                                                 <div class="form-group row">
                                                     <label class="col-form-label col-lg-3 col-sm-12">Nomor PAK</label>
@@ -345,7 +339,7 @@
                                                         <span class="form-text text-muted">Format file harus berbentuk jpg, png, jpeg, pdf, batas size file 1 MB dan file tidak boleh lebih dari 5 file</span>
                                                     </div>
                                                 </div>
-                                                <h4 class="mb-10 font-weight-bold text-dark">Klarifikasi PAK
+                                                <h4 class="mb-10 font-weight-bold text-dark">Klarifikasi Data Dokumen Penetapan Angka Kredit (PAK)
                                                     <span class="form-text text-muted"><small>Khusus untuk PAK yang dikeluarkan oleh Kemenkes & Kemendikbud</small></span>
                                                 </h4>
 
@@ -411,7 +405,7 @@
                                                         <span class="form-text text-muted">Format file harus berbentuk jpg, png, jpeg, pdf, batas size file 1 MB dan file tidak boleh lebih dari 5 file</span>
                                                     </div>
                                                 </div>
-                                            </div>
+                                            <!-- </div> -->
                                         </div>
                                         <!--end: Wizard Step 2-->
 
@@ -498,7 +492,7 @@
                                                 <label class="col-form-label col-lg-3 col-sm-12">TMT (Gol/Ruang) <a style="color: #FF0000;">*</a></label>
                                                 <div class="col-lg-5 col-md-9 col-sm-12">
                                                     <div class="input-group date">
-                                                        <input type="text" class="form-control datetimepicker-input my-datepicker" id="tmt_gol_baru" name="tmt_gol_baru" data-toggle="datetimepicker" data-target="#tmt_gol_baru" placeholder="Pilih Tanggal" value="<?php echo e(old('tmt_gol_baru')); ?>" autocomplete="off" /> <p id="masa"></p>
+                                                        <input type="text" class="form-control datetimepicker-input my-datepicker" id="tmt_gol_baru" name="tmt_gol_baru" data-toggle="datetimepicker" data-target="#tmt_gol_baru" placeholder="Pilih Tanggal" value="<?php echo e(old('tmt_gol_baru')); ?>" autocomplete="off" />
                                                         <div class="input-group-append">
                                                             <span class="input-group-text">
                                                                 <i class="la la-calendar"></i>
@@ -520,7 +514,15 @@
                                                 </div>
                                             </div>
 
-                                            
+                                             <!-- <div class="form-group row">
+                                                <label class="col-form-label col-lg-3 col-sm-12"></label>
+                                                <div class="col-lg-5 col-md-9 col-sm-12">
+                                                    <div class="input-group date">
+                                                        <input type="text" class="form-control" id="masa_kerja_gol_bulan_baru" name="masa_kerja_gol_bulan_baru" value="<?php echo e(old('masa_kerja_gol_bulan_baru')); ?>" autocomplete="off" />
+                                                        <label class="col-form-label text-left col-lg-3 col-sm-12">Bulan</label>
+                                                    </div>
+                                                </div>
+                                            </div>  -->
 
                                             <div class="form-group row">
                                                 <label class="col-form-label col-lg-3 col-sm-12">Periode Masa Jabatan <a style="color: #FF0000;">*</a></label>
@@ -530,7 +532,7 @@
                                                         <div class="input-group-append">
                                                             <span class="input-group-text">
                                                                 <i class="la la-calendar"></i>
-                                                            </span>
+                                                            </span> 
                                                         </div>
                                                     </div>
                                                     <span class="form-text text-muted">Please input the date from start.</span>
@@ -661,7 +663,7 @@
 
                                             <div id="pangkatLuarBiasa">
                                                 <div class="form-group row">
-                                                    <label class="col-lg-3 col-form-label">Upload Surat Keputusan PPK <a style="color: #FF0000;">*</a></label>
+                                                    <label class="col-lg-3 col-form-label">Upload Surat Keputusan PPK  <a style="color: #FF0000;">*</a></label>
                                                     <div class="col-lg-9">
                                                         <input id="file_surat_keputusan_ppk" name="file_surat_keputusan_ppk[]" accept=".jpg,.jpeg,.png,.pdf" type="file" class="file" data-show-preview="false" multiple />
                                                         
@@ -837,15 +839,7 @@
                 placeholder: "Choose..."
             })
 
-            $('#req_masa_periode_start').select2({
-                placeholder: "Choose..."
-            })
-
-            $('#pendidikan_terakhir').select2({
-                placeholder: "Choose..."
-            })
-
-            $('#pangkat_gol').select2({
+            $('#masa_periode_start').select2({
                 placeholder: "Choose..."
             })
 
@@ -865,6 +859,10 @@
                 placeholder: "Choose..."
             })
         }
+
+        $('.select2').select2({
+            placeholder: "Choose..."
+        })
 
         $("#file_data_usulan").on("change", function() {
             if ($("#file_data_usulan")[0].files.length > 5) {
@@ -1060,9 +1058,9 @@
     function myFunction(event) {
 
     if (event.target.value === "April") {
-        document.getElementById("req_masa_periode_end").value ="29 Februari";
+        document.getElementById("masa_periode_end").value ="29 Februari";
     } else if (event.target.value === "Oktober") {
-        document.getElementById("req_masa_periode_end").value = "31 Agustus";
+        document.getElementById("masa_periode_end").value = "31 Agustus";
     }
     };
 

@@ -47,9 +47,12 @@ $(document).ready(function (e) {
                     $('#jabatan').val(data.jabatanNama);
                     $('#instansi_induk').val(data.instansiIndukNama);
                     $('#pangkat_terakhir').val(data.pangkatAkhir);
-                    // document.getElementById("pangkat_terakhir").value = data.pangkatAkhir;
                     $('#tmt_berhenti').val();
                     $('#tmt_pensiun').val();
+
+                    $('.select2').select2({
+                        placeholder: "Choose..."
+                    })
                 }
 
                 $("#btn-bkn").prop('disabled', false);
