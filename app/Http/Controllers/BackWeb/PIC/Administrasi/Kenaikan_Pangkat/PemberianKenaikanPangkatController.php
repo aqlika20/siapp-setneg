@@ -118,8 +118,8 @@ class PemberianKenaikanPangkatController extends Controller
 
             'masa_jabatan_start' => 'required',
             'masa_jabatan_end' => 'required',
-            // 'masa_periode_start' => 'required',
-            // 'masa_periode_end' => 'required',
+            'masa_periode_start' => 'required',
+            'masa_periode_end' => 'required',
             
             'status_hukuman' => 'required',
 

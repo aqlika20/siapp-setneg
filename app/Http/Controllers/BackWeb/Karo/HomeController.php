@@ -140,54 +140,6 @@ class HomeController extends Controller
             $pembatalan_keppres_ns = $count_pembatalan_keppres_ns;
         }
 
-    //pengangkatan pejabat lainnya
-        $count_pengangkatan_pejabat_lainnya = PengangkatanPemberhentianLainnya::where([
-            ['jenis_layanan', Helper::$pengangkatan_pejabat_lainnya],
-            ['status', Helper::$pengajuan_usulan]
-        ])->count();
-
-        if($count_pengangkatan_pejabat_lainnya == 0){
-            $pengangkatan_pejabat_lainnya = '0';
-        } else{
-            $pengangkatan_pejabat_lainnya = $count_pengangkatan_pejabat_lainnya;
-        }
-
-    //pemberhentian pejabat lainnya
-        $count_pemberhentian_pejabat_lainnya = PengangkatanPemberhentianLainnya::where([
-            ['jenis_layanan', Helper::$pemberhentian_pejabat_lainnya],
-            ['status', Helper::$pengajuan_usulan]
-        ])->count();
-
-        if($count_pemberhentian_pejabat_lainnya == 0){
-            $pemberhentian_pejabat_lainnya = '0';
-        } else{
-            $pemberhentian_pejabat_lainnya = $count_pemberhentian_pejabat_lainnya;
-        }
-
-    //ralat keppres jabatan lainnya
-        $count_ralat_keppres_jabatan_lainnya = PengangkatanPemberhentianLainnya::where([
-            ['jenis_layanan', Helper::$ralat_keppres_jabatan_lainnya],
-            ['status', Helper::$pengajuan_usulan]
-        ])->count();
-
-        if($count_ralat_keppres_jabatan_lainnya == 0){
-            $ralat_keppres_jabatan_lainnya = '0';
-        } else{
-            $ralat_keppres_jabatan_lainnya = $count_ralat_keppres_jabatan_lainnya;
-        }
-
-    //pembatalan keppres jabatan lainnya
-        $count_pembatalan_keppres_jabatan_lainnya = PengangkatanPemberhentianLainnya::where([
-            ['jenis_layanan', Helper::$pembatalan_keppres_jabatan_lainnya],
-            ['status', Helper::$pengajuan_usulan]
-        ])->count();
-
-        if($count_pembatalan_keppres_jabatan_lainnya == 0){
-            $pembatalan_keppres_jabatan_lainnya = '0';
-        } else{
-            $pembatalan_keppres_jabatan_lainnya = $count_pembatalan_keppres_jabatan_lainnya;
-        }
-
     //persetujuan pengangkatan staf khusus
         $count_persetujuan_pengangkatan_staf_khusus = PengangkatanPemberhentianLainnya::where([
             ['jenis_layanan', Helper::$persetujuan_pengangkatan_staf_khusus],
@@ -198,6 +150,18 @@ class HomeController extends Controller
             $persetujuan_pengangkatan_staf_khusus = '0';
         } else{
             $persetujuan_pengangkatan_staf_khusus = $count_persetujuan_pengangkatan_staf_khusus;
+        }
+    
+    //laporan pemberhentian
+        $count_laporan_pemberhentian = PengangkatanPemberhentianLainnya::where([
+            ['jenis_layanan', Helper::$laporan_pemberhentian],
+            ['status', Helper::$pengajuan_usulan]
+        ])->count();
+
+        if($count_laporan_pemberhentian == 0){
+            $laporan_pemberhentian = '0';
+        } else{
+            $laporan_pemberhentian = $count_laporan_pemberhentian;
         }
 
     //pemberian kenaikan pangkat

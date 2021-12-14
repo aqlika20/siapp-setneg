@@ -44,7 +44,7 @@
                                                 <label class="col-form-label col-lg-3 col-sm-12">Tanggal Surat usulan <a style="color: #FF0000;">*</a></label>
                                                 <div class="col-lg-5 col-md-9 col-sm-12">
                                                     <div class="input-group date">
-                                                        <input type="text" class="form-control datetimepicker-input my-datepicker" id="tanggal_surat_usulan" name="tanggal_surat_usulan" data-toggle="datetimepicker" data-target="#tanggal_surat_usulan" placeholder="Pilih Tanggal" value="{{old('tanggal_surat_usulan')}}" />
+                                                        <input type="text" class="form-control datetimepicker-input my-datepicker" id="tanggal_surat_usulan" name="tanggal_surat_usulan" data-toggle="datetimepicker" data-target="#tanggal_surat_usulan" placeholder="Pilih Tanggal" value="{{old('tanggal_surat_usulan')}}"/>
                                                         <div class="input-group-append">
                                                             <span class="input-group-text">
                                                                 <i class="la la-calendar"></i>
@@ -77,7 +77,7 @@
                                                 <label class="col-form-label col-lg-3 col-sm-12">Periode Kenaikan Pangkat <a style="color: #FF0000;">*</a></label>
                                                 <div class="col-lg-2 col-md-9 col-sm-12">
                                                     <div class="input-group date">
-                                                        <select class="form-control" style="width: 230px;" id="masa_periode_start" name="masa_periode_start" onchange="myFunction(event)">
+                                                        <select class="form-control select2" style="width: 230px;" id="masa_periode_start" name="masa_periode_start" onchange="myFunction(event)">
                                                             <option value="" disabled selected>Choose</option>
                                                                 <option value="April" @if (old("masa_periode_start") == "April") selected="selected" @endif>April</option>
                                                                 <option value="Oktober" @if (old("masa_periode_start") == "Oktober") selected="selected" @endif>Oktober</option>
@@ -916,10 +916,6 @@
             })
 
             $('.select2').select2({
-                placeholder: "Choose..."
-            })
-
-            $('#masa_periode_start').select2({
                 placeholder: "Choose..."
             })
 

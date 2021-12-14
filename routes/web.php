@@ -704,6 +704,32 @@ Route::group(['middleware' => ['auth', 'checkRole: 9']], function() {
                 Route::post('/create', 'BackWeb\JF_Ahli\TextEditorNSPertekController@store')->name('jf-ahli.inbox.text-editor.ns.store');
             });
 
+            Route::prefix('/lsn')->group(function(){
+                Route::get('/', 'BackWeb\JF_Ahli\LNSController@index')->name('jf-ahli.inbox.lns.index');
+                Route::prefix('/form')->group(function(){
+
+                    Route::get('/pengangkatan-pejabat-ns', 'BackWeb\JF_Ahli\PengangkatanPejabatNonStrukturalController@index')->name('jf-ahli.inbox.pengangkatan-pejabat-ns.index');
+                    Route::patch('/pengangkatan-pejabat-ns/add', 'BackWeb\JF_Ahli\PengangkatanPejabatNonStrukturalController@store')->name('jf-ahli.inbox.pengangkatan-pejabat-ns.store');
+
+                    Route::get('/pemberhentian-pejabat-ns', 'BackWeb\JF_Ahli\PemberhentianPejabatNonStrukturalController@index')->name('jf-ahli.inbox.pemberhentian-pejabat-ns.index');
+                    Route::patch('/pemberhentian-pejabat-ns/add', 'BackWeb\JF_Ahli\PemberhentianPejabatNonStrukturalController@store')->name('jf-ahli.inbox.pemberhentian-pejabat-ns.store');
+
+                    Route::get('/ralat-keppres-jabatan-ns', 'BackWeb\JF_Ahli\RalatKeppresJabatanNonStrukturalController@index')->name('jf-ahli.inbox.ralat-keppres-jabatan-ns.index');
+                    Route::patch('/ralat-keppres-jabatan-ns/add', 'BackWeb\JF_Ahli\RalatKeppresJabatanNonStrukturalController@store')->name('jf-ahli.inbox.ralat-keppres-jabatan-ns.store');
+
+                    Route::get('/pembatalan-keppres-jabatan-ns', 'BackWeb\JF_Ahli\PembatalanKeppresJabatanNonStrukturalController@index')->name('jf-ahli.inbox.pembatalan-keppres-jabatan-ns.index');
+                    Route::patch('/pembatalan-keppres-jabatan-ns/add', 'BackWeb\JF_Ahli\PembatalanKeppresJabatanNonStrukturalController@store')->name('jf-ahli.inbox.pembatalan-keppres-jabatan-ns.store');
+
+
+                    
+                    Route::get('/persetujuan-pengangkatan-staf-khusus', 'BackWeb\JF_Ahli\PersetujuanPengangkatanStafKhususController@index')->name('jf-ahli.inbox.persetujuan-pengangkatan-staf-khusus.index');
+                    Route::patch('/persetujuan-pengangkatan-staf-khusus/add', 'BackWeb\JF_Ahli\PersetujuanPengangkatanStafKhususController@store')->name('jf-ahli.inbox.persetujuan-pengangkatan-staf-khusus.store');
+                    
+                    Route::get('/laporan-pemberhentian', 'BackWeb\JF_Ahli\LaporanPemberhentianController@index')->name('jf-ahli.inbox.laporan-pemberhentian.index');
+                    Route::patch('/laporan-pemberhentian/add', 'BackWeb\JF_Ahli\LaporanPemberhentianController@store')->name('jf-ahli.inbox.laporan-pemberhentian.store');
+                });
+            });
+
         });
         
         Route::get('/atur_dokument', 'BackWeb\JF_Ahli\AturDokumentController@index')->name('jf-ahli.atur-dokument.index');

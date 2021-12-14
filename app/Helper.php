@@ -22,11 +22,8 @@ class Helper {
     public static $ralat_keppres_jabatan_NS = 8;                        // Ralat Keppres Jabatan Non Struktural
     public static $pembatalan_keppres_jabatan_NS = 9;                   // Pembatalan Keppres Jabatan Non Struktural
 
-    public static $pengangkatan_pejabat_lainnya = 10;                   // Pengangkatan Pejabat Lainnya
-    public static $pemberhentian_pejabat_lainnya = 11;                  // Pemberhentian Pejabat Lainnya
-    public static $ralat_keppres_jabatan_lainnya = 12;                  // Ralat Keppres Jabatan Lainnya
-    public static $pembatalan_keppres_jabatan_lainnya = 13;             // Pembatalan Keppres Jabatan Lainnya
-    public static $persetujuan_pengangkatan_staf_khusus = 14;           // Persetujuan pengangkatan Staf Khusus Menteri/Kepala Lembaga
+    public static $persetujuan_pengangkatan_staf_khusus = 13;           // Persetujuan pengangkatan Staf Khusus Menteri/Kepala Lembaga
+    public static $laporan_pemberhentian = 14;                          // Laporan Pemberhentian
     
     public static $pemberian_kenaikan_pangkat = 15;                     // Pemberian Kenaikan Pangkat
     public static $pembatalan_keppres_kenaikan_pangkat = 16;            // Pembatalan Keppres Kenaikan Pangkat
@@ -86,25 +83,13 @@ class Helper {
             case '9':
                 $jenis_layanan = 'Pembatalan Keppres Jabatan Non Struktural';
                 break;
-
-            case '10':
-                $jenis_layanan = 'Pengangkatan Pejabat Lainnya';
-                break;
-
-            case '11':
-                $jenis_layanan = 'Pemberhentian Pejabat Lainnya';
-                break;
-            
-            case '12':
-                $jenis_layanan = 'Ralat Keppres Jabatan Lainnya';
-                break;
-
+                
             case '13':
-                $jenis_layanan = 'Pembatalan Keppres Jabatan Lainnya';
+                $jenis_layanan = 'Persetujuan pengangkatan Staf Khusus Menteri/Kepala Lembaga';
                 break;
 
             case '14':
-                $jenis_layanan = 'Persetujuan pengangkatan Staf Khusus Menteri/Kepala Lembaga';
+                $jenis_layanan = 'Laporan Pemberhentian';
                 break;
 
             case '15':

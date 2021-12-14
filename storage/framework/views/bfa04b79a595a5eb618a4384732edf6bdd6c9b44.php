@@ -556,6 +556,9 @@
                             <li class="menu-item  menu-item-parent" aria-haspopup="true">
                                 <span class="menu-link"><span class="menu-text">Inbox</span></span>
                             </li>
+                            <li class="menu-item <?php echo e((strpos($page_title, 'KemenSetneg | Inbox | Modul Kontrol LNS') !== false) ? 'menu-item-active' : ''); ?>" aria-haspopup="true">
+                                <a href="<?php echo e(route('jf-ahli.inbox.lns.index')); ?>" class="menu-link "><i class="menu-bullet menu-bullet-line"><span></span></i><span class="menu-text">Modul Kontrol LNS</span></a>
+                            </li>
                             <li class="menu-item <?php echo e((strpos($page_title, 'KemenSetneg | Inbox | Usulan') !== false) ? 'menu-item-active' : ''); ?>" aria-haspopup="true">
                                 <a href="<?php echo e(route('jf-ahli.inbox.usulan')); ?>" class="menu-link "><i class="menu-bullet menu-bullet-line"><span></span></i><span class="menu-text">Usulan</span></a>
                             </li>

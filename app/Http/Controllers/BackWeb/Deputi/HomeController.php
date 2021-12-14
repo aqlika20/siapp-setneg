@@ -140,54 +140,6 @@ class HomeController extends Controller
             $pembatalan_keppres_ns = $count_pembatalan_keppres_ns;
         }
 
-    //pengangkatan pejabat lainnya
-        $count_pengangkatan_pejabat_lainnya = PengangkatanPemberhentianLainnya::where([
-            ['jenis_layanan', Helper::$pengangkatan_pejabat_lainnya],
-            ['status', Helper::$pengajuan_usulan]
-        ])->count();
-
-        if($count_pengangkatan_pejabat_lainnya == 0){
-            $pengangkatan_pejabat_lainnya = '0';
-        } else{
-            $pengangkatan_pejabat_lainnya = $count_pengangkatan_pejabat_lainnya;
-        }
-
-    //pemberhentian pejabat lainnya
-        $count_pemberhentian_pejabat_lainnya = PengangkatanPemberhentianLainnya::where([
-            ['jenis_layanan', Helper::$pemberhentian_pejabat_lainnya],
-            ['status', Helper::$pengajuan_usulan]
-        ])->count();
-
-        if($count_pemberhentian_pejabat_lainnya == 0){
-            $pemberhentian_pejabat_lainnya = '0';
-        } else{
-            $pemberhentian_pejabat_lainnya = $count_pemberhentian_pejabat_lainnya;
-        }
-
-    //ralat keppres jabatan lainnya
-        $count_ralat_keppres_jabatan_lainnya = PengangkatanPemberhentianLainnya::where([
-            ['jenis_layanan', Helper::$ralat_keppres_jabatan_lainnya],
-            ['status', Helper::$pengajuan_usulan]
-        ])->count();
-
-        if($count_ralat_keppres_jabatan_lainnya == 0){
-            $ralat_keppres_jabatan_lainnya = '0';
-        } else{
-            $ralat_keppres_jabatan_lainnya = $count_ralat_keppres_jabatan_lainnya;
-        }
-
-    //pembatalan keppres jabatan lainnya
-        $count_pembatalan_keppres_jabatan_lainnya = PengangkatanPemberhentianLainnya::where([
-            ['jenis_layanan', Helper::$pembatalan_keppres_jabatan_lainnya],
-            ['status', Helper::$pengajuan_usulan]
-        ])->count();
-
-        if($count_pembatalan_keppres_jabatan_lainnya == 0){
-            $pembatalan_keppres_jabatan_lainnya = '0';
-        } else{
-            $pembatalan_keppres_jabatan_lainnya = $count_pembatalan_keppres_jabatan_lainnya;
-        }
-
     //persetujuan pengangkatan staf khusus
         $count_persetujuan_pengangkatan_staf_khusus = PengangkatanPemberhentianLainnya::where([
             ['jenis_layanan', Helper::$persetujuan_pengangkatan_staf_khusus],
@@ -198,6 +150,18 @@ class HomeController extends Controller
             $persetujuan_pengangkatan_staf_khusus = '0';
         } else{
             $persetujuan_pengangkatan_staf_khusus = $count_persetujuan_pengangkatan_staf_khusus;
+        }
+
+    //laporan pemberhentian
+        $count_laporan_pemberhentian = PengangkatanPemberhentianLainnya::where([
+            ['jenis_layanan', Helper::$laporan_pemberhentian],
+            ['status', Helper::$pengajuan_usulan]
+        ])->count();
+
+        if($count_laporan_pemberhentian == 0){
+            $laporan_pemberhentian = '0';
+        } else{
+            $laporan_pemberhentian = $count_laporan_pemberhentian;
         }
 
     //pemberian kenaikan pangkat
@@ -407,7 +371,7 @@ class HomeController extends Controller
         // $json_chart = json_encode($chart);
         // var_dump($json_chart);
 
-        return view('pages.deputi.home', compact('page_title', 'page_description', 'currentUser', 'pengangkatan_jfku', 'pemberhentian_jfku', 'perpindahan_jfku', 'ralat_keppres_jfku', 'pembatalan_keppres_jfku', 'pengangkatan_ns', 'pemberhentian_ns', 'ralat_keppres_ns', 'pembatalan_keppres_ns', 'pengangkatan_pejabat_lainnya', 'pemberhentian_pejabat_lainnya', 'ralat_keppres_jabatan_lainnya', 'pembatalan_keppres_jabatan_lainnya', 'persetujuan_pengangkatan_staf_khusus', 'pemberian_kenaikan_pangkat', 'pembatalan_keppres_kenaikan_pangkat', 'pengesahan_kenaikan_pangkat', 'ralat_keppres_kepangkatan', 'bup_non_kpp', 'bup_kpp', 'berhenti_atas_permintaan_sendiri', 'non_bup_JDA_non_kpp', 'non_bup_JDA_kpp', 'berhenti_tidak_hormat', 'anumerta', 'pemberhentian_sementara', 'ralat_keppres_pemberhentian', 'pembatalan_keppress_pemberhentian', 'petikan_keppres_hilang'));
+        return view('pages.deputi.home', compact('page_title', 'page_description', 'currentUser', 'pengangkatan_jfku', 'pemberhentian_jfku', 'perpindahan_jfku', 'ralat_keppres_jfku', 'pembatalan_keppres_jfku', 'pengangkatan_ns', 'pemberhentian_ns', 'ralat_keppres_ns', 'pembatalan_keppres_ns', 'persetujuan_pengangkatan_staf_khusus', 'laporan_pemberhentian', 'pemberian_kenaikan_pangkat', 'pembatalan_keppres_kenaikan_pangkat', 'pengesahan_kenaikan_pangkat', 'ralat_keppres_kepangkatan', 'bup_non_kpp', 'bup_kpp', 'berhenti_atas_permintaan_sendiri', 'non_bup_JDA_non_kpp', 'non_bup_JDA_kpp', 'berhenti_tidak_hormat', 'anumerta', 'pemberhentian_sementara', 'ralat_keppres_pemberhentian', 'pembatalan_keppress_pemberhentian', 'petikan_keppres_hilang'));
         // return view('pages.pic.home', ['chart' => $chart], compact('page_title', 'page_description', 'currentUser', 'pengangkatan'));
     }
 }

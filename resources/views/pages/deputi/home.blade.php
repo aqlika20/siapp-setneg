@@ -203,70 +203,6 @@
 												</div>
                                                 <div class="tab-pane fade" id="kt_tab_pane_5_3" role="tabpanel" aria-labelledby="kt_tab_pane_5_3">
 													<div class="timeline timeline-6 mt-3">
-														<!--begin::Item-->
-														<div class="timeline-item align-items-start">
-															<!--begin::Label-->
-															<div class="timeline-label font-weight-bolder text-dark-75 font-size-xs">{{$pengangkatan_pejabat_lainnya}}</div>
-															<!--end::Label-->
-															<!--begin::Badge-->
-															<div class="timeline-badge">
-																<i class="fa fa-genderless text-warning icon-lg"></i>
-															</div>
-															<!--end::Badge-->
-															<!--begin::Text-->
-															<div class="font-weight-mormal font-size-lg timeline-content text-muted pl-3">Pengangkatan Pejabat Lainnya</div>
-															<!--end::Text-->
-														</div>
-														<!--end::Item-->
-														<!--begin::Item-->
-														<div class="timeline-item align-items-start">
-															<!--begin::Label-->
-															<div class="timeline-label font-weight-bolder text-dark-75 font-size-lg">{{$pemberhentian_pejabat_lainnya}}</div>
-															<!--end::Label-->
-															<!--begin::Badge-->
-															<div class="timeline-badge">
-																<i class="fa fa-genderless text-success icon-lg"></i>
-															</div>
-															<!--end::Badge-->
-															<!--begin::Content-->
-															<div class="timeline-content d-flex">
-																<span class="font-weight-mormal font-size-lg timeline-content text-muted pl-3">Pemberhentian Pejabat Lainnya</span>
-															</div>
-															<!--end::Content-->
-														</div>
-														<!--end::Item-->
-														<!--begin::Item-->
-														<div class="timeline-item align-items-start">
-															<!--begin::Label-->
-															<div class="timeline-label font-weight-bolder text-dark-75 font-size-lg">{{$ralat_keppres_jabatan_lainnya}}</div>
-															<!--end::Label-->
-															<!--begin::Badge-->
-															<div class="timeline-badge">
-																<i class="fa fa-genderless text-primary icon-lg"></i>
-															</div>
-															<!--end::Badge-->
-															<!--begin::Desc-->
-															<div class="font-weight-mormal font-size-lg timeline-content text-muted pl-3">Ralat Keppres Jabatan Lainnya</div>
-															<!--end::Desc-->
-														</div>
-														<!--end::Item-->
-														<!--begin::Item-->
-														
-														<!--end::Item-->
-														<!--begin::Item-->
-														<div class="timeline-item align-items-start">
-															<!--begin::Label-->
-															<div class="timeline-label font-weight-bolder text-dark-75 font-size-xs">{{$pembatalan_keppres_jabatan_lainnya}}</div>
-															<!--end::Label-->
-															<!--begin::Badge-->
-															<div class="timeline-badge">
-																<i class="fa fa-genderless text-danger icon-lg"></i>
-															</div>
-															<!--end::Badge-->
-															<!--begin::Desc-->
-															<div class="font-weight-mormal font-size-lg timeline-content text-muted pl-3">Pembatalan Keppres Jabatan Lainnya</div>
-															<!--end::Desc-->
-														</div>
 														<div class="timeline-item align-items-start">
 															<!--begin::Label-->
 															<div class="timeline-label font-weight-bolder text-dark-75 font-size-xs">{{$persetujuan_pengangkatan_staf_khusus}}</div>
@@ -278,6 +214,20 @@
 															<!--end::Badge-->
 															<!--begin::Desc-->
 															<div class="font-weight-mormal font-size-lg timeline-content text-muted pl-3">Persetujuan pengangkatan Staf Khusus Menteri/Kepala Lembaga (Produk Surat Dinas)</div>
+															<!--end::Desc-->
+														</div>
+
+														<div class="timeline-item align-items-start">
+															<!--begin::Label-->
+															<div class="timeline-label font-weight-bolder text-dark-75 font-size-xs">{{$laporan_pemberhentian}}</div>
+															<!--end::Label-->
+															<!--begin::Badge-->
+															<div class="timeline-badge">
+																<i class="fa fa-genderless text-info icon-lg"></i>
+															</div>
+															<!--end::Badge-->
+															<!--begin::Desc-->
+															<div class="font-weight-mormal font-size-lg timeline-content text-muted pl-3">Laporan Pemberhentian</div>
 															<!--end::Desc-->
 														</div>
 															

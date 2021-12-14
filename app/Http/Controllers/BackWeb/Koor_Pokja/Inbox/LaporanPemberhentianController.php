@@ -100,7 +100,7 @@ class LaporanPemberhentianController extends Controller
             'nama_staff_khusus' => $input['nama_staff_khusus'],
             
             'id_pengirim' => $id_pengirim->nip,
-            'jenis_layanan' => Helper::$persetujuan_pengangkatan_staf_khusus,
+            'jenis_layanan' => Helper::$laporan_pemberhentian,
             'status' => Helper::$pengajuan_usulan
             
         ]);
