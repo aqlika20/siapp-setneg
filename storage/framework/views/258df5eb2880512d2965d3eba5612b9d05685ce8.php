@@ -1,7 +1,6 @@
 <?php $__env->startSection('content'); ?>
-							<!--begin::Card-->
 							<div class="row">
-								<div class="col-lg-4">
+								<div class="col-lg-6">
 									<div class="card card-custom card-stretch gutter-b">
 										<div class="card-body pt-4">
                                             <div style="margin-bottom: 0px;">
@@ -101,41 +100,20 @@
                                                 <div class="tab-pane fade" id="kt_tab_pane_5_3" role="tabpanel" aria-labelledby="kt_tab_pane_5_3">
 													<div class="timeline timeline-6 mt-3">
 														<div class="timeline-item align-items-start">
-															<div class="timeline-label font-weight-bolder text-dark-75 font-size-xs"><?php echo e($pengangkatan_pejabat_lainnya); ?></div>
+															<div class="timeline-label font-weight-bolder text-dark-75 font-size-xs"><?php echo e($persetujuan_pengangkatan_staf_khusus); ?></div>
 															<div class="timeline-badge">
 																<i class="fa fa-genderless text-warning icon-lg"></i>
 															</div>
 															<div class="font-weight-mormal font-size-lg timeline-content text-muted pl-3">Persetujuan pengangkatan Staf Khusus Menteri/Kepala Lembaga</div>
 														</div>
 														<div class="timeline-item align-items-start">
-															<div class="timeline-label font-weight-bolder text-dark-75 font-size-lg"><?php echo e($pemberhentian_pejabat_lainnya); ?></div>
+															<div class="timeline-label font-weight-bolder text-dark-75 font-size-lg"><?php echo e($laporan_pemberhentian); ?></div>
 															<div class="timeline-badge">
 																<i class="fa fa-genderless text-success icon-lg"></i>
 															</div>
 															<div class="timeline-content d-flex">
 																<span class="font-weight-mormal font-size-lg timeline-content text-muted pl-3">Laporan Pemberhentian</span>
 															</div>
-														</div>
-														<div class="timeline-item align-items-start">
-															<div class="timeline-label font-weight-bolder text-dark-75 font-size-lg"><?php echo e($ralat_keppres_jabatan_lainnya); ?></div>
-															<div class="timeline-badge">
-																<i class="fa fa-genderless text-primary icon-lg"></i>
-															</div>
-															<div class="font-weight-mormal font-size-lg timeline-content text-muted pl-3">Ralat Keppres Jabatan Lainnya</div>
-														</div>
-														<div class="timeline-item align-items-start">
-															<div class="timeline-label font-weight-bolder text-dark-75 font-size-xs"><?php echo e($pembatalan_keppres_jabatan_lainnya); ?></div>
-															<div class="timeline-badge">
-																<i class="fa fa-genderless text-danger icon-lg"></i>
-															</div>
-															<div class="font-weight-mormal font-size-lg timeline-content text-muted pl-3">Pembatalan Keppres Jabatan Lainnya</div>
-														</div>
-														<div class="timeline-item align-items-start">
-															<div class="timeline-label font-weight-bolder text-dark-75 font-size-xs"><?php echo e($persetujuan_pengangkatan_staf_khusus); ?></div>
-															<div class="timeline-badge">
-																<i class="fa fa-genderless text-info icon-lg"></i>
-															</div>
-															<div class="font-weight-mormal font-size-lg timeline-content text-muted pl-3">Persetujuan pengangkatan Staf Khusus Menteri/Kepala Lembaga (Produk Surat Dinas)</div>
 														</div>
 													</div>
 												</div>

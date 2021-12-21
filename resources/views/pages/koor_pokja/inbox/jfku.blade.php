@@ -78,7 +78,7 @@
                                                             <!-- <td>{{ Helper::convertDate($pengangkatan->created_at)  }}</td>
                                                             <td><div style="color: #FFA800;">{{ Helper::defineJenisLayananBy($pengangkatan->jenis_layanan) }}</div></td>
                                                             <td>{{ Helper::defineStatusBy($pengangkatan->status) }}</td> -->
-                                                            <td>{{ $pengangkatan->tanggal_surat_usulan }}</td>
+                                                            <td>{{ Helper::converttanggal($pengangkatan->tanggal_surat_usulan) }}</td>
                                                             <td>{{ $pengangkatan->no_surat_usulan }}</td>
                                                             <td>{{ $pengangkatan->instansi_pengusul }}</td>
                                                             <td><div style="color: #FFA800;">{{ Helper::defineJenisLayananBy($pengangkatan->jenis_layanan) }}</div></td>
@@ -130,17 +130,17 @@
                                             <tbody>
                                                 @foreach($jfku_verifikasis as $pengangkatan)
                                                     <tr>
-                                                        <td>{{ $pengangkatan->tanggal_surat_usulan }}</td>
+                                                        <td>{{ Helper::converttanggal($pengangkatan->tanggal_surat_usulan) }}</td>
                                                         <td>{{ $pengangkatan->no_surat_usulan }}</td>
                                                         <td>{{ $pengangkatan->instansi_pengusul }}</td>
                                                         <td><div style="color: #FFA800;">{{ Helper::defineJenisLayananBy($pengangkatan->jenis_layanan) }}</div></td>
                                                         <td><div style="color: #3699FF;">{{ $pengangkatan->nip }}</div></td>
                                                         <td>{{ $pengangkatan->nama }}</td>
                                                     </tr>
-                                                @endforeach
+                                                @endforeach 
                                                 @foreach($ns_verifikasis as $ns)
                                                     <tr>
-                                                        <td>{{ $ns->tanggal_surat_usulan }}</td>
+                                                        <td>{{ Helper::converttanggal($ns->tanggal_surat_usulan) }}</td>
                                                         <td>{{ $ns->no_surat_usulan }}</td>
                                                         <td>{{ $ns->instansi_pengusul }}</td>
                                                         <td><div style="color: #FFA800;">{{ Helper::defineJenisLayananBy($ns->jenis_layanan) }}</div></td>
@@ -150,7 +150,7 @@
                                                 @endforeach
                                                 @foreach($lainnyas as $lainnya)
                                                     <tr>
-                                                        <td>{{ $lainnya->tanggal_surat_usulan }}</td>
+                                                        <td>{{ Helper::converttanggal($lainnya->tanggal_surat_usulan) }}</td>
                                                         <td>{{ $lainnya->no_surat_usulan }}</td>
                                                         <td>{{ $lainnya->instansi_pengusul }}</td>
                                                         <td><div style="color: #FFA800;">{{ Helper::defineJenisLayananBy($lainnya->jenis_layanan) }}</div></td>
@@ -200,7 +200,7 @@
                                             <tbody>
                                                 @foreach($jfku_pendings as $jfku_pending)
                                                     <tr>
-                                                        <td>{{ $jfku_pending->tanggal_surat_usulan }}</td>
+                                                        <td>{{ Helper::converttanggal($jfku_pending->tanggal_surat_usulan) }}</td>
                                                         <td>{{ $jfku_pending->no_surat_usulan }}</td>
                                                         <td>{{ $jfku_pending->instansi_pengusul }}</td>
                                                         <td><div style="color: #FFA800;">{{ Helper::defineJenisLayananBy($jfku_pending->jenis_layanan) }}</div></td>
@@ -215,7 +215,7 @@
                                                 @endforeach
                                                 @foreach($ns_verifikasis as $ns_verifikasi)
                                                     <tr>
-                                                        <td>{{ $ns_verifikasi->tanggal_surat_usulan }}</td>
+                                                        <td>{{ Helper::converttanggal($ns_verifikasi->tanggal_surat_usulan) }}</td>
                                                         <td>{{ $ns_verifikasi->no_surat_usulan }}</td>
                                                         <td>{{ $ns_verifikasi->instansi_pengusul }}</td>
                                                         <td><div style="color: #FFA800;">{{ Helper::defineJenisLayananBy($ns_verifikasi->jenis_layanan) }}</div></td>
@@ -230,7 +230,7 @@
                                                 @endforeach
                                                 @foreach($lainnya_verifikasis as $lainnya_verifikasi)
                                                     <tr>
-                                                        <td>{{ $lainnya_verifikasi->tanggal_surat_usulan }}</td>
+                                                        <td>{{ Helper::converttanggal($lainnya_verifikasi->tanggal_surat_usulan) }}</td>
                                                         <td>{{ $lainnya_verifikasi->no_surat_usulan }}</td>
                                                         <td>{{ $lainnya_verifikasi->instansi_pengusul }}</td>
                                                         <td><div style="color: #FFA800;">{{ Helper::defineJenisLayananBy($lainnya_verifikasi->jenis_layanan) }}</div></td>
@@ -284,7 +284,7 @@
                                             <tbody>
                                                 @foreach($jfku_tolaks as $jfku_tolak)
                                                     <tr>
-                                                        <td>{{ $jfku_tolak->tanggal_surat_usulan }}</td>
+                                                        <td>{{ Helper::converttanggal($jfku_tolak->tanggal_surat_usulan) }}</td>
                                                         <td>{{ $jfku_tolak->no_surat_usulan }}</td>
                                                         <td>{{ $jfku_tolak->instansi_pengusul }}</td>
                                                         <td><div style="color: #FFA800;">{{ Helper::defineJenisLayananBy($jfku_tolak->jenis_layanan) }}</div></td>
@@ -300,7 +300,7 @@
                                                 @endforeach
                                                 @foreach($ns_tolaks as $ns_tolak)
                                                     <tr>
-                                                        <td>{{ $ns_tolak->tanggal_surat_usulan }}</td>
+                                                        <td>{{ Helper::converttanggal($ns_tolak->tanggal_surat_usulan) }}</td>
                                                         <td>{{ $ns_tolak->no_surat_usulan }}</td>
                                                         <td>{{ $ns_tolak->instansi_pengusul }}</td>
                                                         <td><div style="color: #FFA800;">{{ Helper::defineJenisLayananBy($ns_tolak->jenis_layanan) }}</div></td>
@@ -316,7 +316,7 @@
                                                 @endforeach
                                                 @foreach($lainnya_tolaks as $lainnya_tolak)
                                                     <tr>
-                                                        <td>{{ $lainnya_tolak->tanggal_surat_usulan }}</td>
+                                                        <td>{{ Helper::converttanggal($lainnya_tolak->tanggal_surat_usulan) }}</td>
                                                         <td>{{ $lainnya_tolak->no_surat_usulan }}</td>
                                                         <td>{{ $lainnya_tolak->instansi_pengusul }}</td>
                                                         <td><div style="color: #FFA800;">{{ Helper::defineJenisLayananBy($lainnya_tolak->jenis_layanan) }}</div></td>

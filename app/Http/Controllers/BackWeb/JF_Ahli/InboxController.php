@@ -411,7 +411,10 @@ class InboxController extends Controller
 		$newfile = $input['v_file_name'];
 		$nip = $input['v_nip'];
 		$pengirim = $input['v_pengirim'];
-		
+        
+        // $currentUser = UserManagement::find(Auth::id());
+        // dd($currentUser->name);
+
         if($jenis_layanan == Helper::$pengangkatan_pejabat_FKU || $jenis_layanan == Helper::$pemberhentian_pejabat_FKU || $jenis_layanan == Helper::$perpindahan_pejabat_FKU || $jenis_layanan == Helper::$ralat_keppres_jabatan_FKU || $jenis_layanan == Helper::$pembatalan_keppres_jabatan_FKU)
         {
             $pengangkatans = PengangkatanPemberhentianJFKU::where('id', '=', $id)->update(

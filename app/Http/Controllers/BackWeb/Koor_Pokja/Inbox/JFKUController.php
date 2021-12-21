@@ -501,6 +501,16 @@ class JFKUController extends Controller
                 'nama_verifikator' => $nama_verifikator,
                 'tanggal_prosess_penolakan' => Helper::convertDatetoDB($date)
             ]);
+
+            $surat_tolaks = Surat::create([
+                'description' => $newfile,
+				'id_usulan' => $id,
+				'id_layanan' => $jenis_layanan,
+				'nip' => $nip,
+				'id_pengirim' => $pengirim,
+				'status' => Helper::$tolak_pokja
+
+            ]);
             return redirect()->route("koor-pokja.inbox.jfku.index")->with(['success'=>'ditolak Success !!!']);
         } 
         elseif($jenis_layanan == Helper::$pengangkatan_pejabat_NS || $jenis_layanan == Helper::$pemberhentian_pejabat_NS || $jenis_layanan == Helper::$ralat_keppres_jabatan_NS || $jenis_layanan == Helper::$pembatalan_keppres_jabatan_NS )
@@ -517,6 +527,16 @@ class JFKUController extends Controller
                 'nama_verifikator' => $nama_verifikator,
                 'tanggal_prosess_penolakan' => Helper::convertDatetoDB($date)
             ]);
+
+            $surat_tolaks = Surat::create([
+                'description' => $newfile,
+				'id_usulan' => $id,
+				'id_layanan' => $jenis_layanan,
+				'nip' => $nip,
+				'id_pengirim' => $pengirim,
+				'status' => Helper::$tolak_pokja
+
+            ]);
             return redirect()->route("koor-pokja.inbox.jfku.index")->with(['success'=>'ditolak Success !!!']);
         }
         elseif($jenis_layanan == Helper::$pengangkatan_pejabat_lainnya || $jenis_layanan == Helper::$pemberhentian_pejabat_lainnya || $jenis_layanan == Helper::$ralat_keppres_jabatan_lainnya || $jenis_layanan == Helper::$pembatalan_keppres_jabatan_lainnya || $jenis_layanan == Helper::$persetujuan_pengangkatan_staf_khusus )
@@ -532,6 +552,16 @@ class JFKUController extends Controller
                 'id_verifikator' => $id_verifikator,
                 'nama_verifikator' => $nama_verifikator,
                 'tanggal_prosess_penolakan' => Helper::convertDatetoDB($date)
+            ]);
+
+            $surat_tolaks = Surat::create([
+                'description' => $newfile,
+				'id_usulan' => $id,
+				'id_layanan' => $jenis_layanan,
+				'nip' => $nip,
+				'id_pengirim' => $pengirim,
+				'status' => Helper::$tolak_pokja
+
             ]);
             return redirect()->route("koor-pokja.inbox.jfku.index")->with(['success'=>'ditolak Success !!!']);
         } 

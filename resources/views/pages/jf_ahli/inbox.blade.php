@@ -549,7 +549,7 @@
                                             <tbody>
                                                 @foreach($pengangkatans as $pengangkatan)
                                                     <tr>
-                                                        <td>{{ $pengangkatan->tanggal_surat_usulan }}</td>
+                                                        <td>{{ Helper::converttanggal($pengangkatan->tanggal_surat_usulan) }}</td>
                                                         <td>{{ $pengangkatan->no_surat_usulan }}</td>
                                                         <td>{{ $pengangkatan->instansi_pengusul }}</td>
                                                         <td><div style="color: #FFA800;">{{ Helper::defineJenisLayananBy($pengangkatan->jenis_layanan) }}</div></td>
