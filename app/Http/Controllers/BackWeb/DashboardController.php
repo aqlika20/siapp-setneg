@@ -38,18 +38,49 @@ class DashboardController extends Controller
             return redirect()->route('koor-pokja-pensiun.home.index');
         }
 
+        // JF Ahli Muda KP
         if ($currentUser->roles_id == 10) {
             return redirect()->route('jf-ahli-kp.home.index');
         }
         
-        // JF Ahli P4
+        // JF Ahli Muda P4
         if ($currentUser->roles_id == 9) {
             return redirect()->route('jf-ahli.home.index');
         }
         
-        // JF Ahli Pensiun
+        // JF Ahli Muda Pensiun
         if ($currentUser->roles_id == 11) {
             return redirect()->route('jf-ahli-pensiun.home.index');
+        }
+
+        // JF Ahli Pertama KP
+        if ($currentUser->roles_id == 16) {
+            return redirect()->route('jf-ahli-pertama-kp.home.index');
+        }
+        
+        // JF Ahli Pertama P4
+        if ($currentUser->roles_id == 15) {
+            return redirect()->route('jf-ahli-pertama-p4.home.index');
+        }
+        
+        // JF Ahli Pertama Pensiun
+        if ($currentUser->roles_id == 17) {
+            return redirect()->route('jf-ahli-pertama-pensiun.home.index');
+        }
+
+        // JF Ahli Terampil KP
+        if ($currentUser->roles_id == 19) {
+            return redirect()->route('jf-ahli-terampil-kp.home.index');
+        }
+        
+        // JF Ahli Terampil P4
+        if ($currentUser->roles_id == 18) {
+            return redirect()->route('jf-ahli-terampil-p4.home.index');
+        }
+        
+        // JF Ahli Terampil Pensiun
+        if ($currentUser->roles_id == 20) {
+            return redirect()->route('jf-ahli-terampil-pensiun.home.index');
         }
 
         // Karo

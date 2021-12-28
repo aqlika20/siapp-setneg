@@ -290,10 +290,9 @@
                                                         <td><div style="color: #FFA800;">{{ Helper::defineJenisLayananBy($jfku_tolak->jenis_layanan) }}</div></td>
                                                         <td><div style="color: #3699FF;">{{ $jfku_tolak->nip }}</div></td>
                                                         <td>{{ $jfku_tolak->nama }}</td>
-                                                        <td>{{ $jfku_tolak->jabatan_fungsional }}</td>
                                                         <td>
-                                                            <a href="persetujuan.html" type="button" class="btn btn-light-danger btn-sm">
-                                                                Kembalikan
+                                                            <a href="{{route('koor-pokja.inbox.detail-surat-pengembalian-tolak.index', ['id' => $jfku_tolak->id])}}" type="button" class="btn btn-light-danger btn-sm">
+                                                                Tolak
                                                             </a>
                                                         </td>
                                                     </tr>
@@ -306,10 +305,9 @@
                                                         <td><div style="color: #FFA800;">{{ Helper::defineJenisLayananBy($ns_tolak->jenis_layanan) }}</div></td>
                                                         <td><div style="color: #3699FF;">{{ $ns_tolak->nip }}</div></td>
                                                         <td>{{ $ns_tolak->nama }}</td>
-                                                        <td>{{ $ns_tolak->jabatan_fungsional }}</td>
                                                         <td>
-                                                            <a href="persetujuan.html" type="button" class="btn btn-light-danger btn-sm">
-                                                                Kembalikan
+                                                            <a href="{{route('koor-pokja.inbox.detail-surat-pengembalian-tolak.index', ['id' => $ns_tolak->id])}}" type="button" class="btn btn-light-danger btn-sm">
+                                                                Tolak
                                                             </a>
                                                         </td>
                                                     </tr>
@@ -322,10 +320,9 @@
                                                         <td><div style="color: #FFA800;">{{ Helper::defineJenisLayananBy($lainnya_tolak->jenis_layanan) }}</div></td>
                                                         <td><div style="color: #3699FF;">{{ $lainnya_tolak->nip }}</div></td>
                                                         <td>{{ $lainnya_tolak->nama }}</td>
-                                                        <td>{{ $lainnya_tolak->jabatan_fungsional }}</td>
                                                         <td>
-                                                            <a href="persetujuan.html" type="button" class="btn btn-light-danger btn-sm">
-                                                                Kembalikan
+                                                            <a href="{{route('koor-pokja.inbox.detail-surat-pengembalian-tolak.index', ['id' => $lainnya_tolak->id])}}" type="button" class="btn btn-light-danger btn-sm">
+                                                                Tolak
                                                             </a>
                                                         </td>
                                                     </tr>

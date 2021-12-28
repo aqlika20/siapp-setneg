@@ -223,7 +223,7 @@
                                                         <td><div style="color: #3699FF;">{{ $jfku_pending->nip }}</div></td>
                                                         <td>{{ $jfku_pending->nama }}</td>
                                                         <td>
-                                                            <a href="verifikasi_cek.html" type="button" class="btn btn-success font-weight-bold align-items-md-end">
+                                                            <a href="{{route('jf-ahli.detail-surat-pengembalian.index', ['id' => $jfku_pending->id])}}" type="button" class="btn btn-warning btn-sm">
                                                                 Lihat
                                                             </a>
                                                         </td>
@@ -276,10 +276,9 @@
                                                         <td><div style="color: #FFA800;">{{ Helper::defineJenisLayananBy($jfku_tolak->jenis_layanan) }}</div></td>
                                                         <td><div style="color: #3699FF;">{{ $jfku_tolak->nip }}</div></td>
                                                         <td>{{ $jfku_tolak->nama }}</td>
-                                                        <td>{{ $jfku_tolak->jabatan_fungsional }}</td>
                                                         <td>
-                                                            <a href="persetujuan.html" type="button" class="btn btn-light-danger btn-sm">
-                                                                Kembalikan
+                                                            <a href="{{route('jf-ahli.detail-surat-pengembalian-tolak.index', ['id' => $jfku_tolak->id])}}" type="button" class="btn btn-light-danger btn-sm">
+                                                                Tolak
                                                             </a>
                                                         </td>
                                                     </tr>

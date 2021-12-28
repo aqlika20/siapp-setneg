@@ -199,6 +199,15 @@ class Helper {
      public static $verifikasi_rkp_tu_kementerian = 31;
      public static $keppres_Maju = 32;
      public static $keppres_Turun = 33;
+     public static $tolak_jf_ahli_pertama = 34;
+     public static $tolak_jf_ahli_terampil = 35;
+     public static $pending_jf_ahli_pertama = 36;
+     public static $pending_jf_ahli_terampil = 37;
+     public static $revisi_jf_ahli_pokja = 38;
+     public static $revisi_jf_ahli_muda = 39;
+     public static $revisi_jf_ahli_pertama = 40;
+     public static $revisi_jf_ahli_terampil = 41;
+
 
     public static function defineStatusBy($type)
     {
@@ -229,7 +238,7 @@ class Helper {
                 break;
 
             case '7':
-                $status = 'Tolak JF Ahli';
+                $status = 'Tolak JF Ahli Muda';
                 break;
 
             case '8':
@@ -334,6 +343,38 @@ class Helper {
             
             case '33':
                 $status = 'Keppres Turun';
+                break;
+
+            case '34':
+                $status = 'Tolak JF Ahli Pertama';
+                break;
+
+            case '35':
+                $status = 'Tolak JF Ahli Terampil';
+                break;
+
+            case '36':
+                $status = 'Pending JF Ahli Pertama';
+                break;
+
+            case '37':
+                $status = 'Pending JF Ahli Terampil';
+                break;
+
+            case '38':
+                $status = 'Revisi JF Ahli Pokja';
+                break;
+
+            case '39':
+                $status = 'Revisi JF Ahli Muda';
+                break;
+
+            case '40':
+                $status = 'Revisi JF Ahli Pertama';
+                break;
+
+            case '41':
+                $status = 'Revisi JF Ahli Terampil';
                 break;
             
             case '0':

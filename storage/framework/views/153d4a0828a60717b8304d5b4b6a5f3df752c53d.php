@@ -78,7 +78,7 @@
                                                             <!-- <td><?php echo e(Helper::convertDate($pengangkatan->created_at)); ?></td>
                                                             <td><div style="color: #FFA800;"><?php echo e(Helper::defineJenisLayananBy($pengangkatan->jenis_layanan)); ?></div></td>
                                                             <td><?php echo e(Helper::defineStatusBy($pengangkatan->status)); ?></td> -->
-                                                            <td><?php echo e($pengangkatan->tanggal_surat_usulan); ?></td>
+                                                            <td><?php echo e(Helper::converttanggal($pengangkatan->tanggal_surat_usulan)); ?></td>
                                                             <td><?php echo e($pengangkatan->no_surat_usulan); ?></td>
                                                             <td><?php echo e($pengangkatan->instansi_pengusul); ?></td>
                                                             <td><div style="color: #FFA800;"><?php echo e(Helper::defineJenisLayananBy($pengangkatan->jenis_layanan)); ?></div></td>
@@ -130,17 +130,17 @@
                                             <tbody>
                                                 <?php $__currentLoopData = $jfku_verifikasis; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $pengangkatan): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                                     <tr>
-                                                        <td><?php echo e($pengangkatan->tanggal_surat_usulan); ?></td>
+                                                        <td><?php echo e(Helper::converttanggal($pengangkatan->tanggal_surat_usulan)); ?></td>
                                                         <td><?php echo e($pengangkatan->no_surat_usulan); ?></td>
                                                         <td><?php echo e($pengangkatan->instansi_pengusul); ?></td>
                                                         <td><div style="color: #FFA800;"><?php echo e(Helper::defineJenisLayananBy($pengangkatan->jenis_layanan)); ?></div></td>
                                                         <td><div style="color: #3699FF;"><?php echo e($pengangkatan->nip); ?></div></td>
                                                         <td><?php echo e($pengangkatan->nama); ?></td>
                                                     </tr>
-                                                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                                                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?> 
                                                 <?php $__currentLoopData = $ns_verifikasis; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $ns): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                                     <tr>
-                                                        <td><?php echo e($ns->tanggal_surat_usulan); ?></td>
+                                                        <td><?php echo e(Helper::converttanggal($ns->tanggal_surat_usulan)); ?></td>
                                                         <td><?php echo e($ns->no_surat_usulan); ?></td>
                                                         <td><?php echo e($ns->instansi_pengusul); ?></td>
                                                         <td><div style="color: #FFA800;"><?php echo e(Helper::defineJenisLayananBy($ns->jenis_layanan)); ?></div></td>
@@ -150,7 +150,7 @@
                                                 <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                                                 <?php $__currentLoopData = $lainnyas; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $lainnya): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                                     <tr>
-                                                        <td><?php echo e($lainnya->tanggal_surat_usulan); ?></td>
+                                                        <td><?php echo e(Helper::converttanggal($lainnya->tanggal_surat_usulan)); ?></td>
                                                         <td><?php echo e($lainnya->no_surat_usulan); ?></td>
                                                         <td><?php echo e($lainnya->instansi_pengusul); ?></td>
                                                         <td><div style="color: #FFA800;"><?php echo e(Helper::defineJenisLayananBy($lainnya->jenis_layanan)); ?></div></td>
@@ -200,7 +200,7 @@
                                             <tbody>
                                                 <?php $__currentLoopData = $jfku_pendings; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $jfku_pending): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                                     <tr>
-                                                        <td><?php echo e($jfku_pending->tanggal_surat_usulan); ?></td>
+                                                        <td><?php echo e(Helper::converttanggal($jfku_pending->tanggal_surat_usulan)); ?></td>
                                                         <td><?php echo e($jfku_pending->no_surat_usulan); ?></td>
                                                         <td><?php echo e($jfku_pending->instansi_pengusul); ?></td>
                                                         <td><div style="color: #FFA800;"><?php echo e(Helper::defineJenisLayananBy($jfku_pending->jenis_layanan)); ?></div></td>
@@ -215,7 +215,7 @@
                                                 <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                                                 <?php $__currentLoopData = $ns_verifikasis; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $ns_verifikasi): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                                     <tr>
-                                                        <td><?php echo e($ns_verifikasi->tanggal_surat_usulan); ?></td>
+                                                        <td><?php echo e(Helper::converttanggal($ns_verifikasi->tanggal_surat_usulan)); ?></td>
                                                         <td><?php echo e($ns_verifikasi->no_surat_usulan); ?></td>
                                                         <td><?php echo e($ns_verifikasi->instansi_pengusul); ?></td>
                                                         <td><div style="color: #FFA800;"><?php echo e(Helper::defineJenisLayananBy($ns_verifikasi->jenis_layanan)); ?></div></td>
@@ -230,7 +230,7 @@
                                                 <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                                                 <?php $__currentLoopData = $lainnya_verifikasis; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $lainnya_verifikasi): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                                     <tr>
-                                                        <td><?php echo e($lainnya_verifikasi->tanggal_surat_usulan); ?></td>
+                                                        <td><?php echo e(Helper::converttanggal($lainnya_verifikasi->tanggal_surat_usulan)); ?></td>
                                                         <td><?php echo e($lainnya_verifikasi->no_surat_usulan); ?></td>
                                                         <td><?php echo e($lainnya_verifikasi->instansi_pengusul); ?></td>
                                                         <td><div style="color: #FFA800;"><?php echo e(Helper::defineJenisLayananBy($lainnya_verifikasi->jenis_layanan)); ?></div></td>
@@ -284,48 +284,45 @@
                                             <tbody>
                                                 <?php $__currentLoopData = $jfku_tolaks; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $jfku_tolak): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                                     <tr>
-                                                        <td><?php echo e($jfku_tolak->tanggal_surat_usulan); ?></td>
+                                                        <td><?php echo e(Helper::converttanggal($jfku_tolak->tanggal_surat_usulan)); ?></td>
                                                         <td><?php echo e($jfku_tolak->no_surat_usulan); ?></td>
                                                         <td><?php echo e($jfku_tolak->instansi_pengusul); ?></td>
                                                         <td><div style="color: #FFA800;"><?php echo e(Helper::defineJenisLayananBy($jfku_tolak->jenis_layanan)); ?></div></td>
                                                         <td><div style="color: #3699FF;"><?php echo e($jfku_tolak->nip); ?></div></td>
                                                         <td><?php echo e($jfku_tolak->nama); ?></td>
-                                                        <td><?php echo e($jfku_tolak->jabatan_fungsional); ?></td>
                                                         <td>
-                                                            <a href="persetujuan.html" type="button" class="btn btn-light-danger btn-sm">
-                                                                Kembalikan
+                                                            <a href="<?php echo e(route('koor-pokja.inbox.detail-surat-pengembalian-tolak.index', ['id' => $jfku_tolak->id])); ?>" type="button" class="btn btn-light-danger btn-sm">
+                                                                Tolak
                                                             </a>
                                                         </td>
                                                     </tr>
                                                 <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                                                 <?php $__currentLoopData = $ns_tolaks; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $ns_tolak): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                                     <tr>
-                                                        <td><?php echo e($ns_tolak->tanggal_surat_usulan); ?></td>
+                                                        <td><?php echo e(Helper::converttanggal($ns_tolak->tanggal_surat_usulan)); ?></td>
                                                         <td><?php echo e($ns_tolak->no_surat_usulan); ?></td>
                                                         <td><?php echo e($ns_tolak->instansi_pengusul); ?></td>
                                                         <td><div style="color: #FFA800;"><?php echo e(Helper::defineJenisLayananBy($ns_tolak->jenis_layanan)); ?></div></td>
                                                         <td><div style="color: #3699FF;"><?php echo e($ns_tolak->nip); ?></div></td>
                                                         <td><?php echo e($ns_tolak->nama); ?></td>
-                                                        <td><?php echo e($ns_tolak->jabatan_fungsional); ?></td>
                                                         <td>
-                                                            <a href="persetujuan.html" type="button" class="btn btn-light-danger btn-sm">
-                                                                Kembalikan
+                                                            <a href="<?php echo e(route('koor-pokja.inbox.detail-surat-pengembalian-tolak.index', ['id' => $ns_tolak->id])); ?>" type="button" class="btn btn-light-danger btn-sm">
+                                                                Tolak
                                                             </a>
                                                         </td>
                                                     </tr>
                                                 <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                                                 <?php $__currentLoopData = $lainnya_tolaks; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $lainnya_tolak): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                                     <tr>
-                                                        <td><?php echo e($lainnya_tolak->tanggal_surat_usulan); ?></td>
+                                                        <td><?php echo e(Helper::converttanggal($lainnya_tolak->tanggal_surat_usulan)); ?></td>
                                                         <td><?php echo e($lainnya_tolak->no_surat_usulan); ?></td>
                                                         <td><?php echo e($lainnya_tolak->instansi_pengusul); ?></td>
                                                         <td><div style="color: #FFA800;"><?php echo e(Helper::defineJenisLayananBy($lainnya_tolak->jenis_layanan)); ?></div></td>
                                                         <td><div style="color: #3699FF;"><?php echo e($lainnya_tolak->nip); ?></div></td>
                                                         <td><?php echo e($lainnya_tolak->nama); ?></td>
-                                                        <td><?php echo e($lainnya_tolak->jabatan_fungsional); ?></td>
                                                         <td>
-                                                            <a href="persetujuan.html" type="button" class="btn btn-light-danger btn-sm">
-                                                                Kembalikan
+                                                            <a href="<?php echo e(route('koor-pokja.inbox.detail-surat-pengembalian-tolak.index', ['id' => $lainnya_tolak->id])); ?>" type="button" class="btn btn-light-danger btn-sm">
+                                                                Tolak
                                                             </a>
                                                         </td>
                                                     </tr>

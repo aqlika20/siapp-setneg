@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\backweb\JF_Ahli;
+namespace App\Http\Controllers\Backweb\JF_Ahli;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
@@ -67,19 +67,11 @@ class InboxController extends Controller
             ])->get();
 
             $jfku_pendings = PengangkatanPemberhentianJFKU::where([
-                ['status', '=', Helper::$pending_jf_ahli],
-                ['group_id', '=', $currentUser->groups_id]
-            ])->orwhere([
-                ['status', '=', Helper::$pengajuan_usulan],
-                ['distributor_id', '=', $currentUser->nip]
+                ['status', '=', Helper::$pending_jf_ahli_pertama]
             ])->get();
 
             $jfku_tolaks = PengangkatanPemberhentianJFKU::where([
-                ['status', '=', Helper::$tolak_jf_ahli],
-                ['group_id', '=', $currentUser->groups_id]
-            ])->orwhere([
-                ['status', '=', Helper::$pengajuan_usulan],
-                ['distributor_id', '=', $currentUser->nip]
+                ['status', '=', Helper::$tolak_jf_ahli_pertama]
             ])->get();
         //
 
@@ -93,19 +85,11 @@ class InboxController extends Controller
             ])->get();
 
             $ns_pendings = PengangkatanPemberhentianNS::where([
-                ['status', '=', Helper::$pending_jf_ahli],
-                ['group_id', '=', $currentUser->groups_id]
-            ])->orwhere([
-                ['status', '=', Helper::$pengajuan_usulan],
-                ['distributor_id', '=', $currentUser->nip]
+                ['status', '=', Helper::$pending_jf_ahli_pertama]
             ])->get();
 
             $ns_tolaks = PengangkatanPemberhentianNS::where([
-                ['status', '=', Helper::$tolak_jf_ahli],
-                ['group_id', '=', $currentUser->groups_id]
-            ])->orwhere([
-                ['status', '=', Helper::$pengajuan_usulan],
-                ['distributor_id', '=', $currentUser->nip]
+                ['status', '=', Helper::$tolak_jf_ahli_pertama]
             ])->get();
         //
 
@@ -119,19 +103,11 @@ class InboxController extends Controller
             ])->get();
 
             $lainnya_pendings = PengangkatanPemberhentianLainnya::where([
-                ['status', '=', Helper::$pending_jf_ahli],
-                ['group_id', '=', $currentUser->groups_id]
-            ])->orwhere([
-                ['status', '=', Helper::$pengajuan_usulan],
-                ['distributor_id', '=', $currentUser->nip]
+                ['status', '=', Helper::$pending_jf_ahli_pertama]
             ])->get();
 
             $lainnya_tolaks = PengangkatanPemberhentianLainnya::where([
-                ['status', '=', Helper::$tolak_jf_ahli],
-                ['group_id', '=', $currentUser->groups_id]
-            ])->orwhere([
-                ['status', '=', Helper::$pengajuan_usulan],
-                ['distributor_id', '=', $currentUser->nip]
+                ['status', '=', Helper::$tolak_jf_ahli_pertama]
             ])->get();
         //
 

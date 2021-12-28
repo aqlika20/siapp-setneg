@@ -50,6 +50,35 @@
 							</div>
 						</div>
 					</div>
+                    <div class="d-flex justify-content-between mt-5 pt-10" style="margin-left: 50px; margin-right: 50px;">
+                        <div class="mr-2">
+                            <a href="{{ route('koor-pokja.inbox.jfku.index')}}" type="button" class="btn btn-light-primary font-weight-bolder text-uppercase px-9 py-4">Kembali</a>
+                        </div>
+                        <div>
+                            <table>
+                                <th style="margin-right: 10px;">
+                                    <form method="POST" action="{{ route('koor-pokja.inbox.detail-surat-pengembalian.verifikasi') }}">
+                                        @csrf 
+                                        <input type="hidden" class="btn btn-warning font-weight-bolder text-uppercase px-9 py-4" name="v_id" value="{{ $verifikasi->id }}">
+                                        <input type="hidden" class="btn btn-warning font-weight-bolder text-uppercase px-9 py-4" name="v_jenis" value="{{ $verifikasi->jenis_layanan }}">
+                                        <button type="submit" class="btn btn-danger font-weight-bolder text-uppercase px-9 py-4" >
+                                            Tolak
+                                        </button>
+                                    </form>
+                                </th>
+                                <th style="margin-right: 10px;">
+                                    <form method="POST" action="{{ route('koor-pokja.inbox.detail-surat-pengembalian.revisi') }}">
+                                        @csrf
+                                        <input type="hidden" class="btn btn-warning font-weight-bolder text-uppercase px-9 py-4" name="v_id" value="{{ $verifikasi->id }}">
+                                        <input type="hidden" class="btn btn-warning font-weight-bolder text-uppercase px-9 py-4" name="v_jenis" value="{{ $verifikasi->jenis_layanan }}">
+                                        <button type="submit" class="btn btn-primary font-weight-bolder text-uppercase px-9 py-4" >
+                                            Proses
+                                        </button>
+                                    </form>
+                                </th>
+                            </table>
+                        </div>
+                    </div>
                 </div>
                 <!--end::Container-->
             </div>

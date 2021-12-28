@@ -376,6 +376,14 @@ Route::group(['middleware' => ['auth', 'checkRole:5']], function() {
 
             Route::prefix('/detail-surat-pengembalian')->group(function(){
                 Route::get('/{id}', 'BackWeb\Koor_Pokja\Inbox\DetailSuratPengembalianController@index')->name('koor-pokja.inbox.detail-surat-pengembalian.index');
+                Route::post('/verifikasi', 'BackWeb\Koor_Pokja\Inbox\DetailSuratPengembalianController@verifikasi')->name('koor-pokja.inbox.detail-surat-pengembalian.verifikasi');
+                Route::post('/revisi', 'BackWeb\Koor_Pokja\Inbox\DetailSuratPengembalianController@revisi')->name('koor-pokja.inbox.detail-surat-pengembalian.revisi');
+            });
+            
+            Route::prefix('/detail-surat-pengembalian-tolak')->group(function(){
+                Route::get('/{id}', 'BackWeb\Koor_Pokja\Inbox\DetailSuratPengembalianTolakController@index')->name('koor-pokja.inbox.detail-surat-pengembalian-tolak.index');
+                Route::post('/verifikasi', 'BackWeb\Koor_Pokja\Inbox\DetailSuratPengembalianTolakController@verifikasi')->name('koor-pokja.inbox.detail-surat-pengembalian-tolak.verifikasi');
+                Route::post('/revisi', 'BackWeb\Koor_Pokja\Inbox\DetailSuratPengembalianTolakController@revisi')->name('koor-pokja.inbox.detail-surat-pengembalian-tolak.revisi');
             });
 
             Route::prefix('/lsn')->group(function(){
@@ -393,9 +401,7 @@ Route::group(['middleware' => ['auth', 'checkRole:5']], function() {
 
                     Route::get('/pembatalan-keppres-jabatan-ns', 'BackWeb\Koor_Pokja\Inbox\PembatalanKeppresJabatanNonStrukturalController@index')->name('koor-pokja.inbox.pembatalan-keppres-jabatan-ns.index');
                     Route::patch('/pembatalan-keppres-jabatan-ns/add', 'BackWeb\Koor_Pokja\Inbox\PembatalanKeppresJabatanNonStrukturalController@store')->name('koor-pokja.inbox.pembatalan-keppres-jabatan-ns.store');
-
-
-                    
+                   
                     Route::get('/persetujuan-pengangkatan-staf-khusus', 'BackWeb\Koor_Pokja\Inbox\PersetujuanPengangkatanStafKhususController@index')->name('koor-pokja.inbox.persetujuan-pengangkatan-staf-khusus.index');
                     Route::patch('/persetujuan-pengangkatan-staf-khusus/add', 'BackWeb\Koor_Pokja\Inbox\PersetujuanPengangkatanStafKhususController@store')->name('koor-pokja.inbox.persetujuan-pengangkatan-staf-khusus.store');
                     
@@ -628,9 +634,9 @@ Route::group(['middleware' => ['auth', 'checkRole:7']], function() {
     });
 });
 
-// JF AHLI KP
+// JF Ahli Muda KP
 Route::group(['middleware' => ['auth', 'checkRole: 10']], function() {
-    Route::prefix('/Jf-Ahli-KP')->group(function(){
+    Route::prefix('/Jf-Ahli-Muda-KP')->group(function(){
         Route::prefix('/home')->group(function(){
             Route::get('/', 'BackWeb\JF_Ahli_KP\HomeController@index')->name('jf-ahli-kp.home.index');
         });
@@ -656,9 +662,9 @@ Route::group(['middleware' => ['auth', 'checkRole: 10']], function() {
     });
 });
 
-// JF Ahli P4
+// JF Ahli Muda P4
 Route::group(['middleware' => ['auth', 'checkRole: 9']], function() {
-    Route::prefix('/Jf-Ahli')->group(function(){
+    Route::prefix('/Jf-Ahli-Muda-P4')->group(function(){
         Route::prefix('/home')->group(function(){
             Route::get('/', 'BackWeb\JF_Ahli\HomeController@index')->name('jf-ahli.home.index');
         });
@@ -704,6 +710,18 @@ Route::group(['middleware' => ['auth', 'checkRole: 9']], function() {
                 Route::post('/create', 'BackWeb\JF_Ahli\TextEditorNSPertekController@store')->name('jf-ahli.inbox.text-editor.ns.store');
             });
 
+            Route::prefix('/detail-surat-pengembalian-tolak')->group(function(){
+                Route::get('/{id}', 'BackWeb\JF_Ahli\DetailSuratPengembalianTolakController@index')->name('jf-ahli.detail-surat-pengembalian-tolak.index');
+                Route::post('/verifikasi', 'BackWeb\JF_Ahli\DetailSuratPengembalianTolakController@verifikasi')->name('jf-ahli.detail-surat-pengembalian-tolak.verifikasi');
+                Route::post('/revisi', 'BackWeb\JF_Ahli\DetailSuratPengembalianTolakController@revisi')->name('jf-ahli.detail-surat-pengembalian-tolak.revisi');
+            });
+
+            Route::prefix('/detail-surat-pengembalian')->group(function(){
+                Route::get('/{id}', 'BackWeb\JF_Ahli\DetailSuratPengembalianController@index')->name('jf-ahli.detail-surat-pengembalian.index');
+                Route::post('/verifikasi', 'BackWeb\JF_Ahli\DetailSuratPengembalianController@verifikasi')->name('jf-ahli.detail-surat-pengembalian.verifikasi');
+                Route::post('/revisi', 'BackWeb\JF_Ahli\DetailSuratPengembalianController@revisi')->name('jf-ahli.detail-surat-pengembalian.revisi');
+            });
+
             Route::prefix('/lsn')->group(function(){
                 Route::get('/', 'BackWeb\JF_Ahli\LNSController@index')->name('jf-ahli.inbox.lns.index');
                 Route::prefix('/form')->group(function(){
@@ -739,9 +757,9 @@ Route::group(['middleware' => ['auth', 'checkRole: 9']], function() {
     });
 }); 
 
-// JF Ahli Pensiun
+// JF Ahli Muda Pensiun
 Route::group(['middleware' => ['auth', 'checkRole: 11']], function() {
-    Route::prefix('/Jf-Ahli-Pensiun')->group(function(){
+    Route::prefix('/Jf-Ahli-Muda-Pensiun')->group(function(){
         Route::prefix('/home')->group(function(){
             Route::get('/', 'BackWeb\JF_Ahli_Pensiun\HomeController@index')->name('jf-ahli-pensiun.home.index');
         });
@@ -770,6 +788,316 @@ Route::group(['middleware' => ['auth', 'checkRole: 11']], function() {
 
     });
 }); 
+
+// JF Ahli Pertama KP
+Route::group(['middleware' => ['auth', 'checkRole: 16']], function() {
+    Route::prefix('/Jf-Ahli-Pertama-KP')->group(function(){
+        Route::prefix('/home')->group(function(){
+            Route::get('/', 'BackWeb\JF_Ahli_Pertama_KP\HomeController@index')->name('jf-ahli-pertama-kp.home.index');
+        });
+        Route::prefix('/kenaikan_pangkat')->group(function(){
+            Route::get('/verification/{id}', 'BackWeb\JF_Ahli_Pertama_KP\InboxController@verification_kenaikan')->name('jf-ahli-pertama-kp.inbox.kenaikan_pangkat.verif');
+            Route::post('/verification/proses', 'BackWeb\JF_Ahli_Pertama_KP\InboxController@store_proses')->name('jf-ahli-pertama-kp.inbox.kenaikan_pangkat.store_proses');
+            Route::post('/verification/pending', 'BackWeb\JF_Ahli_Pertama_KP\InboxController@store_pending')->name('jf-ahli-pertama-kp.inbox.kenaikan_pangkat.store_pending');
+            Route::post('/verification/tolak', 'BackWeb\JF_Ahli_Pertama_KP\InboxController@store_tolak')->name('jf-ahli-pertama-kp.inbox.kenaikan_pangkat.store_tolak');
+        });
+    Route::prefix('/inbox')->group(function(){
+                 Route::get('/usulan', 'BackWeb\JF_Ahli_Pertama_KP\InboxController@usulan')->name('jf-ahli-pertama-kp.inbox.usulan');
+                 Route::get('/revisi', 'BackWeb\JF_Ahli_Pertama_KP\InboxController@revisi')->name('jf-ahli-pertama-kp.inbox.revisi');
+
+                 Route::prefix('/text-editor-kenaikan')->group(function(){
+                        Route::get('/{id}', 'BackWeb\JF_Ahli_Pertama_KP\TextEditorKenaikanPertekController@index')->name('jf-ahli-pertama-kp.inbox.text-editor.kenaikan.index');
+                        Route::post('/create', 'BackWeb\JF_Ahli_Pertama_KP\TextEditorKenaikanPertekController@store')->name('jf-ahli-pertama-kp.inbox.text-editor.kenaikan.store');
+                    });
+        });
+        Route::get('/atur_dokument', 'BackWeb\JF_Ahli_Pertama_KP\AturDokumentController@index')->name('jf-ahli-pertama-kp.atur-dokument.index');
+        Route::get('/riwayat', 'BackWeb\JF_Ahli_Pertama_KP\RiwayatController@index')->name('jf-ahli-pertama-kp.riwayat.index');
+        Route::get('/faq', 'BackWeb\JF_Ahli_Pertama_KP\PengaturanController@faq')->name('jf-ahli-pertama-kp.pengaturan.faq');
+        
+    });
+});
+
+// JF Ahli Pertama P4
+Route::group(['middleware' => ['auth', 'checkRole: 15']], function() {
+    Route::prefix('/Jf-Ahli-Pertama-P4')->group(function(){
+        Route::prefix('/home')->group(function(){
+            Route::get('/', 'BackWeb\JF_Ahli_Pertama_P4\HomeController@index')->name('jf-ahli-pertama-p4.home.index');
+        });
+
+        Route::prefix('/inbox')->group(function(){
+            Route::get('/usulan', 'BackWeb\JF_Ahli_Pertama_P4\InboxController@usulan')->name('jf-ahli-pertama-p4.inbox.usulan');
+            Route::get('/revisi', 'BackWeb\JF_Ahli_Pertama_P4\InboxController@revisi')->name('jf-ahli-pertama-p4.inbox.revisi');
+
+            Route::prefix('/usulan')->group(function(){
+                Route::get('/verification/{id}', 'BackWeb\JF_Ahli_Pertama_P4\InboxController@verification')->name('jf-ahli-pertama-p4.inbox.usulan.verif');
+                Route::post('/verification/proses', 'BackWeb\JF_Ahli_Pertama_P4\InboxController@store_proses')->name('jf-ahli-pertama-p4.inbox.usulan.store_proses');
+                Route::post('/verification/pending', 'BackWeb\JF_Ahli_Pertama_P4\InboxController@store_pending')->name('jf-ahli-pertama-p4.inbox.usulan.store_pending');
+                Route::post('/verification/tolak', 'BackWeb\JF_Ahli_Pertama_P4\InboxController@store_tolak')->name('jf-ahli-pertama-p4.inbox.usulan.store_tolak');
+                Route::post('/verification/pendingtexteditor', 'BackWeb\JF_Ahli_Pertama_P4\InboxController@pending_text_editor')->name('jf-ahli-pertama-p4.inbox.usulan.pending_text_editor');
+                Route::post('/verification/tolaktexteditor', 'BackWeb\JF_Ahli_Pertama_P4\InboxController@tolak_text_editor')->name('jf-ahli-pertama-p4.inbox.usulan.tolak_text_editor');
+            });
+
+            Route::prefix('/ns')->group(function(){
+                Route::get('/verification/{id}', 'BackWeb\JF_Ahli_Pertama_P4\InboxController@verification_ns')->name('jf-ahli-pertama-p4.inbox.usulan.verif_ns');
+                Route::post('/verification/proses', 'BackWeb\JF_Ahli_Pertama_P4\InboxController@store_proses')->name('jf-ahli-pertama-p4.inbox.usulan.store_proses_ns');
+                Route::post('/verification/pending', 'BackWeb\JF_Ahli_Pertama_P4\InboxController@store_pending')->name('jf-ahli-pertama-p4.inbox.usulan.store_pending_ns');
+                Route::post('/verification/tolak', 'BackWeb\JF_Ahli_Pertama_P4\InboxController@store_tolak')->name('jf-ahli-pertama-p4.inbox.usulan.store_tolak_ns');
+                Route::post('/verification/pendingtexteditor', 'BackWeb\JF_Ahli_Pertama_P4\InboxController@pending_text_editor')->name('jf-ahli-pertama-p4.inbox.usulan.pending_text_editor_ns');
+                Route::post('/verification/tolaktexteditor', 'BackWeb\JF_Ahli_Pertama_P4\InboxController@tolak_text_editor')->name('jf-ahli-pertama-p4.inbox.usulan.tolak_text_editor_ns');
+            });
+
+            Route::prefix('/lainnya')->group(function(){
+                Route::get('/verification/{id}', 'BackWeb\JF_Ahli_Pertama_P4\InboxController@verification_lainnya')->name('jf-ahli-pertama-p4.inbox.usulan.verif_lainnya');
+                Route::post('/verification/proses', 'BackWeb\JF_Ahli_Pertama_P4\InboxController@store_proses')->name('jf-ahli-pertama-p4.inbox.usulan.store_proses_lainnya');
+                Route::post('/verification/pending', 'BackWeb\JF_Ahli_Pertama_P4\InboxController@store_pending')->name('jf-ahli-pertama-p4.inbox.usulan.store_pending_lainnya');
+                Route::post('/verification/tolak', 'BackWeb\JF_Ahli_Pertama_P4\InboxController@store_tolak')->name('jf-ahli-pertama-p4.inbox.usulan.store_tolak_lainnya');
+                Route::post('/verification/pendingtexteditor', 'BackWeb\JF_Ahli_Pertama_P4\InboxController@pending_text_editor')->name('jf-ahli-pertama-p4.inbox.usulan.pending_text_editor_lainnya');
+                Route::post('/verification/tolaktexteditor', 'BackWeb\JF_Ahli_Pertama_P4\InboxController@tolak_text_editor')->name('jf-ahli-pertama-p4.inbox.usulan.tolak_text_editor_lainnya');
+            });
+			
+            Route::prefix('/text-editor-lain')->group(function(){
+                Route::get('/{id}', 'BackWeb\JF_Ahli_Pertama_P4\TextEditorLainPertekController@index')->name('jf-ahli-pertama-p4.inbox.text-editor.lain.index');
+                Route::post('/create', 'BackWeb\JF_Ahli_Pertama_P4\TextEditorLainPertekController@store')->name('jf-ahli-pertama-p4.inbox.text-editor.lain.store');
+            });
+
+            Route::prefix('/text-editor-ns')->group(function(){
+                Route::get('/{id}', 'BackWeb\JF_Ahli_Pertama_P4\TextEditorNSPertekController@index')->name('jf-ahli-pertama-p4.inbox.text-editor.ns.index');
+                Route::post('/create', 'BackWeb\JF_Ahli_Pertama_P4\TextEditorNSPertekController@store')->name('jf-ahli-pertama-p4.inbox.text-editor.ns.store');
+            });
+
+            Route::prefix('/detail-surat-pengembalian-tolak')->group(function(){
+                Route::get('/{id}', 'BackWeb\JF_Ahli_Pertama_P4\DetailSuratPengembalianTolakController@index')->name('jf-ahli-pertama.detail-surat-pengembalian-tolak.index');
+                Route::post('/verifikasi', 'BackWeb\JF_Ahli_Pertama_P4\DetailSuratPengembalianTolakController@verifikasi')->name('jf-ahli-pertama.detail-surat-pengembalian-tolak.verifikasi');
+                Route::post('/revisi', 'BackWeb\JF_Ahli_Pertama_P4\DetailSuratPengembalianTolakController@revisi')->name('jf-ahli-pertama.detail-surat-pengembalian-tolak.revisi');
+            });
+
+            Route::prefix('/detail-surat-pengembalian')->group(function(){
+                Route::get('/{id}', 'BackWeb\JF_Ahli_Pertama_P4\DetailSuratPengembalianController@index')->name('jf-ahli-pertama.detail-surat-pengembalian.index');
+                Route::post('/verifikasi', 'BackWeb\JF_Ahli_Pertama_P4\DetailSuratPengembalianController@verifikasi')->name('jf-ahli-pertama.detail-surat-pengembalian.verifikasi');
+                Route::post('/revisi', 'BackWeb\JF_Ahli_Pertama_P4\DetailSuratPengembalianController@revisi')->name('jf-ahli-pertama.detail-surat-pengembalian.revisi');
+            });
+
+            Route::prefix('/lsn')->group(function(){
+                Route::get('/', 'BackWeb\JF_Ahli_Pertama_P4\LNSController@index')->name('jf-ahli-pertama-p4.inbox.lns.index');
+                Route::prefix('/form')->group(function(){
+
+                    Route::get('/pengangkatan-pejabat-ns', 'BackWeb\JF_Ahli_Pertama_P4\PengangkatanPejabatNonStrukturalController@index')->name('jf-ahli-pertama-p4.inbox.pengangkatan-pejabat-ns.index');
+                    Route::patch('/pengangkatan-pejabat-ns/add', 'BackWeb\JF_Ahli_Pertama_P4\PengangkatanPejabatNonStrukturalController@store')->name('jf-ahli-pertama-p4.inbox.pengangkatan-pejabat-ns.store');
+
+                    Route::get('/pemberhentian-pejabat-ns', 'BackWeb\JF_Ahli_Pertama_P4\PemberhentianPejabatNonStrukturalController@index')->name('jf-ahli-pertama-p4.inbox.pemberhentian-pejabat-ns.index');
+                    Route::patch('/pemberhentian-pejabat-ns/add', 'BackWeb\JF_Ahli_Pertama_P4\PemberhentianPejabatNonStrukturalController@store')->name('jf-ahli-pertama-p4.inbox.pemberhentian-pejabat-ns.store');
+
+                    Route::get('/ralat-keppres-jabatan-ns', 'BackWeb\JF_Ahli_Pertama_P4\RalatKeppresJabatanNonStrukturalController@index')->name('jf-ahli-pertama-p4.inbox.ralat-keppres-jabatan-ns.index');
+                    Route::patch('/ralat-keppres-jabatan-ns/add', 'BackWeb\JF_Ahli_Pertama_P4\RalatKeppresJabatanNonStrukturalController@store')->name('jf-ahli-pertama-p4.inbox.ralat-keppres-jabatan-ns.store');
+
+                    Route::get('/pembatalan-keppres-jabatan-ns', 'BackWeb\JF_Ahli_Pertama_P4\PembatalanKeppresJabatanNonStrukturalController@index')->name('jf-ahli-pertama-p4.inbox.pembatalan-keppres-jabatan-ns.index');
+                    Route::patch('/pembatalan-keppres-jabatan-ns/add', 'BackWeb\JF_Ahli_Pertama_P4\PembatalanKeppresJabatanNonStrukturalController@store')->name('jf-ahli-pertama-p4.inbox.pembatalan-keppres-jabatan-ns.store');
+
+
+                    
+                    Route::get('/persetujuan-pengangkatan-staf-khusus', 'BackWeb\JF_Ahli_Pertama_P4\PersetujuanPengangkatanStafKhususController@index')->name('jf-ahli-pertama-p4.inbox.persetujuan-pengangkatan-staf-khusus.index');
+                    Route::patch('/persetujuan-pengangkatan-staf-khusus/add', 'BackWeb\JF_Ahli_Pertama_P4\PersetujuanPengangkatanStafKhususController@store')->name('jf-ahli-pertama-p4.inbox.persetujuan-pengangkatan-staf-khusus.store');
+                    
+                    Route::get('/laporan-pemberhentian', 'BackWeb\JF_Ahli_Pertama_P4\LaporanPemberhentianController@index')->name('jf-ahli-pertama-p4.inbox.laporan-pemberhentian.index');
+                    Route::patch('/laporan-pemberhentian/add', 'BackWeb\JF_Ahli_Pertama_P4\LaporanPemberhentianController@store')->name('jf-ahli-pertama-p4.inbox.laporan-pemberhentian.store');
+                });
+            });
+
+        });
+        
+        Route::get('/atur_dokument', 'BackWeb\JF_Ahli_Pertama_P4\AturDokumentController@index')->name('jf-ahli-pertama-p4.atur-dokument.index');
+        Route::get('/riwayat', 'BackWeb\JF_Ahli_Pertama_P4\RiwayatController@index')->name('jf-ahli-pertama-p4.riwayat.index');
+        Route::get('/faq', 'BackWeb\JF_Ahli_Pertama_P4\PengaturanController@faq')->name('jf-ahli-pertama-p4.pengaturan.faq');
+
+    });
+}); 
+
+// JF Ahli Pertama Pensiun
+Route::group(['middleware' => ['auth', 'checkRole: 17']], function() {
+    Route::prefix('/Jf-Ahli-Pertama-Pensiun')->group(function(){
+        Route::prefix('/home')->group(function(){
+            Route::get('/', 'BackWeb\JF_Ahli_Pertama_Pensiun\HomeController@index')->name('jf-ahli-pertama-pensiun.home.index');
+        });
+
+        Route::prefix('/inbox')->group(function(){
+            Route::get('/usulan', 'BackWeb\JF_Ahli_Pertama_Pensiun\InboxController@usulan')->name('jf-ahli-pertama-pensiun.inbox.usulan');
+            Route::get('/revisi', 'BackWeb\JF_Ahli_Pertama_Pensiun\InboxController@revisi')->name('jf-ahli-pertama-pensiun.inbox.revisi');
+
+            Route::prefix('/pemberhentian')->group(function(){
+                Route::get('/verification/{id}', 'BackWeb\JF_Ahli_Pertama_Pensiun\InboxController@verification_pemberhentian')->name('jf-ahli-pertama-pensiun.inbox.pemberhentian.verif');
+                Route::post('/verification/proses', 'BackWeb\JF_Ahli_Pertama_Pensiun\InboxController@store_proses')->name('jf-ahli-pertama-pensiun.inbox.pemberhentian.store_proses');
+                Route::post('/verification/pending', 'BackWeb\JF_Ahli_Pertama_Pensiun\InboxController@store_pending')->name('jf-ahli-pertama-pensiun.inbox.pemberhentian.store_pending');
+                Route::post('/verification/tolak', 'BackWeb\JF_Ahli_Pertama_Pensiun\InboxController@store_tolak')->name('jf-ahli-pertama-pensiun.inbox.pemberhentian.store_tolak');
+            });
+
+            Route::prefix('/text-editor-pemberhentian')->group(function(){
+                Route::get('/{id}', 'BackWeb\JF_Ahli_Pertama_Pensiun\TextEditorPemberhentianPertekController@index')->name('jf-ahli-pertama-pensiun.inbox.text-editor.pemberhentian.index');
+                Route::post('/create', 'BackWeb\JF_Ahli_Pertama_Pensiun\TextEditorPemberhentianPertekController@store')->name('jf-ahli-pertama-pensiun.inbox.text-editor.pemberhentian.store');
+            });
+
+        });
+        
+        Route::get('/atur_dokument', 'BackWeb\JF_Ahli_Pertama_Pensiun\AturDokumentController@index')->name('jf-ahli-pertama-pensiun.atur-dokument.index');
+        Route::get('/riwayat', 'BackWeb\JF_Ahli_Pertama_Pensiun\RiwayatController@index')->name('jf-ahli-pertama-pensiun.riwayat.index');
+        Route::get('/faq', 'BackWeb\JF_Ahli_Pertama_Pensiun\PengaturanController@faq')->name('jf-ahli-pertama-pensiun.pengaturan.faq');
+
+    });
+});
+
+// JF Ahli Terampil KP
+Route::group(['middleware' => ['auth', 'checkRole: 19']], function() {
+    Route::prefix('/Jf-Ahli-Terampil-KP')->group(function(){
+        Route::prefix('/home')->group(function(){
+            Route::get('/', 'BackWeb\JF_Ahli_Terampil_KP\HomeController@index')->name('jf-ahli-terampil-kp.home.index');
+        });
+        Route::prefix('/kenaikan_pangkat')->group(function(){
+            Route::get('/verification/{id}', 'BackWeb\JF_Ahli_Terampil_KP\InboxController@verification_kenaikan')->name('jf-ahli-terampil-kp.inbox.kenaikan_pangkat.verif');
+            Route::post('/verification/proses', 'BackWeb\JF_Ahli_Terampil_KP\InboxController@store_proses')->name('jf-ahli-terampil-kp.inbox.kenaikan_pangkat.store_proses');
+            Route::post('/verification/pending', 'BackWeb\JF_Ahli_Terampil_KP\InboxController@store_pending')->name('jf-ahli-terampil-kp.inbox.kenaikan_pangkat.store_pending');
+            Route::post('/verification/tolak', 'BackWeb\JF_Ahli_Terampil_KP\InboxController@store_tolak')->name('jf-ahli-terampil-kp.inbox.kenaikan_pangkat.store_tolak');
+        });
+    Route::prefix('/inbox')->group(function(){
+                 Route::get('/usulan', 'BackWeb\JF_Ahli_Terampil_KP\InboxController@usulan')->name('jf-ahli-terampil-kp.inbox.usulan');
+                 Route::get('/revisi', 'BackWeb\JF_Ahli_Terampil_KP\InboxController@revisi')->name('jf-ahli-terampil-kp.inbox.revisi');
+
+                 Route::prefix('/text-editor-kenaikan')->group(function(){
+                        Route::get('/{id}', 'BackWeb\JF_Ahli_Terampil_KP\TextEditorKenaikanPertekController@index')->name('jf-ahli-terampil-kp.inbox.text-editor.kenaikan.index');
+                        Route::post('/create', 'BackWeb\JF_Ahli_Terampil_KP\TextEditorKenaikanPertekController@store')->name('jf-ahli-terampil-kp.inbox.text-editor.kenaikan.store');
+                    });
+        });
+        Route::get('/atur_dokument', 'BackWeb\JF_Ahli_Terampil_KP\AturDokumentController@index')->name('jf-ahli-terampil-kp.atur-dokument.index');
+        Route::get('/riwayat', 'BackWeb\JF_Ahli_Terampil_KP\RiwayatController@index')->name('jf-ahli-terampil-kp.riwayat.index');
+        Route::get('/faq', 'BackWeb\JF_Ahli_Terampil_KP\PengaturanController@faq')->name('jf-ahli-terampil-kp.pengaturan.faq');
+        
+    });
+});
+
+// JF Ahli Terampil P4
+Route::group(['middleware' => ['auth', 'checkRole: 18']], function() {
+    Route::prefix('/Jf-Ahli-Terampil-P4')->group(function(){
+        Route::prefix('/home')->group(function(){
+            Route::get('/', 'BackWeb\JF_Ahli_Terampil_P4\HomeController@index')->name('jf-ahli-terampil-p4.home.index');
+        });
+
+        Route::prefix('/inbox')->group(function(){
+            Route::get('/usulan', 'BackWeb\JF_Ahli_Terampil_P4\InboxController@usulan')->name('jf-ahli-terampil-p4.inbox.usulan');
+            Route::get('/revisi', 'BackWeb\JF_Ahli_Terampil_P4\InboxController@revisi')->name('jf-ahli-terampil-p4.inbox.revisi');
+
+            Route::prefix('/usulan')->group(function(){
+                Route::get('/verification/{id}', 'BackWeb\JF_Ahli_Terampil_P4\InboxController@verification')->name('jf-ahli-terampil-p4.inbox.usulan.verif');
+                Route::post('/verification/proses', 'BackWeb\JF_Ahli_Terampil_P4\InboxController@store_proses')->name('jf-ahli-terampil-p4.inbox.usulan.store_proses');
+                Route::post('/verification/pending', 'BackWeb\JF_Ahli_Terampil_P4\InboxController@store_pending')->name('jf-ahli-terampil-p4.inbox.usulan.store_pending');
+                Route::post('/verification/tolak', 'BackWeb\JF_Ahli_Terampil_P4\InboxController@store_tolak')->name('jf-ahli-terampil-p4.inbox.usulan.store_tolak');
+                Route::post('/verification/pendingtexteditor', 'BackWeb\JF_Ahli_Terampil_P4\InboxController@pending_text_editor')->name('jf-ahli-terampil-p4.inbox.usulan.pending_text_editor');
+                Route::post('/verification/tolaktexteditor', 'BackWeb\JF_Ahli_Terampil_P4\InboxController@tolak_text_editor')->name('jf-ahli-terampil-p4.inbox.usulan.tolak_text_editor');
+            });
+
+            Route::prefix('/ns')->group(function(){
+                Route::get('/verification/{id}', 'BackWeb\JF_Ahli_Terampil_P4\InboxController@verification_ns')->name('jf-ahli-terampil-p4.inbox.usulan.verif_ns');
+                Route::post('/verification/proses', 'BackWeb\JF_Ahli_Terampil_P4\InboxController@store_proses')->name('jf-ahli-terampil-p4.inbox.usulan.store_proses_ns');
+                Route::post('/verification/pending', 'BackWeb\JF_Ahli_Terampil_P4\InboxController@store_pending')->name('jf-ahli-terampil-p4.inbox.usulan.store_pending_ns');
+                Route::post('/verification/tolak', 'BackWeb\JF_Ahli_Terampil_P4\InboxController@store_tolak')->name('jf-ahli-terampil-p4.inbox.usulan.store_tolak_ns');
+                Route::post('/verification/pendingtexteditor', 'BackWeb\JF_Ahli_Terampil_P4\InboxController@pending_text_editor')->name('jf-ahli-terampil-p4.inbox.usulan.pending_text_editor_ns');
+                Route::post('/verification/tolaktexteditor', 'BackWeb\JF_Ahli_Terampil_P4\InboxController@tolak_text_editor')->name('jf-ahli-terampil-p4.inbox.usulan.tolak_text_editor_ns');
+            });
+
+            Route::prefix('/lainnya')->group(function(){
+                Route::get('/verification/{id}', 'BackWeb\JF_Ahli_Terampil_P4\InboxController@verification_lainnya')->name('jf-ahli-terampil-p4.inbox.usulan.verif_lainnya');
+                Route::post('/verification/proses', 'BackWeb\JF_Ahli_Terampil_P4\InboxController@store_proses')->name('jf-ahli-terampil-p4.inbox.usulan.store_proses_lainnya');
+                Route::post('/verification/pending', 'BackWeb\JF_Ahli_Terampil_P4\InboxController@store_pending')->name('jf-ahli-terampil-p4.inbox.usulan.store_pending_lainnya');
+                Route::post('/verification/tolak', 'BackWeb\JF_Ahli_Terampil_P4\InboxController@store_tolak')->name('jf-ahli-terampil-p4.inbox.usulan.store_tolak_lainnya');
+                Route::post('/verification/pendingtexteditor', 'BackWeb\JF_Ahli_Terampil_P4\InboxController@pending_text_editor')->name('jf-ahli-terampil-p4.inbox.usulan.pending_text_editor_lainnya');
+                Route::post('/verification/tolaktexteditor', 'BackWeb\JF_Ahli_Terampil_P4\InboxController@tolak_text_editor')->name('jf-ahli-terampil-p4.inbox.usulan.tolak_text_editor_lainnya');
+            });
+			
+            Route::prefix('/text-editor-lain')->group(function(){
+                Route::get('/{id}', 'BackWeb\JF_Ahli_Terampil_P4\TextEditorLainPertekController@index')->name('jf-ahli-terampil-p4.inbox.text-editor.lain.index');
+                Route::post('/create', 'BackWeb\JF_Ahli_Terampil_P4\TextEditorLainPertekController@store')->name('jf-ahli-terampil-p4.inbox.text-editor.lain.store');
+            });
+
+            Route::prefix('/text-editor-ns')->group(function(){
+                Route::get('/{id}', 'BackWeb\JF_Ahli_Terampil_P4\TextEditorNSPertekController@index')->name('jf-ahli-terampil-p4.inbox.text-editor.ns.index');
+                Route::post('/create', 'BackWeb\JF_Ahli_Terampil_P4\TextEditorNSPertekController@store')->name('jf-ahli-terampil-p4.inbox.text-editor.ns.store');
+            });
+
+            Route::prefix('/detail-surat-pengembalian-tolak')->group(function(){
+                Route::get('/{id}', 'BackWeb\JF_Ahli_Terampil_P4\DetailSuratPengembalianTolakController@index')->name('jf-ahli-terampil.detail-surat-pengembalian-tolak.index');
+                Route::post('/verifikasi', 'BackWeb\JF_Ahli_Terampil_P4\DetailSuratPengembalianTolakController@verifikasi')->name('jf-ahli-terampil.detail-surat-pengembalian-tolak.verifikasi');
+                Route::post('/revisi', 'BackWeb\JF_Ahli_Terampil_P4\DetailSuratPengembalianTolakController@revisi')->name('jf-ahli-terampil.detail-surat-pengembalian-tolak.revisi');
+            });
+
+            Route::prefix('/detail-surat-pengembalian')->group(function(){
+                Route::get('/{id}', 'BackWeb\JF_Ahli_Terampil_P4\DetailSuratPengembalianController@index')->name('jf-ahli-terampil.detail-surat-pengembalian.index');
+                Route::post('/verifikasi', 'BackWeb\JF_Ahli_Terampil_P4\DetailSuratPengembalianController@verifikasi')->name('jf-ahli-terampil.detail-surat-pengembalian.verifikasi');
+                Route::post('/revisi', 'BackWeb\JF_Ahli_Terampil_P4\DetailSuratPengembalianController@revisi')->name('jf-ahli-terampil.detail-surat-pengembalian.revisi');
+            });
+
+            Route::prefix('/lsn')->group(function(){
+                Route::get('/', 'BackWeb\JF_Ahli_Terampil_P4\LNSController@index')->name('jf-ahli-terampil-p4.inbox.lns.index');
+                Route::prefix('/form')->group(function(){
+
+                    Route::get('/pengangkatan-pejabat-ns', 'BackWeb\JF_Ahli_Terampil_P4\PengangkatanPejabatNonStrukturalController@index')->name('jf-ahli-terampil-p4.inbox.pengangkatan-pejabat-ns.index');
+                    Route::patch('/pengangkatan-pejabat-ns/add', 'BackWeb\JF_Ahli_Terampil_P4\PengangkatanPejabatNonStrukturalController@store')->name('jf-ahli-terampil-p4.inbox.pengangkatan-pejabat-ns.store');
+
+                    Route::get('/pemberhentian-pejabat-ns', 'BackWeb\JF_Ahli_Terampil_P4\PemberhentianPejabatNonStrukturalController@index')->name('jf-ahli-terampil-p4.inbox.pemberhentian-pejabat-ns.index');
+                    Route::patch('/pemberhentian-pejabat-ns/add', 'BackWeb\JF_Ahli_Terampil_P4\PemberhentianPejabatNonStrukturalController@store')->name('jf-ahli-terampil-p4.inbox.pemberhentian-pejabat-ns.store');
+
+                    Route::get('/ralat-keppres-jabatan-ns', 'BackWeb\JF_Ahli_Terampil_P4\RalatKeppresJabatanNonStrukturalController@index')->name('jf-ahli-terampil-p4.inbox.ralat-keppres-jabatan-ns.index');
+                    Route::patch('/ralat-keppres-jabatan-ns/add', 'BackWeb\JF_Ahli_Terampil_P4\RalatKeppresJabatanNonStrukturalController@store')->name('jf-ahli-terampil-p4.inbox.ralat-keppres-jabatan-ns.store');
+
+                    Route::get('/pembatalan-keppres-jabatan-ns', 'BackWeb\JF_Ahli_Terampil_P4\PembatalanKeppresJabatanNonStrukturalController@index')->name('jf-ahli-terampil-p4.inbox.pembatalan-keppres-jabatan-ns.index');
+                    Route::patch('/pembatalan-keppres-jabatan-ns/add', 'BackWeb\JF_Ahli_Terampil_P4\PembatalanKeppresJabatanNonStrukturalController@store')->name('jf-ahli-terampil-p4.inbox.pembatalan-keppres-jabatan-ns.store');
+
+
+                    
+                    Route::get('/persetujuan-pengangkatan-staf-khusus', 'BackWeb\JF_Ahli_Terampil_P4\PersetujuanPengangkatanStafKhususController@index')->name('jf-ahli-terampil-p4.inbox.persetujuan-pengangkatan-staf-khusus.index');
+                    Route::patch('/persetujuan-pengangkatan-staf-khusus/add', 'BackWeb\JF_Ahli_Terampil_P4\PersetujuanPengangkatanStafKhususController@store')->name('jf-ahli-terampil-p4.inbox.persetujuan-pengangkatan-staf-khusus.store');
+                    
+                    Route::get('/laporan-pemberhentian', 'BackWeb\JF_Ahli_Terampil_P4\LaporanPemberhentianController@index')->name('jf-ahli-terampil-p4.inbox.laporan-pemberhentian.index');
+                    Route::patch('/laporan-pemberhentian/add', 'BackWeb\JF_Ahli_Terampil_P4\LaporanPemberhentianController@store')->name('jf-ahli-terampil-p4.inbox.laporan-pemberhentian.store');
+                });
+            });
+
+        });
+        
+        Route::get('/atur_dokument', 'BackWeb\JF_Ahli_Terampil_P4\AturDokumentController@index')->name('jf-ahli-terampil-p4.atur-dokument.index');
+        Route::get('/riwayat', 'BackWeb\JF_Ahli_Terampil_P4\RiwayatController@index')->name('jf-ahli-terampil-p4.riwayat.index');
+        Route::get('/faq', 'BackWeb\JF_Ahli_Terampil_P4\PengaturanController@faq')->name('jf-ahli-terampil-p4.pengaturan.faq');
+
+    });
+}); 
+
+// JF Ahli Terampil Pensiun
+Route::group(['middleware' => ['auth', 'checkRole: 20']], function() {
+    Route::prefix('/Jf-Ahli-Terampil-Pensiun')->group(function(){
+        Route::prefix('/home')->group(function(){
+            Route::get('/', 'BackWeb\JF_Ahli_Terampil_Pensiun\HomeController@index')->name('jf-ahli-terampil-pensiun.home.index');
+        });
+
+        Route::prefix('/inbox')->group(function(){
+            Route::get('/usulan', 'BackWeb\JF_Ahli_Terampil_Pensiun\InboxController@usulan')->name('jf-ahli-terampil-pensiun.inbox.usulan');
+            Route::get('/revisi', 'BackWeb\JF_Ahli_Terampil_Pensiun\InboxController@revisi')->name('jf-ahli-terampil-pensiun.inbox.revisi');
+
+            Route::prefix('/pemberhentian')->group(function(){
+                Route::get('/verification/{id}', 'BackWeb\JF_Ahli_Terampil_Pensiun\InboxController@verification_pemberhentian')->name('jf-ahli-terampil-pensiun.inbox.pemberhentian.verif');
+                Route::post('/verification/proses', 'BackWeb\JF_Ahli_Terampil_Pensiun\InboxController@store_proses')->name('jf-ahli-terampil-pensiun.inbox.pemberhentian.store_proses');
+                Route::post('/verification/pending', 'BackWeb\JF_Ahli_Terampil_Pensiun\InboxController@store_pending')->name('jf-ahli-terampil-pensiun.inbox.pemberhentian.store_pending');
+                Route::post('/verification/tolak', 'BackWeb\JF_Ahli_Terampil_Pensiun\InboxController@store_tolak')->name('jf-ahli-terampil-pensiun.inbox.pemberhentian.store_tolak');
+            });
+
+            Route::prefix('/text-editor-pemberhentian')->group(function(){
+                Route::get('/{id}', 'BackWeb\JF_Ahli_Terampil_Pensiun\TextEditorPemberhentianPertekController@index')->name('jf-ahli-terampil-pensiun.inbox.text-editor.pemberhentian.index');
+                Route::post('/create', 'BackWeb\JF_Ahli_Terampil_Pensiun\TextEditorPemberhentianPertekController@store')->name('jf-ahli-terampil-pensiun.inbox.text-editor.pemberhentian.store');
+            });
+
+        });
+        
+        Route::get('/atur_dokument', 'BackWeb\JF_Ahli_Terampil_Pensiun\AturDokumentController@index')->name('jf-ahli-terampil-pensiun.atur-dokument.index');
+        Route::get('/riwayat', 'BackWeb\JF_Ahli_Terampil_Pensiun\RiwayatController@index')->name('jf-ahli-terampil-pensiun.riwayat.index');
+        Route::get('/faq', 'BackWeb\JF_Ahli_Terampil_Pensiun\PengaturanController@faq')->name('jf-ahli-terampil-pensiun.pengaturan.faq');
+
+    });
+});
 
 // Karo
 Route::group(['middleware' => ['auth', 'checkRole:4']], function() {

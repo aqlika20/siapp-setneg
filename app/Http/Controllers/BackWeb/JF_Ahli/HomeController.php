@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\backweb\JF_Ahli;
+namespace App\Http\Controllers\Backweb\JF_Ahli;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
