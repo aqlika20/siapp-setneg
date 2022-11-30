@@ -179,7 +179,7 @@
                                         </table>
                                         <!--end::Table-->
                                     </div>
-                                    <!--end::Tap pane-->
+                                    <!--end::Tap pane-->    
                                     <!--begin::Tap pane-->
                                     <div class="tab-pane fade " id="tab_pending" role="tabpanel" aria-labelledby="tab_pending">
                                         <!--begin::Table-->

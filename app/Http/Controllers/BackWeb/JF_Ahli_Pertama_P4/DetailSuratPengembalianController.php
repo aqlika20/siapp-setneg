@@ -64,66 +64,88 @@ class DetailSuratPengembalianController extends Controller
             ['id', '=', $id]
         ])->first();
 
-        $surats = [];
-        
-        // dd($pengangkatans);
         if($pengangkatans->jenis_layanan == Helper::$pengangkatan_pejabat_FKU || $pengangkatans->jenis_layanan == Helper::$pemberhentian_pejabat_FKU || $pengangkatans->jenis_layanan == Helper::$perpindahan_pejabat_FKU || $pengangkatans->jenis_layanan == Helper::$ralat_keppres_jabatan_FKU || $pengangkatans->jenis_layanan == Helper::$pembatalan_keppres_jabatan_FKU)
         {
-            
-            $surats = Surat::where([
+            $alasans = Surat::where([
                 // ['id_usulan', '=', $pengangkatans->id], ['id_layanan', '=', $pengangkatans->jenis_layanan], ['nip', '=',$pengangkatans->nip]
                 ['id_usulan', '=', $pengangkatans->id], ['id_layanan', '=', $pengangkatans->jenis_layanan]
-            ])->get();
+            ])->first();
+            // dd($alasans);
+            // dd($alasans->description);
+            $verifikasi = PengangkatanPemberhentianJFKU::where([
+                ['id', '=', $pengangkatans->id]
+            ])->first();
+
+            $stringrnd = "Khirz6zTPdfd3d234sdSPBT3";	
+            $newfilename = $alasans->description;
+            $urlhead = urlencode(webaddress."/storage/TemporaryGenerator/".$newfilename);
+            return view('pages.jf_ahli_pertama.inbox.detail_surat_pengembalian', compact('page_title', 'verifikasi', 'page_description', 'currentUser', 'alasans', 'stringrnd', 'newfilename', 'urlhead'));
+
         } 
         elseif($pengangkatans_ns->jenis_layanan == Helper::$pengangkatan_pejabat_NS || $pengangkatans_ns->jenis_layanan == Helper::$pemberhentian_pejabat_NS || $pengangkatans_ns->jenis_layanan == Helper::$ralat_keppres_jabatan_NS || $pengangkatans_ns->jenis_layanan == Helper::$pembatalan_keppres_jabatan_NS )
         {
-            $surats = Surat::where([
+            $alasans = Surat::where([
                 ['id_usulan', '=', $pengangkatans_ns->id], ['id_layanan', '=', $pengangkatans_ns->jenis_layanan]
                 // ['id_usulan', '=', $pengangkatans_ns->id], ['id_layanan', '=', $pengangkatans_ns->jenis_layanan], ['nip', '=',$pengangkatans_ns->nip]
-            ])->get();
+            ])->first();
+
+            $verifikasi = PengangkatanPemberhentianNS::where([
+                ['id', '=', $pengangkatans->id]
+            ])->first();
+
+            $stringrnd = "Khirz6zTPdfd3d234sdSPBT3";	
+            $newfilename = $alasans->description;
+            $urlhead = urlencode(webaddress."/storage/TemporaryGenerator/".$newfilename);
+            return view('pages.jf_ahli_pertama.inbox.detail_surat_pengembalian', compact('page_title', 'verifikasi', 'page_description', 'currentUser', 'alasans', 'stringrnd', 'newfilename', 'urlhead'));
         }
         elseif($lainnyas->jenis_layanan == Helper::$pengangkatan_pejabat_lainnya || $lainnyas->jenis_layanan == Helper::$pemberhentian_pejabat_lainnya || $lainnyas->jenis_layanan == Helper::$ralat_keppres_jabatan_lainnya || $lainnyas->jenis_layanan == Helper::$pembatalan_keppres_jabatan_lainnya || $lainnyas->jenis_layanan == Helper::$persetujuan_pengangkatan_staf_khusus )
         {
-            $surats = Surat::where([
+            $alasans = Surat::where([
                 ['id_usulan', '=', $lainnyas->id], ['id_layanan', '=', $lainnyas->jenis_layanan]
                 // ['id_usulan', '=', $lainnyas->id], ['id_layanan', '=', $lainnyas->jenis_layanan], ['nip', '=',$lainnyas->nip]
-            ])->get();
+            ])->first();
+
+            $verifikasi = PengangkatanPemberhentianLainnya::where([
+                ['id', '=', $pengangkatans->id]
+            ])->first();
+
+            $stringrnd = "Khirz6zTPdfd3d234sdSPBT3";	
+            $newfilename = $alasans->description;
+            $urlhead = urlencode(webaddress."/storage/TemporaryGenerator/".$newfilename);
+            return view('pages.jf_ahli_pertama.inbox.detail_surat_pengembalian', compact('page_title', 'verifikasi', 'page_description', 'currentUser', 'alasans', 'stringrnd', 'newfilename', 'urlhead'));
         }
         elseif($kenaikans->jenis_layanan == Helper::$pemberian_kenaikan_pangkat || $kenaikans->jenis_layanan == Helper::$pembatalan_keppres_kenaikan_pangkat || $kenaikans->jenis_layanan == Helper::$pengesahan_kenaikan_pangkat || $kenaikans->jenis_layanan == Helper::$ralat_keppres_kepangkatan )
         {
-            $surats = Surat::where([
+            $alasans = Surat::where([
                 ['id_usulan', '=', $kenaikans->id], ['id_layanan', '=', $kenaikans->jenis_layanan]
                 // ['id_usulan', '=', $kenaikans->id], ['id_layanan', '=', $kenaikans->jenis_layanan], ['nip', '=',$kenaikans->nip]
-            ])->get();
+            ])->first();
+
+            $verifikasi = KenaikanPangkat::where([
+                ['id', '=', $pengangkatans->id]
+            ])->first();
+
+            $stringrnd = "Khirz6zTPdfd3d234sdSPBT3";	
+            $newfilename = $alasans->description;
+            $urlhead = urlencode(webaddress."/storage/TemporaryGenerator/".$newfilename);
+            return view('pages.jf_ahli_pertama.inbox.detail_surat_pengembalian', compact('page_title', 'verifikasi', 'page_description', 'currentUser', 'alasans', 'stringrnd', 'newfilename', 'urlhead'));
         }
         elseif($pemberhentians->jenis_layanan == Helper::$bup_non_kpp || $pemberhentians->jenis_layanan == Helper::$bup_kpp || $pemberhentians->jenis_layanan == Helper::$berhenti_atas_permintaan_sendiri || $pemberhentians->jenis_layanan == Helper::$non_bup_JDA_non_kpp || $pemberhentians->jenis_layanan == Helper::$non_bup_JDA_kpp || $pemberhentians->jenis_layanan == Helper::$berhenti_tidak_hormat || $pemberhentians->jenis_layanan == Helper::$anumerta || $pemberhentians->jenis_layanan == Helper::$pemberhentian_sementara || $pemberhentians->jenis_layanan == Helper::$ralat_keppres_pemberhentian || $pemberhentians->jenis_layanan == Helper::$pembatalan_keppress_pemberhentian || $pemberhentians->jenis_layanan == Helper::$petikan_keppres_hilang)
         {
-            $surats = Surat::where([
+            $alasans = Surat::where([
                 ['id_usulan', '=', $pemberhentians->id], ['id_layanan', '=', $pemberhentians->jenis_layanan]
                 // ['id_usulan', '=', $pemberhentians->id], ['id_layanan', '=', $pemberhentians->jenis_layanan], ['nip', '=',$pemberhentians->nip]
-            ])->get();
+            ])->first();
+
+            $verifikasi = Pemberhentian::where([
+                ['id', '=', $pengangkatans->id]
+            ])->first();
+
+            $stringrnd = "Khirz6zTPdfd3d234sdSPBT3";	
+            $newfilename = $alasans->description;
+            $urlhead = urlencode(webaddress."/storage/TemporaryGenerator/".$newfilename);
+            return view('pages.jf_ahli_pertama.inbox.detail_surat_pengembalian', compact('page_title', 'verifikasi', 'page_description', 'currentUser', 'alasans', 'stringrnd', 'newfilename', 'urlhead'));
         }
-
-
-		$newfilename = "Surat_Pengembalian_Berkas_Template.docx";
-		$urlhead = urlencode(webaddress."/storage/Temporary/".$newfilename);
-		$stringrnd = "Khirz6zTPdfd3d234sdSPBT";	
-		if(!empty($surats))
-		{
-			$characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
-			$pin = mt_rand(1000000, 9999999)
-				. mt_rand(1000000, 9999999)
-				. $characters[rand(0, strlen($characters) - 1)];
-			$newfilename = $surats[0]->description;
-			$urlhead = urlencode(webaddress."/storage/TemporaryGenerator/".$newfilename);
-			$stringrnd = str_shuffle($pin);
-		}
-		
-        
-
-        // dd($surats);
-
-        return view('pages.jf_ahli_pertama.inbox.detail_surat_pengembalian', compact('page_title', 'page_description', 'currentUser', 'surats','stringrnd','newfilename','urlhead'));
     }
 
     public function verifikasi(Request $request)
@@ -131,8 +153,6 @@ class DetailSuratPengembalianController extends Controller
         $input = $request->all();
 		$id = $input['v_id'];
         $jenis_layanan = $input['v_jenis'];
-		
-		
 		
         // dd($jenis_layanan);
         if($jenis_layanan == Helper::$pengangkatan_pejabat_FKU || $jenis_layanan == Helper::$pemberhentian_pejabat_FKU || $jenis_layanan == Helper::$perpindahan_pejabat_FKU || $jenis_layanan == Helper::$ralat_keppres_jabatan_FKU || $jenis_layanan == Helper::$pembatalan_keppres_jabatan_FKU)

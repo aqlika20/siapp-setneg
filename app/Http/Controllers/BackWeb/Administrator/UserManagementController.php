@@ -27,7 +27,7 @@ class UserManagementController extends Controller
         $currentUser = UserManagement::find(Auth::id());
         $page_title = 'Administrator | inbox | Usulan';
         $page_description = 'Inbox';
-
+        
         $users = UserManagement::All();
         $roles = Role::All();
         $groups = Group::All();
@@ -38,6 +38,8 @@ class UserManagementController extends Controller
     public function store(Request $request) 
     {
         $input = $request->all();
+        // dd($input['name']);
+        // dd($request);
         $validator = Validator::make($input, [
             'name' => 'required',
             'nip' => 'required|max:18',

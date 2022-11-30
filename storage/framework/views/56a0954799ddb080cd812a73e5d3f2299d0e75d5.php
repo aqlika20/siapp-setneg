@@ -4,7 +4,7 @@
         <meta charset="utf-8"/>
 
         
-        <title>Sistem Kepegawaian</title>
+        <title>SIAPP | KemenSetneg</title>
 
         
         <meta name="description" content="<?php echo $__env->yieldContent('page_description', $page_description ?? ''); ?>"/>
